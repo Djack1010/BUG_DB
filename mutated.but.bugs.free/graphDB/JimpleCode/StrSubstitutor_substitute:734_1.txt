@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    protected boolean substitute(org.apache.commons.lang3.text.StrBuilder, int, int)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        org.apache.commons.lang3.text.StrBuilder buf;
+        int offset, length, temp$0;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        buf := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        offset := @parameter1: int;
+        length := @parameter2: int;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: int substitute(org.apache.commons.lang3.text.StrBuilder,int,int,java.util.List)>(buf, offset, length, null);
+        if temp$0 != 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

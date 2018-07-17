@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    private static final void permOp(int, int, int, int, int[])
+    {
+        int a, b, n, m, t, temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$9, temp$11;
+        int[] results, temp$8, temp$10;
+
+        a := @parameter0: int;
+        b := @parameter1: int;
+        n := @parameter2: int;
+        m := @parameter3: int;
+        results := @parameter4: int[];
+        temp$0 = a >>> n;
+        temp$1 = temp$0 ^ b;
+        temp$2 = temp$1 & m;
+        t = temp$2;
+        temp$3 = a;
+        temp$4 = t << n;
+        temp$5 = temp$3 ^ temp$4;
+        a = temp$5;
+        temp$6 = b;
+        temp$7 = temp$6 ^ t;
+        b = temp$7;
+        temp$8 = results;
+        temp$9 = 0;
+        temp$8[temp$9] = a;
+        temp$10 = results;
+        temp$11 = 1;
+        temp$10[temp$11] = b;
+        return;
+    }
+}

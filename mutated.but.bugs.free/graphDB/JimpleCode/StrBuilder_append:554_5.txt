@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(java.lang.CharSequence, int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1;
+        java.lang.CharSequence seq;
+        int startIndex, length;
+        java.lang.String temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        seq := @parameter0: java.lang.CharSequence;
+        startIndex := @parameter1: int;
+        length := @parameter2: int;
+        if seq == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = interfaceinvoke seq.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String,int,int)>(temp$0, startIndex, length);
+        return temp$1;
+    }
+}

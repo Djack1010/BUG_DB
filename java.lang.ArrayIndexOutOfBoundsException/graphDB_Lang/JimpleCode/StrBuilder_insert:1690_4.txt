@@ -1,0 +1,112 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, boolean)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2, temp$30;
+        int index, temp$0, temp$1, temp$5, temp$6, temp$7, temp$9, temp$10, temp$11, temp$14, temp$15, temp$16, temp$19, temp$20, temp$21, temp$24, temp$26, temp$27, temp$28, temp$29, temp$33, temp$34, temp$35, temp$36, temp$38, temp$39, temp$40, temp$43, temp$44, temp$45, temp$48, temp$49, temp$50, temp$53, temp$54, temp$55, temp$58, temp$60, temp$61;
+        boolean value;
+        char[] temp$3, temp$4, temp$8, temp$13, temp$18, temp$23, temp$31, temp$32, temp$37, temp$42, temp$47, temp$52, temp$57;
+        char temp$12, temp$17, temp$22, temp$25, temp$41, temp$46, temp$51, temp$56, temp$59;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        value := @parameter1: boolean;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void validateIndex(int)>(index);
+        if value == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 + 4;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$1);
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = index - 4;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$7 = temp$6 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$3, index, temp$4, temp$5, temp$7);
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$9 = index;
+        temp$10 = temp$9 + 1;
+        index = temp$10;
+        temp$11 = temp$9;
+        temp$12 = 116;
+        temp$8[temp$11] = temp$12;
+        temp$13 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$14 = index;
+        temp$15 = temp$14 + 1;
+        index = temp$15;
+        temp$16 = temp$14;
+        temp$17 = 114;
+        temp$13[temp$16] = temp$17;
+        temp$18 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$19 = index;
+        temp$20 = temp$19 + 1;
+        index = temp$20;
+        temp$21 = temp$19;
+        temp$22 = 117;
+        temp$18[temp$21] = temp$22;
+        temp$23 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$24 = index;
+        temp$25 = 101;
+        temp$23[temp$24] = temp$25;
+        temp$26 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$27 = temp$26 + 4;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$27;
+        goto label2;
+
+     label1:
+        nop;
+        temp$28 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$29 = temp$28 + 5;
+        temp$30 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$29);
+        temp$31 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$32 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$33 = index;
+        temp$34 = temp$33 + 5;
+        temp$35 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$36 = temp$35 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$31, index, temp$32, temp$34, temp$36);
+        temp$37 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$38 = index;
+        temp$39 = temp$38 + 1;
+        index = temp$39;
+        temp$40 = temp$38;
+        temp$41 = 102;
+        temp$37[temp$40] = temp$41;
+        temp$42 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$43 = index;
+        temp$44 = temp$43 + 1;
+        index = temp$44;
+        temp$45 = temp$43;
+        temp$46 = 97;
+        temp$42[temp$45] = temp$46;
+        temp$47 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$48 = index;
+        temp$49 = temp$48 + 1;
+        index = temp$49;
+        temp$50 = temp$48;
+        temp$51 = 108;
+        temp$47[temp$50] = temp$51;
+        temp$52 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$53 = index;
+        temp$54 = temp$53 + 1;
+        index = temp$54;
+        temp$55 = temp$53;
+        temp$56 = 115;
+        temp$52[temp$55] = temp$56;
+        temp$57 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$58 = index;
+        temp$59 = 101;
+        temp$57[temp$58] = temp$59;
+        temp$60 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$61 = temp$60 + 5;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$61;
+
+     label2:
+        nop;
+        return this;
+    }
+}

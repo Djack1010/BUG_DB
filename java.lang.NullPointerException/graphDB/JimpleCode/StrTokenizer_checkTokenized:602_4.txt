@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    private final void checkTokenized()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.String[] temp$0, temp$3, temp$5, temp$11, temp$13;
+        char[] temp$1, temp$6, temp$7;
+        java.util.List split, split, temp$9;
+        int temp$2, temp$8, temp$10;
+        java.lang.Object[] temp$4, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        if temp$0 == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        if temp$1 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        split = null;
+        temp$2 = interfaceinvoke split.<java.util.List: int size()>();
+        temp$3 = newarray (java.lang.String)[temp$2];
+        temp$4 = interfaceinvoke split.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$3);
+        temp$5 = (java.lang.String[]) temp$4;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$5;
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$7 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$8 = lengthof temp$7;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.util.List tokenize(char[],int,int)>(temp$6, 0, temp$8);
+        split = temp$9;
+        temp$10 = interfaceinvoke split.<java.util.List: int size()>();
+        temp$11 = newarray (java.lang.String)[temp$10];
+        temp$12 = interfaceinvoke split.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$11);
+        temp$13 = (java.lang.String[]) temp$12;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$13;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return;
+    }
+}

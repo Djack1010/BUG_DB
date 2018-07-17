@@ -1,0 +1,164 @@
+public class WrapClass 
+{
+    public static java.lang.String getShortClassName(java.lang.String)
+    {
+        java.lang.String className, temp$1, temp$6, temp$18, temp$23, out, temp$30, temp$31, temp$33;
+        boolean temp$0, temp$3, temp$10, temp$15, temp$20;
+        java.lang.StringBuilder arrayPrefix, temp$2, temp$7;
+        char temp$4, temp$8, temp$13;
+        int temp$5, temp$9, temp$11, temp$12, temp$14, temp$16, temp$17, lastDotIdx, temp$24, innerIdx, temp$25, temp$26, temp$27, temp$28, temp$29;
+        java.util.Map temp$19, temp$21;
+        java.lang.Object temp$22;
+        java.lang.StringBuffer temp$32;
+
+        className := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(className);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.StringBuilder;
+        specialinvoke temp$2.<java.lang.StringBuilder: void <init>()>();
+        arrayPrefix = temp$2;
+        temp$3 = virtualinvoke className.<java.lang.String: boolean startsWith(java.lang.String)>("[");
+        if temp$3 == 0 goto label16;
+
+        goto label2;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke className.<java.lang.String: char charAt(int)>(0);
+        temp$5 = (int) temp$4;
+        if temp$5 == 91 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(1);
+        className = temp$6;
+        temp$7 = virtualinvoke arrayPrefix.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[]");
+        goto label3;
+
+     label5:
+        nop;
+        temp$8 = virtualinvoke className.<java.lang.String: char charAt(int)>(0);
+        temp$9 = (int) temp$8;
+        if temp$9 == 76 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$10 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$10 = 1;
+
+     label8:
+        nop;
+        temp$11 = virtualinvoke className.<java.lang.String: int length()>();
+        temp$12 = temp$11 - 1;
+        temp$13 = virtualinvoke className.<java.lang.String: char charAt(int)>(temp$12);
+        temp$14 = (int) temp$13;
+        if temp$14 == 59 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$15 = 0;
+        goto label11;
+
+     label10:
+        nop;
+        temp$15 = 1;
+
+     label11:
+        nop;
+        if temp$10 == temp$15 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$16 = virtualinvoke className.<java.lang.String: int length()>();
+        temp$17 = temp$16 - 1;
+        temp$18 = virtualinvoke className.<java.lang.String: java.lang.String substring(int,int)>(1, temp$17);
+        className = temp$18;
+
+     label13:
+        nop;
+        temp$19 = <org.apache.commons.lang3.ClassUtils: java.util.Map reverseAbbreviationMap>;
+        temp$20 = interfaceinvoke temp$19.<java.util.Map: boolean containsKey(java.lang.Object)>(className);
+        if temp$20 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$21 = <org.apache.commons.lang3.ClassUtils: java.util.Map reverseAbbreviationMap>;
+        temp$22 = interfaceinvoke temp$21.<java.util.Map: java.lang.Object get(java.lang.Object)>(className);
+        temp$23 = (java.lang.String) temp$22;
+        className = temp$23;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        temp$24 = virtualinvoke className.<java.lang.String: int lastIndexOf(int)>(46);
+        lastDotIdx = temp$24;
+        if lastDotIdx == -1 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$25 = 0;
+        goto label19;
+
+     label18:
+        nop;
+        temp$26 = lastDotIdx;
+        temp$25 = temp$26 + 1;
+
+     label19:
+        nop;
+        temp$27 = virtualinvoke className.<java.lang.String: int indexOf(int,int)>(36, temp$25);
+        innerIdx = temp$27;
+        temp$28 = lastDotIdx;
+        temp$29 = temp$28 + 1;
+        temp$30 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(temp$29);
+        out = temp$30;
+        if innerIdx != -1 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$31 = virtualinvoke out.<java.lang.String: java.lang.String replace(char,char)>(36, 46);
+        out = temp$31;
+
+     label21:
+        nop;
+        temp$32 = new java.lang.StringBuffer;
+        specialinvoke temp$32.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(out);
+        virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(arrayPrefix);
+        temp$33 = virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$33;
+    }
+}

@@ -1,0 +1,444 @@
+public class WrapClass 
+{
+    protected java.util.List parsePattern()
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.text.DateFormatSymbols symbols, temp$0;
+        java.util.Locale temp$1, temp$48, temp$51;
+        java.util.List rules;
+        java.util.ArrayList temp$2;
+        java.lang.String[] ERAs, temp$3, months, temp$4, shortMonths, temp$5, weekdays, temp$6, shortWeekdays, temp$7, AmPmStrings, temp$8, temp$36;
+        int length, temp$10, i, temp$12, temp$16, temp$17, tokenLen, temp$18, temp$22, temp$55, temp$63, temp$64;
+        java.lang.String temp$9, token, temp$13, temp$14, sub, temp$61;
+        int[] indexRef, temp$11, temp$15;
+        org.apache.commons.lang3.time.FastDatePrinter$Rule rule;
+        char c, temp$19, temp$57;
+        org.apache.commons.lang3.time.FastDatePrinter$TextField temp$20, temp$24, temp$25, temp$35, temp$41;
+        org.apache.commons.lang3.time.FastDatePrinter$TwoDigitYearField temp$21;
+        org.apache.commons.lang3.time.FastDatePrinter$NumberRule temp$23, temp$28, temp$30, temp$31, temp$32, temp$33, temp$34, temp$37, temp$38, temp$39, temp$40, temp$43, temp$44;
+        org.apache.commons.lang3.time.FastDatePrinter$TwoDigitMonthField temp$26;
+        org.apache.commons.lang3.time.FastDatePrinter$UnpaddedMonthField temp$27;
+        org.apache.commons.lang3.time.FastDatePrinter$TwelveHourField temp$29;
+        org.apache.commons.lang3.time.FastDatePrinter$TwentyFourHourField temp$42;
+        org.apache.commons.lang3.time.FastDatePrinter$Iso8601_Rule temp$45;
+        org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule temp$46, temp$49;
+        java.util.TimeZone temp$47, temp$50;
+        org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule temp$52, temp$53, temp$54;
+        org.apache.commons.lang3.time.FastDatePrinter$CharacterLiteral temp$56;
+        org.apache.commons.lang3.time.FastDatePrinter$StringLiteral temp$58;
+        java.lang.IllegalArgumentException temp$59;
+        java.lang.StringBuffer temp$60;
+        boolean temp$62;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        temp$0 = new java.text.DateFormatSymbols;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale mLocale>;
+        specialinvoke temp$0.<java.text.DateFormatSymbols: void <init>(java.util.Locale)>(temp$1);
+        symbols = temp$0;
+        temp$2 = new java.util.ArrayList;
+        specialinvoke temp$2.<java.util.ArrayList: void <init>()>();
+        rules = temp$2;
+        temp$3 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getEras()>();
+        ERAs = temp$3;
+        temp$4 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getMonths()>();
+        months = temp$4;
+        temp$5 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getShortMonths()>();
+        shortMonths = temp$5;
+        temp$6 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getWeekdays()>();
+        weekdays = temp$6;
+        temp$7 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getShortWeekdays()>();
+        shortWeekdays = temp$7;
+        temp$8 = virtualinvoke symbols.<java.text.DateFormatSymbols: java.lang.String[] getAmPmStrings()>();
+        AmPmStrings = temp$8;
+        temp$9 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String mPattern>;
+        temp$10 = virtualinvoke temp$9.<java.lang.String: int length()>();
+        length = temp$10;
+        indexRef = newarray (int)[1];
+        i = 0;
+
+     label0:
+        nop;
+        if i < length goto label1;
+
+        goto label58;
+
+     label1:
+        nop;
+        temp$11 = indexRef;
+        temp$12 = 0;
+        temp$11[temp$12] = i;
+        temp$13 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String mPattern>;
+        temp$14 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String parseToken(java.lang.String,int[])>(temp$13, indexRef);
+        token = temp$14;
+        temp$15 = indexRef;
+        temp$16 = 0;
+        temp$17 = temp$15[temp$16];
+        i = temp$17;
+        temp$18 = virtualinvoke token.<java.lang.String: int length()>();
+        tokenLen = temp$18;
+        if tokenLen == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        goto label58;
+
+     label3:
+        nop;
+        temp$19 = virtualinvoke token.<java.lang.String: char charAt(int)>(0);
+        c = temp$19;
+        goto label56;
+
+     label4:
+        nop;
+        temp$20 = new org.apache.commons.lang3.time.FastDatePrinter$TextField;
+        specialinvoke temp$20.<org.apache.commons.lang3.time.FastDatePrinter$TextField: void <init>(int,java.lang.String[])>(0, ERAs);
+        rule = temp$20;
+        goto label57;
+
+     label5:
+        nop;
+        if tokenLen == 2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$21 = <org.apache.commons.lang3.time.FastDatePrinter$TwoDigitYearField: org.apache.commons.lang3.time.FastDatePrinter$TwoDigitYearField INSTANCE>;
+        rule = temp$21;
+        goto label11;
+
+     label7:
+        nop;
+        if tokenLen < 4 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$22 = 4;
+        goto label10;
+
+     label9:
+        nop;
+        temp$22 = tokenLen;
+
+     label10:
+        nop;
+        temp$23 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(1, temp$22);
+        rule = temp$23;
+
+     label11:
+        nop;
+        goto label57;
+
+     label12:
+        nop;
+        if tokenLen >= 4 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$24 = new org.apache.commons.lang3.time.FastDatePrinter$TextField;
+        specialinvoke temp$24.<org.apache.commons.lang3.time.FastDatePrinter$TextField: void <init>(int,java.lang.String[])>(2, months);
+        rule = temp$24;
+        goto label21;
+
+     label14:
+        nop;
+        if tokenLen == 3 goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$25 = new org.apache.commons.lang3.time.FastDatePrinter$TextField;
+        specialinvoke temp$25.<org.apache.commons.lang3.time.FastDatePrinter$TextField: void <init>(int,java.lang.String[])>(2, shortMonths);
+        rule = temp$25;
+        goto label20;
+
+     label16:
+        nop;
+        if tokenLen == 2 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$26 = <org.apache.commons.lang3.time.FastDatePrinter$TwoDigitMonthField: org.apache.commons.lang3.time.FastDatePrinter$TwoDigitMonthField INSTANCE>;
+        rule = temp$26;
+        goto label19;
+
+     label18:
+        nop;
+        temp$27 = <org.apache.commons.lang3.time.FastDatePrinter$UnpaddedMonthField: org.apache.commons.lang3.time.FastDatePrinter$UnpaddedMonthField INSTANCE>;
+        rule = temp$27;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        goto label57;
+
+     label22:
+        nop;
+        temp$28 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(5, tokenLen);
+        rule = temp$28;
+        goto label57;
+
+     label23:
+        nop;
+        temp$29 = new org.apache.commons.lang3.time.FastDatePrinter$TwelveHourField;
+        temp$30 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(10, tokenLen);
+        specialinvoke temp$29.<org.apache.commons.lang3.time.FastDatePrinter$TwelveHourField: void <init>(org.apache.commons.lang3.time.FastDatePrinter$NumberRule)>(temp$30);
+        rule = temp$29;
+        goto label57;
+
+     label24:
+        nop;
+        temp$31 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(11, tokenLen);
+        rule = temp$31;
+        goto label57;
+
+     label25:
+        nop;
+        temp$32 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(12, tokenLen);
+        rule = temp$32;
+        goto label57;
+
+     label26:
+        nop;
+        temp$33 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(13, tokenLen);
+        rule = temp$33;
+        goto label57;
+
+     label27:
+        nop;
+        temp$34 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(14, tokenLen);
+        rule = temp$34;
+        goto label57;
+
+     label28:
+        nop;
+        temp$35 = new org.apache.commons.lang3.time.FastDatePrinter$TextField;
+        if tokenLen < 4 goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$36 = shortWeekdays;
+        goto label31;
+
+     label30:
+        nop;
+        temp$36 = weekdays;
+
+     label31:
+        nop;
+        specialinvoke temp$35.<org.apache.commons.lang3.time.FastDatePrinter$TextField: void <init>(int,java.lang.String[])>(7, temp$36);
+        rule = temp$35;
+        goto label57;
+
+     label32:
+        nop;
+        temp$37 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(6, tokenLen);
+        rule = temp$37;
+        goto label57;
+
+     label33:
+        nop;
+        temp$38 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(8, tokenLen);
+        rule = temp$38;
+        goto label57;
+
+     label34:
+        nop;
+        temp$39 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(3, tokenLen);
+        rule = temp$39;
+        goto label57;
+
+     label35:
+        nop;
+        temp$40 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(4, tokenLen);
+        rule = temp$40;
+        goto label57;
+
+     label36:
+        nop;
+        temp$41 = new org.apache.commons.lang3.time.FastDatePrinter$TextField;
+        specialinvoke temp$41.<org.apache.commons.lang3.time.FastDatePrinter$TextField: void <init>(int,java.lang.String[])>(9, AmPmStrings);
+        rule = temp$41;
+        goto label57;
+
+     label37:
+        nop;
+        temp$42 = new org.apache.commons.lang3.time.FastDatePrinter$TwentyFourHourField;
+        temp$43 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(11, tokenLen);
+        specialinvoke temp$42.<org.apache.commons.lang3.time.FastDatePrinter$TwentyFourHourField: void <init>(org.apache.commons.lang3.time.FastDatePrinter$NumberRule)>(temp$43);
+        rule = temp$42;
+        goto label57;
+
+     label38:
+        nop;
+        temp$44 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int,int)>(10, tokenLen);
+        rule = temp$44;
+        goto label57;
+
+     label39:
+        nop;
+        temp$45 = staticinvoke <org.apache.commons.lang3.time.FastDatePrinter$Iso8601_Rule: org.apache.commons.lang3.time.FastDatePrinter$Iso8601_Rule getRule(int)>(tokenLen);
+        rule = temp$45;
+        goto label57;
+
+     label40:
+        nop;
+        if tokenLen >= 4 goto label41;
+
+        goto label42;
+
+     label41:
+        nop;
+        temp$46 = new org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule;
+        temp$47 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone mTimeZone>;
+        temp$48 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale mLocale>;
+        specialinvoke temp$46.<org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule: void <init>(java.util.TimeZone,java.util.Locale,int)>(temp$47, temp$48, 1);
+        rule = temp$46;
+        goto label43;
+
+     label42:
+        nop;
+        temp$49 = new org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule;
+        temp$50 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone mTimeZone>;
+        temp$51 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale mLocale>;
+        specialinvoke temp$49.<org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNameRule: void <init>(java.util.TimeZone,java.util.Locale,int)>(temp$50, temp$51, 0);
+        rule = temp$49;
+
+     label43:
+        nop;
+        goto label57;
+
+     label44:
+        nop;
+        if tokenLen == 1 goto label45;
+
+        goto label46;
+
+     label45:
+        nop;
+        temp$52 = <org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule: org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule INSTANCE_NO_COLON>;
+        rule = temp$52;
+        goto label50;
+
+     label46:
+        nop;
+        if tokenLen == 2 goto label47;
+
+        goto label48;
+
+     label47:
+        nop;
+        temp$53 = <org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule: org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule INSTANCE_ISO_8601>;
+        rule = temp$53;
+        goto label49;
+
+     label48:
+        nop;
+        temp$54 = <org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule: org.apache.commons.lang3.time.FastDatePrinter$TimeZoneNumberRule INSTANCE_COLON>;
+        rule = temp$54;
+
+     label49:
+        nop;
+
+     label50:
+        nop;
+        goto label57;
+
+     label51:
+        nop;
+        sub = null;
+        temp$55 = virtualinvoke sub.<java.lang.String: int length()>();
+        if temp$55 == 1 goto label52;
+
+        goto label53;
+
+     label52:
+        nop;
+        temp$56 = new org.apache.commons.lang3.time.FastDatePrinter$CharacterLiteral;
+        temp$57 = virtualinvoke sub.<java.lang.String: char charAt(int)>(0);
+        specialinvoke temp$56.<org.apache.commons.lang3.time.FastDatePrinter$CharacterLiteral: void <init>(char)>(temp$57);
+        rule = temp$56;
+        goto label54;
+
+     label53:
+        nop;
+        temp$58 = new org.apache.commons.lang3.time.FastDatePrinter$StringLiteral;
+        specialinvoke temp$58.<org.apache.commons.lang3.time.FastDatePrinter$StringLiteral: void <init>(java.lang.String)>(sub);
+        rule = temp$58;
+
+     label54:
+        nop;
+        goto label57;
+
+     label55:
+        nop;
+        temp$59 = new java.lang.IllegalArgumentException;
+        temp$60 = new java.lang.StringBuffer;
+        specialinvoke temp$60.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$60.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Illegal pattern component: ");
+        virtualinvoke temp$60.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(token);
+        temp$61 = virtualinvoke temp$60.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$59.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$61);
+        throw temp$59;
+
+        goto label57;
+
+     label56:
+        nop;
+        nop;
+        lookupswitch(c)
+        {
+            case 39: goto label51;
+            case 68: goto label32;
+            case 69: goto label28;
+            case 70: goto label33;
+            case 71: goto label4;
+            case 72: goto label24;
+            case 75: goto label38;
+            case 77: goto label12;
+            case 83: goto label27;
+            case 87: goto label35;
+            case 88: goto label39;
+            case 90: goto label44;
+            case 97: goto label36;
+            case 100: goto label22;
+            case 104: goto label23;
+            case 107: goto label37;
+            case 109: goto label25;
+            case 115: goto label26;
+            case 119: goto label34;
+            case 121: goto label5;
+            case 122: goto label40;
+            default: goto label55;
+        };
+
+     label57:
+        nop;
+        temp$62 = interfaceinvoke rules.<java.util.List: boolean add(java.lang.Object)>(rule);
+        nop;
+        temp$63 = i;
+        temp$64 = temp$63 + 1;
+        i = temp$64;
+        goto label0;
+
+     label58:
+        nop;
+        return rules;
+    }
+}

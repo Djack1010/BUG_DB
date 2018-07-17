@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(char[], int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0, temp$11;
+        char[] chars, temp$12;
+        int startIndex, length, temp$1, len, temp$8, temp$9, temp$10, temp$13, temp$14;
+        java.lang.StringIndexOutOfBoundsException temp$2, temp$5;
+        java.lang.StringBuffer temp$3, temp$6;
+        java.lang.String temp$4, temp$7;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        chars := @parameter0: char[];
+        startIndex := @parameter1: int;
+        length := @parameter2: int;
+        if chars == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = lengthof chars;
+        if startIndex > temp$1 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = new java.lang.StringIndexOutOfBoundsException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid startIndex: ");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+
+     label4:
+        nop;
+        temp$5 = new java.lang.StringIndexOutOfBoundsException;
+        temp$6 = new java.lang.StringBuffer;
+        specialinvoke temp$6.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid length: ");
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$7 = virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$5.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$7);
+        throw temp$5;
+
+        if length > 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$8;
+        temp$9 = len;
+        temp$10 = temp$9 + length;
+        temp$11 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$10);
+        temp$12 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(chars, startIndex, temp$12, len, length);
+        temp$13 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$14 = temp$13 + length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$14;
+
+     label6:
+        nop;
+        return this;
+    }
+}

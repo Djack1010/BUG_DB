@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public static java.lang.CharSequence subSequence(java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence cs, temp$0, temp$2;
+        int start, temp$1;
+
+        cs := @parameter0: java.lang.CharSequence;
+        start := @parameter1: int;
+        if cs == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        temp$2 = interfaceinvoke cs.<java.lang.CharSequence: java.lang.CharSequence subSequence(int,int)>(start, temp$1);
+        temp$0 = temp$2;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

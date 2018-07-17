@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    public static short[] intToShortArray(int, int, short[], int, int)
+    {
+        int src, srcPos, dstPos, nShorts, temp$0, temp$1, temp$2, shift, i, temp$4, temp$5, temp$6, temp$8, temp$9, temp$10, temp$11, temp$13, temp$14;
+        short[] dst, temp$7;
+        java.lang.IllegalArgumentException temp$3;
+        short temp$12;
+
+        src := @parameter0: int;
+        srcPos := @parameter1: int;
+        dst := @parameter2: short[];
+        dstPos := @parameter3: int;
+        nShorts := @parameter4: int;
+        if 0 == nShorts goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dst;
+
+     label1:
+        nop;
+        temp$0 = nShorts - 1;
+        temp$1 = temp$0 * 16;
+        temp$2 = temp$1 - srcPos;
+        if temp$2 >= 32 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nShorts-1)*16+srcPos is greather or equal to than 32");
+        throw temp$3;
+
+     label3:
+        nop;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nShorts goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = i * 16;
+        temp$5 = temp$4;
+        temp$6 = temp$5 + srcPos;
+        shift = temp$6;
+        temp$7 = dst;
+        temp$8 = dstPos;
+        temp$9 = temp$8 + i;
+        temp$10 = src >> shift;
+        temp$11 = 65535 & temp$10;
+        temp$12 = (short) temp$11;
+        temp$7[temp$9] = temp$12;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label4;
+
+     label6:
+        nop;
+        return dst;
+    }
+}

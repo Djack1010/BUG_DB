@@ -1,0 +1,91 @@
+public class WrapClass 
+{
+    public long getNanoTime()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$State temp$0, temp$1, temp$3, temp$4, temp$9, temp$10, temp$12, temp$13;
+        boolean temp$2, temp$5;
+        long temp$6, temp$7, temp$8, temp$11, temp$14, temp$15, temp$16;
+        java.lang.RuntimeException temp$17;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State STOPPED>;
+        if temp$0 == temp$1 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 1;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$4 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State SUSPENDED>;
+        if temp$3 == temp$4 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = 1;
+
+     label5:
+        nop;
+        if temp$2 != temp$5 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.time.StopWatch: long stopTime>;
+        temp$7 = this.<org.apache.commons.lang3.time.StopWatch: long startTime>;
+        temp$8 = temp$6 - temp$7;
+        return temp$8;
+
+     label7:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$10 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State UNSTARTED>;
+        if temp$9 == temp$10 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$11 = (long) 0;
+        return temp$11;
+
+     label9:
+        nop;
+        temp$12 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$13 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        if temp$12 == temp$13 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$14 = staticinvoke <java.lang.System: long nanoTime()>();
+        temp$15 = this.<org.apache.commons.lang3.time.StopWatch: long startTime>;
+        temp$16 = temp$14 - temp$15;
+        return temp$16;
+
+     label11:
+        nop;
+        temp$17 = new java.lang.RuntimeException;
+        specialinvoke temp$17.<java.lang.RuntimeException: void <init>(java.lang.String)>("Illegal running state has occurred.");
+        throw temp$17;
+    }
+}

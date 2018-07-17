@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type getArrayComponentType(java.lang.reflect.Type)
+    {
+        java.lang.reflect.Type type, temp$5, temp$6;
+        boolean temp$0, temp$3;
+        java.lang.Class clazz, temp$1, temp$2;
+        java.lang.reflect.GenericArrayType temp$4;
+
+        type := @parameter0: java.lang.reflect.Type;
+        temp$0 = type instanceof java.lang.Class;
+        if temp$0 == 0 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        clazz = (java.lang.Class) type;
+        goto label1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke clazz.<java.lang.Class: java.lang.Class getComponentType()>();
+        temp$1 = temp$2;
+        nop;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$3 = type instanceof java.lang.reflect.GenericArrayType;
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = (java.lang.reflect.GenericArrayType) type;
+        temp$5 = interfaceinvoke temp$4.<java.lang.reflect.GenericArrayType: java.lang.reflect.Type getGenericComponentType()>();
+        return temp$5;
+
+     label4:
+        nop;
+        temp$6 = null;
+        return temp$6;
+    }
+}

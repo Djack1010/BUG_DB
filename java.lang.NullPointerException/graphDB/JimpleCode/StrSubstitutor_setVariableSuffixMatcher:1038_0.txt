@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrSubstitutor setVariableSuffixMatcher(org.apache.commons.lang3.text.StrMatcher)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        org.apache.commons.lang3.text.StrMatcher suffixMatcher;
+        java.lang.IllegalArgumentException temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        suffixMatcher := @parameter0: org.apache.commons.lang3.text.StrMatcher;
+        if suffixMatcher == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Variable suffix matcher must not be null!");
+        throw temp$0;
+
+     label1:
+        nop;
+        this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrMatcher suffixMatcher> = suffixMatcher;
+        return this;
+    }
+}

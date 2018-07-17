@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    public static void inclusiveBetween(long, long, long)
+    {
+        long start, end, value, temp$7, temp$10, temp$13;
+        int temp$0, temp$2, temp$6, temp$9, temp$12;
+        boolean temp$1, temp$3;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.Object[] temp$5;
+        java.lang.Integer temp$8, temp$11, temp$14;
+        java.lang.String temp$15;
+
+        start := @parameter0: long;
+        end := @parameter1: long;
+        value := @parameter2: long;
+        temp$0 = value cmp start;
+        if temp$0 >= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = value cmp end;
+        if temp$2 <= 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = 1;
+
+     label5:
+        nop;
+        if temp$1 != temp$3 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = newarray (java.lang.Object)[3];
+        temp$6 = (int) value;
+        temp$7 = (long) temp$6;
+        temp$8 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$7);
+        temp$5[0] = temp$8;
+        temp$9 = (int) start;
+        temp$10 = (long) temp$9;
+        temp$11 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$10);
+        temp$5[1] = temp$11;
+        temp$12 = (int) end;
+        temp$13 = (long) temp$12;
+        temp$14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$13);
+        temp$5[2] = temp$14;
+        temp$15 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("The value %s is not in the specified inclusive range of %s to %s", temp$5);
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$15);
+        throw temp$4;
+
+     label7:
+        nop;
+        return;
+    }
+}

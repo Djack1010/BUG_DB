@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    private final java.lang.StringBuilder spacer(int)
+    {
+        org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle this;
+        int spaces, i, temp$1, temp$2;
+        java.lang.StringBuilder sb, temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
+        spaces := @parameter0: int;
+        sb = null;
+        i = 0;
+
+     label0:
+        nop;
+        if i < spaces goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        nop;
+        temp$1 = i;
+        temp$2 = temp$1 + 1;
+        i = temp$2;
+        goto label0;
+
+     label2:
+        nop;
+        return sb;
+    }
+}

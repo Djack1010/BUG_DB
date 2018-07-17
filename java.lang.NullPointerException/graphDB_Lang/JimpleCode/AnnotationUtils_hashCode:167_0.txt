@@ -1,0 +1,84 @@
+public class WrapClass 
+{
+    public static int hashCode(java.lang.annotation.Annotation)
+    {
+        java.lang.annotation.Annotation a;
+        int result, temp$2, temp$3, temp$10, temp$12, temp$13;
+        java.lang.Class type, temp$0;
+        java.lang.reflect.Method[] temp$1;
+        java.lang.reflect.Method m, temp$4;
+        java.lang.Object value, temp$6;
+        java.lang.Object[] temp$5, temp$8;
+        java.lang.IllegalStateException temp$7;
+        java.lang.String temp$9, temp$11;
+        java.lang.RuntimeException ex, temp$14;
+        java.lang.Exception ex;
+
+        a := @parameter0: java.lang.annotation.Annotation;
+        result = 0;
+        temp$0 = interfaceinvoke a.<java.lang.annotation.Annotation: java.lang.Class annotationType()>();
+        type = temp$0;
+        temp$1 = virtualinvoke type.<java.lang.Class: java.lang.reflect.Method[] getDeclaredMethods()>();
+        temp$2 = 0;
+
+     label0:
+        nop;
+        temp$3 = lengthof temp$1;
+        if temp$2 >= temp$3 goto label7;
+
+        temp$4 = temp$1[temp$2];
+        m = temp$4;
+
+     label1:
+        nop;
+        temp$5 = newarray (java.lang.Object)[0];
+        temp$6 = virtualinvoke m.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(a, temp$5);
+        value = temp$6;
+        if value == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = new java.lang.IllegalStateException;
+        temp$8 = newarray (java.lang.Object)[1];
+        temp$8[0] = m;
+        temp$9 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("Annotation method %s returned null", temp$8);
+        specialinvoke temp$7.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$9);
+        throw temp$7;
+
+     label3:
+        nop;
+        temp$10 = result;
+        temp$11 = virtualinvoke m.<java.lang.reflect.Method: java.lang.String getName()>();
+        temp$12 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: int hashMember(java.lang.String,java.lang.Object)>(temp$11, value);
+        temp$13 = temp$10 + temp$12;
+        result = temp$13;
+        goto label6;
+
+     label4:
+        nop;
+        ex := @caughtexception;
+        throw ex;
+
+     label5:
+        nop;
+        ex := @caughtexception;
+        temp$14 = new java.lang.RuntimeException;
+        specialinvoke temp$14.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$14;
+
+     label6:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label0;
+
+     label7:
+        nop;
+        return result;
+
+        catch java.lang.RuntimeException from label1 to label4 with label4;
+        catch java.lang.Exception from label1 to label4 with label5;
+    }
+}

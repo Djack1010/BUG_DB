@@ -1,0 +1,103 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.math.Fraction getReducedFraction(int, int)
+    {
+        int numerator, denominator, temp$2, temp$3, temp$4, temp$5, temp$6, temp$8, temp$9, gcd, temp$10, temp$11, temp$12, temp$13, temp$14;
+        java.lang.ArithmeticException temp$0, temp$7;
+        org.apache.commons.lang3.math.Fraction temp$1, temp$15;
+
+        numerator := @parameter0: int;
+        denominator := @parameter1: int;
+        if denominator == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.ArithmeticException;
+        specialinvoke temp$0.<java.lang.ArithmeticException: void <init>(java.lang.String)>("The denominator must not be zero");
+        throw temp$0;
+
+     label1:
+        nop;
+        if numerator == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label3:
+        nop;
+        if denominator == -2147483648 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$2 = numerator & 1;
+        if temp$2 == 0 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = numerator;
+        temp$4 = temp$3 / 2;
+        numerator = temp$4;
+        temp$5 = denominator;
+        temp$6 = temp$5 / 2;
+        denominator = temp$6;
+
+     label6:
+        nop;
+        if denominator < 0 goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        if numerator == -2147483648 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        if denominator == -2147483648 goto label9;
+
+        goto label10;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$7 = new java.lang.ArithmeticException;
+        specialinvoke temp$7.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: can\'t negate");
+        throw temp$7;
+
+     label10:
+        nop;
+        temp$8 = neg numerator;
+        numerator = temp$8;
+        temp$9 = neg denominator;
+        denominator = temp$9;
+
+     label11:
+        nop;
+        temp$10 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(numerator, denominator);
+        gcd = temp$10;
+        temp$11 = numerator;
+        temp$12 = temp$11 / gcd;
+        numerator = temp$12;
+        temp$13 = denominator;
+        temp$14 = temp$13 / gcd;
+        denominator = temp$14;
+        temp$15 = new org.apache.commons.lang3.math.Fraction;
+        specialinvoke temp$15.<org.apache.commons.lang3.math.Fraction: void <init>(int,int)>(numerator, denominator);
+        return temp$15;
+    }
+}

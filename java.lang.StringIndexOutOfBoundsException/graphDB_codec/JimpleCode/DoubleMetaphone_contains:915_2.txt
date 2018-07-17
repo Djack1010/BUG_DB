@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    protected static transient boolean contains(java.lang.String, int, int, java.lang.String[])
+    {
+        java.lang.String value, target, temp$2, element, temp$5;
+        int start, length, temp$0, temp$1, temp$3, temp$4;
+        java.lang.String[] criteria;
+        boolean result, temp$6, temp$7;
+
+        value := @parameter0: java.lang.String;
+        start := @parameter1: int;
+        length := @parameter2: int;
+        criteria := @parameter3: java.lang.String[];
+        result = 0;
+        if start >= 0 goto label0;
+
+        goto label6;
+
+     label0:
+        nop;
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = start;
+        temp$1 = temp$0 + length;
+        temp$2 = virtualinvoke value.<java.lang.String: java.lang.String substring(int,int)>(start, temp$1);
+        target = temp$2;
+        temp$3 = 0;
+
+     label2:
+        nop;
+        temp$4 = lengthof criteria;
+        if temp$3 >= temp$4 goto label5;
+
+        temp$5 = criteria[temp$3];
+        element = temp$5;
+        temp$6 = virtualinvoke target.<java.lang.String: boolean equals(java.lang.Object)>(element);
+        if temp$6 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$7 = 1;
+        result = temp$7;
+        goto label5;
+
+     label4:
+        nop;
+        nop;
+        temp$3 = temp$3 + 1;
+        goto label2;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        return result;
+    }
+}

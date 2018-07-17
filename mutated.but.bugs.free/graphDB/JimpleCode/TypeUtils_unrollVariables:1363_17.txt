@@ -1,0 +1,151 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type unrollVariables(java.util.Map, java.lang.reflect.Type)
+    {
+        java.util.Map typeArguments, temp$0, temp$1, parameterizedTypeArguments, temp$10;
+        java.lang.reflect.Type type, temp$5, temp$6, temp$8, unrolled, temp$15, temp$16, temp$21, temp$22;
+        boolean temp$2, temp$3, temp$7, temp$25;
+        java.lang.Object temp$4;
+        java.lang.reflect.ParameterizedType p, temp$24;
+        java.util.HashMap temp$9;
+        java.lang.reflect.Type[] args, temp$11, temp$13, temp$17, temp$27, temp$28, temp$30, temp$31;
+        int i, temp$12, temp$14, temp$18, temp$19, temp$20;
+        java.lang.Class temp$23;
+        java.lang.reflect.WildcardType wild, temp$33;
+        org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder temp$26, temp$29, temp$32;
+
+        typeArguments := @parameter0: java.util.Map;
+        type := @parameter1: java.lang.reflect.Type;
+        if typeArguments == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>();
+        temp$1 = (java.util.Map) temp$0;
+        typeArguments = temp$1;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean containsTypeVariables(java.lang.reflect.Type)>(type);
+        if temp$2 == 0 goto label17;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = type instanceof java.lang.reflect.TypeVariable;
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = interfaceinvoke typeArguments.<java.util.Map: java.lang.Object get(java.lang.Object)>(type);
+        temp$5 = (java.lang.reflect.Type) temp$4;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type unrollVariables(java.util.Map,java.lang.reflect.Type)>(typeArguments, temp$5);
+        return temp$6;
+
+     label4:
+        nop;
+        temp$7 = type instanceof java.lang.reflect.ParameterizedType;
+        if temp$7 == 0 goto label14;
+
+        goto label5;
+
+     label5:
+        nop;
+        p = null;
+        temp$8 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        if temp$8 == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        parameterizedTypeArguments = typeArguments;
+        goto label8;
+
+     label7:
+        nop;
+        temp$9 = new java.util.HashMap;
+        specialinvoke temp$9.<java.util.HashMap: void <init>(java.util.Map)>(typeArguments);
+        parameterizedTypeArguments = temp$9;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.ParameterizedType)>(p);
+        interfaceinvoke parameterizedTypeArguments.<java.util.Map: void putAll(java.util.Map)>(temp$10);
+
+     label8:
+        nop;
+        temp$11 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        args = temp$11;
+        i = 0;
+
+     label9:
+        nop;
+        temp$12 = lengthof args;
+        if i < temp$12 goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$13 = args;
+        temp$14 = i;
+        temp$15 = temp$13[temp$14];
+        temp$16 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type unrollVariables(java.util.Map,java.lang.reflect.Type)>(parameterizedTypeArguments, temp$15);
+        unrolled = temp$16;
+        if unrolled != null goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$17 = args;
+        temp$18 = i;
+        temp$17[temp$18] = unrolled;
+
+     label12:
+        nop;
+        nop;
+        temp$19 = i;
+        temp$20 = temp$19 + 1;
+        i = temp$20;
+        goto label9;
+
+     label13:
+        nop;
+        temp$21 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        temp$22 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getRawType()>();
+        temp$23 = (java.lang.Class) temp$22;
+        temp$24 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.ParameterizedType parameterizeWithOwner(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type[])>(temp$21, temp$23, args);
+        return temp$24;
+
+     label14:
+        nop;
+        temp$25 = type instanceof java.lang.reflect.WildcardType;
+        if temp$25 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        wild = (java.lang.reflect.WildcardType) type;
+        temp$26 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder wildcardType()>();
+        temp$27 = interfaceinvoke wild.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        temp$28 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] unrollBounds(java.util.Map,java.lang.reflect.Type[])>(typeArguments, temp$27);
+        temp$29 = virtualinvoke temp$26.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder withUpperBounds(java.lang.reflect.Type[])>(temp$28);
+        temp$30 = interfaceinvoke wild.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getLowerBounds()>();
+        temp$31 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] unrollBounds(java.util.Map,java.lang.reflect.Type[])>(typeArguments, temp$30);
+        temp$32 = virtualinvoke temp$29.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder withLowerBounds(java.lang.reflect.Type[])>(temp$31);
+        temp$33 = virtualinvoke temp$32.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: java.lang.reflect.WildcardType build()>();
+        return temp$33;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+        return type;
+    }
+}

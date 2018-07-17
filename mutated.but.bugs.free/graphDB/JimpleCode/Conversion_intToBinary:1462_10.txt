@@ -1,0 +1,85 @@
+public class WrapClass 
+{
+    public static boolean[] intToBinary(int, int, boolean[], int, int)
+    {
+        int src, srcPos, dstPos, nBools, temp$0, temp$1, temp$2, shift, i, temp$4, temp$5, temp$7, temp$8, temp$9, temp$10, temp$12, temp$13;
+        boolean[] dst, temp$6;
+        java.lang.IllegalArgumentException temp$3;
+        boolean temp$11;
+
+        src := @parameter0: int;
+        srcPos := @parameter1: int;
+        dst := @parameter2: boolean[];
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        if 0 == nBools goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dst;
+
+     label1:
+        nop;
+        temp$0 = nBools - 1;
+        temp$1 = temp$0;
+        temp$2 = temp$1 + srcPos;
+        if temp$2 >= 32 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+srcPos is greather or equal to than 32");
+        throw temp$3;
+
+     label3:
+        nop;
+        shift = -1;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nBools goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + srcPos;
+        shift = temp$5;
+        temp$6 = dst;
+        temp$7 = dstPos;
+        temp$8 = temp$7 + i;
+        temp$9 = src >> shift;
+        temp$10 = 1 & temp$9;
+        if temp$10 != 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$11 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$11 = 1;
+
+     label8:
+        nop;
+        temp$6[temp$8] = temp$11;
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label4;
+
+     label9:
+        nop;
+        return dst;
+    }
+}

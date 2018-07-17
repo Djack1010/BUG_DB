@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    private static final void appendDigits(java.lang.StringBuffer, int)
+    {
+        java.lang.StringBuffer buffer, temp$4, temp$9;
+        int value, temp$0, temp$1, temp$2, temp$5, temp$6, temp$7;
+        char temp$3, temp$8;
+
+        buffer := @parameter0: java.lang.StringBuffer;
+        value := @parameter1: int;
+        temp$0 = value / 10;
+        temp$1 = temp$0;
+        temp$2 = temp$1 + 48;
+        temp$3 = (char) temp$2;
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(temp$3);
+        temp$5 = value % -10;
+        temp$6 = temp$5;
+        temp$7 = temp$6 + 48;
+        temp$8 = (char) temp$7;
+        temp$9 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(temp$8);
+        return;
+    }
+}

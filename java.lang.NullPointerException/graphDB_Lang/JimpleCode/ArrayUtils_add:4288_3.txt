@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static java.lang.Object[] add(java.lang.Object[], int, java.lang.Object)
+    {
+        java.lang.Object[] array, newArray;
+        int index;
+        java.lang.Object element, temp$2;
+        java.lang.Class clss, temp$0, temp$1;
+
+        array := @parameter0: java.lang.Object[];
+        index := @parameter1: int;
+        element := @parameter2: java.lang.Object;
+        clss = null;
+        temp$0 = virtualinvoke array.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: java.lang.Class getComponentType()>();
+        clss = temp$1;
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object add(java.lang.Object,int,java.lang.Object,java.lang.Class)>(array, index, element, clss);
+        newArray = (java.lang.Object[]) temp$2;
+        return newArray;
+    }
+}

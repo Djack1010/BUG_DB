@@ -1,0 +1,244 @@
+public class WrapClass 
+{
+    private static final java.lang.String[] splitWorker(java.lang.String, java.lang.String, int, boolean)
+    {
+        java.lang.String str, separatorChars, temp$10, temp$25, temp$33;
+        int max, len, temp$1, sizePlus1, i, start, temp$7, temp$8, temp$13, temp$16, temp$17, temp$19, temp$20, temp$22, temp$23, temp$28, temp$31, temp$32, temp$35;
+        boolean preserveAllTokens, match, lastMatch, temp$5, temp$6, temp$9, temp$11, temp$12, temp$14, temp$15, temp$21, temp$24, temp$26, temp$27, temp$29, temp$30, temp$34;
+        java.lang.String[] temp$0, temp$2, temp$36, temp$38;
+        java.util.List list;
+        java.util.ArrayList temp$3;
+        char temp$4, temp$18;
+        java.lang.Object[] temp$37;
+
+        str := @parameter0: java.lang.String;
+        separatorChars := @parameter1: java.lang.String;
+        max := @parameter2: int;
+        preserveAllTokens := @parameter3: boolean;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$1;
+        if len == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = new java.util.ArrayList;
+        specialinvoke temp$3.<java.util.ArrayList: void <init>()>();
+        list = temp$3;
+        sizePlus1 = 1;
+        i = 0;
+        start = 0;
+        match = 0;
+        lastMatch = 0;
+        if separatorChars == null goto label4;
+
+        goto label15;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        if i < len goto label6;
+
+        goto label14;
+
+     label6:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$5 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(temp$4);
+        if temp$5 == 0 goto label13;
+
+        goto label7;
+
+     label7:
+        nop;
+        if match == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        if preserveAllTokens == 0 goto label12;
+
+        goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$6 = 1;
+        lastMatch = temp$6;
+        temp$7 = sizePlus1;
+        temp$8 = temp$7 + 1;
+        sizePlus1 = temp$8;
+        if temp$7 == max goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        i = len;
+        temp$9 = 0;
+        lastMatch = temp$9;
+
+     label11:
+        nop;
+        temp$10 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$11 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$10);
+        temp$12 = 0;
+        match = temp$12;
+
+     label12:
+        nop;
+        temp$13 = i + 1;
+        i = temp$13;
+        start = temp$13;
+        goto label5;
+
+     label13:
+        nop;
+        temp$14 = 0;
+        lastMatch = temp$14;
+        temp$15 = 1;
+        match = temp$15;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label5;
+
+     label14:
+        nop;
+        goto label26;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        if i < len goto label17;
+
+        goto label25;
+
+     label17:
+        nop;
+        temp$18 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$19 = (int) temp$18;
+        temp$20 = virtualinvoke separatorChars.<java.lang.String: int indexOf(int)>(temp$19);
+        if temp$20 >= 0 goto label18;
+
+        goto label24;
+
+     label18:
+        nop;
+        if match == 0 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        if preserveAllTokens == 0 goto label23;
+
+        goto label20;
+
+        goto label23;
+
+     label20:
+        nop;
+        temp$21 = 1;
+        lastMatch = temp$21;
+        temp$22 = sizePlus1;
+        temp$23 = temp$22 + 1;
+        sizePlus1 = temp$23;
+        if temp$22 == max goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        i = len;
+        temp$24 = 0;
+        lastMatch = temp$24;
+
+     label22:
+        nop;
+        temp$25 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$26 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$25);
+        temp$27 = 0;
+        match = temp$27;
+
+     label23:
+        nop;
+        temp$28 = i + 1;
+        i = temp$28;
+        start = temp$28;
+        goto label16;
+
+     label24:
+        nop;
+        temp$29 = 0;
+        lastMatch = temp$29;
+        temp$30 = 1;
+        match = temp$30;
+        temp$31 = i;
+        temp$32 = temp$31 + 1;
+        i = temp$32;
+        goto label16;
+
+     label25:
+        nop;
+        nop;
+
+     label26:
+        nop;
+        if match == 0 goto label27;
+
+        goto label29;
+
+     label27:
+        nop;
+        if preserveAllTokens == 0 goto label30;
+
+        goto label28;
+
+     label28:
+        nop;
+        if lastMatch == 0 goto label30;
+
+        goto label29;
+
+        goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$33 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$34 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$33);
+
+     label30:
+        nop;
+        temp$35 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$36 = newarray (java.lang.String)[temp$35];
+        temp$37 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$36);
+        temp$38 = (java.lang.String[]) temp$37;
+        return temp$38;
+    }
+}

@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    private static final java.lang.String modify(java.lang.String, java.lang.String[], boolean)
+    {
+        java.lang.String str, temp$12;
+        java.lang.String[] set;
+        boolean expect, temp$5;
+        org.apache.commons.lang3.CharSet chars, temp$0;
+        java.lang.StringBuilder buffer, temp$9;
+        char[] chrs, temp$1, temp$2, temp$6;
+        int sz, i, temp$3, temp$7, temp$10, temp$11;
+        char temp$4, temp$8;
+
+        str := @parameter0: java.lang.String;
+        set := @parameter1: java.lang.String[];
+        expect := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.CharSet: org.apache.commons.lang3.CharSet getInstance(java.lang.String[])>(set);
+        chars = temp$0;
+        buffer = null;
+        temp$1 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        chrs = temp$1;
+        sz = lengthof chrs;
+        i = 0;
+
+     label0:
+        nop;
+        if i < sz goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$2 = chrs;
+        temp$3 = i;
+        temp$4 = temp$2[temp$3];
+        temp$5 = virtualinvoke chars.<org.apache.commons.lang3.CharSet: boolean contains(char)>(temp$4);
+        if temp$5 == expect goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = chrs;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        temp$9 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$8);
+
+     label3:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label0;
+
+     label4:
+        nop;
+        temp$12 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$12;
+    }
+}

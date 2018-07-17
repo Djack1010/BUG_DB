@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    public static java.lang.Boolean toBooleanObject(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String str, trueString, falseString, nullString;
+        boolean temp$0, temp$2, temp$4;
+        java.lang.Boolean temp$1, temp$3, temp$5;
+        java.lang.IllegalArgumentException temp$6;
+
+        str := @parameter0: java.lang.String;
+        trueString := @parameter1: java.lang.String;
+        falseString := @parameter2: java.lang.String;
+        nullString := @parameter3: java.lang.String;
+        temp$0 = virtualinvoke str.<java.lang.String: boolean equals(java.lang.Object)>(trueString);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <java.lang.Boolean: java.lang.Boolean TRUE>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: boolean equals(java.lang.Object)>(falseString);
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: boolean equals(java.lang.Object)>(nullString);
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = null;
+        return temp$5;
+
+     label5:
+        nop;
+        nop;
+        temp$6 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The String did not match any specified value");
+        throw temp$6;
+    }
+}

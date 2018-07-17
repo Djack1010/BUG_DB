@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public static transient long max(long[])
+    {
+        long[] array, temp$0, temp$3, temp$7;
+        long max, temp$5, temp$9;
+        int temp$1, j, temp$2, temp$4, temp$6, temp$8, temp$10, temp$11;
+
+        array := @parameter0: long[];
+        staticinvoke <org.apache.commons.lang3.math.NumberUtils: void validateArray(java.lang.Object)>(array);
+        temp$0 = array;
+        temp$1 = 0;
+        max = temp$0[temp$1];
+        j = 1;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if j < temp$2 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$3 = array;
+        temp$4 = j;
+        temp$5 = temp$3[temp$4];
+        temp$6 = temp$5 cmp max;
+        if temp$6 < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$7 = array;
+        temp$8 = j;
+        temp$9 = temp$7[temp$8];
+        max = temp$9;
+
+     label3:
+        nop;
+        nop;
+        temp$10 = j;
+        temp$11 = temp$10 + 1;
+        j = temp$11;
+        goto label0;
+
+     label4:
+        nop;
+        return max;
+    }
+}

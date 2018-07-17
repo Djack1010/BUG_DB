@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public static void inclusiveBetween(long, long, long)
+    {
+        long start, end, value, temp$3, temp$6, temp$9;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.Object[] temp$1;
+        int temp$2, temp$5, temp$8;
+        java.lang.Integer temp$4, temp$7, temp$10;
+        java.lang.String temp$11;
+
+        start := @parameter0: long;
+        end := @parameter1: long;
+        value := @parameter2: long;
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = newarray (java.lang.Object)[3];
+        temp$2 = (int) value;
+        temp$3 = (long) temp$2;
+        temp$4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$3);
+        temp$1[0] = temp$4;
+        temp$5 = (int) start;
+        temp$6 = (long) temp$5;
+        temp$7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$6);
+        temp$1[1] = temp$7;
+        temp$8 = (int) end;
+        temp$9 = (long) temp$8;
+        temp$10 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$9);
+        temp$1[2] = temp$10;
+        temp$11 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("The value %s is not in the specified inclusive range of %s to %s", temp$1);
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$11);
+        throw temp$0;
+
+        return;
+    }
+}

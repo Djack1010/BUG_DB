@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public boolean hasPrevious()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        int temp$0;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void checkTokenized()>();
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: int tokenPos>;
+        if temp$0 != 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendSeparator(char, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1, temp$2;
+        char standard, defaultIfEmpty;
+        int temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        standard := @parameter0: char;
+        defaultIfEmpty := @parameter1: char;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int size()>();
+        if temp$0 > 1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char)>(standard);
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char)>(defaultIfEmpty);
+
+     label2:
+        nop;
+        return this;
+    }
+}

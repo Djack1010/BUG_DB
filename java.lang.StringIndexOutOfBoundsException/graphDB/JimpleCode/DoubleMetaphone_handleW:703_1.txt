@@ -1,0 +1,177 @@
+public class WrapClass 
+{
+    private final int handleW(java.lang.String, org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result;
+        int index, temp$2, temp$3, temp$4, temp$5, temp$10, temp$11, temp$14, temp$15, temp$16, temp$17, temp$18, temp$21, temp$26, temp$27, temp$30, temp$31, temp$32, temp$33;
+        java.lang.String[] temp$0, temp$8, temp$22, temp$24, temp$28;
+        boolean temp$1, temp$7, temp$9, temp$13, temp$20, temp$23, temp$25, temp$29;
+        char temp$6, temp$12, temp$19;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        result := @parameter1: org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        index := @parameter2: int;
+        temp$0 = newarray (java.lang.String)[1];
+        temp$0[0] = "WR";
+        temp$1 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, index, 2, temp$0);
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(82);
+        temp$2 = index;
+        temp$3 = temp$2 + 2;
+        index = temp$3;
+        goto label19;
+
+     label1:
+        nop;
+        if index == 0 goto label2;
+
+        goto label8;
+
+     label2:
+        nop;
+        temp$4 = index;
+        temp$5 = temp$4 + 1;
+        temp$6 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$5);
+        temp$7 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$6);
+        if temp$7 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$8 = newarray (java.lang.String)[1];
+        temp$8[0] = "WH";
+        temp$9 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, index, 2, temp$8);
+        if temp$9 == 0 goto label8;
+
+        goto label4;
+
+        goto label8;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$10 = index;
+        temp$11 = temp$10 + 1;
+        temp$12 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$11);
+        temp$13 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$12);
+        if temp$13 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char,char)>(65, 70);
+        goto label7;
+
+     label6:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(65);
+
+     label7:
+        nop;
+        temp$14 = index;
+        temp$15 = temp$14 + 1;
+        index = temp$15;
+        goto label18;
+
+     label8:
+        nop;
+        temp$16 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$17 = temp$16 - 1;
+        if index == temp$17 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$18 = index - 1;
+        temp$19 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$18);
+        temp$20 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$19);
+        if temp$20 == 0 goto label10;
+
+        goto label12;
+
+        goto label12;
+
+     label10:
+        nop;
+        temp$21 = index - 1;
+        temp$22 = newarray (java.lang.String)[4];
+        temp$22[0] = "EWSKI";
+        temp$22[1] = "EWSKY";
+        temp$22[2] = "OWSKI";
+        temp$22[3] = "OWSKY";
+        temp$23 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$21, 5, temp$22);
+        if temp$23 == 0 goto label11;
+
+        goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$24 = newarray (java.lang.String)[1];
+        temp$24[0] = "SCH";
+        temp$25 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, 0, 3, temp$24);
+        if temp$25 == 0 goto label13;
+
+        goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void appendAlternate(char)>(70);
+        temp$26 = index;
+        temp$27 = temp$26 + 1;
+        index = temp$27;
+        goto label17;
+
+     label13:
+        nop;
+        temp$28 = newarray (java.lang.String)[2];
+        temp$28[0] = "WICZ";
+        temp$28[1] = "WITZ";
+        temp$29 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, index, -4, temp$28);
+        if temp$29 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(java.lang.String,java.lang.String)>("TS", "FX");
+        temp$30 = index;
+        temp$31 = temp$30 + 4;
+        index = temp$31;
+        goto label16;
+
+     label15:
+        nop;
+        temp$32 = index;
+        temp$33 = temp$32 + 1;
+        index = temp$33;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+        return index;
+    }
+}

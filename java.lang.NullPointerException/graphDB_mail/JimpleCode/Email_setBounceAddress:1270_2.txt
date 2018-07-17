@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.Email setBounceAddress(java.lang.String)
+    {
+        org.apache.commons.mail.Email this;
+        java.lang.String email, temp$1, temp$3, temp$6;
+        boolean temp$0;
+        javax.mail.internet.InternetAddress temp$2;
+        org.apache.commons.mail.EmailException e;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.StringBuffer temp$5;
+
+        this := @this: org.apache.commons.mail.Email;
+        email := @parameter0: java.lang.String;
+        virtualinvoke this.<org.apache.commons.mail.Email: void checkSessionAlreadyInitialized()>();
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke email.<java.lang.String: boolean isEmpty()>();
+        if temp$0 == 0 goto label1;
+
+        goto label5;
+
+        goto label1;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$1 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        temp$2 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress createInternetAddress(java.lang.String,java.lang.String,java.lang.String)>(email, null, temp$1);
+        temp$3 = virtualinvoke temp$2.<javax.mail.internet.InternetAddress: java.lang.String getAddress()>();
+        this.<org.apache.commons.mail.Email: java.lang.String bounceAddress> = temp$3;
+        goto label4;
+
+     label3:
+        nop;
+        e := @caughtexception;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Failed to set the bounce address : ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(email);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(temp$6, e);
+        throw temp$4;
+
+     label4:
+        nop;
+        goto label6;
+
+     label5:
+        nop;
+        this.<org.apache.commons.mail.Email: java.lang.String bounceAddress> = email;
+
+     label6:
+        nop;
+        return this;
+
+        catch org.apache.commons.mail.EmailException from label2 to label3 with label3;
+    }
+}

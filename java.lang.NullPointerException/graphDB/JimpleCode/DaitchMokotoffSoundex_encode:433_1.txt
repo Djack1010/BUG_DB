@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String)
+    {
+        org.apache.commons.codec.language.DaitchMokotoffSoundex this;
+        java.lang.String source, temp$3;
+        java.lang.String[] temp$0, temp$1;
+        int temp$2;
+
+        this := @this: org.apache.commons.codec.language.DaitchMokotoffSoundex;
+        source := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String[] soundex(java.lang.String,boolean)>(source, 0);
+        temp$1 = temp$0;
+        temp$2 = 0;
+        temp$3 = temp$1[temp$2];
+        return temp$3;
+    }
+}

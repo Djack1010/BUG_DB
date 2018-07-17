@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public java.lang.String replace(java.lang.CharSequence)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        java.lang.CharSequence source;
+        int temp$0;
+        java.lang.String temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        source := @parameter0: java.lang.CharSequence;
+        temp$0 = interfaceinvoke source.<java.lang.CharSequence: int length()>();
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: java.lang.String replace(java.lang.CharSequence,int,int)>(source, 0, temp$0);
+        return temp$1;
+    }
+}

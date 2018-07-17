@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type[] getImplicitUpperBounds(java.lang.reflect.WildcardType)
+    {
+        java.lang.reflect.WildcardType wildcardType;
+        java.lang.reflect.Type[] bounds, temp$0, temp$1, temp$3, temp$7;
+        int temp$2;
+        java.lang.Class temp$4, temp$5, temp$6;
+
+        wildcardType := @parameter0: java.lang.reflect.WildcardType;
+        temp$0 = interfaceinvoke wildcardType.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        bounds = temp$0;
+        temp$2 = lengthof bounds;
+        if temp$2 == 0 goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$3 = newarray (java.lang.reflect.Type)[1];
+        temp$5 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+        if temp$5 != null goto label1;
+
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$(java.lang.String)>("java.lang.Object");
+        <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object> = temp$6;
+        temp$4 = temp$6;
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+
+     label2:
+        nop;
+        temp$3[0] = temp$4;
+        temp$1 = temp$3;
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] normalizeUpperBounds(java.lang.reflect.Type[])>(bounds);
+        temp$1 = temp$7;
+
+     label4:
+        nop;
+        return temp$1;
+    }
+}

@@ -1,0 +1,156 @@
+public class WrapClass 
+{
+    private static final boolean arrayMemberEquals(java.lang.Class, java.lang.Object, java.lang.Object)
+    {
+        java.lang.Class componentType, temp$1, temp$6, temp$11, temp$16, temp$21, temp$26, temp$31, temp$36;
+        java.lang.Object o1, o2;
+        boolean temp$0, temp$2, temp$5, temp$7, temp$10, temp$12, temp$15, temp$17, temp$20, temp$22, temp$25, temp$27, temp$30, temp$32, temp$35, temp$37, temp$40, temp$43;
+        byte[] temp$3, temp$4;
+        short[] temp$8, temp$9;
+        int[] temp$13, temp$14;
+        char[] temp$18, temp$19;
+        long[] temp$23, temp$24;
+        float[] temp$28, temp$29;
+        double[] temp$33, temp$34;
+        boolean[] temp$38, temp$39;
+        java.lang.Object[] temp$41, temp$42;
+
+        componentType := @parameter0: java.lang.Class;
+        o1 := @parameter1: java.lang.Object;
+        o2 := @parameter2: java.lang.Object;
+        temp$0 = virtualinvoke componentType.<java.lang.Class: boolean isAnnotation()>();
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$1 = <java.lang.Byte: java.lang.Class TYPE>;
+        temp$2 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$1);
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = (byte[]) o1;
+        temp$4 = (byte[]) o2;
+        temp$5 = staticinvoke <java.util.Arrays: boolean equals(byte[],byte[])>(temp$3, temp$4);
+        return temp$5;
+
+     label3:
+        nop;
+        temp$6 = <java.lang.Short: java.lang.Class TYPE>;
+        temp$7 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$6);
+        if temp$7 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$8 = (short[]) o1;
+        temp$9 = (short[]) o2;
+        temp$10 = staticinvoke <java.util.Arrays: boolean equals(short[],short[])>(temp$8, temp$9);
+        return temp$10;
+
+     label5:
+        nop;
+        temp$11 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$12 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$11);
+        if temp$12 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$13 = (int[]) o1;
+        temp$14 = (int[]) o2;
+        temp$15 = staticinvoke <java.util.Arrays: boolean equals(int[],int[])>(temp$13, temp$14);
+        return temp$15;
+
+     label7:
+        nop;
+        temp$16 = <java.lang.Character: java.lang.Class TYPE>;
+        temp$17 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$16);
+        if temp$17 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$18 = (char[]) o1;
+        temp$19 = (char[]) o2;
+        temp$20 = staticinvoke <java.util.Arrays: boolean equals(char[],char[])>(temp$18, temp$19);
+        return temp$20;
+
+     label9:
+        nop;
+        temp$21 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$22 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$21);
+        if temp$22 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$23 = (long[]) o1;
+        temp$24 = (long[]) o2;
+        temp$25 = staticinvoke <java.util.Arrays: boolean equals(long[],long[])>(temp$23, temp$24);
+        return temp$25;
+
+     label11:
+        nop;
+        temp$26 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$27 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$26);
+        if temp$27 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$28 = (float[]) o1;
+        temp$29 = (float[]) o2;
+        temp$30 = staticinvoke <java.util.Arrays: boolean equals(float[],float[])>(temp$28, temp$29);
+        return temp$30;
+
+     label13:
+        nop;
+        temp$31 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$32 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$31);
+        if temp$32 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$33 = (double[]) o1;
+        temp$34 = (double[]) o2;
+        temp$35 = staticinvoke <java.util.Arrays: boolean equals(double[],double[])>(temp$33, temp$34);
+        return temp$35;
+
+     label15:
+        nop;
+        temp$36 = <java.lang.Boolean: java.lang.Class TYPE>;
+        temp$37 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$36);
+        if temp$37 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$38 = (boolean[]) o1;
+        temp$39 = (boolean[]) o2;
+        temp$40 = staticinvoke <java.util.Arrays: boolean equals(boolean[],boolean[])>(temp$38, temp$39);
+        return temp$40;
+
+     label17:
+        nop;
+        temp$41 = (java.lang.Object[]) o1;
+        temp$42 = (java.lang.Object[]) o2;
+        temp$43 = staticinvoke <java.util.Arrays: boolean equals(java.lang.Object[],java.lang.Object[])>(temp$41, temp$42);
+        return temp$43;
+    }
+}

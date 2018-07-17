@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public static java.lang.String replaceChars(java.lang.String, char, char)
+    {
+        java.lang.String str, temp$0, temp$1;
+        char searchChar, replaceChar;
+
+        str := @parameter0: java.lang.String;
+        searchChar := @parameter1: char;
+        replaceChar := @parameter2: char;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: java.lang.String replace(char,char)>(searchChar, replaceChar);
+        return temp$1;
+    }
+}

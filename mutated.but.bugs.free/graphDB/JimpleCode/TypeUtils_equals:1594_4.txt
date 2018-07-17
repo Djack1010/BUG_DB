@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    private static final boolean equals(java.lang.reflect.ParameterizedType, java.lang.reflect.Type)
+    {
+        java.lang.reflect.ParameterizedType p, other;
+        java.lang.reflect.Type t, temp$1, temp$2, temp$4, temp$5;
+        boolean temp$0, temp$3, temp$6, temp$9, temp$10;
+        java.lang.reflect.Type[] temp$7, temp$8;
+
+        p := @parameter0: java.lang.reflect.ParameterizedType;
+        t := @parameter1: java.lang.reflect.Type;
+        temp$0 = t instanceof java.lang.reflect.ParameterizedType;
+        if temp$0 == 0 goto label4;
+
+        goto label0;
+
+     label0:
+        nop;
+        other = (java.lang.reflect.ParameterizedType) t;
+        temp$1 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getRawType()>();
+        temp$2 = interfaceinvoke other.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getRawType()>();
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)>(temp$1, temp$2);
+        if temp$3 == 0 goto label3;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        temp$5 = interfaceinvoke other.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)>(temp$4, temp$5);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$7 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        temp$8 = interfaceinvoke other.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type[],java.lang.reflect.Type[])>(temp$7, temp$8);
+        return temp$9;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$10 = 0;
+        return temp$10;
+    }
+}

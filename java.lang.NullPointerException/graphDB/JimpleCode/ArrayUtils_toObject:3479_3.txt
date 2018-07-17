@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public static java.lang.Boolean[] toObject(boolean[])
+    {
+        boolean[] array, temp$6;
+        int temp$0, temp$2, i, temp$3, temp$5, temp$7, temp$14, temp$15;
+        java.lang.Boolean[] temp$1, result, temp$4;
+        boolean temp$8, temp$10, temp$12, temp$13;
+        java.lang.Boolean temp$9, temp$11;
+
+        array := @parameter0: boolean[];
+        temp$0 = lengthof array;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: java.lang.Boolean[] EMPTY_BOOLEAN_OBJECT_ARRAY>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = lengthof array;
+        result = newarray (java.lang.Boolean)[temp$2];
+        i = 0;
+
+     label2:
+        nop;
+        temp$3 = lengthof array;
+        if i < temp$3 goto label3;
+
+        goto label9;
+
+     label3:
+        nop;
+        temp$4 = result;
+        temp$5 = i;
+        temp$6 = array;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        if temp$8 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$9 = <java.lang.Boolean: java.lang.Boolean TRUE>;
+        temp$10 = virtualinvoke temp$9.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$10 == 0 goto label6;
+
+        goto label7;
+
+        goto label7;
+
+     label5:
+        nop;
+        temp$11 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        temp$12 = virtualinvoke temp$11.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$12 == 0 goto label6;
+
+        goto label7;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$13 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$13 = 1;
+
+     label8:
+        nop;
+        temp$4[temp$5] = temp$13;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label2;
+
+     label9:
+        nop;
+        return result;
+    }
+}

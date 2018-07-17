@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public static java.math.BigDecimal createBigDecimal(java.lang.String)
+    {
+        java.lang.String str, temp$1, temp$5;
+        java.math.BigDecimal temp$0, temp$6;
+        boolean temp$2;
+        java.lang.NumberFormatException temp$3;
+        java.lang.StringBuffer temp$4;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: java.lang.String trim()>();
+        temp$2 = virtualinvoke temp$1.<java.lang.String: boolean startsWith(java.lang.String)>("--");
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.NumberFormatException;
+        temp$4 = new java.lang.StringBuffer;
+        specialinvoke temp$4.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$5 = virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$3.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$5);
+        throw temp$3;
+
+     label3:
+        nop;
+        temp$6 = new java.math.BigDecimal;
+        specialinvoke temp$6.<java.math.BigDecimal: void <init>(java.lang.String)>(str);
+        return temp$6;
+    }
+}

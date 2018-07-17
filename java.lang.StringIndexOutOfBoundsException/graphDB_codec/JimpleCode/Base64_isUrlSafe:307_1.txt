@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public boolean isUrlSafe()
+    {
+        org.apache.commons.codec.binary.Base64 this;
+        byte[] temp$0, temp$1;
+        boolean temp$2;
+
+        this := @this: org.apache.commons.codec.binary.Base64;
+        temp$0 = this.<org.apache.commons.codec.binary.Base64: byte[] encodeTable>;
+        temp$1 = <org.apache.commons.codec.binary.Base64: byte[] URL_SAFE_ENCODE_TABLE>;
+        if temp$0 == temp$1 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 1;
+
+     label2:
+        nop;
+        return temp$2;
+    }
+}

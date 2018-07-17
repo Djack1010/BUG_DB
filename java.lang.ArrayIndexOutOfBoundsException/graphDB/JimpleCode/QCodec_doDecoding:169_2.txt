@@ -1,0 +1,112 @@
+public class WrapClass 
+{
+    protected byte[] doDecoding(byte[]) throws org.apache.commons.codec.DecoderException
+    {
+        org.apache.commons.codec.net.QCodec this;
+        byte[] bytes, temp$0, tmp, temp$8, temp$11, temp$13, temp$18, temp$19;
+        boolean hasUnderscores, temp$5;
+        int temp$1, temp$2, temp$4, temp$6, i, temp$7, temp$9, temp$10, temp$12, temp$14, temp$16, temp$17;
+        byte b, temp$3, b, temp$15;
+
+        this := @this: org.apache.commons.codec.net.QCodec;
+        bytes := @parameter0: byte[];
+        if bytes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        hasUnderscores = 0;
+        temp$1 = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof bytes;
+        if temp$1 >= temp$2 goto label5;
+
+        temp$3 = bytes[temp$1];
+        b = temp$3;
+        temp$4 = (int) b;
+        if temp$4 == 95 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = 1;
+        hasUnderscores = temp$5;
+        goto label5;
+
+     label4:
+        nop;
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label2;
+
+     label5:
+        nop;
+        if hasUnderscores == 0 goto label13;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$6 = lengthof bytes;
+        tmp = newarray (byte)[temp$6];
+        i = -1;
+
+     label7:
+        nop;
+        temp$7 = lengthof bytes;
+        if i < temp$7 goto label8;
+
+        goto label12;
+
+     label8:
+        nop;
+        temp$8 = bytes;
+        temp$9 = i;
+        b = temp$8[temp$9];
+        temp$10 = (int) b;
+        if temp$10 != 95 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$11 = tmp;
+        temp$12 = i;
+        temp$11[temp$12] = b;
+        goto label11;
+
+     label10:
+        nop;
+        temp$13 = tmp;
+        temp$14 = i;
+        temp$15 = 32;
+        temp$13[temp$14] = temp$15;
+
+     label11:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label7;
+
+     label12:
+        nop;
+        temp$18 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: byte[] decodeQuotedPrintable(byte[])>(tmp);
+        return temp$18;
+
+     label13:
+        nop;
+        temp$19 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: byte[] decodeQuotedPrintable(byte[])>(bytes);
+        return temp$19;
+    }
+}

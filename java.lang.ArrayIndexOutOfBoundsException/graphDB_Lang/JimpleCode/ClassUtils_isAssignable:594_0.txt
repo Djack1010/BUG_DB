@@ -1,0 +1,87 @@
+public class WrapClass 
+{
+    public static boolean isAssignable(java.lang.Class[], java.lang.Class[], boolean)
+    {
+        java.lang.Class[] classArray, toClassArray, temp$2, temp$3, temp$5, temp$8;
+        boolean autoboxing, temp$0, temp$1, temp$11, temp$12, temp$15;
+        int i, temp$4, temp$6, temp$9, temp$13, temp$14;
+        java.lang.Class temp$7, temp$10;
+
+        classArray := @parameter0: java.lang.Class[];
+        toClassArray := @parameter1: java.lang.Class[];
+        autoboxing := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isSameLength(java.lang.Object[],java.lang.Object[])>(classArray, toClassArray);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        if classArray == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+        classArray = temp$2;
+
+     label3:
+        nop;
+        if toClassArray == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+        toClassArray = temp$3;
+
+     label5:
+        nop;
+        i = 0;
+
+     label6:
+        nop;
+        temp$4 = lengthof classArray;
+        if i < temp$4 goto label7;
+
+        goto label10;
+
+     label7:
+        nop;
+        temp$5 = classArray;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = toClassArray;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        temp$11 = staticinvoke <org.apache.commons.lang3.ClassUtils: boolean isAssignable(java.lang.Class,java.lang.Class,boolean)>(temp$7, temp$10, autoboxing);
+        if temp$11 == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$12 = 0;
+        return temp$12;
+
+     label9:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label6;
+
+     label10:
+        nop;
+        temp$15 = 1;
+        return temp$15;
+    }
+}

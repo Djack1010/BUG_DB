@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder append(boolean, boolean)
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this;
+        boolean lhs, rhs;
+        int temp$0, temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        lhs := @parameter0: boolean;
+        rhs := @parameter1: boolean;
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 > 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = -1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$1;
+        goto label6;
+
+     label5:
+        nop;
+        temp$2 = 1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$2;
+
+     label6:
+        nop;
+        return this;
+    }
+}

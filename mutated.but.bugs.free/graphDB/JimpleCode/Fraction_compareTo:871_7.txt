@@ -1,0 +1,84 @@
+public class WrapClass 
+{
+    public final int compareTo(org.apache.commons.lang3.math.Fraction)
+    {
+        org.apache.commons.lang3.math.Fraction this, other;
+        int temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$11, temp$12, temp$16, temp$17, temp$18, temp$19, temp$20;
+        long first, temp$8, temp$9, temp$10, second, temp$13, temp$14, temp$15;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        other := @parameter0: org.apache.commons.lang3.math.Fraction;
+        if this == other goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$2 = other.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$1 == temp$2 goto label2;
+
+        goto label4;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$4 = other.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        if temp$3 >= temp$4 goto label3;
+
+        goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+
+     label4:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$7 = other.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$8 = (long) temp$6;
+        temp$9 = (long) temp$7;
+        temp$10 = temp$8 * temp$9;
+        first = temp$10;
+        temp$11 = other.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$12 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$13 = (long) temp$11;
+        temp$14 = (long) temp$12;
+        temp$15 = temp$13 * temp$14;
+        second = temp$15;
+        temp$16 = first cmp second;
+        if temp$16 != 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$17 = 0;
+        return temp$17;
+
+     label6:
+        nop;
+        temp$18 = first cmp second;
+        if temp$18 >= 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$19 = -1;
+        return temp$19;
+
+     label8:
+        nop;
+        temp$20 = 1;
+        return temp$20;
+    }
+}

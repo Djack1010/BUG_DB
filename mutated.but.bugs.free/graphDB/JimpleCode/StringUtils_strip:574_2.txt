@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static java.lang.String strip(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, stripChars, temp$0, temp$1;
+
+        str := @parameter0: java.lang.String;
+        stripChars := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String stripStart(java.lang.String,java.lang.String)>(str, stripChars);
+        str = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String stripEnd(java.lang.String,java.lang.String)>(str, stripChars);
+        return temp$1;
+    }
+}

@@ -1,0 +1,37 @@
+public class WrapClass 
+{
+    public static java.lang.String removeStart(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, remove, temp$3;
+        boolean temp$0, temp$1;
+        int temp$2;
+
+        str := @parameter0: java.lang.String;
+        remove := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(remove);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String)>(remove);
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke remove.<java.lang.String: int length()>();
+        temp$3 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$2);
+        return temp$3;
+
+     label3:
+        nop;
+        return str;
+    }
+}

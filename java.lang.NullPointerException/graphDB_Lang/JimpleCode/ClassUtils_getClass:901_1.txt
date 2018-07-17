@@ -1,0 +1,95 @@
+public class WrapClass 
+{
+    public static java.lang.Class getClass(java.lang.ClassLoader, java.lang.String, boolean) throws java.lang.ClassNotFoundException
+    {
+        java.lang.ClassLoader classLoader;
+        java.lang.String className, clsName, temp$4, temp$8, temp$12, temp$13;
+        boolean initialize, temp$1;
+        java.lang.Class clazz, temp$2, temp$3, temp$5, temp$14;
+        java.util.Map temp$0;
+        java.lang.ClassNotFoundException ex, ex2;
+        int lastDotIndex, temp$6, temp$10, temp$11;
+        java.lang.StringBuffer temp$7;
+        char temp$9;
+
+        classLoader := @parameter0: java.lang.ClassLoader;
+        className := @parameter1: java.lang.String;
+        initialize := @parameter2: boolean;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ClassUtils: java.util.Map abbreviationMap>;
+        temp$1 = interfaceinvoke temp$0.<java.util.Map: boolean containsKey(java.lang.Object)>(className);
+        if temp$1 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        clsName = null;
+        temp$2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String,boolean,java.lang.ClassLoader)>(clsName, initialize, classLoader);
+        temp$3 = virtualinvoke temp$2.<java.lang.Class: java.lang.Class getComponentType()>();
+        clazz = temp$3;
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.String toCanonicalName(java.lang.String)>(className);
+        temp$5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String,boolean,java.lang.ClassLoader)>(temp$4, initialize, classLoader);
+        clazz = temp$5;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return clazz;
+
+     label5:
+        nop;
+        ex := @caughtexception;
+        temp$6 = virtualinvoke className.<java.lang.String: int lastIndexOf(int)>(46);
+        lastDotIndex = temp$6;
+        if lastDotIndex != -1 goto label6;
+
+        goto label11;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        temp$7 = new java.lang.StringBuffer;
+        specialinvoke temp$7.<java.lang.StringBuffer: void <init>()>();
+        temp$8 = virtualinvoke className.<java.lang.String: java.lang.String substring(int,int)>(0, lastDotIndex);
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$8);
+        temp$9 = <org.apache.commons.lang3.ClassUtils: char INNER_CLASS_SEPARATOR_CHAR>;
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(temp$9);
+        temp$10 = lastDotIndex;
+        temp$11 = temp$10 + 1;
+        temp$12 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(temp$11);
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$12);
+        temp$13 = virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$14 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class getClass(java.lang.ClassLoader,java.lang.String,boolean)>(classLoader, temp$13, initialize);
+
+     label8:
+        nop;
+        return temp$14;
+
+     label9:
+        nop;
+        ex2 := @caughtexception;
+        nop;
+        goto label10;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        throw ex;
+
+        catch java.lang.ClassNotFoundException from label7 to label8 with label9;
+        catch java.lang.ClassNotFoundException from label0 to label4 with label5;
+    }
+}

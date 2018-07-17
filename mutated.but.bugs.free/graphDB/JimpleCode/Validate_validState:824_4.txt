@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public static transient void validState(boolean, java.lang.String, java.lang.Object[])
+    {
+        boolean expression;
+        java.lang.String message, temp$1;
+        java.lang.Object[] values;
+        java.lang.IllegalStateException temp$0;
+
+        expression := @parameter0: boolean;
+        message := @parameter1: java.lang.String;
+        values := @parameter2: java.lang.Object[];
+        if expression == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalStateException;
+        temp$1 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values);
+        specialinvoke temp$0.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$1);
+        throw temp$0;
+
+     label1:
+        nop;
+        return;
+    }
+}

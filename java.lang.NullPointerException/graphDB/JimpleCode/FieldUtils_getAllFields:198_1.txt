@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field[] getAllFields(java.lang.Class)
+    {
+        java.lang.Class 'cls';
+        java.util.List allFieldsList;
+        int temp$0;
+        java.lang.reflect.Field[] temp$1, temp$3;
+        java.lang.Object[] temp$2;
+
+        'cls' := @parameter0: java.lang.Class;
+        allFieldsList = null;
+        temp$0 = interfaceinvoke allFieldsList.<java.util.List: int size()>();
+        temp$1 = newarray (java.lang.reflect.Field)[temp$0];
+        temp$2 = interfaceinvoke allFieldsList.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$1);
+        temp$3 = (java.lang.reflect.Field[]) temp$2;
+        return temp$3;
+    }
+}

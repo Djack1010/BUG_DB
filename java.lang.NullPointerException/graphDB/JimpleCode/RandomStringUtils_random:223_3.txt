@@ -1,0 +1,414 @@
+public class WrapClass 
+{
+    public static java.lang.String random(int, int, int, boolean, boolean, char[], java.util.Random)
+    {
+        int count, start, end, temp$5, temp$8, temp$9, temp$10, temp$11, gap, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$23, temp$24, temp$25, temp$29, temp$30, temp$31, temp$32, temp$34, temp$35, temp$36, temp$38, temp$39, temp$40, temp$41, temp$43, temp$44, temp$45, temp$46, temp$48, temp$49, temp$50, temp$51, temp$53, temp$54, temp$56, temp$57, temp$58, temp$59, temp$60, temp$62, temp$63, temp$64;
+        boolean letters, numbers, temp$4, temp$6, temp$27, temp$28;
+        char[] chars, buffer, temp$22, temp$33, temp$37, temp$47, temp$55, temp$61;
+        java.util.Random random;
+        java.lang.String temp$0, temp$3, temp$14, temp$65;
+        java.lang.IllegalArgumentException temp$1, temp$7, temp$12;
+        java.lang.StringBuffer temp$2, temp$13;
+        char ch, temp$21, temp$26, temp$42, temp$52;
+
+        count := @parameter0: int;
+        start := @parameter1: int;
+        end := @parameter2: int;
+        letters := @parameter3: boolean;
+        numbers := @parameter4: boolean;
+        chars := @parameter5: char[];
+        random := @parameter6: java.util.Random;
+        if count == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = "";
+        return temp$0;
+
+     label1:
+        nop;
+        if count < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Requested random string length ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(count);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is less than 0.");
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$3);
+        throw temp$1;
+
+     label3:
+        nop;
+        if chars != null goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$4 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = 1;
+
+     label6:
+        nop;
+        temp$5 = lengthof chars;
+        if temp$5 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$6 = 1;
+
+     label9:
+        nop;
+        if temp$4 == temp$6 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$7 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The chars array must not be empty");
+        throw temp$7;
+
+     label11:
+        nop;
+        if start == 0 goto label12;
+
+        goto label21;
+
+     label12:
+        nop;
+        if end == 0 goto label13;
+
+        goto label21;
+
+        goto label13;
+
+     label13:
+        nop;
+        if chars != null goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        temp$8 = lengthof chars;
+        end = temp$8;
+        goto label20;
+
+     label15:
+        nop;
+        if letters == 0 goto label16;
+
+        goto label18;
+
+     label16:
+        nop;
+        if numbers == 0 goto label17;
+
+        goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$9 = 2147483647;
+        end = temp$9;
+        goto label19;
+
+     label18:
+        nop;
+        temp$10 = 123;
+        end = temp$10;
+        temp$11 = 32;
+        start = temp$11;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+        goto label24;
+
+     label21:
+        nop;
+        if end <= start goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        temp$12 = new java.lang.IllegalArgumentException;
+        temp$13 = new java.lang.StringBuffer;
+        specialinvoke temp$13.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Parameter end (");
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(end);
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(") must be greater than start (");
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(")");
+        temp$14 = virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$12.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$14);
+        throw temp$12;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        buffer = newarray (char)[count];
+        temp$15 = end - start;
+        gap = temp$15;
+
+     label25:
+        nop;
+        temp$16 = count;
+        temp$17 = temp$16 + -1;
+        count = temp$17;
+        if temp$16 != 0 goto label26;
+
+        goto label56;
+
+     label26:
+        nop;
+        if chars == null goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$18 = virtualinvoke random.<java.util.Random: int nextInt(int)>(gap);
+        temp$19 = temp$18;
+        temp$20 = temp$19 + start;
+        temp$21 = (char) temp$20;
+        ch = temp$21;
+        goto label29;
+
+     label28:
+        nop;
+        temp$22 = chars;
+        temp$23 = virtualinvoke random.<java.util.Random: int nextInt(int)>(gap);
+        temp$24 = temp$23;
+        temp$25 = temp$24 + start;
+        temp$26 = temp$22[temp$25];
+        ch = temp$26;
+
+     label29:
+        nop;
+        if letters == 0 goto label31;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$27 = staticinvoke <java.lang.Character: boolean isLetter(char)>(ch);
+        if temp$27 == 0 goto label31;
+
+        goto label35;
+
+        goto label35;
+
+     label31:
+        nop;
+        if numbers == 0 goto label33;
+
+        goto label32;
+
+     label32:
+        nop;
+        temp$28 = staticinvoke <java.lang.Character: boolean isDigit(char)>(ch);
+        if temp$28 == 0 goto label33;
+
+        goto label35;
+
+        goto label35;
+
+        goto label33;
+
+     label33:
+        nop;
+        if letters == 0 goto label34;
+
+        goto label54;
+
+     label34:
+        nop;
+        if numbers == 0 goto label35;
+
+        goto label54;
+
+        goto label35;
+
+        goto label54;
+
+     label35:
+        nop;
+        temp$29 = (int) ch;
+        if temp$29 >= 56320 goto label36;
+
+        goto label41;
+
+     label36:
+        nop;
+        temp$30 = (int) ch;
+        if temp$30 <= 57343 goto label37;
+
+        goto label41;
+
+        goto label37;
+
+     label37:
+        nop;
+        if count == 0 goto label38;
+
+        goto label39;
+
+     label38:
+        nop;
+        temp$31 = count;
+        temp$32 = temp$31 + 1;
+        count = temp$32;
+        goto label40;
+
+     label39:
+        nop;
+        temp$33 = buffer;
+        temp$34 = count;
+        temp$33[temp$34] = ch;
+        temp$35 = count;
+        temp$36 = temp$35 + -1;
+        count = temp$36;
+        temp$37 = buffer;
+        temp$38 = count;
+        temp$39 = 55296;
+        temp$40 = virtualinvoke random.<java.util.Random: int nextInt(int)>(128);
+        temp$41 = temp$39 + temp$40;
+        temp$42 = (char) temp$41;
+        temp$37[temp$38] = temp$42;
+
+     label40:
+        nop;
+        goto label53;
+
+     label41:
+        nop;
+        temp$43 = (int) ch;
+        if temp$43 >= 55296 goto label42;
+
+        goto label47;
+
+     label42:
+        nop;
+        temp$44 = (int) ch;
+        if temp$44 <= 56191 goto label43;
+
+        goto label47;
+
+        goto label43;
+
+     label43:
+        nop;
+        if count == 0 goto label44;
+
+        goto label45;
+
+     label44:
+        nop;
+        temp$45 = count;
+        temp$46 = temp$45 + 1;
+        count = temp$46;
+        goto label46;
+
+     label45:
+        nop;
+        temp$47 = buffer;
+        temp$48 = count;
+        temp$49 = 56320;
+        temp$50 = virtualinvoke random.<java.util.Random: int nextInt(int)>(128);
+        temp$51 = temp$49 + temp$50;
+        temp$52 = (char) temp$51;
+        temp$47[temp$48] = temp$52;
+        temp$53 = count;
+        temp$54 = temp$53 + -1;
+        count = temp$54;
+        temp$55 = buffer;
+        temp$56 = count;
+        temp$55[temp$56] = ch;
+
+     label46:
+        nop;
+        goto label52;
+
+     label47:
+        nop;
+        temp$57 = (int) ch;
+        if temp$57 >= 56192 goto label48;
+
+        goto label50;
+
+     label48:
+        nop;
+        temp$58 = (int) ch;
+        if temp$58 <= 56319 goto label49;
+
+        goto label50;
+
+        goto label49;
+
+     label49:
+        nop;
+        temp$59 = count;
+        temp$60 = temp$59 + 1;
+        count = temp$60;
+        goto label51;
+
+     label50:
+        nop;
+        temp$61 = buffer;
+        temp$62 = count;
+        temp$61[temp$62] = ch;
+
+     label51:
+        nop;
+
+     label52:
+        nop;
+
+     label53:
+        nop;
+        goto label55;
+
+     label54:
+        nop;
+        temp$63 = count;
+        temp$64 = temp$63 + 1;
+        count = temp$64;
+
+     label55:
+        nop;
+        goto label25;
+
+     label56:
+        nop;
+        temp$65 = new java.lang.String;
+        specialinvoke temp$65.<java.lang.String: void <init>(char[])>(buffer);
+        return temp$65;
+    }
+}

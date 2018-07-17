@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public java.lang.String decode(java.lang.String, java.nio.charset.Charset) throws org.apache.commons.codec.DecoderException
+    {
+        org.apache.commons.codec.net.QuotedPrintableCodec this;
+        java.lang.String str, temp$0;
+        java.nio.charset.Charset charset;
+        byte[] temp$1, temp$2;
+
+        this := @this: org.apache.commons.codec.net.QuotedPrintableCodec;
+        str := @parameter0: java.lang.String;
+        charset := @parameter1: java.nio.charset.Charset;
+        temp$0 = new java.lang.String;
+        temp$1 = staticinvoke <org.apache.commons.codec.binary.StringUtils: byte[] getBytesUsAscii(java.lang.String)>(str);
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.net.QuotedPrintableCodec: byte[] decode(byte[])>(temp$1);
+        specialinvoke temp$0.<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>(temp$2, charset);
+        return temp$0;
+    }
+}

@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public static void writeField(java.lang.Object, java.lang.String, java.lang.Object, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.Object target, value;
+        java.lang.String fieldName, temp$4;
+        boolean forceAccess, temp$2;
+        java.lang.Class 'cls', temp$0;
+        java.lang.reflect.Field field, temp$1;
+        java.lang.Object[] temp$3;
+
+        target := @parameter0: java.lang.Object;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        forceAccess := @parameter3: boolean;
+        temp$0 = virtualinvoke target.<java.lang.Object: java.lang.Class getClass()>();
+        'cls' = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.reflect.Field getField(java.lang.Class,java.lang.String,boolean)>('cls', fieldName, forceAccess);
+        field = temp$1;
+        if field != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 1;
+
+     label2:
+        nop;
+        temp$3 = newarray (java.lang.Object)[2];
+        temp$4 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$3[0] = temp$4;
+        temp$3[1] = fieldName;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "Cannot locate declared field %s.%s", temp$3);
+        staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: void writeField(java.lang.reflect.Field,java.lang.Object,java.lang.Object,boolean)>(field, target, value, 0);
+        return;
+    }
+}

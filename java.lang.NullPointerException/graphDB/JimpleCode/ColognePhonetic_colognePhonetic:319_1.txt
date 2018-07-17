@@ -1,0 +1,498 @@
+public class WrapClass 
+{
+    public java.lang.String colognePhonetic(java.lang.String)
+    {
+        org.apache.commons.codec.language.ColognePhonetic this;
+        java.lang.String text, temp$0, temp$72;
+        org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer output, temp$1;
+        int temp$2, temp$3, rightLength, temp$6, temp$8, temp$14, temp$15, temp$16, temp$17, temp$19, temp$20, temp$21, temp$23, temp$24, temp$34, temp$38, temp$39, temp$40, temp$41, temp$43, temp$44, temp$58, temp$60, temp$62, temp$63, temp$65, temp$66, temp$67, temp$68, temp$69, temp$70, temp$71;
+        org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer input, temp$4;
+        char[] temp$5, temp$11, temp$25, temp$28, temp$31, temp$35, temp$45, temp$49, temp$51, temp$55;
+        char nextChar, lastChar, lastCode, code, chr, temp$7, temp$9, temp$10, temp$13, temp$18, temp$22, temp$27, temp$30, temp$33, temp$37, temp$42, temp$47, temp$48, temp$53, temp$54, temp$57, temp$59, temp$61, temp$64;
+        boolean temp$12, temp$26, temp$29, temp$32, temp$36, temp$46, temp$50, temp$52, temp$56;
+
+        this := @this: org.apache.commons.codec.language.ColognePhonetic;
+        text := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.codec.language.ColognePhonetic: java.lang.String preprocess(java.lang.String)>(text);
+        text = temp$0;
+        temp$1 = new org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer;
+        temp$2 = virtualinvoke text.<java.lang.String: int length()>();
+        temp$3 = temp$2 * 2;
+        specialinvoke temp$1.<org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer: void <init>(org.apache.commons.codec.language.ColognePhonetic,int)>(this, temp$3);
+        output = temp$1;
+        temp$4 = new org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer;
+        temp$5 = virtualinvoke text.<java.lang.String: char[] toCharArray()>();
+        specialinvoke temp$4.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: void <init>(org.apache.commons.codec.language.ColognePhonetic,char[])>(this, temp$5);
+        input = temp$4;
+        lastChar = 45;
+        lastCode = 47;
+        temp$6 = virtualinvoke input.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: int length()>();
+        rightLength = temp$6;
+
+     label0:
+        nop;
+        if rightLength > 0 goto label1;
+
+        goto label72;
+
+     label1:
+        nop;
+        temp$7 = virtualinvoke input.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: char removeNext()>();
+        chr = temp$7;
+        temp$8 = virtualinvoke input.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: int length()>();
+        rightLength = temp$8;
+        if temp$8 > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$9 = virtualinvoke input.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: char getNextChar()>();
+        nextChar = temp$9;
+        goto label4;
+
+     label3:
+        nop;
+        temp$10 = 45;
+        nextChar = temp$10;
+
+     label4:
+        nop;
+        temp$11 = <org.apache.commons.codec.language.ColognePhonetic: char[] AEIJOUY>;
+        temp$12 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$11, chr);
+        if temp$12 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$13 = 48;
+        code = temp$13;
+        goto label64;
+
+     label6:
+        nop;
+        temp$14 = (int) chr;
+        if temp$14 == 72 goto label9;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$15 = (int) chr;
+        if temp$15 < 65 goto label9;
+
+        goto label8;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$16 = (int) chr;
+        if temp$16 > 90 goto label9;
+
+        goto label12;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$17 = (int) lastCode;
+        if temp$17 == 47 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        goto label0;
+
+     label11:
+        nop;
+        temp$18 = 45;
+        code = temp$18;
+        goto label63;
+
+     label12:
+        nop;
+        temp$19 = (int) chr;
+        if temp$19 == 66 goto label15;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$20 = (int) chr;
+        if temp$20 == 80 goto label14;
+
+        goto label16;
+
+     label14:
+        nop;
+        temp$21 = (int) nextChar;
+        if temp$21 != 72 goto label15;
+
+        goto label16;
+
+        goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$22 = 49;
+        code = temp$22;
+        goto label62;
+
+     label16:
+        nop;
+        temp$23 = (int) chr;
+        if temp$23 == 68 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$24 = (int) chr;
+        if temp$24 == 84 goto label18;
+
+        goto label20;
+
+        goto label20;
+
+     label18:
+        nop;
+        temp$25 = <org.apache.commons.codec.language.ColognePhonetic: char[] SCZ>;
+        temp$26 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$25, nextChar);
+        if temp$26 == 0 goto label19;
+
+        goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$27 = 50;
+        code = temp$27;
+        goto label61;
+
+     label20:
+        nop;
+        temp$28 = <org.apache.commons.codec.language.ColognePhonetic: char[] WFPV>;
+        temp$29 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$28, chr);
+        if temp$29 == 0 goto label22;
+
+        goto label21;
+
+     label21:
+        nop;
+        temp$30 = 51;
+        code = temp$30;
+        goto label60;
+
+     label22:
+        nop;
+        temp$31 = <org.apache.commons.codec.language.ColognePhonetic: char[] GKQ>;
+        temp$32 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$31, chr);
+        if temp$32 == 0 goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$33 = 52;
+        code = temp$33;
+        goto label59;
+
+     label24:
+        nop;
+        temp$34 = (int) chr;
+        if temp$34 == 88 goto label25;
+
+        goto label27;
+
+     label25:
+        nop;
+        temp$35 = <org.apache.commons.codec.language.ColognePhonetic: char[] CKQ>;
+        temp$36 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$35, lastChar);
+        if temp$36 == 0 goto label26;
+
+        goto label27;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$37 = 52;
+        code = temp$37;
+        virtualinvoke input.<org.apache.commons.codec.language.ColognePhonetic$CologneInputBuffer: void addLeft(char)>(83);
+        temp$38 = rightLength;
+        temp$39 = temp$38 + 1;
+        rightLength = temp$39;
+        goto label58;
+
+     label27:
+        nop;
+        temp$40 = (int) chr;
+        if temp$40 == 83 goto label29;
+
+        goto label28;
+
+     label28:
+        nop;
+        temp$41 = (int) chr;
+        if temp$41 == 90 goto label29;
+
+        goto label30;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$42 = 56;
+        code = temp$42;
+        goto label57;
+
+     label30:
+        nop;
+        temp$43 = (int) chr;
+        if temp$43 == 67 goto label31;
+
+        goto label42;
+
+     label31:
+        nop;
+        temp$44 = (int) lastCode;
+        if temp$44 == 47 goto label32;
+
+        goto label36;
+
+     label32:
+        nop;
+        temp$45 = <org.apache.commons.codec.language.ColognePhonetic: char[] AHKLOQRUX>;
+        temp$46 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$45, nextChar);
+        if temp$46 == 0 goto label34;
+
+        goto label33;
+
+     label33:
+        nop;
+        temp$47 = 52;
+        code = temp$47;
+        goto label35;
+
+     label34:
+        nop;
+        temp$48 = 56;
+        code = temp$48;
+
+     label35:
+        nop;
+        goto label41;
+
+     label36:
+        nop;
+        temp$49 = <org.apache.commons.codec.language.ColognePhonetic: char[] SZ>;
+        temp$50 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$49, lastChar);
+        if temp$50 == 0 goto label37;
+
+        goto label38;
+
+     label37:
+        nop;
+        temp$51 = <org.apache.commons.codec.language.ColognePhonetic: char[] AHOUKQX>;
+        temp$52 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$51, nextChar);
+        if temp$52 == 0 goto label38;
+
+        goto label39;
+
+        goto label39;
+
+     label38:
+        nop;
+        temp$53 = 56;
+        code = temp$53;
+        goto label40;
+
+     label39:
+        nop;
+        temp$54 = 52;
+        code = temp$54;
+
+     label40:
+        nop;
+
+     label41:
+        nop;
+        goto label56;
+
+     label42:
+        nop;
+        temp$55 = <org.apache.commons.codec.language.ColognePhonetic: char[] TDX>;
+        temp$56 = staticinvoke <org.apache.commons.codec.language.ColognePhonetic: boolean arrayContains(char[],char)>(temp$55, chr);
+        if temp$56 == 0 goto label44;
+
+        goto label43;
+
+     label43:
+        nop;
+        temp$57 = 56;
+        code = temp$57;
+        goto label55;
+
+     label44:
+        nop;
+        temp$58 = (int) chr;
+        if temp$58 == 82 goto label45;
+
+        goto label46;
+
+     label45:
+        nop;
+        temp$59 = 55;
+        code = temp$59;
+        goto label54;
+
+     label46:
+        nop;
+        temp$60 = (int) chr;
+        if temp$60 == 76 goto label47;
+
+        goto label48;
+
+     label47:
+        nop;
+        temp$61 = 53;
+        code = temp$61;
+        goto label53;
+
+     label48:
+        nop;
+        temp$62 = (int) chr;
+        if temp$62 == 77 goto label50;
+
+        goto label49;
+
+     label49:
+        nop;
+        temp$63 = (int) chr;
+        if temp$63 == 78 goto label50;
+
+        goto label51;
+
+        goto label51;
+
+     label50:
+        nop;
+        temp$64 = 54;
+        code = temp$64;
+        goto label52;
+
+     label51:
+        nop;
+        code = chr;
+
+     label52:
+        nop;
+
+     label53:
+        nop;
+
+     label54:
+        nop;
+
+     label55:
+        nop;
+
+     label56:
+        nop;
+
+     label57:
+        nop;
+
+     label58:
+        nop;
+
+     label59:
+        nop;
+
+     label60:
+        nop;
+
+     label61:
+        nop;
+
+     label62:
+        nop;
+
+     label63:
+        nop;
+
+     label64:
+        nop;
+        temp$65 = (int) code;
+        if temp$65 != 45 goto label65;
+
+        goto label71;
+
+     label65:
+        nop;
+        temp$66 = (int) lastCode;
+        temp$67 = (int) code;
+        if temp$66 != temp$67 goto label66;
+
+        goto label68;
+
+     label66:
+        nop;
+        temp$68 = (int) code;
+        if temp$68 != 48 goto label70;
+
+        goto label67;
+
+     label67:
+        nop;
+        temp$69 = (int) lastCode;
+        if temp$69 == 47 goto label70;
+
+        goto label68;
+
+        goto label68;
+
+        goto label70;
+
+     label68:
+        nop;
+        temp$70 = (int) code;
+        if temp$70 < 48 goto label70;
+
+        goto label69;
+
+        goto label69;
+
+     label69:
+        nop;
+        temp$71 = (int) code;
+        if temp$71 > 56 goto label70;
+
+        goto label71;
+
+        goto label71;
+
+        goto label70;
+
+     label70:
+        nop;
+        virtualinvoke output.<org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer: void addRight(char)>(code);
+
+     label71:
+        nop;
+        lastChar = chr;
+        lastCode = code;
+        goto label0;
+
+     label72:
+        nop;
+        temp$72 = virtualinvoke output.<org.apache.commons.codec.language.ColognePhonetic$CologneOutputBuffer: java.lang.String toString()>();
+        return temp$72;
+    }
+}

@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction divideBy(org.apache.commons.lang3.math.Fraction)
+    {
+        org.apache.commons.lang3.math.Fraction this, fraction, temp$2, temp$3;
+        int temp$0;
+        java.lang.ArithmeticException temp$1;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        fraction := @parameter0: org.apache.commons.lang3.math.Fraction;
+        temp$0 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.ArithmeticException;
+        specialinvoke temp$1.<java.lang.ArithmeticException: void <init>(java.lang.String)>("The fraction to divide by must not be zero");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke fraction.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction invert()>();
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction multiplyBy(org.apache.commons.lang3.math.Fraction)>(temp$2);
+        return temp$3;
+    }
+}

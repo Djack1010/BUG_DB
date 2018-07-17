@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    protected void appendIdentityHashCode(java.lang.StringBuffer, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$0, temp$3;
+        java.lang.Object object;
+        int temp$1;
+        java.lang.String temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        if object != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void register(java.lang.Object)>(object);
+        temp$0 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(64);
+        temp$1 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>(object);
+        temp$2 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(temp$1);
+        temp$3 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$2);
+
+     label1:
+        nop;
+        return;
+    }
+}

@@ -1,0 +1,131 @@
+public class WrapClass 
+{
+    public static int getFuzzyDistance(java.lang.CharSequence, java.lang.CharSequence, java.util.Locale)
+    {
+        java.lang.CharSequence term, query;
+        java.util.Locale locale;
+        java.lang.IllegalArgumentException temp$0, temp$1;
+        java.lang.String termLowerCase, temp$2, temp$3, queryLowerCase, temp$4, temp$5;
+        int score, termIndex, previousMatchingCharacterIndex, queryIndex, temp$6, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$18, temp$19, temp$20, temp$21;
+        char queryChar, temp$7, termChar, temp$8;
+        boolean termCharacterMatchFound, temp$17;
+
+        term := @parameter0: java.lang.CharSequence;
+        query := @parameter1: java.lang.CharSequence;
+        locale := @parameter2: java.util.Locale;
+        if term == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if query == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Strings must not be null");
+        throw temp$0;
+
+     label2:
+        nop;
+        if locale == null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Locale must not be null");
+        throw temp$1;
+
+     label4:
+        nop;
+        temp$2 = interfaceinvoke term.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>(locale);
+        termLowerCase = temp$3;
+        temp$4 = interfaceinvoke query.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>(locale);
+        queryLowerCase = temp$5;
+        score = 0;
+        termIndex = 0;
+        previousMatchingCharacterIndex = -2147483648;
+        queryIndex = 0;
+
+     label5:
+        nop;
+        temp$6 = virtualinvoke queryLowerCase.<java.lang.String: int length()>();
+        if queryIndex < temp$6 goto label6;
+
+        goto label14;
+
+     label6:
+        nop;
+        temp$7 = virtualinvoke queryLowerCase.<java.lang.String: char charAt(int)>(queryIndex);
+        queryChar = temp$7;
+        termCharacterMatchFound = 0;
+
+     label7:
+        nop;
+        if termCharacterMatchFound == 0 goto label8;
+
+        goto label13;
+
+     label8:
+        nop;
+        temp$8 = virtualinvoke termLowerCase.<java.lang.String: char charAt(int)>(termIndex);
+        termChar = temp$8;
+        temp$9 = (int) queryChar;
+        temp$10 = (int) termChar;
+        if temp$9 == temp$10 goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$11 = score;
+        temp$12 = temp$11 + 1;
+        score = temp$12;
+        temp$13 = previousMatchingCharacterIndex;
+        temp$14 = temp$13 + 1;
+        if temp$14 == termIndex goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$15 = score;
+        temp$16 = temp$15 + 2;
+        score = temp$16;
+
+     label11:
+        nop;
+        previousMatchingCharacterIndex = termIndex;
+        temp$17 = 1;
+        termCharacterMatchFound = temp$17;
+
+     label12:
+        nop;
+        nop;
+        temp$18 = termIndex;
+        temp$19 = temp$18 + 1;
+        termIndex = temp$19;
+        goto label7;
+
+     label13:
+        nop;
+        nop;
+        temp$20 = queryIndex;
+        temp$21 = temp$20 + 1;
+        queryIndex = temp$21;
+        goto label5;
+
+     label14:
+        nop;
+        return score;
+    }
+}

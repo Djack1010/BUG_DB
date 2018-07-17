@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    protected boolean containsAlphabetOrPad(byte[])
+    {
+        org.apache.commons.codec.binary.BaseNCodec this;
+        byte[] arrayOctet;
+        int temp$0, temp$1, temp$4, temp$5;
+        byte element, temp$2, temp$3;
+        boolean temp$6, temp$7, temp$8;
+
+        this := @this: org.apache.commons.codec.binary.BaseNCodec;
+        arrayOctet := @parameter0: byte[];
+        temp$0 = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof arrayOctet;
+        if temp$0 >= temp$1 goto label4;
+
+        temp$2 = arrayOctet[temp$0];
+        element = temp$2;
+        temp$3 = this.<org.apache.commons.codec.binary.BaseNCodec: byte pad>;
+        temp$4 = (int) temp$3;
+        temp$5 = (int) element;
+        if temp$4 == temp$5 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.codec.binary.BaseNCodec: boolean isInAlphabet(byte)>(element);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = 1;
+        return temp$7;
+
+     label3:
+        nop;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label0;
+
+     label4:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+    }
+}

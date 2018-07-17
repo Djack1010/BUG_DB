@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    public java.util.Date parse(java.lang.String) throws java.text.ParseException
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        java.lang.String source, temp$9, temp$10, temp$14, temp$15;
+        java.util.Date date, temp$1;
+        java.text.ParsePosition temp$0;
+        java.util.Locale temp$2, temp$3, temp$7;
+        boolean temp$4;
+        java.text.ParseException temp$5, temp$11;
+        java.lang.StringBuffer temp$6, temp$12;
+        java.util.regex.Pattern temp$8, temp$13;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        source := @parameter0: java.lang.String;
+        temp$0 = new java.text.ParsePosition;
+        specialinvoke temp$0.<java.text.ParsePosition: void <init>(int)>(0);
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.time.FastDateParser: java.util.Date parse(java.lang.String,java.text.ParsePosition)>(source, temp$0);
+        date = temp$1;
+        if date == null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$3 = <org.apache.commons.lang3.time.FastDateParser: java.util.Locale JAPANESE_IMPERIAL>;
+        temp$4 = virtualinvoke temp$2.<java.util.Locale: boolean equals(java.lang.Object)>(temp$3);
+        if temp$4 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = new java.text.ParseException;
+        temp$6 = new java.lang.StringBuffer;
+        specialinvoke temp$6.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("(The ");
+        temp$7 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$7);
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" locale does not support dates before 1868 AD)\n");
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unparseable date: \"");
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(source);
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\" does not match ");
+        temp$8 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.regex.Pattern parsePattern>;
+        temp$9 = virtualinvoke temp$8.<java.util.regex.Pattern: java.lang.String pattern()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$9);
+        temp$10 = virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$5.<java.text.ParseException: void <init>(java.lang.String,int)>(temp$10, 0);
+        throw temp$5;
+
+     label2:
+        nop;
+        temp$11 = new java.text.ParseException;
+        temp$12 = new java.lang.StringBuffer;
+        specialinvoke temp$12.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unparseable date: \"");
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(source);
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\" does not match ");
+        temp$13 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.regex.Pattern parsePattern>;
+        temp$14 = virtualinvoke temp$13.<java.util.regex.Pattern: java.lang.String pattern()>();
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$14);
+        temp$15 = virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$11.<java.text.ParseException: void <init>(java.lang.String,int)>(temp$15, -1);
+        throw temp$11;
+
+     label3:
+        nop;
+        return date;
+    }
+}

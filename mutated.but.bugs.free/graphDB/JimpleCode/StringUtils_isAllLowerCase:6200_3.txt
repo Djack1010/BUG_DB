@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public static boolean isAllLowerCase(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        boolean temp$0, temp$1, temp$4, temp$5, temp$8;
+        int sz, temp$2, i, temp$6, temp$7;
+        char temp$3;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(cs);
+        if temp$0 == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        sz = temp$2;
+        i = 1;
+
+     label3:
+        nop;
+        if i < sz goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$3 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$4 = staticinvoke <java.lang.Character: boolean isLowerCase(char)>(temp$3);
+        if temp$4 == 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+
+     label6:
+        nop;
+        nop;
+        temp$6 = i;
+        temp$7 = temp$6 + 1;
+        i = temp$7;
+        goto label3;
+
+     label7:
+        nop;
+        temp$8 = 1;
+        return temp$8;
+    }
+}

@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public java.util.Date parse(java.lang.String) throws java.text.ParseException
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        java.lang.String source, temp$5, temp$6;
+        java.util.Date date, temp$1;
+        java.text.ParsePosition temp$0;
+        java.text.ParseException temp$2;
+        java.lang.StringBuffer temp$3;
+        java.util.regex.Pattern temp$4;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        source := @parameter0: java.lang.String;
+        temp$0 = new java.text.ParsePosition;
+        specialinvoke temp$0.<java.text.ParsePosition: void <init>(int)>(0);
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.time.FastDateParser: java.util.Date parse(java.lang.String,java.text.ParsePosition)>(source, temp$0);
+        date = temp$1;
+        if date == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.text.ParseException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unparseable date: \"");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(source);
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\" does not match ");
+        temp$4 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.regex.Pattern parsePattern>;
+        temp$5 = virtualinvoke temp$4.<java.util.regex.Pattern: java.lang.String pattern()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$5);
+        temp$6 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.text.ParseException: void <init>(java.lang.String,int)>(temp$6, 0);
+        throw temp$2;
+
+     label1:
+        nop;
+        return date;
+    }
+}

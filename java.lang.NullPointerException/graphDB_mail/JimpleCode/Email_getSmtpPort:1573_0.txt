@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    public java.lang.String getSmtpPort()
+    {
+        org.apache.commons.mail.Email this;
+        javax.mail.Session temp$0, temp$1;
+        java.lang.String temp$2, temp$3, temp$5, temp$6;
+        boolean temp$4;
+
+        this := @this: org.apache.commons.mail.Email;
+        temp$0 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        if temp$0 != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        temp$2 = virtualinvoke temp$1.<javax.mail.Session: java.lang.String getProperty(java.lang.String)>("mail.smtp.port");
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = this.<org.apache.commons.mail.Email: java.lang.String smtpPort>;
+        temp$4 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$3);
+        if temp$4 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = this.<org.apache.commons.mail.Email: java.lang.String smtpPort>;
+        return temp$5;
+
+     label3:
+        nop;
+        temp$6 = null;
+        return temp$6;
+    }
+}

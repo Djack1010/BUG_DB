@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static char[] removeElement(char[], char)
+    {
+        char[] array, temp$1;
+        char element;
+        int index, temp$0;
+
+        array := @parameter0: char[];
+        element := @parameter1: char;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(char[],char)>(array, element);
+        index = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: char[] remove(char[],int)>(array, index);
+        return temp$1;
+    }
+}

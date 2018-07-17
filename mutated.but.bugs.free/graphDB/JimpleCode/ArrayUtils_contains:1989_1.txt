@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static boolean contains(java.lang.Object[], java.lang.Object)
+    {
+        java.lang.Object[] array;
+        java.lang.Object objectToFind;
+        int temp$0;
+        boolean temp$1;
+
+        array := @parameter0: java.lang.Object[];
+        objectToFind := @parameter1: java.lang.Object;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(java.lang.Object[],java.lang.Object)>(array, objectToFind);
+        if temp$0 > -1 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrSubstitutor setVariablePrefixMatcher(org.apache.commons.lang3.text.StrMatcher)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        org.apache.commons.lang3.text.StrMatcher prefixMatcher, temp$1;
+        java.lang.IllegalArgumentException temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        prefixMatcher := @parameter0: org.apache.commons.lang3.text.StrMatcher;
+        if prefixMatcher == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Variable prefix matcher must not be null!");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = null;
+        this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrMatcher prefixMatcher> = temp$1;
+        return this;
+    }
+}

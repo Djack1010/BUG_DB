@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public static byte CONST_BYTE(int) throws java.lang.IllegalArgumentException
+    {
+        int v;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.StringBuffer temp$1;
+        java.lang.String temp$2;
+        byte temp$3;
+
+        v := @parameter0: int;
+        if v <= -128 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if v > 127 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = new java.lang.StringBuffer;
+        specialinvoke temp$1.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Supplied value must be a valid byte literal between -128 and 127: [");
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(v);
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("]");
+        temp$2 = virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$2);
+        throw temp$0;
+
+     label2:
+        nop;
+        temp$3 = (byte) v;
+        return temp$3;
+    }
+}

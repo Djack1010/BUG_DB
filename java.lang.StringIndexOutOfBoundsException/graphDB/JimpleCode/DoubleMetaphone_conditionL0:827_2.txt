@@ -1,0 +1,87 @@
+public class WrapClass 
+{
+    private final boolean conditionL0(java.lang.String, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        int index, temp$0, temp$1, temp$2, temp$6, temp$7, temp$10, temp$11, temp$14;
+        java.lang.String[] temp$3, temp$8, temp$12, temp$15;
+        boolean temp$4, temp$5, temp$9, temp$13, temp$16, temp$17, temp$18;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        index := @parameter1: int;
+        temp$0 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$1 = temp$0 - 3;
+        if index == temp$1 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$2 = index - 1;
+        temp$3 = newarray (java.lang.String)[3];
+        temp$3[0] = "ILLO";
+        temp$3[1] = "ILLA";
+        temp$3[2] = "ALLE";
+        temp$4 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$2, -4, temp$3);
+        if temp$4 == 0 goto label2;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$7 = temp$6 - 2;
+        temp$8 = newarray (java.lang.String)[2];
+        temp$8[0] = "AS";
+        temp$8[1] = "OS";
+        temp$9 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$7, 2, temp$8);
+        if temp$9 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$10 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$11 = temp$10 - 1;
+        temp$12 = newarray (java.lang.String)[2];
+        temp$12[0] = "A";
+        temp$12[1] = "O";
+        temp$13 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$11, 1, temp$12);
+        if temp$13 == 0 goto label6;
+
+        goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$14 = index - 1;
+        temp$15 = newarray (java.lang.String)[1];
+        temp$15[0] = "ALLE";
+        temp$16 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$14, 4, temp$15);
+        if temp$16 == 0 goto label6;
+
+        goto label5;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$17 = 1;
+        return temp$17;
+
+     label6:
+        nop;
+        temp$18 = 0;
+        return temp$18;
+    }
+}

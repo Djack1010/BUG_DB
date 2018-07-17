@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    public static boolean isAssignable(java.lang.Class[], java.lang.Class[], boolean)
+    {
+        java.lang.Class[] classArray, toClassArray, temp$2, temp$4, temp$7;
+        boolean autoboxing, temp$0, temp$1, temp$10, temp$11, temp$14;
+        int i, temp$3, temp$5, temp$8, temp$12, temp$13;
+        java.lang.Class temp$6, temp$9;
+
+        classArray := @parameter0: java.lang.Class[];
+        toClassArray := @parameter1: java.lang.Class[];
+        autoboxing := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isSameLength(java.lang.Object[],java.lang.Object[])>(classArray, toClassArray);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        if toClassArray == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+        toClassArray = temp$2;
+
+     label3:
+        nop;
+        i = 0;
+
+     label4:
+        nop;
+        temp$3 = lengthof classArray;
+        if i < temp$3 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$4 = classArray;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = toClassArray;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = staticinvoke <org.apache.commons.lang3.ClassUtils: boolean isAssignable(java.lang.Class,java.lang.Class,boolean)>(temp$6, temp$9, autoboxing);
+        if temp$10 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label7:
+        nop;
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label4;
+
+     label8:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+    }
+}

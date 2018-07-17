@@ -1,0 +1,87 @@
+public class WrapClass 
+{
+    public static boolean isSorted(java.lang.Object[], java.util.Comparator)
+    {
+        java.lang.Object[] array, temp$3, temp$5;
+        java.util.Comparator comparator;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1, temp$4, n, i, temp$6, temp$7, temp$9, temp$10;
+        boolean temp$2, temp$8, temp$11;
+        java.lang.Object previous, current;
+
+        array := @parameter0: java.lang.Object[];
+        comparator := @parameter1: java.util.Comparator;
+        if comparator == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Comparator should not be null.");
+        throw temp$0;
+
+     label1:
+        nop;
+        if array == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = lengthof array;
+        if temp$1 < 2 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 1;
+        return temp$2;
+
+     label4:
+        nop;
+        temp$3 = array;
+        temp$4 = 0;
+        previous = temp$3[temp$4];
+        n = lengthof array;
+        i = 1;
+
+     label5:
+        nop;
+        if i < n goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$5 = array;
+        temp$6 = i;
+        current = temp$5[temp$6];
+        temp$7 = interfaceinvoke comparator.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(previous, current);
+        if temp$7 > -1 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+
+     label8:
+        nop;
+        previous = current;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label5;
+
+     label9:
+        nop;
+        temp$11 = 1;
+        return temp$11;
+    }
+}

@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.Email setCc(java.util.Collection) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.Email this;
+        java.util.Collection aCollection;
+        org.apache.commons.mail.EmailException temp$0;
+        java.util.ArrayList temp$1;
+
+        this := @this: org.apache.commons.mail.Email;
+        aCollection := @parameter0: java.util.Collection;
+        if aCollection == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$0.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Address List provided was invalid");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.util.ArrayList;
+        specialinvoke temp$1.<java.util.ArrayList: void <init>(java.util.Collection)>(aCollection);
+        this.<org.apache.commons.mail.Email: java.util.List ccList> = temp$1;
+        return this;
+    }
+}

@@ -1,0 +1,87 @@
+public class WrapClass 
+{
+    private static final transient java.lang.String appendIfMissing(java.lang.String, java.lang.CharSequence, boolean, java.lang.CharSequence[])
+    {
+        java.lang.String str, temp$7, temp$8;
+        java.lang.CharSequence suffix, s, temp$4;
+        boolean ignoreCase, temp$0, temp$1, temp$5;
+        java.lang.CharSequence[] suffixes;
+        int temp$2, temp$3;
+        java.lang.StringBuffer temp$6;
+
+        str := @parameter0: java.lang.String;
+        suffix := @parameter1: java.lang.CharSequence;
+        ignoreCase := @parameter2: boolean;
+        suffixes := @parameter3: java.lang.CharSequence[];
+        if str == null goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(suffix);
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean endsWith(java.lang.CharSequence,java.lang.CharSequence,boolean)>(str, suffix, ignoreCase);
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return str;
+
+     label3:
+        nop;
+        if suffixes != null goto label4;
+
+        goto label9;
+
+     label4:
+        nop;
+        temp$2 = 0;
+
+     label5:
+        nop;
+        temp$3 = lengthof suffixes;
+        if temp$2 >= temp$3 goto label8;
+
+        temp$4 = suffixes[temp$2];
+        s = temp$4;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean endsWith(java.lang.CharSequence,java.lang.CharSequence,boolean)>(str, s, ignoreCase);
+        if temp$5 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        return str;
+
+     label7:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label5;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$6 = new java.lang.StringBuffer;
+        specialinvoke temp$6.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$7 = interfaceinvoke suffix.<java.lang.CharSequence: java.lang.String toString()>();
+        virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$7);
+        temp$8 = virtualinvoke temp$6.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$8;
+    }
+}

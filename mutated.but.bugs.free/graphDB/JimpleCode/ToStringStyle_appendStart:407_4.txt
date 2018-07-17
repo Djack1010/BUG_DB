@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public void appendStart(java.lang.StringBuffer, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.Object object;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        if object != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendClassName(java.lang.StringBuffer,java.lang.Object)>(buffer, object);
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendIdentityHashCode(java.lang.StringBuffer,java.lang.Object)>(buffer, object);
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendContentStart(java.lang.StringBuffer)>(buffer);
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendFieldSeparator(java.lang.StringBuffer)>(buffer);
+
+     label1:
+        nop;
+        return;
+    }
+}

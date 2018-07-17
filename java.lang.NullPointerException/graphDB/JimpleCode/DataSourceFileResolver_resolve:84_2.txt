@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String, boolean) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceFileResolver this;
+        java.lang.String resourceLocation, temp$10, temp$11;
+        boolean isLenient, temp$0, temp$2;
+        java.io.File file, temp$1, temp$3, temp$4, temp$5, temp$6, temp$7;
+        javax.activation.DataSource result;
+        java.io.IOException temp$8;
+        java.lang.StringBuffer temp$9;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceFileResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        isLenient := @parameter1: boolean;
+        result = null;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceFileResolver: boolean isCid(java.lang.String)>(resourceLocation);
+        if temp$0 == 0 goto label0;
+
+        goto label8;
+
+     label0:
+        nop;
+        temp$1 = new java.io.File;
+        specialinvoke temp$1.<java.io.File: void <init>(java.lang.String)>(resourceLocation);
+        file = temp$1;
+        temp$2 = virtualinvoke file.<java.io.File: boolean isAbsolute()>();
+        if temp$2 == 0 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$4 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceFileResolver: java.io.File getBaseDir()>();
+        if temp$4 != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = new java.io.File;
+        temp$6 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceFileResolver: java.io.File getBaseDir()>();
+        specialinvoke temp$5.<java.io.File: void <init>(java.io.File,java.lang.String)>(temp$6, resourceLocation);
+        temp$3 = temp$5;
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = new java.io.File;
+        specialinvoke temp$7.<java.io.File: void <init>(java.lang.String)>(resourceLocation);
+        temp$3 = temp$7;
+
+     label4:
+        nop;
+        file = temp$3;
+
+     label5:
+        nop;
+        if isLenient == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$8 = new java.io.IOException;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Cant resolve the following file resource :");
+        temp$10 = virtualinvoke file.<java.io.File: java.lang.String getAbsolutePath()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$10);
+        temp$11 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$8.<java.io.IOException: void <init>(java.lang.String)>(temp$11);
+        throw temp$8;
+
+     label7:
+        nop;
+        nop;
+
+     label8:
+        nop;
+        return result;
+    }
+}

@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.HtmlEmail setHtmlMsg(java.lang.String) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.HtmlEmail this;
+        java.lang.String aHtml;
+        org.apache.commons.mail.EmailException temp$0;
+
+        this := @this: org.apache.commons.mail.HtmlEmail;
+        aHtml := @parameter0: java.lang.String;
+        temp$0 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$0.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Invalid message supplied");
+        throw temp$0;
+
+        this.<org.apache.commons.mail.HtmlEmail: java.lang.String html> = aHtml;
+        return this;
+    }
+}

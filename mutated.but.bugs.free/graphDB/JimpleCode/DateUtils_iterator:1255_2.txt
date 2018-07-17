@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    public static java.util.Iterator iterator(java.lang.Object, int)
+    {
+        java.lang.Object focus;
+        int rangeStyle;
+        java.lang.IllegalArgumentException temp$0;
+        boolean temp$1, temp$3;
+        java.util.Iterator temp$2, temp$5;
+        java.util.Calendar temp$4;
+        java.lang.ClassCastException temp$6;
+        java.lang.StringBuffer temp$7;
+        java.lang.String temp$8;
+
+        focus := @parameter0: java.lang.Object;
+        rangeStyle := @parameter1: int;
+        if focus == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = focus instanceof java.util.Date;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = null;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = focus instanceof java.util.Calendar;
+        if temp$3 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$4 = (java.util.Calendar) focus;
+        temp$5 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Iterator iterator(java.util.Calendar,int)>(temp$4, rangeStyle);
+        return temp$5;
+
+     label5:
+        nop;
+        temp$6 = new java.lang.ClassCastException;
+        temp$7 = new java.lang.StringBuffer;
+        specialinvoke temp$7.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Could not iterate based on ");
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(focus);
+        temp$8 = virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$6.<java.lang.ClassCastException: void <init>(java.lang.String)>(temp$8);
+        throw temp$6;
+    }
+}

@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static boolean[] removeElement(boolean[], boolean)
+    {
+        boolean[] array, temp$0;
+        boolean element;
+        int index;
+
+        array := @parameter0: boolean[];
+        element := @parameter1: boolean;
+        index = 0;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean[] remove(boolean[],int)>(array, 0);
+        return temp$0;
+    }
+}

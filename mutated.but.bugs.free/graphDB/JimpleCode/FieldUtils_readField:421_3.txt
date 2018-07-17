@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public static java.lang.Object readField(java.lang.reflect.Field, java.lang.Object, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.reflect.Field field;
+        java.lang.Object target, temp$3;
+        boolean forceAccess, temp$0, temp$2;
+        java.lang.Object[] temp$1;
+
+        field := @parameter0: java.lang.reflect.Field;
+        target := @parameter1: java.lang.Object;
+        forceAccess := @parameter2: boolean;
+        if field != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The field must not be null", temp$1);
+        if forceAccess == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        virtualinvoke field.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(field);
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke field.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(target);
+        return temp$3;
+    }
+}

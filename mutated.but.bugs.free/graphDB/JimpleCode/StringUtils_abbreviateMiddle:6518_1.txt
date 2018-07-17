@@ -1,0 +1,68 @@
+public class WrapClass 
+{
+    public static java.lang.String abbreviateMiddle(java.lang.String, java.lang.String, int)
+    {
+        java.lang.String str, middle, temp$14, temp$17, temp$19;
+        int length, temp$1, temp$2, temp$3, temp$4, targetSting, temp$5, temp$6, startOffset, temp$7, temp$8, temp$9, endOffset, temp$10, temp$11, temp$12;
+        boolean temp$0;
+        java.lang.StringBuilder builder, temp$13, temp$15, temp$16, temp$18;
+
+        str := @parameter0: java.lang.String;
+        middle := @parameter1: java.lang.String;
+        length := @parameter2: int;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(middle);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        if length >= temp$1 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke middle.<java.lang.String: int length()>();
+        temp$3 = temp$2;
+        temp$4 = temp$3 + 2;
+        if length < temp$4 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        return str;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke middle.<java.lang.String: int length()>();
+        temp$6 = length - temp$5;
+        targetSting = temp$6;
+        temp$7 = targetSting / 2;
+        temp$8 = temp$7;
+        temp$9 = targetSting % 2;
+        startOffset = temp$8 + temp$9;
+        temp$10 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$11 = targetSting / 2;
+        temp$12 = temp$10 - temp$11;
+        endOffset = temp$12;
+        temp$13 = new java.lang.StringBuilder;
+        specialinvoke temp$13.<java.lang.StringBuilder: void <init>(int)>(length);
+        builder = temp$13;
+        temp$14 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, startOffset);
+        temp$15 = virtualinvoke builder.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$14);
+        temp$16 = virtualinvoke builder.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(middle);
+        temp$17 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(endOffset);
+        temp$18 = virtualinvoke builder.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$17);
+        temp$19 = virtualinvoke builder.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$19;
+    }
+}

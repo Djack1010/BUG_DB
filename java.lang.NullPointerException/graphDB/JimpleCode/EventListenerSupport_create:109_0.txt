@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.event.EventListenerSupport create(java.lang.Class)
+    {
+        java.lang.Class listenerInterface;
+        org.apache.commons.lang3.event.EventListenerSupport temp$0;
+
+        listenerInterface := @parameter0: java.lang.Class;
+        temp$0 = new org.apache.commons.lang3.event.EventListenerSupport;
+        specialinvoke temp$0.<org.apache.commons.lang3.event.EventListenerSupport: void <init>(java.lang.Class)>(listenerInterface);
+        return temp$0;
+    }
+}

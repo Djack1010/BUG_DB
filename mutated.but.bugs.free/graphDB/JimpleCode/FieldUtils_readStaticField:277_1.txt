@@ -1,0 +1,12 @@
+public class WrapClass 
+{
+    public static java.lang.Object readStaticField(java.lang.reflect.Field) throws java.lang.IllegalAccessException
+    {
+        java.lang.reflect.Field field;
+        java.lang.Object temp$0;
+
+        field := @parameter0: java.lang.reflect.Field;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Object readStaticField(java.lang.reflect.Field,boolean)>(field, 1);
+        return temp$0;
+    }
+}

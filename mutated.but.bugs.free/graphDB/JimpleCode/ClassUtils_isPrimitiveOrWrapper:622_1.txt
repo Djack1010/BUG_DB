@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static boolean isPrimitiveOrWrapper(java.lang.Class)
+    {
+        java.lang.Class type;
+        boolean temp$0, temp$1, temp$2, temp$3;
+
+        type := @parameter0: java.lang.Class;
+        if type == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke type.<java.lang.Class: boolean isPrimitive()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.ClassUtils: boolean isPrimitiveWrapper(java.lang.Class)>(type);
+        if temp$1 != temp$2 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 1;
+
+     label4:
+        nop;
+        return temp$3;
+    }
+}

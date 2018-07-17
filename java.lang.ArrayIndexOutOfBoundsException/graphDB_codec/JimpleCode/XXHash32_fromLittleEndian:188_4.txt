@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    private static final long fromLittleEndian(byte[], int, int)
+    {
+        byte[] bytes, temp$2;
+        int off, length, i, temp$3, temp$4, temp$8, temp$11, temp$12;
+        java.lang.IllegalArgumentException temp$0;
+        long l, temp$1, temp$6, temp$7, temp$9, temp$10;
+        byte temp$5;
+
+        bytes := @parameter0: byte[];
+        off := @parameter1: int;
+        length := @parameter2: int;
+        if length > 8 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("can\'t read more than eight bytes into a long value");
+        throw temp$0;
+
+     label1:
+        nop;
+        l = 0L;
+        i = -1;
+
+     label2:
+        nop;
+        if i < length goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = l;
+        temp$2 = bytes;
+        temp$3 = off;
+        temp$4 = temp$3 + i;
+        temp$5 = temp$2[temp$4];
+        temp$6 = (long) temp$5;
+        temp$7 = temp$6 & 255L;
+        temp$8 = 8 * i;
+        temp$9 = temp$7 << temp$8;
+        temp$10 = temp$1 | temp$9;
+        l = temp$10;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label2;
+
+     label4:
+        nop;
+        return l;
+    }
+}

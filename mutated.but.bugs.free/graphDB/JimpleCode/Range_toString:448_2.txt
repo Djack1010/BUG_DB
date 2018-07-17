@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public final java.lang.String toString()
+    {
+        org.apache.commons.lang3.Range this;
+        java.lang.String result, temp$8;
+        java.lang.StringBuilder buf, temp$0, temp$1, temp$3, temp$4, temp$6, temp$7;
+        java.lang.Object temp$2, temp$5;
+
+        this := @this: org.apache.commons.lang3.Range;
+        result = this.<org.apache.commons.lang3.Range: java.lang.String toString>;
+        if result == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>(int)>(0);
+        buf = temp$0;
+        temp$1 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91);
+        temp$2 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$3 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(temp$2);
+        temp$4 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("..");
+        temp$5 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$6 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(temp$5);
+        temp$7 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93);
+        temp$8 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        result = temp$8;
+        this.<org.apache.commons.lang3.Range: java.lang.String toString> = result;
+
+     label1:
+        nop;
+        return result;
+    }
+}

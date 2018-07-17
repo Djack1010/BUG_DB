@@ -1,0 +1,434 @@
+public class WrapClass 
+{
+    public java.lang.String doubleMetaphone(java.lang.String, boolean)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value, temp$0, temp$76, temp$77, temp$78;
+        boolean alternate, slavoGermanic, temp$1, temp$3, temp$6, temp$40;
+        int index, temp$2, temp$5, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$22, temp$23, temp$25, temp$26, temp$27, temp$28, temp$29, temp$30, temp$31, temp$32, temp$33, temp$35, temp$36, temp$37, temp$38, temp$39, temp$41, temp$42, temp$43, temp$44, temp$45, temp$47, temp$48, temp$49, temp$50, temp$51, temp$52, temp$53, temp$54, temp$55, temp$57, temp$58, temp$59, temp$60, temp$61, temp$62, temp$63, temp$64, temp$65, temp$67, temp$68, temp$69, temp$70, temp$71, temp$72, temp$73, temp$74;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result, temp$4;
+        char temp$13, temp$24, temp$34, temp$46, temp$56, temp$66, temp$75;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        alternate := @parameter1: boolean;
+        temp$0 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: java.lang.String cleanInput(java.lang.String)>(value);
+        value = temp$0;
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isSlavoGermanic(java.lang.String)>(value);
+        slavoGermanic = temp$1;
+        temp$3 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isSilentStart(java.lang.String)>(value);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 1;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 0;
+
+     label2:
+        nop;
+        index = temp$2;
+        temp$4 = new org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        temp$5 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int getMaxCodeLen()>();
+        specialinvoke temp$4.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void <init>(org.apache.commons.codec.language.DoubleMetaphone,int)>(this, temp$5);
+        result = temp$4;
+
+     label3:
+        nop;
+        temp$6 = virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: boolean isComplete()>();
+        if temp$6 == 0 goto label4;
+
+        goto label58;
+
+     label4:
+        nop;
+        temp$7 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$8 = temp$7 - 1;
+        if index <= temp$8 goto label5;
+
+        goto label58;
+
+        goto label5;
+
+     label5:
+        nop;
+        goto label56;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleAEIOUY(org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(result, index);
+        index = temp$9;
+        goto label57;
+
+     label12:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(80);
+        temp$11 = index;
+        temp$12 = temp$11 + 1;
+        temp$13 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$12);
+        temp$14 = (int) temp$13;
+        if temp$14 == 66 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$15 = index;
+        temp$10 = temp$15 + 2;
+        goto label15;
+
+     label14:
+        nop;
+        temp$16 = index;
+        temp$10 = temp$16 + 1;
+
+     label15:
+        nop;
+        index = temp$10;
+        goto label57;
+
+     label16:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(83);
+        temp$17 = index;
+        temp$18 = temp$17 + 1;
+        index = temp$18;
+        goto label57;
+
+     label17:
+        nop;
+        temp$19 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleC(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$19;
+        goto label57;
+
+     label18:
+        nop;
+        temp$20 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleD(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$20;
+        goto label57;
+
+     label19:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(70);
+        temp$22 = index;
+        temp$23 = temp$22 + 1;
+        temp$24 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$23);
+        temp$25 = (int) temp$24;
+        if temp$25 == 70 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$26 = index;
+        temp$21 = temp$26 + 2;
+        goto label22;
+
+     label21:
+        nop;
+        temp$27 = index;
+        temp$21 = temp$27 + 1;
+
+     label22:
+        nop;
+        index = temp$21;
+        goto label57;
+
+     label23:
+        nop;
+        temp$28 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleG(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int,boolean)>(value, result, index, slavoGermanic);
+        index = temp$28;
+        goto label57;
+
+     label24:
+        nop;
+        temp$29 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleH(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$29;
+        goto label57;
+
+     label25:
+        nop;
+        temp$30 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleJ(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int,boolean)>(value, result, index, slavoGermanic);
+        index = temp$30;
+        goto label57;
+
+     label26:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(75);
+        temp$32 = index;
+        temp$33 = temp$32 + 1;
+        temp$34 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$33);
+        temp$35 = (int) temp$34;
+        if temp$35 == 75 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$36 = index;
+        temp$31 = temp$36 + 2;
+        goto label29;
+
+     label28:
+        nop;
+        temp$37 = index;
+        temp$31 = temp$37 + 1;
+
+     label29:
+        nop;
+        index = temp$31;
+        goto label57;
+
+     label30:
+        nop;
+        temp$38 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleL(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$38;
+        goto label57;
+
+     label31:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(77);
+        temp$40 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean conditionM0(java.lang.String,int)>(value, index);
+        if temp$40 == 0 goto label33;
+
+        goto label32;
+
+     label32:
+        nop;
+        temp$41 = index;
+        temp$39 = temp$41 + 2;
+        goto label34;
+
+     label33:
+        nop;
+        temp$42 = index;
+        temp$39 = temp$42 + 1;
+
+     label34:
+        nop;
+        index = temp$39;
+        goto label57;
+
+     label35:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(78);
+        temp$44 = index;
+        temp$45 = temp$44 + 1;
+        temp$46 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$45);
+        temp$47 = (int) temp$46;
+        if temp$47 == 78 goto label36;
+
+        goto label37;
+
+     label36:
+        nop;
+        temp$48 = index;
+        temp$43 = temp$48 + 2;
+        goto label38;
+
+     label37:
+        nop;
+        temp$49 = index;
+        temp$43 = temp$49 + 1;
+
+     label38:
+        nop;
+        index = temp$43;
+        goto label57;
+
+     label39:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(78);
+        temp$50 = index;
+        temp$51 = temp$50 + 1;
+        index = temp$51;
+        goto label57;
+
+     label40:
+        nop;
+        temp$52 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleP(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$52;
+        goto label57;
+
+     label41:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(75);
+        temp$54 = index;
+        temp$55 = temp$54 + 1;
+        temp$56 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$55);
+        temp$57 = (int) temp$56;
+        if temp$57 == 81 goto label42;
+
+        goto label43;
+
+     label42:
+        nop;
+        temp$58 = index;
+        temp$53 = temp$58 + 2;
+        goto label44;
+
+     label43:
+        nop;
+        temp$59 = index;
+        temp$53 = temp$59 + 1;
+
+     label44:
+        nop;
+        index = temp$53;
+        goto label57;
+
+     label45:
+        nop;
+        temp$60 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleR(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int,boolean)>(value, result, index, slavoGermanic);
+        index = temp$60;
+        goto label57;
+
+     label46:
+        nop;
+        temp$61 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleS(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int,boolean)>(value, result, index, slavoGermanic);
+        index = temp$61;
+        goto label57;
+
+     label47:
+        nop;
+        temp$62 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleT(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$62;
+        goto label57;
+
+     label48:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(70);
+        temp$64 = index;
+        temp$65 = temp$64 + 1;
+        temp$66 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$65);
+        temp$67 = (int) temp$66;
+        if temp$67 == 86 goto label49;
+
+        goto label50;
+
+     label49:
+        nop;
+        temp$68 = index;
+        temp$63 = temp$68 + 2;
+        goto label51;
+
+     label50:
+        nop;
+        temp$69 = index;
+        temp$63 = temp$69 + 1;
+
+     label51:
+        nop;
+        index = temp$63;
+        goto label57;
+
+     label52:
+        nop;
+        temp$70 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleW(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$70;
+        goto label57;
+
+     label53:
+        nop;
+        temp$71 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleX(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int)>(value, result, index);
+        index = temp$71;
+        goto label57;
+
+     label54:
+        nop;
+        temp$72 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: int handleZ(java.lang.String,org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult,int,boolean)>(value, result, index, slavoGermanic);
+        index = temp$72;
+        goto label57;
+
+     label55:
+        nop;
+        temp$73 = index;
+        temp$74 = temp$73 + 1;
+        index = temp$74;
+        goto label57;
+
+        goto label57;
+
+     label56:
+        nop;
+        temp$75 = virtualinvoke value.<java.lang.String: char charAt(int)>(index);
+        nop;
+        lookupswitch(temp$75)
+        {
+            case 65: goto label6;
+            case 66: goto label12;
+            case 67: goto label17;
+            case 68: goto label18;
+            case 69: goto label7;
+            case 70: goto label19;
+            case 71: goto label23;
+            case 72: goto label24;
+            case 73: goto label8;
+            case 74: goto label25;
+            case 75: goto label26;
+            case 76: goto label30;
+            case 77: goto label31;
+            case 78: goto label35;
+            case 79: goto label9;
+            case 80: goto label40;
+            case 81: goto label41;
+            case 82: goto label45;
+            case 83: goto label46;
+            case 84: goto label47;
+            case 85: goto label10;
+            case 86: goto label48;
+            case 87: goto label52;
+            case 88: goto label53;
+            case 89: goto label11;
+            case 90: goto label54;
+            case 199: goto label16;
+            case 209: goto label39;
+            default: goto label55;
+        };
+
+     label57:
+        nop;
+        goto label3;
+
+     label58:
+        nop;
+        if alternate == 0 goto label60;
+
+        goto label59;
+
+     label59:
+        nop;
+        temp$77 = virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: java.lang.String getAlternate()>();
+        temp$76 = temp$77;
+        goto label61;
+
+     label60:
+        nop;
+        temp$78 = virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: java.lang.String getPrimary()>();
+        temp$76 = temp$78;
+
+     label61:
+        nop;
+        return temp$76;
+    }
+}

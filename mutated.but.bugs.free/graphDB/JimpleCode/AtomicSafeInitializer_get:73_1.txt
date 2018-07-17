@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public final java.lang.Object get() throws org.apache.commons.lang3.concurrent.ConcurrentException
+    {
+        org.apache.commons.lang3.concurrent.AtomicSafeInitializer this;
+        java.lang.Object result, temp$1, temp$3;
+        java.util.concurrent.atomic.AtomicReference temp$0, temp$2;
+
+        this := @this: org.apache.commons.lang3.concurrent.AtomicSafeInitializer;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.concurrent.AtomicSafeInitializer: java.util.concurrent.atomic.AtomicReference reference>;
+        temp$1 = virtualinvoke temp$0.<java.util.concurrent.atomic.AtomicReference: java.lang.Object get()>();
+        result = temp$1;
+        if temp$1 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.concurrent.AtomicSafeInitializer: java.util.concurrent.atomic.AtomicReference reference>;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.concurrent.AtomicSafeInitializer: java.lang.Object initialize()>();
+        virtualinvoke temp$2.<java.util.concurrent.atomic.AtomicReference: void set(java.lang.Object)>(temp$3);
+        goto label0;
+
+     label2:
+        nop;
+        return result;
+    }
+}

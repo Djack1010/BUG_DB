@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public static java.util.UUID byteArrayToUuid(byte[], int)
+    {
+        byte[] src;
+        int srcPos, temp$0, temp$1, temp$5, temp$6;
+        java.lang.IllegalArgumentException temp$2;
+        java.util.UUID temp$3;
+        long temp$4, temp$7;
+
+        src := @parameter0: byte[];
+        srcPos := @parameter1: int;
+        temp$0 = lengthof src;
+        temp$1 = temp$0 - srcPos;
+        if temp$1 < 16 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Need at least 16 bytes for UUID");
+        throw temp$2;
+
+     label1:
+        nop;
+        temp$3 = new java.util.UUID;
+        temp$4 = staticinvoke <org.apache.commons.lang3.Conversion: long byteArrayToLong(byte[],int,long,int,int)>(src, srcPos, 0L, 0, 8);
+        temp$5 = srcPos;
+        temp$6 = temp$5 + 8;
+        temp$7 = staticinvoke <org.apache.commons.lang3.Conversion: long byteArrayToLong(byte[],int,long,int,int)>(src, temp$6, -1L, 0, 8);
+        specialinvoke temp$3.<java.util.UUID: void <init>(long,long)>(temp$4, temp$7);
+        return temp$3;
+    }
+}

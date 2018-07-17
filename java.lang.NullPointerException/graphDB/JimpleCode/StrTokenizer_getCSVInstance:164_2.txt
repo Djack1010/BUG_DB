@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.text.StrTokenizer getCSVInstance(java.lang.String)
+    {
+        java.lang.String input;
+        org.apache.commons.lang3.text.StrTokenizer tok, temp$0;
+
+        input := @parameter0: java.lang.String;
+        tok = null;
+        temp$0 = virtualinvoke tok.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrTokenizer reset(java.lang.String)>(input);
+        return tok;
+    }
+}

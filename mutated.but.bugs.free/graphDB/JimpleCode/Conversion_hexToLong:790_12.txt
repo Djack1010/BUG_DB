@@ -1,0 +1,84 @@
+public class WrapClass 
+{
+    public static long hexToLong(java.lang.String, int, long, int, int)
+    {
+        java.lang.String src;
+        int srcPos, dstPos, nHex, temp$0, temp$1, temp$2, temp$3, temp$4, shift, i, temp$6, temp$7, temp$8, temp$9, temp$10, temp$12, temp$21, temp$22;
+        long dstInit, out, bits, temp$13, temp$14, temp$15, mask, temp$16, temp$17, temp$18, temp$19, temp$20;
+        java.lang.IllegalArgumentException temp$5;
+        char temp$11;
+
+        src := @parameter0: java.lang.String;
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: long;
+        dstPos := @parameter3: int;
+        nHex := @parameter4: int;
+        if 0 == nHex goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dstInit;
+
+     label1:
+        nop;
+        temp$0 = nHex;
+        temp$1 = temp$0 + 1;
+        temp$2 = temp$1 * 4;
+        temp$3 = temp$2;
+        temp$4 = temp$3 + dstPos;
+        if temp$4 >= 64 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nHexs-1)*4+dstPos is greather or equal to than 64");
+        throw temp$5;
+
+     label3:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nHex goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = i * 4;
+        temp$7 = temp$6;
+        temp$8 = temp$7 + dstPos;
+        shift = temp$8;
+        temp$9 = i;
+        temp$10 = temp$9 + srcPos;
+        temp$11 = virtualinvoke src.<java.lang.String: char charAt(int)>(temp$10);
+        temp$12 = staticinvoke <org.apache.commons.lang3.Conversion: int hexDigitToInt(char)>(temp$11);
+        temp$13 = (long) temp$12;
+        temp$14 = 15L & temp$13;
+        temp$15 = temp$14 << shift;
+        bits = temp$15;
+        temp$16 = 15L << shift;
+        mask = temp$16;
+        temp$17 = (long) -1;
+        temp$18 = temp$17 ^ mask;
+        temp$19 = out & temp$18;
+        temp$20 = temp$19 | bits;
+        out = temp$20;
+        nop;
+        temp$21 = i;
+        temp$22 = temp$21 + 1;
+        i = temp$22;
+        goto label4;
+
+     label6:
+        nop;
+        return out;
+    }
+}

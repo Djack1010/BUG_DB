@@ -1,0 +1,78 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.Range intersectionWith(org.apache.commons.lang3.Range)
+    {
+        org.apache.commons.lang3.Range this, other, temp$15;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.Object[] temp$1;
+        java.lang.String temp$2;
+        boolean temp$3;
+        java.lang.Object min, temp$4, temp$6, temp$7, max, temp$9, temp$11, temp$12;
+        java.util.Comparator temp$5, temp$10, temp$14;
+        int temp$8, temp$13;
+
+        this := @this: org.apache.commons.lang3.Range;
+        other := @parameter0: org.apache.commons.lang3.Range;
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = newarray (java.lang.Object)[1];
+        temp$1[0] = other;
+        temp$2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("Cannot calculate intersection with non-overlapping range %s", temp$1);
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$2);
+        throw temp$0;
+
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.Range: boolean equals(java.lang.Object)>(other);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.Range: java.util.Comparator getComparator()>();
+        temp$6 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$7 = other.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$8 = interfaceinvoke temp$5.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(temp$6, temp$7);
+        if temp$8 < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = other.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+
+     label4:
+        nop;
+        min = temp$4;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.Range: java.util.Comparator getComparator()>();
+        temp$11 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$12 = other.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$13 = interfaceinvoke temp$10.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(temp$11, temp$12);
+        if temp$13 < 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        goto label7;
+
+     label6:
+        nop;
+        temp$9 = other.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+
+     label7:
+        nop;
+        max = temp$9;
+        temp$14 = virtualinvoke this.<org.apache.commons.lang3.Range: java.util.Comparator getComparator()>();
+        temp$15 = staticinvoke <org.apache.commons.lang3.Range: org.apache.commons.lang3.Range between(java.lang.Object,java.lang.Object,java.util.Comparator)>(min, max, temp$14);
+        return temp$15;
+    }
+}

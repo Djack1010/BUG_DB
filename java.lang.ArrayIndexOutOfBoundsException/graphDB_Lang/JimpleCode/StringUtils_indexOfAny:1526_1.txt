@@ -1,0 +1,146 @@
+public class WrapClass 
+{
+    public static transient int indexOfAny(java.lang.CharSequence, char[])
+    {
+        java.lang.CharSequence cs;
+        char[] searchChars, temp$7, temp$13;
+        boolean temp$0, temp$1, temp$12;
+        int temp$2, csLen, temp$3, csLast, temp$4, searchLen, searchLast, temp$5, i, j, temp$8, temp$10, temp$11, temp$14, temp$15, temp$17, temp$18, temp$20, temp$21, temp$22, temp$23, temp$24, temp$25, temp$26;
+        char ch, temp$6, temp$9, temp$16, temp$19;
+
+        cs := @parameter0: java.lang.CharSequence;
+        searchChars := @parameter1: char[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(cs);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(char[])>(searchChars);
+        if temp$1 == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label2:
+        nop;
+        temp$3 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        csLen = temp$3;
+        temp$4 = csLen - 1;
+        csLast = temp$4;
+        searchLen = lengthof searchChars;
+        temp$5 = searchLen - 1;
+        searchLast = temp$5;
+        i = 0;
+
+     label3:
+        nop;
+        if i < csLen goto label4;
+
+        goto label17;
+
+     label4:
+        nop;
+        temp$6 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        ch = temp$6;
+        j = 0;
+
+     label5:
+        nop;
+        if j < searchLen goto label6;
+
+        goto label16;
+
+     label6:
+        nop;
+        temp$7 = searchChars;
+        temp$8 = j;
+        temp$9 = temp$7[temp$8];
+        temp$10 = (int) temp$9;
+        temp$11 = (int) ch;
+        if temp$10 == temp$11 goto label7;
+
+        goto label15;
+
+     label7:
+        nop;
+        if i < csLast goto label8;
+
+        goto label13;
+
+     label8:
+        nop;
+        if j < searchLast goto label9;
+
+        goto label13;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$12 = staticinvoke <java.lang.Character: boolean isHighSurrogate(char)>(ch);
+        if temp$12 == 0 goto label13;
+
+        goto label10;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$13 = searchChars;
+        temp$14 = j - 1;
+        temp$15 = temp$14;
+        temp$16 = temp$13[temp$15];
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        temp$19 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(temp$18);
+        temp$20 = (int) temp$16;
+        temp$21 = (int) temp$19;
+        if temp$20 == temp$21 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        return i;
+
+     label12:
+        nop;
+        goto label14;
+
+     label13:
+        nop;
+        return i;
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        nop;
+        temp$22 = j;
+        temp$23 = temp$22 + 1;
+        j = temp$23;
+        goto label5;
+
+     label16:
+        nop;
+        nop;
+        temp$24 = i;
+        temp$25 = temp$24 + 1;
+        i = temp$25;
+        goto label3;
+
+     label17:
+        nop;
+        temp$26 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$26;
+    }
+}

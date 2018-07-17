@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    private static final java.lang.String classToString(java.lang.Class)
+    {
+        java.lang.Class c, temp$1;
+        java.lang.StringBuilder buf, temp$0, temp$3, temp$7, temp$10, temp$11;
+        java.lang.String temp$2, temp$12;
+        java.lang.reflect.TypeVariable[] temp$4, temp$5, temp$8, temp$9;
+        int temp$6;
+
+        c := @parameter0: java.lang.Class;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        buf = temp$0;
+        temp$1 = virtualinvoke c.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if temp$1 != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke c.<java.lang.Class: java.lang.String getName()>();
+        temp$3 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$2);
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke c.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$5 = (java.lang.reflect.TypeVariable[]) temp$4;
+        temp$6 = lengthof temp$5;
+        if temp$6 > 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(60);
+        temp$8 = virtualinvoke c.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$9 = (java.lang.reflect.TypeVariable[]) temp$8;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.StringBuilder appendAllTo(java.lang.StringBuilder,java.lang.String,java.lang.reflect.Type[])>(buf, ", ", temp$9);
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(62);
+
+     label4:
+        nop;
+        temp$12 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$12;
+    }
+}

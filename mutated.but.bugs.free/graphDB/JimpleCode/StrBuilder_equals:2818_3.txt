@@ -1,0 +1,79 @@
+public class WrapClass 
+{
+    public boolean equals(org.apache.commons.lang3.text.StrBuilder)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, other;
+        int temp$0, temp$1, i, temp$3, temp$4, temp$6, temp$9, temp$11, temp$12, temp$14, temp$15;
+        boolean temp$2, temp$13, temp$16;
+        char[] thisBuf, otherBuf, temp$5, temp$8;
+        char temp$7, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        other := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        if this == other goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = other.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$0 != temp$1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label3:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        otherBuf = other.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$4 = temp$3 - 1;
+        i = temp$4;
+
+     label4:
+        nop;
+        if i >= 0 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$5 = thisBuf;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = otherBuf;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        temp$11 = (int) temp$7;
+        temp$12 = (int) temp$10;
+        if temp$11 != temp$12 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$13 = 0;
+        return temp$13;
+
+     label7:
+        nop;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + -1;
+        i = temp$15;
+        goto label4;
+
+     label8:
+        nop;
+        temp$16 = 1;
+        return temp$16;
+    }
+}

@@ -1,0 +1,123 @@
+public class WrapClass 
+{
+    public static final byte[] decodeQuotedPrintable(byte[]) throws org.apache.commons.codec.DecoderException
+    {
+        byte[] bytes, temp$0, temp$3, temp$6, temp$11, temp$15, temp$28;
+        java.io.ByteArrayOutputStream buffer, temp$1;
+        int i, temp$2, b, temp$4, temp$7, temp$8, temp$10, u, temp$12, temp$14, l, temp$16, temp$17, temp$19, temp$20, temp$21, temp$22, temp$24, temp$26, temp$27;
+        byte temp$5, temp$9, temp$13, temp$18;
+        char temp$23;
+        java.lang.ArrayIndexOutOfBoundsException e;
+        org.apache.commons.codec.DecoderException temp$25;
+
+        bytes := @parameter0: byte[];
+        if bytes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.io.ByteArrayOutputStream;
+        specialinvoke temp$1.<java.io.ByteArrayOutputStream: void <init>()>();
+        buffer = temp$1;
+        i = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof bytes;
+        if i < temp$2 goto label3;
+
+        goto label14;
+
+     label3:
+        nop;
+        temp$3 = bytes;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        b = (int) temp$5;
+        if b == 61 goto label4;
+
+        goto label11;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$6 = bytes;
+        temp$7 = i + 1;
+        i = temp$7;
+        temp$8 = temp$7;
+        temp$9 = temp$6[temp$8];
+        temp$10 = (int) temp$9;
+        if temp$10 == 13 goto label6;
+
+        goto label8;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        goto label13;
+
+     label8:
+        nop;
+        temp$11 = bytes;
+        temp$12 = i;
+        temp$13 = temp$11[temp$12];
+        temp$14 = staticinvoke <org.apache.commons.codec.net.Utils: int digit16(byte)>(temp$13);
+        u = temp$14;
+        temp$15 = bytes;
+        temp$16 = i + 1;
+        i = temp$16;
+        temp$17 = temp$16;
+        temp$18 = temp$15[temp$17];
+        temp$19 = staticinvoke <org.apache.commons.codec.net.Utils: int digit16(byte)>(temp$18);
+        l = temp$19;
+        temp$20 = u << 4;
+        temp$21 = temp$20;
+        temp$22 = temp$21 + l;
+        temp$23 = (char) temp$22;
+        temp$24 = (int) temp$23;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(temp$24);
+        goto label10;
+
+     label9:
+        nop;
+        e := @caughtexception;
+        temp$25 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$25.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String,java.lang.Throwable)>("Invalid quoted-printable encoding", e);
+        throw temp$25;
+
+     label10:
+        nop;
+        goto label12;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+
+     label13:
+        nop;
+        temp$26 = i;
+        temp$27 = temp$26 + 1;
+        i = temp$27;
+        goto label2;
+
+     label14:
+        nop;
+        temp$28 = virtualinvoke buffer.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return temp$28;
+
+        catch java.lang.ArrayIndexOutOfBoundsException from label5 to label7 with label9;
+        catch java.lang.ArrayIndexOutOfBoundsException from label8 to label9 with label9;
+    }
+}

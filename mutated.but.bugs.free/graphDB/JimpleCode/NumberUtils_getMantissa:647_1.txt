@@ -1,0 +1,81 @@
+public class WrapClass 
+{
+    private static final java.lang.String getMantissa(java.lang.String, int)
+    {
+        java.lang.String str, temp$6, temp$7, temp$8;
+        int stopPos, temp$1, temp$3;
+        char firstChar, temp$0;
+        boolean hasSign, temp$2, temp$4, temp$5;
+
+        str := @parameter0: java.lang.String;
+        stopPos := @parameter1: int;
+        temp$0 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        firstChar = temp$0;
+        temp$1 = (int) firstChar;
+        if temp$1 == 45 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 1;
+
+     label2:
+        nop;
+        temp$3 = (int) firstChar;
+        if temp$3 == 43 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        if temp$2 != temp$4 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$5 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$5 = 1;
+
+     label8:
+        nop;
+        hasSign = temp$5;
+        if hasSign == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$7 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(1, stopPos);
+        temp$6 = temp$7;
+        goto label11;
+
+     label10:
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, stopPos);
+        temp$6 = temp$8;
+
+     label11:
+        nop;
+        return temp$6;
+    }
+}

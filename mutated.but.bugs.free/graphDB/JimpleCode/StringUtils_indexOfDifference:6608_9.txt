@@ -1,0 +1,106 @@
+public class WrapClass 
+{
+    public static int indexOfDifference(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs1, cs2;
+        int temp$0, temp$1, i, temp$2, temp$3, temp$4, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12;
+        char temp$5, temp$6;
+
+        cs1 := @parameter0: java.lang.CharSequence;
+        cs2 := @parameter1: java.lang.CharSequence;
+        if cs1 == cs2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        if cs1 == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        if cs2 == null goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label4:
+        nop;
+        temp$2 = 0;
+        i = temp$2;
+
+     label5:
+        nop;
+        temp$3 = interfaceinvoke cs1.<java.lang.CharSequence: int length()>();
+        if i < temp$3 goto label6;
+
+        goto label10;
+
+     label6:
+        nop;
+        temp$4 = interfaceinvoke cs2.<java.lang.CharSequence: int length()>();
+        if i < temp$4 goto label7;
+
+        goto label10;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$5 = interfaceinvoke cs1.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$6 = interfaceinvoke cs2.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$7 = (int) temp$5;
+        temp$8 = (int) temp$6;
+        if temp$7 != temp$8 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        goto label10;
+
+     label9:
+        nop;
+        nop;
+        temp$9 = i + 1;
+        i = temp$9;
+        goto label5;
+
+     label10:
+        nop;
+        temp$10 = interfaceinvoke cs2.<java.lang.CharSequence: int length()>();
+        if i < temp$10 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$11 = interfaceinvoke cs1.<java.lang.CharSequence: int length()>();
+        if i < temp$11 goto label12;
+
+        goto label13;
+
+        goto label13;
+
+     label12:
+        nop;
+        return i;
+
+     label13:
+        nop;
+        temp$12 = 0;
+        return temp$12;
+    }
+}

@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static float[] removeElement(float[], float)
+    {
+        float[] array, temp$0;
+        float element;
+        int index;
+
+        array := @parameter0: float[];
+        element := @parameter1: float;
+        index = 0;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: float[] remove(float[],int)>(array, 0);
+        return temp$0;
+    }
+}

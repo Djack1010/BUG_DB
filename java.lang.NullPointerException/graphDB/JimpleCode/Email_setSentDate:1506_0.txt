@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public void setSentDate(java.util.Date)
+    {
+        org.apache.commons.mail.Email this;
+        java.util.Date date, temp$0;
+        long temp$1;
+
+        this := @this: org.apache.commons.mail.Email;
+        date := @parameter0: java.util.Date;
+        if date != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.util.Date;
+        temp$1 = virtualinvoke date.<java.util.Date: long getTime()>();
+        specialinvoke temp$0.<java.util.Date: void <init>(long)>(temp$1);
+        this.<org.apache.commons.mail.Email: java.util.Date sentDate> = temp$0;
+
+     label1:
+        nop;
+        return;
+    }
+}

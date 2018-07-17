@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static transient void exclusiveBetween(java.lang.Object, java.lang.Object, java.lang.Comparable, java.lang.String, java.lang.Object[])
+    {
+        java.lang.Object start, end;
+        java.lang.Comparable value;
+        java.lang.String message, temp$1;
+        java.lang.Object[] values;
+        java.lang.IllegalArgumentException temp$0;
+
+        start := @parameter0: java.lang.Object;
+        end := @parameter1: java.lang.Object;
+        value := @parameter2: java.lang.Comparable;
+        message := @parameter3: java.lang.String;
+        values := @parameter4: java.lang.Object[];
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values);
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$1);
+        throw temp$0;
+
+        return;
+    }
+}

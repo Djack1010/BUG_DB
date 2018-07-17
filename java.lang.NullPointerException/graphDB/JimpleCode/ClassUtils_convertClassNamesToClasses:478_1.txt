@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static java.util.List convertClassNamesToClasses(java.util.List)
+    {
+        java.util.List classNames, classes;
+        java.util.ArrayList temp$0;
+        int temp$1;
+        java.util.Iterator temp$2;
+        java.lang.String className;
+        boolean temp$3, temp$6, temp$7;
+        java.lang.Object temp$4;
+        java.lang.Class temp$5;
+        java.lang.Exception ex;
+
+        classNames := @parameter0: java.util.List;
+        temp$0 = new java.util.ArrayList;
+        temp$1 = interfaceinvoke classNames.<java.util.List: int size()>();
+        specialinvoke temp$0.<java.util.ArrayList: void <init>(int)>(temp$1);
+        classes = temp$0;
+        temp$2 = interfaceinvoke classNames.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$3 = interfaceinvoke temp$2.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label4;
+
+        temp$4 = interfaceinvoke temp$2.<java.util.Iterator: java.lang.Object next()>();
+        className = (java.lang.String) temp$4;
+
+     label1:
+        nop;
+        temp$5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>(className);
+        temp$6 = interfaceinvoke classes.<java.util.List: boolean add(java.lang.Object)>(temp$5);
+        goto label3;
+
+     label2:
+        nop;
+        ex := @caughtexception;
+        temp$7 = interfaceinvoke classes.<java.util.List: boolean add(java.lang.Object)>(null);
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        return classes;
+
+        catch java.lang.Exception from label1 to label2 with label2;
+    }
+}

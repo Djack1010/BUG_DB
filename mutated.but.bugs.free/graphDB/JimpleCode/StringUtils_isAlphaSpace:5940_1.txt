@@ -1,0 +1,90 @@
+public class WrapClass 
+{
+    public static boolean isAlphaSpace(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        boolean temp$0, temp$3, temp$4, temp$7, temp$8, temp$11;
+        int sz, temp$1, i, temp$6, temp$9, temp$10;
+        char temp$2, temp$5;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        sz = temp$1;
+        i = 0;
+
+     label2:
+        nop;
+        if i < sz goto label3;
+
+        goto label12;
+
+     label3:
+        nop;
+        temp$2 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$3 = staticinvoke <java.lang.Character: boolean isLetter(char)>(temp$2);
+        if temp$3 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$4 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = 1;
+
+     label6:
+        nop;
+        temp$5 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$6 = (int) temp$5;
+        if temp$6 != 32 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$7 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$7 = 1;
+
+     label9:
+        nop;
+        if temp$4 == temp$7 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+
+     label11:
+        nop;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label2;
+
+     label12:
+        nop;
+        temp$11 = 1;
+        return temp$11;
+    }
+}

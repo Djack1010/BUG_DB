@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    private static final transient java.lang.reflect.Method getAccessibleMethodFromSuperclass(java.lang.Class, java.lang.String, java.lang.Class[])
+    {
+        java.lang.Class 'cls', parentClass, temp$0, temp$3;
+        java.lang.String methodName;
+        java.lang.Class[] parameterTypes;
+        java.lang.reflect.Method temp$1, temp$2, temp$4;
+        java.lang.NoSuchMethodException e;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        parentClass = temp$0;
+
+     label0:
+        nop;
+        if parentClass != null goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke parentClass.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+
+     label3:
+        nop;
+        return temp$1;
+
+     label4:
+        nop;
+        e := @caughtexception;
+        temp$2 = null;
+        nop;
+        return temp$2;
+
+        temp$3 = virtualinvoke parentClass.<java.lang.Class: java.lang.Class getSuperclass()>();
+        parentClass = temp$3;
+        goto label0;
+
+     label5:
+        nop;
+        temp$4 = null;
+        return temp$4;
+
+        catch java.lang.NoSuchMethodException from label2 to label3 with label4;
+    }
+}

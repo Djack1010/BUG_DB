@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public char[] toCharArray()
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int temp$0, temp$3;
+        char[] temp$1, chars, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: char[] EMPTY_CHAR_ARRAY>;
+        return temp$1;
+
+     label1:
+        nop;
+        chars = null;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$2, 0, chars, 0, temp$3);
+        return chars;
+    }
+}

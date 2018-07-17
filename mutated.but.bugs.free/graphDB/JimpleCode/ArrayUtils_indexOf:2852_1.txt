@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static int indexOf(boolean[], boolean)
+    {
+        boolean[] array;
+        boolean valueToFind;
+        int temp$0;
+
+        array := @parameter0: boolean[];
+        valueToFind := @parameter1: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(boolean[],boolean,int)>(array, valueToFind, -1);
+        return temp$0;
+    }
+}

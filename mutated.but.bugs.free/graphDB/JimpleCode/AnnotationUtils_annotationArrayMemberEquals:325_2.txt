@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    private static final boolean annotationArrayMemberEquals(java.lang.annotation.Annotation[], java.lang.annotation.Annotation[])
+    {
+        java.lang.annotation.Annotation[] a1, a2, temp$4, temp$7;
+        int temp$0, temp$1, i, temp$3, temp$5, temp$8, temp$12, temp$13;
+        boolean temp$2, temp$10, temp$11, temp$14;
+        java.lang.annotation.Annotation temp$6, temp$9;
+
+        a1 := @parameter0: java.lang.annotation.Annotation[];
+        a2 := @parameter1: java.lang.annotation.Annotation[];
+        temp$0 = lengthof a1;
+        temp$1 = lengthof a2;
+        if temp$0 != temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label1:
+        nop;
+        i = 1;
+
+     label2:
+        nop;
+        temp$3 = lengthof a1;
+        if i < temp$3 goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$4 = a1;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = a2;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: boolean equals(java.lang.annotation.Annotation,java.lang.annotation.Annotation)>(temp$6, temp$9);
+        if temp$10 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label5:
+        nop;
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label2;
+
+     label6:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+    }
+}

@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    private final void checkTokenized()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.String[] temp$0, temp$3, temp$9, temp$11;
+        char[] temp$1, temp$4, temp$5;
+        java.util.List split, temp$2, split, temp$7;
+        int temp$6, temp$8;
+        java.lang.Object[] temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        if temp$0 == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        if temp$1 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.util.List tokenize(char[],int,int)>(null, 0, 0);
+        split = temp$2;
+        temp$3 = null;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$3;
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$6 = lengthof temp$5;
+        temp$7 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.util.List tokenize(char[],int,int)>(temp$4, 0, temp$6);
+        split = temp$7;
+        temp$8 = interfaceinvoke split.<java.util.List: int size()>();
+        temp$9 = newarray (java.lang.String)[temp$8];
+        temp$10 = interfaceinvoke split.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$9);
+        temp$11 = (java.lang.String[]) temp$10;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$11;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return;
+    }
+}

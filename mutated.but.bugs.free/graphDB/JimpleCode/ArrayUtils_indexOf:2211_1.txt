@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static int indexOf(short[], short)
+    {
+        short[] array;
+        short valueToFind;
+        int temp$0;
+
+        array := @parameter0: short[];
+        valueToFind := @parameter1: short;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(short[],short,int)>(array, valueToFind, -1);
+        return temp$0;
+    }
+}

@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction invert()
+    {
+        org.apache.commons.lang3.math.Fraction this, temp$5, temp$10;
+        int temp$0, temp$2, temp$4, temp$6, temp$7, temp$8, temp$9;
+        java.lang.ArithmeticException temp$1, temp$3;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        temp$0 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.ArithmeticException;
+        specialinvoke temp$1.<java.lang.ArithmeticException: void <init>(java.lang.String)>("Unable to invert zero.");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$2 == -2147483648 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.ArithmeticException;
+        specialinvoke temp$3.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: can\'t negate numerator");
+        throw temp$3;
+
+     label3:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$4 < 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = new org.apache.commons.lang3.math.Fraction;
+        temp$6 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$7 = neg temp$6;
+        temp$8 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$9 = neg temp$8;
+        specialinvoke temp$5.<org.apache.commons.lang3.math.Fraction: void <init>(int,int)>(temp$7, temp$9);
+        return temp$5;
+
+     label5:
+        nop;
+        temp$10 = null;
+        return temp$10;
+    }
+}

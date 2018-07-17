@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public static transient java.util.Collection validIndex(java.util.Collection, int, java.lang.String, java.lang.Object[])
+    {
+        java.util.Collection collection, temp$1;
+        int index, temp$2;
+        java.lang.String message, temp$4;
+        java.lang.Object[] values;
+        java.lang.Object temp$0;
+        java.lang.IndexOutOfBoundsException temp$3;
+
+        collection := @parameter0: java.util.Collection;
+        index := @parameter1: int;
+        message := @parameter2: java.lang.String;
+        values := @parameter3: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(collection);
+        temp$1 = (java.util.Collection) temp$0;
+        if index < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = interfaceinvoke collection.<java.util.Collection: int size()>();
+        if index >= temp$2 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = new java.lang.IndexOutOfBoundsException;
+        temp$4 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values);
+        specialinvoke temp$3.<java.lang.IndexOutOfBoundsException: void <init>(java.lang.String)>(temp$4);
+        throw temp$3;
+
+     label2:
+        nop;
+        return collection;
+    }
+}

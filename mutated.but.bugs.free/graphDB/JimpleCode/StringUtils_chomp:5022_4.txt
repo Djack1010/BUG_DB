@@ -1,0 +1,128 @@
+public class WrapClass 
+{
+    public static java.lang.String chomp(java.lang.String)
+    {
+        java.lang.String str, temp$7, temp$20;
+        boolean temp$0, temp$4, temp$6;
+        int temp$1, temp$3, temp$5, lastIdx, temp$8, temp$9, temp$11, temp$12, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19;
+        char ch, temp$2, last, temp$10, temp$13;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$1 == 1 goto label2;
+
+        goto label11;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        ch = temp$2;
+        temp$3 = (int) ch;
+        if temp$3 == 13 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        temp$5 = (int) ch;
+        if temp$5 == 10 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$6 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = 1;
+
+     label8:
+        nop;
+        if temp$4 != temp$6 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$7 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$7;
+
+     label10:
+        nop;
+        return str;
+
+     label11:
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$9 = temp$8 - 1;
+        lastIdx = temp$9;
+        temp$10 = virtualinvoke str.<java.lang.String: char charAt(int)>(lastIdx);
+        last = temp$10;
+        temp$11 = (int) last;
+        if temp$11 == 10 goto label12;
+
+        goto label15;
+
+     label12:
+        nop;
+        temp$12 = lastIdx - 1;
+        temp$13 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$12);
+        temp$14 = (int) temp$13;
+        if temp$14 == 13 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$15 = lastIdx;
+        temp$16 = temp$15 + -1;
+        lastIdx = temp$16;
+
+     label14:
+        nop;
+        goto label18;
+
+     label15:
+        nop;
+        temp$17 = (int) last;
+        if temp$17 != 13 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$18 = lastIdx;
+        temp$19 = temp$18 + 1;
+        lastIdx = temp$19;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+        temp$20 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, lastIdx);
+        return temp$20;
+    }
+}

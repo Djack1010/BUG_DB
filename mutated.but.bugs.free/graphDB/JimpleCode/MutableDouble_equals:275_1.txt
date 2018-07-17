@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.mutable.MutableDouble this, temp$1;
+        java.lang.Object obj;
+        boolean temp$0, temp$7;
+        double temp$2, temp$4;
+        long temp$3, temp$5;
+        int temp$6;
+
+        this := @this: org.apache.commons.lang3.mutable.MutableDouble;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof org.apache.commons.lang3.mutable.MutableDouble;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (org.apache.commons.lang3.mutable.MutableDouble) obj;
+        temp$2 = temp$1.<org.apache.commons.lang3.mutable.MutableDouble: double value>;
+        temp$3 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>(temp$2);
+        temp$4 = this.<org.apache.commons.lang3.mutable.MutableDouble: double value>;
+        temp$5 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>(temp$4);
+        temp$6 = temp$3 cmp temp$5;
+        if temp$6 > 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$7 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = 1;
+
+     label3:
+        nop;
+        return temp$7;
+    }
+}

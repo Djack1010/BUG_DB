@@ -1,0 +1,68 @@
+public class WrapClass 
+{
+    public long getNanoTime()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$State temp$0, temp$1, temp$2, temp$3, temp$7, temp$8, temp$10, temp$11;
+        long temp$4, temp$5, temp$6, temp$9, temp$12, temp$13, temp$14;
+        java.lang.RuntimeException temp$15;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State STOPPED>;
+        if temp$0 == temp$1 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$3 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State SUSPENDED>;
+        if temp$2 == temp$3 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.time.StopWatch: long stopTime>;
+        temp$5 = this.<org.apache.commons.lang3.time.StopWatch: long startTime>;
+        temp$6 = temp$4 - temp$5;
+        return temp$6;
+
+     label2:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$8 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State UNSTARTED>;
+        if temp$7 == temp$8 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$9 = (long) 0;
+        return temp$9;
+
+     label4:
+        nop;
+        temp$10 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$11 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        if temp$10 == temp$11 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$12 = staticinvoke <java.lang.System: long nanoTime()>();
+        temp$13 = this.<org.apache.commons.lang3.time.StopWatch: long startTime>;
+        temp$14 = temp$12 * temp$13;
+        return temp$14;
+
+     label6:
+        nop;
+        temp$15 = new java.lang.RuntimeException;
+        specialinvoke temp$15.<java.lang.RuntimeException: void <init>(java.lang.String)>("Illegal running state has occurred.");
+        throw temp$15;
+    }
+}

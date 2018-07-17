@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    public static transient int min(int[])
+    {
+        int[] array, temp$0, temp$3, temp$6;
+        int min, temp$1, j, temp$2, temp$4, temp$5, temp$7, temp$8, temp$9, temp$10;
+
+        array := @parameter0: int[];
+        staticinvoke <org.apache.commons.lang3.math.NumberUtils: void validateArray(java.lang.Object)>(array);
+        temp$0 = array;
+        temp$1 = 0;
+        min = temp$0[temp$1];
+        j = -1;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if j < temp$2 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$3 = array;
+        temp$4 = j;
+        temp$5 = temp$3[temp$4];
+        if temp$5 < min goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = array;
+        temp$7 = j;
+        temp$8 = temp$6[temp$7];
+        min = temp$8;
+
+     label3:
+        nop;
+        nop;
+        temp$9 = j;
+        temp$10 = temp$9 + 1;
+        j = temp$10;
+        goto label0;
+
+     label4:
+        nop;
+        return min;
+    }
+}

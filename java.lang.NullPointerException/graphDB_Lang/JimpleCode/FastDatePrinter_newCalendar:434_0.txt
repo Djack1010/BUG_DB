@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    private final java.util.GregorianCalendar newCalendar()
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.util.GregorianCalendar temp$0;
+        java.util.TimeZone temp$1;
+        java.util.Locale temp$2;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        temp$0 = new java.util.GregorianCalendar;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone mTimeZone>;
+        temp$2 = this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale mLocale>;
+        specialinvoke temp$0.<java.util.GregorianCalendar: void <init>(java.util.TimeZone,java.util.Locale)>(temp$1, temp$2);
+        return temp$0;
+    }
+}

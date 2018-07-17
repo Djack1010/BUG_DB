@@ -1,0 +1,131 @@
+public class WrapClass 
+{
+    public static java.lang.String swapCase(java.lang.String)
+    {
+        java.lang.String str, temp$26;
+        boolean temp$0, whitespace, temp$5, temp$9, temp$10, temp$14, temp$15, temp$19, temp$23;
+        char[] buffer, temp$1, temp$3, temp$6, temp$11, temp$16, temp$20;
+        int i, temp$2, temp$4, temp$7, temp$12, temp$17, temp$21, temp$24, temp$25;
+        char ch, temp$8, temp$13, temp$18, temp$22;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        buffer = temp$1;
+        whitespace = 1;
+        i = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof buffer;
+        if i <= temp$2 goto label3;
+
+        goto label16;
+
+     label3:
+        nop;
+        temp$3 = buffer;
+        temp$4 = i;
+        ch = temp$3[temp$4];
+        temp$5 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>(ch);
+        if temp$5 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$6 = buffer;
+        temp$7 = i;
+        temp$8 = staticinvoke <java.lang.Character: char toLowerCase(char)>(ch);
+        temp$6[temp$7] = temp$8;
+        temp$9 = 0;
+        whitespace = temp$9;
+        goto label15;
+
+     label5:
+        nop;
+        temp$10 = staticinvoke <java.lang.Character: boolean isTitleCase(char)>(ch);
+        if temp$10 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$11 = buffer;
+        temp$12 = i;
+        temp$13 = staticinvoke <java.lang.Character: char toLowerCase(char)>(ch);
+        temp$11[temp$12] = temp$13;
+        temp$14 = 0;
+        whitespace = temp$14;
+        goto label14;
+
+     label7:
+        nop;
+        temp$15 = staticinvoke <java.lang.Character: boolean isLowerCase(char)>(ch);
+        if temp$15 == 0 goto label12;
+
+        goto label8;
+
+     label8:
+        nop;
+        if whitespace == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$16 = buffer;
+        temp$17 = i;
+        temp$18 = staticinvoke <java.lang.Character: char toTitleCase(char)>(ch);
+        temp$16[temp$17] = temp$18;
+        temp$19 = 0;
+        whitespace = temp$19;
+        goto label11;
+
+     label10:
+        nop;
+        temp$20 = buffer;
+        temp$21 = i;
+        temp$22 = staticinvoke <java.lang.Character: char toUpperCase(char)>(ch);
+        temp$20[temp$21] = temp$22;
+
+     label11:
+        nop;
+        goto label13;
+
+     label12:
+        nop;
+        temp$23 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(ch);
+        whitespace = temp$23;
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        nop;
+        temp$24 = i;
+        temp$25 = temp$24 + 1;
+        i = temp$25;
+        goto label2;
+
+     label16:
+        nop;
+        temp$26 = new java.lang.String;
+        specialinvoke temp$26.<java.lang.String: void <init>(char[])>(buffer);
+        return temp$26;
+    }
+}

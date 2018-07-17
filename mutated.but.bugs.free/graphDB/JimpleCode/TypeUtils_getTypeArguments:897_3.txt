@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    private static final java.util.Map getTypeArguments(java.lang.Class, java.lang.Class, java.util.Map)
+    {
+        java.lang.Class 'cls', toClass, temp$4;
+        java.util.Map subtypeVarAssigns, temp$1, temp$10;
+        boolean temp$0, temp$2, temp$3, temp$8;
+        java.util.HashMap typeVarAssigns, temp$5, temp$6, temp$7;
+        java.lang.reflect.Type temp$9;
+
+        'cls' := @parameter0: java.lang.Class;
+        toClass := @parameter1: java.lang.Class;
+        subtypeVarAssigns := @parameter2: java.util.Map;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.Class)>('cls', toClass);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke 'cls'.<java.lang.Class: boolean isPrimitive()>();
+        if temp$2 == 0 goto label5;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = virtualinvoke toClass.<java.lang.Class: boolean isPrimitive()>();
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class primitiveToWrapper(java.lang.Class)>('cls');
+        'cls' = temp$4;
+
+     label5:
+        nop;
+        if subtypeVarAssigns == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = new java.util.HashMap;
+        specialinvoke temp$6.<java.util.HashMap: void <init>()>();
+        temp$5 = temp$6;
+        goto label8;
+
+     label7:
+        nop;
+        temp$7 = new java.util.HashMap;
+        specialinvoke temp$7.<java.util.HashMap: void <init>(java.util.Map)>(subtypeVarAssigns);
+        temp$5 = temp$7;
+
+     label8:
+        nop;
+        typeVarAssigns = temp$5;
+        temp$8 = virtualinvoke toClass.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$8 == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        return typeVarAssigns;
+
+     label10:
+        nop;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type getClosestParentType(java.lang.Class,java.lang.Class)>('cls', toClass);
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.Type,java.lang.Class,java.util.Map)>(temp$9, toClass, typeVarAssigns);
+        return temp$10;
+    }
+}

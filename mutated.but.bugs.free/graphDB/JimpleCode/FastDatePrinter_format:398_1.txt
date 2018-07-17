@@ -1,0 +1,84 @@
+public class WrapClass 
+{
+    public java.lang.StringBuffer format(java.lang.Object, java.lang.StringBuffer, java.text.FieldPosition)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.lang.Object obj;
+        java.lang.StringBuffer toAppendTo, temp$2, temp$5, temp$7, temp$9;
+        java.text.FieldPosition pos;
+        boolean temp$0, temp$3, temp$6;
+        java.util.Date temp$1;
+        java.util.Calendar temp$4;
+        java.lang.IllegalArgumentException temp$8;
+        java.lang.String temp$10, temp$12, temp$13;
+        java.lang.Class temp$11;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        obj := @parameter0: java.lang.Object;
+        toAppendTo := @parameter1: java.lang.StringBuffer;
+        pos := @parameter2: java.text.FieldPosition;
+        temp$0 = obj instanceof java.util.Date;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (java.util.Date) obj;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.StringBuffer format(java.util.Date,java.lang.StringBuffer)>(temp$1, toAppendTo);
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = obj instanceof java.util.Calendar;
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = (java.util.Calendar) obj;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.StringBuffer format(java.util.Calendar,java.lang.StringBuffer)>(temp$4, toAppendTo);
+        return temp$5;
+
+     label3:
+        nop;
+        temp$6 = obj instanceof java.lang.Long;
+        if temp$6 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$7 = null;
+        return temp$7;
+
+     label5:
+        nop;
+        temp$8 = new java.lang.IllegalArgumentException;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unknown class: ");
+        if obj == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$10 = "<null>";
+        goto label8;
+
+     label7:
+        nop;
+        temp$11 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$12 = virtualinvoke temp$11.<java.lang.Class: java.lang.String getName()>();
+        temp$10 = temp$12;
+
+     label8:
+        nop;
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$10);
+        temp$13 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$13);
+        throw temp$8;
+    }
+}

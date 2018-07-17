@@ -1,0 +1,66 @@
+public class WrapClass 
+{
+    public static transient float min(float[])
+    {
+        float[] array, temp$0, temp$3, temp$7, temp$11;
+        float min, temp$5, temp$9, temp$13;
+        int temp$1, i, temp$2, temp$4, temp$8, temp$10, temp$12, temp$14, temp$15;
+        boolean temp$6;
+
+        array := @parameter0: float[];
+        staticinvoke <org.apache.commons.lang3.math.NumberUtils: void validateArray(java.lang.Object)>(array);
+        temp$0 = array;
+        temp$1 = 0;
+        min = temp$0[temp$1];
+        i = 1;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if i < temp$2 goto label1;
+
+        goto label6;
+
+     label1:
+        nop;
+        temp$3 = array;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = staticinvoke <java.lang.Float: boolean isNaN(float)>(temp$5);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        temp$7 = array;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = temp$9 cmpg min;
+        if temp$10 >= 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$11 = array;
+        temp$12 = i;
+        temp$13 = temp$11[temp$12];
+        min = temp$13;
+
+     label5:
+        nop;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label0;
+
+     label6:
+        nop;
+        return min;
+    }
+}

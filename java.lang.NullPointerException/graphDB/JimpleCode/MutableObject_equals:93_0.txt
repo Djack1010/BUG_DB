@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.mutable.MutableObject this, that;
+        java.lang.Object obj, temp$4, temp$5;
+        boolean temp$0, temp$1, temp$6, temp$7;
+        java.lang.Class temp$2, temp$3;
+
+        this := @this: org.apache.commons.lang3.mutable.MutableObject;
+        obj := @parameter0: java.lang.Object;
+        if obj == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        if this == obj goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.mutable.MutableObject: java.lang.Class getClass()>();
+        temp$3 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        if temp$2 == temp$3 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        that = (org.apache.commons.lang3.mutable.MutableObject) obj;
+        temp$4 = this.<org.apache.commons.lang3.mutable.MutableObject: java.lang.Object value>;
+        temp$5 = that.<org.apache.commons.lang3.mutable.MutableObject: java.lang.Object value>;
+        temp$6 = virtualinvoke temp$4.<java.lang.Object: boolean equals(java.lang.Object)>(temp$5);
+        return temp$6;
+
+     label5:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+    }
+}

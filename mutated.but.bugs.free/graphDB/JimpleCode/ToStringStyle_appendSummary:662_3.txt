@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    protected void appendSummary(java.lang.StringBuffer, java.lang.String, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$2, temp$4;
+        java.lang.String fieldName, temp$1, temp$3;
+        java.lang.Object value;
+        java.lang.Class temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        temp$0 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String getShortClassName(java.lang.Class)>(temp$0);
+        temp$2 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$1);
+        temp$3 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String summaryObjectEndText>;
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$3);
+        return;
+    }
+}

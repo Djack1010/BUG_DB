@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public static boolean[] longToBinary(long, int, boolean[], int, int)
+    {
+        long src, temp$10, temp$11;
+        int srcPos, dstPos, nBools, temp$1, temp$2, temp$3, shift, i, temp$5, temp$6, temp$8, temp$9, temp$12, temp$14, temp$15;
+        boolean[] dst, temp$0, temp$7;
+        java.lang.IllegalArgumentException temp$4;
+        boolean temp$13;
+
+        src := @parameter0: long;
+        srcPos := @parameter1: int;
+        dst := @parameter2: boolean[];
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        if 0 == nBools goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = nBools - 1;
+        temp$2 = temp$1;
+        temp$3 = temp$2 + srcPos;
+        if temp$3 >= 64 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+srcPos is greather or equal to than 64");
+        throw temp$4;
+
+     label3:
+        nop;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nBools goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$5 = i;
+        temp$6 = temp$5 + srcPos;
+        shift = temp$6;
+        temp$7 = dst;
+        temp$8 = dstPos;
+        temp$9 = temp$8 + i;
+        temp$10 = src >> shift;
+        temp$11 = 1L & temp$10;
+        temp$12 = temp$11 cmp 0L;
+        if temp$12 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$13 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$13 = 1;
+
+     label8:
+        nop;
+        temp$7[temp$9] = temp$13;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label4;
+
+     label9:
+        nop;
+        return dst;
+    }
+}

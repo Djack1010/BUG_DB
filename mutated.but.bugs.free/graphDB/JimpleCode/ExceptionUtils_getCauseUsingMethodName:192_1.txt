@@ -1,0 +1,93 @@
+public class WrapClass 
+{
+    private static final java.lang.Throwable getCauseUsingMethodName(java.lang.Throwable, java.lang.String)
+    {
+        java.lang.Throwable throwable, temp$5, temp$6;
+        java.lang.String methodName;
+        java.lang.reflect.Method method, temp$2;
+        java.lang.Class temp$0;
+        java.lang.Class[] temp$1;
+        java.lang.NoSuchMethodException ignored;
+        java.lang.SecurityException ignored;
+        java.lang.Object[] temp$3;
+        java.lang.Object temp$4;
+        java.lang.IllegalAccessException ignored;
+        java.lang.IllegalArgumentException ignored;
+        java.lang.reflect.InvocationTargetException ignored;
+
+        throwable := @parameter0: java.lang.Throwable;
+        methodName := @parameter1: java.lang.String;
+        method = null;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke throwable.<java.lang.Throwable: java.lang.Class getClass()>();
+        temp$1 = newarray (java.lang.Class)[0];
+        temp$2 = virtualinvoke temp$0.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, temp$1);
+        method = temp$2;
+        goto label3;
+
+     label1:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label3;
+
+     label2:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        if method != null goto label4;
+
+        goto label11;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$3 = newarray (java.lang.Object)[0];
+        temp$4 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(throwable, temp$3);
+        temp$5 = (java.lang.Throwable) temp$4;
+
+     label6:
+        nop;
+        return temp$5;
+
+     label7:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label10;
+
+     label8:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label10;
+
+     label9:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label10;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$6 = null;
+        return temp$6;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label1;
+        catch java.lang.SecurityException from label0 to label1 with label2;
+        catch java.lang.IllegalAccessException from label5 to label6 with label7;
+        catch java.lang.IllegalArgumentException from label5 to label6 with label8;
+        catch java.lang.reflect.InvocationTargetException from label5 to label6 with label9;
+    }
+}

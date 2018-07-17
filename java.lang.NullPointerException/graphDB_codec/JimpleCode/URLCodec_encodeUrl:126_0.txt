@@ -1,0 +1,107 @@
+public class WrapClass 
+{
+    public static final byte[] encodeUrl(java.util.BitSet, byte[])
+    {
+        java.util.BitSet urlsafe, temp$1;
+        byte[] bytes, temp$0, temp$15;
+        java.io.ByteArrayOutputStream buffer, temp$2;
+        int temp$3, temp$4, b, temp$6, temp$7, temp$9, temp$10, temp$13, temp$14;
+        byte c, temp$5;
+        boolean temp$8;
+        char hex1, temp$11, hex2, temp$12;
+
+        urlsafe := @parameter0: java.util.BitSet;
+        bytes := @parameter1: byte[];
+        if bytes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if urlsafe == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.codec.net.URLCodec: java.util.BitSet WWW_FORM_URL_SAFE>;
+        urlsafe = temp$1;
+
+     label3:
+        nop;
+        temp$2 = new java.io.ByteArrayOutputStream;
+        specialinvoke temp$2.<java.io.ByteArrayOutputStream: void <init>()>();
+        buffer = temp$2;
+        temp$3 = 0;
+
+     label4:
+        nop;
+        temp$4 = lengthof bytes;
+        if temp$3 >= temp$4 goto label12;
+
+        temp$5 = bytes[temp$3];
+        c = temp$5;
+        b = (int) c;
+        if b < 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = 256;
+        temp$7 = temp$6 + b;
+        b = temp$7;
+
+     label6:
+        nop;
+        temp$8 = virtualinvoke urlsafe.<java.util.BitSet: boolean get(int)>(b);
+        if temp$8 == 0 goto label10;
+
+        goto label7;
+
+     label7:
+        nop;
+        if b == 32 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$9 = 43;
+        b = temp$9;
+
+     label9:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(b);
+        goto label11;
+
+     label10:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(37);
+        temp$10 = b >> 4;
+        temp$11 = staticinvoke <org.apache.commons.codec.net.Utils: char hexDigit(int)>(temp$10);
+        hex1 = temp$11;
+        temp$12 = staticinvoke <org.apache.commons.codec.net.Utils: char hexDigit(int)>(b);
+        hex2 = temp$12;
+        temp$13 = (int) hex1;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(temp$13);
+        temp$14 = (int) hex2;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(temp$14);
+
+     label11:
+        nop;
+        nop;
+        temp$3 = temp$3 + 1;
+        goto label4;
+
+     label12:
+        nop;
+        temp$15 = virtualinvoke buffer.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return temp$15;
+    }
+}

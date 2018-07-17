@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    private final void replaceImpl(int, int, int, java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, removeLen, insertLen, newSize, temp$0, temp$1, temp$2, temp$5, temp$6, temp$7, temp$8;
+        java.lang.String insertStr;
+        char[] temp$3, temp$4, temp$9;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        removeLen := @parameter2: int;
+        insertStr := @parameter3: java.lang.String;
+        insertLen := @parameter4: int;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 - removeLen;
+        temp$2 = temp$1;
+        newSize = temp$2 + insertLen;
+        if insertLen != removeLen goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = startIndex;
+        temp$6 = temp$5 + insertLen;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$8 = temp$7 - endIndex;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$3, endIndex, temp$4, temp$6, temp$8);
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = newSize;
+
+     label1:
+        nop;
+        if insertLen > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        virtualinvoke insertStr.<java.lang.String: void getChars(int,int,char[],int)>(0, insertLen, temp$9, startIndex);
+
+     label3:
+        nop;
+        return;
+    }
+}

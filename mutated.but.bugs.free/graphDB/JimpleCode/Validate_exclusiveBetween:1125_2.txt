@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public static void exclusiveBetween(double, double, double)
+    {
+        double start, end, value;
+        int temp$0, temp$1;
+        java.lang.IllegalArgumentException temp$2;
+        java.lang.Object[] temp$3;
+        java.lang.Double temp$4, temp$5, temp$6;
+        java.lang.String temp$7;
+
+        start := @parameter0: double;
+        end := @parameter1: double;
+        value := @parameter2: double;
+        temp$0 = value cmpg start;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = value cmpl end;
+        if temp$1 < 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        temp$3 = newarray (java.lang.Object)[3];
+        temp$4 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>(value);
+        temp$3[0] = temp$4;
+        temp$5 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>(start);
+        temp$3[1] = temp$5;
+        temp$6 = staticinvoke <java.lang.Double: java.lang.Double valueOf(double)>(end);
+        temp$3[2] = temp$6;
+        temp$7 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("The value %s is not in the specified exclusive range of %s to %s", temp$3);
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$7);
+        throw temp$2;
+
+     label2:
+        nop;
+        return;
+    }
+}

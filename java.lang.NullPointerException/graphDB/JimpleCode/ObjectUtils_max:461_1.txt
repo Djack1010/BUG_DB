@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static transient java.lang.Comparable max(java.lang.Comparable[])
+    {
+        java.lang.Comparable[] values;
+        java.lang.Comparable result, value, temp$2;
+        int temp$0, temp$1, temp$3;
+
+        values := @parameter0: java.lang.Comparable[];
+        result = null;
+        temp$0 = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof values;
+        if temp$0 >= temp$1 goto label3;
+
+        temp$2 = values[temp$0];
+        value = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.ObjectUtils: int compare(java.lang.Comparable,java.lang.Comparable,boolean)>(value, result, 0);
+        if temp$3 > 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        result = value;
+
+     label2:
+        nop;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label0;
+
+     label3:
+        nop;
+        return result;
+    }
+}

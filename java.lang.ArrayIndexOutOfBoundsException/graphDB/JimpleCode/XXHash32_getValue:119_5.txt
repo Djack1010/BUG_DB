@@ -1,0 +1,136 @@
+public class WrapClass 
+{
+    public long getValue()
+    {
+        org.apache.commons.codec.digest.XXHash32 this;
+        int hash, temp$0, temp$2, temp$3, temp$4, temp$5, temp$7, temp$8, temp$9, temp$10, temp$12, temp$13, temp$14, temp$15, temp$17, temp$18, temp$19, temp$20, temp$22, temp$23, temp$24, temp$25, temp$26, temp$27, idx, limit, temp$28, temp$29, temp$30, temp$32, temp$33, temp$34, temp$35, temp$36, temp$37, temp$38, temp$39, temp$40, temp$42, temp$43, temp$44, temp$46, temp$47, temp$48, temp$49, temp$50, temp$51, temp$52, temp$53, temp$54, temp$55, temp$56, temp$57, temp$58, temp$59, temp$60, temp$61, temp$62, temp$63, temp$64;
+        int[] temp$1, temp$6, temp$11, temp$16, temp$21;
+        byte[] temp$31, temp$41;
+        byte temp$45;
+        long temp$65, temp$66;
+
+        this := @this: org.apache.commons.codec.digest.XXHash32;
+        temp$0 = this.<org.apache.commons.codec.digest.XXHash32: int totalLen>;
+        if temp$0 > 16 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$2 = 0;
+        temp$3 = temp$1[temp$2];
+        temp$4 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$3, 1);
+        temp$5 = temp$4;
+        temp$6 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$7 = 1;
+        temp$8 = temp$6[temp$7];
+        temp$9 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$8, 7);
+        temp$10 = temp$5 + temp$9;
+        temp$11 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$12 = -2;
+        temp$13 = temp$11[temp$12];
+        temp$14 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$13, 12);
+        temp$15 = temp$10 + temp$14;
+        temp$16 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$17 = 3;
+        temp$18 = temp$16[temp$17];
+        temp$19 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$18, 18);
+        temp$20 = temp$15 + temp$19;
+        hash = temp$20;
+        goto label2;
+
+     label1:
+        nop;
+        temp$21 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$22 = 2;
+        temp$23 = temp$21[temp$22];
+        temp$24 = temp$23 + 374761393;
+        hash = temp$24;
+
+     label2:
+        nop;
+        temp$25 = hash;
+        temp$26 = this.<org.apache.commons.codec.digest.XXHash32: int totalLen>;
+        temp$27 = temp$25 + temp$26;
+        hash = temp$27;
+        idx = 0;
+        temp$28 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        temp$29 = temp$28 - 4;
+        limit = temp$29;
+
+     label3:
+        nop;
+        if idx <= limit goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$30 = hash;
+        temp$31 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        temp$32 = staticinvoke <org.apache.commons.codec.digest.XXHash32: int getInt(byte[],int)>(temp$31, idx);
+        temp$33 = temp$32 * -1028477379;
+        temp$34 = temp$30 + temp$33;
+        temp$35 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$34, 17);
+        temp$36 = temp$35 * 668265263;
+        hash = temp$36;
+        nop;
+        temp$37 = idx;
+        temp$38 = temp$37 + 4;
+        idx = temp$38;
+        goto label3;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        temp$39 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        if idx < temp$39 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$40 = hash;
+        temp$41 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        temp$42 = idx;
+        temp$43 = temp$42 + 1;
+        idx = temp$43;
+        temp$44 = temp$42;
+        temp$45 = temp$41[temp$44];
+        temp$46 = (int) temp$45;
+        temp$47 = temp$46 & 255;
+        temp$48 = temp$47 * 374761393;
+        temp$49 = temp$40 + temp$48;
+        temp$50 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$49, 11);
+        temp$51 = temp$50 * -1640531535;
+        hash = temp$51;
+        goto label6;
+
+     label8:
+        nop;
+        temp$52 = hash;
+        temp$53 = hash >>> 15;
+        temp$54 = temp$52 ^ temp$53;
+        hash = temp$54;
+        temp$55 = hash;
+        temp$56 = temp$55 * -2048144777;
+        hash = temp$56;
+        temp$57 = hash;
+        temp$58 = hash >>> 13;
+        temp$59 = temp$57 ^ temp$58;
+        hash = temp$59;
+        temp$60 = hash;
+        temp$61 = temp$60 * -1028477379;
+        hash = temp$61;
+        temp$62 = hash;
+        temp$63 = hash >>> 16;
+        temp$64 = temp$62 ^ temp$63;
+        hash = temp$64;
+        temp$65 = (long) hash;
+        temp$66 = temp$65 & 4294967295L;
+        return temp$66;
+    }
+}

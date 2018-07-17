@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public static boolean equals(java.lang.Object, java.lang.Object)
+    {
+        java.lang.Object object1, object2;
+        boolean temp$0, temp$1, temp$2;
+
+        object1 := @parameter0: java.lang.Object;
+        object2 := @parameter1: java.lang.Object;
+        if object1 == object2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if object1 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke object1.<java.lang.Object: boolean equals(java.lang.Object)>(object2);
+        return temp$2;
+    }
+}

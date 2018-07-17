@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    private static final void validateArray(java.lang.Object)
+    {
+        java.lang.Object array;
+        int temp$0;
+        boolean temp$1;
+        java.lang.Object[] temp$2;
+
+        array := @parameter0: java.lang.Object;
+        temp$0 = staticinvoke <java.lang.reflect.Array: int getLength(java.lang.Object)>(array);
+        if temp$0 != 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Array cannot be empty.", temp$2);
+        return;
+    }
+}

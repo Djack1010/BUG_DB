@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public int getValue(int)
+    {
+        org.apache.commons.lang3.BitField this;
+        int holder, temp$0, temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.BitField;
+        holder := @parameter0: int;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.BitField: int getRawValue(int)>(holder);
+        temp$1 = this.<org.apache.commons.lang3.BitField: int _shift_count>;
+        temp$2 = temp$0 >>> temp$1;
+        return temp$2;
+    }
+}

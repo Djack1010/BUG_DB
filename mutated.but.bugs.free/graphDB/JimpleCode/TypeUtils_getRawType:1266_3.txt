@@ -1,0 +1,147 @@
+public class WrapClass 
+{
+    public static java.lang.Class getRawType(java.lang.reflect.Type, java.lang.reflect.Type)
+    {
+        java.lang.reflect.Type type, assigningType, typeArgument, temp$14, temp$19;
+        boolean temp$0, temp$2, temp$5, temp$8, temp$17, temp$23;
+        java.lang.Class temp$1, temp$4, temp$9, temp$10, temp$12, temp$15, temp$16, rawComponentType, temp$20, temp$22, temp$24;
+        java.lang.reflect.ParameterizedType temp$3;
+        java.lang.Object genericDeclaration, temp$13, temp$21;
+        java.lang.reflect.TypeVariable temp$6;
+        java.lang.reflect.GenericDeclaration temp$7;
+        java.util.Map typeVarAssigns, temp$11;
+        java.lang.reflect.GenericArrayType temp$18;
+        java.lang.IllegalArgumentException temp$25;
+        java.lang.StringBuffer temp$26;
+        java.lang.String temp$27;
+
+        type := @parameter0: java.lang.reflect.Type;
+        assigningType := @parameter1: java.lang.reflect.Type;
+        temp$0 = type instanceof java.lang.Class;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (java.lang.Class) type;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = type instanceof java.lang.reflect.ParameterizedType;
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = (java.lang.reflect.ParameterizedType) type;
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(temp$3);
+        return temp$4;
+
+     label3:
+        nop;
+        temp$5 = type instanceof java.lang.reflect.TypeVariable;
+        if temp$5 == 0 goto label13;
+
+        goto label4;
+
+     label4:
+        nop;
+        if assigningType == null goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        temp$6 = (java.lang.reflect.TypeVariable) type;
+        temp$7 = interfaceinvoke temp$6.<java.lang.reflect.TypeVariable: java.lang.reflect.GenericDeclaration getGenericDeclaration()>();
+        genericDeclaration = temp$7;
+        temp$8 = genericDeclaration instanceof java.lang.Class;
+        if temp$8 == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$9 = null;
+        return temp$9;
+
+     label8:
+        nop;
+        temp$10 = (java.lang.Class) genericDeclaration;
+        temp$11 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.Type,java.lang.Class)>(assigningType, temp$10);
+        typeVarAssigns = temp$11;
+        if typeVarAssigns == null goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$12 = null;
+        return temp$12;
+
+     label10:
+        nop;
+        temp$13 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(type);
+        temp$14 = (java.lang.reflect.Type) temp$13;
+        typeArgument = temp$14;
+        if typeArgument == null goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$15 = null;
+        return temp$15;
+
+     label12:
+        nop;
+        temp$16 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.Type,java.lang.reflect.Type)>(typeArgument, assigningType);
+        return temp$16;
+
+     label13:
+        nop;
+        temp$17 = type instanceof java.lang.reflect.GenericArrayType;
+        if temp$17 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$18 = (java.lang.reflect.GenericArrayType) type;
+        temp$19 = interfaceinvoke temp$18.<java.lang.reflect.GenericArrayType: java.lang.reflect.Type getGenericComponentType()>();
+        temp$20 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.Type,java.lang.reflect.Type)>(temp$19, assigningType);
+        rawComponentType = temp$20;
+        temp$21 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>(rawComponentType, 0);
+        temp$22 = virtualinvoke temp$21.<java.lang.Object: java.lang.Class getClass()>();
+        return temp$22;
+
+     label15:
+        nop;
+        temp$23 = type instanceof java.lang.reflect.WildcardType;
+        if temp$23 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$24 = null;
+        return temp$24;
+
+     label17:
+        nop;
+        temp$25 = new java.lang.IllegalArgumentException;
+        temp$26 = new java.lang.StringBuffer;
+        specialinvoke temp$26.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("unknown type: ");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(type);
+        temp$27 = virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$25.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$27);
+        throw temp$25;
+    }
+}

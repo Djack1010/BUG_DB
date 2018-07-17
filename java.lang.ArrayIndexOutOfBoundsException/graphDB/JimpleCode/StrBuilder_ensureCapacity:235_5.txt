@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int capacity, temp$1, temp$2, temp$5;
+        char[] temp$0, old, temp$3, temp$4;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        capacity := @parameter0: int;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$1 = lengthof temp$0;
+        if capacity > temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        old = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$2 = capacity * -2;
+        temp$3 = newarray (char)[temp$2];
+        this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer> = temp$3;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(old, 0, temp$4, 0, temp$5);
+
+     label1:
+        nop;
+        return this;
+    }
+}

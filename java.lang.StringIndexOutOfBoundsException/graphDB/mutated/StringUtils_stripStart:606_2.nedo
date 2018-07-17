@@ -1,0 +1,707 @@
+StringUtils_stripStart:606_2 706
+0 EXTRA_NODE ENTRY Entrynode ENTRY Entry_node (2;CFG_EDGE_C) 
+1 EXTRA_NODE EXIT Exitnode EXIT Exit_node 
+2 CFG_NODE AIdentityStatement classsoot.jimple.parser.node.AIdentityStatement AIdentityStatement str:=@parameter0:java.lang.String; (659;PDG_EDGE_D) (431;PDG_EDGE_D) (12;CFG_EDGE_C) (6;AST_EDGE) (475;PDG_EDGE_D) (121;PDG_EDGE_D) (3;AST_EDGE) (7;AST_EDGE) (50;PDG_EDGE_D) (11;AST_EDGE) (205;PDG_EDGE_D) (8;AST_EDGE) (22;PDG_EDGE_D) 
+3 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (4;AST_EDGE) 
+4 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (5;AST_EDGE) 
+5 AST_NODE TIdentifier str TIdentifier str 
+6 AST_NODE TColonEquals := TColonEquals := 
+7 AST_NODE TAtIdentifier @parameter0: TAtIdentifier @parameter0: 
+8 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType java.lang.String (9;AST_EDGE) 
+9 AST_NODE AFullIdentNonvoidType classsoot.jimple.parser.node.AFullIdentNonvoidType AFullIdentNonvoidType java.lang.String (10;AST_EDGE) 
+10 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+11 AST_NODE TSemicolon ; TSemicolon ; 
+12 CFG_NODE AIdentityStatement classsoot.jimple.parser.node.AIdentityStatement AIdentityStatement stripChars:=@parameter1:java.lang.String; (17;AST_EDGE) (16;AST_EDGE) (22;CFG_EDGE_C) (18;AST_EDGE) (21;AST_EDGE) (372;PDG_EDGE_D) (13;AST_EDGE) (144;PDG_EDGE_D) (533;PDG_EDGE_D) 
+13 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName stripChars (14;AST_EDGE) 
+14 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName stripChars (15;AST_EDGE) 
+15 AST_NODE TIdentifier stripChars TIdentifier stripChars 
+16 AST_NODE TColonEquals := TColonEquals := 
+17 AST_NODE TAtIdentifier @parameter1: TAtIdentifier @parameter1: 
+18 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType java.lang.String (19;AST_EDGE) 
+19 AST_NODE AFullIdentNonvoidType classsoot.jimple.parser.node.AFullIdentNonvoidType AFullIdentNonvoidType java.lang.String (20;AST_EDGE) 
+20 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+21 AST_NODE TSemicolon ; TSemicolon ; 
+22 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement ifstr==nullgotolabel1; (121;PDG_EDGE_C) (81;PDG_EDGE_C) (46;PDG_EDGE_C) (93;PDG_EDGE_C) (50;PDG_EDGE_C) (117;CFG_EDGE_C) (40;CFG_EDGE_C) (40;PDG_EDGE_C) (24;AST_EDGE) (23;AST_EDGE) (117;PDG_EDGE_C) (35;AST_EDGE) 
+23 AST_NODE TIf if TIf if 
+24 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr str==null (25;AST_EDGE) 
+25 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr str==null (32;AST_EDGE) (30;AST_EDGE) (26;AST_EDGE) 
+26 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate str (27;AST_EDGE) 
+27 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (28;AST_EDGE) 
+28 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (29;AST_EDGE) 
+29 AST_NODE TIdentifier str TIdentifier str 
+30 AST_NODE ACmpeqBinop classsoot.jimple.parser.node.ACmpeqBinop ACmpeqBinop == (31;AST_EDGE) 
+31 AST_NODE TCmpeq == TCmpeq == 
+32 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate null (33;AST_EDGE) 
+33 AST_NODE ANullConstant classsoot.jimple.parser.node.ANullConstant ANullConstant null (34;AST_EDGE) 
+34 AST_NODE TNull null TNull null 
+35 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel1; (36;AST_EDGE) (39;AST_EDGE) (37;AST_EDGE) 
+36 AST_NODE TGoto goto TGoto goto 
+37 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label1 (38;AST_EDGE) 
+38 AST_NODE TIdentifier label1 TIdentifier label1 
+39 AST_NODE TSemicolon ; TSemicolon ; 
+40 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel0; (46;CFG_EDGE_C) (41;AST_EDGE) 
+41 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel0; (45;AST_EDGE) (42;AST_EDGE) (43;AST_EDGE) 
+42 AST_NODE TGoto goto TGoto goto 
+43 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label0 (44;AST_EDGE) 
+44 AST_NODE TIdentifier label0 TIdentifier label0 
+45 AST_NODE TSemicolon ; TSemicolon ; 
+46 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label0: (49;AST_EDGE) (47;AST_EDGE) (50;CFG_EDGE_C) 
+47 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label0 (48;AST_EDGE) 
+48 AST_NODE TIdentifier label0 TIdentifier label0 
+49 AST_NODE TColon : TColon : 
+50 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$0=virtualinvokestr.<java.lang.String:intlength()>(); (56;AST_EDGE) (55;AST_EDGE) (81;PDG_EDGE_D) (51;AST_EDGE) (80;AST_EDGE) (93;PDG_EDGE_D) (81;CFG_EDGE_C) 
+51 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$0 (52;AST_EDGE) 
+52 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$0 (53;AST_EDGE) 
+53 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$0 (54;AST_EDGE) 
+54 AST_NODE TIdentifier temp$0 TIdentifier temp$0 
+55 AST_NODE TEquals = TEquals = 
+56 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestr.<java.lang.String:intlength()>() (57;AST_EDGE) 
+57 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestr.<java.lang.String:intlength()>() (78;AST_EDGE) (79;AST_EDGE) (60;AST_EDGE) (58;AST_EDGE) (64;AST_EDGE) (63;AST_EDGE) 
+58 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (59;AST_EDGE) 
+59 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+60 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (61;AST_EDGE) 
+61 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (62;AST_EDGE) 
+62 AST_NODE TIdentifier str TIdentifier str 
+63 AST_NODE TDot . TDot . 
+64 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:intlength()> (75;AST_EDGE) (68;AST_EDGE) (77;AST_EDGE) (69;AST_EDGE) (76;AST_EDGE) (66;AST_EDGE) (73;AST_EDGE) (65;AST_EDGE) 
+65 AST_NODE TCmplt < TCmplt < 
+66 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (67;AST_EDGE) 
+67 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+68 AST_NODE TColon : TColon : 
+69 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType int (70;AST_EDGE) 
+70 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (71;AST_EDGE) 
+71 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (72;AST_EDGE) 
+72 AST_NODE TInt int TInt int 
+73 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName length (74;AST_EDGE) 
+74 AST_NODE TIdentifier length TIdentifier length 
+75 AST_NODE TLParen ( TLParen ( 
+76 AST_NODE TRParen ) TRParen ) 
+77 AST_NODE TCmpgt > TCmpgt > 
+78 AST_NODE TLParen ( TLParen ( 
+79 AST_NODE TRParen ) TRParen ) 
+80 AST_NODE TSemicolon ; TSemicolon ; 
+81 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement strLen=temp$0; (82;AST_EDGE) (92;AST_EDGE) (86;AST_EDGE) (87;AST_EDGE) (446;PDG_EDGE_D) (93;CFG_EDGE_C) (176;PDG_EDGE_D) 
+82 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable strLen (83;AST_EDGE) 
+83 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName strLen (84;AST_EDGE) 
+84 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName strLen (85;AST_EDGE) 
+85 AST_NODE TIdentifier strLen TIdentifier strLen 
+86 AST_NODE TEquals = TEquals = 
+87 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression temp$0 (88;AST_EDGE) 
+88 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$0 (89;AST_EDGE) 
+89 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$0 (90;AST_EDGE) 
+90 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$0 (91;AST_EDGE) 
+91 AST_NODE TIdentifier temp$0 TIdentifier temp$0 
+92 AST_NODE TSemicolon ; TSemicolon ; 
+93 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement iftemp$0==0gotolabel1; (128;PDG_EDGE_C) (106;AST_EDGE) (95;AST_EDGE) (144;PDG_EDGE_C) (117;CFG_EDGE_C) (121;PDG_EDGE_C) (117;PDG_EDGE_C) (94;AST_EDGE) (132;PDG_EDGE_C) (111;PDG_EDGE_C) (111;CFG_EDGE_C) 
+94 AST_NODE TIf if TIf if 
+95 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr temp$0==0 (96;AST_EDGE) 
+96 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$0==0 (97;AST_EDGE) (103;AST_EDGE) (101;AST_EDGE) 
+97 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$0 (98;AST_EDGE) 
+98 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$0 (99;AST_EDGE) 
+99 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$0 (100;AST_EDGE) 
+100 AST_NODE TIdentifier temp$0 TIdentifier temp$0 
+101 AST_NODE ACmpeqBinop classsoot.jimple.parser.node.ACmpeqBinop ACmpeqBinop == (102;AST_EDGE) 
+102 AST_NODE TCmpeq == TCmpeq == 
+103 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate 0 (104;AST_EDGE) 
+104 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant 0 (105;AST_EDGE) 
+105 AST_NODE TIntegerConstant 0 TIntegerConstant 0 
+106 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel1; (110;AST_EDGE) (107;AST_EDGE) (108;AST_EDGE) 
+107 AST_NODE TGoto goto TGoto goto 
+108 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label1 (109;AST_EDGE) 
+109 AST_NODE TIdentifier label1 TIdentifier label1 
+110 AST_NODE TSemicolon ; TSemicolon ; 
+111 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel2; (112;AST_EDGE) (128;CFG_EDGE_C) 
+112 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel2; (114;AST_EDGE) (113;AST_EDGE) (116;AST_EDGE) 
+113 AST_NODE TGoto goto TGoto goto 
+114 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label2 (115;AST_EDGE) 
+115 AST_NODE TIdentifier label2 TIdentifier label2 
+116 AST_NODE TSemicolon ; TSemicolon ; 
+117 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label1: (121;CFG_EDGE_C) (120;AST_EDGE) (118;AST_EDGE) 
+118 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label1 (119;AST_EDGE) 
+119 AST_NODE TIdentifier label1 TIdentifier label1 
+120 AST_NODE TColon : TColon : 
+121 CFG_NODE AReturnStatement classsoot.jimple.parser.node.AReturnStatement AReturnStatement returnstr; (122;AST_EDGE) (123;AST_EDGE) (1;CFG_EDGE_C) (127;AST_EDGE) 
+122 AST_NODE TReturn return TReturn return 
+123 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate str (124;AST_EDGE) 
+124 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (125;AST_EDGE) 
+125 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (126;AST_EDGE) 
+126 AST_NODE TIdentifier str TIdentifier str 
+127 AST_NODE TSemicolon ; TSemicolon ; 
+128 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label2: (131;AST_EDGE) (129;AST_EDGE) (132;CFG_EDGE_C) 
+129 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label2 (130;AST_EDGE) 
+130 AST_NODE TIdentifier label2 TIdentifier label2 
+131 AST_NODE TColon : TColon : 
+132 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement start=-1; (446;PDG_EDGE_D) (659;PDG_EDGE_D) (137;AST_EDGE) (143;AST_EDGE) (144;CFG_EDGE_C) (205;PDG_EDGE_D) (138;AST_EDGE) (176;PDG_EDGE_D) (133;AST_EDGE) (603;PDG_EDGE_D) (475;PDG_EDGE_D) (310;PDG_EDGE_D) 
+133 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable start (134;AST_EDGE) 
+134 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (135;AST_EDGE) 
+135 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (136;AST_EDGE) 
+136 AST_NODE TIdentifier start TIdentifier start 
+137 AST_NODE TEquals = TEquals = 
+138 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression -1 (139;AST_EDGE) 
+139 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate -1 (140;AST_EDGE) 
+140 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant -1 (142;AST_EDGE) (141;AST_EDGE) 
+141 AST_NODE TMinus - TMinus - 
+142 AST_NODE TIntegerConstant 1 TIntegerConstant 1 
+143 AST_NODE TSemicolon ; TSemicolon ; 
+144 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement ifstripChars==nullgotolabel3; (176;PDG_EDGE_C) (168;PDG_EDGE_C) (358;PDG_EDGE_C) (368;PDG_EDGE_C) (145;AST_EDGE) (162;PDG_EDGE_C) (172;PDG_EDGE_C) (403;PDG_EDGE_C) (146;AST_EDGE) (168;CFG_EDGE_C) (157;AST_EDGE) (362;PDG_EDGE_C) (162;CFG_EDGE_C) (372;PDG_EDGE_C) 
+145 AST_NODE TIf if TIf if 
+146 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr stripChars==null (147;AST_EDGE) 
+147 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr stripChars==null (154;AST_EDGE) (152;AST_EDGE) (148;AST_EDGE) 
+148 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate stripChars (149;AST_EDGE) 
+149 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName stripChars (150;AST_EDGE) 
+150 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName stripChars (151;AST_EDGE) 
+151 AST_NODE TIdentifier stripChars TIdentifier stripChars 
+152 AST_NODE ACmpeqBinop classsoot.jimple.parser.node.ACmpeqBinop ACmpeqBinop == (153;AST_EDGE) 
+153 AST_NODE TCmpeq == TCmpeq == 
+154 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate null (155;AST_EDGE) 
+155 AST_NODE ANullConstant classsoot.jimple.parser.node.ANullConstant ANullConstant null (156;AST_EDGE) 
+156 AST_NODE TNull null TNull null 
+157 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel3; (161;AST_EDGE) (159;AST_EDGE) (158;AST_EDGE) 
+158 AST_NODE TGoto goto TGoto goto 
+159 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label3 (160;AST_EDGE) 
+160 AST_NODE TIdentifier label3 TIdentifier label3 
+161 AST_NODE TSemicolon ; TSemicolon ; 
+162 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel8; (163;AST_EDGE) (368;CFG_EDGE_C) 
+163 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel8; (167;AST_EDGE) (164;AST_EDGE) (165;AST_EDGE) 
+164 AST_NODE TGoto goto TGoto goto 
+165 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label8 (166;AST_EDGE) 
+166 AST_NODE TIdentifier label8 TIdentifier label8 
+167 AST_NODE TSemicolon ; TSemicolon ; 
+168 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label3: (171;AST_EDGE) (169;AST_EDGE) (172;CFG_EDGE_C) 
+169 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label3 (170;AST_EDGE) 
+170 AST_NODE TIdentifier label3 TIdentifier label3 
+171 AST_NODE TColon : TColon : 
+172 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label4: (176;CFG_EDGE_C) (175;AST_EDGE) (173;AST_EDGE) 
+173 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label4 (174;AST_EDGE) 
+174 AST_NODE TIdentifier label4 TIdentifier label4 
+175 AST_NODE TColon : TColon : 
+176 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement ifstart!=strLengotolabel5; (246;PDG_EDGE_C) (177;AST_EDGE) (201;CFG_EDGE_C) (195;CFG_EDGE_C) (205;PDG_EDGE_C) (282;PDG_EDGE_C) (195;PDG_EDGE_C) (201;PDG_EDGE_C) (190;AST_EDGE) (178;AST_EDGE) 
+177 AST_NODE TIf if TIf if 
+178 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr start!=strLen (179;AST_EDGE) 
+179 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr start!=strLen (180;AST_EDGE) (184;AST_EDGE) (186;AST_EDGE) 
+180 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (181;AST_EDGE) 
+181 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (182;AST_EDGE) 
+182 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (183;AST_EDGE) 
+183 AST_NODE TIdentifier start TIdentifier start 
+184 AST_NODE ACmpneBinop classsoot.jimple.parser.node.ACmpneBinop ACmpneBinop != (185;AST_EDGE) 
+185 AST_NODE TCmpne != TCmpne != 
+186 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate strLen (187;AST_EDGE) 
+187 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName strLen (188;AST_EDGE) 
+188 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName strLen (189;AST_EDGE) 
+189 AST_NODE TIdentifier strLen TIdentifier strLen 
+190 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel5; (194;AST_EDGE) (191;AST_EDGE) (192;AST_EDGE) 
+191 AST_NODE TGoto goto TGoto goto 
+192 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label5 (193;AST_EDGE) 
+193 AST_NODE TIdentifier label5 TIdentifier label5 
+194 AST_NODE TSemicolon ; TSemicolon ; 
+195 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel7; (358;CFG_EDGE_C) (196;AST_EDGE) 
+196 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel7; (200;AST_EDGE) (197;AST_EDGE) (198;AST_EDGE) 
+197 AST_NODE TGoto goto TGoto goto 
+198 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label7 (199;AST_EDGE) 
+199 AST_NODE TIdentifier label7 TIdentifier label7 
+200 AST_NODE TSemicolon ; TSemicolon ; 
+201 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label5: (204;AST_EDGE) (205;CFG_EDGE_C) (202;AST_EDGE) 
+202 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label5 (203;AST_EDGE) 
+203 AST_NODE TIdentifier label5 TIdentifier label5 
+204 AST_NODE TColon : TColon : 
+205 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$1=virtualinvokestr.<java.lang.String:charcharAt(int)>(start); (246;PDG_EDGE_D) (245;AST_EDGE) (211;AST_EDGE) (246;CFG_EDGE_C) (210;AST_EDGE) (206;AST_EDGE) 
+206 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$1 (207;AST_EDGE) 
+207 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$1 (208;AST_EDGE) 
+208 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$1 (209;AST_EDGE) 
+209 AST_NODE TIdentifier temp$1 TIdentifier temp$1 
+210 AST_NODE TEquals = TEquals = 
+211 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestr.<java.lang.String:charcharAt(int)>(start) (212;AST_EDGE) 
+212 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestr.<java.lang.String:charcharAt(int)>(start) (213;AST_EDGE) (239;AST_EDGE) (218;AST_EDGE) (244;AST_EDGE) (219;AST_EDGE) (215;AST_EDGE) (238;AST_EDGE) 
+213 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (214;AST_EDGE) 
+214 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+215 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (216;AST_EDGE) 
+216 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (217;AST_EDGE) 
+217 AST_NODE TIdentifier str TIdentifier str 
+218 AST_NODE TDot . TDot . 
+219 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:charcharAt(int)> (231;AST_EDGE) (236;AST_EDGE) (237;AST_EDGE) (221;AST_EDGE) (228;AST_EDGE) (224;AST_EDGE) (220;AST_EDGE) (223;AST_EDGE) (230;AST_EDGE) 
+220 AST_NODE TCmplt < TCmplt < 
+221 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (222;AST_EDGE) 
+222 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+223 AST_NODE TColon : TColon : 
+224 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType char (225;AST_EDGE) 
+225 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType char (226;AST_EDGE) 
+226 AST_NODE ACharBaseTypeNoName classsoot.jimple.parser.node.ACharBaseTypeNoName ACharBaseTypeNoName char (227;AST_EDGE) 
+227 AST_NODE TChar char TChar char 
+228 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName charAt (229;AST_EDGE) 
+229 AST_NODE TIdentifier charAt TIdentifier charAt 
+230 AST_NODE TLParen ( TLParen ( 
+231 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList int (232;AST_EDGE) 
+232 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter int (233;AST_EDGE) 
+233 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (234;AST_EDGE) 
+234 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (235;AST_EDGE) 
+235 AST_NODE TInt int TInt int 
+236 AST_NODE TRParen ) TRParen ) 
+237 AST_NODE TCmpgt > TCmpgt > 
+238 AST_NODE TLParen ( TLParen ( 
+239 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList start (240;AST_EDGE) 
+240 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (241;AST_EDGE) 
+241 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (242;AST_EDGE) 
+242 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (243;AST_EDGE) 
+243 AST_NODE TIdentifier start TIdentifier start 
+244 AST_NODE TRParen ) TRParen ) 
+245 AST_NODE TSemicolon ; TSemicolon ; 
+246 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$2=staticinvoke<java.lang.Character:booleanisWhitespace(char)>(temp$1); (282;CFG_EDGE_C) (281;AST_EDGE) (282;PDG_EDGE_D) (247;AST_EDGE) (252;AST_EDGE) (251;AST_EDGE) 
+247 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$2 (248;AST_EDGE) 
+248 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$2 (249;AST_EDGE) 
+249 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$2 (250;AST_EDGE) 
+250 AST_NODE TIdentifier temp$2 TIdentifier temp$2 
+251 AST_NODE TEquals = TEquals = 
+252 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression staticinvoke<java.lang.Character:booleanisWhitespace(char)>(temp$1) (253;AST_EDGE) 
+253 AST_NODE AStaticInvokeExpr classsoot.jimple.parser.node.AStaticInvokeExpr AStaticInvokeExpr staticinvoke<java.lang.Character:booleanisWhitespace(char)>(temp$1) (254;AST_EDGE) (255;AST_EDGE) (280;AST_EDGE) (275;AST_EDGE) (274;AST_EDGE) 
+254 AST_NODE TStaticinvoke staticinvoke TStaticinvoke staticinvoke 
+255 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.Character:booleanisWhitespace(char)> (266;AST_EDGE) (259;AST_EDGE) (264;AST_EDGE) (257;AST_EDGE) (273;AST_EDGE) (260;AST_EDGE) (272;AST_EDGE) (267;AST_EDGE) (256;AST_EDGE) 
+256 AST_NODE TCmplt < TCmplt < 
+257 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.Character (258;AST_EDGE) 
+258 AST_NODE TFullIdentifier java.lang.Character TFullIdentifier java.lang.Character 
+259 AST_NODE TColon : TColon : 
+260 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType boolean (261;AST_EDGE) 
+261 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType boolean (262;AST_EDGE) 
+262 AST_NODE ABooleanBaseTypeNoName classsoot.jimple.parser.node.ABooleanBaseTypeNoName ABooleanBaseTypeNoName boolean (263;AST_EDGE) 
+263 AST_NODE TBoolean boolean TBoolean boolean 
+264 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName isWhitespace (265;AST_EDGE) 
+265 AST_NODE TIdentifier isWhitespace TIdentifier isWhitespace 
+266 AST_NODE TLParen ( TLParen ( 
+267 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList char (268;AST_EDGE) 
+268 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter char (269;AST_EDGE) 
+269 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType char (270;AST_EDGE) 
+270 AST_NODE ACharBaseTypeNoName classsoot.jimple.parser.node.ACharBaseTypeNoName ACharBaseTypeNoName char (271;AST_EDGE) 
+271 AST_NODE TChar char TChar char 
+272 AST_NODE TRParen ) TRParen ) 
+273 AST_NODE TCmpgt > TCmpgt > 
+274 AST_NODE TLParen ( TLParen ( 
+275 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList temp$1 (276;AST_EDGE) 
+276 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$1 (277;AST_EDGE) 
+277 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$1 (278;AST_EDGE) 
+278 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$1 (279;AST_EDGE) 
+279 AST_NODE TIdentifier temp$1 TIdentifier temp$1 
+280 AST_NODE TRParen ) TRParen ) 
+281 AST_NODE TSemicolon ; TSemicolon ; 
+282 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement iftemp$2==0gotolabel7; (340;PDG_EDGE_C) (284;AST_EDGE) (352;PDG_EDGE_C) (306;PDG_EDGE_C) (358;CFG_EDGE_C) (283;AST_EDGE) (300;CFG_EDGE_C) (300;PDG_EDGE_C) (295;AST_EDGE) (322;PDG_EDGE_C) (310;PDG_EDGE_C) 
+283 AST_NODE TIf if TIf if 
+284 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr temp$2==0 (285;AST_EDGE) 
+285 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$2==0 (286;AST_EDGE) (290;AST_EDGE) (292;AST_EDGE) 
+286 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$2 (287;AST_EDGE) 
+287 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$2 (288;AST_EDGE) 
+288 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$2 (289;AST_EDGE) 
+289 AST_NODE TIdentifier temp$2 TIdentifier temp$2 
+290 AST_NODE ACmpeqBinop classsoot.jimple.parser.node.ACmpeqBinop ACmpeqBinop == (291;AST_EDGE) 
+291 AST_NODE TCmpeq == TCmpeq == 
+292 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate 0 (293;AST_EDGE) 
+293 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant 0 (294;AST_EDGE) 
+294 AST_NODE TIntegerConstant 0 TIntegerConstant 0 
+295 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel7; (296;AST_EDGE) (299;AST_EDGE) (297;AST_EDGE) 
+296 AST_NODE TGoto goto TGoto goto 
+297 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label7 (298;AST_EDGE) 
+298 AST_NODE TIdentifier label7 TIdentifier label7 
+299 AST_NODE TSemicolon ; TSemicolon ; 
+300 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel6; (301;AST_EDGE) (306;CFG_EDGE_C) 
+301 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel6; (302;AST_EDGE) (303;AST_EDGE) (305;AST_EDGE) 
+302 AST_NODE TGoto goto TGoto goto 
+303 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label6 (304;AST_EDGE) 
+304 AST_NODE TIdentifier label6 TIdentifier label6 
+305 AST_NODE TSemicolon ; TSemicolon ; 
+306 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label6: (309;AST_EDGE) (307;AST_EDGE) (310;CFG_EDGE_C) 
+307 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label6 (308;AST_EDGE) 
+308 AST_NODE TIdentifier label6 TIdentifier label6 
+309 AST_NODE TColon : TColon : 
+310 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$3=start; (322;CFG_EDGE_C) (322;PDG_EDGE_D) (316;AST_EDGE) (315;AST_EDGE) (311;AST_EDGE) (321;AST_EDGE) 
+311 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$3 (312;AST_EDGE) 
+312 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$3 (313;AST_EDGE) 
+313 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$3 (314;AST_EDGE) 
+314 AST_NODE TIdentifier temp$3 TIdentifier temp$3 
+315 AST_NODE TEquals = TEquals = 
+316 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression start (317;AST_EDGE) 
+317 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (318;AST_EDGE) 
+318 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (319;AST_EDGE) 
+319 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (320;AST_EDGE) 
+320 AST_NODE TIdentifier start TIdentifier start 
+321 AST_NODE TSemicolon ; TSemicolon ; 
+322 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$4=temp$3+1; (340;PDG_EDGE_D) (339;AST_EDGE) (323;AST_EDGE) (340;CFG_EDGE_C) (328;AST_EDGE) (327;AST_EDGE) 
+323 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$4 (324;AST_EDGE) 
+324 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$4 (325;AST_EDGE) 
+325 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$4 (326;AST_EDGE) 
+326 AST_NODE TIdentifier temp$4 TIdentifier temp$4 
+327 AST_NODE TEquals = TEquals = 
+328 AST_NODE ABinopExpression classsoot.jimple.parser.node.ABinopExpression ABinopExpression temp$3+1 (329;AST_EDGE) 
+329 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$3+1 (336;AST_EDGE) (334;AST_EDGE) (330;AST_EDGE) 
+330 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$3 (331;AST_EDGE) 
+331 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$3 (332;AST_EDGE) 
+332 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$3 (333;AST_EDGE) 
+333 AST_NODE TIdentifier temp$3 TIdentifier temp$3 
+334 AST_NODE APlusBinop classsoot.jimple.parser.node.APlusBinop APlusBinop + (335;AST_EDGE) 
+335 AST_NODE TPlus + TPlus + 
+336 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate 1 (337;AST_EDGE) 
+337 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant 1 (338;AST_EDGE) 
+338 AST_NODE TIntegerConstant 1 TIntegerConstant 1 
+339 AST_NODE TSemicolon ; TSemicolon ; 
+340 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement start=temp$4; (346;AST_EDGE) (176;PDG_EDGE_D) (351;AST_EDGE) (341;AST_EDGE) (352;CFG_EDGE_C) (659;PDG_EDGE_D) (345;AST_EDGE) (310;PDG_EDGE_D) (205;PDG_EDGE_D) 
+341 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable start (342;AST_EDGE) 
+342 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (343;AST_EDGE) 
+343 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (344;AST_EDGE) 
+344 AST_NODE TIdentifier start TIdentifier start 
+345 AST_NODE TEquals = TEquals = 
+346 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression temp$4 (347;AST_EDGE) 
+347 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$4 (348;AST_EDGE) 
+348 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$4 (349;AST_EDGE) 
+349 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$4 (350;AST_EDGE) 
+350 AST_NODE TIdentifier temp$4 TIdentifier temp$4 
+351 AST_NODE TSemicolon ; TSemicolon ; 
+352 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel4; (353;AST_EDGE) (172;CFG_EDGE_C) 
+353 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel4; (354;AST_EDGE) (357;AST_EDGE) (355;AST_EDGE) 
+354 AST_NODE TGoto goto TGoto goto 
+355 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label4 (356;AST_EDGE) 
+356 AST_NODE TIdentifier label4 TIdentifier label4 
+357 AST_NODE TSemicolon ; TSemicolon ; 
+358 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label7: (361;AST_EDGE) (362;CFG_EDGE_C) (359;AST_EDGE) 
+359 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label7 (360;AST_EDGE) 
+360 AST_NODE TIdentifier label7 TIdentifier label7 
+361 AST_NODE TColon : TColon : 
+362 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel15; (363;AST_EDGE) (655;CFG_EDGE_C) 
+363 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel15; (367;AST_EDGE) (364;AST_EDGE) (365;AST_EDGE) 
+364 AST_NODE TGoto goto TGoto goto 
+365 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label15 (366;AST_EDGE) 
+366 AST_NODE TIdentifier label15 TIdentifier label15 
+367 AST_NODE TSemicolon ; TSemicolon ; 
+368 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label8: (369;AST_EDGE) (371;AST_EDGE) (372;CFG_EDGE_C) 
+369 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label8 (370;AST_EDGE) 
+370 AST_NODE TIdentifier label8 TIdentifier label8 
+371 AST_NODE TColon : TColon : 
+372 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$5=virtualinvokestripChars.<java.lang.String:booleanisEmpty()>(); (402;AST_EDGE) (378;AST_EDGE) (373;AST_EDGE) (377;AST_EDGE) (403;CFG_EDGE_C) (403;PDG_EDGE_D) 
+373 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$5 (374;AST_EDGE) 
+374 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$5 (375;AST_EDGE) 
+375 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$5 (376;AST_EDGE) 
+376 AST_NODE TIdentifier temp$5 TIdentifier temp$5 
+377 AST_NODE TEquals = TEquals = 
+378 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestripChars.<java.lang.String:booleanisEmpty()>() (379;AST_EDGE) 
+379 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestripChars.<java.lang.String:booleanisEmpty()>() (401;AST_EDGE) (386;AST_EDGE) (380;AST_EDGE) (385;AST_EDGE) (400;AST_EDGE) (382;AST_EDGE) 
+380 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (381;AST_EDGE) 
+381 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+382 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName stripChars (383;AST_EDGE) 
+383 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName stripChars (384;AST_EDGE) 
+384 AST_NODE TIdentifier stripChars TIdentifier stripChars 
+385 AST_NODE TDot . TDot . 
+386 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:booleanisEmpty()> (391;AST_EDGE) (390;AST_EDGE) (398;AST_EDGE) (388;AST_EDGE) (395;AST_EDGE) (399;AST_EDGE) (397;AST_EDGE) (387;AST_EDGE) 
+387 AST_NODE TCmplt < TCmplt < 
+388 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (389;AST_EDGE) 
+389 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+390 AST_NODE TColon : TColon : 
+391 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType boolean (392;AST_EDGE) 
+392 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType boolean (393;AST_EDGE) 
+393 AST_NODE ABooleanBaseTypeNoName classsoot.jimple.parser.node.ABooleanBaseTypeNoName ABooleanBaseTypeNoName boolean (394;AST_EDGE) 
+394 AST_NODE TBoolean boolean TBoolean boolean 
+395 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName isEmpty (396;AST_EDGE) 
+396 AST_NODE TIdentifier isEmpty TIdentifier isEmpty 
+397 AST_NODE TLParen ( TLParen ( 
+398 AST_NODE TRParen ) TRParen ) 
+399 AST_NODE TCmpgt > TCmpgt > 
+400 AST_NODE TLParen ( TLParen ( 
+401 AST_NODE TRParen ) TRParen ) 
+402 AST_NODE TSemicolon ; TSemicolon ; 
+403 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement iftemp$5==0gotolabel10; (438;CFG_EDGE_C) (431;PDG_EDGE_C) (421;CFG_EDGE_C) (421;PDG_EDGE_C) (651;PDG_EDGE_C) (446;PDG_EDGE_C) (427;PDG_EDGE_C) (438;PDG_EDGE_C) (442;PDG_EDGE_C) (416;AST_EDGE) (405;AST_EDGE) (404;AST_EDGE) 
+404 AST_NODE TIf if TIf if 
+405 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr temp$5==0 (406;AST_EDGE) 
+406 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$5==0 (411;AST_EDGE) (407;AST_EDGE) (413;AST_EDGE) 
+407 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$5 (408;AST_EDGE) 
+408 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$5 (409;AST_EDGE) 
+409 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$5 (410;AST_EDGE) 
+410 AST_NODE TIdentifier temp$5 TIdentifier temp$5 
+411 AST_NODE ACmpeqBinop classsoot.jimple.parser.node.ACmpeqBinop ACmpeqBinop == (412;AST_EDGE) 
+412 AST_NODE TCmpeq == TCmpeq == 
+413 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate 0 (414;AST_EDGE) 
+414 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant 0 (415;AST_EDGE) 
+415 AST_NODE TIntegerConstant 0 TIntegerConstant 0 
+416 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel10; (417;AST_EDGE) (420;AST_EDGE) (418;AST_EDGE) 
+417 AST_NODE TGoto goto TGoto goto 
+418 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label10 (419;AST_EDGE) 
+419 AST_NODE TIdentifier label10 TIdentifier label10 
+420 AST_NODE TSemicolon ; TSemicolon ; 
+421 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel9; (427;CFG_EDGE_C) (422;AST_EDGE) 
+422 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel9; (424;AST_EDGE) (426;AST_EDGE) (423;AST_EDGE) 
+423 AST_NODE TGoto goto TGoto goto 
+424 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label9 (425;AST_EDGE) 
+425 AST_NODE TIdentifier label9 TIdentifier label9 
+426 AST_NODE TSemicolon ; TSemicolon ; 
+427 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label9: (430;AST_EDGE) (428;AST_EDGE) (431;CFG_EDGE_C) 
+428 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label9 (429;AST_EDGE) 
+429 AST_NODE TIdentifier label9 TIdentifier label9 
+430 AST_NODE TColon : TColon : 
+431 CFG_NODE AReturnStatement classsoot.jimple.parser.node.AReturnStatement AReturnStatement returnstr; (437;AST_EDGE) (433;AST_EDGE) (432;AST_EDGE) (1;CFG_EDGE_C) 
+432 AST_NODE TReturn return TReturn return 
+433 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate str (434;AST_EDGE) 
+434 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (435;AST_EDGE) 
+435 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (436;AST_EDGE) 
+436 AST_NODE TIdentifier str TIdentifier str 
+437 AST_NODE TSemicolon ; TSemicolon ; 
+438 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label10: (441;AST_EDGE) (442;CFG_EDGE_C) (439;AST_EDGE) 
+439 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label10 (440;AST_EDGE) 
+440 AST_NODE TIdentifier label10 TIdentifier label10 
+441 AST_NODE TColon : TColon : 
+442 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label11: (446;CFG_EDGE_C) (445;AST_EDGE) (443;AST_EDGE) 
+443 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label11 (444;AST_EDGE) 
+444 AST_NODE TIdentifier label11 TIdentifier label11 
+445 AST_NODE TColon : TColon : 
+446 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement ifstart!=strLengotolabel12; (516;PDG_EDGE_C) (460;AST_EDGE) (471;PDG_EDGE_C) (465;CFG_EDGE_C) (448;AST_EDGE) (465;PDG_EDGE_C) (574;PDG_EDGE_C) (471;CFG_EDGE_C) (447;AST_EDGE) (533;PDG_EDGE_C) (475;PDG_EDGE_C) 
+447 AST_NODE TIf if TIf if 
+448 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr start!=strLen (449;AST_EDGE) 
+449 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr start!=strLen (450;AST_EDGE) (456;AST_EDGE) (454;AST_EDGE) 
+450 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (451;AST_EDGE) 
+451 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (452;AST_EDGE) 
+452 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (453;AST_EDGE) 
+453 AST_NODE TIdentifier start TIdentifier start 
+454 AST_NODE ACmpneBinop classsoot.jimple.parser.node.ACmpneBinop ACmpneBinop != (455;AST_EDGE) 
+455 AST_NODE TCmpne != TCmpne != 
+456 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate strLen (457;AST_EDGE) 
+457 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName strLen (458;AST_EDGE) 
+458 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName strLen (459;AST_EDGE) 
+459 AST_NODE TIdentifier strLen TIdentifier strLen 
+460 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel12; (464;AST_EDGE) (462;AST_EDGE) (461;AST_EDGE) 
+461 AST_NODE TGoto goto TGoto goto 
+462 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label12 (463;AST_EDGE) 
+463 AST_NODE TIdentifier label12 TIdentifier label12 
+464 AST_NODE TSemicolon ; TSemicolon ; 
+465 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel14; (466;AST_EDGE) (651;CFG_EDGE_C) 
+466 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel14; (470;AST_EDGE) (467;AST_EDGE) (468;AST_EDGE) 
+467 AST_NODE TGoto goto TGoto goto 
+468 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label14 (469;AST_EDGE) 
+469 AST_NODE TIdentifier label14 TIdentifier label14 
+470 AST_NODE TSemicolon ; TSemicolon ; 
+471 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label12: (472;AST_EDGE) (475;CFG_EDGE_C) (474;AST_EDGE) 
+472 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label12 (473;AST_EDGE) 
+473 AST_NODE TIdentifier label12 TIdentifier label12 
+474 AST_NODE TColon : TColon : 
+475 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$6=virtualinvokestr.<java.lang.String:charcharAt(int)>(start); (515;AST_EDGE) (481;AST_EDGE) (476;AST_EDGE) (516;CFG_EDGE_C) (516;PDG_EDGE_D) (480;AST_EDGE) 
+476 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$6 (477;AST_EDGE) 
+477 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$6 (478;AST_EDGE) 
+478 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$6 (479;AST_EDGE) 
+479 AST_NODE TIdentifier temp$6 TIdentifier temp$6 
+480 AST_NODE TEquals = TEquals = 
+481 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestr.<java.lang.String:charcharAt(int)>(start) (482;AST_EDGE) 
+482 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestr.<java.lang.String:charcharAt(int)>(start) (509;AST_EDGE) (483;AST_EDGE) (514;AST_EDGE) (489;AST_EDGE) (488;AST_EDGE) (508;AST_EDGE) (485;AST_EDGE) 
+483 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (484;AST_EDGE) 
+484 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+485 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (486;AST_EDGE) 
+486 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (487;AST_EDGE) 
+487 AST_NODE TIdentifier str TIdentifier str 
+488 AST_NODE TDot . TDot . 
+489 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:charcharAt(int)> (490;AST_EDGE) (500;AST_EDGE) (491;AST_EDGE) (501;AST_EDGE) (506;AST_EDGE) (498;AST_EDGE) (493;AST_EDGE) (494;AST_EDGE) (507;AST_EDGE) 
+490 AST_NODE TCmplt < TCmplt < 
+491 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (492;AST_EDGE) 
+492 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+493 AST_NODE TColon : TColon : 
+494 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType char (495;AST_EDGE) 
+495 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType char (496;AST_EDGE) 
+496 AST_NODE ACharBaseTypeNoName classsoot.jimple.parser.node.ACharBaseTypeNoName ACharBaseTypeNoName char (497;AST_EDGE) 
+497 AST_NODE TChar char TChar char 
+498 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName charAt (499;AST_EDGE) 
+499 AST_NODE TIdentifier charAt TIdentifier charAt 
+500 AST_NODE TLParen ( TLParen ( 
+501 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList int (502;AST_EDGE) 
+502 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter int (503;AST_EDGE) 
+503 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (504;AST_EDGE) 
+504 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (505;AST_EDGE) 
+505 AST_NODE TInt int TInt int 
+506 AST_NODE TRParen ) TRParen ) 
+507 AST_NODE TCmpgt > TCmpgt > 
+508 AST_NODE TLParen ( TLParen ( 
+509 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList start (510;AST_EDGE) 
+510 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (511;AST_EDGE) 
+511 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (512;AST_EDGE) 
+512 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (513;AST_EDGE) 
+513 AST_NODE TIdentifier start TIdentifier start 
+514 AST_NODE TRParen ) TRParen ) 
+515 AST_NODE TSemicolon ; TSemicolon ; 
+516 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$7=(int)temp$6; (533;PDG_EDGE_D) (533;CFG_EDGE_C) (521;AST_EDGE) (532;AST_EDGE) (517;AST_EDGE) (522;AST_EDGE) 
+517 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$7 (518;AST_EDGE) 
+518 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$7 (519;AST_EDGE) 
+519 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$7 (520;AST_EDGE) 
+520 AST_NODE TIdentifier temp$7 TIdentifier temp$7 
+521 AST_NODE TEquals = TEquals = 
+522 AST_NODE ACastExpression classsoot.jimple.parser.node.ACastExpression ACastExpression (int)temp$6 (523;AST_EDGE) (524;AST_EDGE) (527;AST_EDGE) (528;AST_EDGE) 
+523 AST_NODE TLParen ( TLParen ( 
+524 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (525;AST_EDGE) 
+525 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (526;AST_EDGE) 
+526 AST_NODE TInt int TInt int 
+527 AST_NODE TRParen ) TRParen ) 
+528 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$6 (529;AST_EDGE) 
+529 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$6 (530;AST_EDGE) 
+530 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$6 (531;AST_EDGE) 
+531 AST_NODE TIdentifier temp$6 TIdentifier temp$6 
+532 AST_NODE TSemicolon ; TSemicolon ; 
+533 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$8=virtualinvokestripChars.<java.lang.String:intindexOf(int)>(temp$7); (539;AST_EDGE) (574;CFG_EDGE_C) (534;AST_EDGE) (573;AST_EDGE) (574;PDG_EDGE_D) (538;AST_EDGE) 
+534 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$8 (535;AST_EDGE) 
+535 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$8 (536;AST_EDGE) 
+536 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$8 (537;AST_EDGE) 
+537 AST_NODE TIdentifier temp$8 TIdentifier temp$8 
+538 AST_NODE TEquals = TEquals = 
+539 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestripChars.<java.lang.String:intindexOf(int)>(temp$7) (540;AST_EDGE) 
+540 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestripChars.<java.lang.String:intindexOf(int)>(temp$7) (567;AST_EDGE) (541;AST_EDGE) (572;AST_EDGE) (566;AST_EDGE) (547;AST_EDGE) (543;AST_EDGE) (546;AST_EDGE) 
+541 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (542;AST_EDGE) 
+542 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+543 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName stripChars (544;AST_EDGE) 
+544 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName stripChars (545;AST_EDGE) 
+545 AST_NODE TIdentifier stripChars TIdentifier stripChars 
+546 AST_NODE TDot . TDot . 
+547 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:intindexOf(int)> (564;AST_EDGE) (551;AST_EDGE) (559;AST_EDGE) (565;AST_EDGE) (558;AST_EDGE) (556;AST_EDGE) (552;AST_EDGE) (549;AST_EDGE) (548;AST_EDGE) 
+548 AST_NODE TCmplt < TCmplt < 
+549 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (550;AST_EDGE) 
+550 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+551 AST_NODE TColon : TColon : 
+552 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType int (553;AST_EDGE) 
+553 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (554;AST_EDGE) 
+554 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (555;AST_EDGE) 
+555 AST_NODE TInt int TInt int 
+556 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName indexOf (557;AST_EDGE) 
+557 AST_NODE TIdentifier indexOf TIdentifier indexOf 
+558 AST_NODE TLParen ( TLParen ( 
+559 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList int (560;AST_EDGE) 
+560 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter int (561;AST_EDGE) 
+561 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (562;AST_EDGE) 
+562 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (563;AST_EDGE) 
+563 AST_NODE TInt int TInt int 
+564 AST_NODE TRParen ) TRParen ) 
+565 AST_NODE TCmpgt > TCmpgt > 
+566 AST_NODE TLParen ( TLParen ( 
+567 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList temp$7 (568;AST_EDGE) 
+568 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$7 (569;AST_EDGE) 
+569 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$7 (570;AST_EDGE) 
+570 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$7 (571;AST_EDGE) 
+571 AST_NODE TIdentifier temp$7 TIdentifier temp$7 
+572 AST_NODE TRParen ) TRParen ) 
+573 AST_NODE TSemicolon ; TSemicolon ; 
+574 CFG_NODE AIfStatement classsoot.jimple.parser.node.AIfStatement AIfStatement iftemp$8!=-1gotolabel13; (593;PDG_EDGE_C) (615;PDG_EDGE_C) (588;AST_EDGE) (599;CFG_EDGE_C) (576;AST_EDGE) (599;PDG_EDGE_C) (603;PDG_EDGE_C) (633;PDG_EDGE_C) (593;CFG_EDGE_C) (645;PDG_EDGE_C) (575;AST_EDGE) 
+575 AST_NODE TIf if TIf if 
+576 AST_NODE ABinopBoolExpr classsoot.jimple.parser.node.ABinopBoolExpr ABinopBoolExpr temp$8!=-1 (577;AST_EDGE) 
+577 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$8!=-1 (578;AST_EDGE) (584;AST_EDGE) (582;AST_EDGE) 
+578 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$8 (579;AST_EDGE) 
+579 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$8 (580;AST_EDGE) 
+580 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$8 (581;AST_EDGE) 
+581 AST_NODE TIdentifier temp$8 TIdentifier temp$8 
+582 AST_NODE ACmpneBinop classsoot.jimple.parser.node.ACmpneBinop ACmpneBinop != (583;AST_EDGE) 
+583 AST_NODE TCmpne != TCmpne != 
+584 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate -1 (585;AST_EDGE) 
+585 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant -1 (587;AST_EDGE) (586;AST_EDGE) 
+586 AST_NODE TMinus - TMinus - 
+587 AST_NODE TIntegerConstant 1 TIntegerConstant 1 
+588 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel13; (590;AST_EDGE) (589;AST_EDGE) (592;AST_EDGE) 
+589 AST_NODE TGoto goto TGoto goto 
+590 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label13 (591;AST_EDGE) 
+591 AST_NODE TIdentifier label13 TIdentifier label13 
+592 AST_NODE TSemicolon ; TSemicolon ; 
+593 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel14; (651;CFG_EDGE_C) (594;AST_EDGE) 
+594 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel14; (596;AST_EDGE) (595;AST_EDGE) (598;AST_EDGE) 
+595 AST_NODE TGoto goto TGoto goto 
+596 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label14 (597;AST_EDGE) 
+597 AST_NODE TIdentifier label14 TIdentifier label14 
+598 AST_NODE TSemicolon ; TSemicolon ; 
+599 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label13: (602;AST_EDGE) (600;AST_EDGE) (603;CFG_EDGE_C) 
+600 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label13 (601;AST_EDGE) 
+601 AST_NODE TIdentifier label13 TIdentifier label13 
+602 AST_NODE TColon : TColon : 
+603 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$9=start; (608;AST_EDGE) (615;CFG_EDGE_C) (604;AST_EDGE) (614;AST_EDGE) (615;PDG_EDGE_D) (609;AST_EDGE) 
+604 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$9 (605;AST_EDGE) 
+605 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$9 (606;AST_EDGE) 
+606 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$9 (607;AST_EDGE) 
+607 AST_NODE TIdentifier temp$9 TIdentifier temp$9 
+608 AST_NODE TEquals = TEquals = 
+609 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression start (610;AST_EDGE) 
+610 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (611;AST_EDGE) 
+611 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (612;AST_EDGE) 
+612 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (613;AST_EDGE) 
+613 AST_NODE TIdentifier start TIdentifier start 
+614 AST_NODE TSemicolon ; TSemicolon ; 
+615 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$10=temp$9+1; (632;AST_EDGE) (616;AST_EDGE) (633;PDG_EDGE_D) (633;CFG_EDGE_C) (620;AST_EDGE) (621;AST_EDGE) 
+616 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$10 (617;AST_EDGE) 
+617 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$10 (618;AST_EDGE) 
+618 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$10 (619;AST_EDGE) 
+619 AST_NODE TIdentifier temp$10 TIdentifier temp$10 
+620 AST_NODE TEquals = TEquals = 
+621 AST_NODE ABinopExpression classsoot.jimple.parser.node.ABinopExpression ABinopExpression temp$9+1 (622;AST_EDGE) 
+622 AST_NODE ABinopExpr classsoot.jimple.parser.node.ABinopExpr ABinopExpr temp$9+1 (627;AST_EDGE) (623;AST_EDGE) (629;AST_EDGE) 
+623 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$9 (624;AST_EDGE) 
+624 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$9 (625;AST_EDGE) 
+625 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$9 (626;AST_EDGE) 
+626 AST_NODE TIdentifier temp$9 TIdentifier temp$9 
+627 AST_NODE APlusBinop classsoot.jimple.parser.node.APlusBinop APlusBinop + (628;AST_EDGE) 
+628 AST_NODE TPlus + TPlus + 
+629 AST_NODE AConstantImmediate classsoot.jimple.parser.node.AConstantImmediate AConstantImmediate 1 (630;AST_EDGE) 
+630 AST_NODE AIntegerConstant classsoot.jimple.parser.node.AIntegerConstant AIntegerConstant 1 (631;AST_EDGE) 
+631 AST_NODE TIntegerConstant 1 TIntegerConstant 1 
+632 AST_NODE TSemicolon ; TSemicolon ; 
+633 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement start=temp$10; (446;PDG_EDGE_D) (634;AST_EDGE) (638;AST_EDGE) (603;PDG_EDGE_D) (659;PDG_EDGE_D) (639;AST_EDGE) (475;PDG_EDGE_D) (644;AST_EDGE) (645;CFG_EDGE_C) 
+634 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable start (635;AST_EDGE) 
+635 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (636;AST_EDGE) 
+636 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (637;AST_EDGE) 
+637 AST_NODE TIdentifier start TIdentifier start 
+638 AST_NODE TEquals = TEquals = 
+639 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression temp$10 (640;AST_EDGE) 
+640 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$10 (641;AST_EDGE) 
+641 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$10 (642;AST_EDGE) 
+642 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$10 (643;AST_EDGE) 
+643 AST_NODE TIdentifier temp$10 TIdentifier temp$10 
+644 AST_NODE TSemicolon ; TSemicolon ; 
+645 CFG_NODE AGotoStatement classsoot.jimple.parser.node.AGotoStatement AGotoStatement gotolabel11; (442;CFG_EDGE_C) (646;AST_EDGE) 
+646 AST_NODE AGotoStmt classsoot.jimple.parser.node.AGotoStmt AGotoStmt gotolabel11; (648;AST_EDGE) (647;AST_EDGE) (650;AST_EDGE) 
+647 AST_NODE TGoto goto TGoto goto 
+648 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label11 (649;AST_EDGE) 
+649 AST_NODE TIdentifier label11 TIdentifier label11 
+650 AST_NODE TSemicolon ; TSemicolon ; 
+651 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label14: (655;CFG_EDGE_C) (652;AST_EDGE) (654;AST_EDGE) 
+652 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label14 (653;AST_EDGE) 
+653 AST_NODE TIdentifier label14 TIdentifier label14 
+654 AST_NODE TColon : TColon : 
+655 CFG_NODE ALabelStatement classsoot.jimple.parser.node.ALabelStatement ALabelStatement label15: (659;CFG_EDGE_C) (658;AST_EDGE) (656;AST_EDGE) 
+656 AST_NODE ALabelName classsoot.jimple.parser.node.ALabelName ALabelName label15 (657;AST_EDGE) 
+657 AST_NODE TIdentifier label15 TIdentifier label15 
+658 AST_NODE TColon : TColon : 
+659 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$11=virtualinvokestr.<java.lang.String:java.lang.Stringsubstring(int)>(start); (699;CFG_EDGE_C) (665;AST_EDGE) (699;PDG_EDGE_D) (698;AST_EDGE) (664;AST_EDGE) (660;AST_EDGE) 
+660 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$11 (661;AST_EDGE) 
+661 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$11 (662;AST_EDGE) 
+662 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$11 (663;AST_EDGE) 
+663 AST_NODE TIdentifier temp$11 TIdentifier temp$11 
+664 AST_NODE TEquals = TEquals = 
+665 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression virtualinvokestr.<java.lang.String:java.lang.Stringsubstring(int)>(start) (666;AST_EDGE) 
+666 AST_NODE ANonstaticInvokeExpr classsoot.jimple.parser.node.ANonstaticInvokeExpr ANonstaticInvokeExpr virtualinvokestr.<java.lang.String:java.lang.Stringsubstring(int)>(start) (673;AST_EDGE) (691;AST_EDGE) (692;AST_EDGE) (669;AST_EDGE) (672;AST_EDGE) (697;AST_EDGE) (667;AST_EDGE) 
+667 AST_NODE AVirtualNonstaticInvoke classsoot.jimple.parser.node.AVirtualNonstaticInvoke AVirtualNonstaticInvoke virtualinvoke (668;AST_EDGE) 
+668 AST_NODE TVirtualinvoke virtualinvoke TVirtualinvoke virtualinvoke 
+669 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName str (670;AST_EDGE) 
+670 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName str (671;AST_EDGE) 
+671 AST_NODE TIdentifier str TIdentifier str 
+672 AST_NODE TDot . TDot . 
+673 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <java.lang.String:java.lang.Stringsubstring(int)> (683;AST_EDGE) (681;AST_EDGE) (689;AST_EDGE) (677;AST_EDGE) (684;AST_EDGE) (690;AST_EDGE) (675;AST_EDGE) (678;AST_EDGE) (674;AST_EDGE) 
+674 AST_NODE TCmplt < TCmplt < 
+675 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName java.lang.String (676;AST_EDGE) 
+676 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+677 AST_NODE TColon : TColon : 
+678 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType java.lang.String (679;AST_EDGE) 
+679 AST_NODE AFullIdentNonvoidType classsoot.jimple.parser.node.AFullIdentNonvoidType AFullIdentNonvoidType java.lang.String (680;AST_EDGE) 
+680 AST_NODE TFullIdentifier java.lang.String TFullIdentifier java.lang.String 
+681 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName substring (682;AST_EDGE) 
+682 AST_NODE TIdentifier substring TIdentifier substring 
+683 AST_NODE TLParen ( TLParen ( 
+684 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList int (685;AST_EDGE) 
+685 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter int (686;AST_EDGE) 
+686 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (687;AST_EDGE) 
+687 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (688;AST_EDGE) 
+688 AST_NODE TInt int TInt int 
+689 AST_NODE TRParen ) TRParen ) 
+690 AST_NODE TCmpgt > TCmpgt > 
+691 AST_NODE TLParen ( TLParen ( 
+692 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList start (693;AST_EDGE) 
+693 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate start (694;AST_EDGE) 
+694 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName start (695;AST_EDGE) 
+695 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName start (696;AST_EDGE) 
+696 AST_NODE TIdentifier start TIdentifier start 
+697 AST_NODE TRParen ) TRParen ) 
+698 AST_NODE TSemicolon ; TSemicolon ; 
+699 CFG_NODE AReturnStatement classsoot.jimple.parser.node.AReturnStatement AReturnStatement returntemp$11; (700;AST_EDGE) (1;CFG_EDGE_C) (705;AST_EDGE) (701;AST_EDGE) 
+700 AST_NODE TReturn return TReturn return 
+701 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$11 (702;AST_EDGE) 
+702 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$11 (703;AST_EDGE) 
+703 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$11 (704;AST_EDGE) 
+704 AST_NODE TIdentifier temp$11 TIdentifier temp$11 
+705 AST_NODE TSemicolon ; TSemicolon ; 

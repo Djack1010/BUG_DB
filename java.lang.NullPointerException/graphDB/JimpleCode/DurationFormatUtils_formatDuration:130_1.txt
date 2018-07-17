@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public static java.lang.String formatDuration(long, java.lang.String, boolean)
+    {
+        long durationMillis, days, hours, minutes, seconds, milliseconds, temp$2, temp$3, temp$4, temp$7, temp$8, temp$9, temp$12, temp$13, temp$14, temp$17, temp$18, temp$19;
+        java.lang.String format, temp$20;
+        boolean padWithZeros, temp$1, temp$6, temp$11, temp$16;
+        org.apache.commons.lang3.time.DurationFormatUtils$Token[] tokens;
+        java.lang.Object temp$0, temp$5, temp$10, temp$15;
+
+        durationMillis := @parameter0: long;
+        format := @parameter1: java.lang.String;
+        padWithZeros := @parameter2: boolean;
+        staticinvoke <org.apache.commons.lang3.Validate: void inclusiveBetween(long,long,long,java.lang.String)>(0L, 9223372036854775807L, durationMillis, "durationMillis must not be negative");
+        tokens = null;
+        days = 0L;
+        hours = 0L;
+        minutes = 0L;
+        seconds = 0L;
+        milliseconds = durationMillis;
+        temp$0 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object d>;
+        temp$1 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$0);
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = milliseconds / 86400000L;
+        days = temp$2;
+        temp$3 = days * 86400000L;
+        temp$4 = milliseconds - temp$3;
+        milliseconds = temp$4;
+
+     label1:
+        nop;
+        temp$5 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object H>;
+        temp$6 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$5);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$7 = milliseconds / 3600000L;
+        hours = temp$7;
+        temp$8 = hours * 3600000L;
+        temp$9 = milliseconds - temp$8;
+        milliseconds = temp$9;
+
+     label3:
+        nop;
+        temp$10 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object m>;
+        temp$11 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$10);
+        if temp$11 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$12 = milliseconds / 60000L;
+        minutes = temp$12;
+        temp$13 = minutes * 60000L;
+        temp$14 = milliseconds - temp$13;
+        milliseconds = temp$14;
+
+     label5:
+        nop;
+        temp$15 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object s>;
+        temp$16 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$15);
+        if temp$16 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$17 = milliseconds / 1000L;
+        seconds = temp$17;
+        temp$18 = seconds * 1000L;
+        temp$19 = milliseconds - temp$18;
+        milliseconds = temp$19;
+
+     label7:
+        nop;
+        temp$20 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.String format(org.apache.commons.lang3.time.DurationFormatUtils$Token[],long,long,long,long,long,long,long,boolean)>(tokens, 0L, 0L, days, hours, minutes, seconds, milliseconds, padWithZeros);
+        return temp$20;
+    }
+}

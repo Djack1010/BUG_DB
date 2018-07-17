@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static java.lang.String unicodeEscaped(java.lang.Character)
+    {
+        java.lang.Character ch;
+        char temp$0;
+        java.lang.String temp$1;
+
+        ch := @parameter0: java.lang.Character;
+        temp$0 = virtualinvoke ch.<java.lang.Character: char charValue()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.CharUtils: java.lang.String unicodeEscaped(char)>(temp$0);
+        return temp$1;
+    }
+}

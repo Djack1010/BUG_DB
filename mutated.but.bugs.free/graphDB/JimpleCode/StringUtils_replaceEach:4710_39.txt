@@ -1,0 +1,506 @@
+public class WrapClass 
+{
+    private static final java.lang.String replaceEach(java.lang.String, java.lang.String[], java.lang.String[], boolean, int)
+    {
+        java.lang.String text, temp$6, temp$12, temp$15, temp$19, temp$22, temp$32, temp$35, temp$38, temp$42, temp$64, temp$69, temp$80, temp$83, temp$87, temp$90, result, temp$102, temp$104;
+        java.lang.String[] searchList, replacementList, temp$10, temp$13, temp$17, temp$20, temp$30, temp$33, temp$36, temp$40, temp$62, temp$67, temp$78, temp$81, temp$85, temp$88;
+        boolean repeat, temp$0, temp$9, temp$16, temp$26, temp$77, temp$84, temp$94;
+        int timeToLive, temp$1, temp$2, searchLength, replacementLength, textIndex, replaceIndex, tempIndex, i, temp$8, temp$11, temp$14, temp$18, temp$21, temp$23, temp$25, temp$27, temp$28, start, increase, i, temp$29, temp$31, temp$34, greater, temp$37, temp$39, temp$41, temp$43, temp$44, temp$45, temp$46, temp$47, temp$48, temp$49, temp$50, temp$51, temp$52, temp$53, temp$55, temp$56, temp$57, i, temp$60, temp$61, temp$63, temp$66, temp$68, temp$70, temp$71, temp$72, temp$73, temp$74, i, temp$76, temp$79, temp$82, temp$86, temp$89, temp$91, temp$93, temp$95, temp$96, textLength, temp$97, i, temp$100, temp$101, temp$103;
+        java.lang.IllegalStateException temp$3;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.StringBuffer temp$5;
+        boolean[] noMoreMatchesForReplIndex, temp$7, temp$24, temp$75, temp$92;
+        java.lang.StringBuilder buf, temp$54, temp$59, temp$65, temp$99;
+        char temp$58, temp$98;
+
+        text := @parameter0: java.lang.String;
+        searchList := @parameter1: java.lang.String[];
+        replacementList := @parameter2: java.lang.String[];
+        repeat := @parameter3: boolean;
+        timeToLive := @parameter4: int;
+        if text == null goto label5;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke text.<java.lang.String: boolean isEmpty()>();
+        if temp$0 == 0 goto label1;
+
+        goto label5;
+
+        goto label1;
+
+     label1:
+        nop;
+        if searchList == null goto label5;
+
+        goto label2;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = lengthof searchList;
+        if temp$1 == 0 goto label5;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        if replacementList == null goto label5;
+
+        goto label4;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$2 = lengthof replacementList;
+        if temp$2 == 0 goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        return text;
+
+     label6:
+        nop;
+        if timeToLive < 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$3 = new java.lang.IllegalStateException;
+        specialinvoke temp$3.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Aborting to protect against StackOverflowError - output of one loop is the input of another");
+        throw temp$3;
+
+     label8:
+        nop;
+        searchLength = lengthof searchList;
+        replacementLength = lengthof replacementList;
+        if searchLength != replacementLength goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Search and Replace array lengths don\'t match: ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(searchLength);
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" vs ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(replacementLength);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label10:
+        nop;
+        noMoreMatchesForReplIndex = newarray (boolean)[searchLength];
+        textIndex = -1;
+        replaceIndex = -1;
+        tempIndex = -1;
+        i = 0;
+
+     label11:
+        nop;
+        if i < searchLength goto label12;
+
+        goto label25;
+
+     label12:
+        nop;
+        temp$7 = noMoreMatchesForReplIndex;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        if temp$9 == 0 goto label13;
+
+        goto label16;
+
+     label13:
+        nop;
+        temp$10 = searchList;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        if temp$12 == null goto label16;
+
+        goto label14;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$13 = searchList;
+        temp$14 = i;
+        temp$15 = temp$13[temp$14];
+        temp$16 = virtualinvoke temp$15.<java.lang.String: boolean isEmpty()>();
+        if temp$16 == 0 goto label15;
+
+        goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$17 = replacementList;
+        temp$18 = i;
+        temp$19 = temp$17[temp$18];
+        if temp$19 == null goto label16;
+
+        goto label17;
+
+        goto label17;
+
+     label16:
+        nop;
+        goto label24;
+
+     label17:
+        nop;
+        temp$20 = searchList;
+        temp$21 = i;
+        temp$22 = temp$20[temp$21];
+        temp$23 = virtualinvoke text.<java.lang.String: int indexOf(java.lang.String)>(temp$22);
+        tempIndex = temp$23;
+        if tempIndex == -1 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$24 = noMoreMatchesForReplIndex;
+        temp$25 = i;
+        temp$26 = 1;
+        temp$24[temp$25] = temp$26;
+        goto label23;
+
+     label19:
+        nop;
+        if textIndex == -1 goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        if tempIndex < textIndex goto label21;
+
+        goto label22;
+
+        goto label22;
+
+     label21:
+        nop;
+        textIndex = tempIndex;
+        replaceIndex = i;
+
+     label22:
+        nop;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        temp$27 = i;
+        temp$28 = temp$27 + 1;
+        i = temp$28;
+        goto label11;
+
+     label25:
+        nop;
+        if textIndex == -1 goto label26;
+
+        goto label27;
+
+     label26:
+        nop;
+        return text;
+
+     label27:
+        nop;
+        start = 0;
+        increase = 0;
+        i = 0;
+
+     label28:
+        nop;
+        temp$29 = lengthof searchList;
+        if i < temp$29 goto label29;
+
+        goto label36;
+
+     label29:
+        nop;
+        temp$30 = searchList;
+        temp$31 = i;
+        temp$32 = temp$30[temp$31];
+        if temp$32 == null goto label31;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$33 = replacementList;
+        temp$34 = i;
+        temp$35 = temp$33[temp$34];
+        if temp$35 == null goto label31;
+
+        goto label32;
+
+        goto label32;
+
+     label31:
+        nop;
+        goto label35;
+
+     label32:
+        nop;
+        temp$36 = replacementList;
+        temp$37 = i;
+        temp$38 = temp$36[temp$37];
+        temp$39 = virtualinvoke temp$38.<java.lang.String: int length()>();
+        temp$40 = searchList;
+        temp$41 = i;
+        temp$42 = temp$40[temp$41];
+        temp$43 = virtualinvoke temp$42.<java.lang.String: int length()>();
+        temp$44 = temp$39 - temp$43;
+        greater = temp$44;
+        if greater > 0 goto label33;
+
+        goto label34;
+
+     label33:
+        nop;
+        temp$45 = increase;
+        temp$46 = 3 * greater;
+        temp$47 = temp$45 + temp$46;
+        increase = temp$47;
+
+     label34:
+        nop;
+
+     label35:
+        nop;
+        temp$48 = i;
+        temp$49 = temp$48 + 1;
+        i = temp$49;
+        goto label28;
+
+     label36:
+        nop;
+        temp$50 = virtualinvoke text.<java.lang.String: int length()>();
+        temp$51 = temp$50;
+        temp$52 = temp$51 + 5;
+        temp$53 = staticinvoke <java.lang.Math: int min(int,int)>(increase, temp$52);
+        increase = temp$53;
+        temp$54 = new java.lang.StringBuilder;
+        temp$55 = virtualinvoke text.<java.lang.String: int length()>();
+        temp$56 = temp$55;
+        temp$57 = temp$56 + increase;
+        specialinvoke temp$54.<java.lang.StringBuilder: void <init>(int)>(temp$57);
+        buf = temp$54;
+
+     label37:
+        nop;
+        if textIndex != -1 goto label38;
+
+        goto label57;
+
+     label38:
+        nop;
+        i = start;
+
+     label39:
+        nop;
+        if i < textIndex goto label40;
+
+        goto label41;
+
+     label40:
+        nop;
+        temp$58 = virtualinvoke text.<java.lang.String: char charAt(int)>(i);
+        temp$59 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$58);
+        nop;
+        temp$60 = i;
+        temp$61 = temp$60 + 1;
+        i = temp$61;
+        goto label39;
+
+     label41:
+        nop;
+        temp$62 = replacementList;
+        temp$63 = replaceIndex;
+        temp$64 = temp$62[temp$63];
+        temp$65 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$64);
+        temp$66 = textIndex;
+        temp$67 = searchList;
+        temp$68 = replaceIndex;
+        temp$69 = temp$67[temp$68];
+        temp$70 = virtualinvoke temp$69.<java.lang.String: int length()>();
+        temp$71 = temp$66 + temp$70;
+        start = temp$71;
+        temp$72 = -1;
+        textIndex = temp$72;
+        temp$73 = -1;
+        replaceIndex = temp$73;
+        temp$74 = -1;
+        tempIndex = temp$74;
+        i = 0;
+
+     label42:
+        nop;
+        if i < searchLength goto label43;
+
+        goto label56;
+
+     label43:
+        nop;
+        temp$75 = noMoreMatchesForReplIndex;
+        temp$76 = i;
+        temp$77 = temp$75[temp$76];
+        if temp$77 == 0 goto label44;
+
+        goto label47;
+
+     label44:
+        nop;
+        temp$78 = searchList;
+        temp$79 = i;
+        temp$80 = temp$78[temp$79];
+        if temp$80 == null goto label47;
+
+        goto label45;
+
+        goto label45;
+
+     label45:
+        nop;
+        temp$81 = searchList;
+        temp$82 = i;
+        temp$83 = temp$81[temp$82];
+        temp$84 = virtualinvoke temp$83.<java.lang.String: boolean isEmpty()>();
+        if temp$84 == 0 goto label46;
+
+        goto label47;
+
+        goto label46;
+
+     label46:
+        nop;
+        temp$85 = replacementList;
+        temp$86 = i;
+        temp$87 = temp$85[temp$86];
+        if temp$87 == null goto label47;
+
+        goto label48;
+
+        goto label48;
+
+     label47:
+        nop;
+        goto label55;
+
+     label48:
+        nop;
+        temp$88 = searchList;
+        temp$89 = i;
+        temp$90 = temp$88[temp$89];
+        temp$91 = virtualinvoke text.<java.lang.String: int indexOf(java.lang.String,int)>(temp$90, start);
+        tempIndex = temp$91;
+        if tempIndex == -1 goto label49;
+
+        goto label50;
+
+     label49:
+        nop;
+        temp$92 = noMoreMatchesForReplIndex;
+        temp$93 = i;
+        temp$94 = 1;
+        temp$92[temp$93] = temp$94;
+        goto label54;
+
+     label50:
+        nop;
+        if textIndex == -1 goto label52;
+
+        goto label51;
+
+     label51:
+        nop;
+        if tempIndex < textIndex goto label52;
+
+        goto label53;
+
+        goto label53;
+
+     label52:
+        nop;
+        textIndex = tempIndex;
+        replaceIndex = i;
+
+     label53:
+        nop;
+
+     label54:
+        nop;
+
+     label55:
+        nop;
+        temp$95 = i;
+        temp$96 = temp$95 + 1;
+        i = temp$96;
+        goto label42;
+
+     label56:
+        nop;
+        goto label37;
+
+     label57:
+        nop;
+        temp$97 = virtualinvoke text.<java.lang.String: int length()>();
+        textLength = temp$97;
+        i = start;
+
+     label58:
+        nop;
+        if i < textLength goto label59;
+
+        goto label60;
+
+     label59:
+        nop;
+        temp$98 = virtualinvoke text.<java.lang.String: char charAt(int)>(i);
+        temp$99 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$98);
+        nop;
+        temp$100 = i;
+        temp$101 = temp$100 + 1;
+        i = temp$101;
+        goto label58;
+
+     label60:
+        nop;
+        temp$102 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        result = temp$102;
+        if repeat == 0 goto label61;
+
+        goto label62;
+
+     label61:
+        nop;
+        return result;
+
+     label62:
+        nop;
+        temp$103 = timeToLive - 1;
+        temp$104 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String replaceEach(java.lang.String,java.lang.String[],java.lang.String[],boolean,int)>(result, searchList, replacementList, repeat, temp$103);
+        return temp$104;
+    }
+}

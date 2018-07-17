@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public static java.lang.String substringBefore(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, separator, temp$3, temp$5;
+        boolean temp$0, temp$1, temp$2;
+        int pos, temp$4;
+
+        str := @parameter0: java.lang.String;
+        separator := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if separator == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        if temp$0 != temp$1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        return str;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke separator.<java.lang.String: boolean isEmpty()>();
+        if temp$2 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$3;
+
+     label6:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: int indexOf(java.lang.String)>(separator);
+        pos = temp$4;
+        if pos == -1 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return str;
+
+     label8:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        return temp$5;
+    }
+}

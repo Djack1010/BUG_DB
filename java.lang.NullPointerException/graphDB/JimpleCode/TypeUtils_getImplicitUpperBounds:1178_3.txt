@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type[] getImplicitUpperBounds(java.lang.reflect.WildcardType)
+    {
+        java.lang.reflect.WildcardType wildcardType, temp$2;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.reflect.Type[] bounds, temp$3, temp$4;
+
+        wildcardType := @parameter0: java.lang.reflect.WildcardType;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(wildcardType, "wildcardType is null", temp$0);
+        temp$2 = (java.lang.reflect.WildcardType) temp$1;
+        temp$3 = interfaceinvoke wildcardType.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        bounds = temp$3;
+        temp$4 = null;
+        return temp$4;
+    }
+}

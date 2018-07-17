@@ -1,0 +1,160 @@
+public class WrapClass 
+{
+    public java.lang.String soundex(java.lang.String)
+    {
+        org.apache.commons.codec.language.Soundex this;
+        java.lang.String str, temp$0, temp$1, temp$27;
+        int temp$2, count, temp$6, temp$7, temp$8, i, temp$10, temp$11, temp$14, temp$15, temp$17, temp$18, temp$19, temp$20, temp$22, temp$23, temp$24, temp$25, temp$26;
+        char[] out, temp$3, temp$5, temp$21;
+        char first, temp$4, lastDigit, temp$9, ch, temp$12, digit, temp$16;
+        boolean temp$13;
+
+        this := @this: org.apache.commons.codec.language.Soundex;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.codec.language.SoundexUtils: java.lang.String clean(java.lang.String)>(str);
+        str = temp$1;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$2 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return str;
+
+     label3:
+        nop;
+        temp$3 = newarray (char)[4];
+        temp$3[0] = 48;
+        temp$3[1] = 48;
+        temp$3[2] = 48;
+        temp$3[3] = 48;
+        out = temp$3;
+        count = 0;
+        temp$4 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        first = temp$4;
+        temp$5 = out;
+        temp$6 = count;
+        temp$7 = temp$6 + 1;
+        count = temp$7;
+        temp$8 = temp$6;
+        temp$5[temp$8] = first;
+        temp$9 = virtualinvoke this.<org.apache.commons.codec.language.Soundex: char map(char)>(first);
+        lastDigit = temp$9;
+        i = -1;
+
+     label4:
+        nop;
+        temp$10 = virtualinvoke str.<java.lang.String: int length()>();
+        if i < temp$10 goto label5;
+
+        goto label17;
+
+     label5:
+        nop;
+        temp$11 = lengthof out;
+        if count < temp$11 goto label6;
+
+        goto label17;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$12 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        ch = temp$12;
+        temp$13 = this.<org.apache.commons.codec.language.Soundex: boolean specialCaseHW>;
+        if temp$13 == 0 goto label10;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$14 = (int) ch;
+        if temp$14 == 72 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$15 = (int) ch;
+        if temp$15 == 87 goto label9;
+
+        goto label10;
+
+        goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        goto label16;
+
+     label10:
+        nop;
+        temp$16 = virtualinvoke this.<org.apache.commons.codec.language.Soundex: char map(char)>(ch);
+        digit = temp$16;
+        temp$17 = (int) digit;
+        if temp$17 == 45 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        goto label16;
+
+     label12:
+        nop;
+        temp$18 = (int) digit;
+        if temp$18 != 48 goto label13;
+
+        goto label15;
+
+     label13:
+        nop;
+        temp$19 = (int) digit;
+        temp$20 = (int) lastDigit;
+        if temp$19 != temp$20 goto label14;
+
+        goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$21 = out;
+        temp$22 = count;
+        temp$23 = temp$22 + 1;
+        count = temp$23;
+        temp$24 = temp$22;
+        temp$21[temp$24] = digit;
+
+     label15:
+        nop;
+        lastDigit = digit;
+
+     label16:
+        nop;
+        temp$25 = i;
+        temp$26 = temp$25 + 1;
+        i = temp$26;
+        goto label4;
+
+     label17:
+        nop;
+        temp$27 = new java.lang.String;
+        specialinvoke temp$27.<java.lang.String: void <init>(char[])>(out);
+        return temp$27;
+    }
+}

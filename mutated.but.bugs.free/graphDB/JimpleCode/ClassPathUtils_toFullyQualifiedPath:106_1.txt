@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public static java.lang.String toFullyQualifiedPath(java.lang.Class, java.lang.String)
+    {
+        java.lang.Class context;
+        java.lang.String resourceName, temp$2, temp$4;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.Package temp$3;
+
+        context := @parameter0: java.lang.Class;
+        resourceName := @parameter1: java.lang.String;
+        temp$0 = newarray (java.lang.Object)[1];
+        temp$0[0] = "resourceName";
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(resourceName, "Parameter \'%s\' must not be null!", temp$0);
+        temp$2 = (java.lang.String) temp$1;
+        temp$3 = virtualinvoke context.<java.lang.Class: java.lang.Package getPackage()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.ClassPathUtils: java.lang.String toFullyQualifiedPath(java.lang.Package,java.lang.String)>(temp$3, resourceName);
+        return temp$4;
+    }
+}

@@ -1,0 +1,165 @@
+public class WrapClass 
+{
+    private static final java.lang.String[] splitByWholeSeparatorWorker(java.lang.String, java.lang.String, int, boolean)
+    {
+        java.lang.String str, separator, temp$9, temp$11, temp$17, temp$22;
+        int max, len, temp$1, separatorLength, temp$4, numberOfSubstrings, beg, end, temp$6, temp$7, temp$8, temp$13, temp$14, temp$15, temp$16, temp$20, temp$21, temp$24;
+        boolean preserveAllTokens, temp$10, temp$12, temp$18, temp$19, temp$23;
+        java.lang.String[] temp$0, temp$2, temp$3, temp$25, temp$27;
+        java.util.ArrayList substrings, temp$5;
+        java.lang.Object[] temp$26;
+
+        str := @parameter0: java.lang.String;
+        separator := @parameter1: java.lang.String;
+        max := @parameter2: int;
+        preserveAllTokens := @parameter3: boolean;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$1;
+        if len == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$2;
+
+     label3:
+        nop;
+        if separator == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String[] splitWorker(java.lang.String,java.lang.String,int,boolean)>(str, null, max, preserveAllTokens);
+        return temp$3;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke separator.<java.lang.String: int length()>();
+        separatorLength = temp$4;
+        temp$5 = new java.util.ArrayList;
+        specialinvoke temp$5.<java.util.ArrayList: void <init>()>();
+        substrings = temp$5;
+        numberOfSubstrings = 0;
+        beg = 0;
+        end = 0;
+
+     label6:
+        nop;
+        if end < len goto label7;
+
+        goto label22;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: int indexOf(java.lang.String,int)>(separator, beg);
+        end = temp$6;
+        if end > -1 goto label8;
+
+        goto label20;
+
+     label8:
+        nop;
+        if end > beg goto label9;
+
+        goto label13;
+
+     label9:
+        nop;
+        temp$7 = numberOfSubstrings;
+        temp$8 = temp$7 + 1;
+        numberOfSubstrings = temp$8;
+        if numberOfSubstrings == max goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        end = len;
+        temp$9 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(beg);
+        temp$10 = virtualinvoke substrings.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$9);
+        goto label12;
+
+     label11:
+        nop;
+        temp$11 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(beg, end);
+        temp$12 = virtualinvoke substrings.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$11);
+        temp$13 = end;
+        temp$14 = temp$13 + separatorLength;
+        beg = temp$14;
+
+     label12:
+        nop;
+        goto label19;
+
+     label13:
+        nop;
+        if preserveAllTokens == 0 goto label18;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$15 = numberOfSubstrings;
+        temp$16 = temp$15 + 1;
+        numberOfSubstrings = temp$16;
+        if numberOfSubstrings == max goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        end = len;
+        temp$17 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(beg);
+        temp$18 = virtualinvoke substrings.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$17);
+        goto label17;
+
+     label16:
+        nop;
+        temp$19 = virtualinvoke substrings.<java.util.ArrayList: boolean add(java.lang.Object)>("");
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+        temp$20 = end;
+        temp$21 = temp$20 + separatorLength;
+        beg = temp$21;
+
+     label19:
+        nop;
+        goto label21;
+
+     label20:
+        nop;
+        temp$22 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(beg);
+        temp$23 = virtualinvoke substrings.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$22);
+        end = len;
+
+     label21:
+        nop;
+        goto label6;
+
+     label22:
+        nop;
+        temp$24 = virtualinvoke substrings.<java.util.ArrayList: int size()>();
+        temp$25 = newarray (java.lang.String)[temp$24];
+        temp$26 = virtualinvoke substrings.<java.util.ArrayList: java.lang.Object[] toArray(java.lang.Object[])>(temp$25);
+        temp$27 = (java.lang.String[]) temp$26;
+        return temp$27;
+    }
+}

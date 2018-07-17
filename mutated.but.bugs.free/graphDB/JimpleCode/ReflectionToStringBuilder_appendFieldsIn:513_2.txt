@@ -1,0 +1,89 @@
+public class WrapClass 
+{
+    protected void appendFieldsIn(java.lang.Class)
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this, temp$2;
+        java.lang.Class clazz;
+        boolean temp$0, temp$8;
+        java.lang.Object temp$1, fieldValue, temp$9;
+        java.lang.reflect.Field[] fields, temp$3;
+        int temp$4, temp$5;
+        java.lang.reflect.Field field, temp$6;
+        java.lang.String fieldName, temp$7, temp$13, temp$14;
+        org.apache.commons.lang3.builder.ToStringBuilder temp$10;
+        java.lang.IllegalAccessException ex;
+        java.lang.InternalError temp$11;
+        java.lang.StringBuffer temp$12;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        clazz := @parameter0: java.lang.Class;
+        temp$0 = virtualinvoke clazz.<java.lang.Class: boolean isArray()>();
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Object getObject()>();
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: org.apache.commons.lang3.builder.ReflectionToStringBuilder reflectionAppendArray(java.lang.Object)>(temp$1);
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke clazz.<java.lang.Class: java.lang.reflect.Field[] getDeclaredFields()>();
+        fields = temp$3;
+        staticinvoke <java.lang.reflect.AccessibleObject: void setAccessible(java.lang.reflect.AccessibleObject[],boolean)>(fields, 1);
+        temp$4 = 0;
+
+     label2:
+        nop;
+        temp$5 = lengthof fields;
+        if temp$4 >= temp$5 goto label8;
+
+        temp$6 = fields[temp$4];
+        field = temp$6;
+        temp$7 = virtualinvoke field.<java.lang.reflect.Field: java.lang.String getName()>();
+        fieldName = temp$7;
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: boolean accept(java.lang.reflect.Field)>(field);
+        if temp$8 == 0 goto label7;
+
+        goto label3;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Object getValue(java.lang.reflect.Field)>(field);
+        fieldValue = temp$9;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: org.apache.commons.lang3.builder.ToStringBuilder append(java.lang.String,java.lang.Object)>(fieldName, fieldValue);
+        goto label6;
+
+     label5:
+        nop;
+        ex := @caughtexception;
+        temp$11 = new java.lang.InternalError;
+        temp$12 = new java.lang.StringBuffer;
+        specialinvoke temp$12.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unexpected IllegalAccessException: ");
+        temp$13 = virtualinvoke ex.<java.lang.IllegalAccessException: java.lang.String getMessage()>();
+        virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$13);
+        temp$14 = virtualinvoke temp$12.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$11.<java.lang.InternalError: void <init>(java.lang.String)>(temp$14);
+        throw temp$11;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        nop;
+        temp$4 = temp$4 + 1;
+        goto label2;
+
+     label8:
+        nop;
+        return;
+
+        catch java.lang.IllegalAccessException from label4 to label5 with label5;
+    }
+}

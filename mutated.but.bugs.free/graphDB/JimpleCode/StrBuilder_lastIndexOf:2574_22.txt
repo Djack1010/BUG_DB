@@ -1,0 +1,142 @@
+public class WrapClass 
+{
+    public int lastIndexOf(java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        int startIndex, temp$0, strLen, temp$1, temp$2, temp$4, i, temp$5, temp$6, j, temp$9, temp$10, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17, temp$18;
+        char temp$3, temp$7, temp$11;
+        char[] temp$8;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        startIndex := @parameter1: int;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if startIndex < 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = -1;
+        return temp$0;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$1;
+        if strLen > 0 goto label3;
+
+        goto label16;
+
+     label3:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if strLen <= temp$2 goto label4;
+
+        goto label16;
+
+        goto label4;
+
+     label4:
+        nop;
+        if strLen == 1 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int lastIndexOf(char,int)>(temp$3, startIndex);
+        return temp$4;
+
+     label6:
+        nop;
+        nop;
+        temp$5 = startIndex - strLen;
+        temp$6 = temp$5;
+        i = temp$6 + 1;
+
+     label7:
+        nop;
+        if i >= 0 goto label8;
+
+        goto label15;
+
+     label8:
+        nop;
+        j = 0;
+
+     label9:
+        nop;
+        if j < strLen goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$7 = virtualinvoke str.<java.lang.String: char charAt(int)>(j);
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$9 = i;
+        temp$10 = temp$9 + j;
+        temp$11 = temp$8[temp$10];
+        temp$12 = (int) temp$7;
+        temp$13 = (int) temp$11;
+        if temp$12 != temp$13 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        goto label14;
+
+     label12:
+        nop;
+        nop;
+        temp$14 = j;
+        temp$15 = temp$14 + 1;
+        j = temp$15;
+        goto label9;
+
+     label13:
+        nop;
+        return i;
+
+     label14:
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + -1;
+        i = temp$17;
+        goto label7;
+
+     label15:
+        nop;
+        nop;
+        goto label19;
+
+     label16:
+        nop;
+        if strLen == 0 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        return startIndex;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+        temp$18 = -1;
+        return temp$18;
+    }
+}

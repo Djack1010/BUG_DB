@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    private static final long getFragment(java.util.Date, int, java.util.concurrent.TimeUnit)
+    {
+        java.util.Date date;
+        int fragment;
+        java.util.concurrent.TimeUnit unit;
+        java.util.Calendar calendar, temp$0;
+        long temp$1;
+
+        date := @parameter0: java.util.Date;
+        fragment := @parameter1: int;
+        unit := @parameter2: java.util.concurrent.TimeUnit;
+        temp$0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        calendar = temp$0;
+        virtualinvoke calendar.<java.util.Calendar: void setTime(java.util.Date)>(date);
+        temp$1 = staticinvoke <org.apache.commons.lang3.time.DateUtils: long getFragment(java.util.Calendar,int,java.util.concurrent.TimeUnit)>(calendar, fragment, unit);
+        return temp$1;
+    }
+}

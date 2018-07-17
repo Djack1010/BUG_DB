@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static int indexOf(double[], double)
+    {
+        double[] array;
+        double valueToFind;
+        int temp$0;
+
+        array := @parameter0: double[];
+        valueToFind := @parameter1: double;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(double[],double,int)>(array, valueToFind, -1);
+        return temp$0;
+    }
+}

@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    protected void appendClassName(java.lang.StringBuffer, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$3;
+        java.lang.Object object;
+        boolean temp$0;
+        java.lang.Class temp$1;
+        java.lang.String temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringStyle: boolean useClassName>;
+        if temp$0 == 0 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        if object != null goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void register(java.lang.Object)>(object);
+        temp$1 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$2 = virtualinvoke temp$1.<java.lang.Class: java.lang.String getName()>();
+        temp$3 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$2);
+        nop;
+
+     label2:
+        nop;
+        return;
+    }
+}

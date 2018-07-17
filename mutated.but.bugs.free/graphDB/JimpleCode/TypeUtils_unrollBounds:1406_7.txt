@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type[] unrollBounds(java.util.Map, java.lang.reflect.Type[])
+    {
+        java.util.Map typeArguments;
+        java.lang.reflect.Type[] bounds, result, temp$4, temp$5;
+        int i, temp$0, temp$1, temp$2, temp$6, temp$7, temp$8;
+        java.lang.reflect.Type unrolled;
+        java.lang.Object[] temp$3;
+
+        typeArguments := @parameter0: java.util.Map;
+        bounds := @parameter1: java.lang.reflect.Type[];
+        result = bounds;
+        i = 0;
+
+     label0:
+        nop;
+        temp$0 = lengthof result;
+        if i < temp$0 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        unrolled = null;
+        if unrolled == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = i;
+        temp$2 = temp$1 + -1;
+        i = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] remove(java.lang.Object[],int)>(result, temp$1);
+        temp$4 = (java.lang.reflect.Type[]) temp$3;
+        result = temp$4;
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = result;
+        temp$6 = i;
+        temp$5[temp$6] = unrolled;
+
+     label4:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label0;
+
+     label5:
+        nop;
+        return result;
+    }
+}

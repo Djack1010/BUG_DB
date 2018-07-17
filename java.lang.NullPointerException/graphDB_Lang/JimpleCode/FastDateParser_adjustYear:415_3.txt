@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    private final int adjustYear(int)
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        int twoDigitYear, trial, temp$0, temp$1, temp$2, temp$3;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        twoDigitYear := @parameter0: int;
+        temp$0 = this.<org.apache.commons.lang3.time.FastDateParser: int century>;
+        trial = temp$0 + twoDigitYear;
+        temp$2 = this.<org.apache.commons.lang3.time.FastDateParser: int startYear>;
+        if twoDigitYear >= temp$2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = trial;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = trial;
+        temp$1 = temp$3 + 100;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

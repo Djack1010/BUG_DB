@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public java.lang.String toSplitString()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        long temp$0;
+        java.lang.String temp$1;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.time.StopWatch: long getSplitTime()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.String formatDurationHMS(long)>(temp$0);
+        return temp$1;
+    }
+}

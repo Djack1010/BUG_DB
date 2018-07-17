@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    public java.lang.Object decode(java.lang.Object) throws org.apache.commons.codec.DecoderException
+    {
+        org.apache.commons.codec.binary.BinaryCodec this;
+        java.lang.Object ascii, temp$0;
+        boolean temp$1, temp$4, temp$7;
+        byte[] temp$2, temp$3, temp$6, temp$10;
+        char[] temp$5, temp$9;
+        java.lang.String temp$8;
+        org.apache.commons.codec.DecoderException temp$11;
+
+        this := @this: org.apache.commons.codec.binary.BinaryCodec;
+        ascii := @parameter0: java.lang.Object;
+        if ascii == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.codec.binary.BinaryCodec: byte[] EMPTY_BYTE_ARRAY>;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = ascii instanceof byte[];
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = (byte[]) ascii;
+        temp$3 = staticinvoke <org.apache.commons.codec.binary.BinaryCodec: byte[] fromAscii(byte[])>(temp$2);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = ascii instanceof char[];
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = (char[]) ascii;
+        temp$6 = staticinvoke <org.apache.commons.codec.binary.BinaryCodec: byte[] fromAscii(char[])>(temp$5);
+        return temp$6;
+
+     label5:
+        nop;
+        temp$7 = ascii instanceof java.lang.String;
+        if temp$7 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$8 = (java.lang.String) ascii;
+        temp$9 = virtualinvoke temp$8.<java.lang.String: char[] toCharArray()>();
+        temp$10 = staticinvoke <org.apache.commons.codec.binary.BinaryCodec: byte[] fromAscii(char[])>(temp$9);
+        return temp$10;
+
+     label7:
+        nop;
+        temp$11 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$11.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>("argument not a byte array");
+        throw temp$11;
+    }
+}

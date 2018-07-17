@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.Object[] removeElement(java.lang.Object[], java.lang.Object)
+    {
+        java.lang.Object[] array, temp$0;
+        java.lang.Object element;
+        int index;
+
+        array := @parameter0: java.lang.Object[];
+        element := @parameter1: java.lang.Object;
+        index = 0;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] remove(java.lang.Object[],int)>(array, 0);
+        return temp$0;
+    }
+}

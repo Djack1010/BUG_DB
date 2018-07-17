@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    protected java.lang.StringBuffer applyRules(java.util.Calendar, java.lang.StringBuffer)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.util.Calendar calendar;
+        java.lang.StringBuffer buf, temp$4;
+        org.apache.commons.lang3.time.FastDatePrinter$Rule[] temp$0;
+        int temp$1, temp$2;
+        org.apache.commons.lang3.time.FastDatePrinter$Rule rule, temp$3;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        calendar := @parameter0: java.util.Calendar;
+        buf := @parameter1: java.lang.StringBuffer;
+        temp$0 = this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$Rule[] mRules>;
+        temp$1 = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof temp$0;
+        if temp$1 >= temp$2 goto label1;
+
+        temp$3 = temp$0[temp$1];
+        rule = temp$3;
+        interfaceinvoke rule.<org.apache.commons.lang3.time.FastDatePrinter$Rule: void appendTo(java.lang.StringBuffer,java.util.Calendar)>(buf, calendar);
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        temp$4 = null;
+        return temp$4;
+    }
+}

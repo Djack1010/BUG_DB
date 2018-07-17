@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction negate()
+    {
+        org.apache.commons.lang3.math.Fraction this, temp$2;
+        int temp$0;
+        java.lang.ArithmeticException temp$1;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        temp$0 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$0 == -2147483648 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.ArithmeticException;
+        specialinvoke temp$1.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: too large to negate");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = null;
+        return temp$2;
+    }
+}

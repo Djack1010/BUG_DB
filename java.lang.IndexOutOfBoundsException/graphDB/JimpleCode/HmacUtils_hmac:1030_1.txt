@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public final byte[] hmac(java.io.InputStream) throws java.io.IOException
+    {
+        org.apache.commons.codec.digest.HmacUtils this;
+        java.io.InputStream valueToDigest;
+        byte[] buffer, temp$4;
+        int temp$0, read, temp$1;
+        javax.crypto.Mac temp$2, temp$3;
+
+        this := @this: org.apache.commons.codec.digest.HmacUtils;
+        valueToDigest := @parameter0: java.io.InputStream;
+        temp$0 = <org.apache.commons.codec.digest.HmacUtils: int STREAM_BUFFER_LENGTH>;
+        buffer = newarray (byte)[temp$0];
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke valueToDigest.<java.io.InputStream: int read(byte[],int,int)>(buffer, 1, 1024);
+        read = temp$1;
+        if temp$1 > -1 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.codec.digest.HmacUtils: javax.crypto.Mac mac>;
+        virtualinvoke temp$2.<javax.crypto.Mac: void update(byte[],int,int)>(buffer, 0, read);
+        goto label0;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.codec.digest.HmacUtils: javax.crypto.Mac mac>;
+        temp$4 = virtualinvoke temp$3.<javax.crypto.Mac: byte[] doFinal()>();
+        return temp$4;
+    }
+}

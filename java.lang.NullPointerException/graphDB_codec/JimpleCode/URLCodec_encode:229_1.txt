@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String, java.lang.String) throws java.io.UnsupportedEncodingException
+    {
+        org.apache.commons.codec.net.URLCodec this;
+        java.lang.String str, charset, temp$2;
+        byte[] temp$0, temp$1;
+
+        this := @this: org.apache.commons.codec.net.URLCodec;
+        str := @parameter0: java.lang.String;
+        charset := @parameter1: java.lang.String;
+        temp$0 = virtualinvoke str.<java.lang.String: byte[] getBytes(java.lang.String)>(charset);
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.net.URLCodec: byte[] encode(byte[])>(temp$0);
+        temp$2 = staticinvoke <org.apache.commons.codec.binary.StringUtils: java.lang.String newStringUsAscii(byte[])>(temp$1);
+        return temp$2;
+    }
+}

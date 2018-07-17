@@ -1,0 +1,137 @@
+public class WrapClass 
+{
+    public static java.util.Formatter append(java.lang.CharSequence, java.util.Formatter, int, int, int, char, java.lang.CharSequence)
+    {
+        java.lang.CharSequence seq, ellipsis, _ellipsis, temp$6;
+        java.util.Formatter formatter, temp$21;
+        int flags, width, precision, temp$0, temp$7, temp$8, temp$9, temp$12, i, temp$14, temp$15, temp$17, temp$18;
+        char padChar;
+        boolean temp$1, leftJustify, temp$13;
+        java.lang.Object[] temp$2, temp$20;
+        java.lang.Integer temp$3;
+        java.lang.StringBuilder buf, temp$4, temp$11, temp$16;
+        java.lang.Object temp$5;
+        java.lang.String temp$10, temp$19;
+
+        seq := @parameter0: java.lang.CharSequence;
+        formatter := @parameter1: java.util.Formatter;
+        flags := @parameter2: int;
+        width := @parameter3: int;
+        precision := @parameter4: int;
+        padChar := @parameter5: char;
+        ellipsis := @parameter6: java.lang.CharSequence;
+        if ellipsis == null goto label3;
+
+        goto label0;
+
+     label0:
+        nop;
+        if precision < 0 goto label3;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = interfaceinvoke ellipsis.<java.lang.CharSequence: int length()>();
+        if temp$0 <= precision goto label3;
+
+        goto label2;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+
+     label4:
+        nop;
+        temp$2 = newarray (java.lang.Object)[2];
+        temp$2[0] = ellipsis;
+        temp$3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(precision);
+        temp$2[1] = temp$3;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Specified ellipsis \'%1$s\' exceeds precision of %2$s", temp$2);
+        temp$4 = new java.lang.StringBuilder;
+        specialinvoke temp$4.<java.lang.StringBuilder: void <init>(java.lang.CharSequence)>(seq);
+        buf = temp$4;
+        if precision >= 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.Object defaultIfNull(java.lang.Object,java.lang.Object)>(ellipsis, "");
+        temp$6 = (java.lang.CharSequence) temp$5;
+        _ellipsis = temp$6;
+        temp$7 = interfaceinvoke _ellipsis.<java.lang.CharSequence: int length()>();
+        temp$8 = precision - temp$7;
+        temp$9 = interfaceinvoke seq.<java.lang.CharSequence: int length()>();
+        temp$10 = interfaceinvoke _ellipsis.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder replace(int,int,java.lang.String)>(temp$8, temp$9, temp$10);
+
+     label6:
+        nop;
+        temp$12 = flags & 1;
+        if temp$12 == 1 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$13 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$13 = 1;
+
+     label9:
+        nop;
+        leftJustify = temp$13;
+        temp$14 = virtualinvoke buf.<java.lang.StringBuilder: int length()>();
+        i = temp$14;
+
+     label10:
+        nop;
+        if i < width goto label11;
+
+        goto label15;
+
+     label11:
+        nop;
+        if leftJustify == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$15 = i;
+        goto label14;
+
+     label13:
+        nop;
+        temp$15 = 0;
+
+     label14:
+        nop;
+        temp$16 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char)>(temp$15, padChar);
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label10;
+
+     label15:
+        nop;
+        temp$19 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        temp$20 = newarray (java.lang.Object)[0];
+        temp$21 = virtualinvoke formatter.<java.util.Formatter: java.util.Formatter format(java.lang.String,java.lang.Object[])>(temp$19, temp$20);
+        return formatter;
+    }
+}

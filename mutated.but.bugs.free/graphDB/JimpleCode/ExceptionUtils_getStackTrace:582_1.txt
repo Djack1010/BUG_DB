@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.String getStackTrace(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable;
+        java.io.StringWriter sw, temp$0;
+        java.io.PrintWriter pw, temp$1;
+        java.lang.StringBuffer temp$2;
+        java.lang.String temp$3;
+
+        throwable := @parameter0: java.lang.Throwable;
+        temp$0 = new java.io.StringWriter;
+        specialinvoke temp$0.<java.io.StringWriter: void <init>()>();
+        sw = temp$0;
+        temp$1 = new java.io.PrintWriter;
+        specialinvoke temp$1.<java.io.PrintWriter: void <init>(java.io.Writer,boolean)>(sw, 0);
+        pw = temp$1;
+        virtualinvoke throwable.<java.lang.Throwable: void printStackTrace(java.io.PrintWriter)>(pw);
+        temp$2 = virtualinvoke sw.<java.io.StringWriter: java.lang.StringBuffer getBuffer()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$3;
+    }
+}

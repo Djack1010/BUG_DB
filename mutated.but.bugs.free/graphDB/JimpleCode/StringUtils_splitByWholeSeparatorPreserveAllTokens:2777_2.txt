@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static java.lang.String[] splitByWholeSeparatorPreserveAllTokens(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, separator;
+        java.lang.String[] temp$0;
+
+        str := @parameter0: java.lang.String;
+        separator := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String[] splitByWholeSeparatorWorker(java.lang.String,java.lang.String,int,boolean)>(str, separator, -1, 0);
+        return temp$0;
+    }
+}

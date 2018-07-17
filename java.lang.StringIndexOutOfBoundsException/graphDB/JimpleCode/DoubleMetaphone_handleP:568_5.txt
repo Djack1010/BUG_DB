@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    private final int handleP(java.lang.String, org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result;
+        int index, temp$0, temp$1, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$11, temp$12;
+        char temp$2;
+        java.lang.String[] temp$9;
+        boolean temp$10;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        result := @parameter1: org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        index := @parameter2: int;
+        temp$0 = index;
+        temp$1 = temp$0 + 1;
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$1);
+        temp$3 = (int) temp$2;
+        if temp$3 == 72 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(70);
+        temp$4 = index;
+        temp$5 = temp$4 + 2;
+        index = temp$5;
+        goto label5;
+
+     label1:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(80);
+        temp$7 = index;
+        temp$8 = temp$7 + 1;
+        temp$9 = newarray (java.lang.String)[2];
+        temp$9[0] = "P";
+        temp$9[1] = "B";
+        temp$10 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$8, 1, temp$9);
+        if temp$10 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$11 = index;
+        temp$6 = temp$11 + 2;
+        goto label4;
+
+     label3:
+        nop;
+        temp$12 = index - 1;
+        temp$6 = temp$12;
+
+     label4:
+        nop;
+        index = temp$6;
+
+     label5:
+        nop;
+        return index;
+    }
+}

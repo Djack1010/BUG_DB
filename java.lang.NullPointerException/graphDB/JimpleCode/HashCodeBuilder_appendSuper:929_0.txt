@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.HashCodeBuilder appendSuper(int)
+    {
+        org.apache.commons.lang3.builder.HashCodeBuilder this;
+        int superHashCode, temp$0, temp$1, temp$2, temp$3, temp$4;
+
+        this := @this: org.apache.commons.lang3.builder.HashCodeBuilder;
+        superHashCode := @parameter0: int;
+        temp$0 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal>;
+        temp$1 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iConstant>;
+        temp$2 = temp$0 * temp$1;
+        temp$3 = temp$2;
+        temp$4 = temp$3 + superHashCode;
+        this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal> = temp$4;
+        return this;
+    }
+}

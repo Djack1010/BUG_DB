@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    public int indexOf(char, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        char ch, temp$6;
+        int startIndex, temp$0, temp$1, temp$2, i, temp$3, temp$5, temp$7, temp$8, temp$9, temp$10, temp$11;
+        char[] thisBuf, temp$4;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        ch := @parameter0: char;
+        startIndex := @parameter1: int;
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = startIndex;
+        nop;
+        startIndex = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if startIndex >= temp$1 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = -1;
+        return temp$2;
+
+     label2:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        i = startIndex;
+
+     label3:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if i < temp$3 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$4 = thisBuf;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (int) temp$6;
+        temp$8 = (int) ch;
+        if temp$7 == temp$8 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        return i;
+
+     label6:
+        nop;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label3;
+
+     label7:
+        nop;
+        temp$11 = -1;
+        return temp$11;
+    }
+}

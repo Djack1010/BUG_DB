@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendSeparator(java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0;
+        java.lang.String separator;
+        int loopIndex;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        separator := @parameter0: java.lang.String;
+        loopIndex := @parameter1: int;
+        goto label0;
+
+     label0:
+        nop;
+        if loopIndex > 0 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(separator);
+
+     label2:
+        nop;
+        return this;
+    }
+}

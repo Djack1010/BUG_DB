@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.EqualsBuilder append(float, float)
+    {
+        org.apache.commons.lang3.builder.EqualsBuilder this, temp$3;
+        float lhs, rhs;
+        boolean temp$0;
+        int temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.EqualsBuilder;
+        lhs := @parameter0: float;
+        rhs := @parameter1: float;
+        temp$0 = this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.lang.Float: int floatToIntBits(float)>(lhs);
+        temp$2 = staticinvoke <java.lang.Float: int floatToIntBits(float)>(rhs);
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(int,int)>(temp$1, temp$2);
+        return temp$3;
+    }
+}

@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public static byte[] longToByteArray(long, int, byte[], int, int)
+    {
+        long src, temp$10, temp$11;
+        int srcPos, dstPos, nBytes, temp$0, temp$1, temp$2, temp$3, shift, i, temp$5, temp$6, temp$8, temp$9, temp$12, temp$14, temp$15;
+        byte[] dst, temp$7;
+        java.lang.IllegalArgumentException temp$4;
+        byte temp$13;
+
+        src := @parameter0: long;
+        srcPos := @parameter1: int;
+        dst := @parameter2: byte[];
+        dstPos := @parameter3: int;
+        nBytes := @parameter4: int;
+        if 0 == nBytes goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dst;
+
+     label1:
+        nop;
+        temp$0 = nBytes - 1;
+        temp$1 = temp$0 * 8;
+        temp$2 = temp$1;
+        temp$3 = temp$2 + srcPos;
+        if temp$3 >= 64 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nBytes-1)*8+srcPos is greather or equal to than 64");
+        throw temp$4;
+
+     label3:
+        nop;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nBytes goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = i * 8;
+        temp$6 = temp$5 / srcPos;
+        shift = temp$6;
+        temp$7 = dst;
+        temp$8 = dstPos;
+        temp$9 = temp$8 + i;
+        temp$10 = src >> shift;
+        temp$11 = 255L & temp$10;
+        temp$12 = (int) temp$11;
+        temp$13 = (byte) temp$12;
+        temp$7[temp$9] = temp$13;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label4;
+
+     label6:
+        nop;
+        return dst;
+    }
+}

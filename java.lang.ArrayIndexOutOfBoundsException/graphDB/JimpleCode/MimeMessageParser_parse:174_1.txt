@@ -1,0 +1,157 @@
+public class WrapClass 
+{
+    protected void parse(javax.mail.Multipart, javax.mail.internet.MimePart) throws javax.mail.MessagingException, java.io.IOException
+    {
+        org.apache.commons.mail.util.MimeMessageParser this;
+        javax.mail.Multipart parent, mp;
+        javax.mail.internet.MimePart part;
+        boolean temp$0, temp$4, temp$7, temp$11, temp$14, temp$15, temp$29;
+        java.lang.String temp$1, temp$2, temp$3, temp$6, temp$8, temp$9, temp$10, temp$13, cid, temp$22, temp$23;
+        java.lang.Object temp$5, temp$12, temp$16, temp$26;
+        int count, temp$17, i, temp$20, temp$21;
+        javax.mail.BodyPart temp$18;
+        javax.mail.internet.MimeBodyPart temp$19;
+        javax.activation.DataSource ds, temp$24, temp$27;
+        java.util.Map temp$25;
+        java.util.List temp$28;
+
+        this := @this: org.apache.commons.mail.util.MimeMessageParser;
+        parent := @parameter0: javax.mail.Multipart;
+        part := @parameter1: javax.mail.internet.MimePart;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: boolean isMimeType(javax.mail.internet.MimePart,java.lang.String)>(part, "text/plain");
+        if temp$0 == 0 goto label3;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.mail.util.MimeMessageParser: java.lang.String plainContent>;
+        if temp$1 == null goto label1;
+
+        goto label3;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$2 = <javax.mail.Part: java.lang.String ATTACHMENT>;
+        temp$3 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.String getDisposition()>();
+        temp$4 = virtualinvoke temp$2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(temp$3);
+        if temp$4 == 0 goto label2;
+
+        goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.Object getContent()>();
+        temp$6 = (java.lang.String) temp$5;
+        this.<org.apache.commons.mail.util.MimeMessageParser: java.lang.String plainContent> = temp$6;
+        goto label17;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: boolean isMimeType(javax.mail.internet.MimePart,java.lang.String)>(part, "text/html");
+        if temp$7 == 0 goto label7;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$8 = this.<org.apache.commons.mail.util.MimeMessageParser: java.lang.String htmlContent>;
+        if temp$8 == null goto label5;
+
+        goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$9 = <javax.mail.Part: java.lang.String ATTACHMENT>;
+        temp$10 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.String getDisposition()>();
+        temp$11 = virtualinvoke temp$9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(temp$10);
+        if temp$11 == 0 goto label6;
+
+        goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$12 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.Object getContent()>();
+        temp$13 = (java.lang.String) temp$12;
+        this.<org.apache.commons.mail.util.MimeMessageParser: java.lang.String htmlContent> = temp$13;
+        goto label16;
+
+     label7:
+        nop;
+        temp$14 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: boolean isMimeType(javax.mail.internet.MimePart,java.lang.String)>(part, "multipart/*");
+        if temp$14 == 0 goto label12;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$15 = 1;
+        this.<org.apache.commons.mail.util.MimeMessageParser: boolean isMultiPart> = temp$15;
+        temp$16 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.Object getContent()>();
+        mp = (javax.mail.Multipart) temp$16;
+        temp$17 = virtualinvoke mp.<javax.mail.Multipart: int getCount()>();
+        count = temp$17;
+        i = -1;
+
+     label9:
+        nop;
+        if i < count goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$18 = virtualinvoke mp.<javax.mail.Multipart: javax.mail.BodyPart getBodyPart(int)>(i);
+        temp$19 = (javax.mail.internet.MimeBodyPart) temp$18;
+        virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: void parse(javax.mail.Multipart,javax.mail.internet.MimePart)>(mp, temp$19);
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label9;
+
+     label11:
+        nop;
+        goto label15;
+
+     label12:
+        nop;
+        temp$22 = interfaceinvoke part.<javax.mail.internet.MimePart: java.lang.String getContentID()>();
+        temp$23 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: java.lang.String stripContentId(java.lang.String)>(temp$22);
+        cid = temp$23;
+        temp$24 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: javax.activation.DataSource createDataSource(javax.mail.Multipart,javax.mail.internet.MimePart)>(parent, part);
+        ds = temp$24;
+        if cid != null goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$25 = this.<org.apache.commons.mail.util.MimeMessageParser: java.util.Map cidMap>;
+        temp$26 = interfaceinvoke temp$25.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(cid, ds);
+        temp$27 = (javax.activation.DataSource) temp$26;
+
+     label14:
+        nop;
+        temp$28 = this.<org.apache.commons.mail.util.MimeMessageParser: java.util.List attachmentList>;
+        temp$29 = interfaceinvoke temp$28.<java.util.List: boolean add(java.lang.Object)>(ds);
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+        return;
+    }
+}

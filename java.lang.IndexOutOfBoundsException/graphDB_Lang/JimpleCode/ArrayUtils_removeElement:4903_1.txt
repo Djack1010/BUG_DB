@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static double[] removeElement(double[], double)
+    {
+        double[] array, temp$1;
+        double element;
+        int index, temp$0;
+
+        array := @parameter0: double[];
+        element := @parameter1: double;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(double[],double)>(array, element);
+        index = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: double[] remove(double[],int)>(array, index);
+        return temp$1;
+    }
+}

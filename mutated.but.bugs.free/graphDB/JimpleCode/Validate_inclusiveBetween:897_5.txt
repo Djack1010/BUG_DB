@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public static void inclusiveBetween(java.lang.Object, java.lang.Object, java.lang.Comparable)
+    {
+        java.lang.Object start, end;
+        java.lang.Comparable value;
+        int temp$0, temp$1;
+        java.lang.IllegalArgumentException temp$2;
+        java.lang.Object[] temp$3;
+        java.lang.String temp$4;
+
+        start := @parameter0: java.lang.Object;
+        end := @parameter1: java.lang.Object;
+        value := @parameter2: java.lang.Comparable;
+        temp$0 = interfaceinvoke value.<java.lang.Comparable: int compareTo(java.lang.Object)>(start);
+        if temp$0 < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = interfaceinvoke value.<java.lang.Comparable: int compareTo(java.lang.Object)>(end);
+        if temp$1 >= 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        temp$3 = newarray (java.lang.Object)[3];
+        temp$3[0] = value;
+        temp$3[1] = start;
+        temp$3[2] = end;
+        temp$4 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("The value %s is not in the specified inclusive range of %s to %s", temp$3);
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+
+     label2:
+        nop;
+        return;
+    }
+}

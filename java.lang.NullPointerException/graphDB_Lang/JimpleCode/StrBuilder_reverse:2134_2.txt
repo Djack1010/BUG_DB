@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder reverse()
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1;
+        int temp$0, half, temp$2, temp$3, leftIdx, rightIdx, temp$4, temp$5, temp$7, temp$9, temp$11, temp$14, temp$15, temp$16, temp$17, temp$18;
+        char[] buf, temp$6, temp$8, temp$10, temp$13;
+        char swap, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$3 = temp$2 / 2;
+        half = temp$3;
+        buf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        leftIdx = 0;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 - 1;
+        rightIdx = temp$5;
+
+     label2:
+        nop;
+        if leftIdx < half goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$6 = buf;
+        temp$7 = leftIdx;
+        swap = temp$6[temp$7];
+        temp$8 = buf;
+        temp$9 = leftIdx;
+        temp$10 = buf;
+        temp$11 = rightIdx;
+        temp$12 = temp$10[temp$11];
+        temp$8[temp$9] = temp$12;
+        temp$13 = buf;
+        temp$14 = rightIdx;
+        temp$13[temp$14] = swap;
+        nop;
+        temp$15 = leftIdx;
+        temp$16 = temp$15 + 1;
+        leftIdx = temp$16;
+        temp$17 = rightIdx;
+        temp$18 = temp$17 + -1;
+        rightIdx = temp$18;
+        goto label2;
+
+     label4:
+        nop;
+        return this;
+    }
+}

@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static java.lang.String toString(java.lang.Object, org.apache.commons.lang3.builder.ToStringStyle)
+    {
+        java.lang.Object object;
+        org.apache.commons.lang3.builder.ToStringStyle style;
+        java.lang.String temp$0;
+
+        object := @parameter0: java.lang.Object;
+        style := @parameter1: org.apache.commons.lang3.builder.ToStringStyle;
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String toString(java.lang.Object,org.apache.commons.lang3.builder.ToStringStyle,boolean,boolean,java.lang.Class)>(object, style, 1, 0, null);
+        return temp$0;
+    }
+}

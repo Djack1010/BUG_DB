@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public static boolean isInstance(java.lang.Object, java.lang.reflect.Type)
+    {
+        java.lang.Object value;
+        java.lang.reflect.Type type;
+        boolean temp$0, temp$2, temp$4, temp$5;
+        java.lang.Class temp$1, temp$3;
+
+        value := @parameter0: java.lang.Object;
+        type := @parameter1: java.lang.reflect.Type;
+        if type == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        if value == null goto label2;
+
+        goto label4;
+
+     label2:
+        nop;
+        temp$0 = type instanceof java.lang.Class;
+        if temp$0 == 0 goto label6;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = (java.lang.Class) type;
+        temp$2 = virtualinvoke temp$1.<java.lang.Class: boolean isPrimitive()>();
+        if temp$2 == 0 goto label6;
+
+        goto label5;
+
+        goto label5;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$3 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.reflect.Type,java.util.Map)>(temp$3, type, null);
+        if temp$4 == 0 goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = 1;
+
+     label7:
+        nop;
+        return temp$5;
+    }
+}

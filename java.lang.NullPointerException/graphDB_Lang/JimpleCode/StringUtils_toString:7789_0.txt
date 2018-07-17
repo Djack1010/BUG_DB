@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    public static java.lang.String toString(byte[], java.lang.String) throws java.io.UnsupportedEncodingException
+    {
+        byte[] bytes;
+        java.lang.String charsetName, temp$0, temp$1, temp$2;
+        java.nio.charset.Charset temp$3;
+
+        bytes := @parameter0: byte[];
+        charsetName := @parameter1: java.lang.String;
+        if charsetName != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.String;
+        specialinvoke temp$1.<java.lang.String: void <init>(byte[],java.lang.String)>(bytes, charsetName);
+        temp$0 = temp$1;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.String;
+        temp$3 = staticinvoke <java.nio.charset.Charset: java.nio.charset.Charset defaultCharset()>();
+        specialinvoke temp$2.<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>(bytes, temp$3);
+        temp$0 = temp$2;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

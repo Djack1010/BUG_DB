@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public static transient java.lang.String keep(java.lang.String, java.lang.String[])
+    {
+        java.lang.String str, temp$0, temp$3, temp$4;
+        java.lang.String[] set;
+        boolean temp$1, temp$2;
+
+        str := @parameter0: java.lang.String;
+        set := @parameter1: java.lang.String[];
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: boolean isEmpty()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.CharSetUtils: boolean deepEmpty(java.lang.String[])>(set);
+        if temp$1 != temp$2 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.CharSetUtils: java.lang.String modify(java.lang.String,java.lang.String[],boolean)>(str, set, 1);
+        return temp$4;
+    }
+}

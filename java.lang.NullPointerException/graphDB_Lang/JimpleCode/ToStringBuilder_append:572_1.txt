@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ToStringBuilder append(java.lang.String, byte)
+    {
+        org.apache.commons.lang3.builder.ToStringBuilder this, temp$2;
+        java.lang.String fieldName;
+        byte value;
+        org.apache.commons.lang3.builder.ToStringStyle temp$0;
+        java.lang.StringBuffer temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringBuilder;
+        fieldName := @parameter0: java.lang.String;
+        value := @parameter1: byte;
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringStyle style>;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.StringBuffer buffer>;
+        virtualinvoke temp$0.<org.apache.commons.lang3.builder.ToStringStyle: void append(java.lang.StringBuffer,java.lang.String,byte)>(temp$1, fieldName, value);
+        temp$2 = null;
+        return temp$2;
+    }
+}

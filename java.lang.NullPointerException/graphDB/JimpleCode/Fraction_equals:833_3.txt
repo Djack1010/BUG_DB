@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public final boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.math.Fraction this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$1, temp$2, temp$7;
+        int temp$3, temp$4, temp$5, temp$6;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = obj instanceof org.apache.commons.lang3.math.Fraction;
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label3:
+        nop;
+        other = null;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getNumerator()>();
+        temp$4 = virtualinvoke other.<org.apache.commons.lang3.math.Fraction: int getNumerator()>();
+        if temp$3 == temp$4 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getDenominator()>();
+        temp$6 = virtualinvoke other.<org.apache.commons.lang3.math.Fraction: int getDenominator()>();
+        if temp$5 == temp$6 goto label6;
+
+        goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$7 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$7 = 1;
+
+     label7:
+        nop;
+        return temp$7;
+    }
+}

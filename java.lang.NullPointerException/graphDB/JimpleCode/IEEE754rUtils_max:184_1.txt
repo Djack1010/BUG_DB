@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    public static transient float max(float[])
+    {
+        float[] array, temp$2, temp$5;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.Object[] temp$1;
+        float max, temp$7, temp$8;
+        int temp$3, j, temp$4, temp$6, temp$9, temp$10;
+
+        array := @parameter0: float[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Array must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(1, "Array cannot be empty.", temp$1);
+        temp$2 = array;
+        temp$3 = 0;
+        max = temp$2[temp$3];
+        j = 1;
+
+     label2:
+        nop;
+        temp$4 = lengthof array;
+        if j < temp$4 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = array;
+        temp$6 = j;
+        temp$7 = temp$5[temp$6];
+        temp$8 = staticinvoke <org.apache.commons.lang3.math.IEEE754rUtils: float max(float,float)>(temp$7, max);
+        max = temp$8;
+        nop;
+        temp$9 = j;
+        temp$10 = temp$9 + 1;
+        j = temp$10;
+        goto label2;
+
+     label4:
+        nop;
+        return max;
+    }
+}

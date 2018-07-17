@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String, boolean) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceUrlResolver this;
+        java.lang.String resourceLocation;
+        boolean isLenient, temp$0;
+        javax.activation.DataSource result, temp$4;
+        java.net.URL url, temp$1;
+        javax.activation.URLDataSource temp$2;
+        java.io.InputStream temp$3;
+        java.io.IOException e;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceUrlResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        isLenient := @parameter1: boolean;
+        result = null;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: boolean isCid(java.lang.String)>(resourceLocation);
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: java.net.URL createUrl(java.lang.String)>(resourceLocation);
+        url = temp$1;
+        temp$2 = new javax.activation.URLDataSource;
+        specialinvoke temp$2.<javax.activation.URLDataSource: void <init>(java.net.URL)>(url);
+        result = temp$2;
+        temp$3 = interfaceinvoke result.<javax.activation.DataSource: java.io.InputStream getInputStream()>();
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        return result;
+
+     label4:
+        nop;
+        e := @caughtexception;
+        if isLenient == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = null;
+        nop;
+        return temp$4;
+
+     label6:
+        nop;
+        throw e;
+
+        catch java.io.IOException from label0 to label3 with label4;
+    }
+}

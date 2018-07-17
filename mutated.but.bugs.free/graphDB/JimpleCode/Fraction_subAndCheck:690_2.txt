@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    private static final int subAndCheck(int, int)
+    {
+        int x, y, temp$3, temp$4, temp$6;
+        long s, temp$0, temp$1, temp$2;
+        java.lang.ArithmeticException temp$5;
+
+        x := @parameter0: int;
+        y := @parameter1: int;
+        temp$0 = (long) x;
+        temp$1 = (long) y;
+        temp$2 = temp$0 - temp$1;
+        s = temp$2;
+        temp$3 = s cmp -2147483648L;
+        if temp$3 >= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$4 = s cmp 2147483647L;
+        if temp$4 < 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$5 = new java.lang.ArithmeticException;
+        specialinvoke temp$5.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: add");
+        throw temp$5;
+
+     label2:
+        nop;
+        temp$6 = (int) s;
+        return temp$6;
+    }
+}

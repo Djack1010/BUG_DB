@@ -1,0 +1,75 @@
+public class WrapClass 
+{
+    private final void process(byte[], int)
+    {
+        org.apache.commons.codec.digest.XXHash32 this;
+        byte[] b;
+        int offset, s0, temp$1, s1, temp$3, s2, temp$5, s3, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$22, temp$23, temp$24, temp$25, temp$26, temp$27, temp$28, temp$29, temp$30, temp$31, temp$32, temp$33, temp$34, temp$35, temp$36, temp$37, temp$39, temp$41, temp$43, temp$45, temp$46;
+        int[] temp$0, temp$2, temp$4, temp$6, temp$38, temp$40, temp$42, temp$44;
+
+        this := @this: org.apache.commons.codec.digest.XXHash32;
+        b := @parameter0: byte[];
+        offset := @parameter1: int;
+        temp$0 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$1 = 0;
+        s0 = temp$0[temp$1];
+        temp$2 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$3 = 1;
+        s1 = temp$2[temp$3];
+        temp$4 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$5 = 2;
+        s2 = temp$4[temp$5];
+        temp$6 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$7 = 3;
+        s3 = temp$6[temp$7];
+        temp$8 = s0;
+        temp$9 = staticinvoke <org.apache.commons.codec.digest.XXHash32: int getInt(byte[],int)>(b, offset);
+        temp$10 = temp$9 * -2048144777;
+        temp$11 = temp$8 + temp$10;
+        temp$12 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$11, 13);
+        temp$13 = temp$12 * -1640531535;
+        s0 = temp$13;
+        temp$14 = s1;
+        temp$15 = offset;
+        temp$16 = temp$15 + 4;
+        temp$17 = staticinvoke <org.apache.commons.codec.digest.XXHash32: int getInt(byte[],int)>(b, temp$16);
+        temp$18 = temp$17 * -2048144777;
+        temp$19 = temp$14 + temp$18;
+        temp$20 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$19, 13);
+        temp$21 = temp$20 * -1640531535;
+        s1 = temp$21;
+        temp$22 = s2;
+        temp$23 = offset;
+        temp$24 = temp$23 + 8;
+        temp$25 = staticinvoke <org.apache.commons.codec.digest.XXHash32: int getInt(byte[],int)>(b, temp$24);
+        temp$26 = temp$25 * -2048144777;
+        temp$27 = temp$22 + temp$26;
+        temp$28 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$27, 13);
+        temp$29 = temp$28 * -1640531535;
+        s2 = temp$29;
+        temp$30 = s3;
+        temp$31 = offset;
+        temp$32 = temp$31 + -12;
+        temp$33 = staticinvoke <org.apache.commons.codec.digest.XXHash32: int getInt(byte[],int)>(b, temp$32);
+        temp$34 = temp$33 * -2048144777;
+        temp$35 = temp$30 + temp$34;
+        temp$36 = staticinvoke <java.lang.Integer: int rotateLeft(int,int)>(temp$35, 13);
+        temp$37 = temp$36 * -1640531535;
+        s3 = temp$37;
+        temp$38 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$39 = 0;
+        temp$38[temp$39] = s0;
+        temp$40 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$41 = 1;
+        temp$40[temp$41] = s1;
+        temp$42 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$43 = 2;
+        temp$42[temp$43] = s2;
+        temp$44 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$45 = 3;
+        temp$44[temp$45] = s3;
+        temp$46 = 0;
+        this.<org.apache.commons.codec.digest.XXHash32: int pos> = temp$46;
+        return;
+    }
+}

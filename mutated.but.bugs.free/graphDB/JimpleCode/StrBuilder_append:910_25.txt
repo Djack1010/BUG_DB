@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3;
+        char ch;
+        int len, temp$0, temp$1, temp$2, temp$5, temp$6, temp$7;
+        char[] temp$4;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        ch := @parameter0: char;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$0;
+        temp$1 = len;
+        temp$2 = temp$1 + -1;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$2);
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$6 = temp$5 + 1;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$6;
+        temp$7 = temp$5;
+        temp$4[temp$7] = ch;
+        return this;
+    }
+}

@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static java.util.Calendar toCalendar(java.util.Date)
+    {
+        java.util.Date date;
+        java.util.Calendar c, temp$0;
+
+        date := @parameter0: java.util.Date;
+        temp$0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        c = temp$0;
+        return c;
+    }
+}

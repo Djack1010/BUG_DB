@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public int hashCode()
+    {
+        org.apache.commons.lang3.concurrent.ConstantInitializer this;
+        int temp$0, temp$3;
+        java.lang.Object temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.concurrent.ConstantInitializer;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.concurrent.ConstantInitializer: java.lang.Object getObject()>();
+        if temp$1 != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.concurrent.ConstantInitializer: java.lang.Object getObject()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Object: int hashCode()>();
+        temp$0 = temp$3;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = -1;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

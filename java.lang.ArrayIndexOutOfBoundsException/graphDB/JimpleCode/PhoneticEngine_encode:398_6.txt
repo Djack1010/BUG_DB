@@ -1,0 +1,331 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String, org.apache.commons.codec.language.bm.Languages$LanguageSet)
+    {
+        org.apache.commons.codec.language.bm.PhoneticEngine this;
+        java.lang.String input, temp$10, temp$11, temp$12, temp$16, remainder, temp$18, combined, temp$20, temp$22, temp$23, temp$24, l, temp$33, remainder, temp$38, combined, temp$40, temp$42, temp$43, temp$44, aWord, lastPart, temp$73, temp$81, temp$86, word, temp$92, temp$94, temp$104;
+        org.apache.commons.codec.language.bm.Languages$LanguageSet languageSet;
+        java.util.Map rules, temp$2, finalRules1, temp$5, finalRules2, temp$8, temp$25, temp$58, temp$64;
+        org.apache.commons.codec.language.bm.NameType temp$0, temp$3, temp$6, temp$13, temp$14, temp$26, temp$59, temp$65, temp$72, temp$76;
+        org.apache.commons.codec.language.bm.RuleType temp$1, temp$4, temp$7;
+        java.util.Locale temp$9;
+        int temp$15, temp$35, temp$36, temp$37, temp$54, temp$55, temp$56, temp$77, temp$78, temp$79, temp$82, i, temp$96, temp$98, temp$100;
+        boolean temp$17, temp$30, temp$34, temp$50, temp$57, temp$62, temp$63, temp$68, temp$69, temp$80, temp$89;
+        java.lang.StringBuffer temp$19, temp$21, temp$32, temp$39, temp$41, temp$71;
+        java.lang.Object temp$27, temp$31, temp$51, temp$60, temp$66, temp$85, temp$90;
+        java.util.Set temp$28, temp$61, temp$67;
+        java.util.Iterator temp$29, temp$49, temp$83, temp$84, temp$88;
+        java.util.List words, temp$46, temp$47, words2;
+        java.lang.String[] temp$45, parts, temp$52, temp$53;
+        java.util.ArrayList temp$48;
+        java.lang.IllegalStateException temp$70;
+        int[] temp$74, temp$75;
+        java.lang.StringBuilder result, temp$87, temp$91, temp$93;
+        org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder phonemeBuilder, temp$95, temp$101, temp$102, temp$103;
+        org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication rulesApplication, temp$97, temp$99;
+
+        this := @this: org.apache.commons.codec.language.bm.PhoneticEngine;
+        input := @parameter0: java.lang.String;
+        languageSet := @parameter1: org.apache.commons.codec.language.bm.Languages$LanguageSet;
+        temp$0 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$1 = <org.apache.commons.codec.language.bm.RuleType: org.apache.commons.codec.language.bm.RuleType RULES>;
+        temp$2 = staticinvoke <org.apache.commons.codec.language.bm.Rule: java.util.Map getInstanceMap(org.apache.commons.codec.language.bm.NameType,org.apache.commons.codec.language.bm.RuleType,org.apache.commons.codec.language.bm.Languages$LanguageSet)>(temp$0, temp$1, languageSet);
+        rules = temp$2;
+        temp$3 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$4 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.RuleType ruleType>;
+        temp$5 = staticinvoke <org.apache.commons.codec.language.bm.Rule: java.util.Map getInstanceMap(org.apache.commons.codec.language.bm.NameType,org.apache.commons.codec.language.bm.RuleType,java.lang.String)>(temp$3, temp$4, "common");
+        finalRules1 = temp$5;
+        temp$6 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$7 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.RuleType ruleType>;
+        temp$8 = staticinvoke <org.apache.commons.codec.language.bm.Rule: java.util.Map getInstanceMap(org.apache.commons.codec.language.bm.NameType,org.apache.commons.codec.language.bm.RuleType,org.apache.commons.codec.language.bm.Languages$LanguageSet)>(temp$6, temp$7, languageSet);
+        finalRules2 = temp$8;
+        temp$9 = <java.util.Locale: java.util.Locale ENGLISH>;
+        temp$10 = virtualinvoke input.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>(temp$9);
+        temp$11 = virtualinvoke temp$10.<java.lang.String: java.lang.String replace(char,char)>(45, 32);
+        temp$12 = virtualinvoke temp$11.<java.lang.String: java.lang.String trim()>();
+        input = temp$12;
+        temp$13 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$14 = <org.apache.commons.codec.language.bm.NameType: org.apache.commons.codec.language.bm.NameType GENERIC>;
+        if temp$13 == temp$14 goto label0;
+
+        goto label8;
+
+     label0:
+        nop;
+        temp$15 = virtualinvoke input.<java.lang.String: int length()>();
+        if temp$15 >= 2 goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$16 = virtualinvoke input.<java.lang.String: java.lang.String substring(int,int)>(0, 2);
+        temp$17 = virtualinvoke temp$16.<java.lang.String: boolean equals(java.lang.Object)>("d\'");
+        if temp$17 == 0 goto label3;
+
+        goto label2;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$18 = virtualinvoke input.<java.lang.String: java.lang.String substring(int)>(2);
+        remainder = temp$18;
+        temp$19 = new java.lang.StringBuffer;
+        specialinvoke temp$19.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("d");
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(remainder);
+        temp$20 = virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.String toString()>();
+        combined = temp$20;
+        temp$21 = new java.lang.StringBuffer;
+        specialinvoke temp$21.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("(");
+        temp$22 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(remainder);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$22);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(")-(");
+        temp$23 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(combined);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$23);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(")");
+        temp$24 = virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$24;
+
+     label3:
+        nop;
+        temp$25 = <org.apache.commons.codec.language.bm.PhoneticEngine: java.util.Map NAME_PREFIXES>;
+        temp$26 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$27 = interfaceinvoke temp$25.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$26);
+        temp$28 = (java.util.Set) temp$27;
+        temp$29 = interfaceinvoke temp$28.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label4:
+        nop;
+        temp$30 = interfaceinvoke temp$29.<java.util.Iterator: boolean hasNext()>();
+        if temp$30 == 0 goto label7;
+
+        temp$31 = interfaceinvoke temp$29.<java.util.Iterator: java.lang.Object next()>();
+        l = (java.lang.String) temp$31;
+        temp$32 = new java.lang.StringBuffer;
+        specialinvoke temp$32.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(l);
+        virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" ");
+        temp$33 = virtualinvoke temp$32.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$34 = virtualinvoke input.<java.lang.String: boolean startsWith(java.lang.String)>(temp$33);
+        if temp$34 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$35 = virtualinvoke l.<java.lang.String: int length()>();
+        temp$36 = temp$35;
+        temp$37 = temp$36 + 1;
+        temp$38 = virtualinvoke input.<java.lang.String: java.lang.String substring(int)>(temp$37);
+        remainder = temp$38;
+        temp$39 = new java.lang.StringBuffer;
+        specialinvoke temp$39.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$39.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(l);
+        virtualinvoke temp$39.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(remainder);
+        temp$40 = virtualinvoke temp$39.<java.lang.StringBuffer: java.lang.String toString()>();
+        combined = temp$40;
+        temp$41 = new java.lang.StringBuffer;
+        specialinvoke temp$41.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("(");
+        temp$42 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(remainder);
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$42);
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(")-(");
+        temp$43 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(combined);
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$43);
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(")");
+        temp$44 = virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$44;
+
+     label6:
+        nop;
+        nop;
+        goto label4;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+        temp$45 = virtualinvoke input.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\s+");
+        temp$46 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(temp$45);
+        temp$47 = (java.util.List) temp$46;
+        words = temp$47;
+        temp$48 = new java.util.ArrayList;
+        specialinvoke temp$48.<java.util.ArrayList: void <init>()>();
+        words2 = temp$48;
+        goto label15;
+
+     label9:
+        nop;
+        temp$49 = interfaceinvoke words.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label10:
+        nop;
+        temp$50 = interfaceinvoke temp$49.<java.util.Iterator: boolean hasNext()>();
+        if temp$50 == 0 goto label11;
+
+        temp$51 = interfaceinvoke temp$49.<java.util.Iterator: java.lang.Object next()>();
+        aWord = (java.lang.String) temp$51;
+        temp$52 = virtualinvoke aWord.<java.lang.String: java.lang.String[] split(java.lang.String)>("\'");
+        parts = temp$52;
+        temp$53 = parts;
+        temp$54 = lengthof parts;
+        temp$55 = temp$54 / 1;
+        temp$56 = temp$55;
+        lastPart = temp$53[temp$56];
+        temp$57 = interfaceinvoke words2.<java.util.List: boolean add(java.lang.Object)>(lastPart);
+        nop;
+        goto label10;
+
+     label11:
+        nop;
+        temp$58 = <org.apache.commons.codec.language.bm.PhoneticEngine: java.util.Map NAME_PREFIXES>;
+        temp$59 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$60 = interfaceinvoke temp$58.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$59);
+        temp$61 = (java.util.Set) temp$60;
+        temp$62 = interfaceinvoke words2.<java.util.List: boolean removeAll(java.util.Collection)>(temp$61);
+        goto label16;
+
+     label12:
+        nop;
+        temp$63 = interfaceinvoke words2.<java.util.List: boolean addAll(java.util.Collection)>(words);
+        temp$64 = <org.apache.commons.codec.language.bm.PhoneticEngine: java.util.Map NAME_PREFIXES>;
+        temp$65 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$66 = interfaceinvoke temp$64.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$65);
+        temp$67 = (java.util.Set) temp$66;
+        temp$68 = interfaceinvoke words2.<java.util.List: boolean removeAll(java.util.Collection)>(temp$67);
+        goto label16;
+
+     label13:
+        nop;
+        temp$69 = interfaceinvoke words2.<java.util.List: boolean addAll(java.util.Collection)>(words);
+        goto label16;
+
+     label14:
+        nop;
+        temp$70 = new java.lang.IllegalStateException;
+        temp$71 = new java.lang.StringBuffer;
+        specialinvoke temp$71.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unreachable case: ");
+        temp$72 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$72);
+        temp$73 = virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$70.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$73);
+        throw temp$70;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$74 = staticinvoke <org.apache.commons.codec.language.bm.PhoneticEngine: int[] $SwitchMap$org$apache$commons$codec$language$bm$NameType()>();
+        temp$75 = temp$74;
+        temp$76 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.NameType nameType>;
+        temp$77 = virtualinvoke temp$76.<org.apache.commons.codec.language.bm.NameType: int ordinal()>();
+        temp$78 = temp$77;
+        temp$79 = temp$75[temp$78];
+        nop;
+        tableswitch(temp$79)
+        {
+            case 1: goto label9;
+            case 2: goto label12;
+            case 3: goto label13;
+            default: goto label14;
+        };
+
+     label16:
+        nop;
+        temp$80 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: boolean concat>;
+        if temp$80 == 0 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$81 = staticinvoke <org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String join(java.lang.Iterable,java.lang.String)>(words2, " ");
+        input = temp$81;
+        goto label24;
+
+     label18:
+        nop;
+        temp$82 = interfaceinvoke words2.<java.util.List: int size()>();
+        if temp$82 == 1 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        temp$83 = interfaceinvoke words.<java.util.List: java.util.Iterator iterator()>();
+        temp$84 = (java.util.Iterator) temp$83;
+        temp$85 = interfaceinvoke temp$84.<java.util.Iterator: java.lang.Object next()>();
+        temp$86 = (java.lang.String) temp$85;
+        input = temp$86;
+        goto label23;
+
+     label20:
+        nop;
+        temp$87 = new java.lang.StringBuilder;
+        specialinvoke temp$87.<java.lang.StringBuilder: void <init>()>();
+        result = temp$87;
+        temp$88 = interfaceinvoke words2.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label21:
+        nop;
+        temp$89 = interfaceinvoke temp$88.<java.util.Iterator: boolean hasNext()>();
+        if temp$89 == 0 goto label22;
+
+        temp$90 = interfaceinvoke temp$88.<java.util.Iterator: java.lang.Object next()>();
+        word = (java.lang.String) temp$90;
+        temp$91 = virtualinvoke result.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("-");
+        temp$92 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(word);
+        temp$93 = virtualinvoke temp$91.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$92);
+        nop;
+        goto label21;
+
+     label22:
+        nop;
+        temp$94 = virtualinvoke result.<java.lang.StringBuilder: java.lang.String substring(int)>(1);
+        return temp$94;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        temp$95 = staticinvoke <org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder empty(org.apache.commons.codec.language.bm.Languages$LanguageSet)>(languageSet);
+        phonemeBuilder = temp$95;
+        i = 0;
+
+     label25:
+        nop;
+        temp$96 = virtualinvoke input.<java.lang.String: int length()>();
+        if i < temp$96 goto label26;
+
+        goto label27;
+
+     label26:
+        nop;
+        temp$97 = new org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication;
+        temp$98 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: int maxPhonemes>;
+        specialinvoke temp$97.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: void <init>(java.util.Map,java.lang.CharSequence,org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder,int,int)>(rules, input, phonemeBuilder, i, temp$98);
+        temp$99 = virtualinvoke temp$97.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication invoke()>();
+        rulesApplication = temp$99;
+        temp$100 = virtualinvoke rulesApplication.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: int getI()>();
+        i = temp$100;
+        temp$101 = virtualinvoke rulesApplication.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder getPhonemeBuilder()>();
+        phonemeBuilder = temp$101;
+        nop;
+        goto label25;
+
+     label27:
+        nop;
+        temp$102 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder applyFinalRules(org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder,java.util.Map)>(phonemeBuilder, finalRules1);
+        phonemeBuilder = temp$102;
+        temp$103 = virtualinvoke this.<org.apache.commons.codec.language.bm.PhoneticEngine: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder applyFinalRules(org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder,java.util.Map)>(phonemeBuilder, finalRules2);
+        phonemeBuilder = temp$103;
+        temp$104 = virtualinvoke phonemeBuilder.<org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: java.lang.String makeString()>();
+        return temp$104;
+    }
+}

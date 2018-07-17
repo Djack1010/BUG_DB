@@ -1,0 +1,451 @@
+public class WrapClass 
+{
+    public static java.lang.String formatPeriod(long, long, java.lang.String, boolean, java.util.TimeZone)
+    {
+        long startMillis, endMillis, temp$116, temp$117, temp$118, temp$119, temp$120, temp$121, temp$122;
+        java.lang.String format, temp$123;
+        boolean padWithZeros, temp$1, temp$45, temp$56, temp$62, temp$72, temp$93, temp$99, temp$105, temp$111;
+        java.util.TimeZone timezone;
+        int temp$0, milliseconds, temp$7, temp$8, temp$9, seconds, temp$10, temp$11, temp$12, minutes, temp$13, temp$14, temp$15, hours, temp$16, temp$17, temp$18, days, temp$19, temp$20, temp$21, months, temp$22, temp$23, temp$24, years, temp$25, temp$26, temp$27, temp$28, temp$29, temp$30, temp$31, temp$32, temp$33, temp$34, temp$35, temp$36, temp$37, temp$38, temp$39, temp$40, temp$41, temp$42, temp$43, temp$46, temp$47, temp$48, temp$49, temp$50, temp$51, temp$52, temp$53, temp$54, temp$57, temp$58, temp$59, temp$60, target, temp$63, temp$64, temp$65, temp$66, temp$67, temp$68, temp$69, temp$70, temp$71, temp$73, temp$74, temp$75, temp$76, temp$77, temp$78, temp$79, temp$80, temp$81, temp$82, temp$83, temp$84, temp$85, temp$86, temp$87, temp$88, temp$89, temp$90, temp$91, temp$94, temp$95, temp$96, temp$97, temp$100, temp$101, temp$102, temp$103, temp$106, temp$107, temp$108, temp$109, temp$112, temp$113, temp$114, temp$115;
+        java.lang.Object[] temp$2;
+        org.apache.commons.lang3.time.DurationFormatUtils$Token[] tokens, temp$3;
+        java.util.Calendar start, end, temp$5;
+        java.util.Date temp$4, temp$6;
+        java.lang.Object temp$44, temp$55, temp$61, temp$92, temp$98, temp$104, temp$110;
+
+        startMillis := @parameter0: long;
+        endMillis := @parameter1: long;
+        format := @parameter2: java.lang.String;
+        padWithZeros := @parameter3: boolean;
+        timezone := @parameter4: java.util.TimeZone;
+        temp$0 = startMillis cmp endMillis;
+        if temp$0 > 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "startMillis must not be greater than endMillis", temp$2);
+        temp$3 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils: org.apache.commons.lang3.time.DurationFormatUtils$Token[] lexx(java.lang.String)>(format);
+        tokens = temp$3;
+        start = null;
+        temp$4 = new java.util.Date;
+        specialinvoke temp$4.<java.util.Date: void <init>(long)>(startMillis);
+        virtualinvoke start.<java.util.Calendar: void setTime(java.util.Date)>(temp$4);
+        temp$5 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance(java.util.TimeZone)>(timezone);
+        end = temp$5;
+        temp$6 = new java.util.Date;
+        specialinvoke temp$6.<java.util.Date: void <init>(long)>(endMillis);
+        virtualinvoke end.<java.util.Calendar: void setTime(java.util.Date)>(temp$6);
+        temp$7 = virtualinvoke end.<java.util.Calendar: int get(int)>(14);
+        temp$8 = virtualinvoke start.<java.util.Calendar: int get(int)>(14);
+        temp$9 = temp$7 - temp$8;
+        milliseconds = temp$9;
+        temp$10 = virtualinvoke end.<java.util.Calendar: int get(int)>(13);
+        temp$11 = virtualinvoke start.<java.util.Calendar: int get(int)>(13);
+        temp$12 = temp$10 - temp$11;
+        seconds = temp$12;
+        temp$13 = virtualinvoke end.<java.util.Calendar: int get(int)>(12);
+        temp$14 = virtualinvoke start.<java.util.Calendar: int get(int)>(12);
+        temp$15 = temp$13 - temp$14;
+        minutes = temp$15;
+        temp$16 = virtualinvoke end.<java.util.Calendar: int get(int)>(11);
+        temp$17 = virtualinvoke start.<java.util.Calendar: int get(int)>(11);
+        temp$18 = temp$16 - temp$17;
+        hours = temp$18;
+        temp$19 = virtualinvoke end.<java.util.Calendar: int get(int)>(5);
+        temp$20 = virtualinvoke start.<java.util.Calendar: int get(int)>(5);
+        temp$21 = temp$19 - temp$20;
+        days = temp$21;
+        temp$22 = virtualinvoke end.<java.util.Calendar: int get(int)>(2);
+        temp$23 = virtualinvoke start.<java.util.Calendar: int get(int)>(2);
+        temp$24 = temp$22 - temp$23;
+        months = temp$24;
+        temp$25 = virtualinvoke end.<java.util.Calendar: int get(int)>(1);
+        temp$26 = virtualinvoke start.<java.util.Calendar: int get(int)>(1);
+        temp$27 = temp$25 - temp$26;
+        years = temp$27;
+
+     label3:
+        nop;
+        if milliseconds < 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$28 = milliseconds;
+        temp$29 = temp$28 + 1000;
+        milliseconds = temp$29;
+        temp$30 = seconds;
+        temp$31 = temp$30 - 1;
+        seconds = temp$31;
+        goto label3;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        if seconds < 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$32 = seconds;
+        temp$33 = temp$32 + 60;
+        seconds = temp$33;
+        temp$34 = minutes;
+        temp$35 = temp$34 - 1;
+        minutes = temp$35;
+        goto label6;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        if minutes < 0 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$36 = minutes;
+        temp$37 = temp$36 + 60;
+        minutes = temp$37;
+        temp$38 = hours;
+        temp$39 = temp$38 - 1;
+        hours = temp$39;
+        goto label9;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        if hours < 0 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$40 = hours;
+        temp$41 = temp$40 + 24;
+        hours = temp$41;
+        temp$42 = days;
+        temp$43 = temp$42 - 1;
+        days = temp$43;
+        goto label12;
+
+     label14:
+        nop;
+        temp$44 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object M>;
+        temp$45 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$44);
+        if temp$45 == 0 goto label28;
+
+        goto label15;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        if days < 0 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$46 = days;
+        temp$47 = virtualinvoke start.<java.util.Calendar: int getActualMaximum(int)>(5);
+        temp$48 = temp$46 + temp$47;
+        days = temp$48;
+        temp$49 = months;
+        temp$50 = temp$49 - 1;
+        months = temp$50;
+        virtualinvoke start.<java.util.Calendar: void add(int,int)>(2, 1);
+        goto label16;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+        if months < 0 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$51 = months;
+        temp$52 = temp$51 + 12;
+        months = temp$52;
+        temp$53 = years;
+        temp$54 = temp$53 - 1;
+        years = temp$54;
+        goto label19;
+
+     label21:
+        nop;
+        temp$55 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object y>;
+        temp$56 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$55);
+        if temp$56 == 0 goto label22;
+
+        goto label27;
+
+     label22:
+        nop;
+        if years != 0 goto label23;
+
+        goto label27;
+
+        goto label23;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        if years != 0 goto label25;
+
+        goto label26;
+
+     label25:
+        nop;
+        temp$57 = months;
+        temp$58 = 12 * years;
+        temp$59 = temp$57 + temp$58;
+        months = temp$59;
+        temp$60 = 0;
+        years = temp$60;
+        goto label24;
+
+     label26:
+        nop;
+
+     label27:
+        nop;
+        goto label46;
+
+     label28:
+        nop;
+        temp$61 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object y>;
+        temp$62 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$61);
+        if temp$62 == 0 goto label29;
+
+        goto label39;
+
+     label29:
+        nop;
+        temp$63 = virtualinvoke end.<java.util.Calendar: int get(int)>(1);
+        target = temp$63;
+        if months < 0 goto label30;
+
+        goto label31;
+
+     label30:
+        nop;
+        temp$64 = target;
+        temp$65 = temp$64 - 1;
+        target = temp$65;
+
+     label31:
+        nop;
+
+     label32:
+        nop;
+        temp$66 = virtualinvoke start.<java.util.Calendar: int get(int)>(1);
+        if temp$66 != target goto label33;
+
+        goto label38;
+
+     label33:
+        nop;
+        temp$67 = days;
+        temp$68 = virtualinvoke start.<java.util.Calendar: int getActualMaximum(int)>(6);
+        temp$69 = virtualinvoke start.<java.util.Calendar: int get(int)>(6);
+        temp$70 = temp$68 - temp$69;
+        temp$71 = temp$67 + temp$70;
+        days = temp$71;
+        temp$72 = start instanceof java.util.GregorianCalendar;
+        if temp$72 == 0 goto label37;
+
+        goto label34;
+
+     label34:
+        nop;
+        temp$73 = virtualinvoke start.<java.util.Calendar: int get(int)>(2);
+        if temp$73 == 1 goto label35;
+
+        goto label37;
+
+        goto label35;
+
+     label35:
+        nop;
+        temp$74 = virtualinvoke start.<java.util.Calendar: int get(int)>(5);
+        if temp$74 == 29 goto label36;
+
+        goto label37;
+
+        goto label36;
+
+     label36:
+        nop;
+        temp$75 = days;
+        temp$76 = temp$75 + 1;
+        days = temp$76;
+
+     label37:
+        nop;
+        virtualinvoke start.<java.util.Calendar: void add(int,int)>(1, 1);
+        temp$77 = days;
+        temp$78 = virtualinvoke start.<java.util.Calendar: int get(int)>(6);
+        temp$79 = temp$77 + temp$78;
+        days = temp$79;
+        goto label32;
+
+     label38:
+        nop;
+        temp$80 = 0;
+        years = temp$80;
+
+     label39:
+        nop;
+
+     label40:
+        nop;
+        temp$81 = virtualinvoke start.<java.util.Calendar: int get(int)>(2);
+        temp$82 = virtualinvoke end.<java.util.Calendar: int get(int)>(2);
+        if temp$81 != temp$82 goto label41;
+
+        goto label42;
+
+     label41:
+        nop;
+        temp$83 = days;
+        temp$84 = virtualinvoke start.<java.util.Calendar: int getActualMaximum(int)>(5);
+        temp$85 = temp$83 + temp$84;
+        days = temp$85;
+        virtualinvoke start.<java.util.Calendar: void add(int,int)>(2, 1);
+        goto label40;
+
+     label42:
+        nop;
+        temp$86 = 0;
+        months = temp$86;
+
+     label43:
+        nop;
+        if days < 0 goto label44;
+
+        goto label45;
+
+     label44:
+        nop;
+        temp$87 = days;
+        temp$88 = virtualinvoke start.<java.util.Calendar: int getActualMaximum(int)>(5);
+        temp$89 = temp$87 + temp$88;
+        days = temp$89;
+        temp$90 = months;
+        temp$91 = temp$90 - 1;
+        months = temp$91;
+        virtualinvoke start.<java.util.Calendar: void add(int,int)>(2, 1);
+        goto label43;
+
+     label45:
+        nop;
+
+     label46:
+        nop;
+        temp$92 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object d>;
+        temp$93 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$92);
+        if temp$93 == 0 goto label47;
+
+        goto label48;
+
+     label47:
+        nop;
+        temp$94 = hours;
+        temp$95 = 24 * days;
+        temp$96 = temp$94 + temp$95;
+        hours = temp$96;
+        temp$97 = 0;
+        days = temp$97;
+
+     label48:
+        nop;
+        temp$98 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object H>;
+        temp$99 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$98);
+        if temp$99 == 0 goto label49;
+
+        goto label50;
+
+     label49:
+        nop;
+        temp$100 = minutes;
+        temp$101 = 60 * hours;
+        temp$102 = temp$100 + temp$101;
+        minutes = temp$102;
+        temp$103 = 0;
+        hours = temp$103;
+
+     label50:
+        nop;
+        temp$104 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object m>;
+        temp$105 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$104);
+        if temp$105 == 0 goto label51;
+
+        goto label52;
+
+     label51:
+        nop;
+        temp$106 = seconds;
+        temp$107 = 60 * minutes;
+        temp$108 = temp$106 + temp$107;
+        seconds = temp$108;
+        temp$109 = 0;
+        minutes = temp$109;
+
+     label52:
+        nop;
+        temp$110 = <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.Object s>;
+        temp$111 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils$Token: boolean containsTokenWithValue(org.apache.commons.lang3.time.DurationFormatUtils$Token[],java.lang.Object)>(tokens, temp$110);
+        if temp$111 == 0 goto label53;
+
+        goto label54;
+
+     label53:
+        nop;
+        temp$112 = milliseconds;
+        temp$113 = 1000 * seconds;
+        temp$114 = temp$112 + temp$113;
+        milliseconds = temp$114;
+        temp$115 = 0;
+        seconds = temp$115;
+
+     label54:
+        nop;
+        temp$116 = (long) years;
+        temp$117 = (long) months;
+        temp$118 = (long) days;
+        temp$119 = (long) hours;
+        temp$120 = (long) minutes;
+        temp$121 = (long) seconds;
+        temp$122 = (long) milliseconds;
+        temp$123 = staticinvoke <org.apache.commons.lang3.time.DurationFormatUtils: java.lang.String format(org.apache.commons.lang3.time.DurationFormatUtils$Token[],long,long,long,long,long,long,long,boolean)>(tokens, temp$116, temp$117, temp$118, temp$119, temp$120, temp$121, temp$122, padWithZeros);
+        return temp$123;
+    }
+}

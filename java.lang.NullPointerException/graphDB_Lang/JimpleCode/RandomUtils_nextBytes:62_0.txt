@@ -1,0 +1,34 @@
+public class WrapClass 
+{
+    public static byte[] nextBytes(int)
+    {
+        int count;
+        boolean temp$0;
+        java.lang.Object[] temp$1;
+        byte[] result;
+        java.util.Random temp$2;
+
+        count := @parameter0: int;
+        if count >= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "Count cannot be negative.", temp$1);
+        result = newarray (byte)[count];
+        temp$2 = <org.apache.commons.lang3.RandomUtils: java.util.Random RANDOM>;
+        virtualinvoke temp$2.<java.util.Random: void nextBytes(byte[])>(result);
+        return result;
+    }
+}

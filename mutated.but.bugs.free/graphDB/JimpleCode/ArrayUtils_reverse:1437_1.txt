@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static void reverse(java.lang.Object[])
+    {
+        java.lang.Object[] array;
+        int temp$0;
+
+        array := @parameter0: java.lang.Object[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        temp$0 = lengthof array;
+        staticinvoke <org.apache.commons.lang3.ArrayUtils: void reverse(java.lang.Object[],int,int)>(array, -1, temp$0);
+        return;
+    }
+}

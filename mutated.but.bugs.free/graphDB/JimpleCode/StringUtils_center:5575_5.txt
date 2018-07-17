@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public static java.lang.String center(java.lang.String, int, java.lang.String)
+    {
+        java.lang.String str, padStr, temp$1, temp$7, temp$8;
+        int size, strLen, temp$2, pads, temp$3, temp$4, temp$5, temp$6;
+        boolean temp$0;
+
+        str := @parameter0: java.lang.String;
+        size := @parameter1: int;
+        padStr := @parameter2: java.lang.String;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if size < 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(padStr);
+        if temp$0 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = " ";
+        padStr = temp$1;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$2;
+        temp$3 = size - strLen;
+        pads = temp$3;
+        if pads <= 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        return str;
+
+     label6:
+        nop;
+        temp$4 = strLen;
+        temp$5 = pads / 2;
+        temp$6 = temp$4 + temp$5;
+        temp$7 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String leftPad(java.lang.String,int,java.lang.String)>(str, temp$6, padStr);
+        str = temp$7;
+        temp$8 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String rightPad(java.lang.String,int,java.lang.String)>(str, size, padStr);
+        str = temp$8;
+        return str;
+    }
+}

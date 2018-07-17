@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object[] validIndex(java.lang.Object[], int, java.lang.String, java.lang.Object[])
+    {
+        java.lang.Object[] array, values, temp$1;
+        int index, temp$3;
+        java.lang.String message, temp$6;
+        java.lang.Object temp$0;
+        boolean temp$2, temp$4;
+        java.lang.IndexOutOfBoundsException temp$5;
+
+        array := @parameter0: java.lang.Object[];
+        index := @parameter1: int;
+        message := @parameter2: java.lang.String;
+        values := @parameter3: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(array);
+        temp$1 = (java.lang.Object[]) temp$0;
+        if index < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = 1;
+
+     label2:
+        nop;
+        temp$3 = lengthof array;
+        if index >= temp$3 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        if temp$2 != temp$4 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = new java.lang.IndexOutOfBoundsException;
+        temp$6 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values);
+        specialinvoke temp$5.<java.lang.IndexOutOfBoundsException: void <init>(java.lang.String)>(temp$6);
+        throw temp$5;
+
+     label7:
+        nop;
+        return array;
+    }
+}

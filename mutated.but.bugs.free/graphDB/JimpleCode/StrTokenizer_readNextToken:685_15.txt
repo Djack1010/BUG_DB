@@ -1,0 +1,117 @@
+public class WrapClass 
+{
+    private final int readNextToken(char[], int, int, org.apache.commons.lang3.text.StrBuilder, java.util.List)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        char[] srcChars;
+        int start, len, removeLen, temp$1, temp$3, temp$4, temp$6, temp$8, temp$9, temp$10, temp$11, delimLen, temp$13, temp$14, temp$15, quoteLen, temp$17, temp$18, temp$19, temp$20, temp$21;
+        org.apache.commons.lang3.text.StrBuilder workArea;
+        java.util.List tokenList;
+        org.apache.commons.lang3.text.StrMatcher temp$0, temp$2, temp$5, temp$7, temp$12, temp$16;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        srcChars := @parameter0: char[];
+        start := @parameter1: int;
+        len := @parameter2: int;
+        workArea := @parameter3: org.apache.commons.lang3.text.StrBuilder;
+        tokenList := @parameter4: java.util.List;
+
+     label0:
+        nop;
+        if start < len goto label1;
+
+        goto label6;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getIgnoredMatcher()>();
+        temp$1 = virtualinvoke temp$0.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getTrimmerMatcher()>();
+        temp$3 = virtualinvoke temp$2.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        temp$4 = staticinvoke <java.lang.Math: int max(int,int)>(temp$1, temp$3);
+        removeLen = temp$4;
+        if removeLen == 0 goto label4;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getDelimiterMatcher()>();
+        temp$6 = virtualinvoke temp$5.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        if temp$6 > 0 goto label4;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getQuoteMatcher()>();
+        temp$8 = virtualinvoke temp$7.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        if temp$8 > 0 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        goto label6;
+
+     label5:
+        nop;
+        temp$9 = start;
+        temp$10 = temp$9 + removeLen;
+        start = temp$10;
+        goto label0;
+
+     label6:
+        nop;
+        if start >= len goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void addToken(java.util.List,java.lang.String)>(tokenList, "");
+        temp$11 = -1;
+        return temp$11;
+
+     label8:
+        nop;
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getDelimiterMatcher()>();
+        temp$13 = virtualinvoke temp$12.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        delimLen = temp$13;
+        if delimLen > 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void addToken(java.util.List,java.lang.String)>(tokenList, "");
+        temp$14 = start;
+        temp$15 = temp$14 + delimLen;
+        return temp$15;
+
+     label10:
+        nop;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getQuoteMatcher()>();
+        temp$17 = virtualinvoke temp$16.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, start, start, len);
+        quoteLen = temp$17;
+        if quoteLen > 0 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$18 = start;
+        temp$19 = temp$18 + quoteLen;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: int readWithQuotes(char[],int,int,org.apache.commons.lang3.text.StrBuilder,java.util.List,int,int)>(srcChars, temp$19, len, workArea, tokenList, start, quoteLen);
+        return temp$20;
+
+     label12:
+        nop;
+        temp$21 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: int readWithQuotes(char[],int,int,org.apache.commons.lang3.text.StrBuilder,java.util.List,int,int)>(srcChars, start, len, workArea, tokenList, -1, 0);
+        return temp$21;
+    }
+}

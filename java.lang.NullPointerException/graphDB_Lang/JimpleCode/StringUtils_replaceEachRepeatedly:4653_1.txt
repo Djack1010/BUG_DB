@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static java.lang.String replaceEachRepeatedly(java.lang.String, java.lang.String[], java.lang.String[])
+    {
+        java.lang.String text, temp$1;
+        java.lang.String[] searchList, replacementList;
+        int timeToLive, temp$0;
+
+        text := @parameter0: java.lang.String;
+        searchList := @parameter1: java.lang.String[];
+        replacementList := @parameter2: java.lang.String[];
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = lengthof searchList;
+        nop;
+        timeToLive = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String replaceEach(java.lang.String,java.lang.String[],java.lang.String[],boolean,int)>(text, searchList, replacementList, 1, timeToLive);
+        return temp$1;
+    }
+}

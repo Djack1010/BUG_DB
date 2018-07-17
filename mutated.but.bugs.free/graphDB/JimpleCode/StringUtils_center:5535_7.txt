@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    public static java.lang.String center(java.lang.String, int, char)
+    {
+        java.lang.String str, temp$5, temp$6;
+        int size, strLen, temp$0, pads, temp$1, temp$2, temp$3, temp$4;
+        char padChar;
+
+        str := @parameter0: java.lang.String;
+        size := @parameter1: int;
+        padChar := @parameter2: char;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if size <= -1 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$0;
+        temp$1 = size - strLen;
+        pads = temp$1;
+        if pads <= 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        return str;
+
+     label4:
+        nop;
+        temp$2 = strLen;
+        temp$3 = pads / 2;
+        temp$4 = temp$2 + temp$3;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String leftPad(java.lang.String,int,char)>(str, temp$4, padChar);
+        str = temp$5;
+        temp$6 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String rightPad(java.lang.String,int,char)>(str, size, padChar);
+        str = temp$6;
+        return str;
+    }
+}

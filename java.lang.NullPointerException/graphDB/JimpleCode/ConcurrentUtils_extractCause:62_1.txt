@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.concurrent.ConcurrentException extractCause(java.util.concurrent.ExecutionException)
+    {
+        java.util.concurrent.ExecutionException ex;
+        boolean temp$0, temp$2;
+        java.lang.Throwable temp$1, temp$6;
+        org.apache.commons.lang3.concurrent.ConcurrentException temp$3, temp$4;
+        java.lang.String temp$5;
+
+        ex := @parameter0: java.util.concurrent.ExecutionException;
+        if ex == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke ex.<java.util.concurrent.ExecutionException: java.lang.Throwable getCause()>();
+        if temp$1 == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = null;
+        return temp$3;
+
+     label7:
+        nop;
+        staticinvoke <org.apache.commons.lang3.concurrent.ConcurrentUtils: void throwCause(java.util.concurrent.ExecutionException)>(ex);
+        temp$4 = new org.apache.commons.lang3.concurrent.ConcurrentException;
+        temp$5 = virtualinvoke ex.<java.util.concurrent.ExecutionException: java.lang.String getMessage()>();
+        temp$6 = virtualinvoke ex.<java.util.concurrent.ExecutionException: java.lang.Throwable getCause()>();
+        specialinvoke temp$4.<org.apache.commons.lang3.concurrent.ConcurrentException: void <init>(java.lang.String,java.lang.Throwable)>(temp$5, temp$6);
+        return temp$4;
+    }
+}

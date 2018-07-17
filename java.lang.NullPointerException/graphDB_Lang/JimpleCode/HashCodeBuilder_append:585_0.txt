@@ -1,0 +1,34 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.HashCodeBuilder append(boolean)
+    {
+        org.apache.commons.lang3.builder.HashCodeBuilder this;
+        boolean value;
+        int temp$0, temp$1, temp$2, temp$3, temp$4, temp$5;
+
+        this := @this: org.apache.commons.lang3.builder.HashCodeBuilder;
+        value := @parameter0: boolean;
+        temp$0 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal>;
+        temp$1 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iConstant>;
+        temp$2 = temp$0 * temp$1;
+        temp$3 = temp$2;
+        if value == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = 1;
+
+     label2:
+        nop;
+        temp$5 = temp$3 + temp$4;
+        this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal> = temp$5;
+        return this;
+    }
+}

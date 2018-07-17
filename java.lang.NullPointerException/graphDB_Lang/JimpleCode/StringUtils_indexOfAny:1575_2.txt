@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static int indexOfAny(java.lang.CharSequence, java.lang.String)
+    {
+        java.lang.CharSequence cs;
+        java.lang.String searchChars;
+        boolean temp$0, temp$1;
+        int temp$2, temp$4;
+        char[] temp$3;
+
+        cs := @parameter0: java.lang.CharSequence;
+        searchChars := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(cs);
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(searchChars);
+        if temp$0 != temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke searchChars.<java.lang.String: char[] toCharArray()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: int indexOfAny(java.lang.CharSequence,char[])>(cs, temp$3);
+        return temp$4;
+    }
+}

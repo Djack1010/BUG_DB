@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public java.lang.String getReplyTo() throws java.lang.Exception
+    {
+        org.apache.commons.mail.util.MimeMessageParser this;
+        javax.mail.Address[] addresses, temp$1, temp$4;
+        javax.mail.internet.MimeMessage temp$0;
+        int temp$2, temp$5;
+        java.lang.String temp$3, temp$8;
+        javax.mail.Address temp$6;
+        javax.mail.internet.InternetAddress temp$7;
+
+        this := @this: org.apache.commons.mail.util.MimeMessageParser;
+        temp$0 = this.<org.apache.commons.mail.util.MimeMessageParser: javax.mail.internet.MimeMessage mimeMessage>;
+        temp$1 = virtualinvoke temp$0.<javax.mail.internet.MimeMessage: javax.mail.Address[] getReplyTo()>();
+        addresses = temp$1;
+        if addresses == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = lengthof addresses;
+        if temp$2 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = null;
+        return temp$3;
+
+     label2:
+        nop;
+        temp$4 = addresses;
+        temp$5 = 1;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (javax.mail.internet.InternetAddress) temp$6;
+        temp$8 = virtualinvoke temp$7.<javax.mail.internet.InternetAddress: java.lang.String getAddress()>();
+        return temp$8;
+    }
+}

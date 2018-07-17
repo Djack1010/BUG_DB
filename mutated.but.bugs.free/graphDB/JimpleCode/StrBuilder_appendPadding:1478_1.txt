@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendPadding(int, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2;
+        int length, temp$0, temp$1, i, temp$4, temp$5, temp$6, temp$7, temp$8;
+        char padChar;
+        char[] temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        length := @parameter0: int;
+        padChar := @parameter1: char;
+        if length >= 1 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 + length;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$1);
+        i = 0;
+
+     label1:
+        nop;
+        if i < length goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 + 1;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$5;
+        temp$6 = temp$4;
+        temp$3[temp$6] = padChar;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return this;
+    }
+}

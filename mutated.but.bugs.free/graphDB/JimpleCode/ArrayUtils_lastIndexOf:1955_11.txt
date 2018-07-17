@@ -1,0 +1,142 @@
+public class WrapClass 
+{
+    public static int lastIndexOf(java.lang.Object[], java.lang.Object, int)
+    {
+        java.lang.Object[] array, temp$4, temp$12;
+        java.lang.Object objectToFind, temp$6, temp$14;
+        int startIndex, temp$0, temp$1, temp$2, temp$3, i, temp$5, temp$7, temp$8, i, temp$13, temp$16, temp$17, temp$18;
+        java.lang.Class temp$9, temp$10;
+        boolean temp$11, temp$15;
+
+        array := @parameter0: java.lang.Object[];
+        objectToFind := @parameter1: java.lang.Object;
+        startIndex := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        goto label6;
+
+     label3:
+        nop;
+        temp$1 = lengthof array;
+        if startIndex >= temp$1 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = lengthof array;
+        temp$3 = temp$2 - 1;
+        startIndex = temp$3;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        if objectToFind == null goto label7;
+
+        goto label13;
+
+     label7:
+        nop;
+        i = startIndex;
+
+     label8:
+        nop;
+        if i >= 0 goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$4 = array;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        if temp$6 == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        return i;
+
+     label11:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + -1;
+        i = temp$8;
+        goto label8;
+
+     label12:
+        nop;
+        goto label21;
+
+     label13:
+        nop;
+        temp$9 = virtualinvoke array.<java.lang.Object: java.lang.Class getClass()>();
+        temp$10 = virtualinvoke temp$9.<java.lang.Class: java.lang.Class getComponentType()>();
+        temp$11 = virtualinvoke temp$10.<java.lang.Class: boolean isInstance(java.lang.Object)>(objectToFind);
+        if temp$11 == 0 goto label20;
+
+        goto label14;
+
+     label14:
+        nop;
+        i = startIndex;
+
+     label15:
+        nop;
+        if i >= 0 goto label16;
+
+        goto label19;
+
+     label16:
+        nop;
+        temp$12 = array;
+        temp$13 = i;
+        temp$14 = temp$12[temp$13];
+        temp$15 = virtualinvoke objectToFind.<java.lang.Object: boolean equals(java.lang.Object)>(temp$14);
+        if temp$15 == 0 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        return i;
+
+     label18:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + -1;
+        i = temp$17;
+        goto label15;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        temp$18 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$18;
+    }
+}

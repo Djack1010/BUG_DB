@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static int reflectionHashCode(int, int, java.lang.Object)
+    {
+        int initialNonZeroOddNumber, multiplierNonZeroOddNumber, temp$1;
+        java.lang.Object object;
+        java.lang.String[] temp$0;
+
+        initialNonZeroOddNumber := @parameter0: int;
+        multiplierNonZeroOddNumber := @parameter1: int;
+        object := @parameter2: java.lang.Object;
+        temp$0 = newarray (java.lang.String)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.builder.HashCodeBuilder: int reflectionHashCode(int,int,java.lang.Object,boolean,java.lang.Class,java.lang.String[])>(initialNonZeroOddNumber, multiplierNonZeroOddNumber, object, 1, null, temp$0);
+        return temp$1;
+    }
+}

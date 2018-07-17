@@ -1,0 +1,86 @@
+public class WrapClass 
+{
+    public java.lang.StringBuffer format(java.lang.Object, java.lang.StringBuffer, java.text.FieldPosition)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.lang.Object obj;
+        java.lang.StringBuffer toAppendTo, temp$1, temp$4, temp$8, temp$10;
+        java.text.FieldPosition pos;
+        boolean temp$0, temp$2, temp$5;
+        java.util.Calendar temp$3;
+        java.lang.Long temp$6;
+        long temp$7;
+        java.lang.IllegalArgumentException temp$9;
+        java.lang.String temp$11, temp$13, temp$14;
+        java.lang.Class temp$12;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        obj := @parameter0: java.lang.Object;
+        toAppendTo := @parameter1: java.lang.StringBuffer;
+        pos := @parameter2: java.text.FieldPosition;
+        temp$0 = obj instanceof java.util.Date;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = obj instanceof java.util.Calendar;
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = (java.util.Calendar) obj;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.StringBuffer format(java.util.Calendar,java.lang.StringBuffer)>(temp$3, toAppendTo);
+        return temp$4;
+
+     label3:
+        nop;
+        temp$5 = obj instanceof java.lang.Long;
+        if temp$5 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$6 = (java.lang.Long) obj;
+        temp$7 = virtualinvoke temp$6.<java.lang.Long: long longValue()>();
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.StringBuffer format(long,java.lang.StringBuffer)>(temp$7, toAppendTo);
+        return temp$8;
+
+     label5:
+        nop;
+        temp$9 = new java.lang.IllegalArgumentException;
+        temp$10 = new java.lang.StringBuffer;
+        specialinvoke temp$10.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unknown class: ");
+        if obj == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$11 = "<null>";
+        goto label8;
+
+     label7:
+        nop;
+        temp$12 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$13 = virtualinvoke temp$12.<java.lang.Class: java.lang.String getName()>();
+        temp$11 = temp$13;
+
+     label8:
+        nop;
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$11);
+        temp$14 = virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$9.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$14);
+        throw temp$9;
+    }
+}

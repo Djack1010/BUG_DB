@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public transient org.apache.commons.lang3.text.StrBuilder appendAll(java.lang.Object[])
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3;
+        java.lang.Object[] array;
+        int temp$0, temp$1;
+        java.lang.Object element, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        array := @parameter0: java.lang.Object[];
+        if array != null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$0 = 0;
+
+     label1:
+        nop;
+        temp$1 = lengthof array;
+        if temp$0 >= temp$1 goto label2;
+
+        temp$2 = array[temp$0];
+        element = temp$2;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.Object)>(element);
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label1;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        return this;
+    }
+}

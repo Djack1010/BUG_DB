@@ -1,0 +1,106 @@
+public class WrapClass 
+{
+    public static char[] toAsciiChars(byte[])
+    {
+        byte[] raw, temp$9;
+        boolean temp$0;
+        char[] temp$1, l_ascii, temp$17, temp$21;
+        int temp$2, temp$3, ii, jj, temp$4, temp$5, temp$6, bits, temp$8, temp$10, temp$13, temp$14, temp$15, temp$16, temp$18, temp$19, temp$22, temp$23, temp$25, temp$26, temp$27, temp$28, temp$29;
+        int[] temp$7, temp$12;
+        byte temp$11;
+        char temp$20, temp$24;
+
+        raw := @parameter0: byte[];
+        temp$0 = staticinvoke <org.apache.commons.codec.binary.BinaryCodec: boolean isEmpty(byte[])>(raw);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.codec.binary.BinaryCodec: char[] EMPTY_CHAR_ARRAY>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = lengthof raw;
+        temp$3 = temp$2 << 3;
+        l_ascii = newarray (char)[temp$3];
+        ii = 0;
+        temp$4 = lengthof l_ascii;
+        temp$5 = temp$4 - 1;
+        jj = temp$5;
+
+     label2:
+        nop;
+        temp$6 = lengthof raw;
+        if ii < temp$6 goto label3;
+
+        goto label10;
+
+     label3:
+        nop;
+        bits = 0;
+
+     label4:
+        nop;
+        temp$7 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$8 = lengthof temp$7;
+        if bits < temp$8 goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$9 = raw;
+        temp$10 = ii;
+        temp$11 = temp$9[temp$10];
+        temp$12 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$13 = bits;
+        temp$14 = (int) temp$11;
+        temp$15 = temp$12[temp$13];
+        temp$16 = temp$14 & temp$15;
+        if temp$16 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$17 = l_ascii;
+        temp$18 = jj % bits;
+        temp$19 = temp$18;
+        temp$20 = 48;
+        temp$17[temp$19] = temp$20;
+        goto label8;
+
+     label7:
+        nop;
+        temp$21 = l_ascii;
+        temp$22 = jj - bits;
+        temp$23 = temp$22;
+        temp$24 = 49;
+        temp$21[temp$23] = temp$24;
+
+     label8:
+        nop;
+        nop;
+        temp$25 = bits + 1;
+        bits = temp$25;
+        goto label4;
+
+     label9:
+        nop;
+        nop;
+        temp$26 = ii;
+        temp$27 = temp$26 + 1;
+        ii = temp$27;
+        temp$28 = jj;
+        temp$29 = temp$28 - 8;
+        jj = temp$29;
+        goto label2;
+
+     label10:
+        nop;
+        return l_ascii;
+    }
+}

@@ -1,0 +1,68 @@
+public class WrapClass 
+{
+    public static int hashCode(java.lang.annotation.Annotation)
+    {
+        java.lang.annotation.Annotation a;
+        int result, temp$2, temp$3, temp$7, temp$9, temp$10;
+        java.lang.Class type, temp$0;
+        java.lang.reflect.Method[] temp$1;
+        java.lang.reflect.Method m, temp$4;
+        java.lang.Object value, temp$6;
+        java.lang.Object[] temp$5;
+        java.lang.String temp$8;
+        java.lang.RuntimeException ex, temp$11;
+        java.lang.Exception ex;
+
+        a := @parameter0: java.lang.annotation.Annotation;
+        result = 0;
+        temp$0 = interfaceinvoke a.<java.lang.annotation.Annotation: java.lang.Class annotationType()>();
+        type = temp$0;
+        temp$1 = virtualinvoke type.<java.lang.Class: java.lang.reflect.Method[] getDeclaredMethods()>();
+        temp$2 = 0;
+
+     label0:
+        nop;
+        temp$3 = lengthof temp$1;
+        if temp$2 >= temp$3 goto label5;
+
+        temp$4 = temp$1[temp$2];
+        m = temp$4;
+
+     label1:
+        nop;
+        temp$5 = newarray (java.lang.Object)[0];
+        temp$6 = virtualinvoke m.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(a, temp$5);
+        value = temp$6;
+        temp$7 = result;
+        temp$8 = virtualinvoke m.<java.lang.reflect.Method: java.lang.String getName()>();
+        temp$9 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: int hashMember(java.lang.String,java.lang.Object)>(temp$8, value);
+        temp$10 = temp$7 + temp$9;
+        result = temp$10;
+        goto label4;
+
+     label2:
+        nop;
+        ex := @caughtexception;
+        throw ex;
+
+     label3:
+        nop;
+        ex := @caughtexception;
+        temp$11 = new java.lang.RuntimeException;
+        specialinvoke temp$11.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$11;
+
+     label4:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label0;
+
+     label5:
+        nop;
+        return result;
+
+        catch java.lang.RuntimeException from label1 to label2 with label2;
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+}

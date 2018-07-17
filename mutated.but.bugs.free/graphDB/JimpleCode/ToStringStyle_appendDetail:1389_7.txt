@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    protected void appendDetail(java.lang.StringBuffer, java.lang.String, float[])
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$1, temp$4;
+        java.lang.String fieldName, temp$0, temp$3;
+        float[] array, temp$5;
+        int i, temp$2, temp$6, temp$8, temp$9;
+        float temp$7;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        array := @parameter2: float[];
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String arrayStart>;
+        temp$1 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$0);
+        i = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if i < temp$2 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        if i > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String arraySeparator>;
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$3);
+
+     label3:
+        nop;
+        temp$5 = array;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,float)>(buffer, fieldName, temp$7);
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        i = temp$9;
+        goto label0;
+
+     label4:
+        nop;
+        return;
+    }
+}

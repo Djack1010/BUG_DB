@@ -1,0 +1,96 @@
+public class WrapClass 
+{
+    private static final boolean endsWith(java.lang.CharSequence, java.lang.CharSequence, boolean)
+    {
+        java.lang.CharSequence str, suffix;
+        boolean ignoreCase, temp$0, temp$1, temp$2, temp$5, temp$10;
+        int temp$3, temp$4, strOffset, temp$6, temp$7, temp$8, temp$9;
+
+        str := @parameter0: java.lang.CharSequence;
+        suffix := @parameter1: java.lang.CharSequence;
+        ignoreCase := @parameter2: boolean;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if suffix == null goto label1;
+
+        goto label11;
+
+        goto label11;
+
+     label1:
+        nop;
+        if str == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$0 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = 1;
+
+     label4:
+        nop;
+        if suffix == null goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$1 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$1 = 1;
+
+     label7:
+        nop;
+        if temp$0 == temp$1 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$2 = 0;
+        goto label10;
+
+     label9:
+        nop;
+        temp$2 = 1;
+
+     label10:
+        nop;
+        return temp$2;
+
+     label11:
+        nop;
+        temp$3 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$4 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        if temp$3 > temp$4 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+
+     label13:
+        nop;
+        temp$6 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$7 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$8 = temp$6 - temp$7;
+        strOffset = temp$8;
+        temp$9 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$10 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str, ignoreCase, strOffset, suffix, 0, temp$9);
+        return temp$10;
+    }
+}

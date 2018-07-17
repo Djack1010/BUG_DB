@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    private static final boolean deepEmpty(java.lang.String[])
+    {
+        java.lang.String[] strings;
+        int temp$0, temp$1;
+        java.lang.String s, temp$2;
+        boolean temp$3, temp$4, temp$5;
+
+        strings := @parameter0: java.lang.String[];
+        temp$0 = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof strings;
+        if temp$0 >= temp$1 goto label3;
+
+        temp$2 = strings[temp$0];
+        s = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isNotEmpty(java.lang.CharSequence)>(s);
+        if temp$3 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label2:
+        nop;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label0;
+
+     label3:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+    }
+}

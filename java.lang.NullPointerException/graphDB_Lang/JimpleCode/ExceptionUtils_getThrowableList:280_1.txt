@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public static java.util.List getThrowableList(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable, temp$2;
+        java.util.List list;
+        boolean temp$0, temp$1;
+
+        throwable := @parameter0: java.lang.Throwable;
+        list = null;
+
+     label0:
+        nop;
+        if throwable != null goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$0 = interfaceinvoke list.<java.util.List: boolean contains(java.lang.Object)>(throwable);
+        if temp$0 == 0 goto label2;
+
+        goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(throwable);
+        temp$2 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Throwable getCause(java.lang.Throwable)>(throwable);
+        throwable = temp$2;
+        goto label0;
+
+     label3:
+        nop;
+        return list;
+    }
+}

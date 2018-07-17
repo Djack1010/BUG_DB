@@ -1,0 +1,94 @@
+public class WrapClass 
+{
+    public static boolean isSorted(byte[])
+    {
+        byte[] array, temp$4, temp$6;
+        boolean temp$0, temp$2, temp$3, temp$9, temp$12;
+        int temp$1, temp$5, n, i, temp$7, temp$8, temp$10, temp$11;
+        byte previous, current;
+
+        array := @parameter0: byte[];
+        if array == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = lengthof array;
+        if temp$1 < 2 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = 1;
+        return temp$3;
+
+     label7:
+        nop;
+        temp$4 = array;
+        temp$5 = 0;
+        previous = temp$4[temp$5];
+        n = lengthof array;
+        i = 1;
+
+     label8:
+        nop;
+        if i < n goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$6 = array;
+        temp$7 = i;
+        current = temp$6[temp$7];
+        temp$8 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: int compare(byte,byte)>(previous, current);
+        if temp$8 > 0 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+
+     label11:
+        nop;
+        previous = current;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label8;
+
+     label12:
+        nop;
+        temp$12 = 1;
+        return temp$12;
+    }
+}

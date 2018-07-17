@@ -1,0 +1,34 @@
+public class WrapClass 
+{
+    public static char intToHexDigit(int)
+    {
+        int nibble, temp$1;
+        char c, temp$0;
+        java.lang.IllegalArgumentException temp$2;
+        java.lang.StringBuffer temp$3;
+        java.lang.String temp$4;
+
+        nibble := @parameter0: int;
+        temp$0 = staticinvoke <java.lang.Character: char forDigit(int,int)>(nibble, 16);
+        c = temp$0;
+        temp$1 = (int) c;
+        if temp$1 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("nibble value not between 0 and 15: ");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(nibble);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+
+     label1:
+        nop;
+        return c;
+    }
+}

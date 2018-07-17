@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String, boolean) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceClassPathResolver this;
+        java.lang.String resourceLocation;
+        boolean isLenient;
+        javax.activation.DataSource result, temp$0;
+        java.io.IOException e;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceClassPathResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        isLenient := @parameter1: boolean;
+        result = null;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        return result;
+
+     label2:
+        nop;
+        e := @caughtexception;
+        if isLenient == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$0 = null;
+        nop;
+        return temp$0;
+
+     label4:
+        nop;
+        throw e;
+
+        catch java.io.IOException from label0 to label1 with label2;
+    }
+}

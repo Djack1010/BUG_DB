@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder deleteAll(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        int len, temp$0, temp$1, index, temp$2, temp$3, temp$4, temp$5;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = -1;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$0 = temp$1;
+
+     label2:
+        nop;
+        len = temp$0;
+        if len > 0 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int indexOf(java.lang.String,int)>(str, 0);
+        index = temp$2;
+
+     label4:
+        nop;
+        if index >= 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = index;
+        temp$4 = temp$3 + len;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void deleteImpl(int,int,int)>(index, temp$4, len);
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int indexOf(java.lang.String,int)>(str, index);
+        index = temp$5;
+        goto label4;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        return this;
+    }
+}

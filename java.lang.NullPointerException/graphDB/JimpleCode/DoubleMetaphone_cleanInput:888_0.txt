@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    private final java.lang.String cleanInput(java.lang.String)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String input, temp$0, temp$1, temp$3, temp$5;
+        int temp$2;
+        java.util.Locale temp$4;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        input := @parameter0: java.lang.String;
+        if input == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke input.<java.lang.String: java.lang.String trim()>();
+        input = temp$1;
+        temp$2 = virtualinvoke input.<java.lang.String: int length()>();
+        if temp$2 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = null;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = <java.util.Locale: java.util.Locale ENGLISH>;
+        temp$5 = virtualinvoke input.<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>(temp$4);
+        return temp$5;
+    }
+}

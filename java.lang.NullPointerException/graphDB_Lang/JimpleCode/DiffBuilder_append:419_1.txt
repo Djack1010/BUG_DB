@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String, double, double)
+    {
+        org.apache.commons.lang3.builder.DiffBuilder this, temp$2;
+        java.lang.String fieldName;
+        double lhs, rhs;
+        java.lang.IllegalArgumentException temp$0;
+        boolean temp$1, temp$8;
+        long temp$3, temp$4;
+        int temp$5;
+        java.util.List temp$6;
+        org.apache.commons.lang3.builder.DiffBuilder$9Anonymous6 temp$7;
+
+        this := @this: org.apache.commons.lang3.builder.DiffBuilder;
+        fieldName := @parameter0: java.lang.String;
+        lhs := @parameter1: double;
+        rhs := @parameter2: double;
+        if fieldName == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Field name cannot be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.builder.DiffBuilder: boolean objectsTriviallyEqual>;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = null;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>(lhs);
+        temp$4 = staticinvoke <java.lang.Double: long doubleToLongBits(double)>(rhs);
+        temp$5 = temp$3 cmp temp$4;
+        if temp$5 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.builder.DiffBuilder: java.util.List diffs>;
+        temp$7 = new org.apache.commons.lang3.builder.DiffBuilder$9Anonymous6;
+        specialinvoke temp$7.<org.apache.commons.lang3.builder.DiffBuilder$9Anonymous6: void <init>(org.apache.commons.lang3.builder.DiffBuilder,java.lang.String,double,double)>(this, fieldName, rhs, lhs);
+        temp$8 = interfaceinvoke temp$6.<java.util.List: boolean add(java.lang.Object)>(temp$7);
+
+     label5:
+        nop;
+        return this;
+    }
+}

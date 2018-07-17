@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, char[])
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1, temp$4;
+        int index, len, temp$2, temp$3, temp$7, temp$8, temp$9, temp$10, temp$12, temp$13;
+        char[] chars, temp$5, temp$6, temp$11;
+        java.lang.String temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        chars := @parameter1: char[];
+        if chars == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder insert(int,java.lang.String)>(index, temp$0);
+        return temp$1;
+
+     label1:
+        nop;
+        len = lengthof chars;
+        if len > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$3 = temp$2 + len;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$3);
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = index;
+        temp$8 = temp$7 + len;
+        temp$9 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$10 = temp$9 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$5, index, temp$6, temp$8, temp$10);
+        temp$11 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(chars, 0, temp$11, index, len);
+        temp$12 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$13 = temp$12 + len;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$13;
+
+     label3:
+        nop;
+        return this;
+    }
+}

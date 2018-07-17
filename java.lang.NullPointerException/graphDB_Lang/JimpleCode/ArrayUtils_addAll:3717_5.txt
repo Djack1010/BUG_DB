@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object[] addAll(java.lang.Object[], java.lang.Object[])
+    {
+        java.lang.Object[] array1, array2, temp$0, temp$1, joinedArray;
+        java.lang.Class type1, temp$2, temp$3, type2, temp$7, temp$8;
+        int temp$4, temp$5, temp$6;
+        java.lang.ArrayStoreException ase;
+        boolean temp$9;
+        java.lang.IllegalArgumentException temp$10;
+        java.lang.StringBuffer temp$11;
+        java.lang.String temp$12, temp$13, temp$14;
+
+        array1 := @parameter0: java.lang.Object[];
+        array2 := @parameter1: java.lang.Object[];
+        if array1 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] clone(java.lang.Object[])>(array2);
+        return temp$0;
+
+     label1:
+        nop;
+        if array2 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] clone(java.lang.Object[])>(array1);
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke array1.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Class: java.lang.Class getComponentType()>();
+        type1 = temp$3;
+        joinedArray = null;
+        temp$4 = lengthof array1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array1, 0, joinedArray, 0, temp$4);
+
+     label4:
+        nop;
+        temp$5 = lengthof array1;
+        temp$6 = lengthof array2;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array2, 0, joinedArray, temp$5, temp$6);
+        goto label8;
+
+     label5:
+        nop;
+        ase := @caughtexception;
+        temp$7 = virtualinvoke array2.<java.lang.Object: java.lang.Class getClass()>();
+        temp$8 = virtualinvoke temp$7.<java.lang.Class: java.lang.Class getComponentType()>();
+        type2 = temp$8;
+        temp$9 = virtualinvoke type1.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(type2);
+        if temp$9 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$10 = new java.lang.IllegalArgumentException;
+        temp$11 = new java.lang.StringBuffer;
+        specialinvoke temp$11.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Cannot store ");
+        temp$12 = virtualinvoke type2.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$12);
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" in an array of ");
+        temp$13 = virtualinvoke type1.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$13);
+        temp$14 = virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$10.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(temp$14, ase);
+        throw temp$10;
+
+     label7:
+        nop;
+        throw ase;
+
+     label8:
+        nop;
+        return joinedArray;
+
+        catch java.lang.ArrayStoreException from label4 to label5 with label5;
+    }
+}

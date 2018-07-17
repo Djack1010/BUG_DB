@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public static int max(int, int, int)
+    {
+        int a, b, c;
+
+        a := @parameter0: int;
+        b := @parameter1: int;
+        c := @parameter2: int;
+        if b >= a goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        a = b;
+
+     label1:
+        nop;
+        if c > a goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        a = c;
+
+     label3:
+        nop;
+        return a;
+    }
+}

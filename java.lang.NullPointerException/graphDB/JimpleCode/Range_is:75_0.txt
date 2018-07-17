@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.Range is(java.lang.Comparable)
+    {
+        java.lang.Comparable element;
+        org.apache.commons.lang3.Range temp$0, temp$1;
+
+        element := @parameter0: java.lang.Comparable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.Range: org.apache.commons.lang3.Range between(java.lang.Object,java.lang.Object,java.util.Comparator)>(element, element, null);
+        temp$1 = (org.apache.commons.lang3.Range) temp$0;
+        return temp$1;
+    }
+}

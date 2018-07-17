@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public void start()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$State temp$0, temp$1, temp$3, temp$4, temp$8;
+        java.lang.IllegalStateException temp$2, temp$5;
+        long temp$6, temp$7;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State STOPPED>;
+        if temp$0 == temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.IllegalStateException;
+        specialinvoke temp$2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Stopwatch must be reset before being restarted. ");
+        throw temp$2;
+
+     label1:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$4 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State UNSTARTED>;
+        if temp$3 != temp$4 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = new java.lang.IllegalStateException;
+        specialinvoke temp$5.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Stopwatch already started. ");
+        throw temp$5;
+
+     label3:
+        nop;
+        temp$6 = staticinvoke <java.lang.System: long nanoTime()>();
+        this.<org.apache.commons.lang3.time.StopWatch: long startTime> = temp$6;
+        temp$7 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        this.<org.apache.commons.lang3.time.StopWatch: long startTimeMillis> = temp$7;
+        temp$8 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState> = temp$8;
+        return;
+    }
+}

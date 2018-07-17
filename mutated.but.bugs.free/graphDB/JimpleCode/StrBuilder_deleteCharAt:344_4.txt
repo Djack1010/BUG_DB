@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder deleteCharAt(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int index, temp$1, temp$2;
+        java.lang.StringIndexOutOfBoundsException temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        if index < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$0.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(index);
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = index;
+        temp$2 = temp$1 + 1;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void deleteImpl(int,int,int)>(index, temp$2, 1);
+        return this;
+    }
+}

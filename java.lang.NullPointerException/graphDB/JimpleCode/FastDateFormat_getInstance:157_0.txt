@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.time.FastDateFormat getInstance(java.lang.String, java.util.Locale)
+    {
+        java.lang.String pattern;
+        java.util.Locale locale;
+        org.apache.commons.lang3.time.FormatCache temp$0;
+        java.text.Format temp$1;
+        org.apache.commons.lang3.time.FastDateFormat temp$2;
+
+        pattern := @parameter0: java.lang.String;
+        locale := @parameter1: java.util.Locale;
+        temp$0 = <org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FormatCache cache>;
+        temp$1 = virtualinvoke temp$0.<org.apache.commons.lang3.time.FormatCache: java.text.Format getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)>(pattern, null, locale);
+        temp$2 = (org.apache.commons.lang3.time.FastDateFormat) temp$1;
+        return temp$2;
+    }
+}

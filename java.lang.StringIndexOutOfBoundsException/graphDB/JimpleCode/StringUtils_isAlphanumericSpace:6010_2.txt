@@ -1,0 +1,68 @@
+public class WrapClass 
+{
+    public static boolean isAlphanumericSpace(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        boolean temp$0, temp$3, temp$6, temp$9;
+        int sz, temp$1, i, temp$5, temp$7, temp$8;
+        char temp$2, temp$4;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        sz = temp$1;
+        i = -1;
+
+     label2:
+        nop;
+        if i < sz goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$2 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$3 = staticinvoke <java.lang.Character: boolean isLetterOrDigit(char)>(temp$2);
+        if temp$3 == 0 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$4 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$5 = (int) temp$4;
+        if temp$5 != 32 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+
+     label6:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label2;
+
+     label7:
+        nop;
+        temp$9 = 1;
+        return temp$9;
+    }
+}

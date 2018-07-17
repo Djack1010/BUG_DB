@@ -1,0 +1,125 @@
+public class WrapClass 
+{
+    private static final java.lang.Throwable getCauseUsingMethodName(java.lang.Throwable, java.lang.String)
+    {
+        java.lang.Throwable throwable, temp$11, temp$12;
+        java.lang.String methodName;
+        java.lang.reflect.Method method, temp$2;
+        java.lang.Class temp$0, temp$4, temp$5, temp$6, temp$7;
+        java.lang.Class[] temp$1;
+        java.lang.NoSuchMethodException ignored;
+        java.lang.SecurityException ignored;
+        boolean temp$3, temp$8;
+        java.lang.Object[] temp$9;
+        java.lang.Object temp$10;
+        java.lang.IllegalAccessException ignored;
+        java.lang.IllegalArgumentException ignored;
+        java.lang.reflect.InvocationTargetException ignored;
+
+        throwable := @parameter0: java.lang.Throwable;
+        methodName := @parameter1: java.lang.String;
+        method = null;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke throwable.<java.lang.Throwable: java.lang.Class getClass()>();
+        temp$1 = newarray (java.lang.Class)[0];
+        temp$2 = virtualinvoke temp$0.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, temp$1);
+        method = temp$2;
+        goto label3;
+
+     label1:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label3;
+
+     label2:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        if method != null goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$3 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = 1;
+
+     label6:
+        nop;
+        temp$5 = <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Class class$java$lang$Throwable>;
+        if temp$5 != null goto label7;
+
+        temp$6 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Class class$(java.lang.String)>("java.lang.Throwable");
+        <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Class class$java$lang$Throwable> = temp$6;
+        temp$4 = temp$6;
+        goto label8;
+
+     label7:
+        nop;
+        temp$4 = <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Class class$java$lang$Throwable>;
+
+     label8:
+        nop;
+        temp$7 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class getReturnType()>();
+        temp$8 = virtualinvoke temp$4.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(temp$7);
+        if temp$3 == temp$8 goto label9;
+
+        goto label16;
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        temp$9 = newarray (java.lang.Object)[0];
+        temp$10 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(throwable, temp$9);
+        temp$11 = (java.lang.Throwable) temp$10;
+
+     label11:
+        nop;
+        return temp$11;
+
+     label12:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label15;
+
+     label13:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label15;
+
+     label14:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label15;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        temp$12 = null;
+        return temp$12;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label1;
+        catch java.lang.SecurityException from label0 to label1 with label2;
+        catch java.lang.IllegalAccessException from label10 to label11 with label12;
+        catch java.lang.IllegalArgumentException from label10 to label11 with label13;
+        catch java.lang.reflect.InvocationTargetException from label10 to label11 with label14;
+    }
+}

@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static java.lang.String getPackageName(java.lang.Class)
+    {
+        java.lang.Class 'cls';
+        java.lang.String temp$0, temp$1;
+
+        'cls' := @parameter0: java.lang.Class;
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.String getPackageName(java.lang.String)>(temp$0);
+        return temp$1;
+    }
+}

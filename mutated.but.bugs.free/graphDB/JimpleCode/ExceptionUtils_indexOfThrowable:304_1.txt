@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static int indexOfThrowable(java.lang.Throwable, java.lang.Class)
+    {
+        java.lang.Throwable throwable;
+        java.lang.Class clazz;
+        int temp$0;
+
+        throwable := @parameter0: java.lang.Throwable;
+        clazz := @parameter1: java.lang.Class;
+        temp$0 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: int indexOf(java.lang.Throwable,java.lang.Class,int,boolean)>(throwable, clazz, -1, 0);
+        return temp$0;
+    }
+}

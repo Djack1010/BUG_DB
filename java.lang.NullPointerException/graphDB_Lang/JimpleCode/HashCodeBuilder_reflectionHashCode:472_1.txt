@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static transient int reflectionHashCode(java.lang.Object, java.lang.String[])
+    {
+        java.lang.Object object;
+        java.lang.String[] excludeFields;
+        int temp$0;
+
+        object := @parameter0: java.lang.Object;
+        excludeFields := @parameter1: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.HashCodeBuilder: int reflectionHashCode(int,int,java.lang.Object,boolean,java.lang.Class,java.lang.String[])>(17, 37, object, 0, null, excludeFields);
+        return temp$0;
+    }
+}

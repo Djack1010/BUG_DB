@@ -1,0 +1,180 @@
+public class WrapClass 
+{
+    private final int readArgumentIndex(java.lang.String, java.text.ParsePosition)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern, temp$15, temp$24, temp$25, temp$28;
+        java.text.ParsePosition pos, temp$20;
+        int start, temp$0, temp$2, temp$3, temp$4, temp$7, temp$9, temp$10, temp$12, temp$13, temp$14, temp$16, temp$23;
+        java.lang.StringBuilder result, temp$1, temp$19;
+        boolean error, temp$6, temp$11, temp$17, temp$18;
+        char c, temp$5, temp$8;
+        java.lang.NumberFormatException e;
+        java.lang.IllegalArgumentException temp$21, temp$26;
+        java.lang.StringBuffer temp$22, temp$27;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        pos := @parameter1: java.text.ParsePosition;
+        temp$0 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        start = temp$0;
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void seekNonWs(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+        temp$1 = new java.lang.StringBuilder;
+        specialinvoke temp$1.<java.lang.StringBuilder: void <init>()>();
+        result = temp$1;
+        error = 0;
+
+     label0:
+        nop;
+        if error == 0 goto label1;
+
+        goto label20;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$3 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if temp$2 < temp$3 goto label2;
+
+        goto label20;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$5 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$4);
+        c = temp$5;
+        temp$6 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(c);
+        if temp$6 == 0 goto label7;
+
+        goto label3;
+
+     label3:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void seekNonWs(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+        temp$7 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$8 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$7);
+        c = temp$8;
+        temp$9 = (int) c;
+        if temp$9 != 44 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$10 = (int) c;
+        if temp$10 != 125 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$11 = 1;
+        error = temp$11;
+        goto label19;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        temp$12 = (int) c;
+        if temp$12 == 44 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$13 = (int) c;
+        if temp$13 == 125 goto label9;
+
+        goto label15;
+
+        goto label15;
+
+     label9:
+        nop;
+        temp$14 = virtualinvoke result.<java.lang.StringBuilder: int length()>();
+        if temp$14 > 0 goto label10;
+
+        goto label15;
+
+        goto label10;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$15 = virtualinvoke result.<java.lang.StringBuilder: java.lang.String toString()>();
+        temp$16 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$15);
+
+     label12:
+        nop;
+        return temp$16;
+
+     label13:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label14;
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        temp$17 = staticinvoke <java.lang.Character: boolean isDigit(char)>(c);
+        if temp$17 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$18 = 0;
+        goto label18;
+
+     label17:
+        nop;
+        temp$18 = 1;
+
+     label18:
+        nop;
+        error = temp$18;
+        temp$19 = virtualinvoke result.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+
+     label19:
+        nop;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        goto label0;
+
+     label20:
+        nop;
+        temp$21 = new java.lang.IllegalArgumentException;
+        temp$22 = new java.lang.StringBuffer;
+        specialinvoke temp$22.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid format argument index at position ");
+        virtualinvoke temp$22.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        virtualinvoke temp$22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(": ");
+        temp$23 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$24 = virtualinvoke pattern.<java.lang.String: java.lang.String substring(int,int)>(start, temp$23);
+        virtualinvoke temp$22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$24);
+        temp$25 = virtualinvoke temp$22.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$21.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$25);
+        throw temp$21;
+
+        temp$26 = new java.lang.IllegalArgumentException;
+        temp$27 = new java.lang.StringBuffer;
+        specialinvoke temp$27.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$27.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unterminated format element at position ");
+        virtualinvoke temp$27.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        temp$28 = virtualinvoke temp$27.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$26.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$28);
+        throw temp$26;
+
+        catch java.lang.NumberFormatException from label11 to label12 with label13;
+    }
+}

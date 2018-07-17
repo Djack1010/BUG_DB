@@ -1,0 +1,377 @@
+public class WrapClass 
+{
+    public void buildMimeMessage() throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.Email this;
+        javax.mail.internet.MimeMessage temp$0, temp$3, temp$8, temp$11, temp$20, temp$24, temp$29, temp$31, temp$34, temp$36, temp$55, temp$61, temp$67, temp$73, temp$89, temp$92, temp$94;
+        java.lang.IllegalStateException temp$1;
+        javax.mail.Session temp$2, temp$38, temp$40, temp$97;
+        java.lang.String temp$4, temp$6, temp$9, temp$10, temp$12, temp$13, temp$15, temp$16, temp$22, temp$23, temp$26, temp$28, temp$33, temp$39, temp$41, foldedValue, temp$85, temp$87, temp$88, temp$91, temp$99, temp$100, temp$101;
+        boolean temp$5, temp$7, temp$17, temp$19, temp$82, temp$96;
+        java.lang.Object temp$14, temp$18, temp$21, temp$25, temp$83, temp$84, temp$86, temp$90;
+        javax.mail.internet.MimeMultipart temp$27, temp$30, temp$32;
+        javax.mail.internet.InternetAddress temp$35, temp$37;
+        org.apache.commons.mail.EmailException temp$42, temp$52, temp$102;
+        java.util.List temp$43, temp$46, temp$49, temp$53, temp$57, temp$59, temp$63, temp$65, temp$69, temp$71, temp$74;
+        int temp$44, temp$45, temp$47, temp$48, temp$50, temp$51, temp$54, temp$60, temp$66, temp$72, temp$77;
+        javax.mail.Message$RecipientType temp$56, temp$62, temp$68;
+        javax.mail.internet.InternetAddress[] temp$58, temp$64, temp$70, temp$75;
+        java.util.Map temp$76, temp$78;
+        java.util.Set temp$79, temp$80;
+        java.util.Iterator temp$81;
+        java.util.Map$Entry entry;
+        java.util.Date temp$93, temp$95;
+        javax.mail.Store store, temp$98;
+        javax.mail.MessagingException me;
+
+        this := @this: org.apache.commons.mail.Email;
+        temp$0 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        if temp$0 != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.IllegalStateException;
+        specialinvoke temp$1.<java.lang.IllegalStateException: void <init>(java.lang.String)>("The MimeMessage is already built.");
+        throw temp$1;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.Session getMailSession()>();
+        temp$3 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage createMimeMessage(javax.mail.Session)>(temp$2);
+        this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message> = temp$3;
+        temp$4 = this.<org.apache.commons.mail.Email: java.lang.String subject>;
+        temp$5 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$4);
+        if temp$5 == 0 goto label7;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$6 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        temp$7 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$6);
+        if temp$7 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$8 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$9 = this.<org.apache.commons.mail.Email: java.lang.String subject>;
+        temp$10 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        virtualinvoke temp$8.<javax.mail.internet.MimeMessage: void setSubject(java.lang.String,java.lang.String)>(temp$9, temp$10);
+        goto label6;
+
+     label5:
+        nop;
+        temp$11 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$12 = this.<org.apache.commons.mail.Email: java.lang.String subject>;
+        virtualinvoke temp$11.<javax.mail.internet.MimeMessage: void setSubject(java.lang.String)>(temp$12);
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        temp$13 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        virtualinvoke this.<org.apache.commons.mail.Email: void updateContentType(java.lang.String)>(temp$13);
+        temp$14 = this.<org.apache.commons.mail.Email: java.lang.Object content>;
+        if temp$14 != null goto label8;
+
+        goto label13;
+
+     label8:
+        nop;
+        temp$15 = <org.apache.commons.mail.EmailConstants: java.lang.String TEXT_PLAIN>;
+        temp$16 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        temp$17 = virtualinvoke temp$15.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(temp$16);
+        if temp$17 == 0 goto label11;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$18 = this.<org.apache.commons.mail.Email: java.lang.Object content>;
+        temp$19 = temp$18 instanceof java.lang.String;
+        if temp$19 == 0 goto label11;
+
+        goto label10;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$20 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$21 = this.<org.apache.commons.mail.Email: java.lang.Object content>;
+        temp$22 = virtualinvoke temp$21.<java.lang.Object: java.lang.String toString()>();
+        temp$23 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        virtualinvoke temp$20.<javax.mail.internet.MimeMessage: void setText(java.lang.String,java.lang.String)>(temp$22, temp$23);
+        goto label12;
+
+     label11:
+        nop;
+        temp$24 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$25 = this.<org.apache.commons.mail.Email: java.lang.Object content>;
+        temp$26 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        virtualinvoke temp$24.<javax.mail.internet.MimeMessage: void setContent(java.lang.Object,java.lang.String)>(temp$25, temp$26);
+
+     label12:
+        nop;
+        goto label20;
+
+     label13:
+        nop;
+        temp$27 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMultipart emailBody>;
+        if temp$27 != null goto label14;
+
+        goto label18;
+
+     label14:
+        nop;
+        temp$28 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        if temp$28 == null goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$29 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$30 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMultipart emailBody>;
+        virtualinvoke temp$29.<javax.mail.internet.MimeMessage: void setContent(javax.mail.Multipart)>(temp$30);
+        goto label17;
+
+     label16:
+        nop;
+        temp$31 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$32 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMultipart emailBody>;
+        temp$33 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        virtualinvoke temp$31.<javax.mail.internet.MimeMessage: void setContent(java.lang.Object,java.lang.String)>(temp$32, temp$33);
+
+     label17:
+        nop;
+        goto label19;
+
+     label18:
+        nop;
+        temp$34 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        virtualinvoke temp$34.<javax.mail.internet.MimeMessage: void setText(java.lang.String)>("");
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+        temp$35 = this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress fromAddress>;
+        if temp$35 != null goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        temp$36 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$37 = this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress fromAddress>;
+        virtualinvoke temp$36.<javax.mail.internet.MimeMessage: void setFrom(javax.mail.Address)>(temp$37);
+        goto label26;
+
+     label22:
+        nop;
+        temp$38 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        temp$39 = virtualinvoke temp$38.<javax.mail.Session: java.lang.String getProperty(java.lang.String)>("mail.smtp.from");
+        if temp$39 == null goto label23;
+
+        goto label25;
+
+     label23:
+        nop;
+        temp$40 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        temp$41 = virtualinvoke temp$40.<javax.mail.Session: java.lang.String getProperty(java.lang.String)>("mail.from");
+        if temp$41 == null goto label24;
+
+        goto label25;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$42 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$42.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("From address required");
+        throw temp$42;
+
+     label25:
+        nop;
+
+     label26:
+        nop;
+        temp$43 = this.<org.apache.commons.mail.Email: java.util.List toList>;
+        temp$44 = interfaceinvoke temp$43.<java.util.List: int size()>();
+        temp$45 = temp$44;
+        temp$46 = this.<org.apache.commons.mail.Email: java.util.List ccList>;
+        temp$47 = interfaceinvoke temp$46.<java.util.List: int size()>();
+        temp$48 = temp$45 + temp$47;
+        temp$49 = this.<org.apache.commons.mail.Email: java.util.List bccList>;
+        temp$50 = interfaceinvoke temp$49.<java.util.List: int size()>();
+        temp$51 = temp$48 + temp$50;
+        if temp$51 == 1 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$52 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$52.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("At least one receiver address required");
+        throw temp$52;
+
+     label28:
+        nop;
+        temp$53 = this.<org.apache.commons.mail.Email: java.util.List toList>;
+        temp$54 = interfaceinvoke temp$53.<java.util.List: int size()>();
+        if temp$54 > 0 goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$55 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$56 = <javax.mail.Message$RecipientType: javax.mail.Message$RecipientType TO>;
+        temp$57 = this.<org.apache.commons.mail.Email: java.util.List toList>;
+        temp$58 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress[] toInternetAddressArray(java.util.List)>(temp$57);
+        virtualinvoke temp$55.<javax.mail.internet.MimeMessage: void setRecipients(javax.mail.Message$RecipientType,javax.mail.Address[])>(temp$56, temp$58);
+
+     label30:
+        nop;
+        temp$59 = this.<org.apache.commons.mail.Email: java.util.List ccList>;
+        temp$60 = interfaceinvoke temp$59.<java.util.List: int size()>();
+        if temp$60 > 0 goto label31;
+
+        goto label32;
+
+     label31:
+        nop;
+        temp$61 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$62 = <javax.mail.Message$RecipientType: javax.mail.Message$RecipientType CC>;
+        temp$63 = this.<org.apache.commons.mail.Email: java.util.List ccList>;
+        temp$64 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress[] toInternetAddressArray(java.util.List)>(temp$63);
+        virtualinvoke temp$61.<javax.mail.internet.MimeMessage: void setRecipients(javax.mail.Message$RecipientType,javax.mail.Address[])>(temp$62, temp$64);
+
+     label32:
+        nop;
+        temp$65 = this.<org.apache.commons.mail.Email: java.util.List bccList>;
+        temp$66 = interfaceinvoke temp$65.<java.util.List: int size()>();
+        if temp$66 > 0 goto label33;
+
+        goto label34;
+
+     label33:
+        nop;
+        temp$67 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$68 = <javax.mail.Message$RecipientType: javax.mail.Message$RecipientType BCC>;
+        temp$69 = this.<org.apache.commons.mail.Email: java.util.List bccList>;
+        temp$70 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress[] toInternetAddressArray(java.util.List)>(temp$69);
+        virtualinvoke temp$67.<javax.mail.internet.MimeMessage: void setRecipients(javax.mail.Message$RecipientType,javax.mail.Address[])>(temp$68, temp$70);
+
+     label34:
+        nop;
+        temp$71 = this.<org.apache.commons.mail.Email: java.util.List replyList>;
+        temp$72 = interfaceinvoke temp$71.<java.util.List: int size()>();
+        if temp$72 > 0 goto label35;
+
+        goto label36;
+
+     label35:
+        nop;
+        temp$73 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$74 = this.<org.apache.commons.mail.Email: java.util.List replyList>;
+        temp$75 = virtualinvoke this.<org.apache.commons.mail.Email: javax.mail.internet.InternetAddress[] toInternetAddressArray(java.util.List)>(temp$74);
+        virtualinvoke temp$73.<javax.mail.internet.MimeMessage: void setReplyTo(javax.mail.Address[])>(temp$75);
+
+     label36:
+        nop;
+        temp$76 = this.<org.apache.commons.mail.Email: java.util.Map headers>;
+        temp$77 = interfaceinvoke temp$76.<java.util.Map: int size()>();
+        if temp$77 > 0 goto label37;
+
+        goto label40;
+
+     label37:
+        nop;
+        temp$78 = this.<org.apache.commons.mail.Email: java.util.Map headers>;
+        temp$79 = interfaceinvoke temp$78.<java.util.Map: java.util.Set entrySet()>();
+        temp$80 = (java.util.Set) temp$79;
+        temp$81 = interfaceinvoke temp$80.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label38:
+        nop;
+        temp$82 = interfaceinvoke temp$81.<java.util.Iterator: boolean hasNext()>();
+        if temp$82 == 0 goto label39;
+
+        temp$83 = interfaceinvoke temp$81.<java.util.Iterator: java.lang.Object next()>();
+        entry = (java.util.Map$Entry) temp$83;
+        temp$84 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$85 = (java.lang.String) temp$84;
+        temp$86 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$87 = (java.lang.String) temp$86;
+        temp$88 = virtualinvoke this.<org.apache.commons.mail.Email: java.lang.String createFoldedHeaderValue(java.lang.String,java.lang.String)>(temp$85, temp$87);
+        foldedValue = temp$88;
+        temp$89 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$90 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$91 = (java.lang.String) temp$90;
+        virtualinvoke temp$89.<javax.mail.internet.MimeMessage: void addHeader(java.lang.String,java.lang.String)>(temp$91, foldedValue);
+        nop;
+        goto label38;
+
+     label39:
+        nop;
+
+     label40:
+        nop;
+        temp$92 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$93 = virtualinvoke temp$92.<javax.mail.internet.MimeMessage: java.util.Date getSentDate()>();
+        if temp$93 == null goto label41;
+
+        goto label42;
+
+     label41:
+        nop;
+        temp$94 = this.<org.apache.commons.mail.Email: javax.mail.internet.MimeMessage message>;
+        temp$95 = virtualinvoke this.<org.apache.commons.mail.Email: java.util.Date getSentDate()>();
+        virtualinvoke temp$94.<javax.mail.internet.MimeMessage: void setSentDate(java.util.Date)>(temp$95);
+
+     label42:
+        nop;
+        temp$96 = this.<org.apache.commons.mail.Email: boolean popBeforeSmtp>;
+        if temp$96 == 0 goto label44;
+
+        goto label43;
+
+     label43:
+        nop;
+        temp$97 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        temp$98 = virtualinvoke temp$97.<javax.mail.Session: javax.mail.Store getStore(java.lang.String)>("pop3");
+        store = temp$98;
+        temp$99 = this.<org.apache.commons.mail.Email: java.lang.String popHost>;
+        temp$100 = this.<org.apache.commons.mail.Email: java.lang.String popUsername>;
+        temp$101 = this.<org.apache.commons.mail.Email: java.lang.String popPassword>;
+        virtualinvoke store.<javax.mail.Store: void connect(java.lang.String,java.lang.String,java.lang.String)>(temp$99, temp$100, temp$101);
+
+     label44:
+        nop;
+        goto label46;
+
+     label45:
+        nop;
+        me := @caughtexception;
+        temp$102 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$102.<org.apache.commons.mail.EmailException: void <init>(java.lang.Throwable)>(me);
+        throw temp$102;
+
+     label46:
+        nop;
+        return;
+
+        catch javax.mail.MessagingException from label2 to label45 with label45;
+    }
+}

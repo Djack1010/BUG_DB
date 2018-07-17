@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    private final void checkTokenized()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.String[] temp$0, temp$4, temp$6, temp$12, temp$14;
+        char[] temp$1, temp$7, temp$8;
+        java.util.List split, temp$2, split, temp$10;
+        int temp$3, temp$9, temp$11;
+        java.lang.Object[] temp$5, temp$13;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        if temp$0 == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        if temp$1 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.util.List tokenize(char[],int,int)>(null, 1, 0);
+        split = temp$2;
+        temp$3 = interfaceinvoke split.<java.util.List: int size()>();
+        temp$4 = newarray (java.lang.String)[temp$3];
+        temp$5 = interfaceinvoke split.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$4);
+        temp$6 = (java.lang.String[]) temp$5;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$6;
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$8 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        temp$9 = lengthof temp$8;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.util.List tokenize(char[],int,int)>(temp$7, 0, temp$9);
+        split = temp$10;
+        temp$11 = interfaceinvoke split.<java.util.List: int size()>();
+        temp$12 = newarray (java.lang.String)[temp$11];
+        temp$13 = interfaceinvoke split.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$12);
+        temp$14 = (java.lang.String[]) temp$13;
+        this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens> = temp$14;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return;
+    }
+}

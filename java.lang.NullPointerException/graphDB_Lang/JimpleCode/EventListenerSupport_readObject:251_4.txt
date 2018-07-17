@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    private final void readObject(java.io.ObjectInputStream) throws java.io.IOException, java.lang.ClassNotFoundException
+    {
+        org.apache.commons.lang3.event.EventListenerSupport this;
+        java.io.ObjectInputStream objectInputStream;
+        java.lang.Object[] srcListeners;
+        java.lang.Object temp$0;
+        java.util.concurrent.CopyOnWriteArrayList temp$1;
+        java.lang.Class listenerInterface;
+        java.lang.Thread temp$2;
+        java.lang.ClassLoader temp$3;
+
+        this := @this: org.apache.commons.lang3.event.EventListenerSupport;
+        objectInputStream := @parameter0: java.io.ObjectInputStream;
+        temp$0 = virtualinvoke objectInputStream.<java.io.ObjectInputStream: java.lang.Object readObject()>();
+        srcListeners = (java.lang.Object[]) temp$0;
+        temp$1 = new java.util.concurrent.CopyOnWriteArrayList;
+        specialinvoke temp$1.<java.util.concurrent.CopyOnWriteArrayList: void <init>(java.lang.Object[])>(srcListeners);
+        this.<org.apache.commons.lang3.event.EventListenerSupport: java.util.List listeners> = temp$1;
+        listenerInterface = null;
+        temp$2 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Thread: java.lang.ClassLoader getContextClassLoader()>();
+        virtualinvoke this.<org.apache.commons.lang3.event.EventListenerSupport: void initializeTransientFields(java.lang.Class,java.lang.ClassLoader)>(listenerInterface, temp$3);
+        return;
+    }
+}

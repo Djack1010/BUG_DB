@@ -1,0 +1,95 @@
+public class WrapClass 
+{
+    public static java.lang.String join(java.util.Iterator, char)
+    {
+        java.util.Iterator iterator;
+        char separator;
+        java.lang.String temp$0, temp$2, result, temp$5, temp$12;
+        boolean temp$1, temp$4, temp$8;
+        java.lang.Object first, temp$3, obj, temp$10;
+        java.lang.StringBuilder buf, temp$6, temp$7, temp$9, temp$11;
+
+        iterator := @parameter0: java.util.Iterator;
+        separator := @parameter1: char;
+        if iterator == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke iterator.<java.util.Iterator: boolean hasNext()>();
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = interfaceinvoke iterator.<java.util.Iterator: java.lang.Object next()>();
+        first = temp$3;
+        temp$4 = interfaceinvoke iterator.<java.util.Iterator: boolean hasNext()>();
+        if temp$4 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.String toString(java.lang.Object)>(first);
+        result = temp$5;
+        return result;
+
+     label5:
+        nop;
+        temp$6 = new java.lang.StringBuilder;
+        specialinvoke temp$6.<java.lang.StringBuilder: void <init>(int)>(256);
+        buf = temp$6;
+        if first != null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$7 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(first);
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+        temp$8 = interfaceinvoke iterator.<java.util.Iterator: boolean hasNext()>();
+        if temp$8 == 0 goto label12;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$9 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(separator);
+        temp$10 = interfaceinvoke iterator.<java.util.Iterator: java.lang.Object next()>();
+        obj = temp$10;
+        if obj != null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(obj);
+
+     label11:
+        nop;
+        goto label8;
+
+     label12:
+        nop;
+        temp$12 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$12;
+    }
+}

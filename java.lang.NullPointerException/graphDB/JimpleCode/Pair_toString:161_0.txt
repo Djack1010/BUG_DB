@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public java.lang.String toString()
+    {
+        org.apache.commons.lang3.tuple.Pair this;
+        java.lang.StringBuilder temp$0, temp$1, temp$3, temp$4, temp$6, temp$7;
+        java.lang.Object temp$2, temp$5;
+        java.lang.String temp$8;
+
+        this := @this: org.apache.commons.lang3.tuple.Pair;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40);
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getLeft()>();
+        temp$3 = virtualinvoke temp$1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(temp$2);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getRight()>();
+        temp$6 = virtualinvoke temp$4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(temp$5);
+        temp$7 = virtualinvoke temp$6.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41);
+        temp$8 = virtualinvoke temp$7.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$8;
+    }
+}

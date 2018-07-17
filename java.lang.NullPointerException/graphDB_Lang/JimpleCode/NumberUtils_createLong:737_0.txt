@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.Long createLong(java.lang.String)
+    {
+        java.lang.String str;
+        java.lang.Long temp$0, temp$1;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.lang.Long: java.lang.Long decode(java.lang.String)>(str);
+        return temp$1;
+    }
+}

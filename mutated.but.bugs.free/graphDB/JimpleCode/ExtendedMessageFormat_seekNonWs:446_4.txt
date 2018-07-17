@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    private final void seekNonWs(java.lang.String, java.text.ParsePosition)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern;
+        java.text.ParsePosition pos;
+        int len, temp$2, temp$3, temp$4, temp$5;
+        char[] buffer, temp$0;
+        org.apache.commons.lang3.text.StrMatcher temp$1;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        pos := @parameter1: java.text.ParsePosition;
+        len = 0;
+        temp$0 = virtualinvoke pattern.<java.lang.String: char[] toCharArray()>();
+        buffer = temp$0;
+
+     label0:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.text.StrMatcher: org.apache.commons.lang3.text.StrMatcher splitMatcher()>();
+        temp$2 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$3 = virtualinvoke temp$1.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int)>(buffer, temp$2);
+        len = temp$3;
+        nop;
+        if len > 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$5 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if temp$4 < temp$5 goto label0;
+
+        goto label2;
+
+        goto label0;
+
+     label2:
+        nop;
+        return;
+    }
+}

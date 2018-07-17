@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public static int toIntValue(java.lang.Character)
+    {
+        java.lang.Character ch;
+        java.lang.IllegalArgumentException temp$0;
+        char temp$1;
+        int temp$2;
+
+        ch := @parameter0: java.lang.Character;
+        if ch == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The character must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke ch.<java.lang.Character: char charValue()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.CharUtils: int toIntValue(char)>(temp$1);
+        return temp$2;
+    }
+}

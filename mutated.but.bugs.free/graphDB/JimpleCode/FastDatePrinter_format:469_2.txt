@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public java.lang.StringBuffer format(java.util.Date, java.lang.StringBuffer)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.util.Date date;
+        java.lang.StringBuffer buf, temp$1;
+        java.util.Calendar c;
+        java.util.GregorianCalendar temp$0;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        date := @parameter0: java.util.Date;
+        buf := @parameter1: java.lang.StringBuffer;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.GregorianCalendar newCalendar()>();
+        c = temp$0;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.StringBuffer applyRules(java.util.Calendar,java.lang.StringBuffer)>(c, buf);
+        return temp$1;
+    }
+}

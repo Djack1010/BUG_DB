@@ -1,0 +1,34 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.concurrent.ConcurrentRuntimeException extractCauseUnchecked(java.util.concurrent.ExecutionException)
+    {
+        java.util.concurrent.ExecutionException ex;
+        java.lang.Throwable temp$0;
+        org.apache.commons.lang3.concurrent.ConcurrentRuntimeException temp$1, temp$2;
+
+        ex := @parameter0: java.util.concurrent.ExecutionException;
+        if ex == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke ex.<java.util.concurrent.ExecutionException: java.lang.Throwable getCause()>();
+        if temp$0 == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label2:
+        nop;
+        staticinvoke <org.apache.commons.lang3.concurrent.ConcurrentUtils: void throwCause(java.util.concurrent.ExecutionException)>(ex);
+        temp$2 = null;
+        return temp$2;
+    }
+}

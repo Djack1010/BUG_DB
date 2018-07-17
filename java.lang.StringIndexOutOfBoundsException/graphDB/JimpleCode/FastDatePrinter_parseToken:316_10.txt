@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    protected java.lang.String parseToken(java.lang.String, int[])
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.lang.String pattern, temp$18;
+        int[] indexRef, temp$1, temp$16;
+        java.lang.StringBuilder buf, temp$0, temp$5, temp$13;
+        int i, temp$2, length, temp$3, temp$6, temp$7, temp$8, temp$9, temp$11, temp$12, temp$14, temp$15, temp$17;
+        char c, temp$4, peek, temp$10;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        pattern := @parameter0: java.lang.String;
+        indexRef := @parameter1: int[];
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        buf = temp$0;
+        temp$1 = indexRef;
+        temp$2 = 0;
+        i = temp$1[temp$2];
+        temp$3 = virtualinvoke pattern.<java.lang.String: int length()>();
+        length = temp$3;
+        temp$4 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(i);
+        c = temp$4;
+        temp$5 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+
+     label0:
+        nop;
+        temp$6 = i;
+        temp$7 = temp$6 + 1;
+        if temp$7 < length goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        temp$10 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$9);
+        peek = temp$10;
+        temp$11 = (int) peek;
+        temp$12 = (int) c;
+        if temp$11 == temp$12 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$13 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label4;
+
+     label3:
+        nop;
+        goto label5;
+
+     label4:
+        nop;
+        goto label0;
+
+     label5:
+        nop;
+        nop;
+        temp$16 = indexRef;
+        temp$17 = 0;
+        temp$16[temp$17] = i;
+        temp$18 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$18;
+    }
+}

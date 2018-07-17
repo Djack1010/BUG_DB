@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public java.lang.String replace(java.lang.String, int, int)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        java.lang.String source, temp$0, temp$4, temp$5;
+        int offset, length, temp$2, temp$3;
+        org.apache.commons.lang3.text.StrBuilder buf;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        source := @parameter0: java.lang.String;
+        offset := @parameter1: int;
+        length := @parameter2: int;
+        if source == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        buf = null;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean substitute(org.apache.commons.lang3.text.StrBuilder,int,int)>(buf, 0, length);
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = offset;
+        temp$3 = temp$2 + length;
+        temp$4 = virtualinvoke source.<java.lang.String: java.lang.String substring(int,int)>(offset, temp$3);
+        return temp$4;
+
+     label3:
+        nop;
+        temp$5 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: java.lang.String toString()>();
+        return temp$5;
+    }
+}

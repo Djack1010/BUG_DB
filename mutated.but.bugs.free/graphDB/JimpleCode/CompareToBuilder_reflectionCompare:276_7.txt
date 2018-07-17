@@ -1,0 +1,119 @@
+public class WrapClass 
+{
+    public static transient int reflectionCompare(java.lang.Object, java.lang.Object, boolean, java.lang.Class, java.lang.String[])
+    {
+        java.lang.Object lhs, rhs;
+        boolean compareTransients, temp$1, temp$2, temp$5;
+        java.lang.Class reflectUpToClass, lhsClazz, temp$4, temp$8, temp$9;
+        java.lang.String[] excludeFields;
+        int temp$0, temp$10;
+        java.lang.NullPointerException temp$3;
+        java.lang.ClassCastException temp$6;
+        org.apache.commons.lang3.builder.CompareToBuilder compareToBuilder, temp$7;
+
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        compareTransients := @parameter2: boolean;
+        reflectUpToClass := @parameter3: java.lang.Class;
+        excludeFields := @parameter4: java.lang.String[];
+        if lhs == rhs goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        if lhs == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+
+     label4:
+        nop;
+        if rhs == null goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$2 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = 1;
+
+     label7:
+        nop;
+        if temp$1 != temp$2 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$3 = new java.lang.NullPointerException;
+        specialinvoke temp$3.<java.lang.NullPointerException: void <init>()>();
+        throw temp$3;
+
+     label9:
+        nop;
+        temp$4 = virtualinvoke lhs.<java.lang.Object: java.lang.Class getClass()>();
+        lhsClazz = temp$4;
+        temp$5 = virtualinvoke lhsClazz.<java.lang.Class: boolean isInstance(java.lang.Object)>(rhs);
+        if temp$5 == 0 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$6 = new java.lang.ClassCastException;
+        specialinvoke temp$6.<java.lang.ClassCastException: void <init>()>();
+        throw temp$6;
+
+     label11:
+        nop;
+        temp$7 = new org.apache.commons.lang3.builder.CompareToBuilder;
+        specialinvoke temp$7.<org.apache.commons.lang3.builder.CompareToBuilder: void <init>()>();
+        compareToBuilder = temp$7;
+        staticinvoke <org.apache.commons.lang3.builder.CompareToBuilder: void reflectionAppend(java.lang.Object,java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.CompareToBuilder,boolean,java.lang.String[])>(lhs, rhs, lhsClazz, compareToBuilder, compareTransients, excludeFields);
+
+     label12:
+        nop;
+        temp$8 = virtualinvoke lhsClazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        if temp$8 != null goto label13;
+
+        goto label15;
+
+     label13:
+        nop;
+        if lhsClazz != reflectUpToClass goto label14;
+
+        goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$9 = virtualinvoke lhsClazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        lhsClazz = temp$9;
+        staticinvoke <org.apache.commons.lang3.builder.CompareToBuilder: void reflectionAppend(java.lang.Object,java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.CompareToBuilder,boolean,java.lang.String[])>(lhs, rhs, lhsClazz, compareToBuilder, compareTransients, excludeFields);
+        goto label12;
+
+     label15:
+        nop;
+        temp$10 = virtualinvoke compareToBuilder.<org.apache.commons.lang3.builder.CompareToBuilder: int toComparison()>();
+        return temp$10;
+    }
+}

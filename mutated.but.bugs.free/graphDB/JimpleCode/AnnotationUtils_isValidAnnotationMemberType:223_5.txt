@@ -1,0 +1,121 @@
+public class WrapClass 
+{
+    public static boolean isValidAnnotationMemberType(java.lang.Class)
+    {
+        java.lang.Class type, temp$2, temp$7, temp$8, temp$9, temp$11, temp$12, temp$13;
+        boolean temp$0, temp$1, temp$3, temp$4, temp$5, temp$6, temp$10, temp$14, temp$15;
+
+        type := @parameter0: java.lang.Class;
+        if type == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke type.<java.lang.Class: boolean isArray()>();
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke type.<java.lang.Class: java.lang.Class getComponentType()>();
+        type = temp$2;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke type.<java.lang.Class: boolean isPrimitive()>();
+        if temp$3 == 0 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$4 = virtualinvoke type.<java.lang.Class: boolean isEnum()>();
+        if temp$4 == 0 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$5 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = 1;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke type.<java.lang.Class: boolean isAnnotation()>();
+        if temp$5 != temp$6 goto label15;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$8 = <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$String>;
+        if temp$8 != null goto label9;
+
+        temp$9 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$(java.lang.String)>("java.lang.String");
+        <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$String> = temp$9;
+        temp$7 = temp$9;
+        goto label10;
+
+     label9:
+        nop;
+        temp$7 = <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$String>;
+
+     label10:
+        nop;
+        temp$10 = virtualinvoke temp$7.<java.lang.Class: boolean equals(java.lang.Object)>(type);
+        if temp$10 == 0 goto label11;
+
+        goto label15;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$12 = <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$Class>;
+        if temp$12 != null goto label12;
+
+        temp$13 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$(java.lang.String)>("java.lang.Class");
+        <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$Class> = temp$13;
+        temp$11 = temp$13;
+        goto label13;
+
+     label12:
+        nop;
+        temp$11 = <org.apache.commons.lang3.AnnotationUtils: java.lang.Class class$java$lang$Class>;
+
+     label13:
+        nop;
+        temp$14 = virtualinvoke temp$11.<java.lang.Class: boolean equals(java.lang.Object)>(type);
+        if temp$14 == 0 goto label14;
+
+        goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$15 = 0;
+        goto label16;
+
+     label15:
+        nop;
+        temp$15 = 1;
+
+     label16:
+        nop;
+        return temp$15;
+    }
+}

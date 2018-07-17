@@ -1,0 +1,199 @@
+public class WrapClass 
+{
+    private final int readWithQuotes(char[], int, int, org.apache.commons.lang3.text.StrBuilder, java.util.List, int, int)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        char[] srcChars, temp$13, temp$38;
+        int start, len, quoteStart, quoteLen, pos, trimStart, temp$3, temp$4, temp$7, temp$8, temp$9, temp$11, temp$12, temp$14, temp$15, temp$16, temp$19, delimLen, temp$21, temp$23, temp$24, temp$27, temp$28, ignoredLen, temp$30, temp$31, temp$32, trimmedLen, temp$34, temp$36, temp$37, temp$39, temp$40, temp$41, temp$44, temp$46;
+        org.apache.commons.lang3.text.StrBuilder workArea, temp$0, temp$6, temp$18, temp$35, temp$43;
+        java.util.List tokenList;
+        boolean quoting, temp$1, temp$2, temp$5, temp$10, temp$25, temp$26;
+        char temp$17, temp$42;
+        org.apache.commons.lang3.text.StrMatcher temp$20, temp$29, temp$33;
+        java.lang.String temp$22, temp$45;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        srcChars := @parameter0: char[];
+        start := @parameter1: int;
+        len := @parameter2: int;
+        workArea := @parameter3: org.apache.commons.lang3.text.StrBuilder;
+        tokenList := @parameter4: java.util.List;
+        quoteStart := @parameter5: int;
+        quoteLen := @parameter6: int;
+        temp$0 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder clear()>();
+        pos = start;
+        if quoteLen > 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        quoting = temp$1;
+        trimStart = 0;
+
+     label3:
+        nop;
+        if pos < len goto label4;
+
+        goto label21;
+
+     label4:
+        nop;
+        if quoting == 0 goto label10;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: boolean isQuote(char[],int,int,int,int)>(srcChars, pos, len, quoteStart, quoteLen);
+        if temp$2 == 0 goto label9;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$3 = pos;
+        temp$4 = temp$3 + quoteLen;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: boolean isQuote(char[],int,int,int,int)>(srcChars, temp$4, len, quoteStart, quoteLen);
+        if temp$5 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char[],int,int)>(srcChars, pos, quoteLen);
+        temp$7 = pos;
+        temp$8 = quoteLen * 2;
+        temp$9 = temp$7 + temp$8;
+        pos = temp$9;
+        goto label3;
+
+     label8:
+        nop;
+        temp$10 = 0;
+        quoting = temp$10;
+        temp$11 = pos;
+        temp$12 = temp$11 + quoteLen;
+        pos = temp$12;
+        goto label3;
+
+     label9:
+        nop;
+        temp$13 = srcChars;
+        temp$14 = pos;
+        temp$15 = temp$14 + 1;
+        pos = temp$15;
+        temp$16 = temp$14;
+        temp$17 = temp$13[temp$16];
+        temp$18 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char)>(temp$17);
+        temp$19 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: int size()>();
+        trimStart = temp$19;
+        goto label20;
+
+     label10:
+        nop;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getDelimiterMatcher()>();
+        temp$21 = virtualinvoke temp$20.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, pos, start, len);
+        delimLen = temp$21;
+        if delimLen > 0 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$22 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: java.lang.String substring(int,int)>(0, trimStart);
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void addToken(java.util.List,java.lang.String)>(tokenList, temp$22);
+        temp$23 = pos;
+        temp$24 = temp$23 + delimLen;
+        return temp$24;
+
+     label12:
+        nop;
+        if quoteLen > 0 goto label13;
+
+        goto label15;
+
+     label13:
+        nop;
+        temp$25 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: boolean isQuote(char[],int,int,int,int)>(srcChars, pos, len, quoteStart, quoteLen);
+        if temp$25 == 0 goto label15;
+
+        goto label14;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$26 = 1;
+        quoting = temp$26;
+        temp$27 = pos;
+        temp$28 = temp$27 + quoteLen;
+        pos = temp$28;
+        goto label3;
+
+     label15:
+        nop;
+        temp$29 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getIgnoredMatcher()>();
+        temp$30 = virtualinvoke temp$29.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, pos, start, len);
+        ignoredLen = temp$30;
+        if ignoredLen > 0 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$31 = pos;
+        temp$32 = temp$31 + ignoredLen;
+        pos = temp$32;
+        goto label3;
+
+     label17:
+        nop;
+        temp$33 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher getTrimmerMatcher()>();
+        temp$34 = virtualinvoke temp$33.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(srcChars, pos, start, len);
+        trimmedLen = temp$34;
+        if trimmedLen > 0 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$35 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char[],int,int)>(srcChars, pos, trimmedLen);
+        temp$36 = pos;
+        temp$37 = temp$36 + trimmedLen;
+        pos = temp$37;
+        goto label3;
+
+     label19:
+        nop;
+        temp$38 = srcChars;
+        temp$39 = pos;
+        temp$40 = temp$39 + 1;
+        pos = temp$40;
+        temp$41 = temp$39;
+        temp$42 = temp$38[temp$41];
+        temp$43 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(char)>(temp$42);
+        temp$44 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: int size()>();
+        trimStart = temp$44;
+
+     label20:
+        nop;
+        goto label3;
+
+     label21:
+        nop;
+        temp$45 = virtualinvoke workArea.<org.apache.commons.lang3.text.StrBuilder: java.lang.String substring(int,int)>(0, trimStart);
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void addToken(java.util.List,java.lang.String)>(tokenList, temp$45);
+        temp$46 = -1;
+        return temp$46;
+    }
+}

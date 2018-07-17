@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public boolean startsWith(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        boolean temp$0, temp$2, temp$4, temp$11, temp$14;
+        int len, temp$1, temp$3, i, temp$6, temp$9, temp$10, temp$12, temp$13;
+        char[] temp$5;
+        char temp$7, temp$8;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$1;
+        if len <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 1;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if len > temp$3 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label5:
+        nop;
+        i = 0;
+
+     label6:
+        nop;
+        if i < len goto label7;
+
+        goto label10;
+
+     label7:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$9 = (int) temp$7;
+        temp$10 = (int) temp$8;
+        if temp$9 != temp$10 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label9:
+        nop;
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label6;
+
+     label10:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+    }
+}

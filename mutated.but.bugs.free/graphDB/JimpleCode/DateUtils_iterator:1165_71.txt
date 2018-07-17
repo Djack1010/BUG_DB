@@ -1,0 +1,242 @@
+public class WrapClass 
+{
+    public static java.util.Iterator iterator(java.util.Calendar, int)
+    {
+        java.util.Calendar focus, start, end, temp$1, temp$3, temp$6, temp$7;
+        int rangeStyle, startCutoff, endCutoff, temp$4, temp$5, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$20, temp$21, temp$22, temp$23, temp$24, temp$25, temp$26, temp$27, temp$28, temp$29;
+        java.lang.IllegalArgumentException temp$0, temp$17;
+        java.lang.Object temp$2;
+        java.lang.StringBuffer temp$18;
+        java.lang.String temp$19;
+        org.apache.commons.lang3.time.DateUtils$DateIterator temp$30;
+
+        focus := @parameter0: java.util.Calendar;
+        rangeStyle := @parameter1: int;
+        if focus == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        start = null;
+        end = null;
+        startCutoff = 1;
+        endCutoff = 7;
+        goto label18;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Calendar truncate(java.util.Calendar,int)>(focus, 2);
+        start = temp$1;
+        temp$2 = virtualinvoke start.<java.util.Calendar: java.lang.Object clone()>();
+        temp$3 = (java.util.Calendar) temp$2;
+        end = temp$3;
+        virtualinvoke end.<java.util.Calendar: void add(int,int)>(2, 1);
+        virtualinvoke end.<java.util.Calendar: void add(int,int)>(5, -1);
+        if rangeStyle == 6 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 2;
+        startCutoff = temp$4;
+        temp$5 = 1;
+        endCutoff = temp$5;
+
+     label5:
+        nop;
+        goto label19;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$6 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Calendar truncate(java.util.Calendar,int)>(focus, 5);
+        start = temp$6;
+        temp$7 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Calendar truncate(java.util.Calendar,int)>(focus, 5);
+        end = temp$7;
+        goto label15;
+
+     label10:
+        nop;
+        goto label16;
+
+     label11:
+        nop;
+        temp$8 = 2;
+        startCutoff = temp$8;
+        temp$9 = 1;
+        endCutoff = temp$9;
+        goto label16;
+
+     label12:
+        nop;
+        temp$10 = virtualinvoke focus.<java.util.Calendar: int get(int)>(7);
+        startCutoff = temp$10;
+        temp$11 = startCutoff - 1;
+        endCutoff = temp$11;
+        goto label16;
+
+     label13:
+        nop;
+        temp$12 = virtualinvoke focus.<java.util.Calendar: int get(int)>(7);
+        temp$13 = temp$12 - 3;
+        startCutoff = temp$13;
+        temp$14 = virtualinvoke focus.<java.util.Calendar: int get(int)>(7);
+        temp$15 = temp$14;
+        temp$16 = temp$15 + 3;
+        endCutoff = temp$16;
+        goto label16;
+
+     label14:
+        nop;
+        goto label16;
+
+        goto label16;
+
+     label15:
+        nop;
+        nop;
+        tableswitch(rangeStyle)
+        {
+            case 1: goto label10;
+            case 2: goto label11;
+            case 3: goto label12;
+            case 4: goto label13;
+            default: goto label14;
+        };
+
+     label16:
+        nop;
+        goto label19;
+
+     label17:
+        nop;
+        temp$17 = new java.lang.IllegalArgumentException;
+        temp$18 = new java.lang.StringBuffer;
+        specialinvoke temp$18.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("The range style ");
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(rangeStyle);
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not valid.");
+        temp$19 = virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$17.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$19);
+        throw temp$17;
+
+        goto label19;
+
+     label18:
+        nop;
+        nop;
+        tableswitch(rangeStyle)
+        {
+            case 1: goto label6;
+            case 2: goto label7;
+            case 3: goto label8;
+            case 4: goto label9;
+            case 5: goto label2;
+            case 6: goto label3;
+            default: goto label17;
+        };
+
+     label19:
+        nop;
+        if startCutoff < 1 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$20 = startCutoff;
+        temp$21 = temp$20 + 7;
+        startCutoff = temp$21;
+
+     label21:
+        nop;
+        if startCutoff != 7 goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        temp$22 = startCutoff;
+        temp$23 = temp$22 - 7;
+        startCutoff = temp$23;
+
+     label23:
+        nop;
+        if endCutoff < 1 goto label24;
+
+        goto label25;
+
+     label24:
+        nop;
+        temp$24 = endCutoff;
+        temp$25 = temp$24 + 7;
+        endCutoff = temp$25;
+
+     label25:
+        nop;
+        if endCutoff > 7 goto label26;
+
+        goto label27;
+
+     label26:
+        nop;
+        temp$26 = endCutoff;
+        temp$27 = temp$26 - 7;
+        endCutoff = temp$27;
+
+     label27:
+        nop;
+
+     label28:
+        nop;
+        temp$28 = virtualinvoke start.<java.util.Calendar: int get(int)>(7);
+        if temp$28 != startCutoff goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        virtualinvoke start.<java.util.Calendar: void add(int,int)>(5, -1);
+        goto label28;
+
+     label30:
+        nop;
+
+     label31:
+        nop;
+        temp$29 = virtualinvoke end.<java.util.Calendar: int get(int)>(7);
+        if temp$29 != endCutoff goto label32;
+
+        goto label33;
+
+     label32:
+        nop;
+        virtualinvoke end.<java.util.Calendar: void add(int,int)>(5, 1);
+        goto label31;
+
+     label33:
+        nop;
+        temp$30 = new org.apache.commons.lang3.time.DateUtils$DateIterator;
+        specialinvoke temp$30.<org.apache.commons.lang3.time.DateUtils$DateIterator: void <init>(java.util.Calendar,java.util.Calendar)>(start, end);
+        return temp$30;
+    }
+}

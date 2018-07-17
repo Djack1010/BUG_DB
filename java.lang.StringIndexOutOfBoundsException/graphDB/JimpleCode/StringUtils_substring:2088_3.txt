@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static java.lang.String substring(java.lang.String, int)
+    {
+        java.lang.String str, temp$0, temp$6, temp$7;
+        int start, temp$1, temp$2, temp$3, temp$4, temp$5;
+
+        str := @parameter0: java.lang.String;
+        start := @parameter1: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if start < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$2 = temp$1;
+        temp$3 = temp$2 + start;
+        start = temp$3;
+
+     label3:
+        nop;
+        if start < 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = -1;
+        start = temp$4;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: int length()>();
+        if start > temp$5 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$6;
+
+     label7:
+        nop;
+        temp$7 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(start);
+        return temp$7;
+    }
+}

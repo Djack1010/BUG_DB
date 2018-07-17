@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static long generateBitVector(java.lang.Class, java.lang.Iterable)
+    {
+        java.lang.Class enumClass, temp$0;
+        java.lang.Iterable values, temp$2;
+        java.lang.Object temp$1, temp$5;
+        long total, temp$8, temp$11, temp$12;
+        java.util.Iterator temp$3;
+        java.lang.Enum constant;
+        boolean temp$4, temp$6;
+        java.lang.Object[] temp$7;
+        int temp$9, temp$10;
+
+        enumClass := @parameter0: java.lang.Class;
+        values := @parameter1: java.lang.Iterable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.EnumUtils: java.lang.Class checkBitVectorable(java.lang.Class)>(enumClass);
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(values);
+        temp$2 = (java.lang.Iterable) temp$1;
+        total = 0L;
+        temp$3 = interfaceinvoke values.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$4 = interfaceinvoke temp$3.<java.util.Iterator: boolean hasNext()>();
+        if temp$4 == 0 goto label4;
+
+        temp$5 = interfaceinvoke temp$3.<java.util.Iterator: java.lang.Object next()>();
+        constant = (java.lang.Enum) temp$5;
+        if constant != null goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$6 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = 1;
+
+     label3:
+        nop;
+        temp$7 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$6, "null elements not permitted", temp$7);
+        temp$8 = total;
+        temp$9 = virtualinvoke constant.<java.lang.Enum: int ordinal()>();
+        temp$10 = 1 << temp$9;
+        temp$11 = (long) temp$10;
+        temp$12 = temp$8 | temp$11;
+        total = temp$12;
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        return total;
+    }
+}

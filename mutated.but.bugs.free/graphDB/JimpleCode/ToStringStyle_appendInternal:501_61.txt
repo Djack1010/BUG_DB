@@ -1,0 +1,429 @@
+public class WrapClass 
+{
+    protected void appendInternal(java.lang.StringBuffer, java.lang.String, java.lang.Object, boolean)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.String fieldName;
+        java.lang.Object value;
+        boolean detail, temp$0, temp$1, temp$2, temp$6, temp$10, temp$13, temp$16, temp$19, temp$22, temp$25, temp$28, temp$31, temp$35;
+        java.util.Collection temp$3, temp$4;
+        int temp$5, temp$9;
+        java.util.Map temp$7, temp$8;
+        long[] temp$11, temp$12;
+        int[] temp$14, temp$15;
+        short[] temp$17, temp$18;
+        byte[] temp$20, temp$21;
+        char[] temp$23, temp$24;
+        double[] temp$26, temp$27;
+        float[] temp$29, temp$30;
+        boolean[] temp$32, temp$33;
+        java.lang.Class temp$34;
+        java.lang.Object[] temp$36, temp$37;
+        java.lang.Throwable temp$38;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        detail := @parameter3: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: boolean isRegistered(java.lang.Object)>(value);
+        if temp$0 == 0 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = value instanceof java.lang.Character;
+        if temp$1 == 0 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendCyclicObject(java.lang.StringBuffer,java.lang.String,java.lang.Object)>(buffer, fieldName, value);
+        return;
+
+     label2:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void register(java.lang.Object)>(value);
+
+     label3:
+        nop;
+        temp$2 = value instanceof java.util.Collection;
+        if temp$2 == 0 goto label8;
+
+        goto label4;
+
+     label4:
+        nop;
+        if detail == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = (java.util.Collection) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.util.Collection)>(buffer, fieldName, temp$3);
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = (java.util.Collection) value;
+        temp$5 = interfaceinvoke temp$4.<java.util.Collection: int size()>();
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummarySize(java.lang.StringBuffer,java.lang.String,int)>(buffer, fieldName, temp$5);
+
+     label7:
+        nop;
+        goto label72;
+
+     label8:
+        nop;
+        temp$6 = value instanceof java.util.Map;
+        if temp$6 == 0 goto label13;
+
+        goto label9;
+
+     label9:
+        nop;
+        if detail == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$7 = (java.util.Map) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.util.Map)>(buffer, fieldName, temp$7);
+        goto label12;
+
+     label11:
+        nop;
+        temp$8 = (java.util.Map) value;
+        temp$9 = interfaceinvoke temp$8.<java.util.Map: int size()>();
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummarySize(java.lang.StringBuffer,java.lang.String,int)>(buffer, fieldName, temp$9);
+
+     label12:
+        nop;
+        goto label71;
+
+     label13:
+        nop;
+        temp$10 = value instanceof long[];
+        if temp$10 == 0 goto label18;
+
+        goto label14;
+
+     label14:
+        nop;
+        if detail == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$11 = (long[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,long[])>(buffer, fieldName, temp$11);
+        goto label17;
+
+     label16:
+        nop;
+        temp$12 = (long[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,long[])>(buffer, fieldName, temp$12);
+
+     label17:
+        nop;
+        goto label70;
+
+     label18:
+        nop;
+        temp$13 = value instanceof int[];
+        if temp$13 == 0 goto label23;
+
+        goto label19;
+
+     label19:
+        nop;
+        if detail == 0 goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        temp$14 = (int[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,int[])>(buffer, fieldName, temp$14);
+        goto label22;
+
+     label21:
+        nop;
+        temp$15 = (int[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,int[])>(buffer, fieldName, temp$15);
+
+     label22:
+        nop;
+        goto label69;
+
+     label23:
+        nop;
+        temp$16 = value instanceof short[];
+        if temp$16 == 0 goto label28;
+
+        goto label24;
+
+     label24:
+        nop;
+        if detail == 0 goto label26;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$17 = (short[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,short[])>(buffer, fieldName, temp$17);
+        goto label27;
+
+     label26:
+        nop;
+        temp$18 = (short[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,short[])>(buffer, fieldName, temp$18);
+
+     label27:
+        nop;
+        goto label68;
+
+     label28:
+        nop;
+        temp$19 = value instanceof byte[];
+        if temp$19 == 0 goto label33;
+
+        goto label29;
+
+     label29:
+        nop;
+        if detail == 0 goto label31;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$20 = (byte[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,byte[])>(buffer, fieldName, temp$20);
+        goto label32;
+
+     label31:
+        nop;
+        temp$21 = (byte[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,byte[])>(buffer, fieldName, temp$21);
+
+     label32:
+        nop;
+        goto label67;
+
+     label33:
+        nop;
+        temp$22 = value instanceof char[];
+        if temp$22 == 0 goto label38;
+
+        goto label34;
+
+     label34:
+        nop;
+        if detail == 0 goto label36;
+
+        goto label35;
+
+     label35:
+        nop;
+        temp$23 = (char[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,char[])>(buffer, fieldName, temp$23);
+        goto label37;
+
+     label36:
+        nop;
+        temp$24 = (char[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,char[])>(buffer, fieldName, temp$24);
+
+     label37:
+        nop;
+        goto label66;
+
+     label38:
+        nop;
+        temp$25 = value instanceof double[];
+        if temp$25 == 0 goto label43;
+
+        goto label39;
+
+     label39:
+        nop;
+        if detail == 0 goto label41;
+
+        goto label40;
+
+     label40:
+        nop;
+        temp$26 = (double[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,double[])>(buffer, fieldName, temp$26);
+        goto label42;
+
+     label41:
+        nop;
+        temp$27 = (double[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,double[])>(buffer, fieldName, temp$27);
+
+     label42:
+        nop;
+        goto label65;
+
+     label43:
+        nop;
+        temp$28 = value instanceof float[];
+        if temp$28 == 0 goto label48;
+
+        goto label44;
+
+     label44:
+        nop;
+        if detail == 0 goto label46;
+
+        goto label45;
+
+     label45:
+        nop;
+        temp$29 = (float[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,float[])>(buffer, fieldName, temp$29);
+        goto label47;
+
+     label46:
+        nop;
+        temp$30 = (float[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,float[])>(buffer, fieldName, temp$30);
+
+     label47:
+        nop;
+        goto label64;
+
+     label48:
+        nop;
+        temp$31 = value instanceof boolean[];
+        if temp$31 == 0 goto label53;
+
+        goto label49;
+
+     label49:
+        nop;
+        if detail == 0 goto label51;
+
+        goto label50;
+
+     label50:
+        nop;
+        temp$32 = (boolean[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,boolean[])>(buffer, fieldName, temp$32);
+        goto label52;
+
+     label51:
+        nop;
+        temp$33 = (boolean[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,boolean[])>(buffer, fieldName, temp$33);
+
+     label52:
+        nop;
+        goto label63;
+
+     label53:
+        nop;
+        temp$34 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$35 = virtualinvoke temp$34.<java.lang.Class: boolean isArray()>();
+        if temp$35 == 0 goto label58;
+
+        goto label54;
+
+     label54:
+        nop;
+        if detail == 0 goto label56;
+
+        goto label55;
+
+     label55:
+        nop;
+        temp$36 = (java.lang.Object[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.lang.Object[])>(buffer, fieldName, temp$36);
+        goto label57;
+
+     label56:
+        nop;
+        temp$37 = (java.lang.Object[]) value;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,java.lang.Object[])>(buffer, fieldName, temp$37);
+
+     label57:
+        nop;
+        goto label62;
+
+     label58:
+        nop;
+        if detail == 0 goto label60;
+
+        goto label59;
+
+     label59:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.lang.Object)>(buffer, fieldName, value);
+        goto label61;
+
+     label60:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,java.lang.Object)>(buffer, fieldName, value);
+
+     label61:
+        nop;
+
+     label62:
+        nop;
+
+     label63:
+        nop;
+
+     label64:
+        nop;
+
+     label65:
+        nop;
+
+     label66:
+        nop;
+
+     label67:
+        nop;
+
+     label68:
+        nop;
+
+     label69:
+        nop;
+
+     label70:
+        nop;
+
+     label71:
+        nop;
+
+     label72:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void unregister(java.lang.Object)>(value);
+        goto label74;
+
+     label73:
+        nop;
+        temp$38 := @caughtexception;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void unregister(java.lang.Object)>(value);
+        throw temp$38;
+
+     label74:
+        nop;
+        return;
+
+        catch java.lang.Throwable from label3 to label73 with label73;
+    }
+}

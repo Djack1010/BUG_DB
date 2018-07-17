@@ -1,0 +1,131 @@
+public class WrapClass 
+{
+    public static java.util.Set getOverrideHierarchy(java.lang.reflect.Method, org.apache.commons.lang3.ClassUtils$Interfaces)
+    {
+        java.lang.reflect.Method method, temp$1, m, temp$14;
+        org.apache.commons.lang3.ClassUtils$Interfaces interfacesBehavior;
+        java.lang.Object temp$0, temp$8, temp$11;
+        java.util.Set result;
+        java.util.LinkedHashSet temp$2;
+        boolean temp$3, temp$10, temp$16, temp$17, temp$31, temp$34;
+        java.lang.Class[] parameterTypes, temp$4, temp$15;
+        java.lang.Class declaringClass, temp$9, c, temp$12, temp$18;
+        java.util.Iterator hierarchy, temp$6, temp$7;
+        java.lang.Iterable temp$5;
+        java.lang.String temp$13;
+        java.util.Map typeArguments, temp$19;
+        int i, temp$20, temp$23, temp$28, temp$32, temp$33;
+        java.lang.reflect.Type childType, temp$24, temp$25, parentType, temp$29, temp$30;
+        java.lang.reflect.Type[] temp$21, temp$22, temp$26, temp$27;
+
+        method := @parameter0: java.lang.reflect.Method;
+        interfacesBehavior := @parameter1: org.apache.commons.lang3.ClassUtils$Interfaces;
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(method);
+        temp$1 = (java.lang.reflect.Method) temp$0;
+        temp$2 = new java.util.LinkedHashSet;
+        specialinvoke temp$2.<java.util.LinkedHashSet: void <init>()>();
+        result = temp$2;
+        temp$3 = interfaceinvoke result.<java.util.Set: boolean add(java.lang.Object)>(method);
+        temp$4 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        parameterTypes = temp$4;
+        declaringClass = null;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Iterable hierarchy(java.lang.Class,org.apache.commons.lang3.ClassUtils$Interfaces)>(declaringClass, interfacesBehavior);
+        temp$6 = interfaceinvoke temp$5.<java.lang.Iterable: java.util.Iterator iterator()>();
+        temp$7 = (java.util.Iterator) temp$6;
+        hierarchy = temp$7;
+        temp$8 = interfaceinvoke hierarchy.<java.util.Iterator: java.lang.Object next()>();
+        temp$9 = (java.lang.Class) temp$8;
+        nop;
+
+     label0:
+        nop;
+        temp$10 = interfaceinvoke hierarchy.<java.util.Iterator: boolean hasNext()>();
+        if temp$10 == 0 goto label11;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$11 = interfaceinvoke hierarchy.<java.util.Iterator: java.lang.Object next()>();
+        temp$12 = (java.lang.Class) temp$11;
+        c = temp$12;
+        temp$13 = virtualinvoke method.<java.lang.reflect.Method: java.lang.String getName()>();
+        temp$14 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getMatchingAccessibleMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(c, temp$13, parameterTypes);
+        m = temp$14;
+        if m == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        goto label0;
+
+     label3:
+        nop;
+        temp$15 = virtualinvoke m.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        temp$16 = staticinvoke <java.util.Arrays: boolean equals(java.lang.Object[],java.lang.Object[])>(temp$15, parameterTypes);
+        if temp$16 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$17 = interfaceinvoke result.<java.util.Set: boolean add(java.lang.Object)>(m);
+        goto label0;
+
+     label5:
+        nop;
+        temp$18 = virtualinvoke m.<java.lang.reflect.Method: java.lang.Class getDeclaringClass()>();
+        temp$19 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.Type,java.lang.Class)>(declaringClass, temp$18);
+        typeArguments = temp$19;
+        i = 0;
+
+     label6:
+        nop;
+        temp$20 = lengthof parameterTypes;
+        if i < temp$20 goto label7;
+
+        goto label10;
+
+     label7:
+        nop;
+        temp$21 = virtualinvoke method.<java.lang.reflect.Method: java.lang.reflect.Type[] getGenericParameterTypes()>();
+        temp$22 = temp$21;
+        temp$23 = i;
+        temp$24 = temp$22[temp$23];
+        temp$25 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type unrollVariables(java.util.Map,java.lang.reflect.Type)>(typeArguments, temp$24);
+        childType = temp$25;
+        temp$26 = virtualinvoke m.<java.lang.reflect.Method: java.lang.reflect.Type[] getGenericParameterTypes()>();
+        temp$27 = temp$26;
+        temp$28 = i;
+        temp$29 = temp$27[temp$28];
+        temp$30 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type unrollVariables(java.util.Map,java.lang.reflect.Type)>(typeArguments, temp$29);
+        parentType = temp$30;
+        temp$31 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)>(childType, parentType);
+        if temp$31 == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        goto label0;
+
+     label9:
+        nop;
+        nop;
+        temp$32 = i;
+        temp$33 = temp$32 + 1;
+        i = temp$33;
+        goto label6;
+
+     label10:
+        nop;
+        temp$34 = interfaceinvoke result.<java.util.Set: boolean add(java.lang.Object)>(m);
+        goto label0;
+
+     label11:
+        nop;
+        nop;
+        return result;
+    }
+}

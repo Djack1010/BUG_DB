@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public static java.lang.String getShortCanonicalName(java.lang.Object, java.lang.String)
+    {
+        java.lang.Object object;
+        java.lang.String valueIfNull, temp$1, temp$2;
+        java.lang.Class temp$0;
+
+        object := @parameter0: java.lang.Object;
+        valueIfNull := @parameter1: java.lang.String;
+        if object == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return valueIfNull;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: java.lang.String getName()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.String getShortCanonicalName(java.lang.String)>(temp$1);
+        return temp$2;
+    }
+}

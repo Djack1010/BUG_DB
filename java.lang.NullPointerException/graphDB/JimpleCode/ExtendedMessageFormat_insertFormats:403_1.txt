@@ -1,0 +1,125 @@
+public class WrapClass 
+{
+    private final java.lang.String insertFormats(java.lang.String, java.util.ArrayList)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern, customPattern, temp$16, temp$23;
+        java.util.ArrayList customPatterns;
+        boolean temp$0;
+        java.lang.StringBuilder sb, temp$6, temp$9, temp$12, temp$17, temp$18, temp$21;
+        java.text.ParsePosition pos, temp$1, temp$10, temp$22;
+        int fe, depth, temp$2, temp$3, temp$4, temp$7, temp$8, temp$11, temp$13, temp$14, temp$19, temp$20;
+        char c, temp$5;
+        java.lang.Object temp$15;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        customPatterns := @parameter1: java.util.ArrayList;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: boolean containsElements(java.util.Collection)>(customPatterns);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return pattern;
+
+     label1:
+        nop;
+        sb = null;
+        temp$1 = new java.text.ParsePosition;
+        specialinvoke temp$1.<java.text.ParsePosition: void <init>(int)>(0);
+        pos = temp$1;
+        fe = -1;
+        depth = 0;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$3 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if temp$2 < temp$3 goto label3;
+
+        goto label14;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$5 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$4);
+        c = temp$5;
+        goto label12;
+
+     label4:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.StringBuilder appendQuotedString(java.lang.String,java.text.ParsePosition,java.lang.StringBuilder)>(pattern, pos, sb);
+        goto label13;
+
+     label5:
+        nop;
+        temp$7 = depth;
+        temp$8 = temp$7 + 1;
+        depth = temp$8;
+        temp$9 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(123);
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        temp$11 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: int readArgumentIndex(java.lang.String,java.text.ParsePosition)>(pattern, temp$10);
+        temp$12 = virtualinvoke temp$9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$11);
+        if depth == 1 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$13 = fe;
+        temp$14 = temp$13 + 1;
+        fe = temp$14;
+        temp$15 = virtualinvoke customPatterns.<java.util.ArrayList: java.lang.Object get(int)>(fe);
+        temp$16 = (java.lang.String) temp$15;
+        customPattern = temp$16;
+        if customPattern != null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$17 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+        temp$18 = virtualinvoke temp$17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(customPattern);
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        goto label13;
+
+     label10:
+        nop;
+        temp$19 = depth;
+        temp$20 = temp$19 + -1;
+        depth = temp$20;
+
+     label11:
+        nop;
+        temp$21 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        temp$22 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        goto label13;
+
+     label12:
+        nop;
+        nop;
+        lookupswitch(c)
+        {
+            case 39: goto label4;
+            case 123: goto label5;
+            case 125: goto label10;
+            default: goto label11;
+        };
+
+     label13:
+        nop;
+        goto label2;
+
+     label14:
+        nop;
+        temp$23 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$23;
+    }
+}

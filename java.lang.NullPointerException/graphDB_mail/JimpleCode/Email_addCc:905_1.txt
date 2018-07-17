@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public transient org.apache.commons.mail.Email addCc(java.lang.String[]) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.Email this, temp$4;
+        java.lang.String[] emails;
+        org.apache.commons.mail.EmailException temp$0;
+        int temp$1, temp$2;
+        java.lang.String email, temp$3;
+
+        this := @this: org.apache.commons.mail.Email;
+        emails := @parameter0: java.lang.String[];
+        temp$0 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$0.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Address List provided was invalid");
+        throw temp$0;
+
+        temp$1 = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof emails;
+        if temp$1 >= temp$2 goto label1;
+
+        temp$3 = emails[temp$1];
+        email = temp$3;
+        temp$4 = virtualinvoke this.<org.apache.commons.mail.Email: org.apache.commons.mail.Email addCc(java.lang.String,java.lang.String)>(email, null);
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        return this;
+    }
+}

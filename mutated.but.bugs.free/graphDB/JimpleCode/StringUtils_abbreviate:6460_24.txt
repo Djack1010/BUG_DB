@@ -1,0 +1,126 @@
+public class WrapClass 
+{
+    public static java.lang.String abbreviate(java.lang.String, int, int)
+    {
+        java.lang.String str, temp$0, abrevMarker, temp$11, temp$12, temp$19, temp$21, temp$22, temp$27, temp$28;
+        int offset, maxWidth, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$10, temp$14, temp$15, temp$16, temp$17, temp$20, temp$24, temp$25, temp$26;
+        java.lang.IllegalArgumentException temp$1, temp$13;
+        java.lang.StringBuffer temp$9, temp$18, temp$23;
+
+        str := @parameter0: java.lang.String;
+        offset := @parameter1: int;
+        maxWidth := @parameter2: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if maxWidth < 4 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Minimum abbreviation width is 4");
+        throw temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$2 <= maxWidth goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        return str;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$4 = temp$3 - offset;
+        temp$5 = maxWidth - 3;
+        if temp$4 < temp$5 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$7 = maxWidth - 3;
+        temp$8 = temp$6 - temp$7;
+        offset = temp$8;
+
+     label7:
+        nop;
+        abrevMarker = "...";
+        if offset <= 4 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        temp$10 = maxWidth - 3;
+        temp$11 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, temp$10);
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$11);
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(abrevMarker);
+        temp$12 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$12;
+
+     label9:
+        nop;
+        if maxWidth < 7 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$13 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Minimum abbreviation width with offset is 7");
+        throw temp$13;
+
+     label11:
+        nop;
+        temp$14 = offset;
+        temp$15 = temp$14 + maxWidth;
+        temp$16 = temp$15 - 3;
+        temp$17 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$16 < temp$17 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$18 = new java.lang.StringBuffer;
+        specialinvoke temp$18.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(abrevMarker);
+        temp$19 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(offset);
+        temp$20 = maxWidth - 3;
+        temp$21 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String abbreviate(java.lang.String,int)>(temp$19, temp$20);
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$21);
+        temp$22 = virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$22;
+
+     label13:
+        nop;
+        temp$23 = new java.lang.StringBuffer;
+        specialinvoke temp$23.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(abrevMarker);
+        temp$24 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$25 = maxWidth - 3;
+        temp$26 = temp$24 - temp$25;
+        temp$27 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$26);
+        virtualinvoke temp$23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$27);
+        temp$28 = virtualinvoke temp$23.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$28;
+    }
+}

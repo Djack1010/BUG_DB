@@ -1,0 +1,142 @@
+public class WrapClass 
+{
+    public static java.lang.String replace(java.lang.String, java.lang.String, java.lang.String, int)
+    {
+        java.lang.String text, searchString, replacement, temp$13, temp$20, temp$22;
+        int max, start, end, temp$0, replLength, temp$1, increase, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12, temp$16, temp$17, temp$18, temp$19;
+        java.lang.StringBuilder buf, temp$9, temp$14, temp$15, temp$21;
+
+        text := @parameter0: java.lang.String;
+        searchString := @parameter1: java.lang.String;
+        replacement := @parameter2: java.lang.String;
+        max := @parameter3: int;
+        if replacement == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if max == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return text;
+
+     label2:
+        nop;
+        start = 0;
+        temp$0 = virtualinvoke text.<java.lang.String: int indexOf(java.lang.String,int)>(searchString, start);
+        end = temp$0;
+        if end == -1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        return text;
+
+     label4:
+        nop;
+        temp$1 = virtualinvoke searchString.<java.lang.String: int length()>();
+        replLength = temp$1;
+        temp$2 = virtualinvoke replacement.<java.lang.String: int length()>();
+        temp$3 = temp$2 - replLength;
+        increase = temp$3;
+        if increase < 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = increase;
+
+     label7:
+        nop;
+        increase = temp$4;
+        temp$5 = increase;
+        if max < 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$6 = 16;
+        goto label13;
+
+     label9:
+        nop;
+        if max > 64 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$7 = 64;
+        goto label12;
+
+     label11:
+        nop;
+        temp$7 = max;
+
+     label12:
+        nop;
+        temp$6 = temp$7;
+
+     label13:
+        nop;
+        temp$8 = temp$5 * temp$6;
+        increase = temp$8;
+        temp$9 = new java.lang.StringBuilder;
+        temp$10 = virtualinvoke text.<java.lang.String: int length()>();
+        temp$11 = temp$10;
+        temp$12 = temp$11 + increase;
+        specialinvoke temp$9.<java.lang.StringBuilder: void <init>(int)>(temp$12);
+        buf = temp$9;
+
+     label14:
+        nop;
+        if end != -1 goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$13 = virtualinvoke text.<java.lang.String: java.lang.String substring(int,int)>(start, end);
+        temp$14 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$13);
+        temp$15 = virtualinvoke temp$14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(replacement);
+        temp$16 = end;
+        temp$17 = temp$16 + replLength;
+        start = temp$17;
+        temp$18 = max + -1;
+        max = temp$18;
+        if temp$18 == 0 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        goto label18;
+
+     label17:
+        nop;
+        temp$19 = virtualinvoke text.<java.lang.String: int indexOf(java.lang.String,int)>(searchString, start);
+        end = temp$19;
+        goto label14;
+
+     label18:
+        nop;
+        temp$20 = virtualinvoke text.<java.lang.String: java.lang.String substring(int)>(start);
+        temp$21 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$20);
+        temp$22 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$22;
+    }
+}

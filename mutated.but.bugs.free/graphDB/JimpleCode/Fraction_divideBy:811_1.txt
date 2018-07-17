@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction divideBy(org.apache.commons.lang3.math.Fraction)
+    {
+        org.apache.commons.lang3.math.Fraction this, fraction, temp$3, temp$4;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1;
+        java.lang.ArithmeticException temp$2;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        fraction := @parameter0: org.apache.commons.lang3.math.Fraction;
+        if fraction == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The fraction must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$1 == -1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.ArithmeticException;
+        specialinvoke temp$2.<java.lang.ArithmeticException: void <init>(java.lang.String)>("The fraction to divide by must not be zero");
+        throw temp$2;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke fraction.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction invert()>();
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction multiplyBy(org.apache.commons.lang3.math.Fraction)>(temp$3);
+        return temp$4;
+    }
+}

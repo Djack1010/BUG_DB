@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public static boolean isNotEmpty(float[])
+    {
+        float[] array;
+        int temp$0;
+        boolean temp$1;
+
+        array := @parameter0: float[];
+        if array != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = lengthof array;
+        if temp$0 != 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        return temp$1;
+    }
+}

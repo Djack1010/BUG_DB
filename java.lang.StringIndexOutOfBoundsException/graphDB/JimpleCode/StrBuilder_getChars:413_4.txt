@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public void getChars(int, int, char[], int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, destinationIndex, temp$4;
+        char[] destination, temp$3;
+        java.lang.StringIndexOutOfBoundsException temp$0, temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        destination := @parameter2: char[];
+        destinationIndex := @parameter3: int;
+        if startIndex < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$0.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(startIndex);
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$1.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(endIndex);
+        throw temp$1;
+
+        if startIndex > endIndex goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$2.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("end < start");
+        throw temp$2;
+
+     label3:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = endIndex - startIndex;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$3, startIndex, destination, destinationIndex, temp$4);
+        return;
+    }
+}

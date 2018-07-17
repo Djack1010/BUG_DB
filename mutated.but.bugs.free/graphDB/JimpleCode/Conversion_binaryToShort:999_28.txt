@@ -1,0 +1,103 @@
+public class WrapClass 
+{
+    public static short binaryToShort(boolean[], int, short, int, int)
+    {
+        boolean[] src, temp$7;
+        int srcPos, dstPos, nBools, temp$0, temp$1, temp$2, shift, i, temp$4, temp$5, bits, temp$6, temp$8, temp$9, temp$11, mask, temp$12, temp$13, temp$14, temp$15, temp$16, temp$18, temp$19;
+        short dstInit, out, temp$17;
+        java.lang.IllegalArgumentException temp$3;
+        boolean temp$10;
+
+        src := @parameter0: boolean[];
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: short;
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        goto label0;
+
+        nop;
+
+     label0:
+        nop;
+        if 0 == nBools goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return dstInit;
+
+     label2:
+        nop;
+        temp$0 = nBools - 1;
+        temp$1 = temp$0;
+        temp$2 = temp$1 + dstPos;
+        if temp$2 >= 16 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+dstPos is greather or equal to than 16");
+        throw temp$3;
+
+     label4:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label5:
+        nop;
+        if i < nBools goto label6;
+
+        goto label10;
+
+     label6:
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + dstPos;
+        shift = temp$5;
+        temp$7 = src;
+        temp$8 = i;
+        temp$9 = temp$8 + srcPos;
+        temp$10 = temp$7[temp$9];
+        if temp$10 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = 1;
+        goto label9;
+
+     label8:
+        nop;
+        temp$6 = 0;
+
+     label9:
+        nop;
+        temp$11 = temp$6 << shift;
+        bits = temp$11;
+        temp$12 = 1 << shift;
+        mask = temp$12;
+        temp$13 = -1 ^ mask;
+        temp$14 = (int) out;
+        temp$15 = temp$14 & temp$13;
+        temp$16 = temp$15 | bits;
+        temp$17 = (short) temp$16;
+        out = temp$17;
+        nop;
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        i = temp$19;
+        goto label5;
+
+     label10:
+        nop;
+        return out;
+    }
+}

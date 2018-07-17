@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public static long max(long, long, long)
+    {
+        long a, b, c;
+        int temp$0, temp$1;
+
+        a := @parameter0: long;
+        b := @parameter1: long;
+        c := @parameter2: long;
+        temp$0 = b cmp a;
+        if temp$0 < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        a = b;
+
+     label1:
+        nop;
+        temp$1 = c cmp a;
+        if temp$1 <= 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        a = c;
+
+     label3:
+        nop;
+        return a;
+    }
+}

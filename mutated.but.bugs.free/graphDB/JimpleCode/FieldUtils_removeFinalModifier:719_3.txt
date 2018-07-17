@@ -1,0 +1,144 @@
+public class WrapClass 
+{
+    public static void removeFinalModifier(java.lang.reflect.Field, boolean)
+    {
+        java.lang.reflect.Field field, modifiersField, temp$5;
+        boolean forceAccess, temp$0, doForceAccess, temp$6, temp$7;
+        java.lang.Object[] temp$1;
+        java.lang.Class temp$2, temp$3, temp$4;
+        int temp$8, temp$9;
+        java.lang.Throwable temp$10;
+        java.lang.NoSuchFieldException ignored;
+        java.lang.IllegalAccessException ignored;
+
+        field := @parameter0: java.lang.reflect.Field;
+        forceAccess := @parameter1: boolean;
+        if field != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The field must not be null", temp$1);
+
+     label3:
+        nop;
+        temp$3 = <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Class class$java$lang$reflect$Field>;
+        if temp$3 != null goto label4;
+
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Class class$(java.lang.String)>("java.lang.reflect.Field");
+        <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Class class$java$lang$reflect$Field> = temp$4;
+        temp$2 = temp$4;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Class class$java$lang$reflect$Field>;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke temp$2.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>("modifiers");
+        modifiersField = temp$5;
+        if forceAccess == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke modifiersField.<java.lang.reflect.Field: boolean isAccessible()>();
+        if temp$6 == 0 goto label8;
+
+        goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$7 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$7 = 1;
+
+     label9:
+        nop;
+        doForceAccess = temp$7;
+        if doForceAccess == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        virtualinvoke modifiersField.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$8 = virtualinvoke field.<java.lang.reflect.Field: int getModifiers()>();
+        temp$9 = temp$8 & -17;
+        virtualinvoke modifiersField.<java.lang.reflect.Field: void setInt(java.lang.Object,int)>(field, temp$9);
+        if doForceAccess == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        virtualinvoke modifiersField.<java.lang.reflect.Field: void setAccessible(boolean)>(0);
+
+     label14:
+        nop;
+        goto label18;
+
+     label15:
+        nop;
+        temp$10 := @caughtexception;
+        if doForceAccess == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        virtualinvoke modifiersField.<java.lang.reflect.Field: void setAccessible(boolean)>(0);
+
+     label17:
+        nop;
+        throw temp$10;
+
+     label18:
+        nop;
+        goto label21;
+
+     label19:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label21;
+
+     label20:
+        nop;
+        ignored := @caughtexception;
+        nop;
+        goto label21;
+
+     label21:
+        nop;
+        return;
+
+        catch java.lang.Throwable from label12 to label15 with label15;
+        catch java.lang.NoSuchFieldException from label3 to label19 with label19;
+        catch java.lang.IllegalAccessException from label3 to label19 with label20;
+    }
+}

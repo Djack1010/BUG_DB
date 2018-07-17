@@ -1,0 +1,96 @@
+public class WrapClass 
+{
+    private final java.lang.String preprocess(java.lang.String)
+    {
+        org.apache.commons.codec.language.ColognePhonetic this;
+        java.lang.String text, temp$1, temp$27;
+        java.util.Locale temp$0;
+        char[] chrs, temp$2, temp$4, element, temp$11, temp$12, temp$15, temp$20, temp$22;
+        int index, temp$3, temp$5, temp$7, temp$9, temp$10, temp$13, temp$16, temp$18, temp$19, temp$21, temp$23, temp$25, temp$26;
+        char temp$6, temp$14, temp$17, temp$24;
+        char[][] temp$8;
+
+        this := @this: org.apache.commons.codec.language.ColognePhonetic;
+        text := @parameter0: java.lang.String;
+        temp$0 = <java.util.Locale: java.util.Locale GERMAN>;
+        temp$1 = virtualinvoke text.<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>(temp$0);
+        text = temp$1;
+        temp$2 = virtualinvoke text.<java.lang.String: char[] toCharArray()>();
+        chrs = temp$2;
+        index = 0;
+
+     label0:
+        nop;
+        temp$3 = lengthof chrs;
+        if index < temp$3 goto label1;
+
+        goto label8;
+
+     label1:
+        nop;
+        temp$4 = chrs;
+        temp$5 = index;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (int) temp$6;
+        if temp$7 > 90 goto label2;
+
+        goto label7;
+
+     label2:
+        nop;
+        temp$8 = <org.apache.commons.codec.language.ColognePhonetic: char[][] PREPROCESS_MAP>;
+        temp$9 = 0;
+
+     label3:
+        nop;
+        temp$10 = lengthof temp$8;
+        if temp$9 >= temp$10 goto label6;
+
+        temp$11 = temp$8[temp$9];
+        element = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(temp$11);
+        temp$12 = chrs;
+        temp$13 = index;
+        temp$14 = temp$12[temp$13];
+        temp$15 = element;
+        temp$16 = 0;
+        temp$17 = temp$15[temp$16];
+        temp$18 = (int) temp$14;
+        temp$19 = (int) temp$17;
+        if temp$18 == temp$19 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$20 = chrs;
+        temp$21 = index;
+        temp$22 = element;
+        temp$23 = 1;
+        temp$24 = temp$22[temp$23];
+        temp$20[temp$21] = temp$24;
+        goto label6;
+
+     label5:
+        nop;
+        nop;
+        temp$9 = temp$9 + 1;
+        goto label3;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        nop;
+        temp$25 = index;
+        temp$26 = temp$25 + 1;
+        index = temp$26;
+        goto label0;
+
+     label8:
+        nop;
+        temp$27 = new java.lang.String;
+        specialinvoke temp$27.<java.lang.String: void <init>(char[])>(chrs);
+        return temp$27;
+    }
+}

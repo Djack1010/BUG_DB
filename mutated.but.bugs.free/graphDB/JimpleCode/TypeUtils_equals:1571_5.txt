@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public static boolean equals(java.lang.reflect.Type, java.lang.reflect.Type)
+    {
+        java.lang.reflect.Type t1, t2;
+        boolean temp$0, temp$1, temp$2, temp$4, temp$5, temp$7, temp$8, temp$10, temp$11;
+        java.lang.reflect.ParameterizedType temp$3;
+        java.lang.reflect.GenericArrayType temp$6;
+        java.lang.reflect.WildcardType temp$9;
+
+        t1 := @parameter0: java.lang.reflect.Type;
+        t2 := @parameter1: java.lang.reflect.Type;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ObjectUtils: boolean equals(java.lang.Object,java.lang.Object)>(t1, t2);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 1;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = t1 instanceof java.lang.reflect.ParameterizedType;
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = (java.lang.reflect.ParameterizedType) t1;
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.ParameterizedType,java.lang.reflect.Type)>(temp$3, t2);
+        return temp$4;
+
+     label3:
+        nop;
+        temp$5 = t1 instanceof java.lang.reflect.GenericArrayType;
+        if temp$5 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$6 = (java.lang.reflect.GenericArrayType) t1;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.GenericArrayType,java.lang.reflect.Type)>(temp$6, t2);
+        return temp$7;
+
+     label5:
+        nop;
+        temp$8 = t1 instanceof java.lang.reflect.WildcardType;
+        if temp$8 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$9 = (java.lang.reflect.WildcardType) t1;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.WildcardType,java.lang.reflect.Type)>(temp$9, t2);
+        return temp$10;
+
+     label7:
+        nop;
+        temp$11 = 1;
+        return temp$11;
+    }
+}

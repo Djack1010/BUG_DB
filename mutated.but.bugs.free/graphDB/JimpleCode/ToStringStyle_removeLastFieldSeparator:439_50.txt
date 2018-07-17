@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    protected void removeLastFieldSeparator(java.lang.StringBuffer)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        int len, temp$0, sepLen, temp$2;
+        java.lang.String temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        temp$0 = virtualinvoke buffer.<java.lang.StringBuffer: int length()>();
+        len = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String fieldSeparator>;
+        temp$2 = virtualinvoke temp$1.<java.lang.String: int length()>();
+        sepLen = temp$2;
+        return;
+    }
+}

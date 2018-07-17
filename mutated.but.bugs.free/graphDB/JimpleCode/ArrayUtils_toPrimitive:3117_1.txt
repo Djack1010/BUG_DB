@@ -1,0 +1,80 @@
+public class WrapClass 
+{
+    public static int[] toPrimitive(java.lang.Integer[], int)
+    {
+        java.lang.Integer[] array, temp$5;
+        int valueForNull, temp$1, temp$3, i, temp$4, temp$6, temp$8, temp$9, temp$10, temp$11, temp$12;
+        int[] temp$0, temp$2, result, temp$7;
+        java.lang.Integer b;
+
+        array := @parameter0: java.lang.Integer[];
+        valueForNull := @parameter1: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof array;
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: int[] EMPTY_INT_ARRAY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = lengthof array;
+        result = newarray (int)[temp$3];
+        i = 0;
+
+     label4:
+        nop;
+        temp$4 = lengthof array;
+        if i != temp$4 goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$5 = array;
+        temp$6 = i;
+        b = temp$5[temp$6];
+        temp$7 = result;
+        temp$8 = i;
+        if b == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$9 = valueForNull;
+        goto label8;
+
+     label7:
+        nop;
+        temp$10 = virtualinvoke b.<java.lang.Integer: int intValue()>();
+        temp$9 = temp$10;
+
+     label8:
+        nop;
+        temp$7[temp$8] = temp$9;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label4;
+
+     label9:
+        nop;
+        return result;
+    }
+}

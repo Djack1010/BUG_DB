@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    protected javax.mail.BodyPart getPrimaryBodyPart() throws javax.mail.MessagingException
+    {
+        org.apache.commons.mail.MultiPartEmail this;
+        boolean temp$0;
+        javax.mail.BodyPart temp$1, temp$2, temp$4, temp$5;
+        javax.mail.internet.MimeMultipart temp$3;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        temp$0 = this.<org.apache.commons.mail.MultiPartEmail: boolean initialized>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: void init()>();
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart primaryBodyPart>;
+        if temp$1 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart createBodyPart()>();
+        this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart primaryBodyPart> = temp$2;
+        temp$3 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: javax.mail.internet.MimeMultipart getContainer()>();
+        temp$4 = this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart primaryBodyPart>;
+        virtualinvoke temp$3.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart,int)>(temp$4, 0);
+
+     label3:
+        nop;
+        temp$5 = this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart primaryBodyPart>;
+        return temp$5;
+    }
+}

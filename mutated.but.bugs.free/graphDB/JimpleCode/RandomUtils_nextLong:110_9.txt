@@ -1,0 +1,49 @@
+public class WrapClass 
+{
+    public static long nextLong(long, long)
+    {
+        long startInclusive, endExclusive, temp$8;
+        int temp$0, temp$3, temp$7;
+        boolean temp$1;
+        java.lang.Object[] temp$2;
+        double temp$4, temp$5, temp$6;
+
+        startInclusive := @parameter0: long;
+        endExclusive := @parameter1: long;
+        temp$0 = startInclusive cmp 0L;
+        if temp$0 < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Both range values must be non-negative.", temp$2);
+        temp$3 = startInclusive cmp endExclusive;
+        if temp$3 != 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        return startInclusive;
+
+     label4:
+        nop;
+        temp$4 = (double) startInclusive;
+        temp$5 = (double) endExclusive;
+        temp$6 = staticinvoke <org.apache.commons.lang3.RandomUtils: double nextDouble(double,double)>(temp$4, temp$5);
+        temp$7 = (int) temp$6;
+        temp$8 = (long) temp$7;
+        return temp$8;
+    }
+}

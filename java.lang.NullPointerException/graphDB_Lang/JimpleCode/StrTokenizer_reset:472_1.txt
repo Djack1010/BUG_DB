@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrTokenizer reset(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this, temp$0;
+        java.lang.String input;
+        char[] temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        input := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrTokenizer reset()>();
+        temp$1 = virtualinvoke input.<java.lang.String: char[] toCharArray()>();
+        this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars> = temp$1;
+        nop;
+        return this;
+    }
+}

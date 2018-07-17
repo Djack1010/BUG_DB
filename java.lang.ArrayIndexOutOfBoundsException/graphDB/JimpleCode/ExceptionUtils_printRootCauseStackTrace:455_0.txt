@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    public static void printRootCauseStackTrace(java.lang.Throwable, java.io.PrintStream)
+    {
+        java.lang.Throwable throwable;
+        java.io.PrintStream stream;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.String[] trace, temp$1;
+        int temp$2, temp$3;
+        java.lang.String element, temp$4;
+
+        throwable := @parameter0: java.lang.Throwable;
+        stream := @parameter1: java.io.PrintStream;
+        if throwable == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        if stream == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The PrintStream must not be null");
+        throw temp$0;
+
+     label3:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String[] getRootCauseStackTrace(java.lang.Throwable)>(throwable);
+        trace = temp$1;
+        temp$2 = 0;
+
+     label4:
+        nop;
+        temp$3 = lengthof trace;
+        if temp$2 >= temp$3 goto label5;
+
+        temp$4 = trace[temp$2];
+        element = temp$4;
+        virtualinvoke stream.<java.io.PrintStream: void println(java.lang.String)>(element);
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label4;
+
+     label5:
+        nop;
+        virtualinvoke stream.<java.io.PrintStream: void flush()>();
+        return;
+    }
+}

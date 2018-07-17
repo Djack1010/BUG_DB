@@ -1,0 +1,12 @@
+public class WrapClass 
+{
+    public static java.lang.String[] splitPreserveAllTokens(java.lang.String)
+    {
+        java.lang.String str;
+        java.lang.String[] temp$0;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String[] splitWorker(java.lang.String,java.lang.String,int,boolean)>(str, null, -1, 1);
+        return temp$0;
+    }
+}

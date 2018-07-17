@@ -1,0 +1,102 @@
+public class WrapClass 
+{
+    public static int indexOfIgnoreCase(java.lang.CharSequence, java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence str, searchStr;
+        int startPos, temp$0, temp$1, endLimit, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, i, temp$8, temp$10, temp$11, temp$12;
+        boolean temp$9;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStr := @parameter1: java.lang.CharSequence;
+        startPos := @parameter2: int;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if searchStr == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label2:
+        nop;
+        if startPos < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+        startPos = temp$1;
+
+     label4:
+        nop;
+        temp$2 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$3 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$4 = temp$2 - temp$3;
+        temp$5 = temp$4;
+        endLimit = temp$5 + 1;
+        if startPos > endLimit goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$6;
+
+     label6:
+        nop;
+        temp$7 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        if temp$7 == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return startPos;
+
+     label8:
+        nop;
+        i = startPos;
+
+     label9:
+        nop;
+        if i < endLimit goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$8 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$9 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str, 1, i, searchStr, 0, temp$8);
+        if temp$9 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        return i;
+
+     label12:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label9;
+
+     label13:
+        nop;
+        temp$12 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$12;
+    }
+}

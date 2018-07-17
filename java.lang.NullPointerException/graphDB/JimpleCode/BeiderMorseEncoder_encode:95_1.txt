@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String) throws org.apache.commons.codec.EncoderException
+    {
+        org.apache.commons.codec.language.bm.BeiderMorseEncoder this;
+        java.lang.String source, temp$1;
+        org.apache.commons.codec.language.bm.PhoneticEngine temp$0;
+
+        this := @this: org.apache.commons.codec.language.bm.BeiderMorseEncoder;
+        source := @parameter0: java.lang.String;
+        temp$0 = this.<org.apache.commons.codec.language.bm.BeiderMorseEncoder: org.apache.commons.codec.language.bm.PhoneticEngine engine>;
+        temp$1 = virtualinvoke temp$0.<org.apache.commons.codec.language.bm.PhoneticEngine: java.lang.String encode(java.lang.String)>(source);
+        return temp$1;
+    }
+}

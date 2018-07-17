@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    protected char charAt(java.lang.String, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        int index, temp$0;
+        char temp$1, temp$2;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        index := @parameter1: int;
+        if index < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke value.<java.lang.String: int length()>();
+        if index >= temp$0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = <java.lang.Character: char MIN_VALUE>;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke value.<java.lang.String: char charAt(int)>(index);
+        return temp$2;
+    }
+}

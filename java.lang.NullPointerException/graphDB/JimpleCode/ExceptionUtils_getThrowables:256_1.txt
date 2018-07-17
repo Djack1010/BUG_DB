@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.Throwable[] getThrowables(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable;
+        java.util.List list, temp$0;
+        java.lang.Throwable[] temp$1;
+
+        throwable := @parameter0: java.lang.Throwable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.util.List getThrowableList(java.lang.Throwable)>(throwable);
+        list = temp$0;
+        temp$1 = null;
+        return temp$1;
+    }
+}

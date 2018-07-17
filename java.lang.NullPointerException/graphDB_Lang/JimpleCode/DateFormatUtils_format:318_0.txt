@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public static java.lang.String format(java.util.Calendar, java.lang.String, java.util.TimeZone, java.util.Locale)
+    {
+        java.util.Calendar calendar;
+        java.lang.String pattern, temp$1;
+        java.util.TimeZone timeZone;
+        java.util.Locale locale;
+        org.apache.commons.lang3.time.FastDateFormat df, temp$0;
+
+        calendar := @parameter0: java.util.Calendar;
+        pattern := @parameter1: java.lang.String;
+        timeZone := @parameter2: java.util.TimeZone;
+        locale := @parameter3: java.util.Locale;
+        temp$0 = staticinvoke <org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDateFormat getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)>(pattern, timeZone, locale);
+        df = temp$0;
+        temp$1 = virtualinvoke df.<org.apache.commons.lang3.time.FastDateFormat: java.lang.String format(java.util.Calendar)>(calendar);
+        return temp$1;
+    }
+}

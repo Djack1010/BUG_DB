@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    private static final java.lang.String modify(java.lang.String, java.lang.String[], boolean)
+    {
+        java.lang.String str, temp$13;
+        java.lang.String[] set;
+        boolean expect, temp$6;
+        org.apache.commons.lang3.CharSet chars, temp$0;
+        java.lang.StringBuilder buffer, temp$1, temp$10;
+        int temp$2, sz, i, temp$4, temp$8, temp$11, temp$12;
+        char[] chrs, temp$3, temp$7;
+        char temp$5, temp$9;
+
+        str := @parameter0: java.lang.String;
+        set := @parameter1: java.lang.String[];
+        expect := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.CharSet: org.apache.commons.lang3.CharSet getInstance(java.lang.String[])>(set);
+        chars = temp$0;
+        temp$1 = new java.lang.StringBuilder;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        specialinvoke temp$1.<java.lang.StringBuilder: void <init>(int)>(temp$2);
+        buffer = temp$1;
+        chrs = null;
+        sz = lengthof chrs;
+        i = 0;
+
+     label0:
+        nop;
+        if i < sz goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$3 = chrs;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = virtualinvoke chars.<org.apache.commons.lang3.CharSet: boolean contains(char)>(temp$5);
+        if temp$6 == expect goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = chrs;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$9);
+
+     label3:
+        nop;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label0;
+
+     label4:
+        nop;
+        temp$13 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$13;
+    }
+}

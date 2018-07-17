@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public java.util.Date parse(java.lang.String, java.text.ParsePosition)
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        java.lang.String source, temp$2, temp$13;
+        java.text.ParsePosition pos;
+        int offset, temp$0, i, temp$8, temp$10, temp$11, temp$12, temp$14, temp$15, temp$16;
+        java.util.regex.Matcher matcher, temp$3;
+        java.util.regex.Pattern temp$1;
+        java.util.Calendar cal, temp$6;
+        java.util.TimeZone temp$4;
+        java.util.Locale temp$5;
+        org.apache.commons.lang3.time.FastDateParser$Strategy[] temp$7, temp$9;
+        org.apache.commons.lang3.time.FastDateParser$Strategy strategy;
+        java.util.Date temp$17;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        source := @parameter0: java.lang.String;
+        pos := @parameter1: java.text.ParsePosition;
+        temp$0 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        offset = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.regex.Pattern parsePattern>;
+        temp$2 = virtualinvoke source.<java.lang.String: java.lang.String substring(int)>(offset);
+        temp$3 = virtualinvoke temp$1.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(temp$2);
+        matcher = temp$3;
+        temp$4 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$5 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$6 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance(java.util.TimeZone,java.util.Locale)>(temp$4, temp$5);
+        cal = temp$6;
+        virtualinvoke cal.<java.util.Calendar: void clear()>();
+        i = 0;
+
+     label0:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.time.FastDateParser: org.apache.commons.lang3.time.FastDateParser$Strategy[] strategies>;
+        temp$8 = lengthof temp$7;
+        if i < temp$8 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.time.FastDateParser: org.apache.commons.lang3.time.FastDateParser$Strategy[] strategies>;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        temp$12 = temp$10;
+        strategy = temp$9[temp$12];
+        temp$13 = virtualinvoke matcher.<java.util.regex.Matcher: java.lang.String group(int)>(i);
+        virtualinvoke strategy.<org.apache.commons.lang3.time.FastDateParser$Strategy: void setCalendar(org.apache.commons.lang3.time.FastDateParser,java.util.Calendar,java.lang.String)>(this, cal, temp$13);
+        nop;
+        goto label0;
+
+     label2:
+        nop;
+        temp$14 = offset;
+        temp$15 = virtualinvoke matcher.<java.util.regex.Matcher: int end()>();
+        temp$16 = temp$14 + temp$15;
+        virtualinvoke pos.<java.text.ParsePosition: void setIndex(int)>(temp$16);
+        temp$17 = virtualinvoke cal.<java.util.Calendar: java.util.Date getTime()>();
+        return temp$17;
+    }
+}

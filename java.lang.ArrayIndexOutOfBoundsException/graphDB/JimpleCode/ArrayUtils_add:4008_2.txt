@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public static java.lang.Object[] add(java.lang.Object[], java.lang.Object)
+    {
+        java.lang.Object[] array, newArray, temp$5;
+        java.lang.Object element, temp$4;
+        java.lang.Class type, temp$0, temp$1, temp$2;
+        java.lang.IllegalArgumentException temp$3;
+        int temp$6, temp$7, temp$8;
+
+        array := @parameter0: java.lang.Object[];
+        element := @parameter1: java.lang.Object;
+        if array != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke array.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: java.lang.Class getComponentType()>();
+        type = temp$1;
+        goto label5;
+
+     label1:
+        nop;
+        if element != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke element.<java.lang.Object: java.lang.Class getClass()>();
+        type = temp$2;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Arguments cannot both be null");
+        throw temp$3;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object copyArrayGrow1(java.lang.Object,java.lang.Class)>(array, type);
+        newArray = (java.lang.Object[]) temp$4;
+        temp$5 = newArray;
+        temp$6 = lengthof newArray;
+        temp$7 = temp$6 - 0;
+        temp$8 = temp$7;
+        temp$5[temp$8] = element;
+        return newArray;
+    }
+}

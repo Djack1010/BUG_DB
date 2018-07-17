@@ -1,0 +1,306 @@
+public class WrapClass 
+{
+    public void update(byte[], int, int)
+    {
+        org.apache.commons.codec.digest.PureJavaCrc32 this;
+        byte[] b, temp$4, temp$11, temp$19, temp$27, temp$63, temp$73, temp$86, temp$96, temp$113, temp$127, temp$141, temp$155, temp$169, temp$183, temp$197;
+        int offset, len, localCrc, remainder, temp$0, i, end, temp$1, temp$2, temp$3, x, temp$5, temp$7, temp$8, temp$9, temp$10, temp$12, temp$13, temp$15, temp$16, temp$17, temp$18, temp$20, temp$21, temp$23, temp$24, temp$25, temp$26, temp$28, temp$29, temp$31, temp$32, temp$33, temp$34, temp$35, temp$37, temp$38, temp$39, temp$40, temp$42, temp$43, temp$44, temp$45, temp$46, temp$47, temp$48, temp$50, temp$51, temp$52, temp$53, temp$55, temp$56, temp$57, temp$58, temp$59, temp$60, temp$61, temp$64, temp$65, temp$67, temp$68, temp$69, temp$70, temp$71, temp$74, temp$75, temp$77, temp$78, temp$79, temp$80, temp$81, temp$82, temp$83, temp$84, temp$87, temp$88, temp$90, temp$91, temp$92, temp$93, temp$94, temp$97, temp$98, temp$100, temp$101, temp$102, temp$103, temp$104, temp$105, temp$106, temp$107, temp$108, temp$109, temp$110, temp$111, temp$114, temp$115, temp$116, temp$118, temp$119, temp$120, temp$121, temp$122, temp$123, temp$124, temp$125, temp$128, temp$129, temp$130, temp$132, temp$133, temp$134, temp$135, temp$136, temp$137, temp$138, temp$139, temp$142, temp$143, temp$144, temp$146, temp$147, temp$148, temp$149, temp$150, temp$151, temp$152, temp$153, temp$156, temp$157, temp$158, temp$160, temp$161, temp$162, temp$163, temp$164, temp$165, temp$166, temp$167, temp$170, temp$171, temp$172, temp$174, temp$175, temp$176, temp$177, temp$178, temp$179, temp$180, temp$181, temp$184, temp$185, temp$186, temp$188, temp$189, temp$190, temp$191, temp$192, temp$193, temp$194, temp$195, temp$198, temp$199, temp$200, temp$202, temp$203, temp$204, temp$205, temp$206, temp$207, temp$208;
+        byte temp$6, temp$14, temp$22, temp$30, temp$66, temp$76, temp$89, temp$99, temp$117, temp$131, temp$145, temp$159, temp$173, temp$187, temp$201;
+        int[] temp$36, temp$41, temp$49, temp$54, temp$62, temp$72, temp$85, temp$95, temp$112, temp$126, temp$140, temp$154, temp$168, temp$182, temp$196;
+
+        this := @this: org.apache.commons.codec.digest.PureJavaCrc32;
+        b := @parameter0: byte[];
+        offset := @parameter1: int;
+        len := @parameter2: int;
+        localCrc = this.<org.apache.commons.codec.digest.PureJavaCrc32: int crc>;
+        temp$0 = len & 7;
+        remainder = temp$0;
+        i = offset;
+        temp$1 = offset;
+        temp$2 = temp$1 + len;
+        temp$3 = temp$2 - remainder;
+        end = temp$3;
+
+     label0:
+        nop;
+        if i < end goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = b;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (int) temp$6;
+        temp$8 = temp$7 << 24;
+        temp$9 = temp$8 >>> 24;
+        temp$10 = temp$9;
+        temp$11 = b;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        temp$14 = temp$11[temp$13];
+        temp$15 = (int) temp$14;
+        temp$16 = temp$15 << 24;
+        temp$17 = temp$16 >>> 16;
+        temp$18 = temp$10 + temp$17;
+        temp$19 = b;
+        temp$20 = i;
+        temp$21 = temp$20 + 2;
+        temp$22 = temp$19[temp$21];
+        temp$23 = (int) temp$22;
+        temp$24 = temp$23 << 24;
+        temp$25 = temp$24 >>> 8;
+        temp$26 = temp$25;
+        temp$27 = b;
+        temp$28 = i;
+        temp$29 = temp$28 + 3;
+        temp$30 = temp$27[temp$29];
+        temp$31 = (int) temp$30;
+        temp$32 = temp$31 << 24;
+        temp$33 = temp$26 + temp$32;
+        temp$34 = temp$18 + temp$33;
+        temp$35 = localCrc ^ temp$34;
+        x = temp$35;
+        temp$36 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$37 = x << 24;
+        temp$38 = temp$37 >>> 24;
+        temp$39 = temp$38;
+        temp$40 = temp$39 + 1792;
+        temp$41 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$42 = x << 16;
+        temp$43 = temp$42 >>> 24;
+        temp$44 = temp$43;
+        temp$45 = temp$44 + 1536;
+        temp$46 = temp$36[temp$40];
+        temp$47 = temp$41[temp$45];
+        temp$48 = temp$46 ^ temp$47;
+        temp$49 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$50 = x << 8;
+        temp$51 = temp$50 >>> 24;
+        temp$52 = temp$51;
+        temp$53 = temp$52 + 1280;
+        temp$54 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$55 = x >>> 24;
+        temp$56 = temp$55;
+        temp$57 = temp$56 + 1024;
+        temp$58 = temp$49[temp$53];
+        temp$59 = temp$54[temp$57];
+        temp$60 = temp$58 ^ temp$59;
+        temp$61 = temp$48 ^ temp$60;
+        temp$62 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$63 = b;
+        temp$64 = i;
+        temp$65 = temp$64 + 4;
+        temp$66 = temp$63[temp$65];
+        temp$67 = (int) temp$66;
+        temp$68 = temp$67 << 24;
+        temp$69 = temp$68 >>> 24;
+        temp$70 = temp$69;
+        temp$71 = temp$70 + 768;
+        temp$72 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$73 = b;
+        temp$74 = i;
+        temp$75 = temp$74 + 5;
+        temp$76 = temp$73[temp$75];
+        temp$77 = (int) temp$76;
+        temp$78 = temp$77 << 24;
+        temp$79 = temp$78 >>> 24;
+        temp$80 = temp$79;
+        temp$81 = temp$80 + 512;
+        temp$82 = temp$62[temp$71];
+        temp$83 = temp$72[temp$81];
+        temp$84 = temp$82 ^ temp$83;
+        temp$85 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$86 = b;
+        temp$87 = i;
+        temp$88 = temp$87 + 6;
+        temp$89 = temp$86[temp$88];
+        temp$90 = (int) temp$89;
+        temp$91 = temp$90 << 24;
+        temp$92 = temp$91 >>> 24;
+        temp$93 = temp$92;
+        temp$94 = temp$93 + 256;
+        temp$95 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$96 = b;
+        temp$97 = i;
+        temp$98 = temp$97 + 7;
+        temp$99 = temp$96[temp$98];
+        temp$100 = (int) temp$99;
+        temp$101 = temp$100 << 24;
+        temp$102 = temp$101 >>> 24;
+        temp$103 = temp$102;
+        temp$104 = temp$85[temp$94];
+        temp$105 = temp$95[temp$103];
+        temp$106 = temp$104 ^ temp$105;
+        temp$107 = temp$84 ^ temp$106;
+        temp$108 = temp$61 ^ temp$107;
+        localCrc = temp$108;
+        nop;
+        temp$109 = i;
+        temp$110 = temp$109 + 8;
+        i = temp$110;
+        goto label0;
+
+     label2:
+        nop;
+        goto label11;
+
+     label3:
+        nop;
+        temp$111 = localCrc >>> 8;
+        temp$112 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$113 = b;
+        temp$114 = i;
+        temp$115 = temp$114 + 1;
+        i = temp$115;
+        temp$116 = temp$114;
+        temp$117 = temp$113[temp$116];
+        temp$118 = (int) temp$117;
+        temp$119 = localCrc ^ temp$118;
+        temp$120 = temp$119 << 24;
+        temp$121 = temp$120 >>> 0;
+        temp$122 = temp$121;
+        temp$123 = temp$112[temp$122];
+        temp$124 = temp$111 ^ temp$123;
+        localCrc = temp$124;
+
+     label4:
+        nop;
+        temp$125 = localCrc >>> 8;
+        temp$126 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$127 = b;
+        temp$128 = i;
+        temp$129 = temp$128 + 1;
+        i = temp$129;
+        temp$130 = temp$128;
+        temp$131 = temp$127[temp$130];
+        temp$132 = (int) temp$131;
+        temp$133 = localCrc ^ temp$132;
+        temp$134 = temp$133 << 24;
+        temp$135 = temp$134 >>> 24;
+        temp$136 = temp$135;
+        temp$137 = temp$126[temp$136];
+        temp$138 = temp$125 ^ temp$137;
+        localCrc = temp$138;
+
+     label5:
+        nop;
+        temp$139 = localCrc >>> 8;
+        temp$140 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$141 = b;
+        temp$142 = i;
+        temp$143 = temp$142 + 1;
+        i = temp$143;
+        temp$144 = temp$142;
+        temp$145 = temp$141[temp$144];
+        temp$146 = (int) temp$145;
+        temp$147 = localCrc ^ temp$146;
+        temp$148 = temp$147 << 24;
+        temp$149 = temp$148 >>> 24;
+        temp$150 = temp$149;
+        temp$151 = temp$140[temp$150];
+        temp$152 = temp$139 ^ temp$151;
+        localCrc = temp$152;
+
+     label6:
+        nop;
+        temp$153 = localCrc >>> 8;
+        temp$154 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$155 = b;
+        temp$156 = i;
+        temp$157 = temp$156 + 1;
+        i = temp$157;
+        temp$158 = temp$156;
+        temp$159 = temp$155[temp$158];
+        temp$160 = (int) temp$159;
+        temp$161 = localCrc ^ temp$160;
+        temp$162 = temp$161 << 24;
+        temp$163 = temp$162 >>> 24;
+        temp$164 = temp$163;
+        temp$165 = temp$154[temp$164];
+        temp$166 = temp$153 ^ temp$165;
+        localCrc = temp$166;
+
+     label7:
+        nop;
+        temp$167 = localCrc >>> 8;
+        temp$168 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$169 = b;
+        temp$170 = i;
+        temp$171 = temp$170 + 1;
+        i = temp$171;
+        temp$172 = temp$170;
+        temp$173 = temp$169[temp$172];
+        temp$174 = (int) temp$173;
+        temp$175 = localCrc ^ temp$174;
+        temp$176 = temp$175 << 24;
+        temp$177 = temp$176 >>> 24;
+        temp$178 = temp$177;
+        temp$179 = temp$168[temp$178];
+        temp$180 = temp$167 ^ temp$179;
+        localCrc = temp$180;
+
+     label8:
+        nop;
+        temp$181 = localCrc >>> 8;
+        temp$182 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$183 = b;
+        temp$184 = i;
+        temp$185 = temp$184 + 1;
+        i = temp$185;
+        temp$186 = temp$184;
+        temp$187 = temp$183[temp$186];
+        temp$188 = (int) temp$187;
+        temp$189 = localCrc ^ temp$188;
+        temp$190 = temp$189 << 24;
+        temp$191 = temp$190 >>> 24;
+        temp$192 = temp$191;
+        temp$193 = temp$182[temp$192];
+        temp$194 = temp$181 ^ temp$193;
+        localCrc = temp$194;
+
+     label9:
+        nop;
+        temp$195 = localCrc >>> 8;
+        temp$196 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$197 = b;
+        temp$198 = i;
+        temp$199 = temp$198 + 1;
+        i = temp$199;
+        temp$200 = temp$198;
+        temp$201 = temp$197[temp$200];
+        temp$202 = (int) temp$201;
+        temp$203 = localCrc ^ temp$202;
+        temp$204 = temp$203 << 24;
+        temp$205 = temp$204 >>> 24;
+        temp$206 = temp$205;
+        temp$207 = temp$196[temp$206];
+        temp$208 = temp$195 ^ temp$207;
+        localCrc = temp$208;
+
+     label10:
+        nop;
+        goto label12;
+
+     label11:
+        nop;
+        nop;
+        tableswitch(remainder)
+        {
+            case 1: goto label9;
+            case 2: goto label8;
+            case 3: goto label7;
+            case 4: goto label6;
+            case 5: goto label5;
+            case 6: goto label4;
+            case 7: goto label3;
+            default: goto label10;
+        };
+
+     label12:
+        nop;
+        this.<org.apache.commons.codec.digest.PureJavaCrc32: int crc> = localCrc;
+        return;
+    }
+}

@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.text.StrMatcher charSetMatcher(java.lang.String)
+    {
+        java.lang.String chars;
+        boolean temp$0;
+        org.apache.commons.lang3.text.StrMatcher temp$1, temp$5;
+        int temp$2;
+        org.apache.commons.lang3.text.StrMatcher$CharMatcher temp$3;
+        char temp$4;
+
+        chars := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(chars);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.text.StrMatcher: org.apache.commons.lang3.text.StrMatcher NONE_MATCHER>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke chars.<java.lang.String: int length()>();
+        if temp$2 == 1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = new org.apache.commons.lang3.text.StrMatcher$CharMatcher;
+        temp$4 = virtualinvoke chars.<java.lang.String: char charAt(int)>(0);
+        specialinvoke temp$3.<org.apache.commons.lang3.text.StrMatcher$CharMatcher: void <init>(char)>(temp$4);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$5 = null;
+        return temp$5;
+    }
+}

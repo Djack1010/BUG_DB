@@ -1,0 +1,145 @@
+public class WrapClass 
+{
+    public final java.lang.String toProperString()
+    {
+        org.apache.commons.lang3.math.Fraction this;
+        java.lang.String temp$0, temp$2, temp$5, temp$9, temp$17, temp$26, temp$33, temp$34;
+        int temp$1, temp$3, temp$4, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12, temp$13, temp$14, properNumerator, temp$15, temp$16, temp$19, temp$24, temp$28, temp$31;
+        java.lang.StringBuilder temp$18, temp$20, temp$21, temp$22, temp$23, temp$25, temp$27, temp$29, temp$30, temp$32;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        temp$0 = this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString>;
+        if temp$0 == null goto label0;
+
+        goto label19;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$1 == 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = "0";
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$2;
+        goto label18;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$4 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        if temp$3 == temp$4 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = "1";
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$5;
+        goto label17;
+
+     label4:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$7 = -1 * temp$6;
+        temp$8 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$8 == temp$7 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$9 = "-1";
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$9;
+        goto label16;
+
+     label6:
+        nop;
+        temp$11 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$11 > 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$12 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$10 = neg temp$12;
+        goto label9;
+
+     label8:
+        nop;
+        temp$10 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+
+     label9:
+        nop;
+        temp$13 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$14 = neg temp$13;
+        if temp$10 < temp$14 goto label10;
+
+        goto label14;
+
+     label10:
+        nop;
+        temp$15 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getProperNumerator()>();
+        properNumerator = temp$15;
+        if properNumerator == 0 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getProperWhole()>();
+        temp$17 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>(temp$16);
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$17;
+        goto label13;
+
+     label12:
+        nop;
+        temp$18 = new java.lang.StringBuilder;
+        specialinvoke temp$18.<java.lang.StringBuilder: void <init>(int)>(-32);
+        temp$19 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getProperWhole()>();
+        temp$20 = virtualinvoke temp$18.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$19);
+        temp$21 = virtualinvoke temp$20.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32);
+        temp$22 = virtualinvoke temp$21.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(properNumerator);
+        temp$23 = virtualinvoke temp$22.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+        temp$24 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getDenominator()>();
+        temp$25 = virtualinvoke temp$23.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$24);
+        temp$26 = virtualinvoke temp$25.<java.lang.StringBuilder: java.lang.String toString()>();
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$26;
+
+     label13:
+        nop;
+        goto label15;
+
+     label14:
+        nop;
+        temp$27 = new java.lang.StringBuilder;
+        specialinvoke temp$27.<java.lang.StringBuilder: void <init>(int)>(32);
+        temp$28 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getNumerator()>();
+        temp$29 = virtualinvoke temp$27.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$28);
+        temp$30 = virtualinvoke temp$29.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+        temp$31 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: int getDenominator()>();
+        temp$32 = virtualinvoke temp$30.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$31);
+        temp$33 = virtualinvoke temp$32.<java.lang.StringBuilder: java.lang.String toString()>();
+        this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString> = temp$33;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+        temp$34 = this.<org.apache.commons.lang3.math.Fraction: java.lang.String toProperString>;
+        return temp$34;
+    }
+}

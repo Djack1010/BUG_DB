@@ -1,0 +1,75 @@
+public class WrapClass 
+{
+    public static java.lang.String stripEnd(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, stripChars, temp$8;
+        int end, temp$0, temp$2, temp$4, temp$5, temp$6, temp$7;
+        boolean temp$1;
+        char temp$3;
+
+        str := @parameter0: java.lang.String;
+        stripChars := @parameter1: java.lang.String;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        end = temp$0;
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke stripChars.<java.lang.String: boolean isEmpty()>();
+        if temp$1 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        return str;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        if end != 0 goto label6;
+
+        goto label8;
+
+     label6:
+        nop;
+        temp$2 = end - 1;
+        temp$3 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$2);
+        temp$4 = (int) temp$3;
+        temp$5 = virtualinvoke stripChars.<java.lang.String: int indexOf(int)>(temp$4);
+        if temp$5 != -1 goto label7;
+
+        goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = end;
+        temp$7 = temp$6 + -1;
+        end = temp$7;
+        goto label5;
+
+     label8:
+        nop;
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, end);
+        return temp$8;
+    }
+}

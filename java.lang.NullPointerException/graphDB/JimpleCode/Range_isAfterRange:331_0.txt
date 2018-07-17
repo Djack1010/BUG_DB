@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public final boolean isAfterRange(org.apache.commons.lang3.Range)
+    {
+        org.apache.commons.lang3.Range this, otherRange;
+        boolean temp$0, temp$2;
+        java.lang.Object temp$1;
+
+        this := @this: org.apache.commons.lang3.Range;
+        otherRange := @parameter0: org.apache.commons.lang3.Range;
+        if otherRange == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = otherRange.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.Range: boolean isAfter(java.lang.Object)>(temp$1);
+        return temp$2;
+    }
+}

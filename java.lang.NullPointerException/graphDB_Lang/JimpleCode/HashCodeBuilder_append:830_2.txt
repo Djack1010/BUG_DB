@@ -1,0 +1,177 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.HashCodeBuilder append(java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.HashCodeBuilder this, temp$4, temp$7, temp$10, temp$13, temp$16, temp$19, temp$22, temp$25, temp$27;
+        java.lang.Object object;
+        java.lang.Class temp$0;
+        boolean temp$1, temp$2, temp$5, temp$8, temp$11, temp$14, temp$17, temp$20, temp$23;
+        long[] temp$3;
+        int[] temp$6;
+        short[] temp$9;
+        char[] temp$12;
+        byte[] temp$15;
+        double[] temp$18;
+        float[] temp$21;
+        boolean[] temp$24;
+        java.lang.Object[] temp$26;
+        int temp$28, temp$29, temp$30, temp$31, temp$32, temp$33;
+
+        this := @this: org.apache.commons.lang3.builder.HashCodeBuilder;
+        object := @parameter0: java.lang.Object;
+        temp$0 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: boolean isArray()>();
+        if temp$1 == 0 goto label25;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = object instanceof long[];
+        if temp$2 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = (long[]) object;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(long[])>(temp$3);
+        goto label24;
+
+     label2:
+        nop;
+        temp$5 = object instanceof int[];
+        if temp$5 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$6 = (int[]) object;
+        temp$7 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(int[])>(temp$6);
+        goto label23;
+
+     label4:
+        nop;
+        temp$8 = object instanceof short[];
+        if temp$8 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$9 = (short[]) object;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(short[])>(temp$9);
+        goto label22;
+
+     label6:
+        nop;
+        temp$11 = object instanceof char[];
+        if temp$11 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$12 = (char[]) object;
+        temp$13 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(char[])>(temp$12);
+        goto label21;
+
+     label8:
+        nop;
+        temp$14 = object instanceof byte[];
+        if temp$14 == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$15 = (byte[]) object;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(byte[])>(temp$15);
+        goto label20;
+
+     label10:
+        nop;
+        temp$17 = object instanceof double[];
+        if temp$17 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$18 = (double[]) object;
+        temp$19 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(double[])>(temp$18);
+        goto label19;
+
+     label12:
+        nop;
+        temp$20 = object instanceof float[];
+        if temp$20 == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$21 = (float[]) object;
+        temp$22 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(float[])>(temp$21);
+        goto label18;
+
+     label14:
+        nop;
+        temp$23 = object instanceof boolean[];
+        if temp$23 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$24 = (boolean[]) object;
+        temp$25 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(boolean[])>(temp$24);
+        goto label17;
+
+     label16:
+        nop;
+        temp$26 = (java.lang.Object[]) object;
+        temp$27 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(java.lang.Object[])>(temp$26);
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+
+     label22:
+        nop;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        goto label26;
+
+     label25:
+        nop;
+        temp$28 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal>;
+        temp$29 = this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iConstant>;
+        temp$30 = temp$28 * temp$29;
+        temp$31 = temp$30;
+        temp$32 = virtualinvoke object.<java.lang.Object: int hashCode()>();
+        temp$33 = temp$31 + temp$32;
+        this.<org.apache.commons.lang3.builder.HashCodeBuilder: int iTotal> = temp$33;
+
+     label26:
+        nop;
+        nop;
+        return this;
+    }
+}

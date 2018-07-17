@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public java.util.List getDiffs()
+    {
+        org.apache.commons.lang3.builder.DiffResult this;
+        java.util.List temp$0, temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.DiffResult;
+        temp$0 = this.<org.apache.commons.lang3.builder.DiffResult: java.util.List diffs>;
+        temp$1 = staticinvoke <java.util.Collections: java.util.List unmodifiableList(java.util.List)>(temp$0);
+        temp$2 = (java.util.List) temp$1;
+        return temp$2;
+    }
+}

@@ -1,0 +1,496 @@
+public class WrapClass 
+{
+    private static final void modify(java.util.Calendar, int, org.apache.commons.lang3.time.DateUtils$ModifyType)
+    {
+        java.util.Calendar val;
+        int field, temp$0, millisecs, temp$4, seconds, temp$9, minutes, temp$15, temp$21, temp$23, temp$24, temp$26, element, temp$27, temp$28, temp$31, temp$32, temp$34, temp$35, offset, temp$37, temp$38, temp$39, temp$40, temp$41, temp$42, temp$46, temp$47, temp$48, temp$49, temp$50, min, temp$54, temp$55, temp$56, max, temp$58, temp$59, temp$60, temp$62, temp$63, temp$64, temp$65, temp$66, temp$67, temp$70, temp$71, temp$73, temp$74, temp$75, temp$76;
+        org.apache.commons.lang3.time.DateUtils$ModifyType modType, temp$5, temp$10, temp$16, temp$29, temp$30;
+        java.lang.ArithmeticException temp$1;
+        java.util.Date date, temp$2;
+        long time, temp$3, temp$6, temp$7, temp$11, temp$12, temp$13, temp$17, temp$18, temp$19, temp$20;
+        boolean done, temp$8, temp$14, roundUp, offsetSet, temp$43, temp$44, temp$51, temp$52, temp$68;
+        int[][] temp$22;
+        int[] aField, temp$25, temp$33, temp$36, temp$45, temp$53, temp$57, temp$61, temp$69, temp$72;
+        java.lang.IllegalArgumentException temp$77;
+        java.lang.StringBuffer temp$78;
+        java.lang.String temp$79;
+
+        val := @parameter0: java.util.Calendar;
+        field := @parameter1: int;
+        modType := @parameter2: org.apache.commons.lang3.time.DateUtils$ModifyType;
+        temp$0 = virtualinvoke val.<java.util.Calendar: int get(int)>(1);
+        if temp$0 > 280000000 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.ArithmeticException;
+        specialinvoke temp$1.<java.lang.ArithmeticException: void <init>(java.lang.String)>("Calendar value too large for accurate calculations");
+        throw temp$1;
+
+     label1:
+        nop;
+        if field == 14 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke val.<java.util.Calendar: java.util.Date getTime()>();
+        date = temp$2;
+        temp$3 = virtualinvoke date.<java.util.Date: long getTime()>();
+        time = temp$3;
+        done = 0;
+        temp$4 = virtualinvoke val.<java.util.Calendar: int get(int)>(14);
+        millisecs = temp$4;
+        temp$5 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType TRUNCATE>;
+        if temp$5 == modType goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        if millisecs < 500 goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = (long) millisecs;
+        temp$7 = time - temp$6;
+        time = temp$7;
+
+     label6:
+        nop;
+        if field == 13 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$8 = 1;
+        done = temp$8;
+
+     label8:
+        nop;
+        temp$9 = virtualinvoke val.<java.util.Calendar: int get(int)>(13);
+        seconds = temp$9;
+        if done == 0 goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$10 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType TRUNCATE>;
+        if temp$10 == modType goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        if seconds < 30 goto label11;
+
+        goto label12;
+
+        goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$11 = (long) seconds;
+        temp$12 = temp$11 * 1000L;
+        temp$13 = time - temp$12;
+        time = temp$13;
+
+     label12:
+        nop;
+        if field == 12 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$14 = 1;
+        done = temp$14;
+
+     label14:
+        nop;
+        temp$15 = virtualinvoke val.<java.util.Calendar: int get(int)>(12);
+        minutes = temp$15;
+        if done == 0 goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$16 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType TRUNCATE>;
+        if temp$16 == modType goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        if minutes < 30 goto label17;
+
+        goto label18;
+
+        goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$17 = (long) minutes;
+        temp$18 = temp$17 * 60000L;
+        temp$19 = time - temp$18;
+        time = temp$19;
+
+     label18:
+        nop;
+        temp$20 = virtualinvoke date.<java.util.Date: long getTime()>();
+        temp$21 = temp$20 cmp time;
+        if temp$21 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        virtualinvoke date.<java.util.Date: void setTime(long)>(time);
+        virtualinvoke val.<java.util.Calendar: void setTime(java.util.Date)>(date);
+
+     label20:
+        nop;
+        roundUp = 0;
+        temp$22 = <org.apache.commons.lang3.time.DateUtils: int[][] fields>;
+        temp$23 = 0;
+
+     label21:
+        nop;
+        temp$24 = lengthof temp$22;
+        if temp$23 >= temp$24 goto label68;
+
+        temp$25 = temp$22[temp$23];
+        aField = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$25);
+        temp$26 = 0;
+
+     label22:
+        nop;
+        temp$27 = lengthof aField;
+        if temp$26 >= temp$27 goto label41;
+
+        temp$28 = aField[temp$26];
+        element = temp$28;
+        if element == field goto label23;
+
+        goto label40;
+
+     label23:
+        nop;
+        temp$29 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType CEILING>;
+        if modType == temp$29 goto label26;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$30 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType ROUND>;
+        if modType == temp$30 goto label25;
+
+        goto label39;
+
+     label25:
+        nop;
+        if roundUp == 0 goto label39;
+
+        goto label26;
+
+        goto label26;
+
+        goto label39;
+
+     label26:
+        nop;
+        if field >= 1001 goto label27;
+
+        goto label31;
+
+     label27:
+        nop;
+        temp$31 = virtualinvoke val.<java.util.Calendar: int get(int)>(5);
+        if temp$31 == 1 goto label28;
+
+        goto label29;
+
+     label28:
+        nop;
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(5, 15);
+        goto label30;
+
+     label29:
+        nop;
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(5, -15);
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(2, 1);
+
+     label30:
+        nop;
+        goto label38;
+
+     label31:
+        nop;
+        if field == 9 goto label32;
+
+        goto label36;
+
+     label32:
+        nop;
+        temp$32 = virtualinvoke val.<java.util.Calendar: int get(int)>(11);
+        if temp$32 == 0 goto label33;
+
+        goto label34;
+
+     label33:
+        nop;
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(11, 12);
+        goto label35;
+
+     label34:
+        nop;
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(11, -12);
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(5, 1);
+
+     label35:
+        nop;
+        goto label37;
+
+     label36:
+        nop;
+        temp$33 = aField;
+        temp$34 = 0;
+        temp$35 = temp$33[temp$34];
+        virtualinvoke val.<java.util.Calendar: void add(int,int)>(temp$35, 1);
+
+     label37:
+        nop;
+
+     label38:
+        nop;
+
+     label39:
+        nop;
+        return;
+
+     label40:
+        nop;
+        nop;
+        temp$26 = temp$26 + 1;
+        goto label22;
+
+     label41:
+        nop;
+        offset = 0;
+        offsetSet = 0;
+        goto label59;
+
+     label42:
+        nop;
+        temp$36 = aField;
+        temp$37 = 0;
+        temp$38 = temp$36[temp$37];
+        if temp$38 == 5 goto label43;
+
+        goto label49;
+
+     label43:
+        nop;
+        temp$39 = virtualinvoke val.<java.util.Calendar: int get(int)>(5);
+        temp$40 = temp$39 - 1;
+        offset = temp$40;
+        if offset >= 15 goto label44;
+
+        goto label45;
+
+     label44:
+        nop;
+        temp$41 = offset;
+        temp$42 = temp$41 - 15;
+        offset = temp$42;
+
+     label45:
+        nop;
+        if offset > 7 goto label47;
+
+        goto label46;
+
+     label46:
+        nop;
+        temp$43 = 0;
+        goto label48;
+
+     label47:
+        nop;
+        temp$43 = 1;
+
+     label48:
+        nop;
+        roundUp = temp$43;
+        temp$44 = 1;
+        offsetSet = temp$44;
+
+     label49:
+        nop;
+        goto label60;
+
+     label50:
+        nop;
+        temp$45 = aField;
+        temp$46 = 0;
+        temp$47 = temp$45[temp$46];
+        if temp$47 == 11 goto label51;
+
+        goto label57;
+
+     label51:
+        nop;
+        temp$48 = virtualinvoke val.<java.util.Calendar: int get(int)>(11);
+        offset = temp$48;
+        if offset >= 12 goto label52;
+
+        goto label53;
+
+     label52:
+        nop;
+        temp$49 = offset;
+        temp$50 = temp$49 - 12;
+        offset = temp$50;
+
+     label53:
+        nop;
+        if offset >= 6 goto label55;
+
+        goto label54;
+
+     label54:
+        nop;
+        temp$51 = 0;
+        goto label56;
+
+     label55:
+        nop;
+        temp$51 = 1;
+
+     label56:
+        nop;
+        roundUp = temp$51;
+        temp$52 = 1;
+        offsetSet = temp$52;
+
+     label57:
+        nop;
+        goto label60;
+
+     label58:
+        nop;
+        goto label60;
+
+        goto label60;
+
+     label59:
+        nop;
+        nop;
+        lookupswitch(field)
+        {
+            case 9: goto label50;
+            case 1001: goto label42;
+            default: goto label58;
+        };
+
+     label60:
+        nop;
+        if offsetSet == 0 goto label61;
+
+        goto label65;
+
+     label61:
+        nop;
+        temp$53 = aField;
+        temp$54 = 0;
+        temp$55 = temp$53[temp$54];
+        temp$56 = virtualinvoke val.<java.util.Calendar: int getActualMinimum(int)>(temp$55);
+        min = temp$56;
+        temp$57 = aField;
+        temp$58 = 0;
+        temp$59 = temp$57[temp$58];
+        temp$60 = virtualinvoke val.<java.util.Calendar: int getActualMaximum(int)>(temp$59);
+        max = temp$60;
+        temp$61 = aField;
+        temp$62 = 0;
+        temp$63 = temp$61[temp$62];
+        temp$64 = virtualinvoke val.<java.util.Calendar: int get(int)>(temp$63);
+        temp$65 = temp$64 - min;
+        offset = temp$65;
+        temp$66 = max - min;
+        temp$67 = temp$66 / 2;
+        if offset > temp$67 goto label63;
+
+        goto label62;
+
+     label62:
+        nop;
+        temp$68 = 0;
+        goto label64;
+
+     label63:
+        nop;
+        temp$68 = 1;
+
+     label64:
+        nop;
+        roundUp = temp$68;
+
+     label65:
+        nop;
+        if offset != 0 goto label66;
+
+        goto label67;
+
+     label66:
+        nop;
+        temp$69 = aField;
+        temp$70 = 0;
+        temp$71 = temp$69[temp$70];
+        temp$72 = aField;
+        temp$73 = 0;
+        temp$74 = temp$72[temp$73];
+        temp$75 = virtualinvoke val.<java.util.Calendar: int get(int)>(temp$74);
+        temp$76 = temp$75 - offset;
+        virtualinvoke val.<java.util.Calendar: void set(int,int)>(temp$71, temp$76);
+
+     label67:
+        nop;
+        nop;
+        temp$23 = temp$23 + 1;
+        goto label21;
+
+     label68:
+        nop;
+        temp$77 = new java.lang.IllegalArgumentException;
+        temp$78 = new java.lang.StringBuffer;
+        specialinvoke temp$78.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$78.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("The field ");
+        virtualinvoke temp$78.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(field);
+        virtualinvoke temp$78.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not supported");
+        temp$79 = virtualinvoke temp$78.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$77.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$79);
+        throw temp$77;
+
+        return;
+    }
+}

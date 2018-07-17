@@ -1,0 +1,69 @@
+public class WrapClass 
+{
+    public static java.lang.String mid(java.lang.String, int, int)
+    {
+        java.lang.String str, temp$0, temp$1, temp$6, temp$9;
+        int pos, len, temp$2, temp$3, temp$4, temp$5, temp$7, temp$8;
+
+        str := @parameter0: java.lang.String;
+        pos := @parameter1: int;
+        len := @parameter2: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if len < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label4:
+        nop;
+        if pos < 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$2 = 0;
+        pos = temp$2;
+
+     label6:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$4 = pos;
+        temp$5 = temp$4 + len;
+        if temp$3 <= temp$5 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(pos);
+        return temp$6;
+
+     label8:
+        nop;
+        temp$7 = pos;
+        temp$8 = temp$7 + len;
+        temp$9 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(pos, temp$8);
+        return temp$9;
+    }
+}

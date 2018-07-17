@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static transient java.util.Date parseDate(java.lang.String, java.util.Locale, java.lang.String[]) throws java.text.ParseException
+    {
+        java.lang.String str;
+        java.util.Locale locale;
+        java.lang.String[] parsePatterns;
+        java.util.Date temp$0;
+
+        str := @parameter0: java.lang.String;
+        locale := @parameter1: java.util.Locale;
+        parsePatterns := @parameter2: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Date parseDateWithLeniency(java.lang.String,java.util.Locale,java.lang.String[],boolean)>(str, locale, parsePatterns, 0);
+        return temp$0;
+    }
+}

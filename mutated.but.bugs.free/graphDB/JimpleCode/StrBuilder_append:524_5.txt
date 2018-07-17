@@ -1,0 +1,78 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(java.lang.CharSequence)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0, temp$2, temp$3, temp$6, temp$9, temp$12;
+        java.lang.CharSequence seq;
+        boolean temp$1, temp$4, temp$7, temp$10;
+        java.lang.StringBuilder temp$5;
+        java.lang.StringBuffer temp$8;
+        java.lang.String temp$11;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        seq := @parameter0: java.lang.CharSequence;
+        if seq == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = seq instanceof org.apache.commons.lang3.text.StrBuilder;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = (org.apache.commons.lang3.text.StrBuilder) seq;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(org.apache.commons.lang3.text.StrBuilder)>(temp$2);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = seq instanceof java.lang.StringBuilder;
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = (java.lang.StringBuilder) seq;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.StringBuilder)>(temp$5);
+        return temp$6;
+
+     label5:
+        nop;
+        temp$7 = seq instanceof java.lang.StringBuffer;
+        if temp$7 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$8 = (java.lang.StringBuffer) seq;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.StringBuffer)>(temp$8);
+        return temp$9;
+
+     label7:
+        nop;
+        temp$10 = seq instanceof java.nio.CharBuffer;
+        if temp$10 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$11 = interfaceinvoke seq.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(temp$11);
+        return temp$12;
+    }
+}

@@ -1,0 +1,131 @@
+public class WrapClass 
+{
+    public static int binaryToInt(boolean[], int, int, int, int)
+    {
+        boolean[] src, temp$10;
+        int srcPos, dstInit, dstPos, nBools, temp$0, temp$3, temp$4, temp$5, out, shift, i, temp$7, temp$8, bits, temp$9, temp$11, temp$12, temp$14, mask, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20;
+        boolean temp$1, temp$2, temp$13;
+        java.lang.IllegalArgumentException temp$6;
+
+        src := @parameter0: boolean[];
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: int;
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        temp$0 = lengthof src;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        if srcPos == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        if 0 == nBools goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$2 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$2 = 1;
+
+     label6:
+        nop;
+        if temp$1 != temp$2 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return dstInit;
+
+     label8:
+        nop;
+        temp$3 = nBools - 1;
+        temp$4 = temp$3;
+        temp$5 = temp$4 + dstPos;
+        if temp$5 >= 32 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$6 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+dstPos is greather or equal to than 32");
+        throw temp$6;
+
+     label10:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label11:
+        nop;
+        if i < nBools goto label12;
+
+        goto label16;
+
+     label12:
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + dstPos;
+        shift = temp$8;
+        temp$10 = src;
+        temp$11 = i;
+        temp$12 = temp$11 + srcPos;
+        temp$13 = temp$10[temp$12];
+        if temp$13 == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$9 = 1;
+        goto label15;
+
+     label14:
+        nop;
+        temp$9 = 0;
+
+     label15:
+        nop;
+        temp$14 = temp$9 << shift;
+        bits = temp$14;
+        temp$15 = 1 << shift;
+        mask = temp$15;
+        temp$16 = -1 ^ mask;
+        temp$17 = out & temp$16;
+        temp$18 = temp$17 | bits;
+        out = temp$18;
+        nop;
+        temp$19 = i;
+        temp$20 = temp$19 + 1;
+        i = temp$20;
+        goto label11;
+
+     label16:
+        nop;
+        return out;
+    }
+}

@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    protected void appendFieldStart(java.lang.StringBuffer, java.lang.String)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$2, temp$4;
+        java.lang.String fieldName, temp$3;
+        boolean temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        if fieldName != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringStyle: boolean useFieldNames>;
+        if temp$1 == temp$0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(fieldName);
+        temp$3 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String fieldNameValueSeparator>;
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$3);
+
+     label4:
+        nop;
+        return;
+    }
+}

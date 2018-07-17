@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public int hashCode()
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        java.lang.String temp$0;
+        int temp$1, temp$2, temp$4, temp$5, temp$7, temp$8, temp$9, temp$10, temp$11;
+        java.util.TimeZone temp$3;
+        java.util.Locale temp$6;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        temp$0 = this.<org.apache.commons.lang3.time.FastDateParser: java.lang.String pattern>;
+        temp$1 = virtualinvoke temp$0.<java.lang.String: int hashCode()>();
+        temp$2 = temp$1;
+        temp$3 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$4 = virtualinvoke temp$3.<java.util.TimeZone: int hashCode()>();
+        temp$5 = temp$4;
+        temp$6 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$7 = virtualinvoke temp$6.<java.util.Locale: int hashCode()>();
+        temp$8 = 13 * temp$7;
+        temp$9 = temp$2 + 13;
+        temp$10 = temp$5 + temp$8;
+        temp$11 = temp$9 - temp$10;
+        return temp$11;
+    }
+}

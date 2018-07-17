@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String, float[], float[])
+    {
+        org.apache.commons.lang3.builder.DiffBuilder this;
+        java.lang.String fieldName;
+        float[] lhs, rhs;
+        boolean temp$0, temp$1, temp$4;
+        java.util.List temp$2;
+        org.apache.commons.lang3.builder.DiffBuilder$9Anonymous9 temp$3;
+
+        this := @this: org.apache.commons.lang3.builder.DiffBuilder;
+        fieldName := @parameter0: java.lang.String;
+        lhs := @parameter1: float[];
+        rhs := @parameter2: float[];
+        temp$0 = this.<org.apache.commons.lang3.builder.DiffBuilder: boolean objectsTriviallyEqual>;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.util.Arrays: boolean equals(float[],float[])>(lhs, rhs);
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.builder.DiffBuilder: java.util.List diffs>;
+        temp$3 = new org.apache.commons.lang3.builder.DiffBuilder$9Anonymous9;
+        specialinvoke temp$3.<org.apache.commons.lang3.builder.DiffBuilder$9Anonymous9: void <init>(org.apache.commons.lang3.builder.DiffBuilder,java.lang.String,float[],float[])>(this, fieldName, lhs, rhs);
+        temp$4 = interfaceinvoke temp$2.<java.util.List: boolean add(java.lang.Object)>(temp$3);
+
+     label3:
+        nop;
+        return this;
+    }
+}

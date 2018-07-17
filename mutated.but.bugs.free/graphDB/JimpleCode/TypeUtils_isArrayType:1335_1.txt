@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static boolean isArrayType(java.lang.reflect.Type)
+    {
+        java.lang.reflect.Type type;
+        boolean temp$0, temp$2, temp$3, temp$4, temp$5;
+        java.lang.Class temp$1;
+
+        type := @parameter0: java.lang.reflect.Type;
+        temp$0 = type instanceof java.lang.Class;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (java.lang.Class) type;
+        temp$2 = virtualinvoke temp$1.<java.lang.Class: boolean isArray()>();
+        if temp$2 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 1;
+
+     label3:
+        nop;
+        temp$4 = type instanceof java.lang.reflect.GenericArrayType;
+        if temp$4 != temp$3 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = 1;
+
+     label6:
+        nop;
+        return temp$5;
+    }
+}

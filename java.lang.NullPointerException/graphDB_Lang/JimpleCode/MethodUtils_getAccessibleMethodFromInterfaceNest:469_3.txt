@@ -1,0 +1,109 @@
+public class WrapClass 
+{
+    private static final transient java.lang.reflect.Method getAccessibleMethodFromInterfaceNest(java.lang.Class, java.lang.String, java.lang.Class[])
+    {
+        java.lang.Class 'cls', temp$3, temp$8, temp$12, temp$16;
+        java.lang.String methodName;
+        java.lang.Class[] parameterTypes, interfaces, temp$1, temp$6, temp$10;
+        int i, temp$0, temp$2, temp$4, temp$7, temp$11, temp$14, temp$15;
+        boolean temp$5;
+        java.lang.reflect.Method temp$9, method, temp$13, temp$17;
+        java.lang.NoSuchMethodException e;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+
+     label0:
+        nop;
+        if 'cls' != null goto label1;
+
+        goto label14;
+
+     label1:
+        nop;
+        interfaces = null;
+        i = 0;
+
+     label2:
+        nop;
+        temp$0 = lengthof interfaces;
+        if i < temp$0 goto label3;
+
+        goto label13;
+
+     label3:
+        nop;
+        temp$1 = interfaces;
+        temp$2 = i;
+        temp$3 = temp$1[temp$2];
+        temp$4 = virtualinvoke temp$3.<java.lang.Class: int getModifiers()>();
+        temp$5 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$4);
+        if temp$5 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        goto label12;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        temp$6 = interfaces;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        temp$9 = virtualinvoke temp$8.<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+
+     label7:
+        nop;
+        return temp$9;
+
+     label8:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label9;
+
+     label9:
+        nop;
+        temp$10 = interfaces;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        temp$13 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethodFromInterfaceNest(java.lang.Class,java.lang.String,java.lang.Class[])>(temp$12, methodName, parameterTypes);
+        method = temp$13;
+        if method != null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        return method;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label2;
+
+     label13:
+        nop;
+        nop;
+        temp$16 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        'cls' = temp$16;
+        goto label0;
+
+     label14:
+        nop;
+        temp$17 = null;
+        return temp$17;
+
+        catch java.lang.NoSuchMethodException from label6 to label7 with label8;
+    }
+}

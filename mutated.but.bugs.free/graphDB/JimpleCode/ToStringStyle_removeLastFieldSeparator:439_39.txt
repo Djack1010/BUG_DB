@@ -1,0 +1,119 @@
+public class WrapClass 
+{
+    protected void removeLastFieldSeparator(java.lang.StringBuffer)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        int len, temp$0, sepLen, temp$2, i, temp$5, temp$6, temp$9, temp$10, temp$12, temp$13, temp$15, temp$16, temp$17;
+        java.lang.String temp$1, temp$8;
+        boolean temp$3, temp$4, match, temp$14;
+        char temp$7, temp$11;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        temp$0 = virtualinvoke buffer.<java.lang.StringBuffer: int length()>();
+        len = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String fieldSeparator>;
+        temp$2 = virtualinvoke temp$1.<java.lang.String: int length()>();
+        sepLen = temp$2;
+        if len > 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = 1;
+
+     label2:
+        nop;
+        if sepLen > 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        if temp$3 == temp$4 goto label6;
+
+        goto label15;
+
+     label6:
+        nop;
+        if len >= sepLen goto label7;
+
+        goto label15;
+
+        goto label7;
+
+     label7:
+        nop;
+        match = 1;
+        i = 0;
+
+     label8:
+        nop;
+        if i < sepLen goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$5 = len - 1;
+        temp$6 = temp$5 - i;
+        temp$7 = virtualinvoke buffer.<java.lang.StringBuffer: char charAt(int)>(temp$6);
+        temp$8 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String fieldSeparator>;
+        temp$9 = sepLen - 1;
+        temp$10 = temp$9 - i;
+        temp$11 = virtualinvoke temp$8.<java.lang.String: char charAt(int)>(temp$10);
+        temp$12 = (int) temp$7;
+        temp$13 = (int) temp$11;
+        if temp$12 != temp$13 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$14 = 0;
+        match = temp$14;
+        goto label12;
+
+     label11:
+        nop;
+        nop;
+        temp$15 = i;
+        temp$16 = temp$15 + 1;
+        i = temp$16;
+        goto label8;
+
+     label12:
+        nop;
+        if match == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$17 = len - sepLen;
+        virtualinvoke buffer.<java.lang.StringBuffer: void setLength(int)>(temp$17);
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        return;
+    }
+}

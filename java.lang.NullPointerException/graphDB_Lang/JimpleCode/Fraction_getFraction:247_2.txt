@@ -1,0 +1,163 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.math.Fraction getFraction(double)
+    {
+        double value, temp$2, temp$6, temp$7, temp$8, x1, x2, y1, temp$9, temp$10, y2, delta1, delta2, fraction, temp$11, temp$13, temp$14, temp$15, temp$22, temp$23, temp$24, temp$25, temp$26;
+        int sign, temp$0, temp$1, temp$3, wholeNumber, numer0, denom0, numer1, denom1, numer2, denom2, a1, a2, i, temp$12, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$27, temp$28, temp$29, temp$30, temp$32, temp$33, temp$34, temp$35;
+        boolean temp$4;
+        java.lang.ArithmeticException temp$5, temp$31;
+        org.apache.commons.lang3.math.Fraction temp$36;
+
+        value := @parameter0: double;
+        temp$1 = value cmpg 0.0;
+        if temp$1 >= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = -1;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        sign = temp$0;
+        temp$2 = staticinvoke <java.lang.Math: double abs(double)>(value);
+        value = temp$2;
+        temp$3 = value cmpl 2.147483647E9;
+        if temp$3 <= 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = staticinvoke <java.lang.Double: boolean isNaN(double)>(value);
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = new java.lang.ArithmeticException;
+        specialinvoke temp$5.<java.lang.ArithmeticException: void <init>(java.lang.String)>("The value must not be greater than Integer.MAX_VALUE or NaN");
+        throw temp$5;
+
+     label5:
+        nop;
+        wholeNumber = (int) value;
+        temp$6 = value;
+        temp$7 = (double) wholeNumber;
+        temp$8 = temp$6 - temp$7;
+        value = temp$8;
+        numer0 = 0;
+        denom0 = 1;
+        numer1 = 1;
+        denom1 = 0;
+        numer2 = 0;
+        denom2 = 0;
+        a1 = (int) value;
+        a2 = 0;
+        x1 = 1.0;
+        x2 = 0.0;
+        temp$9 = (double) a1;
+        temp$10 = value - temp$9;
+        y1 = temp$10;
+        y2 = 0.0;
+        delta2 = 1.7976931348623157E308;
+        i = 1;
+
+     label6:
+        nop;
+        delta1 = delta2;
+        temp$11 = x1 / y1;
+        temp$12 = (int) temp$11;
+        a2 = temp$12;
+        x2 = y1;
+        temp$13 = (double) a2;
+        temp$14 = temp$13 * y1;
+        temp$15 = x1 - temp$14;
+        y2 = temp$15;
+        temp$16 = a1 * numer1;
+        temp$17 = temp$16;
+        temp$18 = temp$17 + numer0;
+        numer2 = temp$18;
+        temp$19 = a1 * denom1;
+        temp$20 = temp$19;
+        temp$21 = temp$20 + denom0;
+        denom2 = temp$21;
+        temp$22 = (double) numer2;
+        temp$23 = (double) denom2;
+        temp$24 = temp$22 / temp$23;
+        fraction = temp$24;
+        temp$25 = value - fraction;
+        temp$26 = staticinvoke <java.lang.Math: double abs(double)>(temp$25);
+        delta2 = temp$26;
+        a1 = a2;
+        x1 = x2;
+        y1 = y2;
+        numer0 = numer1;
+        denom0 = denom1;
+        numer1 = numer2;
+        temp$27 = 0;
+        denom1 = temp$27;
+        temp$28 = i;
+        temp$29 = temp$28 + 1;
+        i = temp$29;
+        nop;
+        temp$30 = delta1 cmpl delta2;
+        if temp$30 <= 0 goto label10;
+
+        goto label7;
+
+     label7:
+        nop;
+        if denom2 <= 10000 goto label8;
+
+        goto label10;
+
+        goto label8;
+
+     label8:
+        nop;
+        if denom2 > 0 goto label9;
+
+        goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        if i < 25 goto label6;
+
+        goto label10;
+
+        goto label6;
+
+     label10:
+        nop;
+        if i == 25 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$31 = new java.lang.ArithmeticException;
+        specialinvoke temp$31.<java.lang.ArithmeticException: void <init>(java.lang.String)>("Unable to convert double to fraction");
+        throw temp$31;
+
+     label12:
+        nop;
+        temp$32 = numer0;
+        temp$33 = wholeNumber * denom0;
+        temp$34 = temp$32 + temp$33;
+        temp$35 = temp$34 * sign;
+        temp$36 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getReducedFraction(int,int)>(temp$35, denom0);
+        return temp$36;
+    }
+}

@@ -1,0 +1,95 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.MultiPartEmail attach(org.apache.commons.mail.EmailAttachment) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.MultiPartEmail this, result, temp$11, temp$18;
+        org.apache.commons.mail.EmailAttachment attachment;
+        java.net.URL url, temp$0;
+        java.lang.String fileName, temp$1, temp$6, temp$8, temp$9, temp$10, temp$14, temp$15, temp$16, temp$17;
+        java.io.File file, temp$2;
+        boolean temp$3;
+        java.io.IOException temp$4, e;
+        java.lang.StringBuffer temp$5, temp$13;
+        javax.activation.FileDataSource temp$7;
+        org.apache.commons.mail.EmailException temp$12;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        attachment := @parameter0: org.apache.commons.mail.EmailAttachment;
+        result = null;
+        temp$0 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.net.URL getURL()>();
+        url = temp$0;
+        if url == null goto label0;
+
+        goto label6;
+
+     label0:
+        nop;
+        fileName = null;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getPath()>();
+        fileName = temp$1;
+        temp$2 = new java.io.File;
+        specialinvoke temp$2.<java.io.File: void <init>(java.lang.String)>(fileName);
+        file = temp$2;
+        temp$3 = virtualinvoke file.<java.io.File: boolean exists()>();
+        if temp$3 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.io.IOException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\"");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(fileName);
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\" does not exist");
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.io.IOException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label3:
+        nop;
+        temp$7 = new javax.activation.FileDataSource;
+        specialinvoke temp$7.<javax.activation.FileDataSource: void <init>(java.io.File)>(file);
+        temp$8 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getName()>();
+        temp$9 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDescription()>();
+        temp$10 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDisposition()>();
+        temp$11 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: org.apache.commons.mail.MultiPartEmail attach(javax.activation.DataSource,java.lang.String,java.lang.String,java.lang.String)>(temp$7, temp$8, temp$9, temp$10);
+        result = temp$11;
+        goto label5;
+
+     label4:
+        nop;
+        e := @caughtexception;
+        temp$12 = new org.apache.commons.mail.EmailException;
+        temp$13 = new java.lang.StringBuffer;
+        specialinvoke temp$13.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Cannot attach file \"");
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(fileName);
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\"");
+        temp$14 = virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$12.<org.apache.commons.mail.EmailException: void <init>(java.lang.String,java.lang.Throwable)>(temp$14, e);
+        throw temp$12;
+
+     label5:
+        nop;
+        goto label7;
+
+     label6:
+        nop;
+        temp$15 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getName()>();
+        temp$16 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDescription()>();
+        temp$17 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDisposition()>();
+        temp$18 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: org.apache.commons.mail.MultiPartEmail attach(java.net.URL,java.lang.String,java.lang.String,java.lang.String)>(url, temp$15, temp$16, temp$17);
+        result = temp$18;
+
+     label7:
+        nop;
+        return result;
+
+        catch java.io.IOException from label1 to label4 with label4;
+    }
+}

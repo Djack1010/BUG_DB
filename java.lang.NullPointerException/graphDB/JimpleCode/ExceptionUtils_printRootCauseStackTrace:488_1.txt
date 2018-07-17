@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public static void printRootCauseStackTrace(java.lang.Throwable, java.io.PrintWriter)
+    {
+        java.lang.Throwable throwable;
+        java.io.PrintWriter writer;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.String[] trace;
+        int temp$1, temp$2;
+        java.lang.String element, temp$3;
+
+        throwable := @parameter0: java.lang.Throwable;
+        writer := @parameter1: java.io.PrintWriter;
+        if throwable == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        if writer == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The PrintWriter must not be null");
+        throw temp$0;
+
+     label3:
+        nop;
+        trace = null;
+        temp$1 = 0;
+
+     label4:
+        nop;
+        temp$2 = lengthof trace;
+        if temp$1 >= temp$2 goto label5;
+
+        temp$3 = trace[temp$1];
+        element = temp$3;
+        virtualinvoke writer.<java.io.PrintWriter: void println(java.lang.String)>(element);
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label4;
+
+     label5:
+        nop;
+        virtualinvoke writer.<java.io.PrintWriter: void flush()>();
+        return;
+    }
+}

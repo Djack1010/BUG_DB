@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public static java.lang.String left(java.lang.String, int)
+    {
+        java.lang.String str, temp$0, temp$1, temp$3;
+        int len, temp$2;
+
+        str := @parameter0: java.lang.String;
+        len := @parameter1: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if len <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$2 <= len goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        return str;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, len);
+        return temp$3;
+    }
+}

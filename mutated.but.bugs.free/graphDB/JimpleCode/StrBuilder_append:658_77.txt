@@ -1,0 +1,128 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(java.nio.CharBuffer, int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0, temp$12, temp$23;
+        java.nio.CharBuffer buf;
+        int startIndex, length, totalLength, temp$2, temp$5, temp$6, len, temp$9, temp$10, temp$11, temp$14, temp$15, temp$16, temp$17, temp$18, temp$20, temp$21;
+        boolean temp$1, temp$4, temp$7;
+        java.lang.StringIndexOutOfBoundsException temp$3, temp$8;
+        char[] temp$13, temp$19;
+        java.lang.String temp$22;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        buf := @parameter0: java.nio.CharBuffer;
+        startIndex := @parameter1: int;
+        length := @parameter2: int;
+        if buf == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke buf.<java.nio.CharBuffer: boolean hasArray()>();
+        if temp$1 == 0 goto label14;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke buf.<java.nio.CharBuffer: int remaining()>();
+        totalLength = temp$2;
+        if startIndex < 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        if startIndex > totalLength goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$3.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("startIndex must be valid");
+        throw temp$3;
+
+     label5:
+        nop;
+        if length < 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$4 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$4 = 1;
+
+     label8:
+        nop;
+        temp$5 = startIndex;
+        temp$6 = temp$5 + length;
+        if temp$6 > totalLength goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$7 = 0;
+        goto label11;
+
+     label10:
+        nop;
+        temp$7 = 1;
+
+     label11:
+        nop;
+        if temp$4 != temp$7 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$8 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$8.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("length must be valid");
+        throw temp$8;
+
+     label13:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$9;
+        temp$10 = len;
+        temp$11 = temp$10 + length;
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$11);
+        temp$13 = virtualinvoke buf.<java.nio.CharBuffer: char[] array()>();
+        temp$14 = virtualinvoke buf.<java.nio.CharBuffer: int arrayOffset()>();
+        temp$15 = temp$14;
+        temp$16 = virtualinvoke buf.<java.nio.CharBuffer: int position()>();
+        temp$17 = temp$15 + temp$16;
+        temp$18 = temp$17 + startIndex;
+        temp$19 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$13, temp$18, temp$19, len, length);
+        temp$20 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$21 = temp$20 + length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$21;
+        goto label15;
+
+     label14:
+        nop;
+        temp$22 = virtualinvoke buf.<java.nio.CharBuffer: java.lang.String toString()>();
+        temp$23 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String,int,int)>(temp$22, startIndex, length);
+
+     label15:
+        nop;
+        return this;
+    }
+}

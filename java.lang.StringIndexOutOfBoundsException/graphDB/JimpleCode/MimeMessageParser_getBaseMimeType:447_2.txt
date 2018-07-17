@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    private final java.lang.String getBaseMimeType(java.lang.String)
+    {
+        org.apache.commons.mail.util.MimeMessageParser this;
+        java.lang.String fullMimeType, temp$1;
+        int pos, temp$0;
+
+        this := @this: org.apache.commons.mail.util.MimeMessageParser;
+        fullMimeType := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke fullMimeType.<java.lang.String: int indexOf(int)>(59);
+        pos = temp$0;
+        temp$1 = virtualinvoke fullMimeType.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        return temp$1;
+
+        return fullMimeType;
+    }
+}

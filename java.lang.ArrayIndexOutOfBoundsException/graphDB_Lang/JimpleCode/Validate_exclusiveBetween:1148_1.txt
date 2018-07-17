@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static void exclusiveBetween(double, double, double, java.lang.String)
+    {
+        double start, end, value;
+        java.lang.String message, temp$2;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.Object[] temp$1;
+
+        start := @parameter0: double;
+        end := @parameter1: double;
+        value := @parameter2: double;
+        message := @parameter3: java.lang.String;
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = newarray (java.lang.Object)[0];
+        temp$2 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, temp$1);
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$2);
+        throw temp$0;
+
+        return;
+    }
+}

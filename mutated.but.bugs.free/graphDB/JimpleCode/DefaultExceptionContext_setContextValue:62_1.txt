@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.exception.DefaultExceptionContext setContextValue(java.lang.String, java.lang.Object)
+    {
+        org.apache.commons.lang3.exception.DefaultExceptionContext this, temp$9, temp$10;
+        java.lang.String label, temp$7;
+        java.lang.Object value, temp$4, temp$6;
+        java.util.Iterator iter, temp$1, temp$2;
+        java.util.List temp$0;
+        boolean temp$3, temp$8;
+        org.apache.commons.lang3.tuple.Pair p, temp$5;
+
+        this := @this: org.apache.commons.lang3.exception.DefaultExceptionContext;
+        label := @parameter0: java.lang.String;
+        value := @parameter1: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.exception.DefaultExceptionContext: java.util.List contextValues>;
+        temp$1 = interfaceinvoke temp$0.<java.util.List: java.util.Iterator iterator()>();
+        temp$2 = (java.util.Iterator) temp$1;
+        iter = temp$2;
+
+     label0:
+        nop;
+        temp$3 = interfaceinvoke iter.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label4;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = interfaceinvoke iter.<java.util.Iterator: java.lang.Object next()>();
+        temp$5 = (org.apache.commons.lang3.tuple.Pair) temp$4;
+        p = temp$5;
+        temp$6 = virtualinvoke p.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$7 = (java.lang.String) temp$6;
+        temp$8 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean equals(java.lang.CharSequence,java.lang.CharSequence)>(label, temp$7);
+        if temp$8 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        interfaceinvoke iter.<java.util.Iterator: void remove()>();
+
+     label3:
+        nop;
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.exception.DefaultExceptionContext: org.apache.commons.lang3.exception.DefaultExceptionContext addContextValue(java.lang.String,java.lang.Object)>(label, value);
+        temp$10 = null;
+        return temp$10;
+    }
+}

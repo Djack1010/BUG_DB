@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    public static boolean isInstance(java.lang.Object, java.lang.reflect.Type)
+    {
+        java.lang.Object value;
+        java.lang.reflect.Type type;
+        boolean temp$0, temp$2, temp$3;
+        java.lang.Class temp$1;
+
+        value := @parameter0: java.lang.Object;
+        type := @parameter1: java.lang.reflect.Type;
+        if type == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        goto label2;
+
+        nop;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.reflect.Type,java.util.Map)>(temp$1, type, null);
+        if temp$2 == 0 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = 1;
+
+     label5:
+        nop;
+        return temp$3;
+    }
+}

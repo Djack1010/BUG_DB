@@ -1,0 +1,165 @@
+public class WrapClass 
+{
+    public boolean isEncodeEquals(java.lang.String, java.lang.String)
+    {
+        org.apache.commons.codec.language.MatchRatingApproachEncoder this;
+        java.lang.String name1, name2, temp$0, temp$2, temp$5, temp$7, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$22;
+        boolean temp$1, temp$3, temp$4, temp$6, temp$8, temp$9, temp$12, temp$13, temp$14, temp$27, temp$35;
+        int temp$10, temp$11, temp$23, temp$24, temp$25, temp$26, sumLength, temp$28, temp$29, temp$30, temp$31, temp$32, minRating, temp$33, count, temp$34;
+
+        this := @this: org.apache.commons.codec.language.MatchRatingApproachEncoder;
+        name1 := @parameter0: java.lang.String;
+        name2 := @parameter1: java.lang.String;
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String EMPTY>;
+        temp$1 = virtualinvoke temp$0.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(name1);
+        if temp$1 == 0 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$2 = <org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String SPACE>;
+        temp$3 = virtualinvoke temp$2.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(name1);
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label3:
+        nop;
+        if name2 == null goto label6;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = <org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String EMPTY>;
+        temp$6 = virtualinvoke temp$5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(name2);
+        if temp$6 == 0 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$7 = <org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String SPACE>;
+        temp$8 = virtualinvoke temp$7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(name2);
+        if temp$8 == 0 goto label7;
+
+        goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+
+     label7:
+        nop;
+        temp$10 = virtualinvoke name1.<java.lang.String: int length()>();
+        if temp$10 == 1 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$11 = virtualinvoke name2.<java.lang.String: int length()>();
+        if temp$11 == 1 goto label9;
+
+        goto label10;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$12 = 0;
+        return temp$12;
+
+     label10:
+        nop;
+        temp$13 = virtualinvoke name1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(name2);
+        if temp$13 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+
+     label12:
+        nop;
+        temp$15 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String cleanName(java.lang.String)>(name1);
+        name1 = temp$15;
+        temp$16 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String cleanName(java.lang.String)>(name2);
+        name2 = temp$16;
+        temp$17 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String removeVowels(java.lang.String)>(name1);
+        name1 = temp$17;
+        temp$18 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String removeVowels(java.lang.String)>(name2);
+        name2 = temp$18;
+        temp$19 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String removeDoubleConsonants(java.lang.String)>(name1);
+        name1 = temp$19;
+        temp$20 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String removeDoubleConsonants(java.lang.String)>(name2);
+        name2 = temp$20;
+        temp$21 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String getFirst3Last3(java.lang.String)>(name1);
+        name1 = temp$21;
+        temp$22 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: java.lang.String getFirst3Last3(java.lang.String)>(name2);
+        name2 = temp$22;
+        temp$23 = virtualinvoke name1.<java.lang.String: int length()>();
+        temp$24 = virtualinvoke name2.<java.lang.String: int length()>();
+        temp$25 = temp$23 - temp$24;
+        temp$26 = staticinvoke <java.lang.Math: int abs(int)>(temp$25);
+        if temp$26 >= 3 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$27 = 0;
+        return temp$27;
+
+     label14:
+        nop;
+        temp$28 = virtualinvoke name1.<java.lang.String: int length()>();
+        temp$29 = temp$28;
+        temp$30 = virtualinvoke name2.<java.lang.String: int length()>();
+        temp$31 = temp$29 + temp$30;
+        temp$32 = staticinvoke <java.lang.Math: int abs(int)>(temp$31);
+        sumLength = temp$32;
+        minRating = 0;
+        temp$33 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: int getMinRating(int)>(sumLength);
+        minRating = temp$33;
+        temp$34 = virtualinvoke this.<org.apache.commons.codec.language.MatchRatingApproachEncoder: int leftToRightThenRightToLeftProcessing(java.lang.String,java.lang.String)>(name1, name2);
+        count = temp$34;
+        if count >= minRating goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$35 = 0;
+        goto label17;
+
+     label16:
+        nop;
+        temp$35 = 1;
+
+     label17:
+        nop;
+        return temp$35;
+    }
+}

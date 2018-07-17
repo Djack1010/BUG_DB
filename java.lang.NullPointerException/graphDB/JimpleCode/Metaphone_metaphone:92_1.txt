@@ -1,0 +1,979 @@
+public class WrapClass 
+{
+    public java.lang.String metaphone(java.lang.String)
+    {
+        org.apache.commons.codec.language.Metaphone this;
+        java.lang.String txt, temp$3, temp$5, temp$7, temp$64, temp$73, temp$92, temp$119, temp$128, temp$171;
+        boolean hard, temp$0, temp$2, temp$55, temp$59, temp$60, temp$62, temp$63, temp$70, temp$72, temp$80, temp$81, temp$83, temp$84, temp$90, temp$91, temp$104, temp$105, temp$108, temp$109, temp$112, temp$113, temp$114, temp$115, temp$116, temp$117, temp$118, temp$127, temp$135, temp$138, temp$141, temp$145, temp$146, temp$147, temp$150, temp$151, temp$153, temp$154, temp$158, temp$161;
+        int txtLength, temp$1, temp$12, temp$14, temp$15, temp$16, temp$20, temp$22, temp$23, temp$24, temp$28, temp$30, temp$31, temp$32, temp$35, temp$37, temp$38, temp$39, temp$43, temp$48, wdsz, temp$50, n, temp$51, temp$52, temp$54, temp$56, temp$57, temp$65, temp$66, temp$68, temp$69, temp$74, temp$75, temp$77, temp$78, temp$88, temp$89, temp$93, temp$94, temp$96, temp$97, temp$99, temp$100, temp$102, temp$103, temp$106, temp$107, temp$110, temp$111, temp$120, temp$121, temp$123, temp$124, temp$129, temp$131, temp$132, temp$133, temp$134, temp$159, temp$160, temp$166, temp$167, temp$168, temp$169, temp$170;
+        java.util.Locale temp$4, temp$6;
+        char[] inwd, temp$8, temp$11, temp$19, temp$27, temp$34, temp$42, temp$47;
+        java.lang.StringBuilder local, temp$9, code, temp$10, temp$17, temp$18, temp$25, temp$26, temp$33, temp$40, temp$41, temp$45, temp$46, temp$58, temp$61, temp$71, temp$79, temp$82, temp$85, temp$86, temp$87, temp$98, temp$101, temp$125, temp$126, temp$136, temp$137, temp$139, temp$140, temp$142, temp$143, temp$144, temp$148, temp$149, temp$152, temp$155, temp$156, temp$157, temp$162, temp$163, temp$164, temp$165;
+        char temp$13, temp$21, temp$29, temp$36, temp$44, temp$49, symb, temp$53, temp$67, temp$76, temp$95, temp$122, temp$130;
+
+        this := @this: org.apache.commons.codec.language.Metaphone;
+        txt := @parameter0: java.lang.String;
+        hard = 0;
+        if txt == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke txt.<java.lang.String: int length()>();
+        txtLength = temp$1;
+        if temp$1 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = "";
+        return temp$3;
+
+     label7:
+        nop;
+        if txtLength == 1 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$4 = <java.util.Locale: java.util.Locale ENGLISH>;
+        temp$5 = virtualinvoke txt.<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>(temp$4);
+        return temp$5;
+
+     label9:
+        nop;
+        temp$6 = <java.util.Locale: java.util.Locale ENGLISH>;
+        temp$7 = virtualinvoke txt.<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>(temp$6);
+        temp$8 = virtualinvoke temp$7.<java.lang.String: char[] toCharArray()>();
+        inwd = temp$8;
+        temp$9 = new java.lang.StringBuilder;
+        specialinvoke temp$9.<java.lang.StringBuilder: void <init>(int)>(40);
+        local = temp$9;
+        temp$10 = new java.lang.StringBuilder;
+        specialinvoke temp$10.<java.lang.StringBuilder: void <init>(int)>(10);
+        code = temp$10;
+        goto label28;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$11 = inwd;
+        temp$12 = 1;
+        temp$13 = temp$11[temp$12];
+        temp$14 = (int) temp$13;
+        if temp$14 == 78 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$15 = lengthof inwd;
+        temp$16 = temp$15 - 1;
+        temp$17 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>(inwd, 1, temp$16);
+        goto label15;
+
+     label14:
+        nop;
+        temp$18 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>(inwd);
+
+     label15:
+        nop;
+        goto label29;
+
+     label16:
+        nop;
+        temp$19 = inwd;
+        temp$20 = 1;
+        temp$21 = temp$19[temp$20];
+        temp$22 = (int) temp$21;
+        if temp$22 == 69 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$23 = lengthof inwd;
+        temp$24 = temp$23 - 1;
+        temp$25 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>(inwd, 1, temp$24);
+        goto label19;
+
+     label18:
+        nop;
+        temp$26 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>(inwd);
+
+     label19:
+        nop;
+        goto label29;
+
+     label20:
+        nop;
+        temp$27 = inwd;
+        temp$28 = 1;
+        temp$29 = temp$27[temp$28];
+        temp$30 = (int) temp$29;
+        if temp$30 == 82 goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        temp$31 = lengthof inwd;
+        temp$32 = temp$31 - 1;
+        temp$33 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>(inwd, 1, temp$32);
+        goto label29;
+
+     label22:
+        nop;
+        temp$34 = inwd;
+        temp$35 = 1;
+        temp$36 = temp$34[temp$35];
+        temp$37 = (int) temp$36;
+        if temp$37 == 72 goto label23;
+
+        goto label24;
+
+     label23:
+        nop;
+        temp$38 = lengthof inwd;
+        temp$39 = temp$38 - 1;
+        temp$40 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>(inwd, 1, temp$39);
+        virtualinvoke local.<java.lang.StringBuilder: void setCharAt(int,char)>(0, 87);
+        goto label25;
+
+     label24:
+        nop;
+        temp$41 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>(inwd);
+
+     label25:
+        nop;
+        goto label29;
+
+     label26:
+        nop;
+        temp$42 = inwd;
+        temp$43 = 0;
+        temp$44 = 83;
+        temp$42[temp$43] = temp$44;
+        temp$45 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>(inwd);
+        goto label29;
+
+     label27:
+        nop;
+        temp$46 = virtualinvoke local.<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>(inwd);
+        goto label29;
+
+     label28:
+        nop;
+        temp$47 = inwd;
+        temp$48 = 0;
+        temp$49 = temp$47[temp$48];
+        nop;
+        lookupswitch(temp$49)
+        {
+            case 65: goto label16;
+            case 71: goto label11;
+            case 75: goto label10;
+            case 80: goto label12;
+            case 87: goto label20;
+            case 88: goto label26;
+            default: goto label27;
+        };
+
+     label29:
+        nop;
+        temp$50 = virtualinvoke local.<java.lang.StringBuilder: int length()>();
+        wdsz = temp$50;
+        n = 0;
+
+     label30:
+        nop;
+        temp$51 = virtualinvoke code.<java.lang.StringBuilder: int length()>();
+        temp$52 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: int getMaxCodeLen()>();
+        if temp$51 < temp$52 goto label31;
+
+        goto label148;
+
+     label31:
+        nop;
+        if n < wdsz goto label32;
+
+        goto label148;
+
+        goto label32;
+
+     label32:
+        nop;
+        temp$53 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(n);
+        symb = temp$53;
+        temp$54 = (int) symb;
+        if temp$54 != 67 goto label33;
+
+        goto label35;
+
+     label33:
+        nop;
+        temp$55 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, symb);
+        if temp$55 == 0 goto label35;
+
+        goto label34;
+
+        goto label34;
+
+     label34:
+        nop;
+        temp$56 = n;
+        temp$57 = temp$56 + 1;
+        n = temp$57;
+        goto label145;
+
+     label35:
+        nop;
+        goto label143;
+
+     label36:
+        nop;
+
+     label37:
+        nop;
+
+     label38:
+        nop;
+
+     label39:
+        nop;
+
+     label40:
+        nop;
+        if n == 0 goto label41;
+
+        goto label42;
+
+     label41:
+        nop;
+        temp$58 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+
+     label42:
+        nop;
+        goto label144;
+
+     label43:
+        nop;
+        temp$59 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, 77);
+        if temp$59 == 0 goto label46;
+
+        goto label44;
+
+     label44:
+        nop;
+        temp$60 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$60 == 0 goto label46;
+
+        goto label45;
+
+        goto label45;
+
+     label45:
+        nop;
+        goto label144;
+
+     label46:
+        nop;
+        temp$61 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+        goto label144;
+
+     label47:
+        nop;
+        temp$62 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, 83);
+        if temp$62 == 0 goto label51;
+
+        goto label48;
+
+     label48:
+        nop;
+        temp$63 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$63 == 0 goto label49;
+
+        goto label51;
+
+        goto label49;
+
+     label49:
+        nop;
+        temp$64 = <org.apache.commons.codec.language.Metaphone: java.lang.String FRONTV>;
+        temp$65 = n;
+        temp$66 = temp$65 + 1;
+        temp$67 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(temp$66);
+        temp$68 = (int) temp$67;
+        temp$69 = virtualinvoke temp$64.<java.lang.String: int indexOf(int)>(temp$68);
+        if temp$69 >= 0 goto label50;
+
+        goto label51;
+
+        goto label50;
+
+     label50:
+        nop;
+        goto label144;
+
+     label51:
+        nop;
+        temp$70 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "CIA");
+        if temp$70 == 0 goto label53;
+
+        goto label52;
+
+     label52:
+        nop;
+        temp$71 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(88);
+        goto label144;
+
+     label53:
+        nop;
+        temp$72 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$72 == 0 goto label54;
+
+        goto label56;
+
+     label54:
+        nop;
+        temp$73 = <org.apache.commons.codec.language.Metaphone: java.lang.String FRONTV>;
+        temp$74 = n;
+        temp$75 = temp$74 + 1;
+        temp$76 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(temp$75);
+        temp$77 = (int) temp$76;
+        temp$78 = virtualinvoke temp$73.<java.lang.String: int indexOf(int)>(temp$77);
+        if temp$78 >= 0 goto label55;
+
+        goto label56;
+
+        goto label55;
+
+     label55:
+        nop;
+        temp$79 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(83);
+        goto label144;
+
+     label56:
+        nop;
+        temp$80 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, 83);
+        if temp$80 == 0 goto label59;
+
+        goto label57;
+
+     label57:
+        nop;
+        temp$81 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 72);
+        if temp$81 == 0 goto label59;
+
+        goto label58;
+
+        goto label58;
+
+     label58:
+        nop;
+        temp$82 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+        goto label144;
+
+     label59:
+        nop;
+        temp$83 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 72);
+        if temp$83 == 0 goto label66;
+
+        goto label60;
+
+     label60:
+        nop;
+        if n == 0 goto label61;
+
+        goto label64;
+
+     label61:
+        nop;
+        if wdsz >= 3 goto label62;
+
+        goto label64;
+
+        goto label62;
+
+     label62:
+        nop;
+        temp$84 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isVowel(java.lang.StringBuilder,int)>(local, 2);
+        if temp$84 == 0 goto label64;
+
+        goto label63;
+
+        goto label63;
+
+     label63:
+        nop;
+        temp$85 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+        goto label65;
+
+     label64:
+        nop;
+        temp$86 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(88);
+
+     label65:
+        nop;
+        goto label67;
+
+     label66:
+        nop;
+        temp$87 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+
+     label67:
+        nop;
+        goto label144;
+
+     label68:
+        nop;
+        temp$88 = n;
+        temp$89 = temp$88 + 1;
+        temp$90 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, temp$89);
+        if temp$90 == 0 goto label69;
+
+        goto label72;
+
+     label69:
+        nop;
+        temp$91 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 71);
+        if temp$91 == 0 goto label72;
+
+        goto label70;
+
+        goto label70;
+
+     label70:
+        nop;
+        temp$92 = <org.apache.commons.codec.language.Metaphone: java.lang.String FRONTV>;
+        temp$93 = n;
+        temp$94 = temp$93 + 2;
+        temp$95 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(temp$94);
+        temp$96 = (int) temp$95;
+        temp$97 = virtualinvoke temp$92.<java.lang.String: int indexOf(int)>(temp$96);
+        if temp$97 >= 0 goto label71;
+
+        goto label72;
+
+        goto label71;
+
+     label71:
+        nop;
+        temp$98 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(74);
+        temp$99 = n;
+        temp$100 = temp$99 + 2;
+        n = temp$100;
+        goto label73;
+
+     label72:
+        nop;
+        temp$101 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(84);
+
+     label73:
+        nop;
+        goto label144;
+
+     label74:
+        nop;
+        temp$102 = n;
+        temp$103 = temp$102 + 1;
+        temp$104 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, temp$103);
+        if temp$104 == 0 goto label77;
+
+        goto label75;
+
+     label75:
+        nop;
+        temp$105 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 72);
+        if temp$105 == 0 goto label77;
+
+        goto label76;
+
+        goto label76;
+
+     label76:
+        nop;
+        goto label144;
+
+     label77:
+        nop;
+        temp$106 = n;
+        temp$107 = temp$106 + 1;
+        temp$108 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, temp$107);
+        if temp$108 == 0 goto label78;
+
+        goto label81;
+
+     label78:
+        nop;
+        temp$109 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 72);
+        if temp$109 == 0 goto label81;
+
+        goto label79;
+
+        goto label79;
+
+     label79:
+        nop;
+        temp$110 = n;
+        temp$111 = temp$110 + 2;
+        temp$112 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isVowel(java.lang.StringBuilder,int)>(local, temp$111);
+        if temp$112 == 0 goto label80;
+
+        goto label81;
+
+        goto label80;
+
+     label80:
+        nop;
+        goto label144;
+
+     label81:
+        nop;
+        if n > 0 goto label82;
+
+        goto label85;
+
+     label82:
+        nop;
+        temp$113 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "GN");
+        if temp$113 == 0 goto label83;
+
+        goto label84;
+
+     label83:
+        nop;
+        temp$114 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "GNED");
+        if temp$114 == 0 goto label85;
+
+        goto label84;
+
+        goto label85;
+
+        goto label84;
+
+     label84:
+        nop;
+        goto label144;
+
+     label85:
+        nop;
+        temp$115 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, 71);
+        if temp$115 == 0 goto label87;
+
+        goto label86;
+
+     label86:
+        nop;
+        temp$116 = 1;
+        hard = temp$116;
+        goto label88;
+
+     label87:
+        nop;
+        temp$117 = 0;
+        hard = temp$117;
+
+     label88:
+        nop;
+        temp$118 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$118 == 0 goto label89;
+
+        goto label92;
+
+     label89:
+        nop;
+        temp$119 = <org.apache.commons.codec.language.Metaphone: java.lang.String FRONTV>;
+        temp$120 = n;
+        temp$121 = temp$120 + 1;
+        temp$122 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(temp$121);
+        temp$123 = (int) temp$122;
+        temp$124 = virtualinvoke temp$119.<java.lang.String: int indexOf(int)>(temp$123);
+        if temp$124 >= 0 goto label90;
+
+        goto label92;
+
+        goto label90;
+
+     label90:
+        nop;
+        if hard == 0 goto label91;
+
+        goto label92;
+
+        goto label91;
+
+     label91:
+        nop;
+        temp$125 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(74);
+        goto label93;
+
+     label92:
+        nop;
+        temp$126 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+
+     label93:
+        nop;
+        goto label144;
+
+     label94:
+        nop;
+        temp$127 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$127 == 0 goto label96;
+
+        goto label95;
+
+     label95:
+        nop;
+        goto label144;
+
+     label96:
+        nop;
+        if n > 0 goto label97;
+
+        goto label99;
+
+     label97:
+        nop;
+        temp$128 = <org.apache.commons.codec.language.Metaphone: java.lang.String VARSON>;
+        temp$129 = n - 1;
+        temp$130 = virtualinvoke local.<java.lang.StringBuilder: char charAt(int)>(temp$129);
+        temp$131 = (int) temp$130;
+        temp$132 = virtualinvoke temp$128.<java.lang.String: int indexOf(int)>(temp$131);
+        if temp$132 >= 0 goto label98;
+
+        goto label99;
+
+        goto label98;
+
+     label98:
+        nop;
+        goto label144;
+
+     label99:
+        nop;
+        temp$133 = n;
+        temp$134 = temp$133 + 1;
+        temp$135 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isVowel(java.lang.StringBuilder,int)>(local, temp$134);
+        if temp$135 == 0 goto label101;
+
+        goto label100;
+
+     label100:
+        nop;
+        temp$136 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(72);
+
+     label101:
+        nop;
+        goto label144;
+
+     label102:
+        nop;
+
+     label103:
+        nop;
+
+     label104:
+        nop;
+
+     label105:
+        nop;
+
+     label106:
+        nop;
+
+     label107:
+        nop;
+        temp$137 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+        goto label144;
+
+     label108:
+        nop;
+        if n > 0 goto label109;
+
+        goto label112;
+
+     label109:
+        nop;
+        temp$138 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isPreviousChar(java.lang.StringBuilder,int,char)>(local, n, 67);
+        if temp$138 == 0 goto label110;
+
+        goto label111;
+
+     label110:
+        nop;
+        temp$139 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+
+     label111:
+        nop;
+        goto label113;
+
+     label112:
+        nop;
+        temp$140 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+
+     label113:
+        nop;
+        goto label144;
+
+     label114:
+        nop;
+        temp$141 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isNextChar(java.lang.StringBuilder,int,char)>(local, n, 72);
+        if temp$141 == 0 goto label116;
+
+        goto label115;
+
+     label115:
+        nop;
+        temp$142 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(70);
+        goto label117;
+
+     label116:
+        nop;
+        temp$143 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+
+     label117:
+        nop;
+        goto label144;
+
+     label118:
+        nop;
+        temp$144 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+        goto label144;
+
+     label119:
+        nop;
+        temp$145 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "SH");
+        if temp$145 == 0 goto label120;
+
+        goto label122;
+
+     label120:
+        nop;
+        temp$146 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "SIO");
+        if temp$146 == 0 goto label121;
+
+        goto label122;
+
+        goto label121;
+
+     label121:
+        nop;
+        temp$147 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "SIA");
+        if temp$147 == 0 goto label123;
+
+        goto label122;
+
+        goto label123;
+
+     label122:
+        nop;
+        temp$148 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(88);
+        goto label124;
+
+     label123:
+        nop;
+        temp$149 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(83);
+
+     label124:
+        nop;
+        goto label144;
+
+     label125:
+        nop;
+        temp$150 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "TIA");
+        if temp$150 == 0 goto label126;
+
+        goto label127;
+
+     label126:
+        nop;
+        temp$151 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "TIO");
+        if temp$151 == 0 goto label128;
+
+        goto label127;
+
+        goto label128;
+
+     label127:
+        nop;
+        temp$152 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(88);
+        goto label144;
+
+     label128:
+        nop;
+        temp$153 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "TCH");
+        if temp$153 == 0 goto label130;
+
+        goto label129;
+
+     label129:
+        nop;
+        goto label144;
+
+     label130:
+        nop;
+        temp$154 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean regionMatch(java.lang.StringBuilder,int,java.lang.String)>(local, n, "TH");
+        if temp$154 == 0 goto label132;
+
+        goto label131;
+
+     label131:
+        nop;
+        temp$155 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(48);
+        goto label133;
+
+     label132:
+        nop;
+        temp$156 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(84);
+
+     label133:
+        nop;
+        goto label144;
+
+     label134:
+        nop;
+        temp$157 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(70);
+        goto label144;
+
+     label135:
+        nop;
+
+     label136:
+        nop;
+        temp$158 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isLastChar(int,int)>(wdsz, n);
+        if temp$158 == 0 goto label137;
+
+        goto label139;
+
+     label137:
+        nop;
+        temp$159 = n;
+        temp$160 = temp$159 + 1;
+        temp$161 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: boolean isVowel(java.lang.StringBuilder,int)>(local, temp$160);
+        if temp$161 == 0 goto label139;
+
+        goto label138;
+
+        goto label138;
+
+     label138:
+        nop;
+        temp$162 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(symb);
+
+     label139:
+        nop;
+        goto label144;
+
+     label140:
+        nop;
+        temp$163 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(75);
+        temp$164 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(83);
+        goto label144;
+
+     label141:
+        nop;
+        temp$165 = virtualinvoke code.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(83);
+        goto label144;
+
+     label142:
+        nop;
+        goto label144;
+
+        goto label144;
+
+     label143:
+        nop;
+        nop;
+        tableswitch(symb)
+        {
+            case 65: goto label36;
+            case 66: goto label43;
+            case 67: goto label47;
+            case 68: goto label68;
+            case 69: goto label37;
+            case 70: goto label102;
+            case 71: goto label74;
+            case 72: goto label94;
+            case 73: goto label38;
+            case 74: goto label103;
+            case 75: goto label108;
+            case 76: goto label104;
+            case 77: goto label105;
+            case 78: goto label106;
+            case 79: goto label39;
+            case 80: goto label114;
+            case 81: goto label118;
+            case 82: goto label107;
+            case 83: goto label119;
+            case 84: goto label125;
+            case 85: goto label40;
+            case 86: goto label134;
+            case 87: goto label135;
+            case 88: goto label140;
+            case 89: goto label136;
+            case 90: goto label141;
+            default: goto label142;
+        };
+
+     label144:
+        nop;
+        temp$166 = n;
+        temp$167 = temp$166 + 1;
+        n = temp$167;
+
+     label145:
+        nop;
+        temp$168 = virtualinvoke code.<java.lang.StringBuilder: int length()>();
+        temp$169 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: int getMaxCodeLen()>();
+        if temp$168 > temp$169 goto label146;
+
+        goto label147;
+
+     label146:
+        nop;
+        temp$170 = virtualinvoke this.<org.apache.commons.codec.language.Metaphone: int getMaxCodeLen()>();
+        virtualinvoke code.<java.lang.StringBuilder: void setLength(int)>(temp$170);
+
+     label147:
+        nop;
+        goto label30;
+
+     label148:
+        nop;
+        temp$171 = virtualinvoke code.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$171;
+    }
+}

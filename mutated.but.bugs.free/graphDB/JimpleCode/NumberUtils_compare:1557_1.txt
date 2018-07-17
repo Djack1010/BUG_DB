@@ -1,0 +1,37 @@
+public class WrapClass 
+{
+    public static int compare(long, long)
+    {
+        long x, y;
+        int temp$0, temp$1, temp$2, temp$3, temp$4;
+
+        x := @parameter0: long;
+        y := @parameter1: long;
+        temp$0 = x cmp y;
+        if temp$0 != 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = x cmp y;
+        if temp$2 > 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = -1;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = 1;
+        return temp$4;
+    }
+}

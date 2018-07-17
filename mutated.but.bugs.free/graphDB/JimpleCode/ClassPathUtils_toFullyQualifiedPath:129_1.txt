@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public static java.lang.String toFullyQualifiedPath(java.lang.Package, java.lang.String)
+    {
+        java.lang.Package context;
+        java.lang.String resourceName, temp$2, temp$4, temp$5, temp$9;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.StringBuilder sb, temp$3, temp$6, temp$7, temp$8;
+
+        context := @parameter0: java.lang.Package;
+        resourceName := @parameter1: java.lang.String;
+        temp$0 = newarray (java.lang.Object)[1];
+        temp$0[0] = "resourceName";
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(resourceName, "Parameter \'%s\' must not be null!", temp$0);
+        temp$2 = (java.lang.String) temp$1;
+        temp$3 = new java.lang.StringBuilder;
+        specialinvoke temp$3.<java.lang.StringBuilder: void <init>()>();
+        sb = temp$3;
+        temp$4 = virtualinvoke context.<java.lang.Package: java.lang.String getName()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.String: java.lang.String replace(char,char)>(46, 47);
+        temp$6 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$5);
+        temp$7 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+        temp$8 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(resourceName);
+        temp$9 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$9;
+    }
+}

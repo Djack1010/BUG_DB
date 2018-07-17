@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public static java.lang.Class getClass(java.lang.String, boolean) throws java.lang.ClassNotFoundException
+    {
+        java.lang.String className;
+        boolean initialize;
+        java.lang.ClassLoader contextCL, loader, temp$0, temp$4;
+        java.lang.Class temp$1, temp$2, temp$3, temp$5;
+
+        className := @parameter0: java.lang.String;
+        initialize := @parameter1: boolean;
+        contextCL = null;
+        if contextCL == null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ClassUtils: java.lang.Class class$org$apache$commons$lang3$ClassUtils>;
+        if temp$2 != null goto label1;
+
+        temp$3 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class class$(java.lang.String)>("org.apache.commons.lang3.ClassUtils");
+        <org.apache.commons.lang3.ClassUtils: java.lang.Class class$org$apache$commons$lang3$ClassUtils> = temp$3;
+        temp$1 = temp$3;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ClassUtils: java.lang.Class class$org$apache$commons$lang3$ClassUtils>;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke temp$1.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+        temp$0 = temp$4;
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = contextCL;
+
+     label4:
+        nop;
+        loader = temp$0;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class getClass(java.lang.ClassLoader,java.lang.String,boolean)>(loader, className, initialize);
+        return temp$5;
+    }
+}

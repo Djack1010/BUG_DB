@@ -1,0 +1,119 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object mode(java.lang.Object[])
+    {
+        java.lang.Object[] items;
+        boolean temp$0, temp$14;
+        java.util.HashMap occurrences, temp$1;
+        int temp$2, temp$3, temp$4, max, 'cmp', temp$18;
+        java.lang.Object t, temp$5, temp$6, temp$9, result, temp$15, temp$16, temp$19, temp$20, temp$21;
+        org.apache.commons.lang3.mutable.MutableInt count, temp$7, temp$8, temp$10, temp$17;
+        java.util.Set temp$11, temp$12;
+        java.util.Iterator temp$13;
+        java.util.Map$Entry e;
+
+        items := @parameter0: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isNotEmpty(java.lang.Object[])>(items);
+        if temp$0 == 0 goto label13;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = new java.util.HashMap;
+        temp$2 = lengthof items;
+        specialinvoke temp$1.<java.util.HashMap: void <init>(int)>(temp$2);
+        occurrences = temp$1;
+        temp$3 = 0;
+
+     label1:
+        nop;
+        temp$4 = lengthof items;
+        if temp$3 >= temp$4 goto label5;
+
+        temp$5 = items[temp$3];
+        t = temp$5;
+        temp$6 = virtualinvoke occurrences.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(t);
+        temp$7 = (org.apache.commons.lang3.mutable.MutableInt) temp$6;
+        count = temp$7;
+        if count == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$8 = new org.apache.commons.lang3.mutable.MutableInt;
+        specialinvoke temp$8.<org.apache.commons.lang3.mutable.MutableInt: void <init>(int)>(1);
+        temp$9 = virtualinvoke occurrences.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(t, temp$8);
+        temp$10 = (org.apache.commons.lang3.mutable.MutableInt) temp$9;
+        goto label4;
+
+     label3:
+        nop;
+        virtualinvoke count.<org.apache.commons.lang3.mutable.MutableInt: void increment()>();
+
+     label4:
+        nop;
+        nop;
+        temp$3 = temp$3 + 1;
+        goto label1;
+
+     label5:
+        nop;
+        result = null;
+        max = 1;
+        temp$11 = virtualinvoke occurrences.<java.util.HashMap: java.util.Set entrySet()>();
+        temp$12 = (java.util.Set) temp$11;
+        temp$13 = interfaceinvoke temp$12.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label6:
+        nop;
+        temp$14 = interfaceinvoke temp$13.<java.util.Iterator: boolean hasNext()>();
+        if temp$14 == 0 goto label12;
+
+        temp$15 = interfaceinvoke temp$13.<java.util.Iterator: java.lang.Object next()>();
+        e = (java.util.Map$Entry) temp$15;
+        temp$16 = interfaceinvoke e.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$17 = (org.apache.commons.lang3.mutable.MutableInt) temp$16;
+        temp$18 = virtualinvoke temp$17.<org.apache.commons.lang3.mutable.MutableInt: int intValue()>();
+        'cmp' = temp$18;
+        if 'cmp' == max goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$19 = null;
+        result = temp$19;
+        goto label11;
+
+     label8:
+        nop;
+        if 'cmp' > max goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        max = 'cmp';
+        temp$20 = interfaceinvoke e.<java.util.Map$Entry: java.lang.Object getKey()>();
+        result = temp$20;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        nop;
+        goto label6;
+
+     label12:
+        nop;
+        return result;
+
+     label13:
+        nop;
+        temp$21 = null;
+        return temp$21;
+    }
+}

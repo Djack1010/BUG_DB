@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    private static final java.lang.String toCanonicalName(java.lang.String)
+    {
+        java.lang.String className, temp$0, temp$6, abbreviation, temp$10, temp$15;
+        boolean temp$1, temp$3;
+        java.lang.StringBuilder classNameBuffer, temp$2, temp$7, temp$11, temp$12, temp$13, temp$14;
+        int temp$4, temp$5;
+        java.util.Map temp$8;
+        java.lang.Object temp$9;
+
+        className := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String deleteWhitespace(java.lang.String)>(className);
+        className = temp$0;
+        temp$1 = virtualinvoke className.<java.lang.String: boolean endsWith(java.lang.String)>("[]");
+        if temp$1 == 0 goto label7;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.StringBuilder;
+        specialinvoke temp$2.<java.lang.StringBuilder: void <init>()>();
+        classNameBuffer = temp$2;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke className.<java.lang.String: boolean endsWith(java.lang.String)>("[]");
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke className.<java.lang.String: int length()>();
+        temp$5 = temp$4 - 2;
+        temp$6 = virtualinvoke className.<java.lang.String: java.lang.String substring(int,int)>(0, temp$5);
+        className = temp$6;
+        temp$7 = virtualinvoke classNameBuffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[");
+        goto label1;
+
+     label3:
+        nop;
+        temp$8 = <org.apache.commons.lang3.ClassUtils: java.util.Map abbreviationMap>;
+        temp$9 = interfaceinvoke temp$8.<java.util.Map: java.lang.Object get(java.lang.Object)>(className);
+        temp$10 = (java.lang.String) temp$9;
+        abbreviation = temp$10;
+        if abbreviation != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$11 = virtualinvoke classNameBuffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(abbreviation);
+        goto label6;
+
+     label5:
+        nop;
+        temp$12 = virtualinvoke classNameBuffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("L");
+        temp$13 = virtualinvoke temp$12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(className);
+        temp$14 = virtualinvoke temp$13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(";");
+
+     label6:
+        nop;
+        temp$15 = virtualinvoke classNameBuffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        className = temp$15;
+
+     label7:
+        nop;
+        return className;
+    }
+}

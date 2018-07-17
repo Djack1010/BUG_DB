@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendWithSeparators(java.lang.Object[], java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$4, temp$6, temp$10;
+        java.lang.Object[] array, temp$1, temp$7;
+        java.lang.String separator, sep, temp$0;
+        int temp$2, i, temp$5, temp$8, temp$11, temp$12;
+        java.lang.Object temp$3, temp$9;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        array := @parameter0: java.lang.Object[];
+        separator := @parameter1: java.lang.String;
+        if array != null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.String toString(java.lang.Object)>(separator);
+        sep = temp$0;
+        temp$1 = array;
+        temp$2 = 0;
+        temp$3 = temp$1[temp$2];
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.Object)>(temp$3);
+        i = 1;
+
+     label1:
+        nop;
+        temp$5 = lengthof array;
+        if i < temp$5 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(sep);
+        temp$7 = array;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.Object)>(temp$9);
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return this;
+    }
+}

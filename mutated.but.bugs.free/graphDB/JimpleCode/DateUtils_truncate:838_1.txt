@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public static java.util.Calendar truncate(java.util.Calendar, int)
+    {
+        java.util.Calendar date, truncated;
+        int field;
+        java.lang.Object temp$0;
+        org.apache.commons.lang3.time.DateUtils$ModifyType temp$1;
+
+        date := @parameter0: java.util.Calendar;
+        field := @parameter1: int;
+        temp$0 = virtualinvoke date.<java.util.Calendar: java.lang.Object clone()>();
+        truncated = (java.util.Calendar) temp$0;
+        temp$1 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType TRUNCATE>;
+        staticinvoke <org.apache.commons.lang3.time.DateUtils: void modify(java.util.Calendar,int,org.apache.commons.lang3.time.DateUtils$ModifyType)>(truncated, field, temp$1);
+        return truncated;
+    }
+}

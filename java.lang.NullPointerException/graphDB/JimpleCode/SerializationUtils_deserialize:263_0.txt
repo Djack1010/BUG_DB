@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public static java.lang.Object deserialize(byte[])
+    {
+        byte[] objectData;
+        java.lang.IllegalArgumentException temp$0;
+        java.io.ByteArrayInputStream temp$1;
+        java.lang.Object temp$2;
+
+        objectData := @parameter0: byte[];
+        if objectData == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The byte[] must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.io.ByteArrayInputStream;
+        specialinvoke temp$1.<java.io.ByteArrayInputStream: void <init>(byte[])>(objectData);
+        temp$2 = staticinvoke <org.apache.commons.lang3.SerializationUtils: java.lang.Object deserialize(java.io.InputStream)>(temp$1);
+        return temp$2;
+    }
+}

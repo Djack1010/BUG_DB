@@ -1,0 +1,101 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, char[], int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1, temp$13;
+        int index, offset, length, temp$5, temp$6, temp$7, temp$11, temp$12, temp$16, temp$17, temp$18, temp$19, temp$21, temp$22;
+        char[] chars, temp$14, temp$15, temp$20;
+        java.lang.String temp$0, temp$4, temp$10;
+        java.lang.StringIndexOutOfBoundsException temp$2, temp$8;
+        java.lang.StringBuffer temp$3, temp$9;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        chars := @parameter1: char[];
+        offset := @parameter2: int;
+        length := @parameter3: int;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void validateIndex(int)>(index);
+        if chars == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder insert(int,java.lang.String)>(index, temp$0);
+        return temp$1;
+
+     label1:
+        nop;
+        if offset < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.StringIndexOutOfBoundsException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid offset: ");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(offset);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+
+     label3:
+        nop;
+        if length < 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = offset;
+        temp$6 = temp$5 + length;
+        temp$7 = lengthof chars;
+        if temp$6 > temp$7 goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$8 = new java.lang.StringIndexOutOfBoundsException;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid length: ");
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$10 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$8.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$10);
+        throw temp$8;
+
+     label6:
+        nop;
+        if length > 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$11 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$12 = temp$11 + length;
+        temp$13 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$12);
+        temp$14 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$15 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$16 = index;
+        temp$17 = temp$16 + length;
+        temp$18 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$19 = temp$18 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$14, index, temp$15, temp$17, temp$19);
+        temp$20 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(chars, offset, temp$20, index, length);
+        temp$21 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$22 = temp$21 + length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$22;
+
+     label8:
+        nop;
+        return this;
+    }
+}

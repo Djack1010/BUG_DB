@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public void suspend()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$State temp$0, temp$1, temp$4;
+        java.lang.IllegalStateException temp$2;
+        long temp$3;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        if temp$0 != temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.IllegalStateException;
+        specialinvoke temp$2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Stopwatch must be running to suspend. ");
+        throw temp$2;
+
+     label1:
+        nop;
+        temp$3 = staticinvoke <java.lang.System: long nanoTime()>();
+        this.<org.apache.commons.lang3.time.StopWatch: long stopTime> = temp$3;
+        temp$4 = null;
+        this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState> = temp$4;
+        return;
+    }
+}

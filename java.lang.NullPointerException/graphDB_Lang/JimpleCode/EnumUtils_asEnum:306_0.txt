@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    private static final java.lang.Class asEnum(java.lang.Class)
+    {
+        java.lang.Class enumClass, temp$2;
+        java.lang.Object[] temp$0, temp$4;
+        java.lang.Object temp$1;
+        boolean temp$3;
+
+        enumClass := @parameter0: java.lang.Class;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(enumClass, "EnumClass must be defined.", temp$0);
+        temp$2 = (java.lang.Class) temp$1;
+        temp$3 = virtualinvoke enumClass.<java.lang.Class: boolean isEnum()>();
+        temp$4 = newarray (java.lang.Object)[1];
+        temp$4[0] = enumClass;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$3, "%s does not seem to be an Enum type", temp$4);
+        return enumClass;
+    }
+}

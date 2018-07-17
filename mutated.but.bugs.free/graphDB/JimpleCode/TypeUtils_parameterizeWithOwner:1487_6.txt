@@ -1,0 +1,110 @@
+public class WrapClass 
+{
+    public static final transient java.lang.reflect.ParameterizedType parameterizeWithOwner(java.lang.reflect.Type, java.lang.Class, java.lang.reflect.Type[])
+    {
+        java.lang.reflect.Type owner, useOwner, temp$3;
+        java.lang.Class raw, temp$0, temp$4, temp$5;
+        java.lang.reflect.Type[] typeArguments, temp$10;
+        boolean temp$1, temp$6, temp$15;
+        java.lang.Object[] temp$2, temp$7, temp$8, temp$9, temp$16;
+        java.lang.reflect.TypeVariable[] temp$11, temp$12, temp$17, temp$18;
+        int temp$13, temp$14, temp$19, temp$21;
+        java.lang.Integer temp$20, temp$22;
+        org.apache.commons.lang3.reflect.TypeUtils$ParameterizedTypeImpl temp$23;
+
+        owner := @parameter0: java.lang.reflect.Type;
+        raw := @parameter1: java.lang.Class;
+        typeArguments := @parameter2: java.lang.reflect.Type[];
+        temp$0 = virtualinvoke raw.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if temp$0 == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        if owner == null goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        temp$2 = newarray (java.lang.Object)[1];
+        temp$2[0] = raw;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "no owner allowed for top-level %s", temp$2);
+        temp$3 = null;
+        useOwner = temp$3;
+        goto label8;
+
+     label4:
+        nop;
+        if owner == null goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke raw.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        useOwner = temp$4;
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = virtualinvoke raw.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.Class)>(owner, temp$5);
+        temp$7 = newarray (java.lang.Object)[2];
+        temp$7[0] = owner;
+        temp$7[1] = raw;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$6, "%s is invalid owner type for parameterized %s", temp$7);
+        useOwner = owner;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+        temp$8 = newarray (java.lang.Object)[0];
+        temp$9 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] noNullElements(java.lang.Object[],java.lang.String,java.lang.Object[])>(typeArguments, "null type argument at index %s", temp$8);
+        temp$10 = (java.lang.reflect.Type[]) temp$9;
+        temp$11 = virtualinvoke raw.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$12 = (java.lang.reflect.TypeVariable[]) temp$11;
+        temp$13 = lengthof temp$12;
+        temp$14 = lengthof typeArguments;
+        if temp$13 == temp$14 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$15 = 0;
+        goto label11;
+
+     label10:
+        nop;
+        temp$15 = 1;
+
+     label11:
+        nop;
+        temp$16 = newarray (java.lang.Object)[2];
+        temp$17 = virtualinvoke raw.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$18 = (java.lang.reflect.TypeVariable[]) temp$17;
+        temp$19 = lengthof temp$18;
+        temp$20 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$19);
+        temp$16[0] = temp$20;
+        temp$21 = lengthof typeArguments;
+        temp$22 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$21);
+        temp$16[1] = temp$22;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$15, "invalid number of type parameters specified: expected %s, got %s", temp$16);
+        temp$23 = new org.apache.commons.lang3.reflect.TypeUtils$ParameterizedTypeImpl;
+        specialinvoke temp$23.<org.apache.commons.lang3.reflect.TypeUtils$ParameterizedTypeImpl: void <init>(java.lang.Class,java.lang.reflect.Type,java.lang.reflect.Type[],org.apache.commons.lang3.reflect.TypeUtils$ParameterizedTypeImpl$2)>(raw, useOwner, typeArguments, null);
+        return temp$23;
+    }
+}

@@ -1,0 +1,97 @@
+public class WrapClass 
+{
+    public static byte[] fromAscii(byte[])
+    {
+        byte[] ascii, temp$1, l_raw, temp$9, temp$14;
+        boolean temp$0;
+        int temp$2, temp$3, ii, jj, temp$4, temp$5, temp$6, bits, temp$8, temp$10, temp$11, temp$13, temp$15, temp$17, temp$19, temp$20, temp$21, temp$23, temp$24, temp$25, temp$26, temp$27;
+        int[] temp$7, temp$18;
+        byte temp$12, temp$16, temp$22;
+
+        ascii := @parameter0: byte[];
+        temp$0 = staticinvoke <org.apache.commons.codec.binary.BinaryCodec: boolean isEmpty(byte[])>(ascii);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.codec.binary.BinaryCodec: byte[] EMPTY_BYTE_ARRAY>;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = lengthof ascii;
+        temp$3 = temp$2 >> 3;
+        l_raw = newarray (byte)[temp$3];
+        ii = 0;
+        temp$4 = lengthof ascii;
+        temp$5 = temp$4 - 1;
+        jj = temp$5;
+
+     label2:
+        nop;
+        temp$6 = lengthof l_raw;
+        if ii <= temp$6 goto label3;
+
+        goto label9;
+
+     label3:
+        nop;
+        bits = 0;
+
+     label4:
+        nop;
+        temp$7 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$8 = lengthof temp$7;
+        if bits < temp$8 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$9 = ascii;
+        temp$10 = jj - bits;
+        temp$11 = temp$10;
+        temp$12 = temp$9[temp$11];
+        temp$13 = (int) temp$12;
+        if temp$13 == 49 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$14 = l_raw;
+        temp$15 = ii;
+        temp$16 = temp$14[temp$15];
+        temp$17 = (int) temp$16;
+        temp$18 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$19 = bits;
+        temp$20 = temp$18[temp$19];
+        temp$21 = temp$17 | temp$20;
+        temp$22 = (byte) temp$21;
+        temp$14[temp$15] = temp$22;
+
+     label7:
+        nop;
+        nop;
+        temp$23 = bits + 1;
+        bits = temp$23;
+        goto label4;
+
+     label8:
+        nop;
+        nop;
+        temp$24 = ii;
+        temp$25 = temp$24 + 1;
+        ii = temp$25;
+        temp$26 = jj;
+        temp$27 = temp$26 - 8;
+        jj = temp$27;
+        goto label2;
+
+     label9:
+        nop;
+        return l_raw;
+    }
+}

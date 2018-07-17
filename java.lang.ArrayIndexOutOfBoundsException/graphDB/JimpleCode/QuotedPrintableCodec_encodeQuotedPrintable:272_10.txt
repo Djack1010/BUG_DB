@@ -1,0 +1,301 @@
+public class WrapClass 
+{
+    public static final byte[] encodeQuotedPrintable(java.util.BitSet, byte[], boolean)
+    {
+        java.util.BitSet printable, temp$1;
+        byte[] bytes, temp$0, temp$46;
+        boolean strict, temp$7, temp$8, temp$11, temp$12, temp$13, encode, temp$21, temp$22, temp$23, temp$31, temp$34, temp$35, temp$44;
+        java.io.ByteArrayOutputStream buffer, temp$2;
+        int pos, i, temp$3, temp$4, b, temp$5, temp$6, temp$9, temp$10, temp$14, temp$15, temp$16, temp$17, b, temp$18, temp$19, temp$20, temp$24, temp$25, temp$26, i, temp$27, temp$28, temp$29, temp$30, temp$32, temp$33, temp$36, temp$37, temp$38, temp$39, temp$40, b, temp$42, temp$43, temp$45;
+        byte c, temp$41;
+
+        printable := @parameter0: java.util.BitSet;
+        bytes := @parameter1: byte[];
+        strict := @parameter2: boolean;
+        if bytes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if printable == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.codec.net.QuotedPrintableCodec: java.util.BitSet PRINTABLE_CHARS>;
+        printable = temp$1;
+
+     label3:
+        nop;
+        temp$2 = new java.io.ByteArrayOutputStream;
+        specialinvoke temp$2.<java.io.ByteArrayOutputStream: void <init>()>();
+        buffer = temp$2;
+        if strict == 0 goto label33;
+
+        goto label4;
+
+     label4:
+        nop;
+        pos = 1;
+        i = 0;
+
+     label5:
+        nop;
+        temp$3 = lengthof bytes;
+        temp$4 = temp$3 - 3;
+        if i < temp$4 goto label6;
+
+        goto label17;
+
+     label6:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int getUnsignedOctet(int,byte[])>(i, bytes);
+        b = temp$5;
+        if pos < 73 goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        temp$6 = pos;
+        temp$7 = virtualinvoke printable.<java.util.BitSet: boolean get(int)>(b);
+        if temp$7 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$8 = 0;
+        goto label10;
+
+     label9:
+        nop;
+        temp$8 = 1;
+
+     label10:
+        nop;
+        temp$9 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int encodeByte(int,boolean,java.io.ByteArrayOutputStream)>(b, temp$8, buffer);
+        temp$10 = temp$6 + temp$9;
+        pos = temp$10;
+        goto label16;
+
+     label11:
+        nop;
+        temp$11 = virtualinvoke printable.<java.util.BitSet: boolean get(int)>(b);
+        if temp$11 == 0 goto label14;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$12 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: boolean isWhitespace(int)>(b);
+        if temp$12 == 0 goto label13;
+
+        goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$13 = 0;
+        goto label15;
+
+     label14:
+        nop;
+        temp$13 = 1;
+
+     label15:
+        nop;
+        temp$14 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int encodeByte(int,boolean,java.io.ByteArrayOutputStream)>(b, temp$13, buffer);
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(61);
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(13);
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(10);
+        temp$15 = 1;
+        pos = temp$15;
+
+     label16:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label5;
+
+     label17:
+        nop;
+        temp$18 = lengthof bytes;
+        temp$19 = temp$18 + 3;
+        temp$20 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int getUnsignedOctet(int,byte[])>(temp$19, bytes);
+        b = temp$20;
+        temp$21 = virtualinvoke printable.<java.util.BitSet: boolean get(int)>(b);
+        if temp$21 == 0 goto label21;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$22 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: boolean isWhitespace(int)>(b);
+        if temp$22 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        if pos > 68 goto label21;
+
+        goto label20;
+
+        goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        temp$23 = 0;
+        goto label22;
+
+     label21:
+        nop;
+        temp$23 = 1;
+
+     label22:
+        nop;
+        encode = temp$23;
+        temp$24 = pos;
+        temp$25 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int encodeByte(int,boolean,java.io.ByteArrayOutputStream)>(b, encode, buffer);
+        temp$26 = temp$24 + temp$25;
+        pos = temp$26;
+        if pos > 71 goto label23;
+
+        goto label24;
+
+     label23:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(61);
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(13);
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(10);
+
+     label24:
+        nop;
+        temp$27 = lengthof bytes;
+        temp$28 = temp$27 - 2;
+        i = temp$28;
+
+     label25:
+        nop;
+        temp$29 = lengthof bytes;
+        if i < temp$29 goto label26;
+
+        goto label32;
+
+     label26:
+        nop;
+        temp$30 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int getUnsignedOctet(int,byte[])>(i, bytes);
+        b = temp$30;
+        temp$31 = virtualinvoke printable.<java.util.BitSet: boolean get(int)>(b);
+        if temp$31 == 0 goto label30;
+
+        goto label27;
+
+     label27:
+        nop;
+        temp$32 = lengthof bytes;
+        temp$33 = temp$32 - 2;
+        if i > temp$33 goto label28;
+
+        goto label29;
+
+     label28:
+        nop;
+        temp$34 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: boolean isWhitespace(int)>(b);
+        if temp$34 == 0 goto label29;
+
+        goto label30;
+
+        goto label30;
+
+        goto label29;
+
+     label29:
+        nop;
+        temp$35 = 0;
+        goto label31;
+
+     label30:
+        nop;
+        temp$35 = 1;
+
+     label31:
+        nop;
+        encode = temp$35;
+        temp$36 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int encodeByte(int,boolean,java.io.ByteArrayOutputStream)>(b, encode, buffer);
+        nop;
+        temp$37 = i;
+        temp$38 = temp$37 + 1;
+        i = temp$38;
+        goto label25;
+
+     label32:
+        nop;
+        goto label41;
+
+     label33:
+        nop;
+        temp$39 = 0;
+
+     label34:
+        nop;
+        temp$40 = lengthof bytes;
+        if temp$39 >= temp$40 goto label40;
+
+        temp$41 = bytes[temp$39];
+        c = temp$41;
+        b = (int) c;
+        if b < 0 goto label35;
+
+        goto label36;
+
+     label35:
+        nop;
+        temp$42 = 256;
+        temp$43 = temp$42 + b;
+        b = temp$43;
+
+     label36:
+        nop;
+        temp$44 = virtualinvoke printable.<java.util.BitSet: boolean get(int)>(b);
+        if temp$44 == 0 goto label38;
+
+        goto label37;
+
+     label37:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(b);
+        goto label39;
+
+     label38:
+        nop;
+        temp$45 = staticinvoke <org.apache.commons.codec.net.QuotedPrintableCodec: int encodeQuotedPrintable(int,java.io.ByteArrayOutputStream)>(b, buffer);
+
+     label39:
+        nop;
+        nop;
+        temp$39 = temp$39 + 1;
+        goto label34;
+
+     label40:
+        nop;
+
+     label41:
+        nop;
+        temp$46 = virtualinvoke buffer.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return temp$46;
+    }
+}

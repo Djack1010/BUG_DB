@@ -1,0 +1,238 @@
+public class WrapClass 
+{
+    public static transient int indexOfDifference(java.lang.CharSequence[])
+    {
+        java.lang.CharSequence[] css, temp$4, temp$10, temp$15, temp$24, temp$28;
+        boolean temp$0, temp$2, anyStringNull, allStringsNull, temp$7, temp$9;
+        int temp$1, temp$3, arrayLen, shortestStrLen, longestStrLen, i, temp$5, temp$8, temp$11, temp$13, temp$14, temp$16, temp$18, temp$19, temp$20, temp$21, temp$22, temp$23, firstDiff, stringPos, temp$25, arrayPos, temp$29, temp$32, temp$33, temp$34, temp$35, temp$36, temp$37;
+        java.lang.CharSequence temp$6, temp$12, temp$17, temp$26, temp$30;
+        char comparisonChar, temp$27, temp$31;
+
+        css := @parameter0: java.lang.CharSequence[];
+        if css == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = lengthof css;
+        if temp$1 <= 1 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$3;
+
+     label7:
+        nop;
+        anyStringNull = 0;
+        allStringsNull = 1;
+        arrayLen = lengthof css;
+        shortestStrLen = 2147483647;
+        longestStrLen = 0;
+        i = 0;
+
+     label8:
+        nop;
+        if i < arrayLen goto label9;
+
+        goto label13;
+
+     label9:
+        nop;
+        temp$4 = css;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        if temp$6 == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$7 = 1;
+        anyStringNull = temp$7;
+        temp$8 = 0;
+        shortestStrLen = temp$8;
+        goto label12;
+
+     label11:
+        nop;
+        temp$9 = 0;
+        allStringsNull = temp$9;
+        temp$10 = css;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        temp$13 = interfaceinvoke temp$12.<java.lang.CharSequence: int length()>();
+        temp$14 = staticinvoke <java.lang.Math: int min(int,int)>(temp$13, shortestStrLen);
+        shortestStrLen = temp$14;
+        temp$15 = css;
+        temp$16 = i;
+        temp$17 = temp$15[temp$16];
+        temp$18 = interfaceinvoke temp$17.<java.lang.CharSequence: int length()>();
+        temp$19 = staticinvoke <java.lang.Math: int max(int,int)>(temp$18, longestStrLen);
+        longestStrLen = temp$19;
+
+     label12:
+        nop;
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label8;
+
+     label13:
+        nop;
+        if allStringsNull == 0 goto label14;
+
+        goto label16;
+
+     label14:
+        nop;
+        if longestStrLen == 0 goto label15;
+
+        goto label17;
+
+     label15:
+        nop;
+        if anyStringNull == 0 goto label16;
+
+        goto label17;
+
+        goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$22 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$22;
+
+     label17:
+        nop;
+        if shortestStrLen == 0 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$23 = 0;
+        return temp$23;
+
+     label19:
+        nop;
+        firstDiff = -1;
+        stringPos = 0;
+
+     label20:
+        nop;
+        if stringPos < shortestStrLen goto label21;
+
+        goto label29;
+
+     label21:
+        nop;
+        temp$24 = css;
+        temp$25 = 0;
+        temp$26 = temp$24[temp$25];
+        temp$27 = interfaceinvoke temp$26.<java.lang.CharSequence: char charAt(int)>(stringPos);
+        comparisonChar = temp$27;
+        arrayPos = 1;
+
+     label22:
+        nop;
+        if arrayPos < arrayLen goto label23;
+
+        goto label26;
+
+     label23:
+        nop;
+        temp$28 = css;
+        temp$29 = arrayPos;
+        temp$30 = temp$28[temp$29];
+        temp$31 = interfaceinvoke temp$30.<java.lang.CharSequence: char charAt(int)>(stringPos);
+        temp$32 = (int) temp$31;
+        temp$33 = (int) comparisonChar;
+        if temp$32 != temp$33 goto label24;
+
+        goto label25;
+
+     label24:
+        nop;
+        firstDiff = stringPos;
+        goto label26;
+
+     label25:
+        nop;
+        nop;
+        temp$34 = arrayPos;
+        temp$35 = temp$34 + 1;
+        arrayPos = temp$35;
+        goto label22;
+
+     label26:
+        nop;
+        if firstDiff != -1 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        goto label29;
+
+     label28:
+        nop;
+        nop;
+        temp$36 = stringPos;
+        temp$37 = temp$36 + 1;
+        stringPos = temp$37;
+        goto label20;
+
+     label29:
+        nop;
+        if firstDiff == -1 goto label30;
+
+        goto label32;
+
+     label30:
+        nop;
+        if shortestStrLen != longestStrLen goto label31;
+
+        goto label32;
+
+        goto label31;
+
+     label31:
+        nop;
+        return shortestStrLen;
+
+     label32:
+        nop;
+        return firstDiff;
+    }
+}

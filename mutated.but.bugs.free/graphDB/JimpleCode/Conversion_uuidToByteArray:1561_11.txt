@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    public static byte[] uuidToByteArray(java.util.UUID, byte[], int, int)
+    {
+        java.util.UUID src;
+        byte[] dst, temp$2, temp$7;
+        int dstPos, nBytes, temp$1, temp$4, temp$5, temp$6;
+        long temp$0, temp$3;
+
+        src := @parameter0: java.util.UUID;
+        dst := @parameter1: byte[];
+        dstPos := @parameter2: int;
+        nBytes := @parameter3: int;
+        if 0 == nBytes goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dst;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke src.<java.util.UUID: long getMostSignificantBits()>();
+        if nBytes > 8 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 8;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = nBytes;
+
+     label4:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.Conversion: byte[] longToByteArray(long,int,byte[],int,int)>(temp$0, 0, dst, dstPos, temp$1);
+        if nBytes >= 8 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke src.<java.util.UUID: long getLeastSignificantBits()>();
+        temp$4 = dstPos;
+        temp$5 = temp$4 + 8;
+        temp$6 = nBytes - 8;
+        temp$7 = staticinvoke <org.apache.commons.lang3.Conversion: byte[] longToByteArray(long,int,byte[],int,int)>(temp$3, 0, dst, temp$5, temp$6);
+
+     label6:
+        nop;
+        return dst;
+    }
+}

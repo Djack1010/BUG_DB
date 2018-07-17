@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public static java.lang.Object invokeConstructor(java.lang.Class, java.lang.Object[], java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException, java.lang.InstantiationException
+    {
+        java.lang.Class 'cls';
+        java.lang.Object[] args, temp$0;
+        java.lang.Class[] parameterTypes, temp$1;
+        java.lang.reflect.Constructor ctor, temp$2;
+        java.lang.NoSuchMethodException temp$3;
+        java.lang.StringBuffer temp$4;
+        java.lang.String temp$5, temp$6;
+        java.lang.Object temp$7;
+
+        'cls' := @parameter0: java.lang.Class;
+        args := @parameter1: java.lang.Object[];
+        parameterTypes := @parameter2: java.lang.Class[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] nullToEmpty(java.lang.Object[])>(args);
+        args = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] nullToEmpty(java.lang.Class[])>(parameterTypes);
+        parameterTypes = temp$1;
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.ConstructorUtils: java.lang.reflect.Constructor getMatchingAccessibleConstructor(java.lang.Class,java.lang.Class[])>('cls', parameterTypes);
+        ctor = temp$2;
+        if ctor == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$3 = new java.lang.NoSuchMethodException;
+        temp$4 = new java.lang.StringBuffer;
+        specialinvoke temp$4.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("No such accessible constructor on object: ");
+        temp$5 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$5);
+        temp$6 = virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$3.<java.lang.NoSuchMethodException: void <init>(java.lang.String)>(temp$6);
+        throw temp$3;
+
+     label1:
+        nop;
+        temp$7 = virtualinvoke ctor.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>(args);
+        return temp$7;
+    }
+}

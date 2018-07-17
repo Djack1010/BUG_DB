@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    public static java.lang.Object createIfAbsent(java.util.concurrent.ConcurrentMap, java.lang.Object, org.apache.commons.lang3.concurrent.ConcurrentInitializer) throws org.apache.commons.lang3.concurrent.ConcurrentException
+    {
+        java.util.concurrent.ConcurrentMap map;
+        java.lang.Object key, temp$2, value, temp$3, temp$4, temp$5;
+        org.apache.commons.lang3.concurrent.ConcurrentInitializer init;
+        boolean temp$0, temp$1;
+
+        map := @parameter0: java.util.concurrent.ConcurrentMap;
+        key := @parameter1: java.lang.Object;
+        init := @parameter2: org.apache.commons.lang3.concurrent.ConcurrentInitializer;
+        if map == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if init == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = null;
+        return temp$2;
+
+     label7:
+        nop;
+        temp$3 = interfaceinvoke map.<java.util.Map: java.lang.Object get(java.lang.Object)>(key);
+        value = temp$3;
+        if value == null goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$4 = interfaceinvoke init.<org.apache.commons.lang3.concurrent.ConcurrentInitializer: java.lang.Object get()>();
+        temp$5 = staticinvoke <org.apache.commons.lang3.concurrent.ConcurrentUtils: java.lang.Object putIfAbsent(java.util.concurrent.ConcurrentMap,java.lang.Object,java.lang.Object)>(map, key, temp$4);
+        return temp$5;
+
+     label9:
+        nop;
+        return value;
+    }
+}

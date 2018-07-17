@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public static boolean isEmpty(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        int temp$0;
+        boolean temp$1;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        if temp$0 == 0 goto label2;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        return temp$1;
+    }
+}

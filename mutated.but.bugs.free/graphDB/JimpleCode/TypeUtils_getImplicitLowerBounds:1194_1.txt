@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type[] getImplicitLowerBounds(java.lang.reflect.WildcardType)
+    {
+        java.lang.reflect.WildcardType wildcardType;
+        java.lang.reflect.Type[] bounds, temp$0, temp$1, temp$3;
+        int temp$2;
+
+        wildcardType := @parameter0: java.lang.reflect.WildcardType;
+        temp$0 = interfaceinvoke wildcardType.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getLowerBounds()>();
+        bounds = temp$0;
+        temp$2 = lengthof bounds;
+        if temp$2 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$3 = newarray (java.lang.reflect.Type)[1];
+        temp$3[0] = null;
+        temp$1 = temp$3;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = bounds;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

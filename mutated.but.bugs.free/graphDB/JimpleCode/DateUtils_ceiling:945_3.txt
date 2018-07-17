@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static java.util.Date ceiling(java.lang.Object, int)
+    {
+        java.lang.Object date;
+        int field;
+        boolean temp$0, temp$3;
+        java.util.Date temp$1, temp$2, temp$6;
+        java.util.Calendar temp$4, temp$5;
+        java.lang.ClassCastException temp$7;
+        java.lang.StringBuffer temp$8;
+        java.lang.Class temp$9;
+        java.lang.String temp$10;
+
+        date := @parameter0: java.lang.Object;
+        field := @parameter1: int;
+        temp$0 = date instanceof java.util.Date;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (java.util.Date) date;
+        temp$2 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Date ceiling(java.util.Date,int)>(temp$1, field);
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = date instanceof java.util.Calendar;
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = (java.util.Calendar) date;
+        temp$5 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Calendar ceiling(java.util.Calendar,int)>(temp$4, field);
+        temp$6 = virtualinvoke temp$5.<java.util.Calendar: java.util.Date getTime()>();
+        return temp$6;
+
+     label3:
+        nop;
+        temp$7 = new java.lang.ClassCastException;
+        temp$8 = new java.lang.StringBuffer;
+        specialinvoke temp$8.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Could not find ceiling of for type: ");
+        temp$9 = virtualinvoke date.<java.lang.Object: java.lang.Class getClass()>();
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$9);
+        temp$10 = virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$7.<java.lang.ClassCastException: void <init>(java.lang.String)>(temp$10);
+        throw temp$7;
+    }
+}

@@ -1,0 +1,124 @@
+public class WrapClass 
+{
+    public static int lastIndexOfIgnoreCase(java.lang.CharSequence, java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence str, searchStr;
+        int startPos, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, i, temp$11, temp$13, temp$14, temp$15;
+        boolean temp$0, temp$1, temp$12;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStr := @parameter1: java.lang.CharSequence;
+        startPos := @parameter2: int;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if searchStr == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label7:
+        nop;
+        temp$3 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$4 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$5 = temp$3 - temp$4;
+        if startPos > temp$5 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$6 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$7 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$8 = temp$6 - temp$7;
+        startPos = temp$8;
+
+     label9:
+        nop;
+        if startPos < 0 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$9 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$9;
+
+     label11:
+        nop;
+        temp$10 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        if temp$10 == 0 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        return startPos;
+
+     label13:
+        nop;
+        i = startPos;
+
+     label14:
+        nop;
+        if i >= 0 goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$11 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$12 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str, 1, i, searchStr, 0, temp$11);
+        if temp$12 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        return i;
+
+     label17:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + -1;
+        i = temp$14;
+        goto label14;
+
+     label18:
+        nop;
+        temp$15 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$15;
+    }
+}

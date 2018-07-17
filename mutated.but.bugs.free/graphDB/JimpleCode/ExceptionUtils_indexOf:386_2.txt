@@ -1,0 +1,165 @@
+public class WrapClass 
+{
+    private static final int indexOf(java.lang.Throwable, java.lang.Class, int, boolean)
+    {
+        java.lang.Throwable throwable, temp$10, temp$18;
+        java.lang.Class type, temp$11, temp$19;
+        int fromIndex, temp$2, temp$3, temp$5, temp$6, i, temp$7, temp$9, temp$13, temp$14, i, temp$15, temp$17, temp$21, temp$22, temp$23;
+        boolean subclass, temp$0, temp$1, temp$12, temp$20;
+        java.lang.Throwable[] throwables, temp$4, temp$8, temp$16;
+
+        throwable := @parameter0: java.lang.Throwable;
+        type := @parameter1: java.lang.Class;
+        fromIndex := @parameter2: int;
+        subclass := @parameter3: boolean;
+        if throwable == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if type == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = -1;
+        return temp$2;
+
+     label7:
+        nop;
+        if fromIndex < 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$3 = 0;
+        fromIndex = temp$3;
+
+     label9:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Throwable[] getThrowables(java.lang.Throwable)>(throwable);
+        throwables = temp$4;
+        temp$5 = lengthof throwables;
+        if fromIndex >= temp$5 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$6 = -1;
+        return temp$6;
+
+     label11:
+        nop;
+        if subclass == 0 goto label18;
+
+        goto label12;
+
+     label12:
+        nop;
+        i = fromIndex;
+
+     label13:
+        nop;
+        temp$7 = lengthof throwables;
+        if i < temp$7 goto label14;
+
+        goto label17;
+
+     label14:
+        nop;
+        temp$8 = throwables;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        temp$11 = virtualinvoke temp$10.<java.lang.Throwable: java.lang.Class getClass()>();
+        temp$12 = virtualinvoke type.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(temp$11);
+        if temp$12 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        return i;
+
+     label16:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label13;
+
+     label17:
+        nop;
+        goto label24;
+
+     label18:
+        nop;
+        i = fromIndex;
+
+     label19:
+        nop;
+        temp$15 = lengthof throwables;
+        if i < temp$15 goto label20;
+
+        goto label23;
+
+     label20:
+        nop;
+        temp$16 = throwables;
+        temp$17 = i;
+        temp$18 = temp$16[temp$17];
+        temp$19 = virtualinvoke temp$18.<java.lang.Throwable: java.lang.Class getClass()>();
+        temp$20 = virtualinvoke type.<java.lang.Class: boolean equals(java.lang.Object)>(temp$19);
+        if temp$20 == 0 goto label22;
+
+        goto label21;
+
+     label21:
+        nop;
+        return i;
+
+     label22:
+        nop;
+        nop;
+        temp$21 = i;
+        temp$22 = temp$21 + 1;
+        i = temp$22;
+        goto label19;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        temp$23 = -1;
+        return temp$23;
+    }
+}

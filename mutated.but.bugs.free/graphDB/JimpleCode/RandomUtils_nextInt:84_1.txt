@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public static int nextInt(int, int)
+    {
+        int startInclusive, endExclusive, temp$3, temp$5, temp$6, temp$7;
+        java.lang.Object[] temp$0, temp$2;
+        boolean temp$1;
+        java.util.Random temp$4;
+
+        startInclusive := @parameter0: int;
+        endExclusive := @parameter1: int;
+        temp$0 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(1, "Start value must be smaller or equal to end value.", temp$0);
+        if startInclusive >= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Both range values must be non-negative.", temp$2);
+        if startInclusive == endExclusive goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        return startInclusive;
+
+     label4:
+        nop;
+        temp$3 = startInclusive;
+        temp$4 = <org.apache.commons.lang3.RandomUtils: java.util.Random RANDOM>;
+        temp$5 = endExclusive - startInclusive;
+        temp$6 = virtualinvoke temp$4.<java.util.Random: int nextInt(int)>(temp$5);
+        temp$7 = temp$3 + temp$6;
+        return temp$7;
+    }
+}

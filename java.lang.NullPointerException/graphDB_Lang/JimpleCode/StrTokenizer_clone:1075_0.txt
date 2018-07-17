@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public java.lang.Object clone()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.Object temp$0, temp$1;
+        java.lang.CloneNotSupportedException ex;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.Object cloneReset()>();
+
+     label1:
+        nop;
+        return temp$0;
+
+     label2:
+        nop;
+        ex := @caughtexception;
+        temp$1 = null;
+        nop;
+        return temp$1;
+
+        catch java.lang.CloneNotSupportedException from label0 to label1 with label2;
+    }
+}

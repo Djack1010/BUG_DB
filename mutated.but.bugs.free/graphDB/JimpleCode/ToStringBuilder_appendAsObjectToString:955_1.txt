@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ToStringBuilder appendAsObjectToString(java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringBuilder this, temp$1;
+        java.lang.Object srcObject;
+        java.lang.StringBuffer temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringBuilder;
+        srcObject := @parameter0: java.lang.Object;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.StringBuffer getStringBuffer()>();
+        staticinvoke <org.apache.commons.lang3.ObjectUtils: void identityToString(java.lang.StringBuffer,java.lang.Object)>(temp$0, srcObject);
+        temp$1 = null;
+        return temp$1;
+    }
+}

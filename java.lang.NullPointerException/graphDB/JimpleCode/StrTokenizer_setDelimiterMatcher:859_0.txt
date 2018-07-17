@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrTokenizer setDelimiterMatcher(org.apache.commons.lang3.text.StrMatcher)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        org.apache.commons.lang3.text.StrMatcher delim, temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        delim := @parameter0: org.apache.commons.lang3.text.StrMatcher;
+        if delim == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.text.StrMatcher: org.apache.commons.lang3.text.StrMatcher noneMatcher()>();
+        this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher delimMatcher> = temp$0;
+        goto label2;
+
+     label1:
+        nop;
+        this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher delimMatcher> = delim;
+
+     label2:
+        nop;
+        return this;
+    }
+}

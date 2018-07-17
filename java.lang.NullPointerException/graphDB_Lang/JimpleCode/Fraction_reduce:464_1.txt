@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction reduce()
+    {
+        org.apache.commons.lang3.math.Fraction this, temp$1, temp$10;
+        int temp$0, gcd, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        temp$0 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$3 = staticinvoke <java.lang.Math: int abs(int)>(temp$2);
+        temp$4 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$5 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(temp$3, temp$4);
+        gcd = temp$5;
+        if gcd == 1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$7 = temp$6 / gcd;
+        temp$8 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$9 = temp$8 / gcd;
+        temp$10 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int)>(temp$7, temp$9);
+        return temp$10;
+    }
+}

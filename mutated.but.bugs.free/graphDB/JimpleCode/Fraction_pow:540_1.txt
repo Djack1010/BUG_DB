@@ -1,0 +1,79 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction pow(int)
+    {
+        org.apache.commons.lang3.math.Fraction this, temp$0, temp$1, temp$2, temp$5, temp$6, temp$8, f, temp$9, temp$12, temp$14, temp$15;
+        int power, temp$3, temp$4, temp$7, temp$10, temp$11, temp$13;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        power := @parameter0: int;
+        if power == 1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if power == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction ONE>;
+        return temp$0;
+
+     label3:
+        nop;
+        if power < 0 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        if power == -2147483648 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction invert()>();
+        temp$2 = virtualinvoke temp$1.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction pow(int)>(2);
+        temp$3 = power / 2;
+        temp$4 = neg temp$3;
+        temp$5 = virtualinvoke temp$2.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction pow(int)>(temp$4);
+        return temp$5;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction invert()>();
+        temp$7 = neg power;
+        temp$8 = virtualinvoke temp$6.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction pow(int)>(temp$7);
+        return temp$8;
+
+     label7:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction multiplyBy(org.apache.commons.lang3.math.Fraction)>(this);
+        f = temp$9;
+        temp$10 = power % -2;
+        if temp$10 == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$11 = power / 2;
+        temp$12 = virtualinvoke f.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction pow(int)>(temp$11);
+        return temp$12;
+
+     label9:
+        nop;
+        temp$13 = power / 2;
+        temp$14 = virtualinvoke f.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction pow(int)>(temp$13);
+        temp$15 = virtualinvoke temp$14.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction multiplyBy(org.apache.commons.lang3.math.Fraction)>(this);
+        return temp$15;
+    }
+}

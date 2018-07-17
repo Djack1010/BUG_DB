@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public void addHeader(java.lang.String, java.lang.String)
+    {
+        org.apache.commons.mail.Email this;
+        java.lang.String name, value, temp$6;
+        boolean temp$0, temp$2;
+        java.lang.IllegalArgumentException temp$1, temp$3;
+        java.util.Map temp$4;
+        java.lang.Object temp$5;
+
+        this := @this: org.apache.commons.mail.Email;
+        name := @parameter0: java.lang.String;
+        value := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isEmpty(java.lang.String)>(name);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("name can not be null or empty");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isEmpty(java.lang.String)>(value);
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("value can not be null or empty");
+        throw temp$3;
+
+     label3:
+        nop;
+        temp$4 = this.<org.apache.commons.mail.Email: java.util.Map headers>;
+        temp$5 = interfaceinvoke temp$4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(name, value);
+        temp$6 = (java.lang.String) temp$5;
+        return;
+    }
+}

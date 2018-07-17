@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type[] extractTypeArgumentsFrom(java.util.Map, java.lang.reflect.TypeVariable[])
+    {
+        java.util.Map mappings;
+        java.lang.reflect.TypeVariable[] variables;
+        java.lang.reflect.Type[] result, temp$6;
+        int index, temp$0, temp$1, temp$7, temp$8, temp$9;
+        java.lang.reflect.TypeVariable var, temp$2;
+        boolean temp$3;
+        java.lang.Object[] temp$4;
+        java.lang.String temp$5;
+        java.lang.Object temp$10;
+        java.lang.reflect.Type temp$11;
+
+        mappings := @parameter0: java.util.Map;
+        variables := @parameter1: java.lang.reflect.TypeVariable[];
+        result = null;
+        index = 0;
+        temp$0 = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof variables;
+        if temp$0 >= temp$1 goto label1;
+
+        temp$2 = variables[temp$0];
+        var = temp$2;
+        temp$3 = interfaceinvoke mappings.<java.util.Map: boolean containsKey(java.lang.Object)>(var);
+        temp$4 = newarray (java.lang.Object)[1];
+        temp$5 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(var);
+        temp$4[0] = temp$5;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$3, "missing argument mapping for %s", temp$4);
+        temp$6 = result;
+        temp$7 = index;
+        temp$8 = temp$7 + 1;
+        index = temp$8;
+        temp$9 = temp$7;
+        temp$10 = interfaceinvoke mappings.<java.util.Map: java.lang.Object get(java.lang.Object)>(var);
+        temp$11 = (java.lang.reflect.Type) temp$10;
+        temp$6[temp$9] = temp$11;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        return result;
+    }
+}

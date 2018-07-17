@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public synchronized double getAverageCallsPerPeriod()
+    {
+        org.apache.commons.lang3.concurrent.TimedSemaphore this;
+        double temp$0, temp$5, temp$6, temp$7;
+        long temp$1, temp$3, temp$4;
+        int temp$2;
+
+        this := @this: org.apache.commons.lang3.concurrent.TimedSemaphore;
+        temp$1 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: long periodCount>;
+        temp$2 = temp$1 cmp 0L;
+        if temp$2 > 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0.0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: long totalAcquireCount>;
+        temp$4 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: long periodCount>;
+        temp$5 = (double) temp$3;
+        temp$6 = (double) temp$4;
+        temp$7 = temp$5 / temp$6;
+        temp$0 = temp$7;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type substituteTypeVariables(java.lang.reflect.Type, java.util.Map)
+    {
+        java.lang.reflect.Type type, replacementType, temp$3;
+        java.util.Map typeVarAssigns;
+        boolean temp$0, temp$1;
+        java.lang.Object temp$2;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.StringBuffer temp$5;
+        java.lang.String temp$6;
+
+        type := @parameter0: java.lang.reflect.Type;
+        typeVarAssigns := @parameter1: java.util.Map;
+        if typeVarAssigns != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = type instanceof java.lang.reflect.TypeVariable;
+        if temp$1 == temp$0 goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$2 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(type);
+        temp$3 = (java.lang.reflect.Type) temp$2;
+        replacementType = temp$3;
+        if replacementType == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("missing assignment type for type variable ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(type);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label5:
+        nop;
+        return replacementType;
+
+     label6:
+        nop;
+        return type;
+    }
+}

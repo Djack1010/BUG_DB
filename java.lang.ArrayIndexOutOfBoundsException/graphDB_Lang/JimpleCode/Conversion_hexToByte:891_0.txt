@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public static byte hexToByte(java.lang.String, int, byte, int, int)
+    {
+        java.lang.String src;
+        int srcPos, dstPos, nHex, temp$0, temp$1, temp$2, temp$3, shift, i, temp$5, temp$6, temp$7, bits, temp$8, temp$9, temp$11, temp$12, temp$13, mask, temp$14, temp$15, temp$16, temp$17, temp$18, temp$20, temp$21;
+        byte dstInit, out, temp$19;
+        java.lang.IllegalArgumentException temp$4;
+        char temp$10;
+
+        src := @parameter0: java.lang.String;
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: byte;
+        dstPos := @parameter3: int;
+        nHex := @parameter4: int;
+        if 0 == nHex goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dstInit;
+
+     label1:
+        nop;
+        temp$0 = nHex - 1;
+        temp$1 = temp$0 * 4;
+        temp$2 = temp$1;
+        temp$3 = temp$2 + dstPos;
+        if temp$3 >= 8 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nHexs-1)*4+dstPos is greather or equal to than 8");
+        throw temp$4;
+
+     label3:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nHex goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = i * 4;
+        temp$6 = temp$5;
+        temp$7 = temp$6 + dstPos;
+        shift = temp$7;
+        temp$8 = i;
+        temp$9 = temp$8 + srcPos;
+        temp$10 = virtualinvoke src.<java.lang.String: char charAt(int)>(temp$9);
+        temp$11 = staticinvoke <org.apache.commons.lang3.Conversion: int hexDigitToInt(char)>(temp$10);
+        temp$12 = 15 & temp$11;
+        temp$13 = temp$12 << shift;
+        bits = temp$13;
+        temp$14 = 15 << shift;
+        mask = temp$14;
+        temp$15 = -1 ^ mask;
+        temp$16 = (int) out;
+        temp$17 = temp$16 & temp$15;
+        temp$18 = temp$17 | bits;
+        temp$19 = (byte) temp$18;
+        out = temp$19;
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label4;
+
+     label6:
+        nop;
+        return out;
+    }
+}

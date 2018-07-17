@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public transient org.apache.commons.lang3.builder.ReflectionToStringBuilder setExcludeFieldNames(java.lang.String[])
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this;
+        java.lang.String[] excludeFieldNamesParam, temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        excludeFieldNamesParam := @parameter0: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String[] toNoNullStringArray(java.lang.Object[])>(excludeFieldNamesParam);
+        this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String[] excludeFieldNames> = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String[] excludeFieldNames>;
+        staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>(temp$1);
+        nop;
+        return this;
+    }
+}

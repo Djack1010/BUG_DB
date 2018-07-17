@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public static java.lang.Object cloneIfPossible(java.lang.Object)
+    {
+        java.lang.Object obj, clone, temp$0, temp$1;
+
+        obj := @parameter0: java.lang.Object;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.Object clone(java.lang.Object)>(obj);
+        clone = temp$0;
+        if clone == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = obj;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = clone;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

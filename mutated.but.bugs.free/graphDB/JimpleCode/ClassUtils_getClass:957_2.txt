@@ -1,0 +1,12 @@
+public class WrapClass 
+{
+    public static java.lang.Class getClass(java.lang.String) throws java.lang.ClassNotFoundException
+    {
+        java.lang.String className;
+        java.lang.Class temp$0;
+
+        className := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class getClass(java.lang.String,boolean)>(className, 1);
+        return temp$0;
+    }
+}

@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public static long shortArrayToLong(short[], int, long, int, int)
+    {
+        short[] src, temp$8;
+        int srcPos, dstPos, nShorts, temp$0, temp$1, temp$2, temp$3, shift, i, temp$5, temp$6, temp$7, temp$9, temp$10, temp$20, temp$21;
+        long dstInit, out, bits, temp$12, temp$13, temp$14, mask, temp$15, temp$16, temp$17, temp$18, temp$19;
+        java.lang.IllegalArgumentException temp$4;
+        short temp$11;
+
+        src := @parameter0: short[];
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: long;
+        dstPos := @parameter3: int;
+        nShorts := @parameter4: int;
+        if 0 == nShorts goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dstInit;
+
+     label1:
+        nop;
+        temp$0 = nShorts - 1;
+        temp$1 = temp$0 * 16;
+        temp$2 = temp$1;
+        temp$3 = temp$2 + dstPos;
+        if temp$3 >= 64 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nShorts-1)*16+dstPos is greather or equal to than 64");
+        throw temp$4;
+
+     label3:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nShorts goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = i * 16;
+        temp$6 = temp$5;
+        temp$7 = temp$6 + dstPos;
+        shift = temp$7;
+        temp$8 = src;
+        temp$9 = i;
+        temp$10 = temp$9 + srcPos;
+        temp$11 = temp$8[temp$10];
+        temp$12 = (long) temp$11;
+        temp$13 = 65535L & temp$12;
+        temp$14 = temp$13 << shift;
+        bits = temp$14;
+        temp$15 = 65535L << shift;
+        mask = temp$15;
+        temp$16 = (long) -1;
+        temp$17 = temp$16 ^ mask;
+        temp$18 = out & temp$17;
+        temp$19 = temp$18 | bits;
+        out = temp$19;
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label4;
+
+     label6:
+        nop;
+        return out;
+    }
+}

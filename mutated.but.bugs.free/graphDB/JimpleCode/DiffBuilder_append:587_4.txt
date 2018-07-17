@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String, int, int)
+    {
+        org.apache.commons.lang3.builder.DiffBuilder this;
+        java.lang.String fieldName;
+        int lhs, rhs;
+        boolean temp$0, temp$3;
+        java.util.List temp$1;
+        org.apache.commons.lang3.builder.DiffBuilder$11Anonymous10 temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.DiffBuilder;
+        fieldName := @parameter0: java.lang.String;
+        lhs := @parameter1: int;
+        rhs := @parameter2: int;
+        temp$0 = this.<org.apache.commons.lang3.builder.DiffBuilder: boolean objectsTriviallyEqual>;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs != rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.builder.DiffBuilder: java.util.List diffs>;
+        temp$2 = new org.apache.commons.lang3.builder.DiffBuilder$11Anonymous10;
+        specialinvoke temp$2.<org.apache.commons.lang3.builder.DiffBuilder$11Anonymous10: void <init>(org.apache.commons.lang3.builder.DiffBuilder,java.lang.String,int,int)>(this, fieldName, lhs, rhs);
+        temp$3 = interfaceinvoke temp$1.<java.util.List: boolean add(java.lang.Object)>(temp$2);
+
+     label3:
+        nop;
+        return this;
+    }
+}

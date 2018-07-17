@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    private static final float toFloatVersion(java.lang.String)
+    {
+        java.lang.String value, temp$5, temp$8, temp$9;
+        java.lang.String[] toParse, temp$0, temp$3, temp$6;
+        int temp$1, temp$4, temp$7;
+        java.lang.StringBuffer temp$2;
+        float temp$10, temp$11;
+        java.lang.NumberFormatException nfe;
+
+        value := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke value.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.");
+        toParse = temp$0;
+        temp$1 = lengthof toParse;
+        if temp$1 > 2 goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        temp$3 = toParse;
+        temp$4 = 0;
+        temp$5 = temp$3[temp$4];
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$5);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(46);
+        temp$6 = toParse;
+        temp$7 = 1;
+        temp$8 = temp$6[temp$7];
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$8);
+        temp$9 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$10 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>(temp$9);
+
+     label2:
+        nop;
+        return temp$10;
+
+     label3:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label4;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$11 = (float) -1;
+        return temp$11;
+
+        catch java.lang.NumberFormatException from label1 to label2 with label3;
+    }
+}

@@ -1,0 +1,92 @@
+public class WrapClass 
+{
+    public static long[] generateBitVectors(java.lang.Class, java.lang.Iterable)
+    {
+        java.lang.Class enumClass, temp$0;
+        java.lang.Iterable values, temp$2;
+        java.lang.Object temp$1, temp$6, temp$19;
+        java.util.EnumSet condensed, temp$3;
+        java.util.Iterator temp$4, temp$17;
+        java.lang.Enum constant, value;
+        boolean temp$5, temp$7, temp$9, temp$18;
+        java.lang.Object[] temp$8, temp$10;
+        long[] result, temp$20;
+        java.lang.Enum[] temp$11;
+        int temp$12, temp$13, temp$14, temp$15, temp$16, temp$21, temp$22, temp$23, temp$25, temp$26, temp$27;
+        long temp$24, temp$28, temp$29;
+
+        enumClass := @parameter0: java.lang.Class;
+        values := @parameter1: java.lang.Iterable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.EnumUtils: java.lang.Class asEnum(java.lang.Class)>(enumClass);
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(values);
+        temp$2 = (java.lang.Iterable) temp$1;
+        temp$3 = staticinvoke <java.util.EnumSet: java.util.EnumSet noneOf(java.lang.Class)>(enumClass);
+        condensed = temp$3;
+        temp$4 = interfaceinvoke values.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$5 = interfaceinvoke temp$4.<java.util.Iterator: boolean hasNext()>();
+        if temp$5 == 0 goto label4;
+
+        temp$6 = interfaceinvoke temp$4.<java.util.Iterator: java.lang.Object next()>();
+        constant = (java.lang.Enum) temp$6;
+        if constant != null goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$7 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = 1;
+
+     label3:
+        nop;
+        temp$8 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$7, "null elements not permitted", temp$8);
+        temp$9 = virtualinvoke condensed.<java.util.AbstractCollection: boolean add(java.lang.Object)>(constant);
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        temp$10 = virtualinvoke enumClass.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+        temp$11 = (java.lang.Enum[]) temp$10;
+        temp$12 = lengthof temp$11;
+        temp$13 = temp$12 - 1;
+        temp$14 = temp$13 / 64;
+        temp$15 = temp$14;
+        temp$16 = temp$15 + 1;
+        result = newarray (long)[temp$16];
+        temp$17 = interfaceinvoke condensed.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label5:
+        nop;
+        temp$18 = interfaceinvoke temp$17.<java.util.Iterator: boolean hasNext()>();
+        if temp$18 == 0 goto label6;
+
+        temp$19 = interfaceinvoke temp$17.<java.util.Iterator: java.lang.Object next()>();
+        value = (java.lang.Enum) temp$19;
+        temp$20 = result;
+        temp$21 = virtualinvoke value.<java.lang.Enum: int ordinal()>();
+        temp$22 = temp$21 / 64;
+        temp$23 = temp$22;
+        temp$24 = temp$20[temp$23];
+        temp$25 = virtualinvoke value.<java.lang.Enum: int ordinal()>();
+        temp$26 = temp$25 % 64;
+        temp$27 = 1 << temp$26;
+        temp$28 = (long) temp$27;
+        temp$29 = temp$24 | temp$28;
+        temp$20[temp$23] = temp$29;
+        nop;
+        goto label5;
+
+     label6:
+        nop;
+        return result;
+    }
+}

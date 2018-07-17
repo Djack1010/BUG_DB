@@ -1,0 +1,69 @@
+public class WrapClass 
+{
+    public static java.lang.Object[] subarray(java.lang.Object[], int, int)
+    {
+        java.lang.Object[] array, temp$0, emptyArray, subarray;
+        int startIndexInclusive, endIndexExclusive, temp$1, temp$2, temp$3, newSize, temp$4;
+        java.lang.Class type, temp$5, temp$6;
+        java.lang.Object temp$7, temp$8;
+
+        array := @parameter0: java.lang.Object[];
+        startIndexInclusive := @parameter1: int;
+        endIndexExclusive := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndexInclusive < -1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        startIndexInclusive = temp$1;
+
+     label3:
+        nop;
+        temp$2 = lengthof array;
+        if endIndexExclusive > temp$2 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = lengthof array;
+        endIndexExclusive = temp$3;
+
+     label5:
+        nop;
+        temp$4 = endIndexExclusive - startIndexInclusive;
+        newSize = temp$4;
+        temp$5 = virtualinvoke array.<java.lang.Object: java.lang.Class getClass()>();
+        temp$6 = virtualinvoke temp$5.<java.lang.Class: java.lang.Class getComponentType()>();
+        type = temp$6;
+        if newSize <= 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$7 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>(type, 0);
+        emptyArray = (java.lang.Object[]) temp$7;
+        return emptyArray;
+
+     label7:
+        nop;
+        temp$8 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>(type, newSize);
+        subarray = (java.lang.Object[]) temp$8;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array, startIndexInclusive, subarray, 0, newSize);
+        return subarray;
+    }
+}

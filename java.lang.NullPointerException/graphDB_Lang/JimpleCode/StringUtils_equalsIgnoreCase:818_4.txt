@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public static boolean equalsIgnoreCase(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence str1, str2;
+        boolean temp$0, temp$1, temp$4, temp$6;
+        int temp$2, temp$3, temp$5;
+
+        str1 := @parameter0: java.lang.CharSequence;
+        str2 := @parameter1: java.lang.CharSequence;
+        if str1 == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        if str1 == str2 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = 1;
+
+     label3:
+        nop;
+        return temp$0;
+
+     label4:
+        nop;
+        if str1 == str2 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$1 = 1;
+        return temp$1;
+
+     label6:
+        nop;
+        temp$2 = interfaceinvoke str1.<java.lang.CharSequence: int length()>();
+        temp$3 = interfaceinvoke str2.<java.lang.CharSequence: int length()>();
+        if temp$2 != temp$3 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label8:
+        nop;
+        temp$5 = interfaceinvoke str1.<java.lang.CharSequence: int length()>();
+        temp$6 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str1, 1, 0, str2, 0, temp$5);
+        return temp$6;
+    }
+}

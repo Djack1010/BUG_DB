@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    public static java.lang.Boolean toBooleanObject(int, int, int, int)
+    {
+        int value, trueValue, falseValue, nullValue;
+        java.lang.Boolean temp$0, temp$1, temp$2;
+        java.lang.IllegalArgumentException temp$3;
+
+        value := @parameter0: int;
+        trueValue := @parameter1: int;
+        falseValue := @parameter2: int;
+        nullValue := @parameter3: int;
+        if value == trueValue goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <java.lang.Boolean: java.lang.Boolean TRUE>;
+        return temp$0;
+
+     label1:
+        nop;
+        if value == falseValue goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        return temp$1;
+
+     label3:
+        nop;
+        if value == nullValue goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = null;
+        return temp$2;
+
+     label5:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Integer did not match any specified value");
+        throw temp$3;
+    }
+}

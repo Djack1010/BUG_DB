@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    public static transient int reflectionHashCode(int, int, java.lang.Object, boolean, java.lang.Class, java.lang.String[])
+    {
+        int initialNonZeroOddNumber, multiplierNonZeroOddNumber, temp$4;
+        java.lang.Object object;
+        boolean testTransients;
+        java.lang.Class reflectUpToClass, clazz, temp$1, temp$2, temp$3;
+        java.lang.String[] excludeFields;
+        java.lang.IllegalArgumentException temp$0;
+        org.apache.commons.lang3.builder.HashCodeBuilder builder;
+
+        initialNonZeroOddNumber := @parameter0: int;
+        multiplierNonZeroOddNumber := @parameter1: int;
+        object := @parameter2: java.lang.Object;
+        testTransients := @parameter3: boolean;
+        reflectUpToClass := @parameter4: java.lang.Class;
+        excludeFields := @parameter5: java.lang.String[];
+        if object == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The object to build a hash code for must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        builder = null;
+        temp$1 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        clazz = temp$1;
+        staticinvoke <org.apache.commons.lang3.builder.HashCodeBuilder: void reflectionAppend(java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.HashCodeBuilder,boolean,java.lang.String[])>(object, clazz, builder, testTransients, excludeFields);
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke clazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        if temp$2 != null goto label3;
+
+        goto label5;
+
+     label3:
+        nop;
+        if clazz != reflectUpToClass goto label4;
+
+        goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$3 = virtualinvoke clazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        clazz = temp$3;
+        staticinvoke <org.apache.commons.lang3.builder.HashCodeBuilder: void reflectionAppend(java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.HashCodeBuilder,boolean,java.lang.String[])>(object, clazz, builder, testTransients, excludeFields);
+        goto label2;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke builder.<org.apache.commons.lang3.builder.HashCodeBuilder: int toHashCode()>();
+        return temp$4;
+    }
+}

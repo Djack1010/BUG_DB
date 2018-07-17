@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    protected void validateIndex(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int index, temp$1;
+        boolean temp$0, temp$2;
+        java.lang.StringIndexOutOfBoundsException temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        if index < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if index > temp$1 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$3.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(index);
+        throw temp$3;
+
+     label7:
+        nop;
+        return;
+    }
+}

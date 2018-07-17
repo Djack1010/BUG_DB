@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.text.StrTokenizer getCSVInstance(char[])
+    {
+        char[] input;
+        org.apache.commons.lang3.text.StrTokenizer tok, temp$0, temp$1;
+
+        input := @parameter0: char[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrTokenizer getCSVClone()>();
+        tok = temp$0;
+        temp$1 = virtualinvoke tok.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrTokenizer reset(char[])>(input);
+        return tok;
+    }
+}

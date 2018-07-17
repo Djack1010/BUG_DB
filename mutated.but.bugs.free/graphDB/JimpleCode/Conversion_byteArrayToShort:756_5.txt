@@ -1,0 +1,124 @@
+public class WrapClass 
+{
+    public static short byteArrayToShort(byte[], int, short, int, int)
+    {
+        byte[] src, temp$11;
+        int srcPos, dstPos, nBytes, temp$0, temp$3, temp$4, temp$5, temp$6, shift, i, temp$8, temp$9, temp$10, bits, temp$12, temp$13, temp$15, temp$16, temp$17, mask, temp$18, temp$19, temp$20, temp$21, temp$22, temp$24, temp$25;
+        short dstInit, out, temp$23;
+        boolean temp$1, temp$2;
+        java.lang.IllegalArgumentException temp$7;
+        byte temp$14;
+
+        src := @parameter0: byte[];
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: short;
+        dstPos := @parameter3: int;
+        nBytes := @parameter4: int;
+        temp$0 = lengthof src;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        if srcPos == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        if 0 == nBytes goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$2 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$2 = 1;
+
+     label6:
+        nop;
+        if temp$1 != temp$2 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return dstInit;
+
+     label8:
+        nop;
+        temp$3 = nBytes - 1;
+        temp$4 = temp$3 * 8;
+        temp$5 = temp$4;
+        temp$6 = temp$5 + dstPos;
+        if temp$6 >= 16 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$7 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nBytes-1)*8+dstPos is greather or equal to than 16");
+        throw temp$7;
+
+     label10:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label11:
+        nop;
+        if i < nBytes goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$8 = i * 8;
+        temp$9 = temp$8;
+        temp$10 = temp$9 + dstPos;
+        shift = temp$10;
+        temp$11 = src;
+        temp$12 = i;
+        temp$13 = temp$12 + srcPos;
+        temp$14 = temp$11[temp$13];
+        temp$15 = (int) temp$14;
+        temp$16 = 255 & temp$15;
+        temp$17 = temp$16 << shift;
+        bits = temp$17;
+        temp$18 = 255 << shift;
+        mask = temp$18;
+        temp$19 = -1 ^ mask;
+        temp$20 = (int) out;
+        temp$21 = temp$20 & temp$19;
+        temp$22 = temp$21 | bits;
+        temp$23 = (short) temp$22;
+        out = temp$23;
+        nop;
+        temp$24 = i;
+        temp$25 = temp$24 + 1;
+        i = temp$25;
+        goto label11;
+
+     label13:
+        nop;
+        return out;
+    }
+}

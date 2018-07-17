@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public static int indexOf(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence seq, searchSeq;
+        int temp$0, temp$1;
+
+        seq := @parameter0: java.lang.CharSequence;
+        searchSeq := @parameter1: java.lang.CharSequence;
+        if searchSeq == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int indexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(seq, searchSeq, 0);
+        return temp$1;
+    }
+}

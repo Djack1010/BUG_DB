@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public static java.util.Map getEnumMap(java.lang.Class)
+    {
+        java.lang.Class enumClass;
+        java.util.Map map;
+        java.lang.Object[] temp$0;
+        java.lang.Enum[] temp$1;
+        int temp$2, temp$3;
+        java.lang.Enum e, temp$4, temp$7;
+        java.lang.String temp$5;
+        java.lang.Object temp$6;
+
+        enumClass := @parameter0: java.lang.Class;
+        map = null;
+        temp$0 = virtualinvoke enumClass.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+        temp$1 = (java.lang.Enum[]) temp$0;
+        temp$2 = 0;
+
+     label0:
+        nop;
+        temp$3 = lengthof temp$1;
+        if temp$2 >= temp$3 goto label1;
+
+        temp$4 = temp$1[temp$2];
+        e = temp$4;
+        temp$5 = virtualinvoke e.<java.lang.Enum: java.lang.String name()>();
+        temp$6 = interfaceinvoke map.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$5, e);
+        temp$7 = (java.lang.Enum) temp$6;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        return map;
+    }
+}

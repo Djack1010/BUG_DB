@@ -1,0 +1,105 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(java.nio.CharBuffer, int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0, temp$9, temp$20;
+        java.nio.CharBuffer buf;
+        int startIndex, length, totalLength, temp$2, temp$4, temp$5, len, temp$7, temp$8, temp$11, temp$12, temp$13, temp$14, temp$15, temp$17, temp$18;
+        boolean temp$1;
+        java.lang.StringIndexOutOfBoundsException temp$3, temp$6;
+        char[] temp$10, temp$16;
+        java.lang.String temp$19;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        buf := @parameter0: java.nio.CharBuffer;
+        startIndex := @parameter1: int;
+        length := @parameter2: int;
+        if buf == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke buf.<java.nio.CharBuffer: boolean hasArray()>();
+        if temp$1 == 0 goto label9;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke buf.<java.nio.CharBuffer: int remaining()>();
+        totalLength = temp$2;
+        if startIndex < 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        if startIndex > totalLength goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$3.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("startIndex must be valid");
+        throw temp$3;
+
+     label5:
+        nop;
+        if length < 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$4 = startIndex;
+        temp$5 = temp$4 + length;
+        if temp$5 > totalLength goto label7;
+
+        goto label8;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$6.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("length must be valid");
+        throw temp$6;
+
+     label8:
+        nop;
+        len = 0;
+        temp$7 = 0;
+        temp$8 = temp$7 + length;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$8);
+        temp$10 = virtualinvoke buf.<java.nio.CharBuffer: char[] array()>();
+        temp$11 = virtualinvoke buf.<java.nio.CharBuffer: int arrayOffset()>();
+        temp$12 = temp$11;
+        temp$13 = virtualinvoke buf.<java.nio.CharBuffer: int position()>();
+        temp$14 = temp$12 + temp$13;
+        temp$15 = temp$14 + startIndex;
+        temp$16 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$10, temp$15, temp$16, 0, length);
+        temp$17 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$18 = temp$17 + length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$18;
+        goto label10;
+
+     label9:
+        nop;
+        temp$19 = virtualinvoke buf.<java.nio.CharBuffer: java.lang.String toString()>();
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String,int,int)>(temp$19, startIndex, length);
+
+     label10:
+        nop;
+        return this;
+    }
+}

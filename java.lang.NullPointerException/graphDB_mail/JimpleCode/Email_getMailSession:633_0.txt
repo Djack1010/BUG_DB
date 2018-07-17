@@ -1,0 +1,233 @@
+public class WrapClass 
+{
+    public javax.mail.Session getMailSession() throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.Email this;
+        javax.mail.Session temp$0, temp$54, temp$55;
+        java.util.Properties properties, temp$1, temp$2;
+        java.lang.Object temp$3, temp$11, temp$13, temp$16, temp$19, temp$22, temp$25, temp$28, temp$30, temp$33, temp$35, temp$36, temp$37, temp$41, temp$44, temp$48, temp$52;
+        java.lang.String temp$4, temp$6, temp$7, temp$10, temp$12, temp$15, temp$17, temp$20, temp$23, temp$26, temp$32, temp$34, temp$42, temp$43, temp$47, temp$51;
+        boolean temp$5, temp$8, temp$14, temp$18, temp$21, temp$24, temp$27, temp$31, temp$38, temp$39, temp$40;
+        org.apache.commons.mail.EmailException temp$9;
+        javax.mail.Authenticator temp$29, temp$53;
+        int temp$45, temp$46, temp$49, temp$50;
+
+        this := @this: org.apache.commons.mail.Email;
+        temp$0 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        if temp$0 == null goto label0;
+
+        goto label31;
+
+     label0:
+        nop;
+        temp$1 = new java.util.Properties;
+        temp$2 = staticinvoke <java.lang.System: java.util.Properties getProperties()>();
+        specialinvoke temp$1.<java.util.Properties: void <init>(java.util.Properties)>(temp$2);
+        properties = temp$1;
+        temp$3 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.transport.protocol", "smtp");
+        temp$4 = this.<org.apache.commons.mail.Email: java.lang.String hostName>;
+        temp$5 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isEmpty(java.lang.String)>(temp$4);
+        if temp$5 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$6 = virtualinvoke properties.<java.util.Properties: java.lang.String getProperty(java.lang.String)>("mail.smtp.host");
+        this.<org.apache.commons.mail.Email: java.lang.String hostName> = temp$6;
+
+     label2:
+        nop;
+        temp$7 = this.<org.apache.commons.mail.Email: java.lang.String hostName>;
+        temp$8 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isEmpty(java.lang.String)>(temp$7);
+        if temp$8 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$9 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$9.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Cannot find valid hostname for mail session");
+        throw temp$9;
+
+     label4:
+        nop;
+        temp$10 = this.<org.apache.commons.mail.Email: java.lang.String smtpPort>;
+        temp$11 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.port", temp$10);
+        temp$12 = this.<org.apache.commons.mail.Email: java.lang.String hostName>;
+        temp$13 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.host", temp$12);
+        temp$14 = this.<org.apache.commons.mail.Email: boolean debug>;
+        temp$15 = staticinvoke <java.lang.String: java.lang.String valueOf(boolean)>(temp$14);
+        temp$16 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.debug", temp$15);
+        temp$18 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isStartTLSEnabled()>();
+        if temp$18 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$17 = "true";
+        goto label7;
+
+     label6:
+        nop;
+        temp$17 = "false";
+
+     label7:
+        nop;
+        temp$19 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.starttls.enable", temp$17);
+        temp$21 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isStartTLSRequired()>();
+        if temp$21 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$20 = "true";
+        goto label10;
+
+     label9:
+        nop;
+        temp$20 = "false";
+
+     label10:
+        nop;
+        temp$22 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.starttls.required", temp$20);
+        temp$24 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isSendPartial()>();
+        if temp$24 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$23 = "true";
+        goto label13;
+
+     label12:
+        nop;
+        temp$23 = "false";
+
+     label13:
+        nop;
+        temp$25 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.sendpartial", temp$23);
+        temp$27 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isSendPartial()>();
+        if temp$27 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$26 = "true";
+        goto label16;
+
+     label15:
+        nop;
+        temp$26 = "false";
+
+     label16:
+        nop;
+        temp$28 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtps.sendpartial", temp$26);
+        temp$29 = this.<org.apache.commons.mail.Email: javax.mail.Authenticator authenticator>;
+        if temp$29 != null goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$30 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.auth", "true");
+
+     label18:
+        nop;
+        temp$31 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isSSLOnConnect()>();
+        if temp$31 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$32 = this.<org.apache.commons.mail.Email: java.lang.String sslSmtpPort>;
+        temp$33 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.port", temp$32);
+        temp$34 = this.<org.apache.commons.mail.Email: java.lang.String sslSmtpPort>;
+        temp$35 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.socketFactory.port", temp$34);
+        temp$36 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        temp$37 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.socketFactory.fallback", "false");
+
+     label20:
+        nop;
+        temp$38 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isSSLOnConnect()>();
+        if temp$38 == 0 goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        temp$39 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isStartTLSEnabled()>();
+        if temp$39 == 0 goto label24;
+
+        goto label22;
+
+        goto label24;
+
+     label22:
+        nop;
+        temp$40 = virtualinvoke this.<org.apache.commons.mail.Email: boolean isSSLCheckServerIdentity()>();
+        if temp$40 == 0 goto label24;
+
+        goto label23;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$41 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.ssl.checkserveridentity", "true");
+
+     label24:
+        nop;
+        temp$42 = this.<org.apache.commons.mail.Email: java.lang.String bounceAddress>;
+        if temp$42 != null goto label25;
+
+        goto label26;
+
+     label25:
+        nop;
+        temp$43 = this.<org.apache.commons.mail.Email: java.lang.String bounceAddress>;
+        temp$44 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.from", temp$43);
+
+     label26:
+        nop;
+        temp$45 = this.<org.apache.commons.mail.Email: int socketTimeout>;
+        if temp$45 > 0 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$46 = this.<org.apache.commons.mail.Email: int socketTimeout>;
+        temp$47 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>(temp$46);
+        temp$48 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.timeout", temp$47);
+
+     label28:
+        nop;
+        temp$49 = this.<org.apache.commons.mail.Email: int socketConnectionTimeout>;
+        if temp$49 > 0 goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$50 = this.<org.apache.commons.mail.Email: int socketConnectionTimeout>;
+        temp$51 = staticinvoke <java.lang.Integer: java.lang.String toString(int)>(temp$50);
+        temp$52 = virtualinvoke properties.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>("mail.smtp.connectiontimeout", temp$51);
+
+     label30:
+        nop;
+        temp$53 = this.<org.apache.commons.mail.Email: javax.mail.Authenticator authenticator>;
+        temp$54 = staticinvoke <javax.mail.Session: javax.mail.Session getInstance(java.util.Properties,javax.mail.Authenticator)>(properties, temp$53);
+        this.<org.apache.commons.mail.Email: javax.mail.Session session> = temp$54;
+
+     label31:
+        nop;
+        temp$55 = this.<org.apache.commons.mail.Email: javax.mail.Session session>;
+        return temp$55;
+    }
+}

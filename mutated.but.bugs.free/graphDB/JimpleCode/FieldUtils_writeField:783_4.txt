@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static void writeField(java.lang.Object, java.lang.String, java.lang.Object, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.Object target, value;
+        java.lang.String fieldName, temp$6;
+        boolean forceAccess, temp$0, temp$4;
+        java.lang.Object[] temp$1, temp$5;
+        java.lang.Class 'cls', temp$2;
+        java.lang.reflect.Field field, temp$3;
+
+        target := @parameter0: java.lang.Object;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        forceAccess := @parameter3: boolean;
+        if target != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "target object must not be null", temp$1);
+        temp$2 = virtualinvoke target.<java.lang.Object: java.lang.Class getClass()>();
+        'cls' = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.reflect.Field getField(java.lang.Class,java.lang.String,boolean)>('cls', fieldName, forceAccess);
+        field = temp$3;
+        if field != null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        temp$5 = newarray (java.lang.Object)[2];
+        temp$6 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$5[0] = temp$6;
+        temp$5[1] = fieldName;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$4, "Cannot locate declared field %s.%s", temp$5);
+        staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: void writeField(java.lang.reflect.Field,java.lang.Object,java.lang.Object,boolean)>(field, target, value, 1);
+        return;
+    }
+}

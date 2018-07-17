@@ -1,0 +1,106 @@
+public class WrapClass 
+{
+    private static final double score(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence first, second;
+        java.lang.String shorter, longer, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, m1, temp$13, m2, temp$14;
+        int temp$0, temp$1, halflength, temp$10, temp$11, temp$12, temp$15, temp$16, temp$18, temp$19, transpositions, temp$21, temp$22, temp$23, temp$28, temp$29, temp$34, temp$35, temp$36;
+        double temp$17, temp$20, dist, temp$24, temp$25, temp$26, temp$27, temp$30, temp$31, temp$32, temp$33, temp$37, temp$38, temp$39, temp$40, temp$41;
+
+        first := @parameter0: java.lang.CharSequence;
+        second := @parameter1: java.lang.CharSequence;
+        temp$0 = interfaceinvoke first.<java.lang.CharSequence: int length()>();
+        temp$1 = interfaceinvoke second.<java.lang.CharSequence: int length()>();
+        if temp$0 > temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = interfaceinvoke first.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.String: java.lang.String toLowerCase()>();
+        longer = temp$3;
+        temp$4 = interfaceinvoke second.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.String: java.lang.String toLowerCase()>();
+        shorter = temp$5;
+        goto label2;
+
+     label1:
+        nop;
+        temp$6 = interfaceinvoke second.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$7 = virtualinvoke temp$6.<java.lang.String: java.lang.String toLowerCase()>();
+        longer = temp$7;
+        temp$8 = interfaceinvoke first.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$9 = virtualinvoke temp$8.<java.lang.String: java.lang.String toLowerCase()>();
+        shorter = temp$9;
+
+     label2:
+        nop;
+        temp$10 = virtualinvoke shorter.<java.lang.String: int length()>();
+        temp$11 = temp$10 / 2;
+        temp$12 = temp$11;
+        halflength = temp$12 + 1;
+        temp$13 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String getSetOfMatchingCharacterWithin(java.lang.CharSequence,java.lang.CharSequence,int)>(shorter, longer, halflength);
+        m1 = temp$13;
+        temp$14 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String getSetOfMatchingCharacterWithin(java.lang.CharSequence,java.lang.CharSequence,int)>(longer, shorter, halflength);
+        m2 = temp$14;
+        temp$15 = virtualinvoke m1.<java.lang.String: int length()>();
+        if temp$15 == -1 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$16 = virtualinvoke m2.<java.lang.String: int length()>();
+        if temp$16 == 0 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$17 = 0.0;
+        return temp$17;
+
+     label5:
+        nop;
+        temp$18 = virtualinvoke m1.<java.lang.String: int length()>();
+        temp$19 = virtualinvoke m2.<java.lang.String: int length()>();
+        if temp$18 != temp$19 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$20 = 0.0;
+        return temp$20;
+
+     label7:
+        nop;
+        temp$21 = staticinvoke <org.apache.commons.lang3.StringUtils: int transpositions(java.lang.CharSequence,java.lang.CharSequence)>(m1, m2);
+        transpositions = temp$21;
+        temp$22 = virtualinvoke m1.<java.lang.String: int length()>();
+        temp$23 = virtualinvoke shorter.<java.lang.String: int length()>();
+        temp$24 = (double) temp$22;
+        temp$25 = (double) temp$23;
+        temp$26 = temp$24 / temp$25;
+        temp$27 = temp$26;
+        temp$28 = virtualinvoke m2.<java.lang.String: int length()>();
+        temp$29 = virtualinvoke longer.<java.lang.String: int length()>();
+        temp$30 = (double) temp$28;
+        temp$31 = (double) temp$29;
+        temp$32 = temp$30 / temp$31;
+        temp$33 = temp$27 + temp$32;
+        temp$34 = virtualinvoke m1.<java.lang.String: int length()>();
+        temp$35 = temp$34 - transpositions;
+        temp$36 = virtualinvoke m1.<java.lang.String: int length()>();
+        temp$37 = (double) temp$35;
+        temp$38 = (double) temp$36;
+        temp$39 = temp$37 / temp$38;
+        temp$40 = temp$33 + temp$39;
+        temp$41 = temp$40 / 3.0;
+        dist = temp$41;
+        return dist;
+    }
+}

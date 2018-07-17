@@ -1,0 +1,728 @@
+public class WrapClass 
+{
+    public static boolean isNumber(java.lang.String)
+    {
+        java.lang.String str;
+        boolean temp$0, temp$1, hasExp, hasDecPoint, allowSigns, foundDigit, temp$24, temp$50, temp$53, temp$58, temp$69, temp$72, temp$85, temp$86, temp$91, temp$92, temp$101, temp$102, temp$103, temp$104, temp$113, temp$114, temp$115, temp$116, temp$128, temp$137, temp$142, temp$167, temp$168, temp$169;
+        char[] chars, temp$2, temp$4, temp$9, temp$13, temp$18, temp$26, temp$30, temp$34, temp$38, temp$42, temp$46, temp$54, temp$61, temp$65, temp$77, temp$81, temp$87, temp$93, temp$97, temp$105, temp$109, temp$120, temp$124, temp$129, temp$133, temp$138, temp$143, temp$147, temp$151, temp$155, temp$159, temp$163;
+        int sz, start, temp$3, temp$5, temp$7, temp$8, temp$10, temp$12, temp$14, temp$15, temp$17, temp$19, temp$20, temp$22, i, temp$23, temp$25, temp$27, temp$29, temp$31, temp$33, temp$35, temp$37, temp$39, temp$41, temp$43, temp$45, temp$47, temp$49, temp$51, temp$52, temp$55, temp$56, i, temp$59, temp$60, temp$62, temp$64, temp$66, temp$68, temp$70, temp$71, temp$73, temp$74, i, temp$75, temp$76, temp$78, temp$80, temp$82, temp$84, temp$88, temp$90, temp$94, temp$96, temp$98, temp$100, temp$106, temp$108, temp$110, temp$112, temp$117, temp$118, temp$119, temp$121, temp$123, temp$125, temp$127, temp$130, temp$132, temp$134, temp$136, temp$139, temp$141, temp$144, temp$146, temp$148, temp$150, temp$152, temp$154, temp$156, temp$158, temp$160, temp$162, temp$164, temp$166;
+        char temp$6, temp$11, temp$16, temp$21, temp$28, temp$32, temp$36, temp$40, temp$44, temp$48, temp$57, temp$63, temp$67, temp$79, temp$83, temp$89, temp$95, temp$99, temp$107, temp$111, temp$122, temp$126, temp$131, temp$135, temp$140, temp$145, temp$149, temp$153, temp$157, temp$161, temp$165;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        chars = temp$2;
+        sz = lengthof chars;
+        hasExp = 0;
+        hasDecPoint = 0;
+        allowSigns = 0;
+        foundDigit = 0;
+        temp$4 = chars;
+        temp$5 = 0;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (int) temp$6;
+        if temp$7 == 45 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 1;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 0;
+
+     label4:
+        nop;
+        start = temp$3;
+        temp$8 = start / 1;
+        if sz > temp$8 goto label5;
+
+        goto label30;
+
+     label5:
+        nop;
+        temp$9 = chars;
+        temp$10 = start;
+        temp$11 = temp$9[temp$10];
+        temp$12 = (int) temp$11;
+        if temp$12 == 48 goto label6;
+
+        goto label30;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$13 = chars;
+        temp$14 = start;
+        temp$15 = temp$14 + 1;
+        temp$16 = temp$13[temp$15];
+        temp$17 = (int) temp$16;
+        if temp$17 == 120 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$18 = chars;
+        temp$19 = start;
+        temp$20 = temp$19 + 1;
+        temp$21 = temp$18[temp$20];
+        temp$22 = (int) temp$21;
+        if temp$22 == 88 goto label8;
+
+        goto label21;
+
+        goto label21;
+
+     label8:
+        nop;
+        temp$23 = start;
+        i = temp$23 + 2;
+        if i == sz goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$24 = 0;
+        return temp$24;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$25 = lengthof chars;
+        if i < temp$25 goto label12;
+
+        goto label20;
+
+     label12:
+        nop;
+        temp$26 = chars;
+        temp$27 = i;
+        temp$28 = temp$26[temp$27];
+        temp$29 = (int) temp$28;
+        if temp$29 < 48 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$30 = chars;
+        temp$31 = i;
+        temp$32 = temp$30[temp$31];
+        temp$33 = (int) temp$32;
+        if temp$33 > 57 goto label14;
+
+        goto label19;
+
+        goto label19;
+
+     label14:
+        nop;
+        temp$34 = chars;
+        temp$35 = i;
+        temp$36 = temp$34[temp$35];
+        temp$37 = (int) temp$36;
+        if temp$37 < 97 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$38 = chars;
+        temp$39 = i;
+        temp$40 = temp$38[temp$39];
+        temp$41 = (int) temp$40;
+        if temp$41 > 102 goto label16;
+
+        goto label19;
+
+        goto label19;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$42 = chars;
+        temp$43 = i;
+        temp$44 = temp$42[temp$43];
+        temp$45 = (int) temp$44;
+        if temp$45 < 65 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$46 = chars;
+        temp$47 = i;
+        temp$48 = temp$46[temp$47];
+        temp$49 = (int) temp$48;
+        if temp$49 > 70 goto label18;
+
+        goto label19;
+
+        goto label19;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$50 = 0;
+        return temp$50;
+
+     label19:
+        nop;
+        nop;
+        temp$51 = i;
+        temp$52 = temp$51 + 1;
+        i = temp$52;
+        goto label11;
+
+     label20:
+        nop;
+        temp$53 = 1;
+        return temp$53;
+
+     label21:
+        nop;
+        temp$54 = chars;
+        temp$55 = start;
+        temp$56 = temp$55 + 1;
+        temp$57 = temp$54[temp$56];
+        temp$58 = staticinvoke <java.lang.Character: boolean isDigit(char)>(temp$57);
+        if temp$58 == 0 goto label29;
+
+        goto label22;
+
+     label22:
+        nop;
+        temp$59 = start;
+        i = temp$59 + 1;
+
+     label23:
+        nop;
+        temp$60 = lengthof chars;
+        if i < temp$60 goto label24;
+
+        goto label28;
+
+     label24:
+        nop;
+        temp$61 = chars;
+        temp$62 = i;
+        temp$63 = temp$61[temp$62];
+        temp$64 = (int) temp$63;
+        if temp$64 < 48 goto label26;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$65 = chars;
+        temp$66 = i;
+        temp$67 = temp$65[temp$66];
+        temp$68 = (int) temp$67;
+        if temp$68 > 55 goto label26;
+
+        goto label27;
+
+        goto label27;
+
+     label26:
+        nop;
+        temp$69 = 0;
+        return temp$69;
+
+     label27:
+        nop;
+        nop;
+        temp$70 = i;
+        temp$71 = temp$70 + 1;
+        i = temp$71;
+        goto label23;
+
+     label28:
+        nop;
+        temp$72 = 1;
+        return temp$72;
+
+     label29:
+        nop;
+
+     label30:
+        nop;
+        temp$73 = sz;
+        temp$74 = temp$73 + -1;
+        sz = temp$74;
+        i = start;
+
+     label31:
+        nop;
+        if i < sz goto label35;
+
+        goto label32;
+
+     label32:
+        nop;
+        temp$75 = sz;
+        temp$76 = temp$75 + 1;
+        if i < temp$76 goto label33;
+
+        goto label60;
+
+     label33:
+        nop;
+        if allowSigns == 0 goto label60;
+
+        goto label34;
+
+        goto label34;
+
+     label34:
+        nop;
+        if foundDigit == 0 goto label35;
+
+        goto label60;
+
+        goto label35;
+
+        goto label60;
+
+     label35:
+        nop;
+        temp$77 = chars;
+        temp$78 = i;
+        temp$79 = temp$77[temp$78];
+        temp$80 = (int) temp$79;
+        if temp$80 >= 48 goto label36;
+
+        goto label38;
+
+     label36:
+        nop;
+        temp$81 = chars;
+        temp$82 = i;
+        temp$83 = temp$81[temp$82];
+        temp$84 = (int) temp$83;
+        if temp$84 <= 57 goto label37;
+
+        goto label38;
+
+        goto label37;
+
+     label37:
+        nop;
+        temp$85 = 1;
+        foundDigit = temp$85;
+        temp$86 = 0;
+        allowSigns = temp$86;
+        goto label59;
+
+     label38:
+        nop;
+        temp$87 = chars;
+        temp$88 = i;
+        temp$89 = temp$87[temp$88];
+        temp$90 = (int) temp$89;
+        if temp$90 == 46 goto label39;
+
+        goto label43;
+
+     label39:
+        nop;
+        if hasDecPoint == 0 goto label40;
+
+        goto label41;
+
+     label40:
+        nop;
+        if hasExp == 0 goto label42;
+
+        goto label41;
+
+        goto label42;
+
+     label41:
+        nop;
+        temp$91 = 0;
+        return temp$91;
+
+     label42:
+        nop;
+        temp$92 = 1;
+        hasDecPoint = temp$92;
+        goto label58;
+
+     label43:
+        nop;
+        temp$93 = chars;
+        temp$94 = i;
+        temp$95 = temp$93[temp$94];
+        temp$96 = (int) temp$95;
+        if temp$96 == 101 goto label45;
+
+        goto label44;
+
+     label44:
+        nop;
+        temp$97 = chars;
+        temp$98 = i;
+        temp$99 = temp$97[temp$98];
+        temp$100 = (int) temp$99;
+        if temp$100 == 69 goto label45;
+
+        goto label50;
+
+        goto label50;
+
+     label45:
+        nop;
+        if hasExp == 0 goto label47;
+
+        goto label46;
+
+     label46:
+        nop;
+        temp$101 = 0;
+        return temp$101;
+
+     label47:
+        nop;
+        if foundDigit == 0 goto label48;
+
+        goto label49;
+
+     label48:
+        nop;
+        temp$102 = 0;
+        return temp$102;
+
+     label49:
+        nop;
+        temp$103 = 1;
+        hasExp = temp$103;
+        temp$104 = 1;
+        allowSigns = temp$104;
+        goto label57;
+
+     label50:
+        nop;
+        temp$105 = chars;
+        temp$106 = i;
+        temp$107 = temp$105[temp$106];
+        temp$108 = (int) temp$107;
+        if temp$108 == 43 goto label52;
+
+        goto label51;
+
+     label51:
+        nop;
+        temp$109 = chars;
+        temp$110 = i;
+        temp$111 = temp$109[temp$110];
+        temp$112 = (int) temp$111;
+        if temp$112 == 45 goto label52;
+
+        goto label55;
+
+        goto label55;
+
+     label52:
+        nop;
+        if allowSigns == 0 goto label53;
+
+        goto label54;
+
+     label53:
+        nop;
+        temp$113 = 0;
+        return temp$113;
+
+     label54:
+        nop;
+        temp$114 = 0;
+        allowSigns = temp$114;
+        temp$115 = 0;
+        foundDigit = temp$115;
+        goto label56;
+
+     label55:
+        nop;
+        temp$116 = 0;
+        return temp$116;
+
+     label56:
+        nop;
+
+     label57:
+        nop;
+
+     label58:
+        nop;
+
+     label59:
+        nop;
+        temp$117 = i;
+        temp$118 = temp$117 + 1;
+        i = temp$118;
+        goto label31;
+
+     label60:
+        nop;
+        temp$119 = lengthof chars;
+        if i < temp$119 goto label61;
+
+        goto label87;
+
+     label61:
+        nop;
+        temp$120 = chars;
+        temp$121 = i;
+        temp$122 = temp$120[temp$121];
+        temp$123 = (int) temp$122;
+        if temp$123 >= 48 goto label62;
+
+        goto label64;
+
+     label62:
+        nop;
+        temp$124 = chars;
+        temp$125 = i;
+        temp$126 = temp$124[temp$125];
+        temp$127 = (int) temp$126;
+        if temp$127 <= 57 goto label63;
+
+        goto label64;
+
+        goto label63;
+
+     label63:
+        nop;
+        temp$128 = 1;
+        return temp$128;
+
+     label64:
+        nop;
+        temp$129 = chars;
+        temp$130 = i;
+        temp$131 = temp$129[temp$130];
+        temp$132 = (int) temp$131;
+        if temp$132 == 101 goto label66;
+
+        goto label65;
+
+     label65:
+        nop;
+        temp$133 = chars;
+        temp$134 = i;
+        temp$135 = temp$133[temp$134];
+        temp$136 = (int) temp$135;
+        if temp$136 == 69 goto label66;
+
+        goto label67;
+
+        goto label67;
+
+     label66:
+        nop;
+        temp$137 = 0;
+        return temp$137;
+
+     label67:
+        nop;
+        temp$138 = chars;
+        temp$139 = i;
+        temp$140 = temp$138[temp$139];
+        temp$141 = (int) temp$140;
+        if temp$141 == 46 goto label68;
+
+        goto label72;
+
+     label68:
+        nop;
+        if hasDecPoint == 0 goto label69;
+
+        goto label70;
+
+     label69:
+        nop;
+        if hasExp == 0 goto label71;
+
+        goto label70;
+
+        goto label71;
+
+     label70:
+        nop;
+        temp$142 = 0;
+        return temp$142;
+
+     label71:
+        nop;
+        return foundDigit;
+
+     label72:
+        nop;
+        if allowSigns == 0 goto label73;
+
+        goto label78;
+
+     label73:
+        nop;
+        temp$143 = chars;
+        temp$144 = i;
+        temp$145 = temp$143[temp$144];
+        temp$146 = (int) temp$145;
+        if temp$146 == 100 goto label77;
+
+        goto label74;
+
+     label74:
+        nop;
+        temp$147 = chars;
+        temp$148 = i;
+        temp$149 = temp$147[temp$148];
+        temp$150 = (int) temp$149;
+        if temp$150 == 68 goto label77;
+
+        goto label75;
+
+        goto label75;
+
+     label75:
+        nop;
+        temp$151 = chars;
+        temp$152 = i;
+        temp$153 = temp$151[temp$152];
+        temp$154 = (int) temp$153;
+        if temp$154 == 102 goto label77;
+
+        goto label76;
+
+        goto label76;
+
+     label76:
+        nop;
+        temp$155 = chars;
+        temp$156 = i;
+        temp$157 = temp$155[temp$156];
+        temp$158 = (int) temp$157;
+        if temp$158 == 70 goto label77;
+
+        goto label78;
+
+        goto label78;
+
+        goto label77;
+
+     label77:
+        nop;
+        return foundDigit;
+
+     label78:
+        nop;
+        temp$159 = chars;
+        temp$160 = i;
+        temp$161 = temp$159[temp$160];
+        temp$162 = (int) temp$161;
+        if temp$162 == 108 goto label80;
+
+        goto label79;
+
+     label79:
+        nop;
+        temp$163 = chars;
+        temp$164 = i;
+        temp$165 = temp$163[temp$164];
+        temp$166 = (int) temp$165;
+        if temp$166 == 76 goto label80;
+
+        goto label86;
+
+        goto label86;
+
+     label80:
+        nop;
+        if foundDigit == 0 goto label83;
+
+        goto label81;
+
+     label81:
+        nop;
+        if hasExp == 0 goto label82;
+
+        goto label83;
+
+        goto label82;
+
+     label82:
+        nop;
+        if hasDecPoint == 0 goto label84;
+
+        goto label83;
+
+        goto label84;
+
+     label83:
+        nop;
+        temp$167 = 0;
+        goto label85;
+
+     label84:
+        nop;
+        temp$167 = 1;
+
+     label85:
+        nop;
+        return temp$167;
+
+     label86:
+        nop;
+        temp$168 = 0;
+        return temp$168;
+
+     label87:
+        nop;
+        if allowSigns == 0 goto label88;
+
+        goto label89;
+
+     label88:
+        nop;
+        if foundDigit == 0 goto label89;
+
+        goto label90;
+
+        goto label90;
+
+     label89:
+        nop;
+        temp$169 = 0;
+        goto label91;
+
+     label90:
+        nop;
+        temp$169 = 1;
+
+     label91:
+        nop;
+        return temp$169;
+    }
+}

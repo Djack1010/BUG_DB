@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    protected void appendClassName(java.lang.StringBuffer, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$4;
+        java.lang.Object object;
+        boolean temp$0, temp$1;
+        java.lang.Class temp$2;
+        java.lang.String temp$3;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringStyle: boolean useClassName>;
+        if temp$0 == 0 goto label5;
+
+        goto label0;
+
+     label0:
+        nop;
+        if object != null goto label1;
+
+        goto label5;
+
+        goto label1;
+
+     label1:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void register(java.lang.Object)>(object);
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringStyle: boolean useShortClassName>;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Class: java.lang.String getName()>();
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$3);
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        return;
+    }
+}

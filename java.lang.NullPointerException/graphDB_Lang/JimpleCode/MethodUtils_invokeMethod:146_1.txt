@@ -1,0 +1,49 @@
+public class WrapClass 
+{
+    public static java.lang.Object invokeMethod(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException
+    {
+        java.lang.Object object, temp$9;
+        java.lang.String methodName, temp$7, temp$8;
+        java.lang.Object[] args, temp$1;
+        java.lang.Class[] parameterTypes, temp$0;
+        java.lang.reflect.Method method, temp$3;
+        java.lang.Class temp$2, temp$6;
+        java.lang.NoSuchMethodException temp$4;
+        java.lang.StringBuffer temp$5;
+
+        object := @parameter0: java.lang.Object;
+        methodName := @parameter1: java.lang.String;
+        args := @parameter2: java.lang.Object[];
+        parameterTypes := @parameter3: java.lang.Class[];
+        temp$0 = null;
+        parameterTypes = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] nullToEmpty(java.lang.Object[])>(args);
+        args = temp$1;
+        temp$2 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getMatchingAccessibleMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(temp$2, methodName, parameterTypes);
+        method = temp$3;
+        if method == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$4 = new java.lang.NoSuchMethodException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("No such accessible method: ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(methodName);
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("() on object: ");
+        temp$6 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$7 = virtualinvoke temp$6.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$7);
+        temp$8 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.NoSuchMethodException: void <init>(java.lang.String)>(temp$8);
+        throw temp$4;
+
+     label1:
+        nop;
+        temp$9 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(object, args);
+        return temp$9;
+    }
+}

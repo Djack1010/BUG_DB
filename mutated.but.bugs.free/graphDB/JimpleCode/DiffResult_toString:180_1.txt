@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    public java.lang.String toString(org.apache.commons.lang3.builder.ToStringStyle)
+    {
+        org.apache.commons.lang3.builder.DiffResult this;
+        org.apache.commons.lang3.builder.ToStringStyle style;
+        java.util.List temp$0, temp$7;
+        int temp$1;
+        java.lang.String temp$2, temp$11, temp$14, temp$18, temp$19, temp$20;
+        org.apache.commons.lang3.builder.ToStringBuilder lhsBuilder, temp$3, rhsBuilder, temp$5, temp$13, temp$16;
+        java.lang.Object temp$4, temp$6, temp$10, temp$12, temp$15;
+        java.util.Iterator temp$8;
+        org.apache.commons.lang3.builder.Diff diff;
+        boolean temp$9;
+        java.lang.Object[] temp$17;
+
+        this := @this: org.apache.commons.lang3.builder.DiffResult;
+        style := @parameter0: org.apache.commons.lang3.builder.ToStringStyle;
+        temp$0 = this.<org.apache.commons.lang3.builder.DiffResult: java.util.List diffs>;
+        temp$1 = interfaceinvoke temp$0.<java.util.List: int size()>();
+        if temp$1 <= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = <org.apache.commons.lang3.builder.DiffResult: java.lang.String OBJECTS_SAME_STRING>;
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = new org.apache.commons.lang3.builder.ToStringBuilder;
+        temp$4 = this.<org.apache.commons.lang3.builder.DiffResult: java.lang.Object lhs>;
+        specialinvoke temp$3.<org.apache.commons.lang3.builder.ToStringBuilder: void <init>(java.lang.Object,org.apache.commons.lang3.builder.ToStringStyle)>(temp$4, style);
+        lhsBuilder = temp$3;
+        temp$5 = new org.apache.commons.lang3.builder.ToStringBuilder;
+        temp$6 = this.<org.apache.commons.lang3.builder.DiffResult: java.lang.Object rhs>;
+        specialinvoke temp$5.<org.apache.commons.lang3.builder.ToStringBuilder: void <init>(java.lang.Object,org.apache.commons.lang3.builder.ToStringStyle)>(temp$6, style);
+        rhsBuilder = temp$5;
+        temp$7 = this.<org.apache.commons.lang3.builder.DiffResult: java.util.List diffs>;
+        temp$8 = interfaceinvoke temp$7.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label2:
+        nop;
+        temp$9 = interfaceinvoke temp$8.<java.util.Iterator: boolean hasNext()>();
+        if temp$9 == 0 goto label3;
+
+        temp$10 = interfaceinvoke temp$8.<java.util.Iterator: java.lang.Object next()>();
+        diff = (org.apache.commons.lang3.builder.Diff) temp$10;
+        temp$11 = virtualinvoke diff.<org.apache.commons.lang3.builder.Diff: java.lang.String getFieldName()>();
+        temp$12 = virtualinvoke diff.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getLeft()>();
+        temp$13 = virtualinvoke lhsBuilder.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringBuilder append(java.lang.String,java.lang.Object)>(temp$11, temp$12);
+        temp$14 = virtualinvoke diff.<org.apache.commons.lang3.builder.Diff: java.lang.String getFieldName()>();
+        temp$15 = virtualinvoke diff.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getRight()>();
+        temp$16 = virtualinvoke rhsBuilder.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringBuilder append(java.lang.String,java.lang.Object)>(temp$14, temp$15);
+        nop;
+        goto label2;
+
+     label3:
+        nop;
+        temp$17 = newarray (java.lang.Object)[3];
+        temp$18 = virtualinvoke lhsBuilder.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.String build()>();
+        temp$17[0] = temp$18;
+        temp$17[1] = "differs from";
+        temp$19 = virtualinvoke rhsBuilder.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.String build()>();
+        temp$17[2] = temp$19;
+        temp$20 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("%s %s %s", temp$17);
+        return temp$20;
+    }
+}

@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static int indexOf(byte[], byte)
+    {
+        byte[] array;
+        byte valueToFind;
+        int temp$0;
+
+        array := @parameter0: byte[];
+        valueToFind := @parameter1: byte;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(byte[],byte,int)>(array, valueToFind, -1);
+        return temp$0;
+    }
+}

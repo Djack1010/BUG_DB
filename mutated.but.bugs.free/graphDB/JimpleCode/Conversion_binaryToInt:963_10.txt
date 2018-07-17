@@ -1,0 +1,108 @@
+public class WrapClass 
+{
+    public static int binaryToInt(boolean[], int, int, int, int)
+    {
+        boolean[] src, temp$7;
+        int srcPos, dstInit, dstPos, nBools, temp$0, temp$1, temp$2, out, shift, i, temp$4, temp$5, bits, temp$6, temp$8, temp$9, temp$11, mask, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17;
+        java.lang.IllegalArgumentException temp$3;
+        boolean temp$10;
+
+        src := @parameter0: boolean[];
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: int;
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        temp$0 = lengthof src;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        if srcPos == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        if 0 == nBools goto label2;
+
+        goto label3;
+
+        goto label3;
+
+     label2:
+        nop;
+        return dstInit;
+
+     label3:
+        nop;
+        temp$1 = nBools - 1;
+        temp$2 = temp$1 - dstPos;
+        if temp$2 >= 32 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+dstPos is greather or equal to than 32");
+        throw temp$3;
+
+     label5:
+        nop;
+        out = dstInit;
+        shift = 0;
+        i = 0;
+
+     label6:
+        nop;
+        if i < nBools goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + dstPos;
+        shift = temp$5;
+        temp$7 = src;
+        temp$8 = i;
+        temp$9 = temp$8 + srcPos;
+        temp$10 = temp$7[temp$9];
+        if temp$10 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$6 = 1;
+        goto label10;
+
+     label9:
+        nop;
+        temp$6 = 0;
+
+     label10:
+        nop;
+        temp$11 = temp$6 << shift;
+        bits = temp$11;
+        temp$12 = 1 << shift;
+        mask = temp$12;
+        temp$13 = -1 ^ mask;
+        temp$14 = out & temp$13;
+        temp$15 = temp$14 | bits;
+        out = temp$15;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label6;
+
+     label11:
+        nop;
+        return out;
+    }
+}

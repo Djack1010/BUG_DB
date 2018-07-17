@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public void setUpToClass(java.lang.Class)
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this;
+        java.lang.Class clazz;
+        java.lang.Object object, temp$0;
+        boolean temp$1;
+        java.lang.IllegalArgumentException temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        clazz := @parameter0: java.lang.Class;
+        if clazz != null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Object getObject()>();
+        object = temp$0;
+        if object != null goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke clazz.<java.lang.Class: boolean isInstance(java.lang.Object)>(object);
+        if temp$1 == 1 goto label2;
+
+        goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Specified class is not a superclass of the object");
+        throw temp$2;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Class upToClass> = clazz;
+        return;
+    }
+}

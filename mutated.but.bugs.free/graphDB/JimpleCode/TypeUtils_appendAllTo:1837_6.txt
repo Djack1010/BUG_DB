@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    private static final transient java.lang.StringBuilder appendAllTo(java.lang.StringBuilder, java.lang.String, java.lang.reflect.Type[])
+    {
+        java.lang.StringBuilder buf, temp$5, temp$7, temp$12;
+        java.lang.String sep, temp$4, temp$11;
+        java.lang.reflect.Type[] types, temp$1, temp$8;
+        int temp$0, temp$2, i, temp$6, temp$9, temp$13, temp$14;
+        java.lang.reflect.Type temp$3, temp$10;
+
+        buf := @parameter0: java.lang.StringBuilder;
+        sep := @parameter1: java.lang.String;
+        types := @parameter2: java.lang.reflect.Type[];
+        temp$0 = lengthof types;
+        if temp$0 > 0 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$1 = types;
+        temp$2 = 0;
+        temp$3 = temp$1[temp$2];
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(temp$3);
+        temp$5 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$4);
+        i = 1;
+
+     label1:
+        nop;
+        temp$6 = lengthof types;
+        if i < temp$6 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sep);
+        temp$8 = types;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        temp$11 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(temp$10);
+        temp$12 = virtualinvoke temp$7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$11);
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return buf;
+    }
+}

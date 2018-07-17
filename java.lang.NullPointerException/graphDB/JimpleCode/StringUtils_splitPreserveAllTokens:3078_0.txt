@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.String[] splitPreserveAllTokens(java.lang.String, java.lang.String, int)
+    {
+        java.lang.String str, separatorChars;
+        int max;
+        java.lang.String[] temp$0;
+
+        str := @parameter0: java.lang.String;
+        separatorChars := @parameter1: java.lang.String;
+        max := @parameter2: int;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String[] splitWorker(java.lang.String,java.lang.String,int,boolean)>(str, separatorChars, max, 1);
+        return temp$0;
+    }
+}

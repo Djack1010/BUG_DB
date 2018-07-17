@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static boolean isParsable(java.lang.String)
+    {
+        java.lang.String str, temp$3, temp$4, temp$6;
+        boolean temp$0, temp$1, temp$2, temp$5, temp$7;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean endsWith(java.lang.CharSequence,java.lang.CharSequence)>(str, ".");
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean startsWith(java.lang.CharSequence,java.lang.CharSequence)>(str, "-");
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(1);
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String replaceOnce(java.lang.String,java.lang.String,java.lang.String)>(temp$3, ".", "");
+        temp$5 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isDigits(java.lang.String)>(temp$4);
+        return temp$5;
+
+     label3:
+        nop;
+        temp$6 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String replaceOnce(java.lang.String,java.lang.String,java.lang.String)>(str, ".", "");
+        temp$7 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isDigits(java.lang.String)>(temp$6);
+        return temp$7;
+    }
+}

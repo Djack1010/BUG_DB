@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static void writeStaticField(java.lang.reflect.Field, java.lang.Object, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.reflect.Field field;
+        java.lang.Object value;
+        boolean forceAccess, temp$2;
+        java.lang.Object[] temp$0, temp$3;
+        int temp$1;
+        java.lang.Class temp$4;
+        java.lang.String temp$5, temp$6;
+
+        field := @parameter0: java.lang.reflect.Field;
+        value := @parameter1: java.lang.Object;
+        forceAccess := @parameter2: boolean;
+        temp$0 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(1, "The field must not be null", temp$0);
+        temp$1 = virtualinvoke field.<java.lang.reflect.Field: int getModifiers()>();
+        temp$2 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>(temp$1);
+        temp$3 = newarray (java.lang.Object)[2];
+        temp$4 = virtualinvoke field.<java.lang.reflect.Field: java.lang.Class getDeclaringClass()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.Class: java.lang.String getName()>();
+        temp$3[0] = temp$5;
+        temp$6 = virtualinvoke field.<java.lang.reflect.Field: java.lang.String getName()>();
+        temp$3[1] = temp$6;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "The field %s.%s is not static", temp$3);
+        staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: void writeField(java.lang.reflect.Field,java.lang.Object,java.lang.Object,boolean)>(field, null, value, forceAccess);
+        return;
+    }
+}

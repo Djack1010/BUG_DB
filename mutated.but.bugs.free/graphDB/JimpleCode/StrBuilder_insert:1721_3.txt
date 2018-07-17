@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2;
+        int index, temp$0, temp$1, temp$5, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12;
+        char value;
+        char[] temp$3, temp$4, temp$9;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        value := @parameter1: char;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 + 1;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$1);
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = index;
+        temp$6 = temp$5 + 1;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$8 = temp$7 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$3, index, temp$4, temp$6, temp$8);
+        temp$9 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$10 = index;
+        temp$9[temp$10] = value;
+        temp$11 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$12 = temp$11 + 1;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$12;
+        return this;
+    }
+}

@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public static java.lang.String reverseDelimited(java.lang.String, char)
+    {
+        java.lang.String str, temp$1;
+        char separatorChar;
+        java.lang.String[] strs, temp$0;
+
+        str := @parameter0: java.lang.String;
+        separatorChar := @parameter1: char;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String[] split(java.lang.String,char)>(str, separatorChar);
+        strs = temp$0;
+        staticinvoke <org.apache.commons.lang3.ArrayUtils: void reverse(java.lang.Object[])>(strs);
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String join(java.lang.Object[],char)>(strs, separatorChar);
+        return temp$1;
+    }
+}

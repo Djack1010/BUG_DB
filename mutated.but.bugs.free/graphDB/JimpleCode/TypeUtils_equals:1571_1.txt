@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    public static boolean equals(java.lang.reflect.Type, java.lang.reflect.Type)
+    {
+        java.lang.reflect.Type t1, t2;
+        boolean temp$0, temp$1, temp$3, temp$4, temp$6, temp$7, temp$9, temp$10;
+        java.lang.reflect.ParameterizedType temp$2;
+        java.lang.reflect.GenericArrayType temp$5;
+        java.lang.reflect.WildcardType temp$8;
+
+        t1 := @parameter0: java.lang.reflect.Type;
+        t2 := @parameter1: java.lang.reflect.Type;
+        temp$0 = 1;
+        return temp$0;
+
+        temp$1 = t1 instanceof java.lang.reflect.ParameterizedType;
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = (java.lang.reflect.ParameterizedType) t1;
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.ParameterizedType,java.lang.reflect.Type)>(temp$2, t2);
+        return temp$3;
+
+     label1:
+        nop;
+        temp$4 = t1 instanceof java.lang.reflect.GenericArrayType;
+        if temp$4 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = (java.lang.reflect.GenericArrayType) t1;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.GenericArrayType,java.lang.reflect.Type)>(temp$5, t2);
+        return temp$6;
+
+     label3:
+        nop;
+        temp$7 = t1 instanceof java.lang.reflect.WildcardType;
+        if temp$7 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$8 = (java.lang.reflect.WildcardType) t1;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.WildcardType,java.lang.reflect.Type)>(temp$8, t2);
+        return temp$9;
+
+     label5:
+        nop;
+        temp$10 = 0;
+        return temp$10;
+    }
+}

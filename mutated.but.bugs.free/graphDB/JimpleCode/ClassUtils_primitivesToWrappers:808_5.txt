@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    public static transient java.lang.Class[] primitivesToWrappers(java.lang.Class[])
+    {
+        java.lang.Class[] classes, temp$0, convertedClasses, temp$3, temp$5;
+        int temp$1, i, temp$2, temp$4, temp$6, temp$9, temp$10;
+        java.lang.Class temp$7, temp$8;
+
+        classes := @parameter0: java.lang.Class[];
+        if classes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof classes;
+        convertedClasses = newarray (java.lang.Class)[temp$1];
+        i = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof classes;
+        if i < temp$2 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = convertedClasses;
+        temp$4 = i;
+        temp$5 = classes;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class primitiveToWrapper(java.lang.Class)>(temp$7);
+        temp$3[temp$4] = temp$8;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label2;
+
+     label4:
+        nop;
+        return convertedClasses;
+    }
+}

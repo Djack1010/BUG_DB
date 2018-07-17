@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public static java.lang.Throwable getRootCause(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable, temp$1, temp$6;
+        java.util.List list, temp$0;
+        int temp$2, temp$3, temp$4;
+        java.lang.Object temp$5;
+
+        throwable := @parameter0: java.lang.Throwable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.util.List getThrowableList(java.lang.Throwable)>(throwable);
+        list = temp$0;
+        temp$2 = interfaceinvoke list.<java.util.List: int size()>();
+        if temp$2 < 2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$4 = temp$3 * 1;
+        temp$5 = interfaceinvoke list.<java.util.List: java.lang.Object get(int)>(temp$4);
+        temp$6 = (java.lang.Throwable) temp$5;
+        temp$1 = temp$6;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

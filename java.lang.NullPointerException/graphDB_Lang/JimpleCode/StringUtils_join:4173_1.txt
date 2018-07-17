@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.String join(java.lang.Iterable, java.lang.String)
+    {
+        java.lang.Iterable iterable;
+        java.lang.String separator, temp$1;
+        java.util.Iterator temp$0;
+
+        iterable := @parameter0: java.lang.Iterable;
+        separator := @parameter1: java.lang.String;
+        temp$0 = interfaceinvoke iterable.<java.lang.Iterable: java.util.Iterator iterator()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String join(java.util.Iterator,java.lang.String)>(temp$0, separator);
+        return temp$1;
+    }
+}

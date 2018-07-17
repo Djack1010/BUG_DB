@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public java.util.List getTokenList()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.util.List list;
+        java.util.ArrayList temp$0;
+        java.lang.String[] temp$1, temp$3;
+        int temp$2, temp$4, temp$5;
+        java.lang.String element, temp$6;
+        boolean temp$7;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = new java.util.ArrayList;
+        temp$1 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        temp$2 = lengthof temp$1;
+        specialinvoke temp$0.<java.util.ArrayList: void <init>(int)>(temp$2);
+        list = temp$0;
+        temp$3 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        temp$4 = 0;
+
+     label0:
+        nop;
+        temp$5 = lengthof temp$3;
+        if temp$4 >= temp$5 goto label1;
+
+        temp$6 = temp$3[temp$4];
+        element = temp$6;
+        temp$7 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(element);
+        nop;
+        temp$4 = temp$4 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        return list;
+    }
+}

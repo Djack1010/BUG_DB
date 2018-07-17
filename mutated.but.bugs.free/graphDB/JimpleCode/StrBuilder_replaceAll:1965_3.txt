@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder replaceAll(char, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$12;
+        char search, replace, temp$5;
+        int temp$0, temp$1, i, temp$2, temp$4, temp$6, temp$7, temp$9, temp$10, temp$11;
+        char[] temp$3, temp$8;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        search := @parameter0: char;
+        replace := @parameter1: char;
+        temp$0 = (int) search;
+        temp$1 = (int) replace;
+        if temp$0 != temp$1 goto label0;
+
+        goto label6;
+
+     label0:
+        nop;
+        i = 0;
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if i < temp$2 goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = (int) temp$5;
+        temp$7 = (int) search;
+        if temp$6 == temp$7 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$9 = i;
+        temp$8[temp$9] = replace;
+
+     label4:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label1;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        temp$12 = null;
+        return temp$12;
+    }
+}

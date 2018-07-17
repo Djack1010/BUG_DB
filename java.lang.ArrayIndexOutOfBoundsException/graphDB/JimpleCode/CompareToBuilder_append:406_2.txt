@@ -1,0 +1,82 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder append(java.lang.Object, java.lang.Object, java.util.Comparator)
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this;
+        java.lang.Object lhs, rhs;
+        java.util.Comparator comparator, comparator2;
+        int temp$0, temp$1, temp$2, temp$3, temp$4;
+        java.lang.Comparable comparable;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        comparator := @parameter2: java.util.Comparator;
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = -1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$1;
+        return this;
+
+     label5:
+        nop;
+        if rhs == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = 1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$2;
+        return this;
+
+     label7:
+        nop;
+        if comparator == null goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        comparable = (java.lang.Comparable) lhs;
+        temp$3 = interfaceinvoke comparable.<java.lang.Comparable: int compareTo(java.lang.Object)>(rhs);
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$3;
+        goto label10;
+
+     label9:
+        nop;
+        comparator2 = (java.util.Comparator) comparator;
+        temp$4 = interfaceinvoke comparator2.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$4;
+
+     label10:
+        nop;
+        nop;
+        return this;
+    }
+}

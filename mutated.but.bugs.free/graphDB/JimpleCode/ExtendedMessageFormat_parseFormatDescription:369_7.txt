@@ -1,0 +1,101 @@
+public class WrapClass 
+{
+    private final java.lang.String parseFormatDescription(java.lang.String, java.text.ParsePosition)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern, temp$9, temp$15;
+        java.text.ParsePosition pos, temp$12;
+        int start, temp$0, text, temp$1, depth, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$10;
+        char temp$11;
+        java.lang.IllegalArgumentException temp$13;
+        java.lang.StringBuffer temp$14;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        pos := @parameter1: java.text.ParsePosition;
+        temp$0 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        start = temp$0;
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void seekNonWs(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+        temp$1 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        text = temp$1;
+        depth = 1;
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$3 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if temp$2 < temp$3 goto label1;
+
+        goto label10;
+
+     label1:
+        nop;
+        goto label8;
+
+     label2:
+        nop;
+        temp$4 = depth;
+        temp$5 = temp$4 + 1;
+        depth = temp$5;
+        goto label9;
+
+     label3:
+        nop;
+        temp$6 = depth;
+        temp$7 = temp$6 + -1;
+        depth = temp$7;
+        if depth == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$9 = virtualinvoke pattern.<java.lang.String: java.lang.String substring(int,int)>(text, temp$8);
+        return temp$9;
+
+     label5:
+        nop;
+        goto label9;
+
+     label6:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void getQuotedString(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+
+     label7:
+        nop;
+        goto label9;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$10 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$11 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$10);
+        nop;
+        lookupswitch(temp$11)
+        {
+            case 39: goto label6;
+            case 123: goto label2;
+            case 125: goto label3;
+            default: goto label7;
+        };
+
+     label9:
+        nop;
+        nop;
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        goto label0;
+
+     label10:
+        nop;
+        temp$13 = new java.lang.IllegalArgumentException;
+        temp$14 = new java.lang.StringBuffer;
+        specialinvoke temp$14.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unterminated format element at position ");
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        temp$15 = virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$15);
+        throw temp$13;
+    }
+}

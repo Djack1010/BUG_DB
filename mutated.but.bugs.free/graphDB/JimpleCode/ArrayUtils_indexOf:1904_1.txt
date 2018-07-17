@@ -1,0 +1,116 @@
+public class WrapClass 
+{
+    public static int indexOf(java.lang.Object[], java.lang.Object, int)
+    {
+        java.lang.Object[] array, temp$3, temp$9;
+        java.lang.Object objectToFind, temp$5, temp$11;
+        int startIndex, temp$0, temp$1, i, temp$2, temp$4, temp$6, temp$7, i, temp$8, temp$10, temp$13, temp$14, temp$15;
+        boolean temp$12;
+
+        array := @parameter0: java.lang.Object[];
+        objectToFind := @parameter1: java.lang.Object;
+        startIndex := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        startIndex = temp$1;
+
+     label3:
+        nop;
+        if objectToFind == null goto label4;
+
+        goto label10;
+
+     label4:
+        nop;
+        i = startIndex;
+
+     label5:
+        nop;
+        temp$2 = lengthof array;
+        if i < temp$2 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$3 = array;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        if temp$5 == null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return i;
+
+     label8:
+        nop;
+        nop;
+        temp$6 = i;
+        temp$7 = temp$6 + 1;
+        i = temp$7;
+        goto label5;
+
+     label9:
+        nop;
+        goto label16;
+
+     label10:
+        nop;
+        i = startIndex;
+
+     label11:
+        nop;
+        temp$8 = lengthof array;
+        if i < temp$8 goto label12;
+
+        goto label15;
+
+     label12:
+        nop;
+        temp$9 = array;
+        temp$10 = i;
+        temp$11 = temp$9[temp$10];
+        temp$12 = virtualinvoke objectToFind.<java.lang.Object: boolean equals(java.lang.Object)>(temp$11);
+        if temp$12 == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        return i;
+
+     label14:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label11;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        temp$15 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$15;
+    }
+}

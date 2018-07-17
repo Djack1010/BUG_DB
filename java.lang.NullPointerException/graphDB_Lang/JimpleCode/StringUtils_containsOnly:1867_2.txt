@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    public static boolean containsOnly(java.lang.CharSequence, java.lang.String)
+    {
+        java.lang.CharSequence cs;
+        java.lang.String validChars;
+        boolean temp$0, temp$1, temp$2, temp$4;
+        char[] temp$3;
+
+        cs := @parameter0: java.lang.CharSequence;
+        validChars := @parameter1: java.lang.String;
+        if cs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if validChars == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label7:
+        nop;
+        temp$3 = virtualinvoke validChars.<java.lang.String: char[] toCharArray()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean containsOnly(java.lang.CharSequence,char[])>(cs, temp$3);
+        return temp$4;
+    }
+}

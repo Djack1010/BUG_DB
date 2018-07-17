@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public static java.util.Iterator iterator(java.lang.Object, int)
+    {
+        java.lang.Object focus;
+        int rangeStyle;
+        java.lang.IllegalArgumentException temp$0;
+        boolean temp$1, temp$4;
+        java.util.Date temp$2;
+        java.util.Iterator temp$3, temp$6;
+        java.util.Calendar temp$5;
+        java.lang.ClassCastException temp$7;
+        java.lang.StringBuffer temp$8;
+        java.lang.String temp$9;
+
+        focus := @parameter0: java.lang.Object;
+        rangeStyle := @parameter1: int;
+        if focus == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = focus instanceof java.util.Date;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = (java.util.Date) focus;
+        temp$3 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Iterator iterator(java.util.Date,int)>(temp$2, rangeStyle);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = focus instanceof java.util.Calendar;
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = (java.util.Calendar) focus;
+        temp$6 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Iterator iterator(java.util.Calendar,int)>(temp$5, rangeStyle);
+        return temp$6;
+
+     label5:
+        nop;
+        temp$7 = new java.lang.ClassCastException;
+        temp$8 = new java.lang.StringBuffer;
+        specialinvoke temp$8.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Could not iterate based on ");
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(focus);
+        temp$9 = virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$7.<java.lang.ClassCastException: void <init>(java.lang.String)>(temp$9);
+        throw temp$7;
+    }
+}

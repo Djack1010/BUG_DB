@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public int hashCode()
+    {
+        org.apache.commons.lang3.tuple.Pair this;
+        int temp$0, temp$3, temp$4, temp$6, temp$7;
+        java.lang.Object temp$1, temp$2, temp$5;
+
+        this := @this: org.apache.commons.lang3.tuple.Pair;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        if temp$1 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Object: int hashCode()>();
+        temp$0 = temp$3;
+
+     label2:
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getValue()>();
+        temp$6 = virtualinvoke temp$5.<java.lang.Object: int hashCode()>();
+        temp$4 = temp$6;
+        nop;
+        temp$7 = temp$0 ^ temp$4;
+        return temp$7;
+    }
+}

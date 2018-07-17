@@ -1,0 +1,12 @@
+public class WrapClass 
+{
+    public static java.lang.String toString(java.lang.Object)
+    {
+        java.lang.Object object;
+        java.lang.String temp$0;
+
+        object := @parameter0: java.lang.Object;
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String toString(java.lang.Object,org.apache.commons.lang3.builder.ToStringStyle,boolean,boolean,java.lang.Class)>(object, null, 1, 0, null);
+        return temp$0;
+    }
+}

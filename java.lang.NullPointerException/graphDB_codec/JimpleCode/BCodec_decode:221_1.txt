@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    public java.lang.Object decode(java.lang.Object) throws org.apache.commons.codec.DecoderException
+    {
+        org.apache.commons.codec.net.BCodec this;
+        java.lang.Object value;
+        boolean temp$0;
+        java.lang.String temp$1, temp$2, temp$6, temp$7;
+        org.apache.commons.codec.DecoderException temp$3;
+        java.lang.StringBuffer temp$4;
+        java.lang.Class temp$5;
+
+        this := @this: org.apache.commons.codec.net.BCodec;
+        value := @parameter0: java.lang.Object;
+        temp$0 = value instanceof java.lang.String;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (java.lang.String) value;
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.net.BCodec: java.lang.String decode(java.lang.String)>(temp$1);
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = new org.apache.commons.codec.DecoderException;
+        temp$4 = new java.lang.StringBuffer;
+        specialinvoke temp$4.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Objects of type ");
+        temp$5 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$6 = virtualinvoke temp$5.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$6);
+        virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" cannot be decoded using BCodec");
+        temp$7 = virtualinvoke temp$4.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$3.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>(temp$7);
+        throw temp$3;
+    }
+}

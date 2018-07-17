@@ -1,0 +1,81 @@
+public class WrapClass 
+{
+    public final boolean contains(char)
+    {
+        org.apache.commons.lang3.CharRange this;
+        char ch, temp$0, temp$4;
+        int temp$1, temp$2, temp$5, temp$6;
+        boolean temp$3, temp$7, temp$8, temp$9, temp$10;
+
+        this := @this: org.apache.commons.lang3.CharRange;
+        ch := @parameter0: char;
+        temp$0 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$1 = (int) ch;
+        temp$2 = (int) temp$0;
+        if temp$1 >= temp$2 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = 1;
+
+     label2:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$5 = (int) ch;
+        temp$6 = (int) temp$4;
+        if temp$5 <= temp$6 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$7 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = 1;
+
+     label5:
+        nop;
+        if temp$3 == temp$7 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$8 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$8 = 1;
+
+     label8:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.CharRange: boolean negated>;
+        if temp$8 != temp$9 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$10 = 0;
+        goto label11;
+
+     label10:
+        nop;
+        temp$10 = 1;
+
+     label11:
+        nop;
+        return temp$10;
+    }
+}

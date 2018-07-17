@@ -1,0 +1,81 @@
+public class WrapClass 
+{
+    public boolean equals(org.apache.commons.lang3.text.StrBuilder)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, other;
+        boolean temp$0, temp$3, temp$14, temp$17;
+        int temp$1, temp$2, i, temp$4, temp$5, temp$7, temp$10, temp$12, temp$13, temp$15, temp$16;
+        char[] thisBuf, otherBuf, temp$6, temp$9;
+        char temp$8, temp$11;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        other := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        if this == other goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$2 = other.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$1 != temp$2 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label3:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        otherBuf = other.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 / 1;
+        i = temp$5;
+
+     label4:
+        nop;
+        if i >= 0 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$6 = thisBuf;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        temp$9 = otherBuf;
+        temp$10 = i;
+        temp$11 = temp$9[temp$10];
+        temp$12 = (int) temp$8;
+        temp$13 = (int) temp$11;
+        if temp$12 != temp$13 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$14 = 0;
+        return temp$14;
+
+     label7:
+        nop;
+        nop;
+        temp$15 = i;
+        temp$16 = temp$15 + -1;
+        i = temp$16;
+        goto label4;
+
+     label8:
+        nop;
+        temp$17 = 1;
+        return temp$17;
+    }
+}

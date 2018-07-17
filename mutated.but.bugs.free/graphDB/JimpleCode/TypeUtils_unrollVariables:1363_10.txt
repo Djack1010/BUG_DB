@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type unrollVariables(java.util.Map, java.lang.reflect.Type)
+    {
+        java.util.Map typeArguments, temp$0, temp$1;
+        java.lang.reflect.Type type;
+
+        typeArguments := @parameter0: java.util.Map;
+        type := @parameter1: java.lang.reflect.Type;
+        if typeArguments == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>();
+        temp$1 = (java.util.Map) temp$0;
+        typeArguments = temp$1;
+
+     label1:
+        nop;
+        return type;
+    }
+}

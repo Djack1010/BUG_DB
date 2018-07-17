@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public static java.lang.String wrap(java.lang.String, char)
+    {
+        java.lang.String str, temp$3;
+        char wrapWith;
+        boolean temp$0;
+        int temp$1;
+        java.lang.StringBuffer temp$2;
+
+        str := @parameter0: java.lang.String;
+        wrapWith := @parameter1: char;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = (int) wrapWith;
+        if temp$1 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(wrapWith);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(wrapWith);
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$3;
+    }
+}

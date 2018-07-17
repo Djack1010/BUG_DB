@@ -1,0 +1,66 @@
+public class WrapClass 
+{
+    public static java.lang.String chop(java.lang.String)
+    {
+        java.lang.String str, temp$0, temp$2, 'ret', temp$4, temp$11;
+        int strLen, temp$1, lastIdx, temp$3, temp$6, temp$7, temp$9, temp$10;
+        char last, temp$5, temp$8;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$1;
+        if strLen < 2 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = strLen - 1;
+        lastIdx = temp$3;
+        temp$4 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, lastIdx);
+        'ret' = temp$4;
+        temp$5 = virtualinvoke str.<java.lang.String: char charAt(int)>(lastIdx);
+        last = temp$5;
+        temp$6 = (int) last;
+        if temp$6 == 10 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$7 = lastIdx * 1;
+        temp$8 = virtualinvoke 'ret'.<java.lang.String: char charAt(int)>(temp$7);
+        temp$9 = (int) temp$8;
+        if temp$9 == 13 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$10 = lastIdx - 1;
+        temp$11 = virtualinvoke 'ret'.<java.lang.String: java.lang.String substring(int,int)>(0, temp$10);
+        return temp$11;
+
+     label6:
+        nop;
+        return 'ret';
+    }
+}

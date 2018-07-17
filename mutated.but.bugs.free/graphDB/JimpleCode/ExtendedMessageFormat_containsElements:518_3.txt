@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    private final boolean containsElements(java.util.Collection)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.util.Collection coll;
+        boolean temp$0, temp$1, temp$3, temp$4, temp$5;
+        java.util.Iterator temp$2;
+        java.lang.Object name;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        coll := @parameter0: java.util.Collection;
+        temp$0 = interfaceinvoke coll.<java.util.Collection: boolean isEmpty()>();
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = interfaceinvoke coll.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label2:
+        nop;
+        temp$3 = interfaceinvoke temp$2.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label5;
+
+        name = interfaceinvoke temp$2.<java.util.Iterator: java.lang.Object next()>();
+        if name != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = 1;
+        return temp$4;
+
+     label4:
+        nop;
+        nop;
+        goto label2;
+
+     label5:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+    }
+}

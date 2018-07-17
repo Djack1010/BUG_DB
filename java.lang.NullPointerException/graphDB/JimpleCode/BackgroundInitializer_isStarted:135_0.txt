@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public synchronized boolean isStarted()
+    {
+        org.apache.commons.lang3.concurrent.BackgroundInitializer this;
+        java.util.concurrent.Future temp$0;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.concurrent.BackgroundInitializer;
+        temp$0 = this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.Future future>;
+        if temp$0 != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

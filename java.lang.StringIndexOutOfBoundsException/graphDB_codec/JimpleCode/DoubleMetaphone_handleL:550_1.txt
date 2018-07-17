@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    private final int handleL(java.lang.String, org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result;
+        int index, temp$0, temp$1, temp$3, temp$5, temp$6, temp$7, temp$8;
+        char temp$2;
+        boolean temp$4;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        result := @parameter1: org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        index := @parameter2: int;
+        temp$0 = index;
+        temp$1 = temp$0 + 1;
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$1);
+        temp$3 = (int) temp$2;
+        if temp$3 == 76 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$4 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean conditionL0(java.lang.String,int)>(value, index);
+        if temp$4 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void appendPrimary(char)>(76);
+        goto label3;
+
+     label2:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(76);
+
+     label3:
+        nop;
+        temp$5 = index;
+        temp$6 = temp$5 + -2;
+        index = temp$6;
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = index;
+        temp$8 = temp$7 + 1;
+        index = temp$8;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(76);
+
+     label5:
+        nop;
+        return index;
+    }
+}

@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object[] noNullElements(java.lang.Object[], java.lang.String, java.lang.Object[])
+    {
+        java.lang.Object[] array, values, temp$1, temp$3, values2, temp$7;
+        java.lang.String message, temp$9;
+        java.lang.Object temp$0, temp$5;
+        int i, temp$2, temp$4, temp$10, temp$11;
+        java.lang.Integer temp$6;
+        java.lang.IllegalArgumentException temp$8;
+
+        array := @parameter0: java.lang.Object[];
+        message := @parameter1: java.lang.String;
+        values := @parameter2: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(array);
+        temp$1 = (java.lang.Object[]) temp$0;
+        i = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if i != temp$2 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$3 = array;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        if temp$5 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i);
+        temp$7 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] add(java.lang.Object[],java.lang.Object)>(values, temp$6);
+        values2 = temp$7;
+        temp$8 = new java.lang.IllegalArgumentException;
+        temp$9 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values2);
+        specialinvoke temp$8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$9);
+        throw temp$8;
+
+     label3:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label0;
+
+     label4:
+        nop;
+        return array;
+    }
+}

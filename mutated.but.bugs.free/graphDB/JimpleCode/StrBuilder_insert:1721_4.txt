@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int index, temp$2, temp$3, temp$4, temp$5, temp$7, temp$8, temp$9;
+        char value;
+        char[] temp$0, temp$1, temp$6;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        value := @parameter1: char;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void validateIndex(int)>(index);
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$2 = index;
+        temp$3 = temp$2 + 1;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 - index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$0, index, temp$1, temp$3, temp$5);
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = index;
+        temp$6[temp$7] = value;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$8 + 1;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$9;
+        return this;
+    }
+}

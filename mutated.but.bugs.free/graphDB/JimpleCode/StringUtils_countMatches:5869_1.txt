@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public static int countMatches(java.lang.CharSequence, char)
+    {
+        java.lang.CharSequence str;
+        char ch, temp$3;
+        boolean temp$0;
+        int temp$1, count, i, temp$2, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9;
+
+        str := @parameter0: java.lang.CharSequence;
+        ch := @parameter1: char;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        count = 0;
+        i = 0;
+
+     label2:
+        nop;
+        temp$2 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        if i != temp$2 goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$3 = interfaceinvoke str.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$4 = (int) ch;
+        temp$5 = (int) temp$3;
+        if temp$4 == temp$5 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = count;
+        temp$7 = temp$6 + 1;
+        count = temp$7;
+
+     label5:
+        nop;
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        i = temp$9;
+        goto label2;
+
+     label6:
+        nop;
+        return count;
+    }
+}

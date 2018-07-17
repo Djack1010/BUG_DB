@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.DataSourceResolver[] getDataSourceResolvers()
+    {
+        org.apache.commons.mail.resolver.DataSourceCompositeResolver this;
+        org.apache.commons.mail.DataSourceResolver[] resolvers, temp$0, temp$2, temp$3;
+        int temp$1, temp$4;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceCompositeResolver;
+        temp$0 = this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: org.apache.commons.mail.DataSourceResolver[] dataSourceResolvers>;
+        temp$1 = lengthof temp$0;
+        resolvers = newarray (org.apache.commons.mail.DataSourceResolver)[temp$1];
+        temp$2 = this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: org.apache.commons.mail.DataSourceResolver[] dataSourceResolvers>;
+        temp$3 = this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: org.apache.commons.mail.DataSourceResolver[] dataSourceResolvers>;
+        temp$4 = lengthof temp$3;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$2, 0, resolvers, 1, temp$4);
+        return resolvers;
+    }
+}

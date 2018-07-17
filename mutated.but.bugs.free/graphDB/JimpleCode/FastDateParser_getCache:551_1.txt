@@ -1,0 +1,55 @@
+public class WrapClass 
+{
+    private static final java.util.concurrent.ConcurrentMap getCache(int)
+    {
+        int field, temp$2, temp$5, temp$8;
+        java.util.concurrent.ConcurrentMap[] temp$0, temp$1, temp$4, temp$7;
+        java.util.concurrent.ConcurrentMap temp$3, temp$9;
+        java.util.concurrent.ConcurrentHashMap temp$6;
+        java.lang.Throwable temp$10;
+
+        field := @parameter0: int;
+        temp$0 = <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap[] caches>;
+        entermonitor temp$0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap[] caches>;
+        temp$2 = field;
+        temp$3 = temp$1[temp$2];
+        if temp$3 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap[] caches>;
+        temp$5 = field;
+        temp$6 = new java.util.concurrent.ConcurrentHashMap;
+        specialinvoke temp$6.<java.util.concurrent.ConcurrentHashMap: void <init>(int)>(0);
+        temp$4[temp$5] = temp$6;
+
+     label2:
+        nop;
+        temp$7 = <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap[] caches>;
+        temp$8 = field;
+        temp$9 = temp$7[temp$8];
+        exitmonitor temp$0;
+
+     label3:
+        nop;
+        return temp$9;
+
+     label4:
+        nop;
+        temp$10 := @caughtexception;
+        exitmonitor temp$0;
+        throw temp$10;
+
+     label5:
+        nop;
+
+        catch java.lang.Throwable from label0 to label3 with label4;
+        catch java.lang.Throwable from label4 to label5 with label4;
+    }
+}

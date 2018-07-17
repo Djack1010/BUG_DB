@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static void identityToString(java.lang.StringBuffer, java.lang.Object)
+    {
+        java.lang.StringBuffer buffer, temp$2, temp$3, temp$6;
+        java.lang.Object object;
+        java.lang.Class temp$0;
+        java.lang.String temp$1, temp$5;
+        int temp$4;
+
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        temp$0 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: java.lang.String getName()>();
+        temp$2 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$1);
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(64);
+        temp$4 = staticinvoke <java.lang.System: int identityHashCode(java.lang.Object)>(object);
+        temp$5 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(temp$4);
+        temp$6 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$5);
+        return;
+    }
+}

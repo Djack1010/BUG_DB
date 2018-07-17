@@ -1,0 +1,151 @@
+public class WrapClass 
+{
+    public int indexOf(java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        int startIndex, temp$0, temp$1, temp$2, strLen, temp$3, temp$5, temp$6, temp$7, len, temp$8, temp$9, temp$10, i, j, temp$13, temp$14, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$22;
+        char temp$4, temp$11, temp$15;
+        char[] thisBuf, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        startIndex := @parameter1: int;
+        if startIndex < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = startIndex;
+
+     label2:
+        nop;
+        startIndex = temp$0;
+        if str == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if startIndex >= temp$1 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = -1;
+        return temp$2;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$3;
+        if strLen == 1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int indexOf(char,int)>(temp$4, startIndex);
+        return temp$5;
+
+     label7:
+        nop;
+        if strLen == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if strLen > temp$6 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$7 = -1;
+        return temp$7;
+
+     label11:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$8 - strLen;
+        temp$10 = temp$9;
+        len = temp$10 + 1;
+        nop;
+        i = startIndex;
+
+     label12:
+        nop;
+        if i < len goto label13;
+
+        goto label20;
+
+     label13:
+        nop;
+        j = 0;
+
+     label14:
+        nop;
+        if j < strLen goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$11 = virtualinvoke str.<java.lang.String: char charAt(int)>(j);
+        temp$12 = thisBuf;
+        temp$13 = i;
+        temp$14 = temp$13 + j;
+        temp$15 = temp$12[temp$14];
+        temp$16 = (int) temp$11;
+        temp$17 = (int) temp$15;
+        if temp$16 != temp$17 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        goto label19;
+
+     label17:
+        nop;
+        nop;
+        temp$18 = j;
+        temp$19 = temp$18 + 1;
+        j = temp$19;
+        goto label14;
+
+     label18:
+        nop;
+        return i;
+
+     label19:
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label12;
+
+     label20:
+        nop;
+        nop;
+        temp$22 = -1;
+        return temp$22;
+    }
+}

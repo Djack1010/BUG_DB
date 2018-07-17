@@ -1,0 +1,91 @@
+public class WrapClass 
+{
+    public boolean equalsIgnoreCase(org.apache.commons.lang3.text.StrBuilder)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, other;
+        int temp$0, temp$1, i, temp$3, temp$4, temp$6, temp$8, temp$9, temp$10, temp$13, temp$14, temp$16, temp$17;
+        boolean temp$2, temp$15, temp$18;
+        char[] thisBuf, otherBuf, temp$5, temp$7;
+        char c1, c2, temp$11, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        other := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        if this == other goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = other.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$0 != temp$1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label3:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        otherBuf = other.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$4 = temp$3 - 1;
+        i = temp$4;
+
+     label4:
+        nop;
+        if i >= 0 goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$5 = thisBuf;
+        temp$6 = i;
+        c1 = temp$5[temp$6];
+        temp$7 = otherBuf;
+        temp$8 = i;
+        c2 = temp$7[temp$8];
+        temp$9 = (int) c1;
+        temp$10 = (int) c2;
+        if temp$9 != temp$10 goto label6;
+
+        goto label8;
+
+     label6:
+        nop;
+        temp$11 = staticinvoke <java.lang.Character: char toUpperCase(char)>(c1);
+        temp$12 = staticinvoke <java.lang.Character: char toUpperCase(char)>(c2);
+        temp$13 = (int) temp$11;
+        temp$14 = (int) temp$12;
+        if temp$13 != temp$14 goto label7;
+
+        goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$15 = 0;
+        return temp$15;
+
+     label8:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + -1;
+        i = temp$17;
+        goto label4;
+
+     label9:
+        nop;
+        temp$18 = 1;
+        return temp$18;
+    }
+}

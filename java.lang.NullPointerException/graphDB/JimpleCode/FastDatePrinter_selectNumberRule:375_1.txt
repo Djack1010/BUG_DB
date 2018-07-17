@@ -1,0 +1,45 @@
+public class WrapClass 
+{
+    protected org.apache.commons.lang3.time.FastDatePrinter$NumberRule selectNumberRule(int, int)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        int field, padding;
+        org.apache.commons.lang3.time.FastDatePrinter$NumberRule temp$0;
+        org.apache.commons.lang3.time.FastDatePrinter$TwoDigitNumberField temp$1;
+        org.apache.commons.lang3.time.FastDatePrinter$PaddedNumberField temp$2;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        field := @parameter0: int;
+        padding := @parameter1: int;
+        goto label3;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new org.apache.commons.lang3.time.FastDatePrinter$TwoDigitNumberField;
+        specialinvoke temp$1.<org.apache.commons.lang3.time.FastDatePrinter$TwoDigitNumberField: void <init>(int)>(field);
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = new org.apache.commons.lang3.time.FastDatePrinter$PaddedNumberField;
+        specialinvoke temp$2.<org.apache.commons.lang3.time.FastDatePrinter$PaddedNumberField: void <init>(int,int)>(field, padding);
+        return temp$2;
+
+     label3:
+        nop;
+        nop;
+        tableswitch(padding)
+        {
+            case 1: goto label0;
+            case 2: goto label1;
+            default: goto label2;
+        };
+
+        nop;
+    }
+}

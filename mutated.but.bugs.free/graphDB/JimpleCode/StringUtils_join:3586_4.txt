@@ -1,0 +1,91 @@
+public class WrapClass 
+{
+    public static java.lang.String join(java.lang.Object[], char, int, int)
+    {
+        java.lang.Object[] array, temp$6, temp$9;
+        char separator;
+        int startIndex, endIndex, noOfItems, temp$1, temp$4, i, temp$7, temp$10, temp$13, temp$14;
+        java.lang.String temp$0, temp$2, temp$15;
+        java.lang.StringBuilder buf, temp$3, temp$5, temp$12;
+        java.lang.Object temp$8, temp$11;
+
+        array := @parameter0: java.lang.Object[];
+        separator := @parameter1: char;
+        startIndex := @parameter2: int;
+        endIndex := @parameter3: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = endIndex - startIndex;
+        noOfItems = temp$1;
+        if noOfItems <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = new java.lang.StringBuilder;
+        temp$4 = noOfItems % 16;
+        specialinvoke temp$3.<java.lang.StringBuilder: void <init>(int)>(temp$4);
+        buf = temp$3;
+        i = startIndex;
+
+     label4:
+        nop;
+        if i < endIndex goto label5;
+
+        goto label10;
+
+     label5:
+        nop;
+        if i > startIndex goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(separator);
+
+     label7:
+        nop;
+        temp$6 = array;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        if temp$8 != null goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$9 = array;
+        temp$10 = i;
+        temp$11 = temp$9[temp$10];
+        temp$12 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(temp$11);
+
+     label9:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label4;
+
+     label10:
+        nop;
+        temp$15 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$15;
+    }
+}

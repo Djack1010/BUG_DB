@@ -1,0 +1,123 @@
+public class WrapClass 
+{
+    public static java.math.BigInteger createBigInteger(java.lang.String)
+    {
+        java.lang.String str, temp$18;
+        java.math.BigInteger temp$0, value, temp$17, temp$19, temp$20;
+        int pos, radix, temp$3, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12, temp$14, temp$15, temp$16;
+        boolean negate, temp$1, temp$2, temp$4, temp$5, temp$9, temp$13;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        pos = 0;
+        radix = 10;
+        negate = 0;
+        temp$1 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String)>("-");
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = 1;
+        negate = temp$2;
+        temp$3 = 1;
+        pos = temp$3;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String,int)>("0x", pos);
+        if temp$4 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String,int)>("0X", pos);
+        if temp$5 == 0 goto label6;
+
+        goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = 16;
+        radix = temp$6;
+        temp$7 = pos;
+        temp$8 = temp$7 + 2;
+        pos = temp$8;
+        goto label12;
+
+     label6:
+        nop;
+        temp$9 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String,int)>("#", pos);
+        if temp$9 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$10 = 16;
+        radix = temp$10;
+        temp$11 = pos;
+        temp$12 = temp$11 + 1;
+        pos = temp$12;
+        goto label11;
+
+     label8:
+        nop;
+        temp$13 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String,int)>("0", pos);
+        if temp$13 == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$14 = 8;
+        radix = temp$14;
+        temp$15 = pos;
+        temp$16 = temp$15 + 1;
+        pos = temp$16;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$17 = new java.math.BigInteger;
+        temp$18 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(pos);
+        specialinvoke temp$17.<java.math.BigInteger: void <init>(java.lang.String,int)>(temp$18, radix);
+        value = temp$17;
+        if negate == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$20 = virtualinvoke value.<java.math.BigInteger: java.math.BigInteger negate()>();
+        temp$19 = temp$20;
+        goto label15;
+
+     label14:
+        nop;
+        temp$19 = value;
+
+     label15:
+        nop;
+        return temp$19;
+    }
+}

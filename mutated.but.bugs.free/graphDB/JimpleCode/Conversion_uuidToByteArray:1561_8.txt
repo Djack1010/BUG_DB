@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static byte[] uuidToByteArray(java.util.UUID, byte[], int, int)
+    {
+        java.util.UUID src;
+        byte[] dst, temp$3, temp$8;
+        int dstPos, nBytes, temp$2, temp$5, temp$6, temp$7;
+        java.lang.IllegalArgumentException temp$0;
+        long temp$1, temp$4;
+
+        src := @parameter0: java.util.UUID;
+        dst := @parameter1: byte[];
+        dstPos := @parameter2: int;
+        nBytes := @parameter3: int;
+        if nBytes > 16 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBytes is greather than 16");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke src.<java.util.UUID: long getMostSignificantBits()>();
+        if nBytes > 8 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 8;
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = nBytes;
+
+     label4:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.lang3.Conversion: byte[] longToByteArray(long,int,byte[],int,int)>(temp$1, 0, dst, dstPos, temp$2);
+        if nBytes >= 8 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke src.<java.util.UUID: long getLeastSignificantBits()>();
+        temp$5 = dstPos;
+        temp$6 = temp$5 + 8;
+        temp$7 = nBytes - 8;
+        temp$8 = staticinvoke <org.apache.commons.lang3.Conversion: byte[] longToByteArray(long,int,byte[],int,int)>(temp$4, 0, dst, temp$6, temp$7);
+
+     label6:
+        nop;
+        return dst;
+    }
+}

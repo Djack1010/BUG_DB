@@ -1,0 +1,64 @@
+public class WrapClass 
+{
+    public static void exclusiveBetween(long, long, long, java.lang.String)
+    {
+        long start, end, value;
+        java.lang.String message, temp$6;
+        int temp$0, temp$2;
+        boolean temp$1, temp$3;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.Object[] temp$5;
+
+        start := @parameter0: long;
+        end := @parameter1: long;
+        value := @parameter2: long;
+        message := @parameter3: java.lang.String;
+        temp$0 = value cmp start;
+        if temp$0 > 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = value cmp end;
+        if temp$2 < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = 1;
+
+     label5:
+        nop;
+        if temp$1 != temp$3 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = newarray (java.lang.Object)[0];
+        temp$6 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, temp$5);
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label7:
+        nop;
+        return;
+    }
+}

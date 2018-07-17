@@ -1,0 +1,77 @@
+public class WrapClass 
+{
+    public static java.lang.String join(float[], char, int, int)
+    {
+        float[] array, temp$5;
+        char separator;
+        int startIndex, endIndex, noOfItems, temp$1, temp$3, i, temp$6, temp$9, temp$10;
+        java.lang.String temp$0, temp$11;
+        java.lang.StringBuilder buf, temp$2, temp$4, temp$8;
+        float temp$7;
+
+        array := @parameter0: float[];
+        separator := @parameter1: char;
+        startIndex := @parameter2: int;
+        endIndex := @parameter3: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = endIndex - startIndex;
+        noOfItems = temp$1;
+        if noOfItems <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        temp$2 = new java.lang.StringBuilder;
+        temp$3 = noOfItems * 16;
+        specialinvoke temp$2.<java.lang.StringBuilder: void <init>(int)>(temp$3);
+        buf = temp$2;
+        i = startIndex;
+
+     label4:
+        nop;
+        if i < endIndex goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        if i > startIndex goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(separator);
+
+     label7:
+        nop;
+        temp$5 = array;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>(temp$7);
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label4;
+
+     label8:
+        nop;
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$11;
+    }
+}

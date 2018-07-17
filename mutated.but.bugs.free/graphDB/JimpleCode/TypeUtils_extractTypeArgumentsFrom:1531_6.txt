@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type[] extractTypeArgumentsFrom(java.util.Map, java.lang.reflect.TypeVariable[])
+    {
+        java.util.Map mappings;
+        java.lang.reflect.TypeVariable[] variables;
+        java.lang.reflect.Type[] result, temp$4;
+        int temp$0, index, temp$1, temp$2, temp$5, temp$6, temp$7;
+        java.lang.reflect.TypeVariable var, temp$3;
+        java.lang.Object temp$8;
+        java.lang.reflect.Type temp$9;
+
+        mappings := @parameter0: java.util.Map;
+        variables := @parameter1: java.lang.reflect.TypeVariable[];
+        temp$0 = lengthof variables;
+        result = newarray (java.lang.reflect.Type)[temp$0];
+        index = 0;
+        temp$1 = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof variables;
+        if temp$1 >= temp$2 goto label1;
+
+        temp$3 = variables[temp$1];
+        var = temp$3;
+        temp$4 = result;
+        temp$5 = index;
+        temp$6 = temp$5 + 1;
+        index = temp$6;
+        temp$7 = temp$5;
+        temp$8 = interfaceinvoke mappings.<java.util.Map: java.lang.Object get(java.lang.Object)>(var);
+        temp$9 = (java.lang.reflect.Type) temp$8;
+        temp$4[temp$7] = temp$9;
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        return result;
+    }
+}

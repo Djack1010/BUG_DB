@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    private final void deleteImpl(int, int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, len, temp$2, temp$3, temp$4, temp$5;
+        char[] temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        len := @parameter2: int;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$3 = temp$2 - endIndex;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$0, endIndex, temp$1, startIndex, temp$3);
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 - len;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$5;
+        return;
+    }
+}

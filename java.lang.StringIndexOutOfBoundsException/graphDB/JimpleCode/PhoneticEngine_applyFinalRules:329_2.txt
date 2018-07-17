@@ -1,0 +1,158 @@
+public class WrapClass 
+{
+    private final org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder applyFinalRules(org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder, java.util.Map)
+    {
+        org.apache.commons.codec.language.bm.PhoneticEngine this;
+        org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder phonemeBuilder, subBuilder, temp$9, temp$17, temp$35;
+        java.util.Map finalRules, phonemes;
+        java.lang.NullPointerException temp$0;
+        boolean temp$1, temp$6, found, temp$16, temp$24, temp$26;
+        java.util.TreeMap temp$2;
+        java.util.Comparator temp$3;
+        java.util.Set temp$4, temp$22, temp$36, temp$37;
+        java.util.Iterator temp$5, temp$23;
+        org.apache.commons.codec.language.bm.Rule$Phoneme phoneme, newPhoneme, oldPhoneme, temp$28, mergedPhoneme, temp$30, temp$32, temp$34;
+        java.lang.Object temp$7, temp$25, temp$27, temp$31, temp$33;
+        org.apache.commons.codec.language.bm.Languages$LanguageSet temp$8, temp$29;
+        java.lang.String phonemeText, temp$11;
+        java.lang.CharSequence temp$10, temp$20;
+        int i, temp$12, temp$14, temp$18, temp$19, temp$21;
+        org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication rulesApplication, temp$13, temp$15;
+
+        this := @this: org.apache.commons.codec.language.bm.PhoneticEngine;
+        phonemeBuilder := @parameter0: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder;
+        finalRules := @parameter1: java.util.Map;
+        if finalRules == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.NullPointerException;
+        specialinvoke temp$0.<java.lang.NullPointerException: void <init>(java.lang.String)>("finalRules can not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke finalRules.<java.util.Map: boolean isEmpty()>();
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        return phonemeBuilder;
+
+     label3:
+        nop;
+        temp$2 = new java.util.TreeMap;
+        temp$3 = <org.apache.commons.codec.language.bm.Rule$Phoneme: java.util.Comparator COMPARATOR>;
+        specialinvoke temp$2.<java.util.TreeMap: void <init>(java.util.Comparator)>(temp$3);
+        phonemes = temp$2;
+        temp$4 = virtualinvoke phonemeBuilder.<org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: java.util.Set getPhonemes()>();
+        temp$5 = interfaceinvoke temp$4.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label4:
+        nop;
+        temp$6 = interfaceinvoke temp$5.<java.util.Iterator: boolean hasNext()>();
+        if temp$6 == 0 goto label15;
+
+        temp$7 = interfaceinvoke temp$5.<java.util.Iterator: java.lang.Object next()>();
+        phoneme = (org.apache.commons.codec.language.bm.Rule$Phoneme) temp$7;
+        temp$8 = virtualinvoke phoneme.<org.apache.commons.codec.language.bm.Rule$Phoneme: org.apache.commons.codec.language.bm.Languages$LanguageSet getLanguages()>();
+        temp$9 = staticinvoke <org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder empty(org.apache.commons.codec.language.bm.Languages$LanguageSet)>(temp$8);
+        subBuilder = temp$9;
+        temp$10 = virtualinvoke phoneme.<org.apache.commons.codec.language.bm.Rule$Phoneme: java.lang.CharSequence getPhonemeText()>();
+        temp$11 = interfaceinvoke temp$10.<java.lang.CharSequence: java.lang.String toString()>();
+        phonemeText = temp$11;
+        i = -1;
+
+     label5:
+        nop;
+        temp$12 = virtualinvoke phonemeText.<java.lang.String: int length()>();
+        if i < temp$12 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$13 = new org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication;
+        temp$14 = this.<org.apache.commons.codec.language.bm.PhoneticEngine: int maxPhonemes>;
+        specialinvoke temp$13.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: void <init>(java.util.Map,java.lang.CharSequence,org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder,int,int)>(finalRules, phonemeText, subBuilder, i, temp$14);
+        temp$15 = virtualinvoke temp$13.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication invoke()>();
+        rulesApplication = temp$15;
+        temp$16 = virtualinvoke rulesApplication.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: boolean isFound()>();
+        found = temp$16;
+        temp$17 = virtualinvoke rulesApplication.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder getPhonemeBuilder()>();
+        subBuilder = temp$17;
+        if found == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        temp$20 = virtualinvoke phonemeText.<java.lang.String: java.lang.CharSequence subSequence(int,int)>(i, temp$19);
+        virtualinvoke subBuilder.<org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: void append(java.lang.CharSequence)>(temp$20);
+
+     label8:
+        nop;
+        temp$21 = virtualinvoke rulesApplication.<org.apache.commons.codec.language.bm.PhoneticEngine$RulesApplication: int getI()>();
+        i = temp$21;
+        nop;
+        goto label5;
+
+     label9:
+        nop;
+        temp$22 = virtualinvoke subBuilder.<org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: java.util.Set getPhonemes()>();
+        temp$23 = interfaceinvoke temp$22.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label10:
+        nop;
+        temp$24 = interfaceinvoke temp$23.<java.util.Iterator: boolean hasNext()>();
+        if temp$24 == 0 goto label14;
+
+        temp$25 = interfaceinvoke temp$23.<java.util.Iterator: java.lang.Object next()>();
+        newPhoneme = (org.apache.commons.codec.language.bm.Rule$Phoneme) temp$25;
+        temp$26 = interfaceinvoke phonemes.<java.util.Map: boolean containsKey(java.lang.Object)>(newPhoneme);
+        if temp$26 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$27 = interfaceinvoke phonemes.<java.util.Map: java.lang.Object remove(java.lang.Object)>(newPhoneme);
+        temp$28 = (org.apache.commons.codec.language.bm.Rule$Phoneme) temp$27;
+        oldPhoneme = temp$28;
+        temp$29 = virtualinvoke newPhoneme.<org.apache.commons.codec.language.bm.Rule$Phoneme: org.apache.commons.codec.language.bm.Languages$LanguageSet getLanguages()>();
+        temp$30 = virtualinvoke oldPhoneme.<org.apache.commons.codec.language.bm.Rule$Phoneme: org.apache.commons.codec.language.bm.Rule$Phoneme mergeWithLanguage(org.apache.commons.codec.language.bm.Languages$LanguageSet)>(temp$29);
+        mergedPhoneme = temp$30;
+        temp$31 = interfaceinvoke phonemes.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(mergedPhoneme, mergedPhoneme);
+        temp$32 = (org.apache.commons.codec.language.bm.Rule$Phoneme) temp$31;
+        goto label13;
+
+     label12:
+        nop;
+        temp$33 = interfaceinvoke phonemes.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(newPhoneme, newPhoneme);
+        temp$34 = (org.apache.commons.codec.language.bm.Rule$Phoneme) temp$33;
+
+     label13:
+        nop;
+        nop;
+        goto label10;
+
+     label14:
+        nop;
+        nop;
+        goto label4;
+
+     label15:
+        nop;
+        temp$35 = new org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder;
+        temp$36 = interfaceinvoke phonemes.<java.util.Map: java.util.Set keySet()>();
+        temp$37 = (java.util.Set) temp$36;
+        specialinvoke temp$35.<org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder: void <init>(java.util.Set,org.apache.commons.codec.language.bm.PhoneticEngine$PhonemeBuilder$0)>(temp$37, null);
+        return temp$35;
+    }
+}

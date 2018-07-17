@@ -1,0 +1,127 @@
+public class WrapClass 
+{
+    private static final java.util.Map getTypeArguments(java.lang.reflect.ParameterizedType, java.lang.Class, java.util.Map)
+    {
+        java.lang.reflect.ParameterizedType parameterizedType, parameterizedOwnerType;
+        java.lang.Class toClass, 'cls', temp$0, temp$3;
+        java.util.Map subtypeVarAssigns, typeVarAssigns, temp$4, temp$27;
+        java.lang.reflect.Type ownerType, temp$1, typeArg, temp$17, temp$20, temp$22, temp$26;
+        boolean temp$2, temp$18, temp$25;
+        java.util.HashMap temp$5, temp$6, temp$7;
+        java.lang.reflect.Type[] typeArgs, temp$8, temp$12;
+        java.lang.reflect.TypeVariable[] typeParams, temp$9, temp$10, temp$14;
+        int i, temp$11, temp$13, temp$15, temp$23, temp$24;
+        java.lang.reflect.TypeVariable temp$16;
+        java.lang.Object temp$19, temp$21;
+
+        parameterizedType := @parameter0: java.lang.reflect.ParameterizedType;
+        toClass := @parameter1: java.lang.Class;
+        subtypeVarAssigns := @parameter2: java.util.Map;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(parameterizedType);
+        'cls' = temp$0;
+        temp$1 = interfaceinvoke parameterizedType.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        ownerType = temp$1;
+        temp$2 = ownerType instanceof java.lang.reflect.ParameterizedType;
+        if temp$2 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        parameterizedOwnerType = (java.lang.reflect.ParameterizedType) ownerType;
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(parameterizedOwnerType);
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.ParameterizedType,java.lang.Class,java.util.Map)>(parameterizedOwnerType, temp$3, subtypeVarAssigns);
+        typeVarAssigns = temp$4;
+        goto label5;
+
+     label1:
+        nop;
+        if subtypeVarAssigns == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = new java.util.HashMap;
+        specialinvoke temp$6.<java.util.HashMap: void <init>()>();
+        temp$5 = temp$6;
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = new java.util.HashMap;
+        specialinvoke temp$7.<java.util.HashMap: void <init>(java.util.Map)>(subtypeVarAssigns);
+        temp$5 = temp$7;
+
+     label4:
+        nop;
+        typeVarAssigns = temp$5;
+
+     label5:
+        nop;
+        temp$8 = interfaceinvoke parameterizedType.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        typeArgs = temp$8;
+        temp$9 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$10 = (java.lang.reflect.TypeVariable[]) temp$9;
+        typeParams = temp$10;
+        i = 0;
+
+     label6:
+        nop;
+        temp$11 = lengthof typeParams;
+        if i < temp$11 goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        temp$12 = typeArgs;
+        temp$13 = i;
+        typeArg = temp$12[temp$13];
+        temp$14 = typeParams;
+        temp$15 = i;
+        temp$16 = temp$14[temp$15];
+        temp$18 = interfaceinvoke typeVarAssigns.<java.util.Map: boolean containsKey(java.lang.Object)>(typeArg);
+        if temp$18 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$19 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(typeArg);
+        temp$20 = (java.lang.reflect.Type) temp$19;
+        temp$17 = temp$20;
+        goto label10;
+
+     label9:
+        nop;
+        temp$17 = typeArg;
+
+     label10:
+        nop;
+        temp$21 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$16, temp$17);
+        temp$22 = (java.lang.reflect.Type) temp$21;
+        nop;
+        temp$23 = i;
+        temp$24 = temp$23 + 1;
+        i = temp$24;
+        goto label6;
+
+     label11:
+        nop;
+        temp$25 = virtualinvoke toClass.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$25 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        return typeVarAssigns;
+
+     label13:
+        nop;
+        temp$26 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type getClosestParentType(java.lang.Class,java.lang.Class)>('cls', toClass);
+        temp$27 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.Type,java.lang.Class,java.util.Map)>(temp$26, toClass, typeVarAssigns);
+        return temp$27;
+    }
+}

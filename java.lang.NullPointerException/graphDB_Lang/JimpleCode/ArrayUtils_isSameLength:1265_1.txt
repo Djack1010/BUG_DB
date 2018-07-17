@@ -1,0 +1,115 @@
+public class WrapClass 
+{
+    public static boolean isSameLength(int[], int[])
+    {
+        int[] array1, array2;
+        int temp$0, temp$3, temp$4, temp$5;
+        boolean temp$1, temp$2, temp$6, temp$7;
+
+        array1 := @parameter0: int[];
+        array2 := @parameter1: int[];
+        if array1 == null goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        if array2 != null goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = lengthof array2;
+        if temp$0 > 0 goto label13;
+
+        goto label2;
+
+        goto label13;
+
+     label2:
+        nop;
+        if array2 == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if array1 != null goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$2 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$2 = 1;
+
+     label8:
+        nop;
+        if temp$1 == temp$2 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$3 = lengthof array1;
+        if temp$3 > 0 goto label13;
+
+        goto label10;
+
+        goto label13;
+
+        goto label10;
+
+     label10:
+        nop;
+        if array1 != null goto label11;
+
+        goto label14;
+
+     label11:
+        nop;
+        if array2 != null goto label12;
+
+        goto label14;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$4 = lengthof array1;
+        temp$5 = lengthof array2;
+        if temp$4 != temp$5 goto label13;
+
+        goto label14;
+
+        goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+
+     label14:
+        nop;
+        temp$7 = 1;
+        return temp$7;
+    }
+}

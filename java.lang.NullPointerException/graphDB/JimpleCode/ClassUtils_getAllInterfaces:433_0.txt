@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static java.util.List getAllInterfaces(java.lang.Class)
+    {
+        java.lang.Class 'cls';
+        java.util.List temp$0;
+        java.util.LinkedHashSet interfacesFound, temp$1;
+        java.util.ArrayList temp$2;
+
+        'cls' := @parameter0: java.lang.Class;
+        if 'cls' == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.util.LinkedHashSet;
+        specialinvoke temp$1.<java.util.LinkedHashSet: void <init>()>();
+        interfacesFound = temp$1;
+        staticinvoke <org.apache.commons.lang3.ClassUtils: void getAllInterfaces(java.lang.Class,java.util.HashSet)>('cls', interfacesFound);
+        temp$2 = new java.util.ArrayList;
+        specialinvoke temp$2.<java.util.ArrayList: void <init>(java.util.Collection)>(interfacesFound);
+        return temp$2;
+    }
+}

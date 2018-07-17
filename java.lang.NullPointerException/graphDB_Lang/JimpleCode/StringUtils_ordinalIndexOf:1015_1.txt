@@ -1,0 +1,154 @@
+public class WrapClass 
+{
+    private static final int ordinalIndexOf(java.lang.CharSequence, java.lang.CharSequence, int, boolean)
+    {
+        java.lang.CharSequence str, searchStr;
+        int ordinal, temp$2, temp$3, temp$4, temp$5, found, index, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16;
+        boolean lastIndex, temp$0, temp$1;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStr := @parameter1: java.lang.CharSequence;
+        ordinal := @parameter2: int;
+        lastIndex := @parameter3: boolean;
+        if str == null goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        if searchStr == null goto label2;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = 1;
+
+     label3:
+        nop;
+        if ordinal <= 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$1 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$1 = 1;
+
+     label6:
+        nop;
+        if temp$0 != temp$1 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label8:
+        nop;
+        temp$3 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        if temp$3 == 0 goto label9;
+
+        goto label13;
+
+     label9:
+        nop;
+        if lastIndex == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$5 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$4 = temp$5;
+        goto label12;
+
+     label11:
+        nop;
+        temp$4 = 0;
+
+     label12:
+        nop;
+        return temp$4;
+
+     label13:
+        nop;
+        found = 0;
+        if lastIndex == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$7 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$6 = temp$7;
+        goto label16;
+
+     label15:
+        nop;
+        temp$6 = -1;
+
+     label16:
+        nop;
+        index = temp$6;
+
+     label17:
+        nop;
+        if lastIndex == 0 goto label19;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$8 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$9 = index - temp$8;
+        temp$10 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int lastIndexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(str, searchStr, temp$9);
+        index = temp$10;
+        goto label20;
+
+     label19:
+        nop;
+        temp$11 = index;
+        temp$12 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        temp$13 = temp$11 + temp$12;
+        temp$14 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int indexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(str, searchStr, temp$13);
+        index = temp$14;
+
+     label20:
+        nop;
+        if index < 0 goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        return index;
+
+     label22:
+        nop;
+        temp$15 = found;
+        temp$16 = temp$15 + 1;
+        found = temp$16;
+        nop;
+        if found < ordinal goto label17;
+
+        goto label23;
+
+     label23:
+        nop;
+        return index;
+    }
+}

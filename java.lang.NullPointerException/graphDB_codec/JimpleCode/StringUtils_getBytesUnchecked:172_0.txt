@@ -1,0 +1,40 @@
+public class WrapClass 
+{
+    public static byte[] getBytesUnchecked(java.lang.String, java.lang.String)
+    {
+        java.lang.String string, charsetName;
+        byte[] temp$0, temp$1;
+        java.io.UnsupportedEncodingException e;
+        java.lang.IllegalStateException temp$2;
+
+        string := @parameter0: java.lang.String;
+        charsetName := @parameter1: java.lang.String;
+        if string == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke string.<java.lang.String: byte[] getBytes(java.lang.String)>(charsetName);
+
+     label3:
+        nop;
+        return temp$1;
+
+     label4:
+        nop;
+        e := @caughtexception;
+        temp$2 = staticinvoke <org.apache.commons.codec.binary.StringUtils: java.lang.IllegalStateException newIllegalStateException(java.lang.String,java.io.UnsupportedEncodingException)>(charsetName, e);
+        throw temp$2;
+
+        catch java.io.UnsupportedEncodingException from label2 to label3 with label4;
+    }
+}

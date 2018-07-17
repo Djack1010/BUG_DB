@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.MultiPartEmail attach(javax.activation.DataSource, java.lang.String, java.lang.String, java.lang.String) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.MultiPartEmail this;
+        javax.activation.DataSource ds;
+        java.lang.String name, description, disposition, temp$1;
+        javax.mail.BodyPart bodyPart, temp$0;
+        javax.activation.DataHandler temp$2;
+        javax.mail.internet.MimeMultipart temp$3;
+        java.io.UnsupportedEncodingException uee;
+        org.apache.commons.mail.EmailException temp$4, temp$5;
+        javax.mail.MessagingException me;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        ds := @parameter0: javax.activation.DataSource;
+        name := @parameter1: java.lang.String;
+        description := @parameter2: java.lang.String;
+        disposition := @parameter3: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart createBodyPart()>();
+        bodyPart = temp$0;
+
+     label0:
+        nop;
+        virtualinvoke bodyPart.<javax.mail.BodyPart: void setDisposition(java.lang.String)>(disposition);
+        temp$1 = staticinvoke <javax.mail.internet.MimeUtility: java.lang.String encodeText(java.lang.String)>(name);
+        virtualinvoke bodyPart.<javax.mail.BodyPart: void setFileName(java.lang.String)>(temp$1);
+        virtualinvoke bodyPart.<javax.mail.BodyPart: void setDescription(java.lang.String)>(description);
+        temp$2 = new javax.activation.DataHandler;
+        specialinvoke temp$2.<javax.activation.DataHandler: void <init>(javax.activation.DataSource)>(ds);
+        virtualinvoke bodyPart.<javax.mail.BodyPart: void setDataHandler(javax.activation.DataHandler)>(temp$2);
+        temp$3 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: javax.mail.internet.MimeMultipart getContainer()>();
+        virtualinvoke temp$3.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart)>(bodyPart);
+        goto label3;
+
+     label1:
+        nop;
+        uee := @caughtexception;
+        temp$4 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$4.<org.apache.commons.mail.EmailException: void <init>(java.lang.Throwable)>(uee);
+        throw temp$4;
+
+     label2:
+        nop;
+        me := @caughtexception;
+        temp$5 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$5.<org.apache.commons.mail.EmailException: void <init>(java.lang.Throwable)>(me);
+        throw temp$5;
+
+     label3:
+        nop;
+        virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: void setBoolHasAttachments(boolean)>(1);
+        return this;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label1;
+        catch javax.mail.MessagingException from label0 to label1 with label2;
+    }
+}

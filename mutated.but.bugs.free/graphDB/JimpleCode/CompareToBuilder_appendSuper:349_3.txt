@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder appendSuper(int)
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this;
+        int superCompareTo, temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        superCompareTo := @parameter0: int;
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = superCompareTo;
+        return this;
+    }
+}

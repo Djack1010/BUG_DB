@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public static java.lang.Object readDeclaredStaticField(java.lang.Class, java.lang.String, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.Class 'cls';
+        java.lang.String fieldName, temp$2;
+        boolean forceAccess;
+        java.lang.reflect.Field field, temp$0;
+        java.lang.Object[] temp$1;
+        java.lang.Object temp$3;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        forceAccess := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.reflect.Field getDeclaredField(java.lang.Class,java.lang.String,boolean)>('cls', fieldName, forceAccess);
+        field = temp$0;
+        temp$1 = newarray (java.lang.Object)[2];
+        temp$2 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$1[0] = temp$2;
+        temp$1[1] = fieldName;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(1, "Cannot locate declared field %s.%s", temp$1);
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Object readStaticField(java.lang.reflect.Field,boolean)>(field, 0);
+        return temp$3;
+    }
+}

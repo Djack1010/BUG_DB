@@ -1,0 +1,78 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder setLength(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3;
+        int length, temp$1, temp$2, oldEnd, newEnd, i, temp$5, temp$7, temp$8;
+        java.lang.StringIndexOutOfBoundsException temp$0;
+        char[] temp$4;
+        char temp$6;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        length := @parameter0: int;
+        if length <= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$0.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(length);
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if length < temp$1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = length;
+        goto label9;
+
+     label3:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if length > temp$2 goto label4;
+
+        goto label8;
+
+     label4:
+        nop;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(length);
+        oldEnd = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        newEnd = length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = length;
+        i = oldEnd;
+
+     label5:
+        nop;
+        if i < newEnd goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = i;
+        temp$6 = 0;
+        temp$4[temp$5] = temp$6;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label5;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        return this;
+    }
+}

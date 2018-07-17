@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    protected void appendDetail(java.lang.StringBuffer, java.lang.String, java.util.Collection)
+    {
+        org.apache.commons.lang3.builder.RecursiveToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.String fieldName;
+        java.util.Collection coll;
+        java.lang.Object[] temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.RecursiveToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        coll := @parameter2: java.util.Collection;
+        virtualinvoke this.<org.apache.commons.lang3.builder.RecursiveToStringStyle: void appendIdentityHashCode(java.lang.StringBuffer,java.lang.Object)>(buffer, coll);
+        temp$0 = interfaceinvoke coll.<java.util.Collection: java.lang.Object[] toArray()>();
+        virtualinvoke this.<org.apache.commons.lang3.builder.RecursiveToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.lang.Object[])>(buffer, fieldName, temp$0);
+        return;
+    }
+}

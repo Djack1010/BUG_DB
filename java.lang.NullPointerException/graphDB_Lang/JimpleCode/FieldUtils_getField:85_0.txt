@@ -1,0 +1,162 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field getField(java.lang.Class, java.lang.String, boolean)
+    {
+        java.lang.Class 'cls', acls, temp$7, class1;
+        java.lang.String fieldName;
+        boolean forceAccess, temp$0, temp$2, temp$6, temp$10, temp$13;
+        java.lang.Object[] temp$1, temp$3, temp$14;
+        java.lang.reflect.Field field, temp$4, match, test, temp$12;
+        int temp$5;
+        java.lang.NoSuchFieldException ex, ex;
+        java.util.List temp$8;
+        java.util.Iterator temp$9;
+        java.lang.Object temp$11;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        forceAccess := @parameter2: boolean;
+        if 'cls' != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The class must not be null", temp$1);
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isNotBlank(java.lang.CharSequence)>(fieldName);
+        temp$3 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "The field name must not be blank/empty", temp$3);
+        acls = 'cls';
+
+     label3:
+        nop;
+        if acls != null goto label4;
+
+        goto label16;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke acls.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(fieldName);
+        field = temp$4;
+        temp$5 = virtualinvoke field.<java.lang.reflect.Field: int getModifiers()>();
+        temp$6 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$5);
+        if temp$6 == 0 goto label6;
+
+        goto label11;
+
+     label6:
+        nop;
+        if forceAccess == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        virtualinvoke field.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        goto label10;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        goto label15;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        return field;
+
+     label13:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label14;
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        temp$7 = virtualinvoke acls.<java.lang.Class: java.lang.Class getSuperclass()>();
+        acls = temp$7;
+        goto label3;
+
+     label16:
+        nop;
+        match = null;
+        temp$8 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.util.List getAllInterfaces(java.lang.Class)>('cls');
+        temp$9 = interfaceinvoke temp$8.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label17:
+        nop;
+        temp$10 = interfaceinvoke temp$9.<java.util.Iterator: boolean hasNext()>();
+        if temp$10 == 0 goto label24;
+
+        temp$11 = interfaceinvoke temp$9.<java.util.Iterator: java.lang.Object next()>();
+        class1 = (java.lang.Class) temp$11;
+
+     label18:
+        nop;
+        temp$12 = virtualinvoke class1.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>(fieldName);
+        test = temp$12;
+        if match == null goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$13 = 0;
+        goto label21;
+
+     label20:
+        nop;
+        temp$13 = 1;
+
+     label21:
+        nop;
+        temp$14 = newarray (java.lang.Object)[2];
+        temp$14[0] = fieldName;
+        temp$14[1] = 'cls';
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$13, "Reference to field %s is ambiguous relative to %s; a matching field exists on two or more implemented interfaces.", temp$14);
+        match = test;
+        goto label23;
+
+     label22:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label23;
+
+     label23:
+        nop;
+        nop;
+        goto label17;
+
+     label24:
+        nop;
+        return match;
+
+        catch java.lang.NoSuchFieldException from label5 to label9 with label13;
+        catch java.lang.NoSuchFieldException from label10 to label12 with label13;
+        catch java.lang.NoSuchFieldException from label18 to label22 with label22;
+    }
+}

@@ -1,0 +1,132 @@
+public class WrapClass 
+{
+    public static java.util.Map toMap(java.lang.Object[])
+    {
+        java.lang.Object[] array, temp$7, entry, temp$18, temp$21;
+        java.util.Map temp$0, map;
+        java.util.HashMap temp$1;
+        int temp$2, temp$5, i, temp$6, temp$8, temp$14, temp$19, temp$22, temp$28, temp$29;
+        double temp$3, temp$4;
+        java.lang.Object object, temp$10, temp$11, temp$12, temp$20, temp$23, temp$24;
+        boolean temp$9, temp$13;
+        java.util.Map$Entry entry;
+        java.lang.IllegalArgumentException temp$15, temp$25;
+        java.lang.StringBuffer temp$16, temp$26;
+        java.lang.String temp$17, temp$27;
+
+        array := @parameter0: java.lang.Object[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.util.HashMap;
+        temp$2 = lengthof array;
+        temp$3 = (double) temp$2;
+        temp$4 = temp$3 * 1.5;
+        temp$5 = (int) temp$4;
+        specialinvoke temp$1.<java.util.HashMap: void <init>(int)>(temp$5);
+        map = temp$1;
+        i = 0;
+
+     label2:
+        nop;
+        temp$6 = lengthof array;
+        if i < temp$6 goto label3;
+
+        goto label12;
+
+     label3:
+        nop;
+        temp$7 = array;
+        temp$8 = i;
+        object = temp$7[temp$8];
+        temp$9 = object instanceof java.util.Map$Entry;
+        if temp$9 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        entry = (java.util.Map$Entry) object;
+        temp$10 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$11 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$12 = interfaceinvoke map.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$10, temp$11);
+        goto label11;
+
+     label5:
+        nop;
+        temp$13 = object instanceof java.lang.Object[];
+        if temp$13 == 0 goto label9;
+
+        goto label6;
+
+     label6:
+        nop;
+        entry = (java.lang.Object[]) object;
+        temp$14 = lengthof entry;
+        if temp$14 < 2 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$15 = new java.lang.IllegalArgumentException;
+        temp$16 = new java.lang.StringBuffer;
+        specialinvoke temp$16.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Array element ");
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(i);
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(", \'");
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(object);
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\', has a length less than 2");
+        temp$17 = virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$15.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$17);
+        throw temp$15;
+
+     label8:
+        nop;
+        temp$18 = entry;
+        temp$19 = 0;
+        temp$20 = temp$18[temp$19];
+        temp$21 = entry;
+        temp$22 = -1;
+        temp$23 = temp$21[temp$22];
+        temp$24 = interfaceinvoke map.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$20, temp$23);
+        goto label10;
+
+     label9:
+        nop;
+        temp$25 = new java.lang.IllegalArgumentException;
+        temp$26 = new java.lang.StringBuffer;
+        specialinvoke temp$26.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Array element ");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(i);
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(", \'");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(object);
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\', is neither of type Map.Entry nor an Array");
+        temp$27 = virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$25.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$27);
+        throw temp$25;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        nop;
+        temp$28 = i;
+        temp$29 = temp$28 + 1;
+        i = temp$29;
+        goto label2;
+
+     label12:
+        nop;
+        return map;
+    }
+}

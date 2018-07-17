@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String, float, float)
+    {
+        org.apache.commons.lang3.builder.DiffBuilder this;
+        java.lang.String fieldName;
+        float lhs, rhs;
+        java.lang.IllegalArgumentException temp$0;
+        boolean temp$1, temp$6;
+        int temp$2, temp$3;
+        java.util.List temp$4;
+        org.apache.commons.lang3.builder.DiffBuilder$18Anonymous8 temp$5;
+
+        this := @this: org.apache.commons.lang3.builder.DiffBuilder;
+        fieldName := @parameter0: java.lang.String;
+        lhs := @parameter1: float;
+        rhs := @parameter2: float;
+        if fieldName == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Field name cannot be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.builder.DiffBuilder: boolean objectsTriviallyEqual>;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        temp$2 = staticinvoke <java.lang.Float: int floatToIntBits(float)>(lhs);
+        temp$3 = staticinvoke <java.lang.Float: int floatToIntBits(float)>(rhs);
+        if temp$2 != temp$3 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.builder.DiffBuilder: java.util.List diffs>;
+        temp$5 = new org.apache.commons.lang3.builder.DiffBuilder$18Anonymous8;
+        specialinvoke temp$5.<org.apache.commons.lang3.builder.DiffBuilder$18Anonymous8: void <init>(org.apache.commons.lang3.builder.DiffBuilder,java.lang.String,float,float)>(this, fieldName, lhs, rhs);
+        temp$6 = interfaceinvoke temp$4.<java.util.List: boolean add(java.lang.Object)>(temp$5);
+
+     label5:
+        nop;
+        return this;
+    }
+}

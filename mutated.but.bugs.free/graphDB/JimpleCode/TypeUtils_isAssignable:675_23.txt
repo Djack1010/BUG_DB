@@ -1,0 +1,140 @@
+public class WrapClass 
+{
+    private static final boolean isAssignable(java.lang.reflect.Type, java.lang.reflect.TypeVariable, java.util.Map)
+    {
+        java.lang.reflect.Type type, bound, temp$9;
+        java.lang.reflect.TypeVariable toTypeVariable, temp$5;
+        java.util.Map typeVarAssigns;
+        boolean temp$0, temp$1, temp$2, temp$3, temp$4, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16;
+        java.lang.reflect.Type[] bounds, temp$6;
+        int temp$7, temp$8;
+        java.lang.IllegalStateException temp$17;
+        java.lang.StringBuffer temp$18;
+        java.lang.String temp$19;
+
+        type := @parameter0: java.lang.reflect.Type;
+        toTypeVariable := @parameter1: java.lang.reflect.TypeVariable;
+        typeVarAssigns := @parameter2: java.util.Map;
+        if type == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if toTypeVariable == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = interfaceinvoke toTypeVariable.<java.lang.reflect.TypeVariable: boolean equals(java.lang.Object)>(type);
+        if temp$2 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label5:
+        nop;
+        temp$4 = type instanceof java.lang.reflect.TypeVariable;
+        if temp$4 == 0 goto label11;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$5 = (java.lang.reflect.TypeVariable) type;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] getImplicitBounds(java.lang.reflect.TypeVariable)>(temp$5);
+        bounds = temp$6;
+        temp$7 = 0;
+
+     label7:
+        nop;
+        temp$8 = lengthof bounds;
+        if temp$7 >= temp$8 goto label10;
+
+        temp$9 = bounds[temp$7];
+        bound = temp$9;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.reflect.TypeVariable,java.util.Map)>(bound, toTypeVariable, typeVarAssigns);
+        if temp$10 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$11 = 1;
+        return temp$11;
+
+     label9:
+        nop;
+        nop;
+        temp$7 = temp$7 + 1;
+        goto label7;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$12 = type instanceof java.lang.Class;
+        if temp$12 == 0 goto label12;
+
+        goto label15;
+
+     label12:
+        nop;
+        temp$13 = type instanceof java.lang.reflect.ParameterizedType;
+        if temp$13 == 0 goto label13;
+
+        goto label15;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$14 = type instanceof java.lang.reflect.GenericArrayType;
+        if temp$14 == 0 goto label14;
+
+        goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$15 = type instanceof java.lang.reflect.WildcardType;
+        if temp$15 == 0 goto label16;
+
+        goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$16 = 0;
+        return temp$16;
+
+     label16:
+        nop;
+        temp$17 = new java.lang.IllegalStateException;
+        temp$18 = new java.lang.StringBuffer;
+        specialinvoke temp$18.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("found an unhandled type: ");
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(type);
+        temp$19 = virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$17.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$19);
+        throw temp$17;
+    }
+}

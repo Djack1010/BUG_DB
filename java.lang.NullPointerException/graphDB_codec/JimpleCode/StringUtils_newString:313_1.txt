@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static java.lang.String newString(byte[], java.lang.String)
+    {
+        byte[] bytes;
+        java.lang.String charsetName, temp$0;
+        java.io.UnsupportedEncodingException e;
+        java.lang.IllegalStateException temp$1;
+
+        bytes := @parameter0: byte[];
+        charsetName := @parameter1: java.lang.String;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.String;
+        specialinvoke temp$0.<java.lang.String: void <init>(byte[],java.lang.String)>(bytes, charsetName);
+
+     label1:
+        nop;
+        return temp$0;
+
+     label2:
+        nop;
+        e := @caughtexception;
+        temp$1 = staticinvoke <org.apache.commons.codec.binary.StringUtils: java.lang.IllegalStateException newIllegalStateException(java.lang.String,java.io.UnsupportedEncodingException)>(charsetName, e);
+        throw temp$1;
+
+        catch java.io.UnsupportedEncodingException from label0 to label1 with label2;
+    }
+}

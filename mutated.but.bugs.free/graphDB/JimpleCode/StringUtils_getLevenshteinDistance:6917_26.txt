@@ -1,0 +1,297 @@
+public class WrapClass 
+{
+    public static int getLevenshteinDistance(java.lang.CharSequence, java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence s, t, tmp;
+        int threshold, n, temp$2, m, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, boundary, temp$11, temp$12, i, temp$14, temp$15, temp$16, temp$17, j, temp$18, temp$21, min, temp$22, temp$23, max, temp$24, temp$25, temp$26, temp$27, temp$28, temp$29, i, temp$30, temp$32, temp$33, temp$35, temp$37, temp$38, temp$39, temp$41, temp$42, temp$44, temp$45, temp$46, temp$48, temp$49, temp$50, temp$52, temp$53, temp$54, temp$55, temp$56, temp$57, temp$58, temp$59, temp$60, temp$62, temp$63, temp$65, temp$66, temp$67;
+        java.lang.IllegalArgumentException temp$0, temp$1;
+        int[] p, d, _d, temp$13, temp$20, temp$34, temp$36, temp$40, temp$43, temp$47, temp$51, temp$61, temp$64;
+        char t_j, temp$19, temp$31;
+
+        s := @parameter0: java.lang.CharSequence;
+        t := @parameter1: java.lang.CharSequence;
+        threshold := @parameter2: int;
+        if s == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if t == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Strings must not be null");
+        throw temp$0;
+
+     label2:
+        nop;
+        if threshold < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Threshold must not be negative");
+        throw temp$1;
+
+     label4:
+        nop;
+        temp$2 = interfaceinvoke s.<java.lang.CharSequence: int length()>();
+        n = temp$2;
+        temp$3 = interfaceinvoke t.<java.lang.CharSequence: int length()>();
+        m = temp$3;
+        if n == 0 goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        if m <= threshold goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = m;
+        goto label8;
+
+     label7:
+        nop;
+        temp$4 = -1;
+
+     label8:
+        nop;
+        return temp$4;
+
+     label9:
+        nop;
+        if m == 0 goto label10;
+
+        goto label14;
+
+     label10:
+        nop;
+        if n <= threshold goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$5 = n;
+        goto label13;
+
+     label12:
+        nop;
+        temp$5 = -1;
+
+     label13:
+        nop;
+        return temp$5;
+
+     label14:
+        nop;
+        if n > m goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        tmp = s;
+        s = t;
+        t = tmp;
+        n = m;
+        temp$6 = interfaceinvoke t.<java.lang.CharSequence: int length()>();
+        m = temp$6;
+
+     label16:
+        nop;
+        temp$7 = n;
+        temp$8 = temp$7 + 1;
+        p = newarray (int)[temp$8];
+        temp$9 = n;
+        temp$10 = temp$9 + 1;
+        d = newarray (int)[temp$10];
+        temp$11 = staticinvoke <java.lang.Math: int min(int,int)>(n, threshold);
+        temp$12 = temp$11;
+        boundary = temp$12 + 1;
+        i = 0;
+
+     label17:
+        nop;
+        if i < boundary goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$13 = p;
+        temp$14 = i;
+        temp$13[temp$14] = i;
+        nop;
+        temp$15 = i;
+        temp$16 = temp$15 + 1;
+        i = temp$16;
+        goto label17;
+
+     label19:
+        nop;
+        temp$17 = lengthof p;
+        staticinvoke <java.util.Arrays: void fill(int[],int,int,int)>(p, boundary, temp$17, 2147483647);
+        staticinvoke <java.util.Arrays: void fill(int[],int)>(d, 2147483647);
+        j = 1;
+
+     label20:
+        nop;
+        if j <= m goto label21;
+
+        goto label35;
+
+     label21:
+        nop;
+        temp$18 = j - 1;
+        temp$19 = interfaceinvoke t.<java.lang.CharSequence: char charAt(int)>(temp$18);
+        t_j = temp$19;
+        temp$20 = d;
+        temp$21 = 0;
+        temp$20[temp$21] = j;
+        temp$22 = j - threshold;
+        temp$23 = staticinvoke <java.lang.Math: int max(int,int)>(1, temp$22);
+        min = temp$23;
+        temp$25 = 2147483647 - threshold;
+        if j > temp$25 goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        temp$24 = n;
+        goto label24;
+
+     label23:
+        nop;
+        temp$26 = j;
+        temp$27 = temp$26 + threshold;
+        temp$28 = staticinvoke <java.lang.Math: int min(int,int)>(n, temp$27);
+        temp$24 = temp$28;
+
+     label24:
+        nop;
+        max = temp$24;
+        if min > max goto label25;
+
+        goto label26;
+
+     label25:
+        nop;
+        temp$29 = -1;
+        return temp$29;
+
+     label26:
+        nop;
+        if min > 1 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+
+     label28:
+        nop;
+        i = min;
+
+     label29:
+        nop;
+        if i <= max goto label30;
+
+        goto label34;
+
+     label30:
+        nop;
+        temp$30 = i - 1;
+        temp$31 = interfaceinvoke s.<java.lang.CharSequence: char charAt(int)>(temp$30);
+        temp$32 = (int) temp$31;
+        temp$33 = (int) t_j;
+        if temp$32 == temp$33 goto label31;
+
+        goto label32;
+
+     label31:
+        nop;
+        temp$34 = d;
+        temp$35 = i;
+        temp$36 = p;
+        temp$37 = i - 1;
+        temp$38 = temp$37;
+        temp$39 = temp$36[temp$38];
+        temp$34[temp$35] = temp$39;
+        goto label33;
+
+     label32:
+        nop;
+        temp$40 = d;
+        temp$41 = i;
+        temp$42 = 1;
+        temp$43 = d;
+        temp$44 = i - 1;
+        temp$45 = temp$44;
+        temp$46 = temp$43[temp$45];
+        temp$47 = p;
+        temp$48 = i;
+        temp$49 = temp$47[temp$48];
+        temp$50 = staticinvoke <java.lang.Math: int min(int,int)>(temp$46, temp$49);
+        temp$51 = p;
+        temp$52 = i - 1;
+        temp$53 = temp$52;
+        temp$54 = temp$51[temp$53];
+        temp$55 = staticinvoke <java.lang.Math: int min(int,int)>(temp$50, temp$54);
+        temp$56 = temp$42 + temp$55;
+        temp$40[temp$41] = temp$56;
+
+     label33:
+        nop;
+        nop;
+        temp$57 = i;
+        temp$58 = temp$57 + 1;
+        i = temp$58;
+        goto label29;
+
+     label34:
+        nop;
+        _d = p;
+        p = d;
+        d = _d;
+        nop;
+        temp$59 = j;
+        temp$60 = temp$59 + 1;
+        j = temp$60;
+        goto label20;
+
+     label35:
+        nop;
+        temp$61 = p;
+        temp$62 = n;
+        temp$63 = temp$61[temp$62];
+        if temp$63 <= threshold goto label36;
+
+        goto label37;
+
+     label36:
+        nop;
+        temp$64 = p;
+        temp$65 = n;
+        temp$66 = temp$64[temp$65];
+        return temp$66;
+
+     label37:
+        nop;
+        temp$67 = -1;
+        return temp$67;
+    }
+}

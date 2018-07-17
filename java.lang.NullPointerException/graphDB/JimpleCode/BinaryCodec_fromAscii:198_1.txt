@@ -1,0 +1,84 @@
+public class WrapClass 
+{
+    public static byte[] fromAscii(byte[])
+    {
+        byte[] ascii, l_raw, temp$7, temp$12;
+        int temp$0, temp$1, ii, jj, temp$2, temp$3, temp$4, bits, temp$6, temp$8, temp$9, temp$11, temp$13, temp$15, temp$17, temp$18, temp$19, temp$21, temp$22, temp$23, temp$24, temp$25;
+        int[] temp$5, temp$16;
+        byte temp$10, temp$14, temp$20;
+
+        ascii := @parameter0: byte[];
+        temp$0 = lengthof ascii;
+        temp$1 = temp$0 >> 3;
+        l_raw = newarray (byte)[temp$1];
+        ii = 0;
+        temp$2 = lengthof ascii;
+        temp$3 = temp$2 - 1;
+        jj = temp$3;
+
+     label0:
+        nop;
+        temp$4 = lengthof l_raw;
+        if ii < temp$4 goto label1;
+
+        goto label7;
+
+     label1:
+        nop;
+        bits = 0;
+
+     label2:
+        nop;
+        temp$5 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$6 = lengthof temp$5;
+        if bits < temp$6 goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$7 = ascii;
+        temp$8 = jj - bits;
+        temp$9 = temp$8;
+        temp$10 = temp$7[temp$9];
+        temp$11 = (int) temp$10;
+        if temp$11 == 49 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$12 = l_raw;
+        temp$13 = ii;
+        temp$14 = temp$12[temp$13];
+        temp$15 = (int) temp$14;
+        temp$16 = <org.apache.commons.codec.binary.BinaryCodec: int[] BITS>;
+        temp$17 = bits;
+        temp$18 = temp$16[temp$17];
+        temp$19 = temp$15 | temp$18;
+        temp$20 = (byte) temp$19;
+        temp$12[temp$13] = temp$20;
+
+     label5:
+        nop;
+        nop;
+        temp$21 = bits + 1;
+        bits = temp$21;
+        goto label2;
+
+     label6:
+        nop;
+        nop;
+        temp$22 = ii;
+        temp$23 = temp$22 + 1;
+        ii = temp$23;
+        temp$24 = jj;
+        temp$25 = temp$24 - 8;
+        jj = temp$25;
+        goto label0;
+
+     label7:
+        nop;
+        return l_raw;
+    }
+}

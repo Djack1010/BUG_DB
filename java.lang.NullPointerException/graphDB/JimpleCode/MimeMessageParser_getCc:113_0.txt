@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public java.util.List getCc() throws java.lang.Exception
+    {
+        org.apache.commons.mail.util.MimeMessageParser this;
+        javax.mail.Address[] recipients, temp$2;
+        javax.mail.internet.MimeMessage temp$0;
+        javax.mail.Message$RecipientType temp$1;
+        java.util.List temp$3, temp$4, temp$5;
+        java.util.ArrayList temp$6;
+
+        this := @this: org.apache.commons.mail.util.MimeMessageParser;
+        temp$0 = this.<org.apache.commons.mail.util.MimeMessageParser: javax.mail.internet.MimeMessage mimeMessage>;
+        temp$1 = <javax.mail.Message$RecipientType: javax.mail.Message$RecipientType CC>;
+        temp$2 = virtualinvoke temp$0.<javax.mail.internet.MimeMessage: javax.mail.Address[] getRecipients(javax.mail.Message$RecipientType)>(temp$1);
+        recipients = temp$2;
+        if recipients != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$4 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(recipients);
+        temp$5 = (java.util.List) temp$4;
+        temp$3 = temp$5;
+        goto label2;
+
+     label1:
+        nop;
+        temp$6 = new java.util.ArrayList;
+        specialinvoke temp$6.<java.util.ArrayList: void <init>()>();
+        temp$3 = temp$6;
+
+     label2:
+        nop;
+        return temp$3;
+    }
+}

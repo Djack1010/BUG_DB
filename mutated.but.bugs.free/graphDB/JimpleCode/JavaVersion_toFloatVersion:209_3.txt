@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    private static final float toFloatVersion(java.lang.String)
+    {
+        java.lang.String value;
+        java.lang.String[] toParse, temp$0;
+        int temp$1;
+        java.lang.NumberFormatException nfe;
+        float temp$2;
+
+        value := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke value.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\.");
+        toParse = temp$0;
+        temp$1 = lengthof toParse;
+        if temp$1 >= 2 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        goto label3;
+
+     label2:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$2 = (float) -1;
+        return temp$2;
+
+        catch java.lang.NumberFormatException from label1 to label2 with label2;
+    }
+}

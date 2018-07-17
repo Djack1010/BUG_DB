@@ -1,0 +1,122 @@
+public class WrapClass 
+{
+    private static final int[] body(int[], int, int)
+    {
+        int[] schedule, results, temp$13, temp$16, temp$19, temp$22, temp$25, temp$28, temp$31, temp$34, temp$37, temp$40, out, temp$43, temp$45;
+        int eSwap0, eSwap1, left, right, t, j, i, temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$14, temp$15, temp$17, temp$18, temp$20, temp$21, temp$23, temp$24, temp$26, temp$27, temp$29, temp$30, temp$32, temp$33, temp$35, temp$36, temp$38, temp$39, temp$41, temp$42, temp$44, temp$46;
+
+        schedule := @parameter0: int[];
+        eSwap0 := @parameter1: int;
+        eSwap1 := @parameter2: int;
+        left = 0;
+        right = 0;
+        t = 0;
+        j = 0;
+
+     label0:
+        nop;
+        if j < 25 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        i = 0;
+
+     label2:
+        nop;
+        if i < 32 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int dEncrypt(int,int,int,int,int,int[])>(left, right, i, eSwap0, eSwap1, schedule);
+        left = temp$0;
+        temp$1 = i - 2;
+        temp$2 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int dEncrypt(int,int,int,int,int,int[])>(right, left, temp$1, eSwap0, eSwap1, schedule);
+        right = temp$2;
+        nop;
+        temp$3 = i;
+        temp$4 = temp$3 + 4;
+        i = temp$4;
+        goto label2;
+
+     label4:
+        nop;
+        t = left;
+        left = right;
+        right = t;
+        nop;
+        temp$5 = j;
+        temp$6 = temp$5 + 1;
+        j = temp$6;
+        goto label0;
+
+     label5:
+        nop;
+        t = right;
+        temp$7 = left >>> 1;
+        temp$8 = left << 31;
+        temp$9 = temp$7 | temp$8;
+        right = temp$9;
+        temp$10 = t >>> 1;
+        temp$11 = t << 31;
+        temp$12 = temp$10 | temp$11;
+        left = temp$12;
+        results = newarray (int)[2];
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 1, 1431655765, results);
+        temp$13 = results;
+        temp$14 = 0;
+        temp$15 = temp$13[temp$14];
+        right = temp$15;
+        temp$16 = results;
+        temp$17 = 1;
+        temp$18 = temp$16[temp$17];
+        left = temp$18;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(left, right, 8, 16711935, results);
+        temp$19 = results;
+        temp$20 = 0;
+        temp$21 = temp$19[temp$20];
+        left = temp$21;
+        temp$22 = results;
+        temp$23 = 1;
+        temp$24 = temp$22[temp$23];
+        right = temp$24;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 2, 858993459, results);
+        temp$25 = results;
+        temp$26 = 0;
+        temp$27 = temp$25[temp$26];
+        right = temp$27;
+        temp$28 = results;
+        temp$29 = 1;
+        temp$30 = temp$28[temp$29];
+        left = temp$30;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(left, right, 16, 65535, results);
+        temp$31 = results;
+        temp$32 = 0;
+        temp$33 = temp$31[temp$32];
+        left = temp$33;
+        temp$34 = results;
+        temp$35 = 1;
+        temp$36 = temp$34[temp$35];
+        right = temp$36;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 4, 252645135, results);
+        temp$37 = results;
+        temp$38 = 0;
+        temp$39 = temp$37[temp$38];
+        right = temp$39;
+        temp$40 = results;
+        temp$41 = 1;
+        temp$42 = temp$40[temp$41];
+        left = temp$42;
+        out = newarray (int)[2];
+        temp$43 = out;
+        temp$44 = 0;
+        temp$43[temp$44] = left;
+        temp$45 = out;
+        temp$46 = 1;
+        temp$45[temp$46] = right;
+        return out;
+    }
+}

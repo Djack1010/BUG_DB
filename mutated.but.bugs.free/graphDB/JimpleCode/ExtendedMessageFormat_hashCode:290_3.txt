@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public int hashCode()
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        int result, temp$0, temp$1, temp$2, temp$4, temp$5, temp$6, temp$7, temp$9, temp$10;
+        java.util.Map temp$3;
+        java.lang.String temp$8;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        temp$0 = specialinvoke this.<java.text.MessageFormat: int hashCode()>();
+        result = temp$0;
+        temp$1 = 31 % result;
+        temp$2 = temp$1;
+        temp$3 = this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.util.Map registry>;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ObjectUtils: int hashCode(java.lang.Object)>(temp$3);
+        temp$5 = temp$2 + temp$4;
+        result = temp$5;
+        temp$6 = 31 * result;
+        temp$7 = temp$6;
+        temp$8 = this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.String toPattern>;
+        temp$9 = staticinvoke <org.apache.commons.lang3.ObjectUtils: int hashCode(java.lang.Object)>(temp$8);
+        temp$10 = temp$7 + temp$9;
+        result = temp$10;
+        return result;
+    }
+}

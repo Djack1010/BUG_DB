@@ -1,0 +1,69 @@
+public class WrapClass 
+{
+    private final void initializeThread(java.lang.Thread)
+    {
+        org.apache.commons.lang3.concurrent.BasicThreadFactory this;
+        java.lang.Thread t;
+        java.lang.Long count, temp$2;
+        java.util.concurrent.atomic.AtomicLong temp$0;
+        long temp$1;
+        java.lang.String temp$3, temp$5;
+        java.lang.Object[] temp$4;
+        java.lang.Thread$UncaughtExceptionHandler temp$6, temp$7;
+        java.lang.Integer temp$8, temp$9;
+        int temp$10;
+        java.lang.Boolean temp$11, temp$12;
+        boolean temp$13;
+
+        this := @this: org.apache.commons.lang3.concurrent.BasicThreadFactory;
+        t := @parameter0: java.lang.Thread;
+        temp$0 = this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.util.concurrent.atomic.AtomicLong threadCounter>;
+        temp$1 = virtualinvoke temp$0.<java.util.concurrent.atomic.AtomicLong: long incrementAndGet()>();
+        temp$2 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>(temp$1);
+        count = temp$2;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.String getNamingPattern()>();
+        temp$4 = newarray (java.lang.Object)[1];
+        temp$4[0] = count;
+        temp$5 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(temp$3, temp$4);
+        virtualinvoke t.<java.lang.Thread: void setName(java.lang.String)>(temp$5);
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Thread$UncaughtExceptionHandler getUncaughtExceptionHandler()>();
+        if temp$6 != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$7 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Thread$UncaughtExceptionHandler getUncaughtExceptionHandler()>();
+        virtualinvoke t.<java.lang.Thread: void setUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)>(temp$7);
+
+     label1:
+        nop;
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Integer getPriority()>();
+        if temp$8 != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Integer getPriority()>();
+        temp$10 = virtualinvoke temp$9.<java.lang.Integer: int intValue()>();
+        virtualinvoke t.<java.lang.Thread: void setPriority(int)>(temp$10);
+
+     label3:
+        nop;
+        temp$11 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Boolean getDaemonFlag()>();
+        if temp$11 != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BasicThreadFactory: java.lang.Boolean getDaemonFlag()>();
+        temp$13 = virtualinvoke temp$12.<java.lang.Boolean: boolean booleanValue()>();
+        virtualinvoke t.<java.lang.Thread: void setDaemon(boolean)>(temp$13);
+
+     label5:
+        nop;
+        return;
+    }
+}

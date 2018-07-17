@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    private static final java.lang.String getMantissa(java.lang.String, int)
+    {
+        java.lang.String str, temp$4, temp$5, temp$6;
+        int stopPos, temp$1, temp$2;
+        char firstChar, temp$0;
+        boolean hasSign, temp$3;
+
+        str := @parameter0: java.lang.String;
+        stopPos := @parameter1: int;
+        temp$0 = virtualinvoke str.<java.lang.String: char charAt(int)>(-1);
+        firstChar = temp$0;
+        temp$1 = (int) firstChar;
+        if temp$1 == 45 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = (int) firstChar;
+        if temp$2 == 43 goto label2;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 1;
+
+     label3:
+        nop;
+        hasSign = temp$3;
+        if hasSign == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(1, stopPos);
+        temp$4 = temp$5;
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, stopPos);
+        temp$4 = temp$6;
+
+     label6:
+        nop;
+        return temp$4;
+    }
+}

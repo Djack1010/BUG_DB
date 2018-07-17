@@ -1,0 +1,122 @@
+public class WrapClass 
+{
+    public static boolean isSameLocalTime(java.util.Calendar, java.util.Calendar)
+    {
+        java.util.Calendar cal1, cal2;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14;
+        java.lang.Class temp$15, temp$16;
+        boolean temp$17;
+
+        cal1 := @parameter0: java.util.Calendar;
+        cal2 := @parameter1: java.util.Calendar;
+        if cal1 == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if cal2 == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(14);
+        temp$2 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(14);
+        if temp$1 == temp$2 goto label3;
+
+        goto label10;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(13);
+        temp$4 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(13);
+        if temp$3 == temp$4 goto label4;
+
+        goto label10;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(12);
+        temp$6 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(12);
+        if temp$5 <= temp$6 goto label5;
+
+        goto label10;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$7 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(11);
+        temp$8 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(11);
+        if temp$7 == temp$8 goto label6;
+
+        goto label10;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$9 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(6);
+        temp$10 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(6);
+        if temp$9 == temp$10 goto label7;
+
+        goto label10;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$11 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(1);
+        temp$12 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(1);
+        if temp$11 == temp$12 goto label8;
+
+        goto label10;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$13 = virtualinvoke cal1.<java.util.Calendar: int get(int)>(0);
+        temp$14 = virtualinvoke cal2.<java.util.Calendar: int get(int)>(0);
+        if temp$13 == temp$14 goto label9;
+
+        goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$15 = virtualinvoke cal1.<java.util.Calendar: java.lang.Class getClass()>();
+        temp$16 = virtualinvoke cal2.<java.util.Calendar: java.lang.Class getClass()>();
+        if temp$15 == temp$16 goto label11;
+
+        goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$17 = 0;
+        goto label12;
+
+     label11:
+        nop;
+        temp$17 = 1;
+
+     label12:
+        nop;
+        return temp$17;
+    }
+}

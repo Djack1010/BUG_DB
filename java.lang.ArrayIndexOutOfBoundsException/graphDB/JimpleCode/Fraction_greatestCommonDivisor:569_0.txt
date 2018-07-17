@@ -1,0 +1,217 @@
+public class WrapClass 
+{
+    private static final int greatestCommonDivisor(int, int)
+    {
+        int u, v, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, k, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17, t, temp$19, temp$20, temp$21, temp$22, temp$23, temp$24, temp$25, temp$26, temp$27, temp$28, temp$29, temp$30;
+        java.lang.ArithmeticException temp$0, temp$18;
+
+        u := @parameter0: int;
+        v := @parameter1: int;
+        if u == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if v == 0 goto label1;
+
+        goto label5;
+
+        goto label5;
+
+     label1:
+        nop;
+        if u == -2147483648 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        if v == -2147483648 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = new java.lang.ArithmeticException;
+        specialinvoke temp$0.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: gcd is 2^31");
+        throw temp$0;
+
+     label4:
+        nop;
+        temp$1 = staticinvoke <java.lang.Math: int abs(int)>(u);
+        temp$2 = temp$1;
+        temp$3 = staticinvoke <java.lang.Math: int abs(int)>(v);
+        temp$4 = temp$2 + temp$3;
+        return temp$4;
+
+     label5:
+        nop;
+        temp$5 = staticinvoke <java.lang.Math: int abs(int)>(u);
+        if temp$5 == 1 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$6 = staticinvoke <java.lang.Math: int abs(int)>(v);
+        if temp$6 == 1 goto label7;
+
+        goto label8;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$7 = 1;
+        return temp$7;
+
+     label8:
+        nop;
+        if u > 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$8 = neg u;
+        u = temp$8;
+
+     label10:
+        nop;
+        if v > 0 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$9 = neg v;
+        v = temp$9;
+
+     label12:
+        nop;
+        k = 0;
+
+     label13:
+        nop;
+        temp$10 = u & 1;
+        if temp$10 == 0 goto label14;
+
+        goto label17;
+
+     label14:
+        nop;
+        temp$11 = v & 1;
+        if temp$11 == 0 goto label15;
+
+        goto label17;
+
+        goto label15;
+
+     label15:
+        nop;
+        if k < 31 goto label16;
+
+        goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$12 = u;
+        temp$13 = temp$12 / 2;
+        u = temp$13;
+        temp$14 = v;
+        temp$15 = temp$14 / 2;
+        v = temp$15;
+        temp$16 = k;
+        temp$17 = temp$16 + 1;
+        k = temp$17;
+        goto label13;
+
+     label17:
+        nop;
+        if k == 31 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$18 = new java.lang.ArithmeticException;
+        specialinvoke temp$18.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: gcd is 2^31");
+        throw temp$18;
+
+     label19:
+        nop;
+        temp$20 = u & 1;
+        if temp$20 == 1 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$19 = v;
+        goto label22;
+
+     label21:
+        nop;
+        temp$21 = u / 2;
+        temp$19 = neg temp$21;
+
+     label22:
+        nop;
+        t = temp$19;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+        temp$22 = t & 1;
+        if temp$22 == 0 goto label25;
+
+        goto label26;
+
+     label25:
+        nop;
+        temp$23 = t;
+        temp$24 = temp$23 / 2;
+        t = temp$24;
+        goto label24;
+
+     label26:
+        nop;
+        if t > 0 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$25 = neg t;
+        u = temp$25;
+        goto label29;
+
+     label28:
+        nop;
+        v = t;
+
+     label29:
+        nop;
+        temp$26 = v - u;
+        temp$27 = temp$26 / 2;
+        t = temp$27;
+        nop;
+        if t != 0 goto label23;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$28 = 1 << k;
+        temp$29 = neg u;
+        temp$30 = temp$29 * temp$28;
+        return temp$30;
+    }
+}

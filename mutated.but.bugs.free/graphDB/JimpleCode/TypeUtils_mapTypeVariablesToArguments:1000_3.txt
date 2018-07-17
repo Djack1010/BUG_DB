@@ -1,0 +1,93 @@
+public class WrapClass 
+{
+    private static final void mapTypeVariablesToArguments(java.lang.Class, java.lang.reflect.ParameterizedType, java.util.Map)
+    {
+        java.lang.Class 'cls', temp$3;
+        java.lang.reflect.ParameterizedType parameterizedType;
+        java.util.Map typeVarAssigns;
+        java.lang.reflect.Type ownerType, temp$0, typeArg, temp$18, temp$20;
+        boolean temp$1, temp$14, temp$15;
+        java.lang.reflect.Type[] typeArgs, temp$2, temp$12;
+        java.lang.reflect.TypeVariable[] typeVars, temp$4, temp$5, temp$6, temp$10;
+        java.util.List typeVarList, temp$7, temp$8;
+        int i, temp$9, temp$11, temp$13, temp$21, temp$22;
+        java.lang.reflect.TypeVariable typeVar, temp$16;
+        java.lang.Object temp$17, temp$19;
+
+        'cls' := @parameter0: java.lang.Class;
+        parameterizedType := @parameter1: java.lang.reflect.ParameterizedType;
+        typeVarAssigns := @parameter2: java.util.Map;
+        temp$0 = interfaceinvoke parameterizedType.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        ownerType = temp$0;
+        temp$1 = ownerType instanceof java.lang.reflect.ParameterizedType;
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$2 = interfaceinvoke parameterizedType.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        typeArgs = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(parameterizedType);
+        temp$4 = virtualinvoke temp$3.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$5 = (java.lang.reflect.TypeVariable[]) temp$4;
+        typeVars = temp$5;
+        temp$6 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$7 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(temp$6);
+        temp$8 = (java.util.List) temp$7;
+        typeVarList = temp$8;
+        i = 0;
+
+     label2:
+        nop;
+        temp$9 = lengthof typeArgs;
+        if i < temp$9 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$10 = typeVars;
+        temp$11 = i;
+        typeVar = temp$10[temp$11];
+        temp$12 = typeArgs;
+        temp$13 = i;
+        typeArg = temp$12[temp$13];
+        temp$14 = interfaceinvoke typeVarList.<java.util.List: boolean contains(java.lang.Object)>(typeArg);
+        if temp$14 == 0 goto label6;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$15 = interfaceinvoke typeVarAssigns.<java.util.Map: boolean containsKey(java.lang.Object)>(typeVar);
+        if temp$15 == 0 goto label6;
+
+        goto label5;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$16 = (java.lang.reflect.TypeVariable) typeArg;
+        temp$17 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(typeVar);
+        temp$18 = (java.lang.reflect.Type) temp$17;
+        temp$19 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$16, temp$18);
+        temp$20 = (java.lang.reflect.Type) temp$19;
+
+     label6:
+        nop;
+        nop;
+        temp$21 = i;
+        temp$22 = temp$21 + 1;
+        i = temp$22;
+        goto label2;
+
+     label7:
+        nop;
+        return;
+    }
+}

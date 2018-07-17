@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public static int toInteger(java.lang.Boolean, int, int, int)
+    {
+        java.lang.Boolean bool;
+        int trueValue, falseValue, nullValue, temp$0;
+        boolean temp$1;
+
+        bool := @parameter0: java.lang.Boolean;
+        trueValue := @parameter1: int;
+        falseValue := @parameter2: int;
+        nullValue := @parameter3: int;
+        temp$1 = virtualinvoke bool.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = trueValue;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = falseValue;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

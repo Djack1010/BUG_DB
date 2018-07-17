@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    private static final float maxVersion()
+    {
+        float v, temp$1, temp$2;
+        java.lang.String temp$0;
+
+        temp$0 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String,java.lang.String)>("java.version", "2.0");
+        temp$1 = staticinvoke <org.apache.commons.lang3.JavaVersion: float toFloatVersion(java.lang.String)>(temp$0);
+        v = temp$1;
+        temp$2 = 2.0F;
+        return temp$2;
+    }
+}

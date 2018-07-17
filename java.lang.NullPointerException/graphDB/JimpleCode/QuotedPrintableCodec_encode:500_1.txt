@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public java.lang.Object encode(java.lang.Object) throws org.apache.commons.codec.EncoderException
+    {
+        org.apache.commons.codec.net.QuotedPrintableCodec this;
+        java.lang.Object obj;
+        boolean temp$0, temp$3;
+        byte[] temp$1, temp$2;
+        java.lang.String temp$4, temp$5, temp$9, temp$10;
+        org.apache.commons.codec.EncoderException temp$6;
+        java.lang.StringBuffer temp$7;
+        java.lang.Class temp$8;
+
+        this := @this: org.apache.commons.codec.net.QuotedPrintableCodec;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof byte[];
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (byte[]) obj;
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.net.QuotedPrintableCodec: byte[] encode(byte[])>(temp$1);
+        return temp$2;
+
+     label1:
+        nop;
+        temp$3 = obj instanceof java.lang.String;
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = (java.lang.String) obj;
+        temp$5 = virtualinvoke this.<org.apache.commons.codec.net.QuotedPrintableCodec: java.lang.String encode(java.lang.String)>(temp$4);
+        return temp$5;
+
+     label3:
+        nop;
+        temp$6 = new org.apache.commons.codec.EncoderException;
+        temp$7 = new java.lang.StringBuffer;
+        specialinvoke temp$7.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Objects of type ");
+        temp$8 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$9 = virtualinvoke temp$8.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$9);
+        virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" cannot be quoted-printable encoded");
+        temp$10 = virtualinvoke temp$7.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$6.<org.apache.commons.codec.EncoderException: void <init>(java.lang.String)>(temp$10);
+        throw temp$6;
+    }
+}

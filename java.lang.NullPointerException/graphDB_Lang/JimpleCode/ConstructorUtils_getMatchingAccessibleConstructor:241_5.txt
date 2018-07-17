@@ -1,0 +1,95 @@
+public class WrapClass 
+{
+    public static transient java.lang.reflect.Constructor getMatchingAccessibleConstructor(java.lang.Class, java.lang.Class[])
+    {
+        java.lang.Class 'cls', temp$2;
+        java.lang.Class[] parameterTypes, temp$11, temp$12;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.reflect.Constructor ctor, temp$3, result, ctor, temp$8, temp$9, constructor;
+        boolean temp$4, temp$10;
+        java.lang.NoSuchMethodException e;
+        java.lang.reflect.Constructor[] ctors, temp$5;
+        int temp$6, temp$7, temp$13;
+
+        'cls' := @parameter0: java.lang.Class;
+        parameterTypes := @parameter1: java.lang.Class[];
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>('cls', "class cannot be null", temp$0);
+        temp$2 = (java.lang.Class) temp$1;
+
+     label0:
+        nop;
+        temp$3 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>(parameterTypes);
+        ctor = temp$3;
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(ctor);
+
+     label1:
+        nop;
+        return ctor;
+
+     label2:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        result = null;
+        temp$5 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Constructor[] getConstructors()>();
+        ctors = temp$5;
+        temp$6 = 0;
+
+     label4:
+        nop;
+        temp$7 = lengthof ctors;
+        if temp$6 >= temp$7 goto label10;
+
+        temp$8 = ctors[temp$6];
+        ctor = temp$8;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.ConstructorUtils: java.lang.reflect.Constructor getAccessibleConstructor(java.lang.reflect.Constructor)>(ctor);
+        ctor = temp$9;
+        if ctor != null goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(ctor);
+        if result == null goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$11 = virtualinvoke ctor.<java.lang.reflect.Constructor: java.lang.Class[] getParameterTypes()>();
+        temp$12 = virtualinvoke result.<java.lang.reflect.Constructor: java.lang.Class[] getParameterTypes()>();
+        temp$13 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: int compareParameterTypes(java.lang.Class[],java.lang.Class[],java.lang.Class[])>(temp$11, temp$12, parameterTypes);
+        if temp$13 < 0 goto label7;
+
+        goto label8;
+
+        goto label8;
+
+     label7:
+        nop;
+        constructor = (java.lang.reflect.Constructor) ctor;
+        result = constructor;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        nop;
+        temp$6 = temp$6 + 1;
+        goto label4;
+
+     label10:
+        nop;
+        return result;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label2;
+    }
+}

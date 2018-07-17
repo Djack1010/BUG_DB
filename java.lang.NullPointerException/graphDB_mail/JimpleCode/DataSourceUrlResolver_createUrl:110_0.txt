@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    protected java.net.URL createUrl(java.lang.String) throws java.net.MalformedURLException
+    {
+        org.apache.commons.mail.resolver.DataSourceUrlResolver this;
+        java.lang.String resourceLocation, temp$9;
+        java.net.URL temp$0, temp$1, temp$6, temp$7, temp$8;
+        int temp$2;
+        java.lang.IllegalArgumentException temp$3;
+        boolean temp$4, temp$5;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceUrlResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        temp$0 = this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: java.net.URL baseUrl>;
+        if temp$0 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.net.URL;
+        specialinvoke temp$1.<java.net.URL: void <init>(java.lang.String)>(resourceLocation);
+        return temp$1;
+
+     label1:
+        nop;
+        if resourceLocation == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke resourceLocation.<java.lang.String: int length()>();
+        if temp$2 == 0 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("No resource defined");
+        throw temp$3;
+
+     label4:
+        nop;
+        temp$4 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: boolean isFileUrl(java.lang.String)>(resourceLocation);
+        if temp$4 == 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: boolean isHttpUrl(java.lang.String)>(resourceLocation);
+        if temp$5 == 0 goto label7;
+
+        goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = new java.net.URL;
+        specialinvoke temp$6.<java.net.URL: void <init>(java.lang.String)>(resourceLocation);
+        return temp$6;
+
+     label7:
+        nop;
+        temp$7 = new java.net.URL;
+        temp$8 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceUrlResolver: java.net.URL getBaseUrl()>();
+        temp$9 = virtualinvoke resourceLocation.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("&amp;", "&");
+        specialinvoke temp$7.<java.net.URL: void <init>(java.net.URL,java.lang.String)>(temp$8, temp$9);
+        return temp$7;
+    }
+}

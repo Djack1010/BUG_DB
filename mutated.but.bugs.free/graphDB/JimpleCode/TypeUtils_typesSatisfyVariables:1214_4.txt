@@ -1,0 +1,71 @@
+public class WrapClass 
+{
+    public static boolean typesSatisfyVariables(java.util.Map)
+    {
+        java.util.Map typeVarAssigns;
+        java.util.Set temp$0, temp$1;
+        java.util.Iterator temp$2;
+        java.util.Map$Entry entry;
+        boolean temp$3, temp$14, temp$15, temp$16;
+        java.lang.Object temp$4, temp$5, temp$7;
+        java.lang.reflect.TypeVariable typeVar, temp$6;
+        java.lang.reflect.Type type, temp$8, bound, temp$12, temp$13;
+        java.lang.reflect.Type[] temp$9;
+        int temp$10, temp$11;
+
+        typeVarAssigns := @parameter0: java.util.Map;
+        temp$0 = interfaceinvoke typeVarAssigns.<java.util.Map: java.util.Set entrySet()>();
+        temp$1 = (java.util.Set) temp$0;
+        temp$2 = interfaceinvoke temp$1.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$3 = interfaceinvoke temp$2.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label5;
+
+        temp$4 = interfaceinvoke temp$2.<java.util.Iterator: java.lang.Object next()>();
+        entry = (java.util.Map$Entry) temp$4;
+        temp$5 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$6 = (java.lang.reflect.TypeVariable) temp$5;
+        typeVar = temp$6;
+        temp$7 = interfaceinvoke entry.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$8 = (java.lang.reflect.Type) temp$7;
+        type = temp$8;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] getImplicitBounds(java.lang.reflect.TypeVariable)>(typeVar);
+        temp$10 = 0;
+
+     label1:
+        nop;
+        temp$11 = lengthof temp$9;
+        if temp$10 >= temp$11 goto label4;
+
+        temp$12 = temp$9[temp$10];
+        bound = temp$12;
+        temp$13 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type substituteTypeVariables(java.lang.reflect.Type,java.util.Map)>(bound, typeVarAssigns);
+        temp$14 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.reflect.Type,java.util.Map)>(type, temp$13, typeVarAssigns);
+        if temp$14 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$15 = 0;
+        return temp$15;
+
+     label3:
+        nop;
+        nop;
+        temp$10 = temp$10 + 1;
+        goto label1;
+
+     label4:
+        nop;
+        nop;
+        goto label0;
+
+     label5:
+        nop;
+        temp$16 = 1;
+        return temp$16;
+    }
+}

@@ -1,0 +1,237 @@
+public class WrapClass 
+{
+    private static final char[] transcodeRemaining(char, char, char, char)
+    {
+        char prev, curr, next, aNext;
+        int temp$0, temp$1, temp$5, temp$7, temp$9, temp$11, temp$12, temp$15, temp$16, temp$17, temp$19, temp$21, temp$24, temp$28;
+        char[] temp$2, temp$4, temp$6, temp$8, temp$10, temp$13, temp$14, temp$18, temp$23, temp$27, temp$30, temp$31;
+        boolean temp$3, temp$20, temp$22, temp$25, temp$26, temp$29;
+
+        prev := @parameter0: char;
+        curr := @parameter1: char;
+        next := @parameter2: char;
+        aNext := @parameter3: char;
+        temp$0 = (int) curr;
+        if temp$0 == 69 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$1 = (int) next;
+        if temp$1 == 86 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$2 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_AF>;
+        return temp$2;
+
+     label2:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.codec.language.Nysiis: boolean isVowel(char)>(curr);
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$4 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_A>;
+        return temp$4;
+
+     label4:
+        nop;
+        temp$5 = (int) curr;
+        if temp$5 == 81 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$6 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_G>;
+        return temp$6;
+
+     label6:
+        nop;
+        temp$7 = (int) curr;
+        if temp$7 == 90 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$8 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_S>;
+        return temp$8;
+
+     label8:
+        nop;
+        temp$9 = (int) curr;
+        if temp$9 == 77 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$10 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_N>;
+        return temp$10;
+
+     label10:
+        nop;
+        temp$11 = (int) curr;
+        if temp$11 == 75 goto label11;
+
+        goto label14;
+
+     label11:
+        nop;
+        temp$12 = (int) next;
+        if temp$12 == 78 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$13 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_NN>;
+        return temp$13;
+
+     label13:
+        nop;
+        temp$14 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_C>;
+        return temp$14;
+
+     label14:
+        nop;
+        temp$15 = (int) curr;
+        if temp$15 == 83 goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$16 = (int) next;
+        if temp$16 == 67 goto label16;
+
+        goto label18;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$17 = (int) aNext;
+        if temp$17 == 72 goto label17;
+
+        goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$18 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_SSS>;
+        return temp$18;
+
+     label18:
+        nop;
+        temp$19 = (int) curr;
+        if temp$19 == 80 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$20 = 0;
+        goto label21;
+
+     label20:
+        nop;
+        temp$20 = 1;
+
+     label21:
+        nop;
+        temp$21 = (int) next;
+        if temp$21 == 72 goto label23;
+
+        goto label22;
+
+     label22:
+        nop;
+        temp$22 = 0;
+        goto label24;
+
+     label23:
+        nop;
+        temp$22 = 1;
+
+     label24:
+        nop;
+        if temp$20 == temp$22 goto label25;
+
+        goto label26;
+
+     label25:
+        nop;
+        temp$23 = <org.apache.commons.codec.language.Nysiis: char[] CHARS_FF>;
+        return temp$23;
+
+     label26:
+        nop;
+        temp$24 = (int) curr;
+        if temp$24 == 72 goto label27;
+
+        goto label30;
+
+     label27:
+        nop;
+        temp$25 = staticinvoke <org.apache.commons.codec.language.Nysiis: boolean isVowel(char)>(prev);
+        if temp$25 == 0 goto label29;
+
+        goto label28;
+
+     label28:
+        nop;
+        temp$26 = staticinvoke <org.apache.commons.codec.language.Nysiis: boolean isVowel(char)>(next);
+        if temp$26 == 0 goto label29;
+
+        goto label30;
+
+        goto label30;
+
+        goto label29;
+
+     label29:
+        nop;
+        temp$27 = newarray (char)[1];
+        temp$27[0] = prev;
+        return temp$27;
+
+     label30:
+        nop;
+        temp$28 = (int) curr;
+        if temp$28 == 87 goto label31;
+
+        goto label33;
+
+     label31:
+        nop;
+        temp$29 = staticinvoke <org.apache.commons.codec.language.Nysiis: boolean isVowel(char)>(prev);
+        if temp$29 == 0 goto label33;
+
+        goto label32;
+
+        goto label32;
+
+     label32:
+        nop;
+        temp$30 = newarray (char)[1];
+        temp$30[0] = prev;
+        return temp$30;
+
+     label33:
+        nop;
+        temp$31 = newarray (char)[1];
+        temp$31[0] = curr;
+        return temp$31;
+    }
+}

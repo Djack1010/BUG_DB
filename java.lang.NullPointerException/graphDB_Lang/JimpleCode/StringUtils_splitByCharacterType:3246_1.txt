@@ -1,0 +1,149 @@
+public class WrapClass 
+{
+    private static final java.lang.String[] splitByCharacterType(java.lang.String, boolean)
+    {
+        java.lang.String str, temp$15, temp$18, temp$23;
+        boolean camelCase, temp$1, temp$17, temp$20, temp$26;
+        java.lang.String[] temp$0, temp$2, temp$28, temp$30;
+        char[] c, temp$4, temp$10;
+        java.util.List list;
+        java.util.ArrayList temp$3;
+        int tokenStart, currentType, temp$5, temp$7, pos, temp$8, temp$9, type, temp$11, temp$13, newTokenStart, temp$14, temp$16, temp$19, temp$21, temp$22, temp$24, temp$25, temp$27;
+        char temp$6, temp$12;
+        java.lang.Object[] temp$29;
+
+        str := @parameter0: java.lang.String;
+        camelCase := @parameter1: boolean;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: boolean isEmpty()>();
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$2;
+
+     label3:
+        nop;
+        c = null;
+        temp$3 = new java.util.ArrayList;
+        specialinvoke temp$3.<java.util.ArrayList: void <init>()>();
+        list = temp$3;
+        tokenStart = 0;
+        temp$4 = c;
+        temp$5 = tokenStart;
+        temp$6 = temp$4[temp$5];
+        temp$7 = staticinvoke <java.lang.Character: int getType(char)>(temp$6);
+        currentType = temp$7;
+        temp$8 = tokenStart;
+        pos = temp$8 + 1;
+
+     label4:
+        nop;
+        temp$9 = lengthof c;
+        if pos < temp$9 goto label5;
+
+        goto label16;
+
+     label5:
+        nop;
+        temp$10 = c;
+        temp$11 = pos;
+        temp$12 = temp$10[temp$11];
+        temp$13 = staticinvoke <java.lang.Character: int getType(char)>(temp$12);
+        type = temp$13;
+        if type == currentType goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        goto label15;
+
+     label7:
+        nop;
+        if camelCase == 0 goto label13;
+
+        goto label8;
+
+     label8:
+        nop;
+        if type == 2 goto label9;
+
+        goto label13;
+
+        goto label9;
+
+     label9:
+        nop;
+        if currentType == 1 goto label10;
+
+        goto label13;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$14 = pos - 1;
+        newTokenStart = temp$14;
+        if newTokenStart != tokenStart goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$15 = new java.lang.String;
+        temp$16 = newTokenStart - tokenStart;
+        specialinvoke temp$15.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$16);
+        temp$17 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$15);
+        tokenStart = newTokenStart;
+
+     label12:
+        nop;
+        goto label14;
+
+     label13:
+        nop;
+        temp$18 = new java.lang.String;
+        temp$19 = pos - tokenStart;
+        specialinvoke temp$18.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$19);
+        temp$20 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$18);
+        tokenStart = pos;
+
+     label14:
+        nop;
+        currentType = type;
+
+     label15:
+        nop;
+        temp$21 = pos;
+        temp$22 = temp$21 + 1;
+        pos = temp$22;
+        goto label4;
+
+     label16:
+        nop;
+        temp$23 = new java.lang.String;
+        temp$24 = lengthof c;
+        temp$25 = temp$24 - tokenStart;
+        specialinvoke temp$23.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$25);
+        temp$26 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$23);
+        temp$27 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$28 = newarray (java.lang.String)[temp$27];
+        temp$29 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$28);
+        temp$30 = (java.lang.String[]) temp$29;
+        return temp$30;
+    }
+}

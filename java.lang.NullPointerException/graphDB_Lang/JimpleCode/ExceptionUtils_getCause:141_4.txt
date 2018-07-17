@@ -1,0 +1,62 @@
+public class WrapClass 
+{
+    public static java.lang.Throwable getCause(java.lang.Throwable, java.lang.String[])
+    {
+        java.lang.Throwable throwable, cause, temp$4, temp$5;
+        java.lang.String[] methodNames, temp$0;
+        int temp$1, temp$2;
+        java.lang.String methodName, temp$3;
+
+        throwable := @parameter0: java.lang.Throwable;
+        methodNames := @parameter1: java.lang.String[];
+        if methodNames == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String[] CAUSE_METHOD_NAMES>;
+        methodNames = temp$0;
+
+     label1:
+        nop;
+        temp$1 = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof methodNames;
+        if temp$1 >= temp$2 goto label7;
+
+        temp$3 = methodNames[temp$1];
+        methodName = temp$3;
+        if methodName != null goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Throwable getCauseUsingMethodName(java.lang.Throwable,java.lang.String)>(throwable, methodName);
+        cause = temp$4;
+        if cause != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        return cause;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label2;
+
+     label7:
+        nop;
+        temp$5 = null;
+        return temp$5;
+    }
+}

@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static transient boolean endsWithAny(java.lang.CharSequence, java.lang.CharSequence[])
+    {
+        java.lang.CharSequence string, searchString, temp$4;
+        java.lang.CharSequence[] searchStrings;
+        boolean temp$0, temp$1, temp$5, temp$6, temp$7;
+        int temp$2, temp$3;
+
+        string := @parameter0: java.lang.CharSequence;
+        searchStrings := @parameter1: java.lang.CharSequence[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(string);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = 0;
+
+     label2:
+        nop;
+        temp$3 = lengthof searchStrings;
+        if temp$2 >= temp$3 goto label5;
+
+        temp$4 = searchStrings[temp$2];
+        searchString = temp$4;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean endsWith(java.lang.CharSequence,java.lang.CharSequence)>(string, searchString);
+        if temp$5 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$6 = 1;
+        return temp$6;
+
+     label4:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label2;
+
+     label5:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+    }
+}

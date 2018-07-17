@@ -1,0 +1,134 @@
+public class WrapClass 
+{
+    private final java.lang.String replacePattern(java.lang.String, java.util.regex.Pattern) throws org.apache.commons.mail.EmailException, java.io.IOException
+    {
+        org.apache.commons.mail.ImageHtmlEmail this;
+        java.lang.String htmlMessage, resourceLocation, temp$5, name, temp$14, cid, temp$17, temp$18, temp$20, temp$22, temp$23, temp$24, temp$25, temp$28;
+        java.util.regex.Pattern pattern;
+        javax.activation.DataSource dataSource, temp$7, temp$9, temp$11, temp$13;
+        java.lang.StringBuffer stringBuffer, temp$0, temp$21, temp$27;
+        java.util.Map cidCache, dataSourceCache;
+        java.util.HashMap temp$1, temp$2;
+        java.util.regex.Matcher matcher, temp$3, temp$26;
+        boolean temp$4, temp$15;
+        java.lang.Object temp$6, temp$10, temp$12, temp$16, temp$19;
+        org.apache.commons.mail.DataSourceResolver temp$8;
+
+        this := @this: org.apache.commons.mail.ImageHtmlEmail;
+        htmlMessage := @parameter0: java.lang.String;
+        pattern := @parameter1: java.util.regex.Pattern;
+        temp$0 = new java.lang.StringBuffer;
+        specialinvoke temp$0.<java.lang.StringBuffer: void <init>()>();
+        stringBuffer = temp$0;
+        temp$1 = new java.util.HashMap;
+        specialinvoke temp$1.<java.util.HashMap: void <init>()>();
+        cidCache = temp$1;
+        temp$2 = new java.util.HashMap;
+        specialinvoke temp$2.<java.util.HashMap: void <init>()>();
+        dataSourceCache = temp$2;
+        temp$3 = virtualinvoke pattern.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(htmlMessage);
+        matcher = temp$3;
+
+     label0:
+        nop;
+        temp$4 = virtualinvoke matcher.<java.util.regex.Matcher: boolean find()>();
+        if temp$4 == 0 goto label13;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = virtualinvoke matcher.<java.util.regex.Matcher: java.lang.String group(int)>(2);
+        resourceLocation = temp$5;
+        temp$6 = interfaceinvoke dataSourceCache.<java.util.Map: java.lang.Object get(java.lang.Object)>(resourceLocation);
+        temp$7 = (javax.activation.DataSource) temp$6;
+        if temp$7 == null goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$8 = virtualinvoke this.<org.apache.commons.mail.ImageHtmlEmail: org.apache.commons.mail.DataSourceResolver getDataSourceResolver()>();
+        temp$9 = interfaceinvoke temp$8.<org.apache.commons.mail.DataSourceResolver: javax.activation.DataSource resolve(java.lang.String)>(resourceLocation);
+        dataSource = temp$9;
+        if dataSource != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$10 = interfaceinvoke dataSourceCache.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(resourceLocation, dataSource);
+        temp$11 = (javax.activation.DataSource) temp$10;
+
+     label4:
+        nop;
+        goto label6;
+
+     label5:
+        nop;
+        temp$12 = interfaceinvoke dataSourceCache.<java.util.Map: java.lang.Object get(java.lang.Object)>(resourceLocation);
+        temp$13 = (javax.activation.DataSource) temp$12;
+        dataSource = temp$13;
+
+     label6:
+        nop;
+        if dataSource != null goto label7;
+
+        goto label12;
+
+     label7:
+        nop;
+        temp$14 = interfaceinvoke dataSource.<javax.activation.DataSource: java.lang.String getName()>();
+        name = temp$14;
+        temp$15 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isEmpty(java.lang.String)>(name);
+        if temp$15 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        name = resourceLocation;
+
+     label9:
+        nop;
+        temp$16 = interfaceinvoke cidCache.<java.util.Map: java.lang.Object get(java.lang.Object)>(name);
+        temp$17 = (java.lang.String) temp$16;
+        cid = temp$17;
+        if cid == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$18 = virtualinvoke this.<org.apache.commons.mail.ImageHtmlEmail: java.lang.String embed(javax.activation.DataSource,java.lang.String)>(dataSource, name);
+        cid = temp$18;
+        temp$19 = interfaceinvoke cidCache.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(name, cid);
+        temp$20 = (java.lang.String) temp$19;
+
+     label11:
+        nop;
+        temp$21 = new java.lang.StringBuffer;
+        specialinvoke temp$21.<java.lang.StringBuffer: void <init>()>();
+        temp$22 = virtualinvoke matcher.<java.util.regex.Matcher: java.lang.String group(int)>(1);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$22);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("cid:");
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(cid);
+        temp$23 = virtualinvoke matcher.<java.util.regex.Matcher: java.lang.String group(int)>(3);
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$23);
+        temp$24 = virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$25 = staticinvoke <java.util.regex.Matcher: java.lang.String quoteReplacement(java.lang.String)>(temp$24);
+        temp$26 = virtualinvoke matcher.<java.util.regex.Matcher: java.util.regex.Matcher appendReplacement(java.lang.StringBuffer,java.lang.String)>(stringBuffer, temp$25);
+
+     label12:
+        nop;
+        goto label0;
+
+     label13:
+        nop;
+        temp$27 = virtualinvoke matcher.<java.util.regex.Matcher: java.lang.StringBuffer appendTail(java.lang.StringBuffer)>(stringBuffer);
+        interfaceinvoke cidCache.<java.util.Map: void clear()>();
+        interfaceinvoke dataSourceCache.<java.util.Map: void clear()>();
+        temp$28 = virtualinvoke stringBuffer.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$28;
+    }
+}

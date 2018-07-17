@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public int setValue(int, int)
+    {
+        org.apache.commons.lang3.BitField this;
+        int holder, value, temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7;
+
+        this := @this: org.apache.commons.lang3.BitField;
+        holder := @parameter0: int;
+        value := @parameter1: int;
+        temp$0 = this.<org.apache.commons.lang3.BitField: int _mask>;
+        temp$1 = -1 ^ temp$0;
+        temp$2 = holder & temp$1;
+        temp$3 = this.<org.apache.commons.lang3.BitField: int _shift_count>;
+        temp$4 = value << temp$3;
+        temp$5 = this.<org.apache.commons.lang3.BitField: int _mask>;
+        temp$6 = temp$4 & temp$5;
+        temp$7 = temp$2 ^ temp$6;
+        return temp$7;
+    }
+}

@@ -1,0 +1,73 @@
+public class WrapClass 
+{
+    public static byte[] decodeHex(char[]) throws org.apache.commons.codec.DecoderException
+    {
+        char[] data, temp$3, temp$10;
+        int len, temp$0, temp$2, i, j, f, temp$4, temp$6, temp$7, temp$8, temp$9, temp$11, temp$13, temp$14, temp$15, temp$16, temp$18, temp$19, temp$21, temp$22;
+        org.apache.commons.codec.DecoderException temp$1;
+        byte[] out, temp$17;
+        char temp$5, temp$12;
+        byte temp$20;
+
+        data := @parameter0: char[];
+        len = lengthof data;
+        temp$0 = len & 1;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$1.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>("Odd number of characters.");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = len >> 1;
+        out = newarray (byte)[temp$2];
+        i = -1;
+        j = 0;
+
+     label2:
+        nop;
+        if j < len goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = data;
+        temp$4 = j;
+        temp$5 = temp$3[temp$4];
+        temp$6 = staticinvoke <org.apache.commons.codec.binary.Hex: int toDigit(char,int)>(temp$5, j);
+        temp$7 = temp$6 << 4;
+        f = temp$7;
+        temp$8 = j;
+        temp$9 = temp$8 + 1;
+        j = temp$9;
+        temp$10 = data;
+        temp$11 = j;
+        temp$12 = temp$10[temp$11];
+        temp$13 = staticinvoke <org.apache.commons.codec.binary.Hex: int toDigit(char,int)>(temp$12, j);
+        temp$14 = f | temp$13;
+        f = temp$14;
+        temp$15 = j;
+        temp$16 = temp$15 + 1;
+        j = temp$16;
+        temp$17 = out;
+        temp$18 = i;
+        temp$19 = f & 255;
+        temp$20 = (byte) temp$19;
+        temp$17[temp$18] = temp$20;
+        nop;
+        temp$21 = i;
+        temp$22 = temp$21 + 1;
+        i = temp$22;
+        goto label2;
+
+     label4:
+        nop;
+        return out;
+    }
+}

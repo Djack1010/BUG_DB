@@ -1,0 +1,122 @@
+public class WrapClass 
+{
+    private static final int arrayMemberHash(java.lang.Class, java.lang.Object)
+    {
+        java.lang.Class componentType, temp$0, temp$4, temp$8, temp$12, temp$16, temp$20, temp$24;
+        java.lang.Object o;
+        boolean temp$1, temp$5, temp$9, temp$13, temp$17, temp$21, temp$25;
+        short[] temp$2;
+        int temp$3, temp$7, temp$11, temp$15, temp$19, temp$23, temp$27, temp$29;
+        int[] temp$6;
+        char[] temp$10;
+        long[] temp$14;
+        float[] temp$18;
+        double[] temp$22;
+        boolean[] temp$26;
+        java.lang.Object[] temp$28;
+
+        componentType := @parameter0: java.lang.Class;
+        o := @parameter1: java.lang.Object;
+        temp$0 = <java.lang.Short: java.lang.Class TYPE>;
+        temp$1 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$0);
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = (short[]) o;
+        temp$3 = staticinvoke <java.util.Arrays: int hashCode(short[])>(temp$2);
+        return temp$3;
+
+     label1:
+        nop;
+        temp$4 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$5 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$4);
+        if temp$5 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$6 = (int[]) o;
+        temp$7 = staticinvoke <java.util.Arrays: int hashCode(int[])>(temp$6);
+        return temp$7;
+
+     label3:
+        nop;
+        temp$8 = <java.lang.Character: java.lang.Class TYPE>;
+        temp$9 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$8);
+        if temp$9 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$10 = (char[]) o;
+        temp$11 = staticinvoke <java.util.Arrays: int hashCode(char[])>(temp$10);
+        return temp$11;
+
+     label5:
+        nop;
+        temp$12 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$13 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$12);
+        if temp$13 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$14 = (long[]) o;
+        temp$15 = staticinvoke <java.util.Arrays: int hashCode(long[])>(temp$14);
+        return temp$15;
+
+     label7:
+        nop;
+        temp$16 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$17 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$16);
+        if temp$17 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$18 = (float[]) o;
+        temp$19 = staticinvoke <java.util.Arrays: int hashCode(float[])>(temp$18);
+        return temp$19;
+
+     label9:
+        nop;
+        temp$20 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$21 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$20);
+        if temp$21 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$22 = (double[]) o;
+        temp$23 = staticinvoke <java.util.Arrays: int hashCode(double[])>(temp$22);
+        return temp$23;
+
+     label11:
+        nop;
+        temp$24 = <java.lang.Boolean: java.lang.Class TYPE>;
+        temp$25 = virtualinvoke componentType.<java.lang.Class: boolean equals(java.lang.Object)>(temp$24);
+        if temp$25 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$26 = (boolean[]) o;
+        temp$27 = staticinvoke <java.util.Arrays: int hashCode(boolean[])>(temp$26);
+        return temp$27;
+
+     label13:
+        nop;
+        temp$28 = (java.lang.Object[]) o;
+        temp$29 = staticinvoke <java.util.Arrays: int hashCode(java.lang.Object[])>(temp$28);
+        return temp$29;
+    }
+}

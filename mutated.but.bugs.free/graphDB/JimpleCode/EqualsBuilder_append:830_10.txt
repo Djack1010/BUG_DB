@@ -1,0 +1,125 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.EqualsBuilder append(double[], double[])
+    {
+        org.apache.commons.lang3.builder.EqualsBuilder this, temp$13;
+        double[] lhs, rhs, temp$7, temp$10;
+        boolean temp$0, temp$1, temp$2, temp$6;
+        int temp$3, temp$4, i, temp$5, temp$8, temp$11, temp$14;
+        double temp$9, temp$12;
+
+        this := @this: org.apache.commons.lang3.builder.EqualsBuilder;
+        lhs := @parameter0: double[];
+        rhs := @parameter1: double[];
+        temp$0 = this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == null goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$1 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$1 = 1;
+
+     label6:
+        nop;
+        if rhs == null goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$2 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$2 = 1;
+
+     label9:
+        nop;
+        if temp$1 != temp$2 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: void setEquals(boolean)>(0);
+        return this;
+
+     label11:
+        nop;
+        temp$3 = lengthof lhs;
+        temp$4 = lengthof rhs;
+        if temp$3 != temp$4 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: void setEquals(boolean)>(0);
+        return this;
+
+     label13:
+        nop;
+        i = 0;
+
+     label14:
+        nop;
+        temp$5 = lengthof lhs;
+        if i < temp$5 goto label15;
+
+        goto label17;
+
+     label15:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals>;
+        if temp$6 == 0 goto label17;
+
+        goto label16;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$7 = lhs;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = rhs;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        temp$13 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(double,double)>(temp$9, temp$12);
+        nop;
+        temp$14 = i + 1;
+        i = temp$14;
+        goto label14;
+
+     label17:
+        nop;
+        return this;
+    }
+}

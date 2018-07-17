@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.Object deserialize(byte[])
+    {
+        byte[] objectData;
+        java.io.ByteArrayInputStream temp$0;
+        java.lang.Object temp$1;
+
+        objectData := @parameter0: byte[];
+        temp$0 = new java.io.ByteArrayInputStream;
+        specialinvoke temp$0.<java.io.ByteArrayInputStream: void <init>(byte[])>(objectData);
+        temp$1 = staticinvoke <org.apache.commons.lang3.SerializationUtils: java.lang.Object deserialize(java.io.InputStream)>(temp$0);
+        return temp$1;
+    }
+}

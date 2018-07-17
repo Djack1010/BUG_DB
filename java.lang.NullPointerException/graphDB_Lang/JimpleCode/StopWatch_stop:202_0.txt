@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public void stop()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$State temp$0, temp$1, temp$2, temp$3, temp$5, temp$6, temp$8;
+        java.lang.IllegalStateException temp$4;
+        long temp$7;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        if temp$0 != temp$1 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$3 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State SUSPENDED>;
+        if temp$2 != temp$3 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = new java.lang.IllegalStateException;
+        specialinvoke temp$4.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Stopwatch is not running. ");
+        throw temp$4;
+
+     label2:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState>;
+        temp$6 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State RUNNING>;
+        if temp$5 == temp$6 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = staticinvoke <java.lang.System: long nanoTime()>();
+        this.<org.apache.commons.lang3.time.StopWatch: long stopTime> = temp$7;
+
+     label4:
+        nop;
+        temp$8 = <org.apache.commons.lang3.time.StopWatch$State: org.apache.commons.lang3.time.StopWatch$State STOPPED>;
+        this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$State runningState> = temp$8;
+        return;
+    }
+}

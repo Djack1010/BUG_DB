@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    public static void exclusiveBetween(long, long, long)
+    {
+        long start, end, value, temp$5, temp$8, temp$11;
+        int temp$0, temp$1, temp$4, temp$7, temp$10;
+        java.lang.IllegalArgumentException temp$2;
+        java.lang.Object[] temp$3;
+        java.lang.Integer temp$6, temp$9, temp$12;
+        java.lang.String temp$13;
+
+        start := @parameter0: long;
+        end := @parameter1: long;
+        value := @parameter2: long;
+        temp$0 = value cmp start;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = value cmp end;
+        if temp$1 < 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        temp$3 = newarray (java.lang.Object)[3];
+        temp$4 = (int) value;
+        temp$5 = (long) temp$4;
+        temp$6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$5);
+        temp$3[0] = temp$6;
+        temp$7 = (int) start;
+        temp$8 = (long) temp$7;
+        temp$9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$8);
+        temp$3[1] = temp$9;
+        temp$10 = (int) end;
+        temp$11 = (long) temp$10;
+        temp$12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$11);
+        temp$3[2] = temp$12;
+        temp$13 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("The value %s is not in the specified exclusive range of %s to %s", temp$3);
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$13);
+        throw temp$2;
+
+     label2:
+        nop;
+        return;
+    }
+}

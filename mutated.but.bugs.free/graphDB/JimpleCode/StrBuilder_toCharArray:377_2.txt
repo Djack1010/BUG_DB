@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public char[] toCharArray(int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, temp$0, len, temp$1;
+        char[] temp$2, chars, temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int validateRange(int,int)>(startIndex, endIndex);
+        endIndex = temp$0;
+        temp$1 = endIndex;
+        len = temp$1 + startIndex;
+        if len == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: char[] EMPTY_CHAR_ARRAY>;
+        return temp$2;
+
+     label1:
+        nop;
+        chars = newarray (char)[len];
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$3, startIndex, chars, 0, len);
+        return chars;
+    }
+}

@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public void getChars(int, int, char[], int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, destinationIndex, temp$1, temp$5;
+        char[] destination, temp$4;
+        java.lang.StringIndexOutOfBoundsException temp$0, temp$2, temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        destination := @parameter2: char[];
+        destinationIndex := @parameter3: int;
+        if startIndex < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$0.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(startIndex);
+        throw temp$0;
+
+     label1:
+        nop;
+        if endIndex < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        if endIndex > temp$1 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$2.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(endIndex);
+        throw temp$2;
+
+     label4:
+        nop;
+        if startIndex >= endIndex goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$3.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>("end < start");
+        throw temp$3;
+
+     label6:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = endIndex - startIndex;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$4, startIndex, destination, destinationIndex, temp$5);
+        return;
+    }
+}

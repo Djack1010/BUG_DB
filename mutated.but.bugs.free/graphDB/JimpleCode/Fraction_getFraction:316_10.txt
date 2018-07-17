@@ -1,0 +1,106 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.math.Fraction getFraction(java.lang.String)
+    {
+        java.lang.String str, temp$5, temp$9, temp$12, temp$16, temp$22, temp$26;
+        java.lang.IllegalArgumentException temp$0;
+        int pos, temp$1, temp$4, whole, temp$6, temp$7, temp$8, temp$10, numer, temp$13, denom, temp$14, temp$15, temp$17, temp$19, temp$20, numer, temp$23, denom, temp$24, temp$25, temp$27;
+        double temp$2;
+        org.apache.commons.lang3.math.Fraction temp$3, temp$18, temp$21, temp$28;
+        java.lang.NumberFormatException temp$11;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The string must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int indexOf(int)>(46);
+        pos = temp$1;
+        if pos > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>(str);
+        temp$3 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(double)>(temp$2);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: int indexOf(int)>(32);
+        pos = temp$4;
+        if pos > 0 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        temp$6 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$5);
+        whole = temp$6;
+        temp$7 = pos;
+        temp$8 = temp$7 + 1;
+        temp$9 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$8);
+        str = temp$9;
+        temp$10 = virtualinvoke str.<java.lang.String: int indexOf(int)>(47);
+        pos = temp$10;
+        if pos < 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$11 = new java.lang.NumberFormatException;
+        specialinvoke temp$11.<java.lang.NumberFormatException: void <init>(java.lang.String)>("The fraction could not be parsed as the format X Y/Z");
+        throw temp$11;
+
+     label6:
+        nop;
+        temp$12 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        temp$13 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$12);
+        numer = temp$13;
+        temp$14 = pos;
+        temp$15 = temp$14 + 1;
+        temp$16 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$15);
+        temp$17 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$16);
+        denom = temp$17;
+        temp$18 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int,int)>(whole, numer, denom);
+        return temp$18;
+
+     label7:
+        nop;
+        temp$19 = virtualinvoke str.<java.lang.String: int indexOf(int)>(47);
+        pos = temp$19;
+        if pos < 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$20 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(str);
+        temp$21 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int)>(temp$20, 1);
+        return temp$21;
+
+     label9:
+        nop;
+        temp$22 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        temp$23 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$22);
+        numer = temp$23;
+        temp$24 = pos;
+        temp$25 = temp$24 + 1;
+        temp$26 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$25);
+        temp$27 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$26);
+        denom = temp$27;
+        temp$28 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int)>(numer, denom);
+        return temp$28;
+    }
+}

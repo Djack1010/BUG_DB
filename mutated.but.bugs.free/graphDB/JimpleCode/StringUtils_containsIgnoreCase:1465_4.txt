@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    public static boolean containsIgnoreCase(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence str, searchStr;
+        boolean temp$0, temp$4, temp$7;
+        int len, temp$1, max, temp$2, temp$3, i, temp$5, temp$6;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStr := @parameter1: java.lang.CharSequence;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if searchStr == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label2:
+        nop;
+        temp$1 = interfaceinvoke searchStr.<java.lang.CharSequence: int length()>();
+        len = temp$1;
+        temp$2 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$3 = temp$2 - len;
+        max = temp$3;
+        i = 0;
+
+     label3:
+        nop;
+        if i <= max goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+        return temp$4;
+
+        nop;
+        temp$5 = i;
+        temp$6 = temp$5 + 1;
+        i = temp$6;
+        goto label3;
+
+     label5:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+    }
+}

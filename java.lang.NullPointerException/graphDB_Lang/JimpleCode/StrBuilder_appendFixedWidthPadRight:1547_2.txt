@@ -1,0 +1,98 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendFixedWidthPadRight(java.lang.Object, int, char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2;
+        java.lang.Object obj;
+        int width, temp$0, temp$1, strLen, temp$6, temp$8, padLen, temp$9, temp$11, i, temp$13, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19;
+        char padChar;
+        java.lang.String str, temp$3, temp$4, temp$5;
+        char[] temp$7, temp$10, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        obj := @parameter0: java.lang.Object;
+        width := @parameter1: int;
+        padChar := @parameter2: char;
+        if width > 0 goto label0;
+
+        goto label10;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 + width;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$1);
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = virtualinvoke obj.<java.lang.Object: java.lang.String toString()>();
+        temp$3 = temp$4;
+        nop;
+        str = temp$3;
+        if str == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = "";
+        str = temp$5;
+
+     label3:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$6;
+        if strLen >= width goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        virtualinvoke str.<java.lang.String: void getChars(int,int,char[],int)>(0, width, temp$7, temp$8);
+        goto label9;
+
+     label5:
+        nop;
+        temp$9 = width - strLen;
+        padLen = temp$9;
+        temp$10 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$11 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        virtualinvoke str.<java.lang.String: void getChars(int,int,char[],int)>(0, strLen, temp$10, temp$11);
+        i = 0;
+
+     label6:
+        nop;
+        if i < padLen goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$12 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$13 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$14 = temp$13 + strLen;
+        temp$15 = temp$14 + i;
+        temp$12[temp$15] = padChar;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label6;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$18 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$19 = temp$18 + width;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$19;
+
+     label10:
+        nop;
+        return this;
+    }
+}

@@ -1,0 +1,71 @@
+public class WrapClass 
+{
+    public static transient boolean containsOnly(java.lang.CharSequence, char[])
+    {
+        java.lang.CharSequence cs;
+        char[] valid;
+        boolean temp$0, temp$2, temp$4, temp$6;
+        int temp$1, temp$3, temp$5;
+
+        cs := @parameter0: java.lang.CharSequence;
+        valid := @parameter1: char[];
+        if valid == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label2:
+        nop;
+        temp$1 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        if temp$1 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 1;
+        return temp$2;
+
+     label4:
+        nop;
+        temp$3 = lengthof valid;
+        if temp$3 == 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label6:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: int indexOfAnyBut(java.lang.CharSequence,char[])>(cs, valid);
+        if temp$5 == -1 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$6 = 1;
+
+     label9:
+        nop;
+        return temp$6;
+    }
+}

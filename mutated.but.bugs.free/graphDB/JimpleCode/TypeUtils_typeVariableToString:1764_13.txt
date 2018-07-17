@@ -1,0 +1,94 @@
+public class WrapClass 
+{
+    private static final java.lang.String typeVariableToString(java.lang.reflect.TypeVariable)
+    {
+        java.lang.reflect.TypeVariable v;
+        java.lang.StringBuilder buf, temp$0, temp$14, temp$16;
+        java.lang.String temp$1, temp$17;
+        java.lang.reflect.Type[] bounds, temp$2, temp$9, temp$15;
+        int temp$3, temp$5, temp$10;
+        boolean temp$4, temp$12, temp$13;
+        java.lang.Class temp$6, temp$7, temp$8;
+        java.lang.reflect.Type temp$11;
+
+        v := @parameter0: java.lang.reflect.TypeVariable;
+        temp$0 = new java.lang.StringBuilder;
+        temp$1 = interfaceinvoke v.<java.lang.reflect.TypeVariable: java.lang.String getName()>();
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>(java.lang.String)>(temp$1);
+        buf = temp$0;
+        temp$2 = interfaceinvoke v.<java.lang.reflect.TypeVariable: java.lang.reflect.Type[] getBounds()>();
+        bounds = temp$2;
+        temp$3 = lengthof bounds;
+        if temp$3 > 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = 1;
+
+     label2:
+        nop;
+        temp$5 = lengthof bounds;
+        if temp$5 == 1 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$7 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+        if temp$7 != null goto label4;
+
+        temp$8 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$(java.lang.String)>("java.lang.Object");
+        <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object> = temp$8;
+        temp$6 = temp$8;
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+
+     label5:
+        nop;
+        temp$9 = bounds;
+        temp$10 = 0;
+        temp$11 = temp$9[temp$10];
+        temp$12 = virtualinvoke temp$6.<java.lang.Class: boolean equals(java.lang.Object)>(temp$11);
+        if temp$12 == 0 goto label7;
+
+        goto label6;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$13 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$13 = 1;
+
+     label8:
+        nop;
+        if temp$4 == temp$13 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$14 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" extends ");
+        temp$15 = interfaceinvoke v.<java.lang.reflect.TypeVariable: java.lang.reflect.Type[] getBounds()>();
+        temp$16 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.StringBuilder appendAllTo(java.lang.StringBuilder,java.lang.String,java.lang.reflect.Type[])>(buf, " & ", temp$15);
+
+     label10:
+        nop;
+        temp$17 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$17;
+    }
+}

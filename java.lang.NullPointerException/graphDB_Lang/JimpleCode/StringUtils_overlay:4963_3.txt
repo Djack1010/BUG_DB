@@ -1,0 +1,108 @@
+public class WrapClass 
+{
+    public static java.lang.String overlay(java.lang.String, java.lang.String, int, int)
+    {
+        java.lang.String str, overlay, temp$0, temp$1, temp$13, temp$16, temp$18;
+        int start, end, len, temp$2, temp$3, temp$4, temp, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12;
+        java.lang.StringBuilder temp$5, temp$14, temp$15, temp$17;
+
+        str := @parameter0: java.lang.String;
+        overlay := @parameter1: java.lang.String;
+        start := @parameter2: int;
+        end := @parameter3: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if overlay == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = null;
+        overlay = temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$2;
+        if start < 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = 0;
+        start = temp$3;
+
+     label5:
+        nop;
+        if start > len goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        start = len;
+
+     label7:
+        nop;
+        if end < 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$4 = 0;
+        end = temp$4;
+
+     label9:
+        nop;
+        if end > len goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        end = len;
+
+     label11:
+        nop;
+        if start > end goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp = start;
+        start = end;
+        end = temp;
+
+     label13:
+        nop;
+        temp$5 = new java.lang.StringBuilder;
+        temp$6 = len;
+        temp$7 = temp$6 + start;
+        temp$8 = temp$7 - end;
+        temp$9 = temp$8;
+        temp$10 = virtualinvoke overlay.<java.lang.String: int length()>();
+        temp$11 = temp$9 + temp$10;
+        temp$12 = temp$11 + 1;
+        specialinvoke temp$5.<java.lang.StringBuilder: void <init>(int)>(temp$12);
+        temp$13 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, start);
+        temp$14 = virtualinvoke temp$5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$13);
+        temp$15 = virtualinvoke temp$14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(overlay);
+        temp$16 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(end);
+        temp$17 = virtualinvoke temp$15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$16);
+        temp$18 = virtualinvoke temp$17.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$18;
+    }
+}

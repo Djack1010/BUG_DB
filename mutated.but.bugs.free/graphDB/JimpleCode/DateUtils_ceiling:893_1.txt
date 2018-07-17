@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public static java.util.Date ceiling(java.util.Date, int)
+    {
+        java.util.Date date, temp$2;
+        int field;
+        java.util.Calendar gval, temp$0;
+        org.apache.commons.lang3.time.DateUtils$ModifyType temp$1;
+
+        date := @parameter0: java.util.Date;
+        field := @parameter1: int;
+        temp$0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        gval = temp$0;
+        virtualinvoke gval.<java.util.Calendar: void setTime(java.util.Date)>(date);
+        temp$1 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType CEILING>;
+        staticinvoke <org.apache.commons.lang3.time.DateUtils: void modify(java.util.Calendar,int,org.apache.commons.lang3.time.DateUtils$ModifyType)>(gval, field, temp$1);
+        temp$2 = virtualinvoke gval.<java.util.Calendar: java.util.Date getTime()>();
+        return temp$2;
+    }
+}

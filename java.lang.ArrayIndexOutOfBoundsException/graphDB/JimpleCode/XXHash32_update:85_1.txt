@@ -1,0 +1,102 @@
+public class WrapClass 
+{
+    public void update(byte[], int, int)
+    {
+        org.apache.commons.codec.digest.XXHash32 this;
+        byte[] b, temp$5, temp$12, temp$14, temp$21;
+        int off, len, temp$0, temp$1, end, temp$2, temp$3, temp$4, temp$6, temp$7, temp$8, temp$9, size, temp$10, temp$11, temp$13, temp$15, temp$16, limit, temp$17, temp$18, temp$19, temp$20, temp$22;
+
+        this := @this: org.apache.commons.codec.digest.XXHash32;
+        b := @parameter0: byte[];
+        off := @parameter1: int;
+        len := @parameter2: int;
+        if len <= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        temp$0 = this.<org.apache.commons.codec.digest.XXHash32: int totalLen>;
+        temp$1 = temp$0 + len;
+        this.<org.apache.commons.codec.digest.XXHash32: int totalLen> = temp$1;
+        temp$2 = off;
+        end = temp$2 + len;
+        temp$3 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        temp$4 = temp$3 + len;
+        if temp$4 < 16 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$5 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        temp$6 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(b, off, temp$5, temp$6, len);
+        temp$7 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        temp$8 = temp$7 + len;
+        this.<org.apache.commons.codec.digest.XXHash32: int pos> = temp$8;
+        return;
+
+     label3:
+        nop;
+        temp$9 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        if temp$9 > 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$10 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        temp$11 = 16 - temp$10;
+        size = temp$11;
+        temp$12 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        temp$13 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(b, off, temp$12, temp$13, size);
+        temp$14 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        virtualinvoke this.<org.apache.commons.codec.digest.XXHash32: void process(byte[],int)>(temp$14, 0);
+        temp$15 = off;
+        temp$16 = temp$15 + size;
+        off = temp$16;
+
+     label5:
+        nop;
+        temp$17 = end - 16;
+        limit = temp$17;
+
+     label6:
+        nop;
+        if off == limit goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        virtualinvoke this.<org.apache.commons.codec.digest.XXHash32: void process(byte[],int)>(b, off);
+        temp$18 = off;
+        temp$19 = temp$18 + 16;
+        off = temp$19;
+        goto label6;
+
+     label8:
+        nop;
+        if off < end goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$20 = end - off;
+        this.<org.apache.commons.codec.digest.XXHash32: int pos> = temp$20;
+        temp$21 = this.<org.apache.commons.codec.digest.XXHash32: byte[] buffer>;
+        temp$22 = this.<org.apache.commons.codec.digest.XXHash32: int pos>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(b, off, temp$21, 0, temp$22);
+
+     label10:
+        nop;
+        return;
+    }
+}

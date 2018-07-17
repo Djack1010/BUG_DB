@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public final boolean isOverlappedBy(org.apache.commons.lang3.Range)
+    {
+        org.apache.commons.lang3.Range this, otherRange;
+        boolean temp$0, temp$2, temp$4, temp$6, temp$7;
+        java.lang.Object temp$1, temp$3, temp$5;
+
+        this := @this: org.apache.commons.lang3.Range;
+        otherRange := @parameter0: org.apache.commons.lang3.Range;
+        if otherRange == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$2 = virtualinvoke otherRange.<org.apache.commons.lang3.Range: boolean contains(java.lang.Object)>(temp$1);
+        if temp$2 == 0 goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$4 = virtualinvoke otherRange.<org.apache.commons.lang3.Range: boolean contains(java.lang.Object)>(temp$3);
+        if temp$4 == 0 goto label3;
+
+        goto label5;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = otherRange.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.Range: boolean contains(java.lang.Object)>(temp$5);
+        if temp$6 == 0 goto label4;
+
+        goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$7 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$7 = 1;
+
+     label6:
+        nop;
+        return temp$7;
+    }
+}

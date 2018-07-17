@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public static final java.lang.reflect.ParameterizedType parameterize(java.lang.Class, java.util.Map)
+    {
+        java.lang.Class raw, temp$2;
+        java.util.Map typeArgMappings;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.reflect.TypeVariable[] temp$3, temp$4;
+        java.lang.reflect.Type[] temp$5;
+        java.lang.reflect.ParameterizedType temp$6;
+
+        raw := @parameter0: java.lang.Class;
+        typeArgMappings := @parameter1: java.util.Map;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(raw, "raw class is null", temp$0);
+        temp$2 = (java.lang.Class) temp$1;
+        temp$3 = virtualinvoke raw.<java.lang.Class: java.lang.reflect.TypeVariable[] getTypeParameters()>();
+        temp$4 = (java.lang.reflect.TypeVariable[]) temp$3;
+        temp$5 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] extractTypeArgumentsFrom(java.util.Map,java.lang.reflect.TypeVariable[])>(typeArgMappings, temp$4);
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.ParameterizedType parameterizeWithOwner(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type[])>(null, raw, temp$5);
+        return temp$6;
+    }
+}

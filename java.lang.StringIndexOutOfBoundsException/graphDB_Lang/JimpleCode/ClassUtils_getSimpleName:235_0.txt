@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.String getSimpleName(java.lang.Class)
+    {
+        java.lang.Class 'cls';
+        java.lang.String temp$0, temp$1;
+
+        'cls' := @parameter0: java.lang.Class;
+        if 'cls' == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getSimpleName()>();
+        return temp$1;
+    }
+}

@@ -1,0 +1,157 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String)
+    {
+        org.apache.commons.codec.language.Caverphone1 this;
+        java.lang.String source, txt, temp$1, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21, temp$22, temp$23, temp$24, temp$25, temp$26, temp$27, temp$28, temp$29, temp$30, temp$31, temp$32, temp$33, temp$34, temp$35, temp$36, temp$37, temp$38, temp$39, temp$40, temp$41, temp$42, temp$43, temp$44, temp$45, temp$46, temp$47, temp$48, temp$49, temp$50, temp$51, temp$52, temp$53, temp$54, temp$55, temp$56, temp$57, temp$59, temp$60, temp$61, temp$63;
+        int temp$0, temp$62;
+        java.util.Locale temp$2;
+        java.lang.StringBuffer temp$58;
+
+        this := @this: org.apache.commons.codec.language.Caverphone1;
+        source := @parameter0: java.lang.String;
+        txt = source;
+        if txt == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke txt.<java.lang.String: int length()>();
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = <org.apache.commons.codec.language.Caverphone1: java.lang.String SIX_1>;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = <java.util.Locale: java.util.Locale ENGLISH>;
+        temp$3 = virtualinvoke txt.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>(temp$2);
+        txt = temp$3;
+        temp$4 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("[^a-z]", "");
+        txt = temp$4;
+        temp$5 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^cough", "cou2f");
+        txt = temp$5;
+        temp$6 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^rough", "rou2f");
+        txt = temp$6;
+        temp$7 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^tough", "tou2f");
+        txt = temp$7;
+        temp$8 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^enough", "enou2f");
+        txt = temp$8;
+        temp$9 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^gn", "2n");
+        txt = temp$9;
+        temp$10 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("mb$", "m2");
+        txt = temp$10;
+        temp$11 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("cq", "2q");
+        txt = temp$11;
+        temp$12 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("ci", "si");
+        txt = temp$12;
+        temp$13 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("ce", "se");
+        txt = temp$13;
+        temp$14 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("cy", "sy");
+        txt = temp$14;
+        temp$15 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("tch", "2ch");
+        txt = temp$15;
+        temp$16 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("c", "k");
+        txt = temp$16;
+        temp$17 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("q", "k");
+        txt = temp$17;
+        temp$18 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("x", "k");
+        txt = temp$18;
+        temp$19 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("v", "f");
+        txt = temp$19;
+        temp$20 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("dg", "2g");
+        txt = temp$20;
+        temp$21 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("tio", "sio");
+        txt = temp$21;
+        temp$22 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("tia", "sia");
+        txt = temp$22;
+        temp$23 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("d", "t");
+        txt = temp$23;
+        temp$24 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("ph", "fh");
+        txt = temp$24;
+        temp$25 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("b", "p");
+        txt = temp$25;
+        temp$26 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("sh", "s2");
+        txt = temp$26;
+        temp$27 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("z", "s");
+        txt = temp$27;
+        temp$28 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^[aeiou]", "A");
+        txt = temp$28;
+        temp$29 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("[aeiou]", "3");
+        txt = temp$29;
+        temp$30 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("3gh3", "3kh3");
+        txt = temp$30;
+        temp$31 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("gh", "22");
+        txt = temp$31;
+        temp$32 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("g", "k");
+        txt = temp$32;
+        temp$33 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("s+", "S");
+        txt = temp$33;
+        temp$34 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("t+", "T");
+        txt = temp$34;
+        temp$35 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("p+", "P");
+        txt = temp$35;
+        temp$36 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("k+", "K");
+        txt = temp$36;
+        temp$37 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("f+", "F");
+        txt = temp$37;
+        temp$38 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("m+", "M");
+        txt = temp$38;
+        temp$39 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("n+", "N");
+        txt = temp$39;
+        temp$40 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("w3", "W3");
+        txt = temp$40;
+        temp$41 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("wy", "Wy");
+        txt = temp$41;
+        temp$42 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("wh3", "Wh3");
+        txt = temp$42;
+        temp$43 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("why", "Why");
+        txt = temp$43;
+        temp$44 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("w", "2");
+        txt = temp$44;
+        temp$45 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("^h", "A");
+        txt = temp$45;
+        temp$46 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("h", "2");
+        txt = temp$46;
+        temp$47 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("r3", "R3");
+        txt = temp$47;
+        temp$48 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("ry", "Ry");
+        txt = temp$48;
+        temp$49 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("r", "2");
+        txt = temp$49;
+        temp$50 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("l3", "L3");
+        txt = temp$50;
+        temp$51 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("ly", "Ly");
+        txt = temp$51;
+        temp$52 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("l", "2");
+        txt = temp$52;
+        temp$53 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("j", "y");
+        txt = temp$53;
+        temp$54 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("y3", "Y3");
+        txt = temp$54;
+        temp$55 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("y", "2");
+        txt = temp$55;
+        temp$56 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("2", "");
+        txt = temp$56;
+        temp$57 = virtualinvoke txt.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("3", "");
+        txt = temp$57;
+        temp$58 = new java.lang.StringBuffer;
+        specialinvoke temp$58.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(txt);
+        temp$59 = <org.apache.commons.codec.language.Caverphone1: java.lang.String SIX_1>;
+        virtualinvoke temp$58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$59);
+        temp$60 = virtualinvoke temp$58.<java.lang.StringBuffer: java.lang.String toString()>();
+        txt = temp$60;
+        temp$61 = <org.apache.commons.codec.language.Caverphone1: java.lang.String SIX_1>;
+        temp$62 = virtualinvoke temp$61.<java.lang.String: int length()>();
+        temp$63 = virtualinvoke txt.<java.lang.String: java.lang.String substring(int,int)>(0, temp$62);
+        return temp$63;
+    }
+}

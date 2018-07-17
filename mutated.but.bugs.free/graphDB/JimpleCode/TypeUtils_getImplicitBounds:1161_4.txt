@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type[] getImplicitBounds(java.lang.reflect.TypeVariable)
+    {
+        java.lang.reflect.TypeVariable typeVariable, temp$2;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.reflect.Type[] bounds, temp$3, temp$4, temp$6, temp$10;
+        int temp$5;
+        java.lang.Class temp$7, temp$8, temp$9;
+
+        typeVariable := @parameter0: java.lang.reflect.TypeVariable;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(typeVariable, "typeVariable is null", temp$0);
+        temp$2 = (java.lang.reflect.TypeVariable) temp$1;
+        temp$3 = interfaceinvoke typeVariable.<java.lang.reflect.TypeVariable: java.lang.reflect.Type[] getBounds()>();
+        bounds = temp$3;
+        temp$5 = lengthof bounds;
+        if temp$5 <= 0 goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$6 = newarray (java.lang.reflect.Type)[1];
+        temp$8 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+        if temp$8 != null goto label1;
+
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$(java.lang.String)>("java.lang.Object");
+        <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object> = temp$9;
+        temp$7 = temp$9;
+        goto label2;
+
+     label1:
+        nop;
+        temp$7 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+
+     label2:
+        nop;
+        temp$6[0] = temp$7;
+        temp$4 = temp$6;
+        goto label4;
+
+     label3:
+        nop;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] normalizeUpperBounds(java.lang.reflect.Type[])>(bounds);
+        temp$4 = temp$10;
+
+     label4:
+        nop;
+        return temp$4;
+    }
+}

@@ -1,0 +1,138 @@
+public class WrapClass 
+{
+    public static transient java.lang.String initials(java.lang.String, char[])
+    {
+        java.lang.String str, temp$4, temp$19;
+        char[] delimiters, buf, temp$12;
+        boolean temp$0, temp$1, temp$3, lastWasGap, temp$10, temp$11, temp$16;
+        int temp$2, strLen, temp$5, temp$6, temp$7, temp$8, count, i, temp$13, temp$14, temp$15, temp$17, temp$18;
+        char ch, temp$9;
+
+        str := @parameter0: java.lang.String;
+        delimiters := @parameter1: char[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        if delimiters != null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+
+     label4:
+        nop;
+        temp$2 = lengthof delimiters;
+        if temp$2 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = 1;
+
+     label7:
+        nop;
+        if temp$1 == temp$3 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$4 = "";
+        return temp$4;
+
+     label9:
+        nop;
+        temp$5 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$5;
+        temp$6 = strLen / 2;
+        temp$7 = temp$6;
+        temp$8 = temp$7 + 1;
+        buf = newarray (char)[temp$8];
+        count = 0;
+        lastWasGap = 1;
+        i = 0;
+
+     label10:
+        nop;
+        if i < strLen goto label11;
+
+        goto label19;
+
+     label11:
+        nop;
+        temp$9 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        ch = temp$9;
+        temp$10 = staticinvoke <org.apache.commons.lang3.text.WordUtils: boolean isDelimiter(char,char[])>(ch, delimiters);
+        if temp$10 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$11 = 1;
+        lastWasGap = temp$11;
+        goto label17;
+
+     label13:
+        nop;
+        if lastWasGap == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$12 = buf;
+        temp$13 = count;
+        temp$14 = temp$13 + 1;
+        count = temp$14;
+        temp$15 = temp$13;
+        temp$12[temp$15] = ch;
+        temp$16 = 0;
+        lastWasGap = temp$16;
+        goto label16;
+
+     label15:
+        nop;
+        goto label18;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label10;
+
+     label19:
+        nop;
+        temp$19 = new java.lang.String;
+        specialinvoke temp$19.<java.lang.String: void <init>(char[],int,int)>(buf, 0, count);
+        return temp$19;
+    }
+}

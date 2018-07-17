@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    protected static int toDigit(char, int) throws org.apache.commons.codec.DecoderException
+    {
+        char ch;
+        int index, digit, temp$0;
+        org.apache.commons.codec.DecoderException temp$1;
+        java.lang.StringBuffer temp$2;
+        java.lang.String temp$3;
+
+        ch := @parameter0: char;
+        index := @parameter1: int;
+        temp$0 = staticinvoke <java.lang.Character: int digit(char,int)>(ch, 16);
+        digit = temp$0;
+        if digit >= -1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new org.apache.commons.codec.DecoderException;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Illegal hexadecimal character ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(ch);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" at index ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(index);
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$1.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>(temp$3);
+        throw temp$1;
+
+     label1:
+        nop;
+        return digit;
+    }
+}

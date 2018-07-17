@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public static boolean toBoolean(java.lang.Boolean)
+    {
+        java.lang.Boolean bool;
+        boolean temp$0, temp$1, temp$2;
+
+        bool := @parameter0: java.lang.Boolean;
+        if bool != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke bool.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$0 == temp$1 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        return temp$2;
+    }
+}

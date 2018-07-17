@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static int reflectionHashCode(java.lang.Object, java.util.Collection)
+    {
+        java.lang.Object object;
+        java.util.Collection excludeFields;
+        java.lang.String[] temp$0;
+        int temp$1;
+
+        object := @parameter0: java.lang.Object;
+        excludeFields := @parameter1: java.util.Collection;
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String[] toNoNullStringArray(java.util.Collection)>(excludeFields);
+        temp$1 = staticinvoke <org.apache.commons.lang3.builder.HashCodeBuilder: int reflectionHashCode(java.lang.Object,java.lang.String[])>(object, temp$0);
+        return temp$1;
+    }
+}

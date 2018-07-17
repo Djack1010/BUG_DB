@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    private static final java.util.Properties copyProperties(java.util.Properties)
+    {
+        java.util.Properties input, temp$0, output, temp$1;
+        java.util.Enumeration propertyNames;
+        boolean temp$2;
+        java.lang.String propertyName, temp$4, temp$5;
+        java.lang.Object temp$3, temp$6;
+
+        input := @parameter0: java.util.Properties;
+        if input == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.util.Properties;
+        specialinvoke temp$1.<java.util.Properties: void <init>()>();
+        output = temp$1;
+        propertyNames = null;
+
+     label2:
+        nop;
+        temp$2 = interfaceinvoke propertyNames.<java.util.Enumeration: boolean hasMoreElements()>();
+        if temp$2 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$3 = interfaceinvoke propertyNames.<java.util.Enumeration: java.lang.Object nextElement()>();
+        temp$4 = (java.lang.String) temp$3;
+        propertyName = temp$4;
+        temp$5 = virtualinvoke input.<java.util.Properties: java.lang.String getProperty(java.lang.String)>(propertyName);
+        temp$6 = virtualinvoke output.<java.util.Properties: java.lang.Object setProperty(java.lang.String,java.lang.String)>(propertyName, temp$5);
+        goto label2;
+
+     label4:
+        nop;
+        return output;
+    }
+}

@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ToStringBuilder append(java.lang.String, boolean[])
+    {
+        org.apache.commons.lang3.builder.ToStringBuilder this, temp$2;
+        java.lang.String fieldName;
+        boolean[] array;
+        org.apache.commons.lang3.builder.ToStringStyle temp$0;
+        java.lang.StringBuffer temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringBuilder;
+        fieldName := @parameter0: java.lang.String;
+        array := @parameter1: boolean[];
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringStyle style>;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.StringBuffer buffer>;
+        virtualinvoke temp$0.<org.apache.commons.lang3.builder.ToStringStyle: void append(java.lang.StringBuffer,java.lang.String,boolean[],java.lang.Boolean)>(temp$1, fieldName, array, null);
+        temp$2 = null;
+        return temp$2;
+    }
+}

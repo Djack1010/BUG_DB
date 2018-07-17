@@ -1,0 +1,62 @@
+public class WrapClass 
+{
+    private static final transient java.lang.reflect.Method getAccessibleMethodFromSuperclass(java.lang.Class, java.lang.String, java.lang.Class[])
+    {
+        java.lang.Class 'cls', parentClass, temp$0;
+        java.lang.String methodName;
+        java.lang.Class[] parameterTypes;
+        int temp$1;
+        boolean temp$2;
+        java.lang.reflect.Method temp$3, temp$4, temp$5;
+        java.lang.NoSuchMethodException e;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        parentClass = temp$0;
+
+     label0:
+        nop;
+        if parentClass != null goto label1;
+
+        goto label7;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke parentClass.<java.lang.Class: int getModifiers()>();
+        temp$2 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$1);
+        if temp$2 == 0 goto label6;
+
+        goto label2;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke parentClass.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+
+     label4:
+        nop;
+        return temp$3;
+
+     label5:
+        nop;
+        e := @caughtexception;
+        temp$4 = null;
+        nop;
+        return temp$4;
+
+     label6:
+        nop;
+        goto label0;
+
+     label7:
+        nop;
+        temp$5 = null;
+        return temp$5;
+
+        catch java.lang.NoSuchMethodException from label3 to label4 with label5;
+    }
+}

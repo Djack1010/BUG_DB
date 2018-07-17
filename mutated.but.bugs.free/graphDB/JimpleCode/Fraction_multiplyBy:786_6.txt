@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction multiplyBy(org.apache.commons.lang3.math.Fraction)
+    {
+        org.apache.commons.lang3.math.Fraction this, fraction, temp$5, temp$22;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1, temp$3, d1, temp$6, temp$7, temp$8, d2, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21;
+        boolean temp$2, temp$4;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        fraction := @parameter0: org.apache.commons.lang3.math.Fraction;
+        if fraction == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The fraction must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 1;
+
+     label4:
+        nop;
+        temp$3 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$3 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = 1;
+
+     label7:
+        nop;
+        if temp$2 != temp$4 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$5 = <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction ZERO>;
+        return temp$5;
+
+     label9:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$7 = fraction.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$8 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(temp$6, temp$7);
+        d1 = temp$8;
+        temp$9 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$10 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$11 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(temp$9, temp$10);
+        d2 = temp$11;
+        temp$12 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$13 = temp$12 / d1;
+        temp$14 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$15 = temp$14 / d2;
+        temp$16 = staticinvoke <org.apache.commons.lang3.math.Fraction: int mulAndCheck(int,int)>(temp$13, temp$15);
+        temp$17 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$18 = temp$17 / d2;
+        temp$19 = fraction.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$20 = temp$19 / d1;
+        temp$21 = staticinvoke <org.apache.commons.lang3.math.Fraction: int mulPosAndCheck(int,int)>(temp$18, temp$20);
+        temp$22 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getReducedFraction(int,int)>(temp$16, temp$21);
+        return temp$22;
+    }
+}

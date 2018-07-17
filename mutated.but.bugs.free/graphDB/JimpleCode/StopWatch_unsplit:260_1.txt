@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public void unsplit()
+    {
+        org.apache.commons.lang3.time.StopWatch this;
+        org.apache.commons.lang3.time.StopWatch$SplitState temp$0, temp$1;
+        java.lang.IllegalStateException temp$2;
+
+        this := @this: org.apache.commons.lang3.time.StopWatch;
+        temp$0 = this.<org.apache.commons.lang3.time.StopWatch: org.apache.commons.lang3.time.StopWatch$SplitState splitState>;
+        temp$1 = <org.apache.commons.lang3.time.StopWatch$SplitState: org.apache.commons.lang3.time.StopWatch$SplitState SPLIT>;
+        if temp$0 != temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$2 = new java.lang.IllegalStateException;
+        specialinvoke temp$2.<java.lang.IllegalStateException: void <init>(java.lang.String)>("Stopwatch has not been split. ");
+        throw temp$2;
+
+     label1:
+        nop;
+        return;
+    }
+}

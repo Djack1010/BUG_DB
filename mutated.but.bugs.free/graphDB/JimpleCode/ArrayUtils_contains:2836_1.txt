@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public static boolean contains(float[], float)
+    {
+        float[] array;
+        float valueToFind;
+        int temp$0;
+        boolean temp$1;
+
+        array := @parameter0: float[];
+        valueToFind := @parameter1: float;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(float[],float)>(array, valueToFind);
+        if temp$0 > -1 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

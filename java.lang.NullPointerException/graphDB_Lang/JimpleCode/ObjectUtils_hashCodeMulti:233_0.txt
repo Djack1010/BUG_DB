@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public static transient int hashCodeMulti(java.lang.Object[])
+    {
+        java.lang.Object[] objects;
+        int hash, temp$0, temp$1, tmpHash, temp$3, temp$4, temp$5, temp$6;
+        java.lang.Object object, temp$2;
+
+        objects := @parameter0: java.lang.Object[];
+        hash = 1;
+        if objects != null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$0 = 0;
+
+     label1:
+        nop;
+        temp$1 = lengthof objects;
+        if temp$0 >= temp$1 goto label2;
+
+        temp$2 = objects[temp$0];
+        object = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.ObjectUtils: int hashCode(java.lang.Object)>(object);
+        tmpHash = temp$3;
+        temp$4 = hash * 31;
+        temp$5 = temp$4;
+        temp$6 = temp$5 + tmpHash;
+        hash = temp$6;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label1;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        return hash;
+    }
+}

@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.HashCodeBuilder append(short[])
+    {
+        org.apache.commons.lang3.builder.HashCodeBuilder this, temp$3;
+        short[] array;
+        int temp$0, temp$1;
+        short element, temp$2;
+
+        this := @this: org.apache.commons.lang3.builder.HashCodeBuilder;
+        array := @parameter0: short[];
+        temp$0 = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof array;
+        if temp$0 >= temp$1 goto label1;
+
+        temp$2 = array[temp$0];
+        element = temp$2;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.builder.HashCodeBuilder: org.apache.commons.lang3.builder.HashCodeBuilder append(short)>(element);
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label0;
+
+     label1:
+        nop;
+        nop;
+        return this;
+    }
+}

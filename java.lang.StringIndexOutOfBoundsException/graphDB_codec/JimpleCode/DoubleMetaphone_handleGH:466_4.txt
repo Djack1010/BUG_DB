@@ -1,0 +1,220 @@
+public class WrapClass 
+{
+    private final int handleGH(java.lang.String, org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result;
+        int index, temp$0, temp$3, temp$4, temp$5, temp$6, temp$8, temp$9, temp$10, temp$11, temp$14, temp$17, temp$20, temp$21, temp$22, temp$24, temp$25, temp$28, temp$30, temp$31, temp$32;
+        char temp$1, temp$7, temp$23, temp$29;
+        boolean temp$2, temp$13, temp$16, temp$19, temp$27;
+        java.lang.String[] temp$12, temp$15, temp$18, temp$26;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        result := @parameter1: org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        index := @parameter2: int;
+        if index > 0 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$0 = index - 1;
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$0);
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$1);
+        if temp$2 == 0 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(75);
+        temp$3 = index;
+        temp$4 = temp$3 + 2;
+        index = temp$4;
+        goto label25;
+
+     label2:
+        nop;
+        if index == 0 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$5 = index;
+        temp$6 = temp$5 + 2;
+        temp$7 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$6);
+        temp$8 = (int) temp$7;
+        if temp$8 == 73 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(74);
+        goto label6;
+
+     label5:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(75);
+
+     label6:
+        nop;
+        temp$9 = index;
+        temp$10 = temp$9 + 2;
+        index = temp$10;
+        goto label24;
+
+     label7:
+        nop;
+        if index > 1 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$11 = index - 2;
+        temp$12 = newarray (java.lang.String)[3];
+        temp$12[0] = "B";
+        temp$12[1] = "H";
+        temp$12[2] = "D";
+        temp$13 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$11, 1, temp$12);
+        if temp$13 == 0 goto label9;
+
+        goto label13;
+
+        goto label13;
+
+     label9:
+        nop;
+        if index > 2 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$14 = index - 3;
+        temp$15 = newarray (java.lang.String)[3];
+        temp$15[0] = "B";
+        temp$15[1] = "H";
+        temp$15[2] = "D";
+        temp$16 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$14, 1, temp$15);
+        if temp$16 == 0 goto label11;
+
+        goto label13;
+
+        goto label13;
+
+        goto label11;
+
+     label11:
+        nop;
+        if index > 3 goto label12;
+
+        goto label14;
+
+     label12:
+        nop;
+        temp$17 = index - 4;
+        temp$18 = newarray (java.lang.String)[2];
+        temp$18[0] = "B";
+        temp$18[1] = "H";
+        temp$19 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$17, -1, temp$18);
+        if temp$19 == 0 goto label14;
+
+        goto label13;
+
+        goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$20 = index;
+        temp$21 = temp$20 + 2;
+        index = temp$21;
+        goto label23;
+
+     label14:
+        nop;
+        if index > 2 goto label15;
+
+        goto label18;
+
+     label15:
+        nop;
+        temp$22 = index - 1;
+        temp$23 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$22);
+        temp$24 = (int) temp$23;
+        if temp$24 == 85 goto label16;
+
+        goto label18;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$25 = index - 3;
+        temp$26 = newarray (java.lang.String)[5];
+        temp$26[0] = "C";
+        temp$26[1] = "G";
+        temp$26[2] = "L";
+        temp$26[3] = "R";
+        temp$26[4] = "T";
+        temp$27 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$25, 1, temp$26);
+        if temp$27 == 0 goto label18;
+
+        goto label17;
+
+        goto label17;
+
+     label17:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(70);
+        goto label22;
+
+     label18:
+        nop;
+        if index > 0 goto label19;
+
+        goto label21;
+
+     label19:
+        nop;
+        temp$28 = index - 1;
+        temp$29 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$28);
+        temp$30 = (int) temp$29;
+        if temp$30 != 73 goto label20;
+
+        goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(75);
+
+     label21:
+        nop;
+
+     label22:
+        nop;
+        temp$31 = index;
+        temp$32 = temp$31 + 2;
+        index = temp$32;
+
+     label23:
+        nop;
+
+     label24:
+        nop;
+
+     label25:
+        nop;
+        return index;
+    }
+}

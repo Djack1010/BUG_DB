@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    private final void checkSessionAlreadyInitialized()
+    {
+        org.apache.commons.mail.Email this;
+        java.lang.IllegalStateException temp$0;
+
+        this := @this: org.apache.commons.mail.Email;
+        temp$0 = new java.lang.IllegalStateException;
+        specialinvoke temp$0.<java.lang.IllegalStateException: void <init>(java.lang.String)>("The mail session is already initialized");
+        throw temp$0;
+
+        return;
+    }
+}

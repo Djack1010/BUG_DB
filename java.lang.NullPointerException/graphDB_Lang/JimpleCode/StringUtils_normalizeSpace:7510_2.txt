@@ -1,0 +1,138 @@
+public class WrapClass 
+{
+    public static java.lang.String normalizeSpace(java.lang.String)
+    {
+        java.lang.String str, temp$15, temp$21, temp$22;
+        int size, temp$0, count, whitespacesCount, i, temp$5, temp$6, temp$7, temp$9, temp$10, temp$12, temp$13, temp$14, temp$17, temp$18, temp$19, temp$20, temp$23, temp$24;
+        char[] newChars, temp$4, temp$11;
+        boolean startWhitespaces, isWhitespace, temp$2, temp$3;
+        char actualChar, temp$1, temp$8, temp$16;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        size = temp$0;
+        newChars = newarray (char)[size];
+        count = 0;
+        whitespacesCount = 0;
+        startWhitespaces = 1;
+        i = 0;
+
+     label0:
+        nop;
+        if i < size goto label1;
+
+        goto label11;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        actualChar = temp$1;
+        temp$2 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(actualChar);
+        isWhitespace = temp$2;
+        if isWhitespace == 0 goto label2;
+
+        goto label6;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        startWhitespaces = temp$3;
+        temp$4 = newChars;
+        temp$5 = count;
+        temp$6 = temp$5 + 1;
+        count = temp$6;
+        temp$7 = temp$5;
+        temp$9 = (int) actualChar;
+        if temp$9 == 160 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$8 = 32;
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = actualChar;
+
+     label5:
+        nop;
+        temp$4[temp$7] = temp$8;
+        temp$10 = 0;
+        whitespacesCount = temp$10;
+        goto label10;
+
+     label6:
+        nop;
+        if whitespacesCount == 0 goto label7;
+
+        goto label9;
+
+     label7:
+        nop;
+        if startWhitespaces == 0 goto label8;
+
+        goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$11 = newChars;
+        temp$12 = count;
+        temp$13 = temp$12 + 1;
+        count = temp$13;
+        temp$14 = temp$12;
+        temp$15 = <org.apache.commons.lang3.StringUtils: java.lang.String SPACE>;
+        temp$16 = virtualinvoke temp$15.<java.lang.String: char charAt(int)>(0);
+        temp$11[temp$14] = temp$16;
+
+     label9:
+        nop;
+        temp$17 = whitespacesCount;
+        temp$18 = temp$17 + 1;
+        whitespacesCount = temp$18;
+
+     label10:
+        nop;
+        nop;
+        temp$19 = i;
+        temp$20 = temp$19 + 1;
+        i = temp$20;
+        goto label0;
+
+     label11:
+        nop;
+        if startWhitespaces == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$21 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$21;
+
+     label13:
+        nop;
+        temp$22 = new java.lang.String;
+        if whitespacesCount > 0 goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        temp$23 = 1;
+        goto label16;
+
+     label15:
+        nop;
+        temp$23 = 0;
+
+     label16:
+        nop;
+        temp$24 = count - temp$23;
+        specialinvoke temp$22.<java.lang.String: void <init>(char[],int,int)>(newChars, 0, temp$24);
+        return temp$22;
+    }
+}

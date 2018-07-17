@@ -1,0 +1,53 @@
+public class WrapClass 
+{
+    public static transient byte max(byte[])
+    {
+        byte[] array, temp$0, temp$3, temp$8;
+        byte max, temp$5, temp$10;
+        int temp$1, i, temp$2, temp$4, temp$6, temp$7, temp$9, temp$11, temp$12;
+
+        array := @parameter0: byte[];
+        staticinvoke <org.apache.commons.lang3.math.NumberUtils: void validateArray(java.lang.Object)>(array);
+        temp$0 = array;
+        temp$1 = 1;
+        max = temp$0[temp$1];
+        i = 1;
+
+     label0:
+        nop;
+        temp$2 = lengthof array;
+        if i < temp$2 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$3 = array;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = (int) temp$5;
+        temp$7 = (int) max;
+        if temp$6 > temp$7 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$8 = array;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        max = temp$10;
+
+     label3:
+        nop;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label0;
+
+     label4:
+        nop;
+        return max;
+    }
+}

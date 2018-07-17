@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type substituteTypeVariables(java.lang.reflect.Type, java.util.Map)
+    {
+        java.lang.reflect.Type type, replacementType, temp$1;
+        java.util.Map typeVarAssigns;
+        java.lang.Object temp$0;
+        java.lang.IllegalArgumentException temp$2;
+        java.lang.StringBuffer temp$3;
+        java.lang.String temp$4;
+
+        type := @parameter0: java.lang.reflect.Type;
+        typeVarAssigns := @parameter1: java.util.Map;
+        if typeVarAssigns != null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$0 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(type);
+        temp$1 = (java.lang.reflect.Type) temp$0;
+        replacementType = temp$1;
+        if replacementType == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("missing assignment type for type variable ");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(type);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+
+     label2:
+        nop;
+        return replacementType;
+
+     label3:
+        nop;
+        return type;
+    }
+}

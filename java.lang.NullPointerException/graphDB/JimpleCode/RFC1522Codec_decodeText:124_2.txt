@@ -1,0 +1,122 @@
+public class WrapClass 
+{
+    protected java.lang.String decodeText(java.lang.String) throws org.apache.commons.codec.DecoderException, java.io.UnsupportedEncodingException
+    {
+        org.apache.commons.codec.net.RFC1522Codec this;
+        java.lang.String text, temp$0, charset, temp$7, encoding, temp$14, temp$15, temp$19, temp$23, temp$26;
+        boolean temp$1, temp$2, temp$8, temp$16;
+        org.apache.commons.codec.DecoderException temp$3, temp$9, temp$13, temp$17;
+        int terminator, temp$4, temp$5, 'from', 'to', temp$6, temp$10, temp$11, temp$12, temp$20, temp$21, temp$22;
+        java.lang.StringBuffer temp$18;
+        byte[] data, temp$24, temp$25;
+
+        this := @this: org.apache.commons.codec.net.RFC1522Codec;
+        text := @parameter0: java.lang.String;
+        if text == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke text.<java.lang.String: boolean startsWith(java.lang.String)>("=?");
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke text.<java.lang.String: boolean endsWith(java.lang.String)>("?=");
+        if temp$2 == 0 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$3.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>("RFC 1522 violation: malformed encoded content");
+        throw temp$3;
+
+     label4:
+        nop;
+        temp$4 = virtualinvoke text.<java.lang.String: int length()>();
+        temp$5 = temp$4 - 2;
+        terminator = temp$5;
+        'from' = 2;
+        temp$6 = virtualinvoke text.<java.lang.String: int indexOf(int,int)>(63, 'from');
+        'to' = temp$6;
+        temp$7 = virtualinvoke text.<java.lang.String: java.lang.String substring(int,int)>('from', 'to');
+        charset = temp$7;
+        temp$8 = virtualinvoke charset.<java.lang.String: boolean equals(java.lang.Object)>("");
+        if temp$8 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$9 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$9.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>("RFC 1522 violation: charset not specified");
+        throw temp$9;
+
+     label6:
+        nop;
+        temp$10 = 'to';
+        temp$11 = temp$10 + 1;
+        'from' = temp$11;
+        temp$12 = virtualinvoke text.<java.lang.String: int indexOf(int,int)>(63, 'from');
+        'to' = temp$12;
+        if 'to' == terminator goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$13 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$13.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>("RFC 1522 violation: encoding token not found");
+        throw temp$13;
+
+     label8:
+        nop;
+        temp$14 = virtualinvoke text.<java.lang.String: java.lang.String substring(int,int)>('from', 'to');
+        encoding = temp$14;
+        temp$15 = virtualinvoke this.<org.apache.commons.codec.net.RFC1522Codec: java.lang.String getEncoding()>();
+        temp$16 = virtualinvoke temp$15.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(encoding);
+        if temp$16 == 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$17 = new org.apache.commons.codec.DecoderException;
+        temp$18 = new java.lang.StringBuffer;
+        specialinvoke temp$18.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("This codec cannot decode ");
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(encoding);
+        virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" encoded content");
+        temp$19 = virtualinvoke temp$18.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$17.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String)>(temp$19);
+        throw temp$17;
+
+     label10:
+        nop;
+        temp$20 = 'to';
+        temp$21 = temp$20 + 1;
+        'from' = temp$21;
+        temp$22 = virtualinvoke text.<java.lang.String: int indexOf(int,int)>(63, 'from');
+        'to' = temp$22;
+        temp$23 = virtualinvoke text.<java.lang.String: java.lang.String substring(int,int)>('from', 'to');
+        temp$24 = staticinvoke <org.apache.commons.codec.binary.StringUtils: byte[] getBytesUsAscii(java.lang.String)>(temp$23);
+        data = temp$24;
+        temp$25 = virtualinvoke this.<org.apache.commons.codec.net.RFC1522Codec: byte[] doDecoding(byte[])>(data);
+        data = temp$25;
+        temp$26 = new java.lang.String;
+        specialinvoke temp$26.<java.lang.String: void <init>(byte[],java.lang.String)>(data, charset);
+        return temp$26;
+    }
+}

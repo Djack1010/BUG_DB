@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public static transient long generateBitVector(java.lang.Class, java.lang.Enum[])
+    {
+        java.lang.Class enumClass;
+        java.lang.Enum[] values;
+        java.util.List temp$0, temp$1;
+        long temp$2;
+
+        enumClass := @parameter0: java.lang.Class;
+        values := @parameter1: java.lang.Enum[];
+        temp$0 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(values);
+        temp$1 = (java.util.List) temp$0;
+        temp$2 = staticinvoke <org.apache.commons.lang3.EnumUtils: long generateBitVector(java.lang.Class,java.lang.Iterable)>(enumClass, temp$1);
+        return temp$2;
+    }
+}

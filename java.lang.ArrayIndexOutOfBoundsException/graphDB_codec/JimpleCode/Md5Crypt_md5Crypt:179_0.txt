@@ -1,0 +1,308 @@
+public class WrapClass 
+{
+    public static java.lang.String md5Crypt(byte[], java.lang.String, java.lang.String)
+    {
+        byte[] keyBytes, saltBytes, temp$12, temp$15, finalb, temp$17, temp$22, temp$25, temp$33, temp$39, temp$42, temp$45, temp$48, temp$51, temp$54, temp$57, temp$60, temp$63, temp$66, temp$69, temp$72, temp$75, temp$78, temp$81, temp$84, temp$87;
+        java.lang.String salt, prefix, saltString, temp$0, temp$2, temp$3, temp$9, temp$10, temp$32, temp$90;
+        int keyLen, ii, temp$18, temp$19, temp$20, j, temp$21, temp$23, temp$26, temp$28, temp$29, i, temp$35, temp$36, temp$37, temp$38, temp$40, temp$41, temp$43, temp$46, temp$49, temp$52, temp$55, temp$58, temp$61, temp$64, temp$67, temp$70, temp$73, temp$76, temp$79, temp$82, temp$85, temp$88;
+        java.util.regex.Pattern p, temp$4;
+        java.lang.StringBuffer temp$1, temp$8, temp$31;
+        java.util.regex.Matcher m, temp$5;
+        boolean temp$6;
+        java.lang.IllegalArgumentException temp$7;
+        java.nio.charset.Charset temp$11, temp$14;
+        java.security.MessageDigest ctx, temp$13, ctx1, temp$16, temp$34;
+        byte temp$24, temp$27, temp$44, temp$47, temp$50, temp$53, temp$56, temp$59, temp$62, temp$65, temp$68, temp$71, temp$74, temp$77, temp$80, temp$83, temp$86, temp$89;
+        java.lang.StringBuilder passwd, temp$30;
+
+        keyBytes := @parameter0: byte[];
+        salt := @parameter1: java.lang.String;
+        prefix := @parameter2: java.lang.String;
+        keyLen = lengthof keyBytes;
+        if salt == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.codec.digest.B64: java.lang.String getRandomSalt(int)>(8);
+        saltString = temp$0;
+        goto label4;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.StringBuffer;
+        specialinvoke temp$1.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("^");
+        temp$2 = virtualinvoke prefix.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("$", "\\$");
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$2);
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("([\\.\\/a-zA-Z0-9]{1,8}).*");
+        temp$3 = virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$4 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(temp$3);
+        p = temp$4;
+        temp$5 = virtualinvoke p.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(salt);
+        m = temp$5;
+        temp$6 = virtualinvoke m.<java.util.regex.Matcher: boolean find()>();
+        if temp$6 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = new java.lang.IllegalArgumentException;
+        temp$8 = new java.lang.StringBuffer;
+        specialinvoke temp$8.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid salt value: ");
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(salt);
+        temp$9 = virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$9);
+        throw temp$7;
+
+     label3:
+        nop;
+        temp$10 = virtualinvoke m.<java.util.regex.Matcher: java.lang.String group(int)>(1);
+        saltString = temp$10;
+
+     label4:
+        nop;
+        temp$11 = <org.apache.commons.codec.Charsets: java.nio.charset.Charset UTF_8>;
+        temp$12 = virtualinvoke saltString.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>(temp$11);
+        saltBytes = temp$12;
+        temp$13 = staticinvoke <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getMd5Digest()>();
+        ctx = temp$13;
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+        temp$14 = <org.apache.commons.codec.Charsets: java.nio.charset.Charset UTF_8>;
+        temp$15 = virtualinvoke prefix.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>(temp$14);
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte[])>(temp$15);
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte[])>(saltBytes);
+        temp$16 = staticinvoke <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getMd5Digest()>();
+        ctx1 = temp$16;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(saltBytes);
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+        temp$17 = virtualinvoke ctx1.<java.security.MessageDigest: byte[] digest()>();
+        finalb = temp$17;
+        ii = keyLen;
+
+     label5:
+        nop;
+        if ii > 0 goto label6;
+
+        goto label10;
+
+     label6:
+        nop;
+        if ii > 16 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$18 = 16;
+        goto label9;
+
+     label8:
+        nop;
+        temp$18 = ii;
+
+     label9:
+        nop;
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte[],int,int)>(finalb, 0, temp$18);
+        temp$19 = ii;
+        temp$20 = temp$19 - 16;
+        ii = temp$20;
+        goto label5;
+
+     label10:
+        nop;
+        staticinvoke <java.util.Arrays: void fill(byte[],byte)>(finalb, 0);
+        ii = keyLen;
+        j = 0;
+
+     label11:
+        nop;
+        if ii > 0 goto label12;
+
+        goto label16;
+
+     label12:
+        nop;
+        temp$21 = ii & 1;
+        if temp$21 == 1 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$22 = finalb;
+        temp$23 = j;
+        temp$24 = temp$22[temp$23];
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte)>(temp$24);
+        goto label15;
+
+     label14:
+        nop;
+        temp$25 = keyBytes;
+        temp$26 = j;
+        temp$27 = temp$25[temp$26];
+        virtualinvoke ctx.<java.security.MessageDigest: void update(byte)>(temp$27);
+
+     label15:
+        nop;
+        temp$28 = ii;
+        temp$29 = temp$28 >> 1;
+        ii = temp$29;
+        goto label11;
+
+     label16:
+        nop;
+        temp$30 = new java.lang.StringBuilder;
+        temp$31 = new java.lang.StringBuffer;
+        specialinvoke temp$31.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(prefix);
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(saltString);
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("$");
+        temp$32 = virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$30.<java.lang.StringBuilder: void <init>(java.lang.String)>(temp$32);
+        passwd = temp$30;
+        temp$33 = virtualinvoke ctx.<java.security.MessageDigest: byte[] digest()>();
+        finalb = temp$33;
+        i = 0;
+
+     label17:
+        nop;
+        if i < 1000 goto label18;
+
+        goto label29;
+
+     label18:
+        nop;
+        temp$34 = staticinvoke <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getMd5Digest()>();
+        ctx1 = temp$34;
+        temp$35 = i & 1;
+        if temp$35 != 0 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+        goto label21;
+
+     label20:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[],int,int)>(finalb, 0, 16);
+
+     label21:
+        nop;
+        temp$36 = i % 3;
+        if temp$36 != 0 goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(saltBytes);
+
+     label23:
+        nop;
+        temp$37 = i % 7;
+        if temp$37 != 0 goto label24;
+
+        goto label25;
+
+     label24:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+
+     label25:
+        nop;
+        temp$38 = i & 1;
+        if temp$38 != 0 goto label26;
+
+        goto label27;
+
+     label26:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[],int,int)>(finalb, 0, 16);
+        goto label28;
+
+     label27:
+        nop;
+        virtualinvoke ctx1.<java.security.MessageDigest: void update(byte[])>(keyBytes);
+
+     label28:
+        nop;
+        temp$39 = virtualinvoke ctx1.<java.security.MessageDigest: byte[] digest()>();
+        finalb = temp$39;
+        nop;
+        temp$40 = i;
+        temp$41 = temp$40 + 1;
+        i = temp$41;
+        goto label17;
+
+     label29:
+        nop;
+        temp$42 = finalb;
+        temp$43 = 0;
+        temp$44 = temp$42[temp$43];
+        temp$45 = finalb;
+        temp$46 = 6;
+        temp$47 = temp$45[temp$46];
+        temp$48 = finalb;
+        temp$49 = 12;
+        temp$50 = temp$48[temp$49];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(temp$44, temp$47, temp$50, 4, passwd);
+        temp$51 = finalb;
+        temp$52 = 1;
+        temp$53 = temp$51[temp$52];
+        temp$54 = finalb;
+        temp$55 = 7;
+        temp$56 = temp$54[temp$55];
+        temp$57 = finalb;
+        temp$58 = 13;
+        temp$59 = temp$57[temp$58];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(temp$53, temp$56, temp$59, 4, passwd);
+        temp$60 = finalb;
+        temp$61 = 2;
+        temp$62 = temp$60[temp$61];
+        temp$63 = finalb;
+        temp$64 = 8;
+        temp$65 = temp$63[temp$64];
+        temp$66 = finalb;
+        temp$67 = 14;
+        temp$68 = temp$66[temp$67];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(temp$62, temp$65, temp$68, 4, passwd);
+        temp$69 = finalb;
+        temp$70 = 3;
+        temp$71 = temp$69[temp$70];
+        temp$72 = finalb;
+        temp$73 = 9;
+        temp$74 = temp$72[temp$73];
+        temp$75 = finalb;
+        temp$76 = 15;
+        temp$77 = temp$75[temp$76];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(temp$71, temp$74, temp$77, 4, passwd);
+        temp$78 = finalb;
+        temp$79 = 4;
+        temp$80 = temp$78[temp$79];
+        temp$81 = finalb;
+        temp$82 = 10;
+        temp$83 = temp$81[temp$82];
+        temp$84 = finalb;
+        temp$85 = 5;
+        temp$86 = temp$84[temp$85];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(temp$80, temp$83, temp$86, 4, passwd);
+        temp$87 = finalb;
+        temp$88 = 11;
+        temp$89 = temp$87[temp$88];
+        staticinvoke <org.apache.commons.codec.digest.B64: void b64from24bit(byte,byte,byte,int,java.lang.StringBuilder)>(0, 0, temp$89, 2, passwd);
+        virtualinvoke ctx.<java.security.MessageDigest: void reset()>();
+        virtualinvoke ctx1.<java.security.MessageDigest: void reset()>();
+        staticinvoke <java.util.Arrays: void fill(byte[],byte)>(keyBytes, 0);
+        staticinvoke <java.util.Arrays: void fill(byte[],byte)>(saltBytes, 0);
+        staticinvoke <java.util.Arrays: void fill(byte[],byte)>(finalb, 0);
+        temp$90 = virtualinvoke passwd.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$90;
+    }
+}

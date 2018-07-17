@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public static transient java.lang.Iterable noNullElements(java.lang.Iterable, java.lang.String, java.lang.Object[])
+    {
+        java.lang.Iterable iterable, temp$1;
+        java.lang.String message, temp$8;
+        java.lang.Object[] values, values2, temp$4, temp$6;
+        java.lang.Object temp$0, temp$3;
+        int i, temp$9, temp$10;
+        java.util.Iterator it;
+        boolean temp$2;
+        java.lang.Integer temp$5;
+        java.lang.IllegalArgumentException temp$7;
+
+        iterable := @parameter0: java.lang.Iterable;
+        message := @parameter1: java.lang.String;
+        values := @parameter2: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(iterable);
+        temp$1 = (java.lang.Iterable) temp$0;
+        i = 0;
+        it = null;
+
+     label0:
+        nop;
+        temp$2 = interfaceinvoke it.<java.util.Iterator: boolean hasNext()>();
+        if temp$2 == 0 goto label4;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = interfaceinvoke it.<java.util.Iterator: java.lang.Object next()>();
+        if temp$3 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = newarray (java.lang.Object)[1];
+        temp$5 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i);
+        temp$4[0] = temp$5;
+        temp$6 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] addAll(java.lang.Object[],java.lang.Object[])>(values, temp$4);
+        values2 = temp$6;
+        temp$7 = new java.lang.IllegalArgumentException;
+        temp$8 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, values2);
+        specialinvoke temp$7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$8);
+        throw temp$7;
+
+     label3:
+        nop;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label0;
+
+     label4:
+        nop;
+        return iterable;
+    }
+}

@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public static int hashCode(java.lang.annotation.Annotation)
+    {
+        java.lang.annotation.Annotation a;
+        int result, temp$1, temp$2, temp$9, temp$11, temp$12;
+        java.lang.Class type;
+        java.lang.reflect.Method[] temp$0;
+        java.lang.reflect.Method m, temp$3;
+        java.lang.Object value, temp$5;
+        java.lang.Object[] temp$4, temp$7;
+        java.lang.IllegalStateException temp$6;
+        java.lang.String temp$8, temp$10;
+        java.lang.RuntimeException ex, temp$13;
+        java.lang.Exception ex;
+
+        a := @parameter0: java.lang.annotation.Annotation;
+        result = 0;
+        type = null;
+        temp$0 = virtualinvoke type.<java.lang.Class: java.lang.reflect.Method[] getDeclaredMethods()>();
+        temp$1 = 0;
+
+     label0:
+        nop;
+        temp$2 = lengthof temp$0;
+        if temp$1 >= temp$2 goto label7;
+
+        temp$3 = temp$0[temp$1];
+        m = temp$3;
+
+     label1:
+        nop;
+        temp$4 = newarray (java.lang.Object)[0];
+        temp$5 = virtualinvoke m.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(a, temp$4);
+        value = temp$5;
+        if value == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = new java.lang.IllegalStateException;
+        temp$7 = newarray (java.lang.Object)[1];
+        temp$7[0] = m;
+        temp$8 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("Annotation method %s returned null", temp$7);
+        specialinvoke temp$6.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$8);
+        throw temp$6;
+
+     label3:
+        nop;
+        temp$9 = result;
+        temp$10 = virtualinvoke m.<java.lang.reflect.Method: java.lang.String getName()>();
+        temp$11 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: int hashMember(java.lang.String,java.lang.Object)>(temp$10, value);
+        temp$12 = temp$9 + temp$11;
+        result = temp$12;
+        goto label6;
+
+     label4:
+        nop;
+        ex := @caughtexception;
+        throw ex;
+
+     label5:
+        nop;
+        ex := @caughtexception;
+        temp$13 = new java.lang.RuntimeException;
+        specialinvoke temp$13.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$13;
+
+     label6:
+        nop;
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label0;
+
+     label7:
+        nop;
+        return result;
+
+        catch java.lang.RuntimeException from label1 to label4 with label4;
+        catch java.lang.Exception from label1 to label4 with label5;
+    }
+}

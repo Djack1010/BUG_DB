@@ -1,0 +1,49 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Method getAccessibleMethod(java.lang.reflect.Method)
+    {
+        java.lang.reflect.Method method, temp$0, temp$6, temp$7;
+        java.lang.Class 'cls', temp$1;
+        int temp$2;
+        boolean temp$3;
+        java.lang.String methodName, temp$4;
+        java.lang.Class[] parameterTypes, temp$5;
+
+        method := @parameter0: java.lang.reflect.Method;
+        temp$0 = null;
+        return temp$0;
+
+        temp$1 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class getDeclaringClass()>();
+        'cls' = temp$1;
+        temp$2 = virtualinvoke 'cls'.<java.lang.Class: int getModifiers()>();
+        temp$3 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$2);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return method;
+
+     label1:
+        nop;
+        temp$4 = virtualinvoke method.<java.lang.reflect.Method: java.lang.String getName()>();
+        methodName = temp$4;
+        temp$5 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        parameterTypes = temp$5;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethodFromInterfaceNest(java.lang.Class,java.lang.String,java.lang.Class[])>('cls', methodName, parameterTypes);
+        method = temp$6;
+        if method == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethodFromSuperclass(java.lang.Class,java.lang.String,java.lang.Class[])>('cls', methodName, parameterTypes);
+        method = temp$7;
+
+     label3:
+        nop;
+        return method;
+    }
+}

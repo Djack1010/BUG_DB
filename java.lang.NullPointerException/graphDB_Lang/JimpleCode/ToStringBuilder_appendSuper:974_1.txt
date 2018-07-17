@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ToStringBuilder appendSuper(java.lang.String)
+    {
+        org.apache.commons.lang3.builder.ToStringBuilder this, temp$2;
+        java.lang.String superToString;
+        org.apache.commons.lang3.builder.ToStringStyle temp$0;
+        java.lang.StringBuffer temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringBuilder;
+        superToString := @parameter0: java.lang.String;
+        if superToString != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringStyle style>;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.StringBuffer buffer>;
+        virtualinvoke temp$0.<org.apache.commons.lang3.builder.ToStringStyle: void appendSuper(java.lang.StringBuffer,java.lang.String)>(temp$1, superToString);
+
+     label1:
+        nop;
+        temp$2 = null;
+        return temp$2;
+    }
+}

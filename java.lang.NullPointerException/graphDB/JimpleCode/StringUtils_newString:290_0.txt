@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    private static final java.lang.String newString(byte[], java.nio.charset.Charset)
+    {
+        byte[] bytes;
+        java.nio.charset.Charset charset;
+        java.lang.String temp$0, temp$1;
+
+        bytes := @parameter0: byte[];
+        charset := @parameter1: java.nio.charset.Charset;
+        if bytes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.String;
+        specialinvoke temp$1.<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>(bytes, charset);
+        temp$0 = temp$1;
+
+     label2:
+        nop;
+        return temp$0;
+    }
+}

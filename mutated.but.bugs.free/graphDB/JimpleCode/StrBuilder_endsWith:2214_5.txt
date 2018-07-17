@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public boolean endsWith(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        boolean temp$0, temp$3, temp$12, temp$17;
+        int len, temp$1, temp$2, pos, temp$4, temp$5, i, temp$7, temp$10, temp$11, temp$13, temp$14, temp$15, temp$16;
+        char[] temp$6;
+        char temp$8, temp$9;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$1;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if len > temp$2 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$5 = temp$4 - len;
+        pos = temp$5;
+        i = 0;
+
+     label4:
+        nop;
+        if i < len goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = pos;
+        temp$8 = temp$6[temp$7];
+        temp$9 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$10 = (int) temp$8;
+        temp$11 = (int) temp$9;
+        if temp$10 != temp$11 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$12 = 0;
+        return temp$12;
+
+     label7:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        temp$15 = pos;
+        temp$16 = temp$15 + 1;
+        pos = temp$16;
+        goto label4;
+
+     label8:
+        nop;
+        temp$17 = 1;
+        return temp$17;
+    }
+}

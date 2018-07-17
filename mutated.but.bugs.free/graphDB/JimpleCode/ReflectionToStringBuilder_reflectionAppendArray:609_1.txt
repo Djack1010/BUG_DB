@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ReflectionToStringBuilder reflectionAppendArray(java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this, temp$2;
+        java.lang.Object array;
+        org.apache.commons.lang3.builder.ToStringStyle temp$0;
+        java.lang.StringBuffer temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        array := @parameter0: java.lang.Object;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: org.apache.commons.lang3.builder.ToStringStyle getStyle()>();
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.StringBuffer getStringBuffer()>();
+        virtualinvoke temp$0.<org.apache.commons.lang3.builder.ToStringStyle: void reflectionAppendArrayDetail(java.lang.StringBuffer,java.lang.String,java.lang.Object)>(temp$1, null, array);
+        temp$2 = null;
+        return temp$2;
+    }
+}

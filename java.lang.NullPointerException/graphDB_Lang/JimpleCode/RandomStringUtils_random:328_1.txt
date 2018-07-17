@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public static transient java.lang.String random(int, char[])
+    {
+        int count, temp$0;
+        char[] chars;
+        java.util.Random temp$1;
+        java.lang.String temp$2;
+
+        count := @parameter0: int;
+        chars := @parameter1: char[];
+        temp$0 = lengthof chars;
+        temp$1 = <org.apache.commons.lang3.RandomStringUtils: java.util.Random RANDOM>;
+        temp$2 = staticinvoke <org.apache.commons.lang3.RandomStringUtils: java.lang.String random(int,int,int,boolean,boolean,char[],java.util.Random)>(count, 0, temp$0, 0, 0, chars, temp$1);
+        return temp$2;
+    }
+}

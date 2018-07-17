@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    private final java.text.Format getFormat(java.lang.String)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String desc, name, args, temp$2, temp$3, temp$4;
+        java.util.Map temp$0, temp$5;
+        int i, temp$1;
+        org.apache.commons.lang3.text.FormatFactory factory, temp$7;
+        java.lang.Object temp$6;
+        java.util.Locale temp$8;
+        java.text.Format temp$9, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        desc := @parameter0: java.lang.String;
+        temp$0 = this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.util.Map registry>;
+        if temp$0 != null goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+        name = desc;
+        args = null;
+        temp$1 = virtualinvoke desc.<java.lang.String: int indexOf(int)>(44);
+        i = temp$1;
+        if i > 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke desc.<java.lang.String: java.lang.String substring(int,int)>(0, i);
+        temp$3 = virtualinvoke temp$2.<java.lang.String: java.lang.String trim()>();
+        name = temp$3;
+        temp$4 = null;
+        args = temp$4;
+
+     label2:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.util.Map registry>;
+        temp$6 = interfaceinvoke temp$5.<java.util.Map: java.lang.Object get(java.lang.Object)>(name);
+        temp$7 = (org.apache.commons.lang3.text.FormatFactory) temp$6;
+        factory = temp$7;
+        if factory != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.util.Locale getLocale()>();
+        temp$9 = interfaceinvoke factory.<org.apache.commons.lang3.text.FormatFactory: java.text.Format getFormat(java.lang.String,java.lang.String,java.util.Locale)>(name, args, temp$8);
+        return temp$9;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$10 = null;
+        return temp$10;
+    }
+}

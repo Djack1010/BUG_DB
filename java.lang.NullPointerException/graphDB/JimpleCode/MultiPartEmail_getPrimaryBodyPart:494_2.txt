@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    protected javax.mail.BodyPart getPrimaryBodyPart() throws javax.mail.MessagingException
+    {
+        org.apache.commons.mail.MultiPartEmail this;
+        boolean temp$0;
+        javax.mail.BodyPart temp$1;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        temp$0 = this.<org.apache.commons.mail.MultiPartEmail: boolean initialized>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: void init()>();
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.mail.MultiPartEmail: javax.mail.BodyPart primaryBodyPart>;
+        return temp$1;
+    }
+}

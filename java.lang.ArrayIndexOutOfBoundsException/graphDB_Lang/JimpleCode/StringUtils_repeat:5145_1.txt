@@ -1,0 +1,165 @@
+public class WrapClass 
+{
+    public static java.lang.String repeat(java.lang.String, int)
+    {
+        java.lang.String str, temp$0, temp$1, temp$4, temp$7, temp$21, temp$26;
+        int repeat, inputLength, temp$2, outputLength, temp$5, i, temp$10, temp$11, temp$13, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, i, temp$24, temp$25;
+        char temp$3, temp$6, ch0, temp$8, ch1, temp$9;
+        char[] output2, temp$12, temp$14;
+        java.lang.StringBuilder buf, temp$22, temp$23;
+
+        str := @parameter0: java.lang.String;
+        repeat := @parameter1: int;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if repeat <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        inputLength = temp$2;
+        if repeat == 1 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        if inputLength == 0 goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        return str;
+
+     label6:
+        nop;
+        if inputLength == 1 goto label7;
+
+        goto label9;
+
+     label7:
+        nop;
+        if repeat <= 8192 goto label8;
+
+        goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String repeat(char,int)>(temp$3, repeat);
+        return temp$4;
+
+     label9:
+        nop;
+        temp$5 = inputLength * repeat;
+        outputLength = temp$5;
+        goto label19;
+
+     label10:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$7 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String repeat(char,int)>(temp$6, repeat);
+        return temp$7;
+
+     label11:
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        ch0 = temp$8;
+        temp$9 = virtualinvoke str.<java.lang.String: char charAt(int)>(1);
+        ch1 = temp$9;
+        output2 = newarray (char)[outputLength];
+        temp$10 = repeat * 2;
+        temp$11 = temp$10;
+        i = temp$11 + 2;
+
+     label12:
+        nop;
+        if i >= 0 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$12 = output2;
+        temp$13 = i;
+        temp$12[temp$13] = ch0;
+        temp$14 = output2;
+        temp$15 = i;
+        temp$16 = temp$15 + 1;
+        temp$14[temp$16] = ch1;
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + -1;
+        i = temp$18;
+        temp$19 = i;
+        temp$20 = temp$19 + -1;
+        i = temp$20;
+        goto label12;
+
+     label14:
+        nop;
+        temp$21 = new java.lang.String;
+        specialinvoke temp$21.<java.lang.String: void <init>(char[])>(output2);
+        return temp$21;
+
+     label15:
+        nop;
+        temp$22 = new java.lang.StringBuilder;
+        specialinvoke temp$22.<java.lang.StringBuilder: void <init>(int)>(outputLength);
+        buf = temp$22;
+        i = 0;
+
+     label16:
+        nop;
+        if i < repeat goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$23 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(str);
+        nop;
+        temp$24 = i;
+        temp$25 = temp$24 + 1;
+        i = temp$25;
+        goto label16;
+
+     label18:
+        nop;
+        temp$26 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$26;
+
+     label19:
+        nop;
+        nop;
+        tableswitch(inputLength)
+        {
+            case 1: goto label10;
+            case 2: goto label11;
+            default: goto label15;
+        };
+
+        nop;
+    }
+}

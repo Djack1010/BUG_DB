@@ -1,0 +1,143 @@
+public class WrapClass 
+{
+    public int indexOf(java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String str;
+        int startIndex, temp$0, temp$1, strLen, temp$2, temp$4, temp$5, temp$6, len, temp$7, temp$8, temp$9, i, j, temp$12, temp$13, temp$15, temp$16, temp$17, temp$18, temp$19, temp$20, temp$21;
+        char temp$3, temp$10, temp$14;
+        char[] thisBuf, temp$11;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        startIndex := @parameter1: int;
+        if startIndex < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = startIndex;
+
+     label2:
+        nop;
+        startIndex = temp$0;
+        if str == null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = -1;
+        return temp$1;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$2;
+        if strLen == 1 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int indexOf(char,int)>(temp$3, startIndex);
+        return temp$4;
+
+     label6:
+        nop;
+        if strLen == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return startIndex;
+
+     label8:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if strLen > temp$5 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$6 = -1;
+        return temp$6;
+
+     label10:
+        nop;
+        thisBuf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$8 = temp$7 - strLen;
+        temp$9 = temp$8;
+        len = temp$9 + 1;
+        nop;
+        i = startIndex;
+
+     label11:
+        nop;
+        if i < len goto label12;
+
+        goto label19;
+
+     label12:
+        nop;
+        j = 0;
+
+     label13:
+        nop;
+        if j < strLen goto label14;
+
+        goto label17;
+
+     label14:
+        nop;
+        temp$10 = virtualinvoke str.<java.lang.String: char charAt(int)>(j);
+        temp$11 = thisBuf;
+        temp$12 = i;
+        temp$13 = temp$12 + j;
+        temp$14 = temp$11[temp$13];
+        temp$15 = (int) temp$10;
+        temp$16 = (int) temp$14;
+        if temp$15 != temp$16 goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        goto label18;
+
+     label16:
+        nop;
+        nop;
+        temp$17 = j;
+        temp$18 = temp$17 + 1;
+        j = temp$18;
+        goto label13;
+
+     label17:
+        nop;
+        return i;
+
+     label18:
+        nop;
+        temp$19 = i;
+        temp$20 = temp$19 + 1;
+        i = temp$20;
+        goto label11;
+
+     label19:
+        nop;
+        nop;
+        temp$21 = -1;
+        return temp$21;
+    }
+}

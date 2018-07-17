@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public static java.lang.Class primitiveToWrapper(java.lang.Class)
+    {
+        java.lang.Class 'cls', convertedClass, temp$4;
+        boolean temp$0, temp$1;
+        java.util.Map temp$2;
+        java.lang.Object temp$3;
+
+        'cls' := @parameter0: java.lang.Class;
+        convertedClass = 'cls';
+        if 'cls' != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke 'cls'.<java.lang.Class: boolean isPrimitive()>();
+        if temp$0 == temp$1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ClassUtils: java.util.Map primitiveWrapperMap>;
+        temp$3 = interfaceinvoke temp$2.<java.util.Map: java.lang.Object get(java.lang.Object)>('cls');
+        temp$4 = (java.lang.Class) temp$3;
+        convertedClass = temp$4;
+
+     label4:
+        nop;
+        return convertedClass;
+    }
+}

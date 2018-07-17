@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.tuple.Pair this;
+        java.lang.Object obj, temp$2, temp$3, temp$5, temp$6;
+        boolean temp$0, temp$1, temp$4, temp$7, temp$8, temp$9;
+        java.util.Map$Entry other;
+
+        this := @this: org.apache.commons.lang3.tuple.Pair;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = obj instanceof java.util.Map$Entry;
+        if temp$1 == 0 goto label7;
+
+        goto label2;
+
+     label2:
+        nop;
+        other = (java.util.Map$Entry) obj;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$3 = interfaceinvoke other.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.ObjectUtils: boolean equals(java.lang.Object,java.lang.Object)>(temp$2, temp$3);
+        if temp$4 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getValue()>();
+        temp$6 = interfaceinvoke other.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$7 = staticinvoke <org.apache.commons.lang3.ObjectUtils: boolean equals(java.lang.Object,java.lang.Object)>(temp$5, temp$6);
+        if temp$7 == 0 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$8 = 1;
+
+     label6:
+        nop;
+        return temp$8;
+
+     label7:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+    }
+}

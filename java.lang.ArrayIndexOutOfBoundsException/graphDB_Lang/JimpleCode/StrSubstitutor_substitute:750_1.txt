@@ -1,0 +1,415 @@
+public class WrapClass 
+{
+    private final int substitute(org.apache.commons.lang3.text.StrBuilder, int, int, java.util.List)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        org.apache.commons.lang3.text.StrBuilder buf, temp$19, bufName, temp$41, temp$64;
+        int offset, length, lengthChange, bufEnd, temp$6, pos, startMatchLen, temp$7, temp$8, temp$9, temp$12, temp$13, temp$15, temp$16, temp$18, temp$21, temp$22, temp$24, temp$25, startPos, temp$26, temp$27, endMatchLen, nestedVarCount, temp$28, temp$29, temp$30, temp$31, temp$32, temp$33, temp$34, temp$35, temp$37, temp$38, temp$39, temp$40, temp$42, temp$45, temp$46, endPos, valueDelimiterMatchLen, i, temp$48, temp$49, temp$50, temp$51, temp$53, temp$54, temp$56, temp$57, varLen, temp$63, change, temp$66, temp$67, temp$68, temp$69, temp$70, temp$71, temp$72, temp$73, temp$74, temp$75, temp$76, temp$78, temp$79, temp$82, temp$83, temp$84, temp$85, temp$86;
+        java.util.List priorVariables;
+        org.apache.commons.lang3.text.StrMatcher pfxMatcher, temp$0, suffMatcher, temp$1, valueDelimMatcher, temp$3;
+        char escape, temp$2, temp$14;
+        boolean substitutionInVariablesEnabled, temp$4, top, temp$5, altered, temp$10, temp$17, temp$23, temp$43, temp$60, temp$61, temp$65;
+        char[] chars, temp$11, temp$20, varNameExprChars, temp$47, temp$77;
+        java.lang.String varNameExpr, temp$36, temp$44, varName, varDefaultValue, temp$52, temp$55, temp$59, varValue, temp$62, temp$81;
+        java.util.ArrayList temp$58;
+        java.lang.Object temp$80;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        buf := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        offset := @parameter1: int;
+        length := @parameter2: int;
+        priorVariables := @parameter3: java.util.List;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrMatcher getVariablePrefixMatcher()>();
+        pfxMatcher = temp$0;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrMatcher getVariableSuffixMatcher()>();
+        suffMatcher = temp$1;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: char getEscapeChar()>();
+        escape = temp$2;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrMatcher getValueDelimiterMatcher()>();
+        valueDelimMatcher = temp$3;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean isEnableSubstitutionInVariables()>();
+        substitutionInVariablesEnabled = temp$4;
+        if priorVariables == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$5 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$5 = 1;
+
+     label2:
+        nop;
+        top = temp$5;
+        altered = 0;
+        lengthChange = 0;
+        chars = buf.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = offset;
+        bufEnd = temp$6 + length;
+        pos = offset;
+
+     label3:
+        nop;
+        if pos < bufEnd goto label4;
+
+        goto label46;
+
+     label4:
+        nop;
+        temp$7 = virtualinvoke pfxMatcher.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(chars, pos, offset, bufEnd);
+        startMatchLen = temp$7;
+        if startMatchLen == 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$8 = pos;
+        temp$9 = temp$8 + 1;
+        pos = temp$9;
+        goto label45;
+
+     label6:
+        nop;
+        if pos > offset goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$10 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$10 = 1;
+
+     label9:
+        nop;
+        temp$11 = chars;
+        temp$12 = pos - 1;
+        temp$13 = temp$12;
+        temp$14 = temp$11[temp$13];
+        temp$15 = (int) temp$14;
+        temp$16 = (int) escape;
+        if temp$15 == temp$16 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$17 = 0;
+        goto label12;
+
+     label11:
+        nop;
+        temp$17 = 1;
+
+     label12:
+        nop;
+        if temp$10 == temp$17 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$18 = pos - 1;
+        temp$19 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder deleteCharAt(int)>(temp$18);
+        temp$20 = buf.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        chars = temp$20;
+        temp$21 = lengthChange;
+        temp$22 = temp$21 + -1;
+        lengthChange = temp$22;
+        temp$23 = 1;
+        altered = temp$23;
+        temp$24 = bufEnd;
+        temp$25 = temp$24 + -1;
+        bufEnd = temp$25;
+        goto label44;
+
+     label14:
+        nop;
+        startPos = pos;
+        temp$26 = pos;
+        temp$27 = temp$26 + startMatchLen;
+        pos = temp$27;
+        endMatchLen = 0;
+        nestedVarCount = 0;
+
+     label15:
+        nop;
+        if pos < bufEnd goto label16;
+
+        goto label43;
+
+     label16:
+        nop;
+        if substitutionInVariablesEnabled == 0 goto label19;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$28 = virtualinvoke pfxMatcher.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(chars, pos, offset, bufEnd);
+        endMatchLen = temp$28;
+        if temp$28 != 0 goto label18;
+
+        goto label19;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$29 = nestedVarCount;
+        temp$30 = temp$29 + 1;
+        nestedVarCount = temp$30;
+        temp$31 = pos;
+        temp$32 = temp$31 + endMatchLen;
+        pos = temp$32;
+        goto label15;
+
+     label19:
+        nop;
+        temp$33 = virtualinvoke suffMatcher.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(chars, pos, offset, bufEnd);
+        endMatchLen = temp$33;
+        if endMatchLen == 0 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$34 = pos;
+        temp$35 = temp$34 + 1;
+        pos = temp$35;
+        goto label42;
+
+     label21:
+        nop;
+        if nestedVarCount == 0 goto label22;
+
+        goto label41;
+
+     label22:
+        nop;
+        temp$36 = new java.lang.String;
+        temp$37 = startPos;
+        temp$38 = temp$37 + startMatchLen;
+        temp$39 = pos - startPos;
+        temp$40 = temp$39 - startMatchLen;
+        specialinvoke temp$36.<java.lang.String: void <init>(char[],int,int)>(chars, temp$38, temp$40);
+        varNameExpr = temp$36;
+        if substitutionInVariablesEnabled == 0 goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$41 = new org.apache.commons.lang3.text.StrBuilder;
+        specialinvoke temp$41.<org.apache.commons.lang3.text.StrBuilder: void <init>(java.lang.String)>(varNameExpr);
+        bufName = temp$41;
+        temp$42 = virtualinvoke bufName.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$43 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean substitute(org.apache.commons.lang3.text.StrBuilder,int,int)>(bufName, 0, temp$42);
+        temp$44 = virtualinvoke bufName.<org.apache.commons.lang3.text.StrBuilder: java.lang.String toString()>();
+        varNameExpr = temp$44;
+
+     label24:
+        nop;
+        temp$45 = pos;
+        temp$46 = temp$45 + endMatchLen;
+        pos = temp$46;
+        endPos = pos;
+        varName = varNameExpr;
+        varDefaultValue = null;
+        if valueDelimMatcher != null goto label25;
+
+        goto label34;
+
+     label25:
+        nop;
+        temp$47 = virtualinvoke varNameExpr.<java.lang.String: char[] toCharArray()>();
+        varNameExprChars = temp$47;
+        valueDelimiterMatchLen = 0;
+        i = 0;
+
+     label26:
+        nop;
+        temp$48 = lengthof varNameExprChars;
+        if i < temp$48 goto label27;
+
+        goto label33;
+
+     label27:
+        nop;
+        if substitutionInVariablesEnabled == 0 goto label28;
+
+        goto label30;
+
+     label28:
+        nop;
+        temp$49 = lengthof varNameExprChars;
+        temp$50 = virtualinvoke pfxMatcher.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int,int,int)>(varNameExprChars, i, i, temp$49);
+        if temp$50 != 0 goto label29;
+
+        goto label30;
+
+        goto label29;
+
+     label29:
+        nop;
+        goto label33;
+
+     label30:
+        nop;
+        temp$51 = virtualinvoke valueDelimMatcher.<org.apache.commons.lang3.text.StrMatcher: int isMatch(char[],int)>(varNameExprChars, i);
+        valueDelimiterMatchLen = temp$51;
+        if temp$51 != 0 goto label31;
+
+        goto label32;
+
+     label31:
+        nop;
+        temp$52 = virtualinvoke varNameExpr.<java.lang.String: java.lang.String substring(int,int)>(0, i);
+        varName = temp$52;
+        temp$53 = i;
+        temp$54 = temp$53 + valueDelimiterMatchLen;
+        temp$55 = virtualinvoke varNameExpr.<java.lang.String: java.lang.String substring(int)>(temp$54);
+        varDefaultValue = temp$55;
+        goto label33;
+
+     label32:
+        nop;
+        nop;
+        temp$56 = i;
+        temp$57 = temp$56 + 1;
+        i = temp$57;
+        goto label26;
+
+     label33:
+        nop;
+
+     label34:
+        nop;
+        if priorVariables == null goto label35;
+
+        goto label36;
+
+     label35:
+        nop;
+        temp$58 = new java.util.ArrayList;
+        specialinvoke temp$58.<java.util.ArrayList: void <init>()>();
+        priorVariables = temp$58;
+        temp$59 = new java.lang.String;
+        specialinvoke temp$59.<java.lang.String: void <init>(char[],int,int)>(chars, offset, length);
+        temp$60 = interfaceinvoke priorVariables.<java.util.List: boolean add(java.lang.Object)>(temp$59);
+
+     label36:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: void checkCyclicSubstitution(java.lang.String,java.util.List)>(varName, priorVariables);
+        temp$61 = interfaceinvoke priorVariables.<java.util.List: boolean add(java.lang.Object)>(varName);
+        temp$62 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: java.lang.String resolveVariable(java.lang.String,org.apache.commons.lang3.text.StrBuilder,int,int)>(varName, buf, startPos, endPos);
+        varValue = temp$62;
+        if varValue == null goto label37;
+
+        goto label38;
+
+     label37:
+        nop;
+        varValue = varDefaultValue;
+
+     label38:
+        nop;
+        if varValue != null goto label39;
+
+        goto label40;
+
+     label39:
+        nop;
+        temp$63 = virtualinvoke varValue.<java.lang.String: int length()>();
+        varLen = temp$63;
+        temp$64 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder replace(int,int,java.lang.String)>(startPos, endPos, varValue);
+        temp$65 = 1;
+        altered = temp$65;
+        temp$66 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: int substitute(org.apache.commons.lang3.text.StrBuilder,int,int,java.util.List)>(buf, startPos, varLen, priorVariables);
+        change = temp$66;
+        temp$67 = change;
+        temp$68 = endPos - startPos;
+        temp$69 = temp$67 + varLen;
+        temp$70 = temp$69 - temp$68;
+        change = temp$70;
+        temp$71 = pos;
+        temp$72 = temp$71 + change;
+        pos = temp$72;
+        temp$73 = bufEnd;
+        temp$74 = temp$73 + change;
+        bufEnd = temp$74;
+        temp$75 = lengthChange;
+        temp$76 = temp$75 + change;
+        lengthChange = temp$76;
+        temp$77 = buf.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        chars = temp$77;
+
+     label40:
+        nop;
+        temp$78 = interfaceinvoke priorVariables.<java.util.List: int size()>();
+        temp$79 = temp$78 - 1;
+        temp$80 = interfaceinvoke priorVariables.<java.util.List: java.lang.Object remove(int)>(temp$79);
+        temp$81 = (java.lang.String) temp$80;
+        goto label43;
+
+     label41:
+        nop;
+        temp$82 = nestedVarCount;
+        temp$83 = temp$82 + -1;
+        nestedVarCount = temp$83;
+        temp$84 = pos;
+        temp$85 = temp$84 + endMatchLen;
+        pos = temp$85;
+
+     label42:
+        nop;
+        goto label15;
+
+     label43:
+        nop;
+
+     label44:
+        nop;
+
+     label45:
+        nop;
+        goto label3;
+
+     label46:
+        nop;
+        if top == 0 goto label51;
+
+        goto label47;
+
+     label47:
+        nop;
+        if altered == 0 goto label49;
+
+        goto label48;
+
+     label48:
+        nop;
+        temp$86 = 1;
+        goto label50;
+
+     label49:
+        nop;
+        temp$86 = 0;
+
+     label50:
+        nop;
+        return temp$86;
+
+     label51:
+        nop;
+        return lengthChange;
+    }
+}

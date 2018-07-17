@@ -1,0 +1,111 @@
+public class WrapClass 
+{
+    public static boolean[] shortToBinary(short, int, boolean[], int, int)
+    {
+        short src;
+        int srcPos, dstPos, nBools, temp$0, temp$1, temp$2, shift, temp$5, temp$6, i, temp$8, temp$9, temp$11, temp$12, temp$13, temp$14, temp$15, temp$17, temp$18;
+        boolean[] dst, temp$10;
+        java.lang.IllegalArgumentException temp$3;
+        boolean temp$4, temp$16;
+        java.lang.AssertionError temp$7;
+
+        src := @parameter0: short;
+        srcPos := @parameter1: int;
+        dst := @parameter2: boolean[];
+        dstPos := @parameter3: int;
+        nBools := @parameter4: int;
+        if 0 == nBools goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dst;
+
+     label1:
+        nop;
+        temp$0 = nBools - 1;
+        temp$1 = temp$0;
+        temp$2 = temp$1 + srcPos;
+        if temp$2 >= 16 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("nBools-1+srcPos is greather or equal to than 16");
+        throw temp$3;
+
+     label3:
+        nop;
+        shift = 0;
+        temp$4 = <org.apache.commons.lang3.Conversion: boolean $assertionsDisabled>;
+        if temp$4 == 0 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$5 = nBools - 1;
+        temp$6 = 16 - srcPos;
+        if temp$5 < temp$6 goto label6;
+
+        goto label5;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$7 = new java.lang.AssertionError;
+        specialinvoke temp$7.<java.lang.AssertionError: void <init>()>();
+        throw temp$7;
+
+     label6:
+        nop;
+        i = 0;
+
+     label7:
+        nop;
+        if i < nBools goto label8;
+
+        goto label12;
+
+     label8:
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + srcPos;
+        shift = temp$9;
+        temp$10 = dst;
+        temp$11 = dstPos - i;
+        temp$12 = temp$11;
+        temp$13 = (int) src;
+        temp$14 = temp$13 >> shift;
+        temp$15 = 1 & temp$14;
+        if temp$15 != 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$16 = 0;
+        goto label11;
+
+     label10:
+        nop;
+        temp$16 = 1;
+
+     label11:
+        nop;
+        temp$10[temp$12] = temp$16;
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label7;
+
+     label12:
+        nop;
+        return dst;
+    }
+}

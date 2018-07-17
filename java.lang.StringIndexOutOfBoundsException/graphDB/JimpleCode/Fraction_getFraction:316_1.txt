@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.math.Fraction getFraction(java.lang.String)
+    {
+        java.lang.String str, temp$8, temp$12;
+        java.lang.IllegalArgumentException temp$0;
+        int pos, temp$1, temp$4, temp$5, temp$6, numer, temp$9, denom, temp$10, temp$11, temp$13;
+        double temp$2;
+        org.apache.commons.lang3.math.Fraction temp$3, temp$7, temp$14;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The string must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int indexOf(int)>(46);
+        pos = temp$1;
+        if pos >= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>(str);
+        temp$3 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(double)>(temp$2);
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke str.<java.lang.String: int indexOf(int)>(32);
+        pos = temp$4;
+        temp$5 = virtualinvoke str.<java.lang.String: int indexOf(int)>(47);
+        pos = temp$5;
+        if pos < 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(str);
+        temp$7 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int)>(temp$6, 1);
+        return temp$7;
+
+     label5:
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, pos);
+        temp$9 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$8);
+        numer = temp$9;
+        temp$10 = pos;
+        temp$11 = temp$10 + 1;
+        temp$12 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$11);
+        temp$13 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(temp$12);
+        denom = temp$13;
+        temp$14 = staticinvoke <org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction getFraction(int,int)>(numer, denom);
+        return temp$14;
+    }
+}

@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    private static final java.lang.String wildcardTypeToString(java.lang.reflect.WildcardType)
+    {
+        java.lang.reflect.WildcardType w;
+        java.lang.StringBuilder buf, temp$0, temp$1, temp$4, temp$5;
+        java.lang.reflect.Type[] lowerBounds, temp$2, upperBounds, temp$3;
+        java.lang.String temp$6;
+
+        w := @parameter0: java.lang.reflect.WildcardType;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(63);
+        buf = temp$1;
+        temp$2 = interfaceinvoke w.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getLowerBounds()>();
+        lowerBounds = temp$2;
+        temp$3 = interfaceinvoke w.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        upperBounds = temp$3;
+        temp$4 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" super ");
+        temp$5 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.StringBuilder appendAllTo(java.lang.StringBuilder,java.lang.String,java.lang.reflect.Type[])>(temp$4, " & ", lowerBounds);
+        nop;
+        temp$6 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$6;
+    }
+}

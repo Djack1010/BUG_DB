@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public static void inclusiveBetween(long, long, long, java.lang.String)
+    {
+        long start, end, value;
+        java.lang.String message, temp$3;
+        int temp$0;
+        java.lang.IllegalArgumentException temp$1;
+        java.lang.Object[] temp$2;
+
+        start := @parameter0: long;
+        end := @parameter1: long;
+        value := @parameter2: long;
+        message := @parameter3: java.lang.String;
+        temp$0 = value cmp end;
+        if temp$0 <= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        temp$2 = newarray (java.lang.Object)[0];
+        temp$3 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>(message, temp$2);
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$3);
+        throw temp$1;
+
+     label1:
+        nop;
+        return;
+    }
+}

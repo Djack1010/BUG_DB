@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public void appendDetail(java.lang.StringBuffer, java.lang.String, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle this;
+        java.lang.StringBuffer buffer, temp$14;
+        java.lang.String fieldName, temp$13;
+        java.lang.Object value;
+        java.lang.Class temp$0, temp$2, temp$3, temp$4, temp$5, temp$8;
+        boolean temp$1, temp$6, temp$7, temp$9;
+        int temp$10, temp$11, temp$12, temp$15, temp$16, temp$17;
+
+        this := @this: org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        temp$0 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.ClassUtils: boolean isPrimitiveWrapper(java.lang.Class)>(temp$0);
+        if temp$1 == 0 goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$3 = <org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: java.lang.Class class$java$lang$String>;
+        if temp$3 != null goto label1;
+
+        temp$4 = staticinvoke <org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: java.lang.Class class$(java.lang.String)>("java.lang.String");
+        <org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: java.lang.Class class$java$lang$String> = temp$4;
+        temp$2 = temp$4;
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = <org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: java.lang.Class class$java$lang$String>;
+
+     label2:
+        nop;
+        temp$5 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$6 = virtualinvoke temp$2.<java.lang.Class: boolean equals(java.lang.Object)>(temp$5);
+        if temp$6 == 0 goto label4;
+
+        goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = 1;
+
+     label5:
+        nop;
+        temp$8 = virtualinvoke value.<java.lang.Object: java.lang.Class getClass()>();
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: boolean accept(java.lang.Class)>(temp$8);
+        if temp$7 == temp$9 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$10 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces>;
+        temp$11 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int indent>;
+        temp$12 = temp$10 + temp$11;
+        this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces> = temp$12;
+        virtualinvoke this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: void resetIndent()>();
+        temp$13 = staticinvoke <org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String toString(java.lang.Object,org.apache.commons.lang3.builder.ToStringStyle)>(value, this);
+        temp$14 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$13);
+        temp$15 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces>;
+        temp$16 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int indent>;
+        temp$17 = temp$15 - temp$16;
+        this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces> = temp$17;
+        virtualinvoke this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: void resetIndent()>();
+        goto label8;
+
+     label7:
+        nop;
+        specialinvoke this.<org.apache.commons.lang3.builder.RecursiveToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,java.lang.Object)>(buffer, fieldName, value);
+
+     label8:
+        nop;
+        return;
+    }
+}

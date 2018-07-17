@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static short[] removeElement(short[], short)
+    {
+        short[] array, temp$0;
+        short element;
+        int index;
+
+        array := @parameter0: short[];
+        element := @parameter1: short;
+        index = 0;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: short[] remove(short[],int)>(array, 0);
+        return temp$0;
+    }
+}

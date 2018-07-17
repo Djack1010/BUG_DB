@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    public static java.util.Map determineTypeArguments(java.lang.Class, java.lang.reflect.ParameterizedType)
+    {
+        java.lang.Class 'cls', temp$2, superClass, temp$6, temp$13, midClass, temp$15;
+        java.lang.reflect.ParameterizedType superType, temp$5, midParameterizedType;
+        java.lang.Object[] temp$0, temp$3;
+        java.lang.Object temp$1, temp$4;
+        boolean temp$7, temp$9, temp$12;
+        java.util.Map temp$8, temp$10, temp$14, typeVarAssigns, temp$16;
+        java.lang.reflect.Type midType, temp$11;
+
+        'cls' := @parameter0: java.lang.Class;
+        superType := @parameter1: java.lang.reflect.ParameterizedType;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>('cls', "cls is null", temp$0);
+        temp$2 = (java.lang.Class) temp$1;
+        temp$3 = newarray (java.lang.Object)[0];
+        temp$4 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(superType, "superType is null", temp$3);
+        temp$5 = (java.lang.reflect.ParameterizedType) temp$4;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(superType);
+        superClass = temp$6;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.Class)>('cls', superClass);
+        if temp$7 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$8 = null;
+        return temp$8;
+
+     label1:
+        nop;
+        temp$9 = virtualinvoke 'cls'.<java.lang.Class: boolean equals(java.lang.Object)>(superClass);
+        if temp$9 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.ParameterizedType,java.lang.Class,java.util.Map)>(superType, superClass, null);
+        return temp$10;
+
+     label3:
+        nop;
+        temp$11 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type getClosestParentType(java.lang.Class,java.lang.Class)>('cls', superClass);
+        midType = temp$11;
+        temp$12 = midType instanceof java.lang.Class;
+        if temp$12 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$13 = (java.lang.Class) midType;
+        temp$14 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map determineTypeArguments(java.lang.Class,java.lang.reflect.ParameterizedType)>(temp$13, superType);
+        return temp$14;
+
+     label5:
+        nop;
+        midParameterizedType = (java.lang.reflect.ParameterizedType) midType;
+        temp$15 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class getRawType(java.lang.reflect.ParameterizedType)>(midParameterizedType);
+        midClass = temp$15;
+        temp$16 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map determineTypeArguments(java.lang.Class,java.lang.reflect.ParameterizedType)>(midClass, superType);
+        typeVarAssigns = temp$16;
+        staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: void mapTypeVariablesToArguments(java.lang.Class,java.lang.reflect.ParameterizedType,java.util.Map)>('cls', midParameterizedType, typeVarAssigns);
+        return typeVarAssigns;
+    }
+}

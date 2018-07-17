@@ -1,0 +1,123 @@
+public class WrapClass 
+{
+    private static final int[] body(int[], int, int)
+    {
+        int[] schedule, results, temp$14, temp$17, temp$20, temp$23, temp$26, temp$29, temp$32, temp$35, temp$38, temp$41, out, temp$44, temp$46;
+        int eSwap0, eSwap1, left, right, t, j, i, temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$15, temp$16, temp$18, temp$19, temp$21, temp$22, temp$24, temp$25, temp$27, temp$28, temp$30, temp$31, temp$33, temp$34, temp$36, temp$37, temp$39, temp$40, temp$42, temp$43, temp$45, temp$47;
+
+        schedule := @parameter0: int[];
+        eSwap0 := @parameter1: int;
+        eSwap1 := @parameter2: int;
+        left = 0;
+        right = 0;
+        t = 0;
+        j = 0;
+
+     label0:
+        nop;
+        if j < 25 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        i = 0;
+
+     label2:
+        nop;
+        if i < 32 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int dEncrypt(int,int,int,int,int,int[])>(left, right, i, eSwap0, eSwap1, schedule);
+        left = temp$0;
+        temp$1 = i;
+        temp$2 = temp$1 + 2;
+        temp$3 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int dEncrypt(int,int,int,int,int,int[])>(right, left, temp$2, eSwap0, eSwap1, schedule);
+        right = temp$3;
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + 4;
+        i = temp$5;
+        goto label2;
+
+     label4:
+        nop;
+        t = left;
+        left = right;
+        right = t;
+        nop;
+        temp$6 = j;
+        temp$7 = temp$6 + 1;
+        j = temp$7;
+        goto label0;
+
+     label5:
+        nop;
+        t = right;
+        temp$8 = left >>> 1;
+        temp$9 = left << 31;
+        temp$10 = temp$8 | temp$9;
+        right = temp$10;
+        temp$11 = t >>> 1;
+        temp$12 = t << 31;
+        temp$13 = temp$11 | temp$12;
+        left = temp$13;
+        results = newarray (int)[0];
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 1, 1431655765, results);
+        temp$14 = results;
+        temp$15 = 0;
+        temp$16 = temp$14[temp$15];
+        right = temp$16;
+        temp$17 = results;
+        temp$18 = 1;
+        temp$19 = temp$17[temp$18];
+        left = temp$19;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(left, right, 8, 16711935, results);
+        temp$20 = results;
+        temp$21 = 0;
+        temp$22 = temp$20[temp$21];
+        left = temp$22;
+        temp$23 = results;
+        temp$24 = 1;
+        temp$25 = temp$23[temp$24];
+        right = temp$25;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 2, 858993459, results);
+        temp$26 = results;
+        temp$27 = 0;
+        temp$28 = temp$26[temp$27];
+        right = temp$28;
+        temp$29 = results;
+        temp$30 = 1;
+        temp$31 = temp$29[temp$30];
+        left = temp$31;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(left, right, 16, 65535, results);
+        temp$32 = results;
+        temp$33 = 0;
+        temp$34 = temp$32[temp$33];
+        left = temp$34;
+        temp$35 = results;
+        temp$36 = 1;
+        temp$37 = temp$35[temp$36];
+        right = temp$37;
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void permOp(int,int,int,int,int[])>(right, left, 4, 252645135, results);
+        temp$38 = results;
+        temp$39 = 0;
+        temp$40 = temp$38[temp$39];
+        right = temp$40;
+        temp$41 = results;
+        temp$42 = 1;
+        temp$43 = temp$41[temp$42];
+        left = temp$43;
+        out = newarray (int)[2];
+        temp$44 = out;
+        temp$45 = 0;
+        temp$44[temp$45] = left;
+        temp$46 = out;
+        temp$47 = 1;
+        temp$46[temp$47] = right;
+        return out;
+    }
+}

@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field getField(java.lang.Class, java.lang.String)
+    {
+        java.lang.Class 'cls';
+        java.lang.String fieldName;
+        java.lang.reflect.Field field;
+        boolean temp$0;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        field = null;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(field);
+        return field;
+    }
+}

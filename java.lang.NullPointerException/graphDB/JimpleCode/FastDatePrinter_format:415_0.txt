@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public java.lang.String format(long)
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        long millis;
+        java.util.Calendar c;
+        java.util.GregorianCalendar temp$0;
+        java.lang.String temp$1;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        millis := @parameter0: long;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.util.GregorianCalendar newCalendar()>();
+        c = temp$0;
+        virtualinvoke c.<java.util.Calendar: void setTimeInMillis(long)>(millis);
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String applyRulesToString(java.util.Calendar)>(c);
+        return temp$1;
+    }
+}

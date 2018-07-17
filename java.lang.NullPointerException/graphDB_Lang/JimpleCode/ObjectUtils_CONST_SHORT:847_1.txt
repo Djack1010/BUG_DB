@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public static short CONST_SHORT(int) throws java.lang.IllegalArgumentException
+    {
+        int v;
+        java.lang.IllegalArgumentException temp$0;
+        java.lang.StringBuffer temp$1;
+        java.lang.String temp$2;
+        short temp$3;
+
+        v := @parameter0: int;
+        temp$0 = new java.lang.IllegalArgumentException;
+        temp$1 = new java.lang.StringBuffer;
+        specialinvoke temp$1.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Supplied value must be a valid byte literal between -32768 and 32767: [");
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(v);
+        virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("]");
+        temp$2 = virtualinvoke temp$1.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$2);
+        throw temp$0;
+
+        temp$3 = (short) v;
+        return temp$3;
+    }
+}

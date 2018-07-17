@@ -1,0 +1,152 @@
+ArrayUtils_removeElement:5163_1 151
+0 EXTRA_NODE ENTRY Entrynode ENTRY Entry_node (2;CFG_EDGE_C) 
+1 EXTRA_NODE EXIT Exitnode EXIT Exit_node 
+2 CFG_NODE AIdentityStatement classsoot.jimple.parser.node.AIdentityStatement AIdentityStatement array:=@parameter0:short[]; (3;AST_EDGE) (90;PDG_EDGE_D) (27;PDG_EDGE_D) (15;AST_EDGE) (16;CFG_EDGE_C) (8;AST_EDGE) (7;AST_EDGE) (6;AST_EDGE) 
+3 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName array (4;AST_EDGE) 
+4 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName array (5;AST_EDGE) 
+5 AST_NODE TIdentifier array TIdentifier array 
+6 AST_NODE TColonEquals := TColonEquals := 
+7 AST_NODE TAtIdentifier @parameter0: TAtIdentifier @parameter0: 
+8 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType short[] (9;AST_EDGE) 
+9 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short[] (10;AST_EDGE) (12;AST_EDGE) 
+10 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (11;AST_EDGE) 
+11 AST_NODE TShort short TShort short 
+12 AST_NODE AArrayBrackets classsoot.jimple.parser.node.AArrayBrackets AArrayBrackets [] (14;AST_EDGE) (13;AST_EDGE) 
+13 AST_NODE TLBracket [ TLBracket [ 
+14 AST_NODE TRBracket ] TRBracket ] 
+15 AST_NODE TSemicolon ; TSemicolon ; 
+16 CFG_NODE AIdentityStatement classsoot.jimple.parser.node.AIdentityStatement AIdentityStatement element:=@parameter1:short; (26;AST_EDGE) (17;AST_EDGE) (21;AST_EDGE) (20;AST_EDGE) (27;PDG_EDGE_D) (27;CFG_EDGE_C) (22;AST_EDGE) 
+17 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName element (18;AST_EDGE) 
+18 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName element (19;AST_EDGE) 
+19 AST_NODE TIdentifier element TIdentifier element 
+20 AST_NODE TColonEquals := TColonEquals := 
+21 AST_NODE TAtIdentifier @parameter1: TAtIdentifier @parameter1: 
+22 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType short (23;AST_EDGE) 
+23 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short (24;AST_EDGE) 
+24 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (25;AST_EDGE) 
+25 AST_NODE TShort short TShort short 
+26 AST_NODE TSemicolon ; TSemicolon ; 
+27 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$0=staticinvoke<org.apache.commons.lang3.ArrayUtils:intindexOf(short[],short)>(array,element); (78;PDG_EDGE_D) (77;AST_EDGE) (28;AST_EDGE) (78;CFG_EDGE_C) (32;AST_EDGE) (33;AST_EDGE) 
+28 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$0 (29;AST_EDGE) 
+29 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$0 (30;AST_EDGE) 
+30 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$0 (31;AST_EDGE) 
+31 AST_NODE TIdentifier temp$0 TIdentifier temp$0 
+32 AST_NODE TEquals = TEquals = 
+33 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression staticinvoke<org.apache.commons.lang3.ArrayUtils:intindexOf(short[],short)>(array,element) (34;AST_EDGE) 
+34 AST_NODE AStaticInvokeExpr classsoot.jimple.parser.node.AStaticInvokeExpr AStaticInvokeExpr staticinvoke<org.apache.commons.lang3.ArrayUtils:intindexOf(short[],short)>(array,element) (36;AST_EDGE) (76;AST_EDGE) (35;AST_EDGE) (65;AST_EDGE) (64;AST_EDGE) 
+35 AST_NODE TStaticinvoke staticinvoke TStaticinvoke staticinvoke 
+36 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <org.apache.commons.lang3.ArrayUtils:intindexOf(short[],short)> (38;AST_EDGE) (45;AST_EDGE) (37;AST_EDGE) (48;AST_EDGE) (41;AST_EDGE) (63;AST_EDGE) (40;AST_EDGE) (62;AST_EDGE) (47;AST_EDGE) 
+37 AST_NODE TCmplt < TCmplt < 
+38 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName org.apache.commons.lang3.ArrayUtils (39;AST_EDGE) 
+39 AST_NODE TFullIdentifier org.apache.commons.lang3.ArrayUtils TFullIdentifier org.apache.commons.lang3.ArrayUtils 
+40 AST_NODE TColon : TColon : 
+41 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType int (42;AST_EDGE) 
+42 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (43;AST_EDGE) 
+43 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (44;AST_EDGE) 
+44 AST_NODE TInt int TInt int 
+45 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName indexOf (46;AST_EDGE) 
+46 AST_NODE TIdentifier indexOf TIdentifier indexOf 
+47 AST_NODE TLParen ( TLParen ( 
+48 AST_NODE AMultiParameterList classsoot.jimple.parser.node.AMultiParameterList AMultiParameterList short[],short (57;AST_EDGE) (56;AST_EDGE) (49;AST_EDGE) 
+49 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter short[] (50;AST_EDGE) 
+50 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short[] (51;AST_EDGE) (53;AST_EDGE) 
+51 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (52;AST_EDGE) 
+52 AST_NODE TShort short TShort short 
+53 AST_NODE AArrayBrackets classsoot.jimple.parser.node.AArrayBrackets AArrayBrackets [] (55;AST_EDGE) (54;AST_EDGE) 
+54 AST_NODE TLBracket [ TLBracket [ 
+55 AST_NODE TRBracket ] TRBracket ] 
+56 AST_NODE TComma , TComma , 
+57 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList short (58;AST_EDGE) 
+58 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter short (59;AST_EDGE) 
+59 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short (60;AST_EDGE) 
+60 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (61;AST_EDGE) 
+61 AST_NODE TShort short TShort short 
+62 AST_NODE TRParen ) TRParen ) 
+63 AST_NODE TCmpgt > TCmpgt > 
+64 AST_NODE TLParen ( TLParen ( 
+65 AST_NODE AMultiArgList classsoot.jimple.parser.node.AMultiArgList AMultiArgList array,element (66;AST_EDGE) (71;AST_EDGE) (70;AST_EDGE) 
+66 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate array (67;AST_EDGE) 
+67 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName array (68;AST_EDGE) 
+68 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName array (69;AST_EDGE) 
+69 AST_NODE TIdentifier array TIdentifier array 
+70 AST_NODE TComma , TComma , 
+71 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList element (72;AST_EDGE) 
+72 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate element (73;AST_EDGE) 
+73 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName element (74;AST_EDGE) 
+74 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName element (75;AST_EDGE) 
+75 AST_NODE TIdentifier element TIdentifier element 
+76 AST_NODE TRParen ) TRParen ) 
+77 AST_NODE TSemicolon ; TSemicolon ; 
+78 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement index=temp$0; (89;AST_EDGE) (79;AST_EDGE) (90;PDG_EDGE_D) (90;CFG_EDGE_C) (83;AST_EDGE) (84;AST_EDGE) 
+79 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable index (80;AST_EDGE) 
+80 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName index (81;AST_EDGE) 
+81 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName index (82;AST_EDGE) 
+82 AST_NODE TIdentifier index TIdentifier index 
+83 AST_NODE TEquals = TEquals = 
+84 AST_NODE AImmediateExpression classsoot.jimple.parser.node.AImmediateExpression AImmediateExpression temp$0 (85;AST_EDGE) 
+85 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$0 (86;AST_EDGE) 
+86 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$0 (87;AST_EDGE) 
+87 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$0 (88;AST_EDGE) 
+88 AST_NODE TIdentifier temp$0 TIdentifier temp$0 
+89 AST_NODE TSemicolon ; TSemicolon ; 
+90 CFG_NODE AAssignStatement classsoot.jimple.parser.node.AAssignStatement AAssignStatement temp$1=staticinvoke<org.apache.commons.lang3.ArrayUtils:short[]remove(short[],int)>(array,index); (144;PDG_EDGE_D) (143;AST_EDGE) (96;AST_EDGE) (91;AST_EDGE) (144;CFG_EDGE_C) (95;AST_EDGE) 
+91 AST_NODE ALocalVariable classsoot.jimple.parser.node.ALocalVariable ALocalVariable temp$1 (92;AST_EDGE) 
+92 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$1 (93;AST_EDGE) 
+93 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$1 (94;AST_EDGE) 
+94 AST_NODE TIdentifier temp$1 TIdentifier temp$1 
+95 AST_NODE TEquals = TEquals = 
+96 AST_NODE AInvokeExpression classsoot.jimple.parser.node.AInvokeExpression AInvokeExpression staticinvoke<org.apache.commons.lang3.ArrayUtils:short[]remove(short[],int)>(array,index) (97;AST_EDGE) 
+97 AST_NODE AStaticInvokeExpr classsoot.jimple.parser.node.AStaticInvokeExpr AStaticInvokeExpr staticinvoke<org.apache.commons.lang3.ArrayUtils:short[]remove(short[],int)>(array,index) (142;AST_EDGE) (131;AST_EDGE) (99;AST_EDGE) (130;AST_EDGE) (98;AST_EDGE) 
+98 AST_NODE TStaticinvoke staticinvoke TStaticinvoke staticinvoke 
+99 AST_NODE AMethodSignature classsoot.jimple.parser.node.AMethodSignature AMethodSignature <org.apache.commons.lang3.ArrayUtils:short[]remove(short[],int)> (100;AST_EDGE) (104;AST_EDGE) (129;AST_EDGE) (114;AST_EDGE) (103;AST_EDGE) (101;AST_EDGE) (113;AST_EDGE) (111;AST_EDGE) (128;AST_EDGE) 
+100 AST_NODE TCmplt < TCmplt < 
+101 AST_NODE AFullIdentClassName classsoot.jimple.parser.node.AFullIdentClassName AFullIdentClassName org.apache.commons.lang3.ArrayUtils (102;AST_EDGE) 
+102 AST_NODE TFullIdentifier org.apache.commons.lang3.ArrayUtils TFullIdentifier org.apache.commons.lang3.ArrayUtils 
+103 AST_NODE TColon : TColon : 
+104 AST_NODE ANovoidType classsoot.jimple.parser.node.ANovoidType ANovoidType short[] (105;AST_EDGE) 
+105 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short[] (108;AST_EDGE) (106;AST_EDGE) 
+106 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (107;AST_EDGE) 
+107 AST_NODE TShort short TShort short 
+108 AST_NODE AArrayBrackets classsoot.jimple.parser.node.AArrayBrackets AArrayBrackets [] (109;AST_EDGE) (110;AST_EDGE) 
+109 AST_NODE TLBracket [ TLBracket [ 
+110 AST_NODE TRBracket ] TRBracket ] 
+111 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName remove (112;AST_EDGE) 
+112 AST_NODE TIdentifier remove TIdentifier remove 
+113 AST_NODE TLParen ( TLParen ( 
+114 AST_NODE AMultiParameterList classsoot.jimple.parser.node.AMultiParameterList AMultiParameterList short[],int (123;AST_EDGE) (122;AST_EDGE) (115;AST_EDGE) 
+115 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter short[] (116;AST_EDGE) 
+116 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType short[] (119;AST_EDGE) (117;AST_EDGE) 
+117 AST_NODE AShortBaseTypeNoName classsoot.jimple.parser.node.AShortBaseTypeNoName AShortBaseTypeNoName short (118;AST_EDGE) 
+118 AST_NODE TShort short TShort short 
+119 AST_NODE AArrayBrackets classsoot.jimple.parser.node.AArrayBrackets AArrayBrackets [] (121;AST_EDGE) (120;AST_EDGE) 
+120 AST_NODE TLBracket [ TLBracket [ 
+121 AST_NODE TRBracket ] TRBracket ] 
+122 AST_NODE TComma , TComma , 
+123 AST_NODE ASingleParameterList classsoot.jimple.parser.node.ASingleParameterList ASingleParameterList int (124;AST_EDGE) 
+124 AST_NODE AParameter classsoot.jimple.parser.node.AParameter AParameter int (125;AST_EDGE) 
+125 AST_NODE ABaseNonvoidType classsoot.jimple.parser.node.ABaseNonvoidType ABaseNonvoidType int (126;AST_EDGE) 
+126 AST_NODE AIntBaseTypeNoName classsoot.jimple.parser.node.AIntBaseTypeNoName AIntBaseTypeNoName int (127;AST_EDGE) 
+127 AST_NODE TInt int TInt int 
+128 AST_NODE TRParen ) TRParen ) 
+129 AST_NODE TCmpgt > TCmpgt > 
+130 AST_NODE TLParen ( TLParen ( 
+131 AST_NODE AMultiArgList classsoot.jimple.parser.node.AMultiArgList AMultiArgList array,index (137;AST_EDGE) (136;AST_EDGE) (132;AST_EDGE) 
+132 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate array (133;AST_EDGE) 
+133 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName array (134;AST_EDGE) 
+134 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName array (135;AST_EDGE) 
+135 AST_NODE TIdentifier array TIdentifier array 
+136 AST_NODE TComma , TComma , 
+137 AST_NODE ASingleArgList classsoot.jimple.parser.node.ASingleArgList ASingleArgList index (138;AST_EDGE) 
+138 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate index (139;AST_EDGE) 
+139 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName index (140;AST_EDGE) 
+140 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName index (141;AST_EDGE) 
+141 AST_NODE TIdentifier index TIdentifier index 
+142 AST_NODE TRParen ) TRParen ) 
+143 AST_NODE TSemicolon ; TSemicolon ; 
+144 CFG_NODE AReturnStatement classsoot.jimple.parser.node.AReturnStatement AReturnStatement returntemp$1; (150;AST_EDGE) (145;AST_EDGE) (1;CFG_EDGE_C) (146;AST_EDGE) 
+145 AST_NODE TReturn return TReturn return 
+146 AST_NODE ALocalImmediate classsoot.jimple.parser.node.ALocalImmediate ALocalImmediate temp$1 (147;AST_EDGE) 
+147 AST_NODE ALocalName classsoot.jimple.parser.node.ALocalName ALocalName temp$1 (148;AST_EDGE) 
+148 AST_NODE AIdentName classsoot.jimple.parser.node.AIdentName AIdentName temp$1 (149;AST_EDGE) 
+149 AST_NODE TIdentifier temp$1 TIdentifier temp$1 
+150 AST_NODE TSemicolon ; TSemicolon ; 

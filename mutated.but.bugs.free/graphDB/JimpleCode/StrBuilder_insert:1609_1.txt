@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3;
+        int index, strLen, temp$1, newSize, temp$2, temp$6, temp$7, temp$8, temp$9;
+        java.lang.String str, temp$0;
+        char[] temp$4, temp$5, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        str := @parameter1: java.lang.String;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void validateIndex(int)>(index);
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        str = temp$0;
+
+     label1:
+        nop;
+        if str != null goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$1;
+        if strLen > 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        newSize = temp$2 + strLen;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(newSize);
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = index;
+        temp$7 = temp$6 + strLen;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$8 + index;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$4, index, temp$5, temp$7, temp$9);
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = newSize;
+        temp$10 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        virtualinvoke str.<java.lang.String: void getChars(int,int,char[],int)>(0, strLen, temp$10, index);
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        return this;
+    }
+}

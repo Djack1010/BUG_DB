@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    private final boolean conditionM0(java.lang.String, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        int index, temp$0, temp$1, temp$3, temp$5, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13;
+        char temp$2;
+        boolean temp$4, temp$7, temp$15, temp$16;
+        java.lang.String[] temp$6, temp$14;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        index := @parameter1: int;
+        temp$0 = index;
+        temp$1 = temp$0 + 1;
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$1);
+        temp$3 = (int) temp$2;
+        if temp$3 == 77 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$4 = 1;
+        return temp$4;
+
+     label1:
+        nop;
+        temp$5 = index - 1;
+        temp$6 = newarray (java.lang.String)[1];
+        temp$6[0] = "UMB";
+        temp$7 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$5, 3, temp$6);
+        if temp$7 == 0 goto label4;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$8 = index;
+        temp$9 = virtualinvoke value.<java.lang.String: int length()>();
+        temp$10 = temp$9 - 1;
+        temp$11 = temp$8 + 1;
+        if temp$11 == temp$10 goto label5;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$12 = index;
+        temp$13 = temp$12 + 2;
+        temp$14 = newarray (java.lang.String)[1];
+        temp$14[0] = "ER";
+        temp$15 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$13, -2, temp$14);
+        if temp$15 == 0 goto label4;
+
+        goto label5;
+
+        goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$16 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$16 = 1;
+
+     label6:
+        nop;
+        return temp$16;
+    }
+}

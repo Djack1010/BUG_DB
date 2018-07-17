@@ -1,0 +1,88 @@
+public class WrapClass 
+{
+    public void updateContentType(java.lang.String)
+    {
+        org.apache.commons.mail.Email this;
+        java.lang.String aContentType, strMarker, temp$0, temp$5, temp$7, temp$8, temp$9, temp$11, temp$14, temp$16, temp$18;
+        int charsetPos, temp$1, temp$2, temp$3, temp$4, intCharsetEnd, temp$6;
+        boolean temp$10, temp$12;
+        java.lang.StringBuffer contentTypeBuf, temp$13, temp$15, temp$17;
+
+        this := @this: org.apache.commons.mail.Email;
+        aContentType := @parameter0: java.lang.String;
+        this.<org.apache.commons.mail.Email: java.lang.String contentType> = aContentType;
+        strMarker = "; charset=";
+        temp$0 = virtualinvoke aContentType.<java.lang.String: java.lang.String toLowerCase()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.String: int indexOf(java.lang.String)>("; charset=");
+        charsetPos = temp$1;
+        if charsetPos != -1 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$2 = charsetPos;
+        temp$3 = virtualinvoke strMarker.<java.lang.String: int length()>();
+        temp$4 = temp$2 + temp$3;
+        charsetPos = temp$4;
+        temp$5 = virtualinvoke aContentType.<java.lang.String: java.lang.String toLowerCase()>();
+        temp$6 = virtualinvoke temp$5.<java.lang.String: int indexOf(java.lang.String,int)>(" ", charsetPos);
+        intCharsetEnd = temp$6;
+        if intCharsetEnd != -1 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$7 = virtualinvoke aContentType.<java.lang.String: java.lang.String substring(int,int)>(charsetPos, intCharsetEnd);
+        this.<org.apache.commons.mail.Email: java.lang.String charset> = temp$7;
+        goto label3;
+
+     label2:
+        nop;
+        temp$8 = virtualinvoke aContentType.<java.lang.String: java.lang.String substring(int)>(charsetPos);
+        this.<org.apache.commons.mail.Email: java.lang.String charset> = temp$8;
+
+     label3:
+        nop;
+        goto label8;
+
+     label4:
+        nop;
+        temp$9 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        temp$10 = virtualinvoke temp$9.<java.lang.String: boolean startsWith(java.lang.String)>("text/");
+        if temp$10 == 0 goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$11 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        temp$12 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$11);
+        if temp$12 == 0 goto label7;
+
+        goto label6;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$13 = new java.lang.StringBuffer;
+        temp$14 = this.<org.apache.commons.mail.Email: java.lang.String contentType>;
+        specialinvoke temp$13.<java.lang.StringBuffer: void <init>(java.lang.String)>(temp$14);
+        contentTypeBuf = temp$13;
+        temp$15 = virtualinvoke contentTypeBuf.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("; charset=");
+        temp$16 = this.<org.apache.commons.mail.Email: java.lang.String charset>;
+        temp$17 = virtualinvoke contentTypeBuf.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$16);
+        temp$18 = virtualinvoke contentTypeBuf.<java.lang.StringBuffer: java.lang.String toString()>();
+        this.<org.apache.commons.mail.Email: java.lang.String contentType> = temp$18;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+        nop;
+        return;
+    }
+}

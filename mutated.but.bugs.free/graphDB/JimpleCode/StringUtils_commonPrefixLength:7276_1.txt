@@ -1,0 +1,37 @@
+public class WrapClass 
+{
+    private static final int commonPrefixLength(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence first, second;
+        int result, temp$4, temp$5;
+        java.lang.String[] temp$0;
+        java.lang.String temp$1, temp$2, temp$3;
+
+        first := @parameter0: java.lang.CharSequence;
+        second := @parameter1: java.lang.CharSequence;
+        temp$0 = newarray (java.lang.String)[2];
+        temp$1 = interfaceinvoke first.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$0[0] = temp$1;
+        temp$2 = interfaceinvoke second.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$0[1] = temp$2;
+        temp$3 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String getCommonPrefix(java.lang.String[])>(temp$0);
+        temp$4 = virtualinvoke temp$3.<java.lang.String: int length()>();
+        result = temp$4;
+        if result >= 4 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$5 = 4;
+        goto label2;
+
+     label1:
+        nop;
+        temp$5 = result;
+
+     label2:
+        nop;
+        return temp$5;
+    }
+}

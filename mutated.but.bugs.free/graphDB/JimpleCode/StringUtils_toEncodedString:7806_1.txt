@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public static java.lang.String toEncodedString(byte[], java.nio.charset.Charset)
+    {
+        byte[] bytes;
+        java.nio.charset.Charset charset, temp$1;
+        java.lang.String temp$0;
+
+        bytes := @parameter0: byte[];
+        charset := @parameter1: java.nio.charset.Charset;
+        temp$0 = new java.lang.String;
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = charset;
+        nop;
+        specialinvoke temp$0.<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>(bytes, temp$1);
+        return temp$0;
+    }
+}

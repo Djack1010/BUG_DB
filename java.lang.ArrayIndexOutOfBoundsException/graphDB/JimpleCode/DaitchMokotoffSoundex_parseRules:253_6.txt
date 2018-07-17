@@ -1,0 +1,287 @@
+public class WrapClass 
+{
+    private static final void parseRules(java.util.Scanner, java.lang.String, java.util.Map, java.util.Map)
+    {
+        java.util.Scanner scanner;
+        java.lang.String location, rawLine, temp$3, line, temp$9, temp$10, temp$18, leftCharacter, rightCharacter, temp$27, temp$39, pattern, temp$42, temp$43, replacement1, temp$46, temp$47, replacement2, temp$50, temp$51, replacement3, temp$54, temp$55, temp$57, temp$69;
+        java.util.Map ruleMapping, asciiFoldings;
+        int currentLine, temp$1, temp$2, cmtI, temp$8, temp$11, temp$14, temp$17, temp$20, temp$22, temp$23, temp$24, temp$35, temp$38, temp$41, temp$45, temp$49, temp$53;
+        boolean inMultilineComment, temp$0, temp$4, temp$5, temp$6, temp$7, temp$12, temp$66;
+        java.lang.String[] parts, temp$13, temp$19, temp$21, parts, temp$34, temp$40, temp$44, temp$48, temp$52;
+        java.lang.IllegalArgumentException temp$15, temp$25, temp$36, e;
+        java.lang.StringBuffer temp$16, temp$26, temp$37, temp$68;
+        char temp$28, temp$30, patternKey, temp$58;
+        java.lang.Character temp$29, temp$31, temp$33, temp$59, temp$63;
+        java.lang.Object temp$32, temp$60, temp$64;
+        org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule r, temp$56;
+        java.util.List rules, temp$61, temp$65;
+        java.util.ArrayList temp$62;
+        java.lang.IllegalStateException temp$67;
+
+        scanner := @parameter0: java.util.Scanner;
+        location := @parameter1: java.lang.String;
+        ruleMapping := @parameter2: java.util.Map;
+        asciiFoldings := @parameter3: java.util.Map;
+        currentLine = 0;
+        inMultilineComment = 0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke scanner.<java.util.Scanner: boolean hasNextLine()>();
+        if temp$0 == 0 goto label28;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = currentLine;
+        temp$2 = temp$1 + 1;
+        currentLine = temp$2;
+        temp$3 = virtualinvoke scanner.<java.util.Scanner: java.lang.String nextLine()>();
+        rawLine = temp$3;
+        line = rawLine;
+        if inMultilineComment == 0 goto label5;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke line.<java.lang.String: boolean endsWith(java.lang.String)>("*/");
+        if temp$4 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = 0;
+        inMultilineComment = temp$5;
+
+     label4:
+        nop;
+        goto label0;
+
+     label5:
+        nop;
+        temp$6 = virtualinvoke line.<java.lang.String: boolean startsWith(java.lang.String)>("/*");
+        if temp$6 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$7 = 1;
+        inMultilineComment = temp$7;
+        goto label27;
+
+     label7:
+        nop;
+        temp$8 = virtualinvoke line.<java.lang.String: int indexOf(java.lang.String)>("//");
+        cmtI = temp$8;
+        if cmtI >= 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$9 = virtualinvoke line.<java.lang.String: java.lang.String substring(int,int)>(0, cmtI);
+        line = temp$9;
+
+     label9:
+        nop;
+        temp$10 = virtualinvoke line.<java.lang.String: java.lang.String trim()>();
+        line = temp$10;
+        temp$11 = virtualinvoke line.<java.lang.String: int length()>();
+        if temp$11 == 0 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        goto label0;
+
+     label11:
+        nop;
+        temp$12 = virtualinvoke line.<java.lang.String: boolean contains(java.lang.CharSequence)>("=");
+        if temp$12 == 0 goto label18;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$13 = virtualinvoke line.<java.lang.String: java.lang.String[] split(java.lang.String)>("=");
+        parts = temp$13;
+        temp$14 = lengthof parts;
+        if temp$14 != 2 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$15 = new java.lang.IllegalArgumentException;
+        temp$16 = new java.lang.StringBuffer;
+        specialinvoke temp$16.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Malformed folding statement split into ");
+        temp$17 = lengthof parts;
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(temp$17);
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" parts: ");
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(rawLine);
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" in ");
+        virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(location);
+        temp$18 = virtualinvoke temp$16.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$15.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$18);
+        throw temp$15;
+
+     label14:
+        nop;
+        temp$19 = parts;
+        temp$20 = 0;
+        leftCharacter = temp$19[temp$20];
+        temp$21 = parts;
+        temp$22 = 1;
+        rightCharacter = temp$21[temp$22];
+        temp$23 = virtualinvoke leftCharacter.<java.lang.String: int length()>();
+        if temp$23 != 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$24 = virtualinvoke rightCharacter.<java.lang.String: int length()>();
+        if temp$24 != 1 goto label16;
+
+        goto label17;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$25 = new java.lang.IllegalArgumentException;
+        temp$26 = new java.lang.StringBuffer;
+        specialinvoke temp$26.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Malformed folding statement - patterns are not single characters: ");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(rawLine);
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" in ");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(location);
+        temp$27 = virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$25.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$27);
+        throw temp$25;
+
+     label17:
+        nop;
+        temp$28 = virtualinvoke leftCharacter.<java.lang.String: char charAt(int)>(0);
+        temp$29 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(temp$28);
+        temp$30 = virtualinvoke rightCharacter.<java.lang.String: char charAt(int)>(0);
+        temp$31 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(temp$30);
+        temp$32 = interfaceinvoke asciiFoldings.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$29, temp$31);
+        temp$33 = (java.lang.Character) temp$32;
+        goto label26;
+
+     label18:
+        nop;
+        temp$34 = virtualinvoke line.<java.lang.String: java.lang.String[] split(java.lang.String)>("\\s+");
+        parts = temp$34;
+        temp$35 = lengthof parts;
+        if temp$35 != 4 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        temp$36 = new java.lang.IllegalArgumentException;
+        temp$37 = new java.lang.StringBuffer;
+        specialinvoke temp$37.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Malformed rule statement split into ");
+        temp$38 = lengthof parts;
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(temp$38);
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" parts: ");
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(rawLine);
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" in ");
+        virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(location);
+        temp$39 = virtualinvoke temp$37.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$36.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$39);
+        throw temp$36;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        temp$40 = parts;
+        temp$41 = 0;
+        temp$42 = temp$40[temp$41];
+        temp$43 = staticinvoke <org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String stripQuotes(java.lang.String)>(temp$42);
+        pattern = temp$43;
+        temp$44 = parts;
+        temp$45 = 1;
+        temp$46 = temp$44[temp$45];
+        temp$47 = staticinvoke <org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String stripQuotes(java.lang.String)>(temp$46);
+        replacement1 = temp$47;
+        temp$48 = parts;
+        temp$49 = 2;
+        temp$50 = temp$48[temp$49];
+        temp$51 = staticinvoke <org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String stripQuotes(java.lang.String)>(temp$50);
+        replacement2 = temp$51;
+        temp$52 = parts;
+        temp$53 = 3;
+        temp$54 = temp$52[temp$53];
+        temp$55 = staticinvoke <org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String stripQuotes(java.lang.String)>(temp$54);
+        replacement3 = temp$55;
+        temp$56 = new org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule;
+        specialinvoke temp$56.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(pattern, replacement1, replacement2, replacement3);
+        r = temp$56;
+        temp$57 = staticinvoke <org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule: java.lang.String get$pattern$access$0(org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule)>(r);
+        temp$58 = virtualinvoke temp$57.<java.lang.String: char charAt(int)>(0);
+        patternKey = temp$58;
+        temp$59 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(patternKey);
+        temp$60 = interfaceinvoke ruleMapping.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$59);
+        temp$61 = (java.util.List) temp$60;
+        rules = temp$61;
+        if rules == null goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        temp$62 = new java.util.ArrayList;
+        specialinvoke temp$62.<java.util.ArrayList: void <init>()>();
+        rules = temp$62;
+        temp$63 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(patternKey);
+        temp$64 = interfaceinvoke ruleMapping.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(temp$63, rules);
+        temp$65 = (java.util.List) temp$64;
+
+     label23:
+        nop;
+        temp$66 = interfaceinvoke rules.<java.util.List: boolean add(java.lang.Object)>(r);
+        goto label25;
+
+     label24:
+        nop;
+        e := @caughtexception;
+        temp$67 = new java.lang.IllegalStateException;
+        temp$68 = new java.lang.StringBuffer;
+        specialinvoke temp$68.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$68.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Problem parsing line \'");
+        virtualinvoke temp$68.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(currentLine);
+        virtualinvoke temp$68.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\' in ");
+        virtualinvoke temp$68.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(location);
+        temp$69 = virtualinvoke temp$68.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$67.<java.lang.IllegalStateException: void <init>(java.lang.String,java.lang.Throwable)>(temp$69, e);
+        throw temp$67;
+
+     label25:
+        nop;
+
+     label26:
+        nop;
+
+     label27:
+        nop;
+        goto label0;
+
+     label28:
+        nop;
+        return;
+
+        catch java.lang.IllegalArgumentException from label21 to label24 with label24;
+    }
+}

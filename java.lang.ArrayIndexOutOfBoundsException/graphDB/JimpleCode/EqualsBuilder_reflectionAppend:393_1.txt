@@ -1,0 +1,155 @@
+public class WrapClass 
+{
+    private static final void reflectionAppend(java.lang.Object, java.lang.Object, java.lang.Class, org.apache.commons.lang3.builder.EqualsBuilder, boolean, java.lang.String[])
+    {
+        java.lang.Object lhs, rhs, temp$14, temp$15;
+        java.lang.Class clazz;
+        org.apache.commons.lang3.builder.EqualsBuilder builder, temp$16;
+        boolean useTransients, temp$0, temp$3, temp$7, temp$11, temp$13;
+        java.lang.String[] excludeFields;
+        java.lang.reflect.Field[] fields, temp$1, temp$4;
+        int i, temp$2, temp$5, temp$9, temp$10, temp$12, temp$18, temp$19;
+        java.lang.reflect.Field f;
+        java.lang.String temp$6, temp$8;
+        java.lang.IllegalAccessException e;
+        java.lang.InternalError temp$17;
+        java.lang.Throwable temp$20;
+
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        clazz := @parameter2: java.lang.Class;
+        builder := @parameter3: org.apache.commons.lang3.builder.EqualsBuilder;
+        useTransients := @parameter4: boolean;
+        excludeFields := @parameter5: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: boolean isRegistered(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: void register(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        temp$1 = virtualinvoke clazz.<java.lang.Class: java.lang.reflect.Field[] getDeclaredFields()>();
+        fields = temp$1;
+        staticinvoke <java.lang.reflect.AccessibleObject: void setAccessible(java.lang.reflect.AccessibleObject[],boolean)>(fields, 1);
+        i = -1;
+
+     label3:
+        nop;
+        temp$2 = lengthof fields;
+        if i < temp$2 goto label4;
+
+        goto label15;
+
+     label4:
+        nop;
+        temp$3 = builder.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals>;
+        if temp$3 == 0 goto label15;
+
+        goto label5;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = fields;
+        temp$5 = i;
+        f = temp$4[temp$5];
+        temp$6 = virtualinvoke f.<java.lang.reflect.Field: java.lang.String getName()>();
+        temp$7 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean contains(java.lang.Object[],java.lang.Object)>(excludeFields, temp$6);
+        if temp$7 == 0 goto label6;
+
+        goto label14;
+
+     label6:
+        nop;
+        temp$8 = virtualinvoke f.<java.lang.reflect.Field: java.lang.String getName()>();
+        temp$9 = virtualinvoke temp$8.<java.lang.String: int indexOf(int)>(36);
+        if temp$9 == -1 goto label7;
+
+        goto label14;
+
+        goto label7;
+
+     label7:
+        nop;
+        if useTransients == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$10 = virtualinvoke f.<java.lang.reflect.Field: int getModifiers()>();
+        temp$11 = staticinvoke <java.lang.reflect.Modifier: boolean isTransient(int)>(temp$10);
+        if temp$11 == 0 goto label9;
+
+        goto label14;
+
+        goto label14;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$12 = virtualinvoke f.<java.lang.reflect.Field: int getModifiers()>();
+        temp$13 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>(temp$12);
+        if temp$13 == 0 goto label10;
+
+        goto label14;
+
+        goto label10;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        temp$14 = virtualinvoke f.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(lhs);
+        temp$15 = virtualinvoke f.<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>(rhs);
+        temp$16 = virtualinvoke builder.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(java.lang.Object,java.lang.Object)>(temp$14, temp$15);
+        goto label13;
+
+     label12:
+        nop;
+        e := @caughtexception;
+        temp$17 = new java.lang.InternalError;
+        specialinvoke temp$17.<java.lang.InternalError: void <init>(java.lang.String)>("Unexpected IllegalAccessException");
+        throw temp$17;
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+        nop;
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        i = temp$19;
+        goto label3;
+
+     label15:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: void unregister(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        goto label17;
+
+     label16:
+        nop;
+        temp$20 := @caughtexception;
+        staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: void unregister(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        throw temp$20;
+
+     label17:
+        nop;
+        return;
+
+        catch java.lang.IllegalAccessException from label11 to label12 with label12;
+        catch java.lang.Throwable from label2 to label16 with label16;
+    }
+}

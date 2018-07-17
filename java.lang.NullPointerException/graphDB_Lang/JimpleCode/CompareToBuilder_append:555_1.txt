@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder append(double, double)
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this, temp$2;
+        double lhs, rhs;
+        int temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        lhs := @parameter0: double;
+        rhs := @parameter1: double;
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.lang.Double: int compare(double,double)>(lhs, rhs);
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$1;
+        temp$2 = null;
+        return temp$2;
+    }
+}

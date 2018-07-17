@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public void setUpToClass(java.lang.Class)
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this;
+        java.lang.Class clazz;
+        java.lang.Object object, temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        clazz := @parameter0: java.lang.Class;
+        if clazz != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Object getObject()>();
+        object = temp$0;
+
+     label1:
+        nop;
+        this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Class upToClass> = clazz;
+        return;
+    }
+}

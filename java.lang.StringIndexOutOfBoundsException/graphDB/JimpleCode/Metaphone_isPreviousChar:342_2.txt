@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    private final boolean isPreviousChar(java.lang.StringBuilder, int, char)
+    {
+        org.apache.commons.codec.language.Metaphone this;
+        java.lang.StringBuilder string;
+        int index, temp$0, temp$1, temp$3, temp$4;
+        char c, temp$2;
+        boolean matches, temp$5;
+
+        this := @this: org.apache.commons.codec.language.Metaphone;
+        string := @parameter0: java.lang.StringBuilder;
+        index := @parameter1: int;
+        c := @parameter2: char;
+        matches = 0;
+        if index >= 0 goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke string.<java.lang.StringBuilder: int length()>();
+        if index < temp$0 goto label1;
+
+        goto label5;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = index - 1;
+        temp$2 = virtualinvoke string.<java.lang.StringBuilder: char charAt(int)>(temp$1);
+        temp$3 = (int) temp$2;
+        temp$4 = (int) c;
+        if temp$3 == temp$4 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = 1;
+
+     label4:
+        nop;
+        matches = temp$5;
+
+     label5:
+        nop;
+        return matches;
+    }
+}

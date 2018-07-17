@@ -1,0 +1,300 @@
+public class WrapClass 
+{
+    public static char binaryToHexDigitMsb0_4bits(boolean[], int)
+    {
+        boolean[] src, temp$11, temp$15, temp$19, temp$24, temp$28, temp$31, temp$36, temp$40, temp$43, temp$47, temp$52, temp$56, temp$59, temp$64, temp$68;
+        int srcPos, temp$0, temp$3, temp$5, temp$6, temp$9, temp$12, temp$13, temp$16, temp$17, temp$20, temp$21, temp$25, temp$29, temp$32, temp$33, temp$37, temp$41, temp$44, temp$45, temp$48, temp$49, temp$53, temp$57, temp$60, temp$61, temp$65, temp$69;
+        java.lang.IllegalArgumentException temp$1, temp$7;
+        java.lang.StringBuffer temp$2, temp$8;
+        java.lang.String temp$4, temp$10;
+        boolean temp$14, temp$18, temp$22, temp$26, temp$30, temp$34, temp$38, temp$42, temp$46, temp$50, temp$54, temp$58, temp$62, temp$66, temp$70;
+        char temp$23, temp$27, temp$35, temp$39, temp$51, temp$55, temp$63, temp$67;
+
+        src := @parameter0: boolean[];
+        srcPos := @parameter1: int;
+        temp$0 = lengthof src;
+        if temp$0 > 8 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.IllegalArgumentException;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("src.length>8: src.length=");
+        temp$3 = lengthof src;
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(temp$3);
+        temp$4 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$1.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$4);
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$5 = lengthof src;
+        temp$6 = temp$5 - srcPos;
+        if temp$6 < 4 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = new java.lang.IllegalArgumentException;
+        temp$8 = new java.lang.StringBuffer;
+        specialinvoke temp$8.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("src.length-srcPos<4: src.length=");
+        temp$9 = lengthof src;
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(temp$9);
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(", srcPos=");
+        virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(srcPos);
+        temp$10 = virtualinvoke temp$8.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$10);
+        throw temp$7;
+
+     label3:
+        nop;
+        temp$11 = src;
+        temp$12 = srcPos;
+        temp$13 = temp$12 + 3;
+        temp$14 = temp$11[temp$13];
+        if temp$14 == 0 goto label23;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$15 = src;
+        temp$16 = srcPos;
+        temp$17 = temp$16 + 2;
+        temp$18 = temp$15[temp$17];
+        if temp$18 == 0 goto label14;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$19 = src;
+        temp$20 = srcPos;
+        temp$21 = temp$20 + 1;
+        temp$22 = temp$19[temp$21];
+        if temp$22 == 0 goto label10;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$24 = src;
+        temp$25 = srcPos;
+        temp$26 = temp$24[temp$25];
+        if temp$26 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$23 = 102;
+        goto label9;
+
+     label8:
+        nop;
+        temp$23 = 55;
+
+     label9:
+        nop;
+        return temp$23;
+
+     label10:
+        nop;
+        temp$28 = src;
+        temp$29 = srcPos;
+        temp$30 = temp$28[temp$29];
+        if temp$30 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$27 = 98;
+        goto label13;
+
+     label12:
+        nop;
+        temp$27 = 51;
+
+     label13:
+        nop;
+        return temp$27;
+
+     label14:
+        nop;
+        temp$31 = src;
+        temp$32 = srcPos;
+        temp$33 = temp$32 + 1;
+        temp$34 = temp$31[temp$33];
+        if temp$34 == 0 goto label19;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$36 = src;
+        temp$37 = srcPos;
+        temp$38 = temp$36[temp$37];
+        if temp$38 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$35 = 100;
+        goto label18;
+
+     label17:
+        nop;
+        temp$35 = 53;
+
+     label18:
+        nop;
+        return temp$35;
+
+     label19:
+        nop;
+        temp$40 = src;
+        temp$41 = srcPos;
+        temp$42 = temp$40[temp$41];
+        if temp$42 == 0 goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        temp$39 = 57;
+        goto label22;
+
+     label21:
+        nop;
+        temp$39 = 49;
+
+     label22:
+        nop;
+        return temp$39;
+
+     label23:
+        nop;
+        temp$43 = src;
+        temp$44 = srcPos;
+        temp$45 = temp$44 + 2;
+        temp$46 = temp$43[temp$45];
+        if temp$46 == 0 goto label33;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$47 = src;
+        temp$48 = srcPos;
+        temp$49 = temp$48 + 1;
+        temp$50 = temp$47[temp$49];
+        if temp$50 == 0 goto label29;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$52 = src;
+        temp$53 = srcPos;
+        temp$54 = temp$52[temp$53];
+        if temp$54 == 0 goto label27;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$51 = 101;
+        goto label28;
+
+     label27:
+        nop;
+        temp$51 = 54;
+
+     label28:
+        nop;
+        return temp$51;
+
+     label29:
+        nop;
+        temp$56 = src;
+        temp$57 = srcPos;
+        temp$58 = temp$56[temp$57];
+        if temp$58 == 0 goto label31;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$55 = 97;
+        goto label32;
+
+     label31:
+        nop;
+        temp$55 = 50;
+
+     label32:
+        nop;
+        return temp$55;
+
+     label33:
+        nop;
+        temp$59 = src;
+        temp$60 = srcPos;
+        temp$61 = temp$60 + -1;
+        temp$62 = temp$59[temp$61];
+        if temp$62 == 0 goto label38;
+
+        goto label34;
+
+     label34:
+        nop;
+        temp$64 = src;
+        temp$65 = srcPos;
+        temp$66 = temp$64[temp$65];
+        if temp$66 == 0 goto label36;
+
+        goto label35;
+
+     label35:
+        nop;
+        temp$63 = 99;
+        goto label37;
+
+     label36:
+        nop;
+        temp$63 = 52;
+
+     label37:
+        nop;
+        return temp$63;
+
+     label38:
+        nop;
+        temp$68 = src;
+        temp$69 = srcPos;
+        temp$70 = temp$68[temp$69];
+        if temp$70 == 0 goto label40;
+
+        goto label39;
+
+     label39:
+        nop;
+        temp$67 = 56;
+        goto label41;
+
+     label40:
+        nop;
+        temp$67 = 48;
+
+     label41:
+        nop;
+        return temp$67;
+    }
+}

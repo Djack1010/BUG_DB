@@ -1,0 +1,162 @@
+public class WrapClass 
+{
+    private static final java.util.Date parseDateWithLeniency(java.lang.String, java.util.Locale, java.lang.String[], boolean) throws java.text.ParseException
+    {
+        java.lang.String str, parsePattern, temp$8, pattern, temp$12, str2, temp$14, temp$20;
+        java.util.Locale locale;
+        java.lang.String[] parsePatterns;
+        boolean lenient, temp$0, temp$1, temp$9, temp$13;
+        java.lang.IllegalArgumentException temp$2;
+        java.text.SimpleDateFormat parser, temp$3, temp$4;
+        java.text.ParsePosition pos, temp$5;
+        int temp$6, temp$7, temp$10, temp$11, temp$16, temp$17;
+        java.util.Date date, temp$15;
+        java.text.ParseException temp$18;
+        java.lang.StringBuffer temp$19;
+
+        str := @parameter0: java.lang.String;
+        locale := @parameter1: java.util.Locale;
+        parsePatterns := @parameter2: java.lang.String[];
+        lenient := @parameter3: boolean;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if parsePatterns == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Date and Patterns must not be null");
+        throw temp$2;
+
+     label7:
+        nop;
+        if locale == null goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$3 = new java.text.SimpleDateFormat;
+        specialinvoke temp$3.<java.text.SimpleDateFormat: void <init>()>();
+        parser = temp$3;
+        goto label10;
+
+     label9:
+        nop;
+        temp$4 = new java.text.SimpleDateFormat;
+        specialinvoke temp$4.<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>("", locale);
+        parser = temp$4;
+
+     label10:
+        nop;
+        virtualinvoke parser.<java.text.SimpleDateFormat: void setLenient(boolean)>(lenient);
+        temp$5 = new java.text.ParsePosition;
+        specialinvoke temp$5.<java.text.ParsePosition: void <init>(int)>(0);
+        pos = temp$5;
+        temp$6 = 0;
+
+     label11:
+        nop;
+        temp$7 = lengthof parsePatterns;
+        if temp$6 >= temp$7 goto label19;
+
+        temp$8 = parsePatterns[temp$6];
+        parsePattern = temp$8;
+        pattern = parsePattern;
+        temp$9 = virtualinvoke parsePattern.<java.lang.String: boolean endsWith(java.lang.String)>("ZZ");
+        if temp$9 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$10 = virtualinvoke pattern.<java.lang.String: int length()>();
+        temp$11 = temp$10 - 1;
+        temp$12 = virtualinvoke pattern.<java.lang.String: java.lang.String substring(int,int)>(0, temp$11);
+        pattern = temp$12;
+
+     label13:
+        nop;
+        virtualinvoke parser.<java.text.SimpleDateFormat: void applyPattern(java.lang.String)>(pattern);
+        virtualinvoke pos.<java.text.ParsePosition: void setIndex(int)>(0);
+        str2 = str;
+        temp$13 = virtualinvoke parsePattern.<java.lang.String: boolean endsWith(java.lang.String)>("ZZ");
+        if temp$13 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$14 = virtualinvoke str.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>("([-+][0-9][0-9]):([0-9][0-9])$", "$1$2");
+        str2 = temp$14;
+
+     label15:
+        nop;
+        temp$15 = virtualinvoke parser.<java.text.SimpleDateFormat: java.util.Date parse(java.lang.String,java.text.ParsePosition)>(str2, pos);
+        date = temp$15;
+        if date != null goto label16;
+
+        goto label18;
+
+     label16:
+        nop;
+        temp$16 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$17 = virtualinvoke str2.<java.lang.String: int length()>();
+        if temp$16 == temp$17 goto label17;
+
+        goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        return date;
+
+     label18:
+        nop;
+        nop;
+        temp$6 = temp$6 + 1;
+        goto label11;
+
+     label19:
+        nop;
+        temp$18 = new java.text.ParseException;
+        temp$19 = new java.lang.StringBuffer;
+        specialinvoke temp$19.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unable to parse the date: ");
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$20 = virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$18.<java.text.ParseException: void <init>(java.lang.String,int)>(temp$20, -1);
+        throw temp$18;
+    }
+}

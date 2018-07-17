@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public static boolean isSameInstant(java.util.Calendar, java.util.Calendar)
+    {
+        java.util.Calendar cal1, cal2;
+        java.lang.IllegalArgumentException temp$0;
+        java.util.Date temp$1, temp$3;
+        long temp$2, temp$4;
+        int temp$5;
+        boolean temp$6;
+
+        cal1 := @parameter0: java.util.Calendar;
+        cal2 := @parameter1: java.util.Calendar;
+        if cal1 == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if cal2 == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke cal1.<java.util.Calendar: java.util.Date getTime()>();
+        temp$2 = virtualinvoke temp$1.<java.util.Date: long getTime()>();
+        temp$3 = virtualinvoke cal2.<java.util.Calendar: java.util.Date getTime()>();
+        temp$4 = virtualinvoke temp$3.<java.util.Date: long getTime()>();
+        temp$5 = temp$2 cmp temp$4;
+        if temp$5 < 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$6 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = 1;
+
+     label5:
+        nop;
+        return temp$6;
+    }
+}

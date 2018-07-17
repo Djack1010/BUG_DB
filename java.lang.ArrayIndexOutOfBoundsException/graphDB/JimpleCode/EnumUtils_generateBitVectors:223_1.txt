@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public static transient long[] generateBitVectors(java.lang.Class, java.lang.Enum[])
+    {
+        java.lang.Class enumClass, temp$0;
+        java.lang.Enum[] values, temp$2, temp$6;
+        java.lang.Object[] temp$1, temp$5;
+        java.util.EnumSet condensed, temp$3;
+        boolean temp$4, temp$13;
+        long[] result, temp$15;
+        int temp$7, temp$8, temp$9, temp$10, temp$11, temp$16, temp$17, temp$18, temp$20, temp$21, temp$22;
+        java.util.Iterator temp$12;
+        java.lang.Enum value;
+        java.lang.Object temp$14;
+        long temp$19, temp$23, temp$24;
+
+        enumClass := @parameter0: java.lang.Class;
+        values := @parameter1: java.lang.Enum[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.EnumUtils: java.lang.Class asEnum(java.lang.Class)>(enumClass);
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] noNullElements(java.lang.Object[])>(values);
+        temp$2 = (java.lang.Enum[]) temp$1;
+        temp$3 = staticinvoke <java.util.EnumSet: java.util.EnumSet noneOf(java.lang.Class)>(enumClass);
+        condensed = temp$3;
+        temp$4 = staticinvoke <java.util.Collections: boolean addAll(java.util.Collection,java.lang.Object[])>(condensed, values);
+        temp$5 = virtualinvoke enumClass.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+        temp$6 = (java.lang.Enum[]) temp$5;
+        temp$7 = lengthof temp$6;
+        temp$8 = temp$7 - 1;
+        temp$9 = temp$8 / 64;
+        temp$10 = temp$9;
+        temp$11 = temp$10 + 1;
+        result = newarray (long)[temp$11];
+        temp$12 = interfaceinvoke condensed.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$13 = interfaceinvoke temp$12.<java.util.Iterator: boolean hasNext()>();
+        if temp$13 == 0 goto label1;
+
+        temp$14 = interfaceinvoke temp$12.<java.util.Iterator: java.lang.Object next()>();
+        value = (java.lang.Enum) temp$14;
+        temp$15 = result;
+        temp$16 = virtualinvoke value.<java.lang.Enum: int ordinal()>();
+        temp$17 = temp$16;
+        temp$18 = temp$17 + 64;
+        temp$19 = temp$15[temp$18];
+        temp$20 = virtualinvoke value.<java.lang.Enum: int ordinal()>();
+        temp$21 = temp$20 % 64;
+        temp$22 = 1 << temp$21;
+        temp$23 = (long) temp$22;
+        temp$24 = temp$19 | temp$23;
+        temp$15[temp$18] = temp$24;
+        nop;
+        goto label0;
+
+     label1:
+        nop;
+        staticinvoke <org.apache.commons.lang3.ArrayUtils: void reverse(long[])>(result);
+        return result;
+    }
+}

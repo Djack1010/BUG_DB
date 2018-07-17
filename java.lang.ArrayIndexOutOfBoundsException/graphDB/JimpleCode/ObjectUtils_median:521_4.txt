@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public static transient java.lang.Comparable median(java.lang.Comparable[])
+    {
+        java.lang.Comparable[] items, temp$1, temp$3;
+        java.lang.Object[] temp$0, temp$2, temp$6, temp$7;
+        java.util.TreeSet sort, temp$4;
+        boolean temp$5;
+        java.lang.Comparable result;
+        int temp$8, temp$9, temp$10, temp$11;
+        java.lang.Object temp$12;
+
+        items := @parameter0: java.lang.Comparable[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] notEmpty(java.lang.Object[])>(items);
+        temp$1 = (java.lang.Comparable[]) temp$0;
+        temp$2 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] noNullElements(java.lang.Object[])>(items);
+        temp$3 = (java.lang.Comparable[]) temp$2;
+        temp$4 = new java.util.TreeSet;
+        specialinvoke temp$4.<java.util.TreeSet: void <init>()>();
+        sort = temp$4;
+        temp$5 = staticinvoke <java.util.Collections: boolean addAll(java.util.Collection,java.lang.Object[])>(sort, items);
+        temp$6 = virtualinvoke sort.<java.util.TreeSet: java.lang.Object[] toArray()>();
+        temp$7 = temp$6;
+        temp$8 = virtualinvoke sort.<java.util.TreeSet: int size()>();
+        temp$9 = temp$8 - 1;
+        temp$10 = temp$9 * 2;
+        temp$11 = temp$10;
+        temp$12 = temp$7[temp$11];
+        result = (java.lang.Comparable) temp$12;
+        return result;
+    }
+}

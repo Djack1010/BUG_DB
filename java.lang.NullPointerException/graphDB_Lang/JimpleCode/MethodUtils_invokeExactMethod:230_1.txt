@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public static java.lang.Object invokeExactMethod(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException
+    {
+        java.lang.Object object, temp$4;
+        java.lang.String methodName;
+        java.lang.Object[] args, temp$0;
+        java.lang.Class[] parameterTypes, temp$1;
+        java.lang.reflect.Method method, temp$3;
+        java.lang.Class temp$2;
+
+        object := @parameter0: java.lang.Object;
+        methodName := @parameter1: java.lang.String;
+        args := @parameter2: java.lang.Object[];
+        parameterTypes := @parameter3: java.lang.Class[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] nullToEmpty(java.lang.Object[])>(args);
+        args = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] nullToEmpty(java.lang.Class[])>(parameterTypes);
+        parameterTypes = temp$1;
+        temp$2 = virtualinvoke object.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(temp$2, methodName, parameterTypes);
+        method = temp$3;
+        temp$4 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(object, args);
+        return temp$4;
+    }
+}

@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public static void writeDeclaredStaticField(java.lang.Class, java.lang.String, java.lang.Object, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.Class 'cls';
+        java.lang.String fieldName;
+        java.lang.Object value;
+        boolean forceAccess;
+        java.lang.reflect.Field field, temp$0;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        value := @parameter2: java.lang.Object;
+        forceAccess := @parameter3: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.reflect.Field getDeclaredField(java.lang.Class,java.lang.String,boolean)>('cls', fieldName, forceAccess);
+        field = temp$0;
+        staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: void writeField(java.lang.reflect.Field,java.lang.Object,java.lang.Object,boolean)>(field, null, value, 0);
+        return;
+    }
+}

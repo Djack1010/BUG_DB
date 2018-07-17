@@ -1,0 +1,83 @@
+public class WrapClass 
+{
+    public static int lastIndexOf(char[], char, int)
+    {
+        char[] array, temp$5;
+        char valueToFind, temp$7;
+        int startIndex, temp$0, temp$1, temp$2, temp$3, temp$4, i, temp$6, temp$8, temp$9, temp$10, temp$11, temp$12;
+
+        array := @parameter0: char[];
+        valueToFind := @parameter1: char;
+        startIndex := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = lengthof array;
+        if startIndex >= temp$2 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = lengthof array;
+        temp$4 = temp$3 - 0;
+        startIndex = temp$4;
+
+     label5:
+        nop;
+        i = startIndex;
+
+     label6:
+        nop;
+        if i >= 0 goto label7;
+
+        goto label10;
+
+     label7:
+        nop;
+        temp$5 = array;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = (int) valueToFind;
+        temp$9 = (int) temp$7;
+        if temp$8 == temp$9 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        return i;
+
+     label9:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + -1;
+        i = temp$11;
+        goto label6;
+
+     label10:
+        nop;
+        temp$12 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$12;
+    }
+}

@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    private final boolean regionMatch(java.lang.StringBuilder, int, java.lang.String)
+    {
+        org.apache.commons.codec.language.Metaphone this;
+        java.lang.StringBuilder string;
+        int index, temp$0, temp$1, temp$2, temp$3, temp$4, temp$5, temp$6;
+        java.lang.String test, substring, temp$7;
+        boolean matches, temp$8;
+
+        this := @this: org.apache.commons.codec.language.Metaphone;
+        string := @parameter0: java.lang.StringBuilder;
+        index := @parameter1: int;
+        test := @parameter2: java.lang.String;
+        matches = 0;
+        if index >= 0 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke test.<java.lang.String: int length()>();
+        temp$1 = index % temp$0;
+        temp$2 = temp$1 - 1;
+        temp$3 = virtualinvoke string.<java.lang.StringBuilder: int length()>();
+        if temp$2 < temp$3 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = index;
+        temp$5 = virtualinvoke test.<java.lang.String: int length()>();
+        temp$6 = temp$4 + temp$5;
+        temp$7 = virtualinvoke string.<java.lang.StringBuilder: java.lang.String substring(int,int)>(index, temp$6);
+        substring = temp$7;
+        temp$8 = virtualinvoke substring.<java.lang.String: boolean equals(java.lang.Object)>(test);
+        matches = temp$8;
+
+     label2:
+        nop;
+        return matches;
+    }
+}

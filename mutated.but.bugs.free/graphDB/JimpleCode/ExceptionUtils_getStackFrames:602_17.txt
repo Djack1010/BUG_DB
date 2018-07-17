@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.String[] getStackFrames(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable;
+        java.lang.String temp$0;
+        java.lang.String[] temp$1;
+
+        throwable := @parameter0: java.lang.Throwable;
+        if throwable == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String getStackTrace(java.lang.Throwable)>(throwable);
+        temp$1 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String[] getStackFrames(java.lang.String)>(temp$0);
+        return temp$1;
+    }
+}

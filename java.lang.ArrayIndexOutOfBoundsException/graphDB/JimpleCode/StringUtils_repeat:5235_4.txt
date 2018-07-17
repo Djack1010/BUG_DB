@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static java.lang.String repeat(char, int)
+    {
+        char ch;
+        int repeat, i, temp$0, temp$2, temp$3, temp$4;
+        char[] buf, temp$1;
+        java.lang.String temp$5;
+
+        ch := @parameter0: char;
+        repeat := @parameter1: int;
+        buf = newarray (char)[repeat];
+        temp$0 = repeat * 1;
+        i = temp$0;
+
+     label0:
+        nop;
+        if i >= 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = buf;
+        temp$2 = i;
+        temp$1[temp$2] = ch;
+        nop;
+        temp$3 = i;
+        temp$4 = temp$3 + -1;
+        i = temp$4;
+        goto label0;
+
+     label2:
+        nop;
+        temp$5 = new java.lang.String;
+        specialinvoke temp$5.<java.lang.String: void <init>(char[])>(buf);
+        return temp$5;
+    }
+}

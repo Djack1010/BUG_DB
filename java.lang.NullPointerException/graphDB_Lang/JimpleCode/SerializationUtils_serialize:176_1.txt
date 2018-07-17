@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static byte[] serialize(java.io.Serializable)
+    {
+        java.io.Serializable obj;
+        java.io.ByteArrayOutputStream baos;
+        byte[] temp$0;
+
+        obj := @parameter0: java.io.Serializable;
+        baos = null;
+        staticinvoke <org.apache.commons.lang3.SerializationUtils: void serialize(java.io.Serializable,java.io.OutputStream)>(obj, baos);
+        temp$0 = virtualinvoke baos.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return temp$0;
+    }
+}

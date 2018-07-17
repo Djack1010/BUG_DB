@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public final boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.reflect.TypeLiteral this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$3;
+        java.lang.reflect.Type temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.reflect.TypeLiteral;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        other = (org.apache.commons.lang3.reflect.TypeLiteral) obj;
+        temp$1 = this.<org.apache.commons.lang3.reflect.TypeLiteral: java.lang.reflect.Type value>;
+        temp$2 = other.<org.apache.commons.lang3.reflect.TypeLiteral: java.lang.reflect.Type value>;
+        temp$3 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)>(temp$1, temp$2);
+        return temp$3;
+    }
+}

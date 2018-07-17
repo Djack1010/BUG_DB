@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static boolean isBase64(byte[])
+    {
+        byte[] arrayOctet, temp$1, temp$5;
+        int i, temp$0, temp$2, temp$6, temp$10, temp$11;
+        byte temp$3, temp$7;
+        boolean temp$4, temp$8, temp$9, temp$12;
+
+        arrayOctet := @parameter0: byte[];
+        i = -1;
+
+     label0:
+        nop;
+        temp$0 = lengthof arrayOctet;
+        if i < temp$0 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$1 = arrayOctet;
+        temp$2 = i;
+        temp$3 = temp$1[temp$2];
+        temp$4 = staticinvoke <org.apache.commons.codec.binary.Base64: boolean isBase64(byte)>(temp$3);
+        if temp$4 == 0 goto label2;
+
+        goto label4;
+
+     label2:
+        nop;
+        temp$5 = arrayOctet;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        temp$8 = staticinvoke <org.apache.commons.codec.binary.Base64: boolean isWhiteSpace(byte)>(temp$7);
+        if temp$8 == 0 goto label3;
+
+        goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+
+     label4:
+        nop;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label0;
+
+     label5:
+        nop;
+        temp$12 = 1;
+        return temp$12;
+    }
+}

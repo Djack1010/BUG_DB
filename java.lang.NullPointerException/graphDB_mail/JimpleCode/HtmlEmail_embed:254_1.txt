@@ -1,0 +1,153 @@
+public class WrapClass 
+{
+    public java.lang.String embed(java.net.URL, java.lang.String) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.HtmlEmail this;
+        java.net.URL url, temp$8, temp$14;
+        java.lang.String name, temp$7, temp$9, temp$11, temp$15, temp$20;
+        org.apache.commons.mail.EmailException temp$0, temp$12, temp$17;
+        java.util.Map temp$1, temp$3;
+        boolean temp$2, temp$10;
+        org.apache.commons.mail.HtmlEmail$InlineImage ii, temp$5;
+        java.lang.Object temp$4;
+        javax.activation.URLDataSource urlDataSource, temp$19;
+        javax.activation.DataSource temp$6;
+        java.lang.StringBuffer temp$13;
+        java.io.InputStream is, temp$16;
+        java.io.IOException ioe, e, ioe;
+        java.lang.Throwable temp$18;
+
+        this := @this: org.apache.commons.mail.HtmlEmail;
+        url := @parameter0: java.net.URL;
+        name := @parameter1: java.lang.String;
+        temp$0 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$0.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("name cannot be null or empty");
+        throw temp$0;
+
+        temp$1 = this.<org.apache.commons.mail.HtmlEmail: java.util.Map inlineEmbeds>;
+        temp$2 = interfaceinvoke temp$1.<java.util.Map: boolean containsKey(java.lang.Object)>(name);
+        if temp$2 == 0 goto label3;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = this.<org.apache.commons.mail.HtmlEmail: java.util.Map inlineEmbeds>;
+        temp$4 = interfaceinvoke temp$3.<java.util.Map: java.lang.Object get(java.lang.Object)>(name);
+        temp$5 = (org.apache.commons.mail.HtmlEmail$InlineImage) temp$4;
+        ii = temp$5;
+        temp$6 = virtualinvoke ii.<org.apache.commons.mail.HtmlEmail$InlineImage: javax.activation.DataSource getDataSource()>();
+        urlDataSource = (javax.activation.URLDataSource) temp$6;
+        temp$7 = virtualinvoke url.<java.net.URL: java.lang.String toExternalForm()>();
+        temp$8 = virtualinvoke urlDataSource.<javax.activation.URLDataSource: java.net.URL getURL()>();
+        temp$9 = virtualinvoke temp$8.<java.net.URL: java.lang.String toExternalForm()>();
+        temp$10 = virtualinvoke temp$7.<java.lang.String: boolean equals(java.lang.Object)>(temp$9);
+        if temp$10 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$11 = virtualinvoke ii.<org.apache.commons.mail.HtmlEmail$InlineImage: java.lang.String getCid()>();
+        return temp$11;
+
+     label2:
+        nop;
+        temp$12 = new org.apache.commons.mail.EmailException;
+        temp$13 = new java.lang.StringBuffer;
+        specialinvoke temp$13.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("embedded name \'");
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(name);
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("\' is already bound to URL ");
+        temp$14 = virtualinvoke urlDataSource.<javax.activation.URLDataSource: java.net.URL getURL()>();
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$14);
+        virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("; existing names cannot be rebound");
+        temp$15 = virtualinvoke temp$13.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$12.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>(temp$15);
+        throw temp$12;
+
+     label3:
+        nop;
+        is = null;
+
+     label4:
+        nop;
+        temp$16 = virtualinvoke url.<java.net.URL: java.io.InputStream openStream()>();
+        is = temp$16;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        if is != null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        virtualinvoke is.<java.io.InputStream: void close()>();
+
+     label8:
+        nop;
+        goto label10;
+
+     label9:
+        nop;
+        ioe := @caughtexception;
+        nop;
+        goto label10;
+
+     label10:
+        nop;
+        goto label18;
+
+     label11:
+        nop;
+        e := @caughtexception;
+        temp$17 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$17.<org.apache.commons.mail.EmailException: void <init>(java.lang.String,java.lang.Throwable)>("Invalid URL", e);
+        throw temp$17;
+
+     label12:
+        nop;
+        temp$18 := @caughtexception;
+
+     label13:
+        nop;
+        if is != null goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        virtualinvoke is.<java.io.InputStream: void close()>();
+
+     label15:
+        nop;
+        goto label17;
+
+     label16:
+        nop;
+        ioe := @caughtexception;
+        nop;
+        goto label17;
+
+     label17:
+        nop;
+        throw temp$18;
+
+     label18:
+        nop;
+        temp$19 = new javax.activation.URLDataSource;
+        specialinvoke temp$19.<javax.activation.URLDataSource: void <init>(java.net.URL)>(url);
+        temp$20 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: java.lang.String embed(javax.activation.DataSource,java.lang.String)>(temp$19, name);
+        return temp$20;
+
+        catch java.io.IOException from label6 to label9 with label9;
+        catch java.io.IOException from label13 to label16 with label16;
+        catch java.io.IOException from label4 to label5 with label11;
+        catch java.lang.Throwable from label4 to label5 with label12;
+        catch java.lang.Throwable from label5 to label12 with label12;
+    }
+}

@@ -1,0 +1,250 @@
+public class WrapClass 
+{
+    public static java.lang.String crypt(byte[], java.lang.String)
+    {
+        byte[] original, key, temp$26, temp$33, temp$36, b, temp$50, temp$55;
+        java.lang.String salt, temp$11, temp$15, temp$75;
+        java.util.Random randomGenerator, temp$0;
+        int numSaltChars, temp$4, temp$5, temp$8, temp$9, eSwap0, eSwap1, temp$23, temp$24, i, temp$25, temp$27, temp$29, temp$30, i, temp$31, temp$32, iChar, temp$34, temp$37, temp$38, temp$40, temp$41, temp$45, temp$46, temp$48, temp$49, temp$51, i, y, u, j, c, temp$53, temp$54, temp$56, temp$58, temp$59, temp$60, temp$61, temp$62, temp$63, temp$64, temp$65, temp$66, temp$68, temp$69, temp$71, temp$72, temp$73, temp$74;
+        char[] temp$1, temp$3, temp$7;
+        java.lang.StringBuffer temp$2, temp$14;
+        char temp$6, temp$10, charZero, temp$17, charOne, temp$18, temp$20, temp$22, temp$70;
+        boolean temp$12;
+        java.lang.IllegalArgumentException temp$13;
+        java.lang.StringBuilder buffer, temp$16;
+        int[] temp$19, temp$21, schedule, temp$42, out, temp$43, temp$44, temp$47, temp$67;
+        byte temp$28, temp$35, temp$39, temp$52, temp$57;
+
+        original := @parameter0: byte[];
+        salt := @parameter1: java.lang.String;
+        if salt == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.util.Random;
+        specialinvoke temp$0.<java.util.Random: void <init>()>();
+        randomGenerator = temp$0;
+        temp$1 = <org.apache.commons.codec.digest.UnixCrypt: char[] SALT_CHARS>;
+        numSaltChars = lengthof temp$1;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("");
+        temp$3 = <org.apache.commons.codec.digest.UnixCrypt: char[] SALT_CHARS>;
+        temp$4 = virtualinvoke randomGenerator.<java.util.Random: int nextInt(int)>(numSaltChars);
+        temp$5 = temp$4;
+        temp$6 = temp$3[temp$5];
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(temp$6);
+        temp$7 = <org.apache.commons.codec.digest.UnixCrypt: char[] SALT_CHARS>;
+        temp$8 = virtualinvoke randomGenerator.<java.util.Random: int nextInt(int)>(numSaltChars);
+        temp$9 = temp$8;
+        temp$10 = temp$7[temp$9];
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(temp$10);
+        temp$11 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        salt = temp$11;
+        goto label4;
+
+     label1:
+        nop;
+        temp$12 = virtualinvoke salt.<java.lang.String: boolean matches(java.lang.String)>("^[./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz]{2,}$");
+        if temp$12 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$13 = new java.lang.IllegalArgumentException;
+        temp$14 = new java.lang.StringBuffer;
+        specialinvoke temp$14.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid salt value: ");
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(salt);
+        temp$15 = virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$15);
+        throw temp$13;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$16 = new java.lang.StringBuilder;
+        specialinvoke temp$16.<java.lang.StringBuilder: void <init>(java.lang.String)>("             ");
+        buffer = temp$16;
+        temp$17 = virtualinvoke salt.<java.lang.String: char charAt(int)>(0);
+        charZero = temp$17;
+        temp$18 = virtualinvoke salt.<java.lang.String: char charAt(int)>(1);
+        charOne = temp$18;
+        virtualinvoke buffer.<java.lang.StringBuilder: void setCharAt(int,char)>(0, charZero);
+        virtualinvoke buffer.<java.lang.StringBuilder: void setCharAt(int,char)>(1, charOne);
+        temp$19 = <org.apache.commons.codec.digest.UnixCrypt: int[] CON_SALT>;
+        temp$20 = charZero;
+        eSwap0 = temp$19[temp$20];
+        temp$21 = <org.apache.commons.codec.digest.UnixCrypt: int[] CON_SALT>;
+        temp$22 = charOne;
+        temp$23 = temp$21[temp$22];
+        temp$24 = temp$23 << 4;
+        eSwap1 = temp$24;
+        key = newarray (byte)[8];
+        i = 0;
+
+     label5:
+        nop;
+        temp$25 = lengthof key;
+        if i < temp$25 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$26 = key;
+        temp$27 = i;
+        temp$28 = 0;
+        temp$26[temp$27] = temp$28;
+        nop;
+        temp$29 = i;
+        temp$30 = temp$29 + 1;
+        i = temp$30;
+        goto label5;
+
+     label7:
+        nop;
+        i = 0;
+
+     label8:
+        nop;
+        temp$31 = lengthof key;
+        if i < temp$31 goto label9;
+
+        goto label11;
+
+     label9:
+        nop;
+        temp$32 = lengthof original;
+        if i < temp$32 goto label10;
+
+        goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$33 = original;
+        temp$34 = i;
+        temp$35 = temp$33[temp$34];
+        iChar = (int) temp$35;
+        temp$36 = key;
+        temp$37 = i;
+        temp$38 = iChar << 1;
+        temp$39 = (byte) temp$38;
+        temp$36[temp$37] = temp$39;
+        nop;
+        temp$40 = i;
+        temp$41 = temp$40 + 1;
+        i = temp$41;
+        goto label8;
+
+     label11:
+        nop;
+        temp$42 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int[] desSetKey(byte[])>(key);
+        schedule = temp$42;
+        temp$43 = staticinvoke <org.apache.commons.codec.digest.UnixCrypt: int[] body(int[],int,int)>(schedule, eSwap0, eSwap1);
+        out = temp$43;
+        b = newarray (byte)[9];
+        temp$44 = out;
+        temp$45 = 0;
+        temp$46 = temp$44[temp$45];
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void intToFourBytes(int,byte[],int)>(temp$46, b, 0);
+        temp$47 = out;
+        temp$48 = 1;
+        temp$49 = temp$47[temp$48];
+        staticinvoke <org.apache.commons.codec.digest.UnixCrypt: void intToFourBytes(int,byte[],int)>(temp$49, b, 4);
+        temp$50 = b;
+        temp$51 = 8;
+        temp$52 = 0;
+        temp$50[temp$51] = temp$52;
+        i = 0;
+        y = 0;
+        u = 128;
+
+     label12:
+        nop;
+        if i < 13 goto label13;
+
+        goto label21;
+
+     label13:
+        nop;
+        j = 0;
+        c = 0;
+
+     label14:
+        nop;
+        if j < 6 goto label15;
+
+        goto label20;
+
+     label15:
+        nop;
+        temp$53 = c;
+        temp$54 = temp$53 << 1;
+        c = temp$54;
+        temp$55 = b;
+        temp$56 = y;
+        temp$57 = temp$55[temp$56];
+        temp$58 = (int) temp$57;
+        temp$59 = temp$58 & u;
+        if temp$59 != 0 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$60 = c;
+        temp$61 = temp$60 | 1;
+        c = temp$61;
+
+     label17:
+        nop;
+        temp$62 = u;
+        temp$63 = temp$62 >>> 1;
+        u = temp$63;
+        if u == 0 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$64 = y;
+        temp$65 = temp$64 + 1;
+        y = temp$65;
+        temp$66 = 128;
+        u = temp$66;
+
+     label19:
+        nop;
+        temp$67 = <org.apache.commons.codec.digest.UnixCrypt: int[] COV2CHAR>;
+        temp$68 = c;
+        temp$69 = temp$67[temp$68];
+        temp$70 = (char) temp$69;
+        virtualinvoke buffer.<java.lang.StringBuilder: void setCharAt(int,char)>(i, temp$70);
+        nop;
+        temp$71 = j;
+        temp$72 = temp$71 + 1;
+        j = temp$72;
+        goto label14;
+
+     label20:
+        nop;
+        nop;
+        temp$73 = i;
+        temp$74 = temp$73 + 1;
+        i = temp$74;
+        goto label12;
+
+     label21:
+        nop;
+        temp$75 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$75;
+    }
+}

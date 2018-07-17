@@ -1,0 +1,125 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String, boolean) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceClassPathResolver this;
+        java.lang.String resourceLocation, mimeType, temp$3, resourceName, temp$4, temp$14;
+        boolean isLenient, temp$0, temp$1;
+        javax.activation.DataSource result, temp$16;
+        javax.activation.FileTypeMap temp$2;
+        java.io.InputStream is, temp$8;
+        java.lang.Class temp$5, temp$6, temp$7, temp$10, temp$11, temp$12;
+        javax.mail.util.ByteArrayDataSource ds, temp$9;
+        java.net.URL temp$13;
+        java.lang.Throwable temp$15;
+        java.io.IOException e;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceClassPathResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        isLenient := @parameter1: boolean;
+        result = null;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceClassPathResolver: boolean isCid(java.lang.String)>(resourceLocation);
+        if temp$0 == 0 goto label1;
+
+        goto label10;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceClassPathResolver: boolean isHttpUrl(java.lang.String)>(resourceLocation);
+        if temp$1 == 0 goto label2;
+
+        goto label10;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = staticinvoke <javax.activation.FileTypeMap: javax.activation.FileTypeMap getDefaultFileTypeMap()>();
+        temp$3 = virtualinvoke temp$2.<javax.activation.FileTypeMap: java.lang.String getContentType(java.lang.String)>(resourceLocation);
+        mimeType = temp$3;
+        temp$4 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.String getResourceName(java.lang.String)>(resourceLocation);
+        resourceName = temp$4;
+        temp$6 = <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver>;
+        if temp$6 != null goto label3;
+
+        temp$7 = staticinvoke <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$(java.lang.String)>("org.apache.commons.mail.resolver.DataSourceClassPathResolver");
+        <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver> = temp$7;
+        temp$5 = temp$7;
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver>;
+
+     label4:
+        nop;
+        temp$8 = virtualinvoke temp$5.<java.lang.Class: java.io.InputStream getResourceAsStream(java.lang.String)>(resourceName);
+        is = temp$8;
+
+     label5:
+        nop;
+        temp$9 = new javax.mail.util.ByteArrayDataSource;
+        specialinvoke temp$9.<javax.mail.util.ByteArrayDataSource: void <init>(java.io.InputStream,java.lang.String)>(is, mimeType);
+        ds = temp$9;
+        temp$11 = <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver>;
+        if temp$11 != null goto label6;
+
+        temp$12 = staticinvoke <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$(java.lang.String)>("org.apache.commons.mail.resolver.DataSourceClassPathResolver");
+        <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver> = temp$12;
+        temp$10 = temp$12;
+        goto label7;
+
+     label6:
+        nop;
+        temp$10 = <org.apache.commons.mail.resolver.DataSourceClassPathResolver: java.lang.Class class$org$apache$commons$mail$resolver$DataSourceClassPathResolver>;
+
+     label7:
+        nop;
+        temp$13 = virtualinvoke temp$10.<java.lang.Class: java.net.URL getResource(java.lang.String)>(resourceName);
+        temp$14 = virtualinvoke temp$13.<java.net.URL: java.lang.String toString()>();
+        virtualinvoke ds.<javax.mail.util.ByteArrayDataSource: void setName(java.lang.String)>(temp$14);
+        result = ds;
+        virtualinvoke is.<java.io.InputStream: void close()>();
+        goto label9;
+
+     label8:
+        nop;
+        temp$15 := @caughtexception;
+        virtualinvoke is.<java.io.InputStream: void close()>();
+        throw temp$15;
+
+     label9:
+        nop;
+        nop;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        return result;
+
+     label12:
+        nop;
+        e := @caughtexception;
+        if isLenient == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$16 = null;
+        nop;
+        return temp$16;
+
+     label14:
+        nop;
+        throw e;
+
+        catch java.lang.Throwable from label5 to label8 with label8;
+        catch java.io.IOException from label0 to label11 with label12;
+    }
+}

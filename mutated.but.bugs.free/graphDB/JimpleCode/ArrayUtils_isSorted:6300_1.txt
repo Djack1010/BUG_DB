@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    public static boolean isSorted(char[])
+    {
+        char[] array, temp$1, temp$3;
+        boolean temp$0, temp$6, temp$9;
+        char previous, current;
+        int temp$2, n, i, temp$4, temp$5, temp$7, temp$8;
+
+        array := @parameter0: char[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = array;
+        temp$2 = 0;
+        previous = temp$1[temp$2];
+        n = lengthof array;
+        i = 1;
+
+     label2:
+        nop;
+        if i < n goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$3 = array;
+        temp$4 = i;
+        current = temp$3[temp$4];
+        temp$5 = staticinvoke <org.apache.commons.lang3.CharUtils: int compare(char,char)>(previous, current);
+        if temp$5 > 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+
+     label5:
+        nop;
+        previous = current;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label2;
+
+     label6:
+        nop;
+        temp$9 = 1;
+        return temp$9;
+    }
+}

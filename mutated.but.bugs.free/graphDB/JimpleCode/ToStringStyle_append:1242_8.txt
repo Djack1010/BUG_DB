@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public void append(java.lang.StringBuffer, java.lang.String, char[], java.lang.Boolean)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.String fieldName;
+        char[] array;
+        java.lang.Boolean fullDetail;
+        boolean temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        array := @parameter2: char[];
+        fullDetail := @parameter3: java.lang.Boolean;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendFieldStart(java.lang.StringBuffer,java.lang.String)>(buffer, fieldName);
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: boolean isFullDetail(java.lang.Boolean)>(fullDetail);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,char[])>(buffer, fieldName, array);
+        goto label2;
+
+     label1:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendSummary(java.lang.StringBuffer,java.lang.String,char[])>(buffer, fieldName, array);
+
+     label2:
+        nop;
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendFieldEnd(java.lang.StringBuffer,java.lang.String)>(buffer, fieldName);
+        return;
+    }
+}

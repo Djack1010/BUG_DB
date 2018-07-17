@@ -1,0 +1,441 @@
+public class WrapClass 
+{
+    public static java.util.Locale toLocale(java.lang.String)
+    {
+        java.lang.String str, temp$6, temp$10, temp$15, temp$22, temp$24, temp$27, temp$32, temp$34, temp$35, temp$42, temp$45, temp$49, temp$53, temp$57, temp$61, temp$66, temp$69, temp$72, temp$75, temp$79, temp$83, temp$87, temp$91, temp$95, temp$99, temp$104, temp$107, temp$110, temp$113;
+        java.util.Locale temp$0, temp$2, temp$23, temp$33, temp$39, temp$63, temp$101;
+        boolean temp$1, temp$3, temp$18, temp$19, temp$38, temp$46, temp$62, temp$76, temp$96;
+        java.lang.IllegalArgumentException temp$4, temp$8, temp$13, temp$20, temp$25, temp$30, temp$40, temp$70, temp$111;
+        java.lang.StringBuffer temp$5, temp$9, temp$14, temp$21, temp$26, temp$31, temp$41, temp$71, temp$112;
+        int len, temp$7, temp$12, temp$29, occurrences, temp$36, temp$37, temp$44, temp$48, temp$50, temp$52, temp$54, temp$56, temp$58, temp$60, temp$65, temp$68, temp$74, temp$78, temp$80, temp$82, temp$84, temp$86, temp$88, temp$90, temp$92, temp$94, temp$98, temp$100, temp$103, temp$106, temp$109;
+        char ch0, temp$11, ch1, temp$16, ch2, temp$17, temp$28;
+        java.lang.String[] split, temp$43, temp$47, temp$51, temp$55, temp$59, temp$64, temp$67, temp$73, temp$77, temp$81, temp$85, temp$89, temp$93, temp$97, temp$102, temp$105, temp$108;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: boolean isEmpty()>();
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = new java.util.Locale;
+        specialinvoke temp$2.<java.util.Locale: void <init>(java.lang.String,java.lang.String)>("", "");
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke str.<java.lang.String: boolean contains(java.lang.CharSequence)>("#");
+        if temp$3 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label5:
+        nop;
+        temp$7 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$7;
+        if len < 2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$8 = new java.lang.IllegalArgumentException;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$10 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$10);
+        throw temp$8;
+
+     label7:
+        nop;
+        temp$11 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        ch0 = temp$11;
+        temp$12 = (int) ch0;
+        if temp$12 == 95 goto label8;
+
+        goto label20;
+
+     label8:
+        nop;
+        if len < 3 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$13 = new java.lang.IllegalArgumentException;
+        temp$14 = new java.lang.StringBuffer;
+        specialinvoke temp$14.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$15 = virtualinvoke temp$14.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$15);
+        throw temp$13;
+
+     label10:
+        nop;
+        temp$16 = virtualinvoke str.<java.lang.String: char charAt(int)>(1);
+        ch1 = temp$16;
+        temp$17 = virtualinvoke str.<java.lang.String: char charAt(int)>(2);
+        ch2 = temp$17;
+        temp$18 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>(ch1);
+        if temp$18 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$19 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>(ch2);
+        if temp$19 == 0 goto label12;
+
+        goto label13;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$20 = new java.lang.IllegalArgumentException;
+        temp$21 = new java.lang.StringBuffer;
+        specialinvoke temp$21.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$22 = virtualinvoke temp$21.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$20.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$22);
+        throw temp$20;
+
+     label13:
+        nop;
+        if len == 3 goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        temp$23 = new java.util.Locale;
+        temp$24 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(1, 3);
+        specialinvoke temp$23.<java.util.Locale: void <init>(java.lang.String,java.lang.String)>("", temp$24);
+        return temp$23;
+
+     label15:
+        nop;
+        if len < 5 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$25 = new java.lang.IllegalArgumentException;
+        temp$26 = new java.lang.StringBuffer;
+        specialinvoke temp$26.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$27 = virtualinvoke temp$26.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$25.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$27);
+        throw temp$25;
+
+     label17:
+        nop;
+        temp$28 = virtualinvoke str.<java.lang.String: char charAt(int)>(3);
+        temp$29 = (int) temp$28;
+        if temp$29 != 95 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$30 = new java.lang.IllegalArgumentException;
+        temp$31 = new java.lang.StringBuffer;
+        specialinvoke temp$31.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$32 = virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$30.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$32);
+        throw temp$30;
+
+     label19:
+        nop;
+        temp$33 = new java.util.Locale;
+        temp$34 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(1, 3);
+        temp$35 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(4);
+        specialinvoke temp$33.<java.util.Locale: void <init>(java.lang.String,java.lang.String,java.lang.String)>("", temp$34, temp$35);
+        return temp$33;
+
+     label20:
+        nop;
+        split = null;
+        temp$36 = lengthof split;
+        temp$37 = temp$36 - 1;
+        occurrences = temp$37;
+        goto label43;
+
+     label21:
+        nop;
+        temp$38 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isAllLowerCase(java.lang.CharSequence)>(str);
+        if temp$38 == 0 goto label25;
+
+        goto label22;
+
+     label22:
+        nop;
+        if len == 2 goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        if len == 3 goto label24;
+
+        goto label25;
+
+        goto label25;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$39 = new java.util.Locale;
+        specialinvoke temp$39.<java.util.Locale: void <init>(java.lang.String)>(str);
+        return temp$39;
+
+     label25:
+        nop;
+        temp$40 = new java.lang.IllegalArgumentException;
+        temp$41 = new java.lang.StringBuffer;
+        specialinvoke temp$41.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$42 = virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$40.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$42);
+        throw temp$40;
+
+     label26:
+        nop;
+        temp$43 = split;
+        temp$44 = 0;
+        temp$45 = temp$43[temp$44];
+        temp$46 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isAllLowerCase(java.lang.CharSequence)>(temp$45);
+        if temp$46 == 0 goto label32;
+
+        goto label27;
+
+     label27:
+        nop;
+        temp$47 = split;
+        temp$48 = 0;
+        temp$49 = temp$47[temp$48];
+        temp$50 = virtualinvoke temp$49.<java.lang.String: int length()>();
+        if temp$50 == 2 goto label29;
+
+        goto label28;
+
+     label28:
+        nop;
+        temp$51 = split;
+        temp$52 = 0;
+        temp$53 = temp$51[temp$52];
+        temp$54 = virtualinvoke temp$53.<java.lang.String: int length()>();
+        if temp$54 == 3 goto label29;
+
+        goto label32;
+
+        goto label32;
+
+        goto label29;
+
+     label29:
+        nop;
+        temp$55 = split;
+        temp$56 = 1;
+        temp$57 = temp$55[temp$56];
+        temp$58 = virtualinvoke temp$57.<java.lang.String: int length()>();
+        if temp$58 == 2 goto label30;
+
+        goto label32;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$59 = split;
+        temp$60 = 1;
+        temp$61 = temp$59[temp$60];
+        temp$62 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isAllUpperCase(java.lang.CharSequence)>(temp$61);
+        if temp$62 == 0 goto label32;
+
+        goto label31;
+
+        goto label31;
+
+     label31:
+        nop;
+        temp$63 = new java.util.Locale;
+        temp$64 = split;
+        temp$65 = 0;
+        temp$66 = temp$64[temp$65];
+        temp$67 = split;
+        temp$68 = 1;
+        temp$69 = temp$67[temp$68];
+        specialinvoke temp$63.<java.util.Locale: void <init>(java.lang.String,java.lang.String)>(temp$66, temp$69);
+        return temp$63;
+
+     label32:
+        nop;
+        temp$70 = new java.lang.IllegalArgumentException;
+        temp$71 = new java.lang.StringBuffer;
+        specialinvoke temp$71.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$72 = virtualinvoke temp$71.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$70.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$72);
+        throw temp$70;
+
+     label33:
+        nop;
+        temp$73 = split;
+        temp$74 = 0;
+        temp$75 = temp$73[temp$74];
+        temp$76 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isAllLowerCase(java.lang.CharSequence)>(temp$75);
+        if temp$76 == 0 goto label41;
+
+        goto label34;
+
+     label34:
+        nop;
+        temp$77 = split;
+        temp$78 = 0;
+        temp$79 = temp$77[temp$78];
+        temp$80 = virtualinvoke temp$79.<java.lang.String: int length()>();
+        if temp$80 == 2 goto label36;
+
+        goto label35;
+
+     label35:
+        nop;
+        temp$81 = split;
+        temp$82 = 0;
+        temp$83 = temp$81[temp$82];
+        temp$84 = virtualinvoke temp$83.<java.lang.String: int length()>();
+        if temp$84 == 3 goto label36;
+
+        goto label41;
+
+        goto label41;
+
+        goto label36;
+
+     label36:
+        nop;
+        temp$85 = split;
+        temp$86 = 1;
+        temp$87 = temp$85[temp$86];
+        temp$88 = virtualinvoke temp$87.<java.lang.String: int length()>();
+        if temp$88 == 0 goto label39;
+
+        goto label37;
+
+     label37:
+        nop;
+        temp$89 = split;
+        temp$90 = 1;
+        temp$91 = temp$89[temp$90];
+        temp$92 = virtualinvoke temp$91.<java.lang.String: int length()>();
+        if temp$92 == 2 goto label38;
+
+        goto label41;
+
+     label38:
+        nop;
+        temp$93 = split;
+        temp$94 = 1;
+        temp$95 = temp$93[temp$94];
+        temp$96 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isAllUpperCase(java.lang.CharSequence)>(temp$95);
+        if temp$96 == 0 goto label41;
+
+        goto label39;
+
+        goto label39;
+
+        goto label41;
+
+        goto label39;
+
+     label39:
+        nop;
+        temp$97 = split;
+        temp$98 = 2;
+        temp$99 = temp$97[temp$98];
+        temp$100 = virtualinvoke temp$99.<java.lang.String: int length()>();
+        if temp$100 > 0 goto label40;
+
+        goto label41;
+
+        goto label40;
+
+     label40:
+        nop;
+        temp$101 = new java.util.Locale;
+        temp$102 = split;
+        temp$103 = 0;
+        temp$104 = temp$102[temp$103];
+        temp$105 = split;
+        temp$106 = 1;
+        temp$107 = temp$105[temp$106];
+        temp$108 = split;
+        temp$109 = 2;
+        temp$110 = temp$108[temp$109];
+        specialinvoke temp$101.<java.util.Locale: void <init>(java.lang.String,java.lang.String,java.lang.String)>(temp$104, temp$107, temp$110);
+        return temp$101;
+
+     label41:
+        nop;
+
+     label42:
+        nop;
+        temp$111 = new java.lang.IllegalArgumentException;
+        temp$112 = new java.lang.StringBuffer;
+        specialinvoke temp$112.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$112.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid locale format: ");
+        virtualinvoke temp$112.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        temp$113 = virtualinvoke temp$112.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$111.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$113);
+        throw temp$111;
+
+     label43:
+        nop;
+        nop;
+        tableswitch(occurrences)
+        {
+            case 0: goto label21;
+            case 1: goto label26;
+            case 2: goto label33;
+            default: goto label42;
+        };
+
+        nop;
+    }
+}

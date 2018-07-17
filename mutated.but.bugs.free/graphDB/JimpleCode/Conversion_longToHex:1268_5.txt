@@ -1,0 +1,100 @@
+public class WrapClass 
+{
+    public static java.lang.String longToHex(long, int, java.lang.String, int, int)
+    {
+        long src, temp$10, temp$11;
+        int srcPos, dstPos, nHexs, temp$0, temp$1, temp$2, temp$3, shift, append, temp$6, i, temp$7, temp$8, temp$9, bits, temp$12, temp$13, temp$14, temp$17, temp$18, temp$20, temp$21;
+        java.lang.String dstInit, temp$22;
+        java.lang.IllegalArgumentException temp$4;
+        java.lang.StringBuilder sb, temp$5, temp$16;
+        char temp$15, temp$19;
+
+        src := @parameter0: long;
+        srcPos := @parameter1: int;
+        dstInit := @parameter2: java.lang.String;
+        dstPos := @parameter3: int;
+        nHexs := @parameter4: int;
+        if 0 == nHexs goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return dstInit;
+
+     label1:
+        nop;
+        temp$0 = nHexs - 1;
+        temp$1 = temp$0 * 4;
+        temp$2 = temp$1;
+        temp$3 = temp$2 + srcPos;
+        if temp$3 >= 64 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("(nHexs-1)*4+srcPos is greather or equal to than 64");
+        throw temp$4;
+
+     label3:
+        nop;
+        temp$5 = new java.lang.StringBuilder;
+        specialinvoke temp$5.<java.lang.StringBuilder: void <init>(java.lang.String)>(dstInit);
+        sb = temp$5;
+        shift = 0;
+        temp$6 = virtualinvoke sb.<java.lang.StringBuilder: int length()>();
+        append = temp$6;
+        i = 0;
+
+     label4:
+        nop;
+        if i < nHexs goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$7 = i * 4;
+        temp$8 = temp$7;
+        temp$9 = temp$8 + srcPos;
+        shift = temp$9;
+        temp$10 = src >>> shift;
+        temp$11 = 15L & temp$10;
+        bits = (int) temp$11;
+        temp$12 = dstPos;
+        temp$13 = temp$12 + i;
+        if temp$13 == append goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$14 = append + 1;
+        append = temp$14;
+        temp$15 = staticinvoke <org.apache.commons.lang3.Conversion: char intToHexDigit(int)>(bits);
+        temp$16 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$15);
+        goto label8;
+
+     label7:
+        nop;
+        temp$17 = dstPos;
+        temp$18 = temp$17 + i;
+        temp$19 = staticinvoke <org.apache.commons.lang3.Conversion: char intToHexDigit(int)>(bits);
+        virtualinvoke sb.<java.lang.StringBuilder: void setCharAt(int,char)>(temp$18, temp$19);
+
+     label8:
+        nop;
+        nop;
+        temp$20 = i;
+        temp$21 = temp$20 + 1;
+        i = temp$21;
+        goto label4;
+
+     label9:
+        nop;
+        temp$22 = virtualinvoke sb.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$22;
+    }
+}

@@ -1,0 +1,138 @@
+public class WrapClass 
+{
+    private static final java.lang.String[] splitByCharacterType(java.lang.String, boolean)
+    {
+        java.lang.String str, temp$14, temp$17, temp$22;
+        boolean camelCase, temp$16, temp$19, temp$25;
+        java.lang.String[] temp$0, temp$27, temp$29;
+        char[] c, temp$1, temp$3, temp$9;
+        java.util.List list;
+        java.util.ArrayList temp$2;
+        int tokenStart, currentType, temp$4, temp$6, pos, temp$7, temp$8, type, temp$10, temp$12, newTokenStart, temp$13, temp$15, temp$18, temp$20, temp$21, temp$23, temp$24, temp$26;
+        char temp$5, temp$11;
+        java.lang.Object[] temp$28;
+
+        str := @parameter0: java.lang.String;
+        camelCase := @parameter1: boolean;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        c = temp$1;
+        temp$2 = new java.util.ArrayList;
+        specialinvoke temp$2.<java.util.ArrayList: void <init>()>();
+        list = temp$2;
+        tokenStart = 0;
+        temp$3 = c;
+        temp$4 = tokenStart;
+        temp$5 = temp$3[temp$4];
+        temp$6 = staticinvoke <java.lang.Character: int getType(char)>(temp$5);
+        currentType = temp$6;
+        temp$7 = tokenStart;
+        pos = temp$7 + 1;
+
+     label2:
+        nop;
+        temp$8 = lengthof c;
+        if pos < temp$8 goto label3;
+
+        goto label14;
+
+     label3:
+        nop;
+        temp$9 = c;
+        temp$10 = pos;
+        temp$11 = temp$9[temp$10];
+        temp$12 = staticinvoke <java.lang.Character: int getType(char)>(temp$11);
+        type = temp$12;
+        if type == currentType goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        goto label13;
+
+     label5:
+        nop;
+        if camelCase == 0 goto label11;
+
+        goto label6;
+
+     label6:
+        nop;
+        if type == 2 goto label7;
+
+        goto label11;
+
+        goto label7;
+
+     label7:
+        nop;
+        if currentType == 1 goto label8;
+
+        goto label11;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$13 = pos - 1;
+        newTokenStart = temp$13;
+        if newTokenStart != tokenStart goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$14 = new java.lang.String;
+        temp$15 = newTokenStart - tokenStart;
+        specialinvoke temp$14.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$15);
+        temp$16 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$14);
+        tokenStart = newTokenStart;
+
+     label10:
+        nop;
+        goto label12;
+
+     label11:
+        nop;
+        temp$17 = new java.lang.String;
+        temp$18 = pos - tokenStart;
+        specialinvoke temp$17.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$18);
+        temp$19 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$17);
+        tokenStart = pos;
+
+     label12:
+        nop;
+        currentType = type;
+
+     label13:
+        nop;
+        temp$20 = pos;
+        temp$21 = temp$20 + 1;
+        pos = temp$21;
+        goto label2;
+
+     label14:
+        nop;
+        temp$22 = new java.lang.String;
+        temp$23 = lengthof c;
+        temp$24 = temp$23 - tokenStart;
+        specialinvoke temp$22.<java.lang.String: void <init>(char[],int,int)>(c, tokenStart, temp$24);
+        temp$25 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$22);
+        temp$26 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$27 = newarray (java.lang.String)[temp$26];
+        temp$28 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$27);
+        temp$29 = (java.lang.String[]) temp$28;
+        return temp$29;
+    }
+}

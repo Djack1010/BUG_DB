@@ -1,0 +1,115 @@
+public class WrapClass 
+{
+    public java.lang.String getFormattedExceptionMessage(java.lang.String)
+    {
+        org.apache.commons.lang3.exception.DefaultExceptionContext this;
+        java.lang.String baseMessage, temp$14, valueStr, temp$19, temp$21, temp$22, temp$26;
+        java.lang.StringBuilder buffer, temp$0, temp$1, temp$4, temp$9, temp$11, temp$12, temp$15, temp$16, temp$18, temp$23, temp$24, temp$25;
+        java.util.List temp$2, temp$5;
+        int temp$3, i, temp$10;
+        java.util.Iterator temp$6;
+        org.apache.commons.lang3.tuple.Pair pair;
+        boolean temp$7;
+        java.lang.Object temp$8, temp$13, value, temp$17;
+        java.lang.Exception e;
+        java.lang.StringBuffer temp$20;
+
+        this := @this: org.apache.commons.lang3.exception.DefaultExceptionContext;
+        baseMessage := @parameter0: java.lang.String;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>(int)>(256);
+        buffer = temp$0;
+        if baseMessage != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(baseMessage);
+
+     label1:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.exception.DefaultExceptionContext: java.util.List contextValues>;
+        temp$3 = interfaceinvoke temp$2.<java.util.List: int size()>();
+        if temp$3 > 0 goto label2;
+
+        goto label11;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Exception Context:\n");
+        i = 0;
+        temp$5 = this.<org.apache.commons.lang3.exception.DefaultExceptionContext: java.util.List contextValues>;
+        temp$6 = interfaceinvoke temp$5.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label3:
+        nop;
+        temp$7 = interfaceinvoke temp$6.<java.util.Iterator: boolean hasNext()>();
+        if temp$7 == 0 goto label10;
+
+        temp$8 = interfaceinvoke temp$6.<java.util.Iterator: java.lang.Object next()>();
+        pair = (org.apache.commons.lang3.tuple.Pair) temp$8;
+        temp$9 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\t[");
+        temp$10 = i + 1;
+        i = temp$10;
+        temp$11 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(temp$10);
+        temp$12 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(58);
+        temp$13 = virtualinvoke pair.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$14 = (java.lang.String) temp$13;
+        temp$15 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$14);
+        temp$16 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=");
+        temp$17 = virtualinvoke pair.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getValue()>();
+        value = temp$17;
+        if value == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$18 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("null");
+        goto label9;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        temp$19 = virtualinvoke value.<java.lang.Object: java.lang.String toString()>();
+        valueStr = temp$19;
+        goto label8;
+
+     label7:
+        nop;
+        e := @caughtexception;
+        temp$20 = new java.lang.StringBuffer;
+        specialinvoke temp$20.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Exception thrown on toString(): ");
+        temp$21 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String getStackTrace(java.lang.Throwable)>(e);
+        virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$21);
+        temp$22 = virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.String toString()>();
+        valueStr = temp$22;
+        nop;
+        goto label8;
+
+     label8:
+        nop;
+        temp$23 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(valueStr);
+
+     label9:
+        nop;
+        temp$24 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]\n");
+        nop;
+        goto label3;
+
+     label10:
+        nop;
+        temp$25 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("---------------------------------");
+
+     label11:
+        nop;
+        temp$26 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$26;
+
+        catch java.lang.Exception from label6 to label7 with label7;
+    }
+}

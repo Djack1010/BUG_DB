@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder replace(int, int, java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, temp$0, insertLen, temp$1, temp$2, temp$3;
+        java.lang.String replaceStr;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        replaceStr := @parameter2: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int validateRange(int,int)>(startIndex, endIndex);
+        endIndex = temp$0;
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke replaceStr.<java.lang.String: int length()>();
+        temp$1 = temp$2;
+        nop;
+        insertLen = temp$1;
+        temp$3 = endIndex - startIndex;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void replaceImpl(int,int,int,java.lang.String,int)>(startIndex, endIndex, temp$3, replaceStr, insertLen);
+        return this;
+    }
+}

@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public final boolean isEndedBy(java.lang.Object)
+    {
+        org.apache.commons.lang3.Range this;
+        java.lang.Object element, temp$2;
+        boolean temp$0, temp$4;
+        java.util.Comparator temp$1;
+        int temp$3;
+
+        this := @this: org.apache.commons.lang3.Range;
+        element := @parameter0: java.lang.Object;
+        if element == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.Range: java.util.Comparator comparator>;
+        temp$2 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$3 = interfaceinvoke temp$1.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(element, temp$2);
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = 1;
+
+     label4:
+        nop;
+        return temp$4;
+    }
+}

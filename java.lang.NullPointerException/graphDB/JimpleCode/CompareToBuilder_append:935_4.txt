@@ -1,0 +1,126 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder append(float[], float[])
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this, temp$3, temp$17;
+        float[] lhs, rhs, temp$11, temp$14;
+        int temp$0, temp$1, temp$2, temp$4, temp$5, temp$6, temp$7, temp$8, i, temp$9, temp$10, temp$12, temp$15, temp$18, temp$19;
+        float temp$13, temp$16;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        lhs := @parameter0: float[];
+        rhs := @parameter1: float[];
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = -1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$1;
+        return this;
+
+     label5:
+        nop;
+        if rhs == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = 1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$2;
+        temp$3 = null;
+        return temp$3;
+
+     label7:
+        nop;
+        temp$4 = lengthof lhs;
+        temp$5 = lengthof rhs;
+        if temp$4 != temp$5 goto label8;
+
+        goto label12;
+
+     label8:
+        nop;
+        temp$7 = lengthof lhs;
+        temp$8 = lengthof rhs;
+        if temp$7 < temp$8 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$6 = -1;
+        goto label11;
+
+     label10:
+        nop;
+        temp$6 = 1;
+
+     label11:
+        nop;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$6;
+        return this;
+
+     label12:
+        nop;
+        i = 0;
+
+     label13:
+        nop;
+        temp$9 = lengthof lhs;
+        if i < temp$9 goto label14;
+
+        goto label16;
+
+     label14:
+        nop;
+        temp$10 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$10 == 0 goto label15;
+
+        goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$11 = lhs;
+        temp$12 = i;
+        temp$13 = temp$11[temp$12];
+        temp$14 = rhs;
+        temp$15 = i;
+        temp$16 = temp$14[temp$15];
+        temp$17 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(float,float)>(temp$13, temp$16);
+        nop;
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        i = temp$19;
+        goto label13;
+
+     label16:
+        nop;
+        return this;
+    }
+}

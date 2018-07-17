@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    private final java.lang.String getLocalPart(java.lang.String, int)
+    {
+        org.apache.commons.mail.util.IDNEmailAddressConverter this;
+        java.lang.String email, temp$0;
+        int idx;
+
+        this := @this: org.apache.commons.mail.util.IDNEmailAddressConverter;
+        email := @parameter0: java.lang.String;
+        idx := @parameter1: int;
+        temp$0 = virtualinvoke email.<java.lang.String: java.lang.String substring(int,int)>(0, idx);
+        return temp$0;
+    }
+}

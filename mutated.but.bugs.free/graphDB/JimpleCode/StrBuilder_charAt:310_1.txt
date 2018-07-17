@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public char charAt(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int index, temp$0, temp$3;
+        java.lang.StringIndexOutOfBoundsException temp$1;
+        char[] temp$2;
+        char temp$4;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        if index < 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        if index == temp$0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$1.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(index);
+        throw temp$1;
+
+     label2:
+        nop;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = index;
+        temp$4 = temp$2[temp$3];
+        return temp$4;
+    }
+}

@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.mutable.MutableInt this, temp$1;
+        java.lang.Object obj;
+        boolean temp$0, temp$4, temp$5;
+        int temp$2, temp$3;
+
+        this := @this: org.apache.commons.lang3.mutable.MutableInt;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof org.apache.commons.lang3.mutable.MutableInt;
+        if temp$0 == 0 goto label4;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = (org.apache.commons.lang3.mutable.MutableInt) obj;
+        temp$2 = virtualinvoke temp$1.<org.apache.commons.lang3.mutable.MutableInt: int intValue()>();
+        temp$3 = this.<org.apache.commons.lang3.mutable.MutableInt: int value>;
+        if temp$3 >= temp$2 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = 1;
+
+     label3:
+        nop;
+        return temp$4;
+
+     label4:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+    }
+}

@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    private final org.apache.commons.lang3.time.FastDateParser$Strategy getLocaleSpecificStrategy(int, java.util.Calendar)
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        int field;
+        java.util.Calendar definingCalendar;
+        java.util.concurrent.ConcurrentMap cache, temp$0;
+        org.apache.commons.lang3.time.FastDateParser$Strategy strategy, temp$3, inCache, temp$9;
+        java.util.Locale temp$1, temp$6, temp$7;
+        java.lang.Object temp$2, temp$8;
+        wildcards.& org.apache.commons.lang3.time.FastDateParser.TimeZoneStrategy& org.apache.commons.lang3.time.FastDateParser.CaseInsensitiveTextStrategy temp$4;
+        org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy temp$5;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        field := @parameter0: int;
+        definingCalendar := @parameter1: java.util.Calendar;
+        temp$0 = staticinvoke <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap getCache(int)>(field);
+        cache = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$2 = interfaceinvoke cache.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$1);
+        temp$3 = (org.apache.commons.lang3.time.FastDateParser$Strategy) temp$2;
+        strategy = temp$3;
+        if strategy == null goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = new org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy;
+        temp$6 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        specialinvoke temp$5.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: void <init>(int,java.util.Calendar,java.util.Locale)>(field, definingCalendar, temp$6);
+        temp$4 = temp$5;
+        nop;
+        strategy = temp$4;
+        temp$7 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$8 = interfaceinvoke cache.<java.util.concurrent.ConcurrentMap: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(temp$7, strategy);
+        temp$9 = (org.apache.commons.lang3.time.FastDateParser$Strategy) temp$8;
+        inCache = temp$9;
+        if inCache != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return inCache;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return strategy;
+    }
+}

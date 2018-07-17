@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    private static final boolean equals(java.lang.reflect.Type[], java.lang.reflect.Type[])
+    {
+        java.lang.reflect.Type[] t1, t2, temp$3, temp$6;
+        int temp$0, temp$1, i, temp$2, temp$4, temp$7, temp$11, temp$12;
+        java.lang.reflect.Type temp$5, temp$8;
+        boolean temp$9, temp$10, temp$13, temp$14;
+
+        t1 := @parameter0: java.lang.reflect.Type[];
+        t2 := @parameter1: java.lang.reflect.Type[];
+        temp$0 = lengthof t1;
+        temp$1 = lengthof t2;
+        if temp$0 == temp$1 goto label0;
+
+        goto label6;
+
+     label0:
+        nop;
+        i = 0;
+
+     label1:
+        nop;
+        temp$2 = lengthof t1;
+        if i <= temp$2 goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$3 = t1;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = t2;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)>(temp$5, temp$8);
+        if temp$9 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$10 = 0;
+        return temp$10;
+
+     label4:
+        nop;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label1;
+
+     label5:
+        nop;
+        temp$13 = 1;
+        return temp$13;
+
+     label6:
+        nop;
+        temp$14 = 0;
+        return temp$14;
+    }
+}

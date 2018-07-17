@@ -1,0 +1,272 @@
+public class WrapClass 
+{
+    public java.lang.String nysiis(java.lang.String)
+    {
+        org.apache.commons.codec.language.Nysiis this;
+        java.lang.String str, temp$0, temp$1, temp$5, temp$8, temp$11, temp$14, temp$17, temp$20, temp$23, string, temp$87, temp$88, temp$92;
+        int temp$2, temp$25, len, i, temp$30, temp$32, temp$33, temp$35, temp$37, temp$38, temp$40, temp$41, temp$44, temp$47, temp$49, temp$52, temp$53, temp$55, temp$56, temp$58, temp$61, temp$62, temp$63, temp$64, temp$65, temp$67, temp$68, temp$69, temp$71, temp$72, temp$74, temp$75, temp$76, temp$78, temp$79, temp$80, temp$81, temp$83, temp$84, temp$85, temp$90, temp$91;
+        java.util.regex.Pattern temp$3, temp$6, temp$9, temp$12, temp$15, temp$18, temp$21;
+        java.util.regex.Matcher temp$4, temp$7, temp$10, temp$13, temp$16, temp$19, temp$22;
+        java.lang.StringBuilder key, temp$24, temp$27, temp$60, temp$70, temp$82, temp$86;
+        char temp$26, next, temp$29, aNext, temp$34, temp$42, temp$45, temp$50, temp$54, temp$59, lastChar, temp$66, temp$73, last2Char, temp$77;
+        char[] chars, temp$28, temp$31, temp$36, transcoded, temp$39, temp$43, temp$46, temp$48, temp$51, temp$57;
+        boolean temp$89;
+
+        this := @this: org.apache.commons.codec.language.Nysiis;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.codec.language.SoundexUtils: java.lang.String clean(java.lang.String)>(str);
+        str = temp$1;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        if temp$2 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return str;
+
+     label3:
+        nop;
+        temp$3 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_MAC>;
+        temp$4 = virtualinvoke temp$3.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$5 = virtualinvoke temp$4.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("MCC");
+        str = temp$5;
+        temp$6 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_KN>;
+        temp$7 = virtualinvoke temp$6.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$8 = virtualinvoke temp$7.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("NN");
+        str = temp$8;
+        temp$9 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_K>;
+        temp$10 = virtualinvoke temp$9.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$11 = virtualinvoke temp$10.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("C");
+        str = temp$11;
+        temp$12 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_PH_PF>;
+        temp$13 = virtualinvoke temp$12.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$14 = virtualinvoke temp$13.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("FF");
+        str = temp$14;
+        temp$15 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_SCH>;
+        temp$16 = virtualinvoke temp$15.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$17 = virtualinvoke temp$16.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("SSS");
+        str = temp$17;
+        temp$18 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_EE_IE>;
+        temp$19 = virtualinvoke temp$18.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$20 = virtualinvoke temp$19.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("Y");
+        str = temp$20;
+        temp$21 = <org.apache.commons.codec.language.Nysiis: java.util.regex.Pattern PAT_DT_ETC>;
+        temp$22 = virtualinvoke temp$21.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(str);
+        temp$23 = virtualinvoke temp$22.<java.util.regex.Matcher: java.lang.String replaceFirst(java.lang.String)>("D");
+        str = temp$23;
+        temp$24 = new java.lang.StringBuilder;
+        temp$25 = virtualinvoke str.<java.lang.String: int length()>();
+        specialinvoke temp$24.<java.lang.StringBuilder: void <init>(int)>(temp$25);
+        key = temp$24;
+        temp$26 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        temp$27 = virtualinvoke key.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$26);
+        temp$28 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        chars = temp$28;
+        len = lengthof chars;
+        i = 1;
+
+     label4:
+        nop;
+        if i < len goto label5;
+
+        goto label14;
+
+     label5:
+        nop;
+        temp$30 = len - 1;
+        if i < temp$30 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$31 = chars;
+        temp$32 = i;
+        temp$33 = temp$32 + 1;
+        temp$29 = temp$31[temp$33];
+        goto label8;
+
+     label7:
+        nop;
+        temp$29 = 32;
+
+     label8:
+        nop;
+        next = temp$29;
+        temp$35 = len - 2;
+        if i < temp$35 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$36 = chars;
+        temp$37 = i;
+        temp$38 = temp$37 + 2;
+        temp$34 = temp$36[temp$38];
+        goto label11;
+
+     label10:
+        nop;
+        temp$34 = 32;
+
+     label11:
+        nop;
+        aNext = temp$34;
+        temp$39 = chars;
+        temp$40 = i - 1;
+        temp$41 = temp$40;
+        temp$42 = temp$39[temp$41];
+        temp$43 = chars;
+        temp$44 = i;
+        temp$45 = temp$43[temp$44];
+        temp$46 = staticinvoke <org.apache.commons.codec.language.Nysiis: char[] transcodeRemaining(char,char,char,char)>(temp$42, temp$45, next, aNext);
+        transcoded = temp$46;
+        temp$47 = lengthof transcoded;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(transcoded, 0, chars, i, temp$47);
+        temp$48 = chars;
+        temp$49 = i;
+        temp$50 = temp$48[temp$49];
+        temp$51 = chars;
+        temp$52 = i - 1;
+        temp$53 = temp$52;
+        temp$54 = temp$51[temp$53];
+        temp$55 = (int) temp$50;
+        temp$56 = (int) temp$54;
+        if temp$55 != temp$56 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$57 = chars;
+        temp$58 = i;
+        temp$59 = temp$57[temp$58];
+        temp$60 = virtualinvoke key.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$59);
+
+     label13:
+        nop;
+        nop;
+        temp$61 = i;
+        temp$62 = temp$61 + 1;
+        i = temp$62;
+        goto label4;
+
+     label14:
+        nop;
+        temp$63 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        if temp$63 > 1 goto label15;
+
+        goto label25;
+
+     label15:
+        nop;
+        temp$64 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$65 = temp$64 - 1;
+        temp$66 = virtualinvoke key.<java.lang.StringBuilder: char charAt(int)>(temp$65);
+        lastChar = temp$66;
+        temp$67 = (int) lastChar;
+        if temp$67 == 83 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$68 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$69 = temp$68 - 1;
+        temp$70 = virtualinvoke key.<java.lang.StringBuilder: java.lang.StringBuilder deleteCharAt(int)>(temp$69);
+        temp$71 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$72 = temp$71 - 1;
+        temp$73 = virtualinvoke key.<java.lang.StringBuilder: char charAt(int)>(temp$72);
+        lastChar = temp$73;
+
+     label17:
+        nop;
+        temp$74 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        if temp$74 > 0 goto label18;
+
+        goto label22;
+
+     label18:
+        nop;
+        temp$75 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$76 = temp$75 - 2;
+        temp$77 = virtualinvoke key.<java.lang.StringBuilder: char charAt(int)>(temp$76);
+        last2Char = temp$77;
+        temp$78 = (int) last2Char;
+        if temp$78 == 65 goto label19;
+
+        goto label21;
+
+     label19:
+        nop;
+        temp$79 = (int) lastChar;
+        if temp$79 == 89 goto label20;
+
+        goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        temp$80 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$81 = temp$80 - 2;
+        temp$82 = virtualinvoke key.<java.lang.StringBuilder: java.lang.StringBuilder deleteCharAt(int)>(temp$81);
+
+     label21:
+        nop;
+
+     label22:
+        nop;
+        temp$83 = (int) lastChar;
+        if temp$83 == 65 goto label23;
+
+        goto label24;
+
+     label23:
+        nop;
+        temp$84 = virtualinvoke key.<java.lang.StringBuilder: int length()>();
+        temp$85 = temp$84 - 1;
+        temp$86 = virtualinvoke key.<java.lang.StringBuilder: java.lang.StringBuilder deleteCharAt(int)>(temp$85);
+
+     label24:
+        nop;
+
+     label25:
+        nop;
+        temp$87 = virtualinvoke key.<java.lang.StringBuilder: java.lang.String toString()>();
+        string = temp$87;
+        temp$89 = virtualinvoke this.<org.apache.commons.codec.language.Nysiis: boolean isStrict()>();
+        if temp$89 == 0 goto label27;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$90 = virtualinvoke string.<java.lang.String: int length()>();
+        temp$91 = staticinvoke <java.lang.Math: int min(int,int)>(6, temp$90);
+        temp$92 = virtualinvoke string.<java.lang.String: java.lang.String substring(int,int)>(0, temp$91);
+        temp$88 = temp$92;
+        goto label28;
+
+     label27:
+        nop;
+        temp$88 = string;
+
+     label28:
+        nop;
+        return temp$88;
+    }
+}

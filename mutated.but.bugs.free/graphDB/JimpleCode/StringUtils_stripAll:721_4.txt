@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    public static java.lang.String[] stripAll(java.lang.String[], java.lang.String)
+    {
+        java.lang.String[] strs, newArr, temp$1, temp$3;
+        java.lang.String stripChars, temp$5, temp$6;
+        int strsLen, temp$0, i, temp$2, temp$4, temp$7, temp$8;
+
+        strs := @parameter0: java.lang.String[];
+        stripChars := @parameter1: java.lang.String;
+        if strs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = lengthof strs;
+        strsLen = temp$0;
+        if temp$0 == 1 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return strs;
+
+     label2:
+        nop;
+        newArr = newarray (java.lang.String)[strsLen];
+        i = 0;
+
+     label3:
+        nop;
+        if i < strsLen goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = newArr;
+        temp$2 = i;
+        temp$3 = strs;
+        temp$4 = i;
+        temp$5 = temp$3[temp$4];
+        temp$6 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String strip(java.lang.String,java.lang.String)>(temp$5, stripChars);
+        temp$1[temp$2] = temp$6;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label3;
+
+     label5:
+        nop;
+        return newArr;
+    }
+}

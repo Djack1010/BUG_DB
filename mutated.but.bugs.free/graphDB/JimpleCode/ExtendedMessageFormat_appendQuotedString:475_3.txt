@@ -1,0 +1,139 @@
+public class WrapClass 
+{
+    private final java.lang.StringBuilder appendQuotedString(java.lang.String, java.text.ParsePosition, java.lang.StringBuilder)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern, temp$8, temp$29;
+        java.text.ParsePosition pos, temp$10, temp$15, temp$20;
+        java.lang.StringBuilder appendTo, temp$9, temp$16, temp$19;
+        boolean temp$0;
+        char[] temp$1, temp$2, c, temp$12, temp$21;
+        int temp$3, temp$4, temp$6, start, temp$11, lastHold, i, temp$13, temp$14, temp$17, temp$18, temp$22, temp$23, temp$25, temp$26;
+        char temp$5, temp$24;
+        java.lang.AssertionError temp$7;
+        java.lang.IllegalArgumentException temp$27;
+        java.lang.StringBuffer temp$28;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        pos := @parameter1: java.text.ParsePosition;
+        appendTo := @parameter2: java.lang.StringBuilder;
+        temp$0 = <org.apache.commons.lang3.text.ExtendedMessageFormat: boolean $assertionsDisabled>;
+        if temp$0 == 0 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke pattern.<java.lang.String: char[] toCharArray()>();
+        temp$2 = temp$1;
+        temp$3 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$4 = temp$3;
+        temp$5 = temp$2[temp$4];
+        temp$6 = (int) temp$5;
+        if temp$6 == 39 goto label2;
+
+        goto label1;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$7 = new java.lang.AssertionError;
+        temp$8 = "Quoted string must start with quote character";
+        specialinvoke temp$7.<java.lang.AssertionError: void <init>(java.lang.Object)>(temp$8);
+        throw temp$7;
+
+     label2:
+        nop;
+        if appendTo != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$9 = virtualinvoke appendTo.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(39);
+
+     label4:
+        nop;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        temp$11 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        start = temp$11;
+        temp$12 = virtualinvoke pattern.<java.lang.String: char[] toCharArray()>();
+        c = temp$12;
+        lastHold = start;
+        temp$13 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        i = temp$13;
+
+     label5:
+        nop;
+        temp$14 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if i < temp$14 goto label6;
+
+        goto label14;
+
+     label6:
+        nop;
+        goto label12;
+
+     label7:
+        nop;
+        temp$15 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        if appendTo == null goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$16 = null;
+        goto label10;
+
+     label9:
+        nop;
+        temp$17 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$18 = temp$17 % lastHold;
+        temp$19 = virtualinvoke appendTo.<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>(c, lastHold, temp$18);
+        temp$16 = temp$19;
+
+     label10:
+        nop;
+        return temp$16;
+
+     label11:
+        nop;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        goto label13;
+
+     label12:
+        nop;
+        temp$21 = c;
+        temp$22 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$23 = temp$22;
+        temp$24 = temp$21[temp$23];
+        nop;
+        lookupswitch(temp$24)
+        {
+            case 39: goto label7;
+            default: goto label11;
+        };
+
+     label13:
+        nop;
+        nop;
+        temp$25 = i;
+        temp$26 = temp$25 + 1;
+        i = temp$26;
+        goto label5;
+
+     label14:
+        nop;
+        temp$27 = new java.lang.IllegalArgumentException;
+        temp$28 = new java.lang.StringBuffer;
+        specialinvoke temp$28.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$28.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unterminated quoted string at position ");
+        virtualinvoke temp$28.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        temp$29 = virtualinvoke temp$28.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$27.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$29);
+        throw temp$27;
+    }
+}

@@ -1,0 +1,98 @@
+public class WrapClass 
+{
+    public static transient java.util.EnumSet processBitVectors(java.lang.Class, long[])
+    {
+        java.lang.Class enumClass, temp$0;
+        long[] values, lvalues, temp$3, temp$4, temp$14;
+        java.util.EnumSet results, temp$1;
+        java.lang.Object temp$2;
+        java.lang.Object[] temp$5;
+        java.lang.Enum[] temp$6;
+        int temp$7, temp$8, block, temp$10, temp$11, temp$12, temp$15, temp$16, temp$17, temp$18, temp$22;
+        java.lang.Enum constant, temp$9;
+        boolean temp$13, temp$23, temp$24;
+        long temp$19, temp$20, temp$21;
+
+        enumClass := @parameter0: java.lang.Class;
+        values := @parameter1: long[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.EnumUtils: java.lang.Class asEnum(java.lang.Class)>(enumClass);
+        temp$1 = staticinvoke <java.util.EnumSet: java.util.EnumSet noneOf(java.lang.Class)>(temp$0);
+        results = temp$1;
+        temp$2 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object)>(values);
+        temp$3 = (long[]) temp$2;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ArrayUtils: long[] clone(long[])>(temp$3);
+        lvalues = temp$4;
+        staticinvoke <org.apache.commons.lang3.ArrayUtils: void reverse(long[])>(lvalues);
+        temp$5 = virtualinvoke enumClass.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+        temp$6 = (java.lang.Enum[]) temp$5;
+        temp$7 = 0;
+
+     label0:
+        nop;
+        temp$8 = lengthof temp$6;
+        if temp$7 >= temp$8 goto label9;
+
+        temp$9 = temp$6[temp$7];
+        constant = temp$9;
+        temp$10 = virtualinvoke constant.<java.lang.Enum: int ordinal()>();
+        temp$11 = temp$10 / 64;
+        block = temp$11;
+        temp$12 = lengthof lvalues;
+        if block < temp$12 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$13 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$13 = 1;
+
+     label3:
+        nop;
+        temp$14 = lvalues;
+        temp$15 = block;
+        temp$16 = virtualinvoke constant.<java.lang.Enum: int ordinal()>();
+        temp$17 = temp$16 % 64;
+        temp$18 = 1 << temp$17;
+        temp$19 = temp$14[temp$15];
+        temp$20 = (long) temp$18;
+        temp$21 = temp$19 & temp$20;
+        temp$22 = temp$21 cmp 0L;
+        if temp$22 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$23 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$23 = 1;
+
+     label6:
+        nop;
+        if temp$13 == temp$23 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$24 = virtualinvoke results.<java.util.AbstractCollection: boolean add(java.lang.Object)>(constant);
+
+     label8:
+        nop;
+        nop;
+        temp$7 = temp$7 + 1;
+        goto label0;
+
+     label9:
+        nop;
+        return results;
+    }
+}

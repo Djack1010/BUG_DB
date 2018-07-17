@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    private static final transient java.lang.StringBuilder appendAllTo(java.lang.StringBuilder, java.lang.String, java.lang.reflect.Type[])
+    {
+        java.lang.StringBuilder buf, temp$9, temp$11, temp$16;
+        java.lang.String sep, temp$8, temp$15;
+        java.lang.reflect.Type[] types, temp$1, temp$3, temp$5, temp$12;
+        java.lang.Object[] temp$0, temp$2;
+        int temp$4, temp$6, i, temp$10, temp$13, temp$17, temp$18;
+        java.lang.reflect.Type temp$7, temp$14;
+
+        buf := @parameter0: java.lang.StringBuilder;
+        sep := @parameter1: java.lang.String;
+        types := @parameter2: java.lang.reflect.Type[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] noNullElements(java.lang.Object[])>(types);
+        temp$1 = (java.lang.reflect.Type[]) temp$0;
+        temp$2 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object[] notEmpty(java.lang.Object[])>(temp$1);
+        temp$3 = (java.lang.reflect.Type[]) temp$2;
+        temp$4 = lengthof types;
+        if temp$4 > 0 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$5 = types;
+        temp$6 = 0;
+        temp$7 = temp$5[temp$6];
+        temp$8 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(temp$7);
+        temp$9 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$8);
+        i = 1;
+
+     label1:
+        nop;
+        temp$10 = lengthof types;
+        if i != temp$10 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(sep);
+        temp$12 = types;
+        temp$13 = i;
+        temp$14 = temp$12[temp$13];
+        temp$15 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(temp$14);
+        temp$16 = virtualinvoke temp$11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$15);
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        return buf;
+    }
+}

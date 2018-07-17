@@ -1,0 +1,125 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(char[], int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$0, temp$16;
+        char[] chars, temp$17;
+        int startIndex, length, temp$2, temp$7, temp$8, temp$9, len, temp$13, temp$14, temp$15, temp$18, temp$19;
+        boolean temp$1, temp$3;
+        java.lang.StringIndexOutOfBoundsException temp$4, temp$10;
+        java.lang.StringBuffer temp$5, temp$11;
+        java.lang.String temp$6, temp$12;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        chars := @parameter0: char[];
+        startIndex := @parameter1: int;
+        length := @parameter2: int;
+        if chars == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+
+     label4:
+        nop;
+        temp$2 = lengthof chars;
+        if startIndex > temp$2 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = 1;
+
+     label7:
+        nop;
+        if temp$1 != temp$3 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$4 = new java.lang.StringIndexOutOfBoundsException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid startIndex: ");
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label9:
+        nop;
+        if length < 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$7 = startIndex;
+        temp$8 = temp$7 + length;
+        temp$9 = lengthof chars;
+        if temp$8 > temp$9 goto label11;
+
+        goto label12;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$10 = new java.lang.StringIndexOutOfBoundsException;
+        temp$11 = new java.lang.StringBuffer;
+        specialinvoke temp$11.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Invalid length: ");
+        virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$12 = virtualinvoke temp$11.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$10.<java.lang.StringIndexOutOfBoundsException: void <init>(java.lang.String)>(temp$12);
+        throw temp$10;
+
+     label12:
+        nop;
+        if length > 0 goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$13 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$13;
+        temp$14 = len;
+        temp$15 = temp$14 + length;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$15);
+        temp$17 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(chars, startIndex, temp$17, len, length);
+        temp$18 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$19 = temp$18 + length;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$19;
+
+     label14:
+        nop;
+        return this;
+    }
+}

@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendNull()
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2;
+        java.lang.String temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        if temp$0 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(temp$1);
+        return temp$2;
+    }
+}

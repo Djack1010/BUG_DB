@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    public synchronized void shutdown()
+    {
+        org.apache.commons.lang3.concurrent.TimedSemaphore this;
+        boolean temp$0, temp$1, temp$6, temp$7;
+        java.util.concurrent.ScheduledExecutorService temp$2;
+        java.util.List temp$3;
+        java.util.concurrent.ScheduledFuture temp$4, temp$5;
+
+        this := @this: org.apache.commons.lang3.concurrent.TimedSemaphore;
+        temp$0 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: boolean shutdown>;
+        if temp$0 == 0 goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: boolean ownExecutor>;
+        if temp$1 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.concurrent.TimedSemaphore: java.util.concurrent.ScheduledExecutorService getExecutorService()>();
+        temp$3 = interfaceinvoke temp$2.<java.util.concurrent.ScheduledExecutorService: java.util.List shutdownNow()>();
+
+     label2:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: java.util.concurrent.ScheduledFuture task>;
+        if temp$4 != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.concurrent.TimedSemaphore: java.util.concurrent.ScheduledFuture task>;
+        temp$6 = interfaceinvoke temp$5.<java.util.concurrent.ScheduledFuture: boolean cancel(boolean)>(0);
+
+     label4:
+        nop;
+        temp$7 = 1;
+        this.<org.apache.commons.lang3.concurrent.TimedSemaphore: boolean shutdown> = temp$7;
+
+     label5:
+        nop;
+        return;
+    }
+}

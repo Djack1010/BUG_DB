@@ -1,0 +1,46 @@
+public class WrapClass 
+{
+    public static java.lang.String difference(java.lang.String, java.lang.String)
+    {
+        java.lang.String str1, str2, temp$1, temp$2;
+        int at, temp$0;
+
+        str1 := @parameter0: java.lang.String;
+        str2 := @parameter1: java.lang.String;
+        if str1 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return str2;
+
+     label1:
+        nop;
+        if str2 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return str1;
+
+     label3:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: int indexOfDifference(java.lang.CharSequence,java.lang.CharSequence)>(str1, str2);
+        at = temp$0;
+        if at <= -1 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label5:
+        nop;
+        temp$2 = virtualinvoke str2.<java.lang.String: java.lang.String substring(int)>(at);
+        return temp$2;
+    }
+}

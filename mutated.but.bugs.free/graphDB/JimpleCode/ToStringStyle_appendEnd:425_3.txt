@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public void appendEnd(java.lang.StringBuffer, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.Object object;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        object := @parameter1: java.lang.Object;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendContentEnd(java.lang.StringBuffer)>(buffer);
+        staticinvoke <org.apache.commons.lang3.builder.ToStringStyle: void unregister(java.lang.Object)>(object);
+        return;
+    }
+}

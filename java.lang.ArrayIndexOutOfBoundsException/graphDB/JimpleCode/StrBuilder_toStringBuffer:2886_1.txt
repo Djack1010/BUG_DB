@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public java.lang.StringBuffer toStringBuffer()
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.StringBuffer temp$0, temp$4;
+        int temp$1, temp$3;
+        char[] temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = new java.lang.StringBuffer;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        specialinvoke temp$0.<java.lang.StringBuffer: void <init>(int)>(temp$1);
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$4 = virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(char[],int,int)>(temp$2, -1, temp$3);
+        return temp$4;
+    }
+}

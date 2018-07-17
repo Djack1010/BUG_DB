@@ -1,0 +1,246 @@
+public class WrapClass 
+{
+    private final void build() throws javax.mail.MessagingException, org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.HtmlEmail this;
+        javax.mail.internet.MimeMultipart rootContainer, temp$0, bodyEmbedsContainer, bodyContainer, temp$5, temp$9, temp$19;
+        javax.mail.internet.MimeBodyPart msgHtml, msgText, temp$23, temp$41, temp$44;
+        java.lang.String temp$1, temp$7, temp$12, temp$14, temp$21, temp$24, temp$25, contentType, temp$26, temp$28, temp$30, temp$32, temp$33, temp$34, temp$42, temp$45, temp$46;
+        boolean temp$2, temp$8, temp$13, temp$15, temp$18, temp$22, temp$27, temp$29, temp$39, temp$43;
+        java.util.Map temp$3, temp$16, temp$35;
+        int temp$4, temp$17;
+        org.apache.commons.mail.Email temp$6, temp$20;
+        javax.mail.BodyPart bodyPart, temp$10;
+        javax.mail.MessagingException me;
+        org.apache.commons.mail.EmailException temp$11;
+        java.lang.StringBuffer temp$31;
+        java.util.Collection temp$36, temp$37;
+        java.util.Iterator temp$38;
+        org.apache.commons.mail.HtmlEmail$InlineImage image;
+        java.lang.Object temp$40;
+
+        this := @this: org.apache.commons.mail.HtmlEmail;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: javax.mail.internet.MimeMultipart getContainer()>();
+        rootContainer = temp$0;
+        bodyEmbedsContainer = rootContainer;
+        bodyContainer = rootContainer;
+        msgHtml = null;
+        msgText = null;
+        virtualinvoke rootContainer.<javax.mail.internet.MimeMultipart: void setSubType(java.lang.String)>("mixed");
+        temp$1 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        temp$2 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$1);
+        if temp$2 == 0 goto label7;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = this.<org.apache.commons.mail.HtmlEmail: java.util.Map inlineEmbeds>;
+        temp$4 = interfaceinvoke temp$3.<java.util.Map: int size()>();
+        if temp$4 > 0 goto label1;
+
+        goto label7;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = new javax.mail.internet.MimeMultipart;
+        specialinvoke temp$5.<javax.mail.internet.MimeMultipart: void <init>(java.lang.String)>("related");
+        bodyEmbedsContainer = temp$5;
+        bodyContainer = bodyEmbedsContainer;
+        temp$6 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: org.apache.commons.mail.Email addPart(javax.mail.internet.MimeMultipart,int)>(bodyEmbedsContainer, 0);
+        temp$7 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String text>;
+        temp$8 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$7);
+        if temp$8 == 0 goto label6;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$9 = new javax.mail.internet.MimeMultipart;
+        specialinvoke temp$9.<javax.mail.internet.MimeMultipart: void <init>(java.lang.String)>("alternative");
+        bodyContainer = temp$9;
+        temp$10 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: javax.mail.BodyPart createBodyPart()>();
+        bodyPart = temp$10;
+
+     label3:
+        nop;
+        virtualinvoke bodyPart.<javax.mail.BodyPart: void setContent(javax.mail.Multipart)>(bodyContainer);
+        virtualinvoke bodyEmbedsContainer.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart,int)>(bodyPart, 0);
+        goto label5;
+
+     label4:
+        nop;
+        me := @caughtexception;
+        temp$11 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$11.<org.apache.commons.mail.EmailException: void <init>(java.lang.Throwable)>(me);
+        throw temp$11;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        goto label15;
+
+     label7:
+        nop;
+        temp$12 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String text>;
+        temp$13 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$12);
+        if temp$13 == 0 goto label14;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$14 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        temp$15 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$14);
+        if temp$15 == 0 goto label14;
+
+        goto label9;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$16 = this.<org.apache.commons.mail.HtmlEmail: java.util.Map inlineEmbeds>;
+        temp$17 = interfaceinvoke temp$16.<java.util.Map: int size()>();
+        if temp$17 > 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$18 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: boolean isBoolHasAttachments()>();
+        if temp$18 == 0 goto label12;
+
+        goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$19 = new javax.mail.internet.MimeMultipart;
+        specialinvoke temp$19.<javax.mail.internet.MimeMultipart: void <init>(java.lang.String)>("alternative");
+        bodyContainer = temp$19;
+        temp$20 = virtualinvoke this.<org.apache.commons.mail.HtmlEmail: org.apache.commons.mail.Email addPart(javax.mail.internet.MimeMultipart,int)>(bodyContainer, 0);
+        goto label13;
+
+     label12:
+        nop;
+        virtualinvoke rootContainer.<javax.mail.internet.MimeMultipart: void setSubType(java.lang.String)>("alternative");
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+
+     label15:
+        nop;
+        temp$21 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        temp$22 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$21);
+        if temp$22 == 0 goto label25;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$23 = new javax.mail.internet.MimeBodyPart;
+        specialinvoke temp$23.<javax.mail.internet.MimeBodyPart: void <init>()>();
+        msgHtml = temp$23;
+        virtualinvoke bodyContainer.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart,int)>(msgHtml, -1);
+        temp$24 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        temp$25 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String charset>;
+        virtualinvoke msgHtml.<javax.mail.internet.MimeBodyPart: void setText(java.lang.String,java.lang.String,java.lang.String)>(temp$24, temp$25, "html");
+        temp$26 = virtualinvoke msgHtml.<javax.mail.internet.MimeBodyPart: java.lang.String getContentType()>();
+        contentType = temp$26;
+        if contentType == null goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$27 = virtualinvoke contentType.<java.lang.String: boolean equals(java.lang.Object)>("text/html");
+        if temp$27 == 0 goto label18;
+
+        goto label22;
+
+        goto label22;
+
+     label18:
+        nop;
+        temp$28 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String charset>;
+        temp$29 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$28);
+        if temp$29 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$30 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        temp$31 = new java.lang.StringBuffer;
+        specialinvoke temp$31.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("text/html; charset=");
+        temp$32 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String charset>;
+        virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$32);
+        temp$33 = virtualinvoke temp$31.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke msgHtml.<javax.mail.internet.MimeBodyPart: void setContent(java.lang.Object,java.lang.String)>(temp$30, temp$33);
+        goto label21;
+
+     label20:
+        nop;
+        temp$34 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String html>;
+        virtualinvoke msgHtml.<javax.mail.internet.MimeBodyPart: void setContent(java.lang.Object,java.lang.String)>(temp$34, "text/html");
+
+     label21:
+        nop;
+
+     label22:
+        nop;
+        temp$35 = this.<org.apache.commons.mail.HtmlEmail: java.util.Map inlineEmbeds>;
+        temp$36 = interfaceinvoke temp$35.<java.util.Map: java.util.Collection values()>();
+        temp$37 = (java.util.Collection) temp$36;
+        temp$38 = interfaceinvoke temp$37.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label23:
+        nop;
+        temp$39 = interfaceinvoke temp$38.<java.util.Iterator: boolean hasNext()>();
+        if temp$39 == 0 goto label24;
+
+        temp$40 = interfaceinvoke temp$38.<java.util.Iterator: java.lang.Object next()>();
+        image = (org.apache.commons.mail.HtmlEmail$InlineImage) temp$40;
+        temp$41 = virtualinvoke image.<org.apache.commons.mail.HtmlEmail$InlineImage: javax.mail.internet.MimeBodyPart getMbp()>();
+        virtualinvoke bodyEmbedsContainer.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart)>(temp$41);
+        nop;
+        goto label23;
+
+     label24:
+        nop;
+
+     label25:
+        nop;
+        temp$42 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String text>;
+        temp$43 = staticinvoke <org.apache.commons.mail.EmailUtils: boolean isNotEmpty(java.lang.String)>(temp$42);
+        if temp$43 == 0 goto label27;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$44 = new javax.mail.internet.MimeBodyPart;
+        specialinvoke temp$44.<javax.mail.internet.MimeBodyPart: void <init>()>();
+        msgText = temp$44;
+        virtualinvoke bodyContainer.<javax.mail.internet.MimeMultipart: void addBodyPart(javax.mail.BodyPart,int)>(msgText, 0);
+        temp$45 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String text>;
+        temp$46 = this.<org.apache.commons.mail.HtmlEmail: java.lang.String charset>;
+        virtualinvoke msgText.<javax.mail.internet.MimeBodyPart: void setText(java.lang.String,java.lang.String)>(temp$45, temp$46);
+
+     label27:
+        nop;
+        return;
+
+        catch javax.mail.MessagingException from label3 to label4 with label4;
+    }
+}

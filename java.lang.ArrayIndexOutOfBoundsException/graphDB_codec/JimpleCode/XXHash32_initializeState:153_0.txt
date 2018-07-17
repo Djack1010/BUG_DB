@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    private final void initializeState()
+    {
+        org.apache.commons.codec.digest.XXHash32 this;
+        int[] temp$0, temp$5, temp$9, temp$12;
+        int temp$1, temp$2, temp$3, temp$4, temp$6, temp$7, temp$8, temp$10, temp$11, temp$13, temp$14, temp$15;
+
+        this := @this: org.apache.commons.codec.digest.XXHash32;
+        temp$0 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$1 = 0;
+        temp$2 = this.<org.apache.commons.codec.digest.XXHash32: int seed>;
+        temp$3 = temp$2 + -1640531535;
+        temp$4 = temp$3 + -2048144777;
+        temp$0[temp$1] = temp$4;
+        temp$5 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$6 = 1;
+        temp$7 = this.<org.apache.commons.codec.digest.XXHash32: int seed>;
+        temp$8 = temp$7 + -2048144777;
+        temp$5[temp$6] = temp$8;
+        temp$9 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$10 = 2;
+        temp$11 = this.<org.apache.commons.codec.digest.XXHash32: int seed>;
+        temp$9[temp$10] = temp$11;
+        temp$12 = this.<org.apache.commons.codec.digest.XXHash32: int[] state>;
+        temp$13 = 3;
+        temp$14 = this.<org.apache.commons.codec.digest.XXHash32: int seed>;
+        temp$15 = temp$14 - -1640531535;
+        temp$12[temp$13] = temp$15;
+        return;
+    }
+}

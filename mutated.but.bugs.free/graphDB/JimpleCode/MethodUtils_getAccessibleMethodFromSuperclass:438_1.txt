@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    private static final transient java.lang.reflect.Method getAccessibleMethodFromSuperclass(java.lang.Class, java.lang.String, java.lang.Class[])
+    {
+        java.lang.Class 'cls', parentClass, temp$0, temp$1;
+        java.lang.String methodName;
+        java.lang.Class[] parameterTypes;
+        java.lang.reflect.Method temp$2;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        parentClass = temp$0;
+
+     label0:
+        nop;
+        if parentClass != null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke parentClass.<java.lang.Class: java.lang.Class getSuperclass()>();
+        parentClass = temp$1;
+        goto label0;
+
+     label2:
+        nop;
+        temp$2 = null;
+        return temp$2;
+    }
+}

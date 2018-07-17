@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public static java.util.Iterator iterator(java.util.Date, int)
+    {
+        java.util.Date focus;
+        int rangeStyle;
+        java.util.Calendar gval, temp$0;
+        java.util.Iterator temp$1;
+
+        focus := @parameter0: java.util.Date;
+        rangeStyle := @parameter1: int;
+        temp$0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        gval = temp$0;
+        virtualinvoke gval.<java.util.Calendar: void setTime(java.util.Date)>(focus);
+        temp$1 = staticinvoke <org.apache.commons.lang3.time.DateUtils: java.util.Iterator iterator(java.util.Calendar,int)>(gval, rangeStyle);
+        return temp$1;
+    }
+}

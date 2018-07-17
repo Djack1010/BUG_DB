@@ -1,0 +1,70 @@
+public class WrapClass 
+{
+    private static final boolean startsWith(java.lang.CharSequence, java.lang.CharSequence, boolean)
+    {
+        java.lang.CharSequence str, prefix;
+        boolean ignoreCase, temp$0, temp$3, temp$5;
+        int temp$1, temp$2, temp$4;
+
+        str := @parameter0: java.lang.CharSequence;
+        prefix := @parameter1: java.lang.CharSequence;
+        ignoreCase := @parameter2: boolean;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if prefix == null goto label1;
+
+        goto label6;
+
+        goto label6;
+
+     label1:
+        nop;
+        if str == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        if prefix == null goto label4;
+
+        goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$0 = 1;
+
+     label5:
+        nop;
+        return temp$0;
+
+     label6:
+        nop;
+        temp$1 = interfaceinvoke prefix.<java.lang.CharSequence: int length()>();
+        temp$2 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        if temp$1 >= temp$2 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label8:
+        nop;
+        temp$4 = interfaceinvoke prefix.<java.lang.CharSequence: int length()>();
+        temp$5 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str, ignoreCase, 0, prefix, 0, temp$4);
+        return temp$5;
+    }
+}

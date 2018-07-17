@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.text.StrTokenizer getTSVInstance(char[])
+    {
+        char[] input;
+        org.apache.commons.lang3.text.StrTokenizer tok, temp$0;
+
+        input := @parameter0: char[];
+        tok = null;
+        temp$0 = virtualinvoke tok.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrTokenizer reset(char[])>(input);
+        return tok;
+    }
+}

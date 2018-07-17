@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.MultiPartEmail attach(org.apache.commons.mail.EmailAttachment) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.MultiPartEmail this, result, temp$5;
+        org.apache.commons.mail.EmailAttachment attachment;
+        org.apache.commons.mail.EmailException temp$0;
+        java.net.URL url, temp$1;
+        java.lang.String temp$2, temp$3, temp$4;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        attachment := @parameter0: org.apache.commons.mail.EmailAttachment;
+        result = null;
+        if attachment == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$0.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Invalid attachment supplied");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.net.URL getURL()>();
+        url = temp$1;
+        temp$2 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getName()>();
+        temp$3 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDescription()>();
+        temp$4 = virtualinvoke attachment.<org.apache.commons.mail.EmailAttachment: java.lang.String getDisposition()>();
+        temp$5 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: org.apache.commons.mail.MultiPartEmail attach(java.net.URL,java.lang.String,java.lang.String,java.lang.String)>(url, temp$2, temp$3, temp$4);
+        result = temp$5;
+        nop;
+        return result;
+    }
+}

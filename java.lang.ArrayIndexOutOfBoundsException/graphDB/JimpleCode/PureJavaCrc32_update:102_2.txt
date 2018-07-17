@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public final void update(int)
+    {
+        org.apache.commons.codec.digest.PureJavaCrc32 this;
+        int b, temp$0, temp$1, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9;
+        int[] temp$2;
+
+        this := @this: org.apache.commons.codec.digest.PureJavaCrc32;
+        b := @parameter0: int;
+        temp$0 = this.<org.apache.commons.codec.digest.PureJavaCrc32: int crc>;
+        temp$1 = temp$0 >>> 8;
+        temp$2 = <org.apache.commons.codec.digest.PureJavaCrc32: int[] T>;
+        temp$3 = this.<org.apache.commons.codec.digest.PureJavaCrc32: int crc>;
+        temp$4 = temp$3 ^ b;
+        temp$5 = temp$4 << 24;
+        temp$6 = temp$5 >>> 0;
+        temp$7 = temp$6;
+        temp$8 = temp$2[temp$7];
+        temp$9 = temp$1 ^ temp$8;
+        this.<org.apache.commons.codec.digest.PureJavaCrc32: int crc> = temp$9;
+        return;
+    }
+}

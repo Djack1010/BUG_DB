@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrTokenizer setIgnoredMatcher(org.apache.commons.lang3.text.StrMatcher)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        org.apache.commons.lang3.text.StrMatcher ignored;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        ignored := @parameter0: org.apache.commons.lang3.text.StrMatcher;
+        if ignored != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        this.<org.apache.commons.lang3.text.StrTokenizer: org.apache.commons.lang3.text.StrMatcher ignoredMatcher> = ignored;
+
+     label1:
+        nop;
+        return this;
+    }
+}

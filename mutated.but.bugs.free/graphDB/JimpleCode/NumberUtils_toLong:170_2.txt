@@ -1,0 +1,37 @@
+public class WrapClass 
+{
+    public static long toLong(java.lang.String, long)
+    {
+        java.lang.String str;
+        long defaultValue, temp$0;
+        java.lang.NumberFormatException nfe;
+
+        str := @parameter0: java.lang.String;
+        defaultValue := @parameter1: long;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(str);
+
+     label3:
+        nop;
+        return temp$0;
+
+     label4:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        return defaultValue;
+
+        catch java.lang.NumberFormatException from label2 to label3 with label4;
+    }
+}

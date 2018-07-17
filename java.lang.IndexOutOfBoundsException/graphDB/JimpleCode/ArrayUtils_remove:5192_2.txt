@@ -1,0 +1,66 @@
+public class WrapClass 
+{
+    private static final java.lang.Object remove(java.lang.Object, int)
+    {
+        java.lang.Object array, result, temp$7;
+        int index, length, temp$0, temp$6, temp$8, temp$9, temp$10, temp$11, temp$12;
+        java.lang.IndexOutOfBoundsException temp$1;
+        java.lang.StringBuffer temp$2;
+        java.lang.String temp$3;
+        java.lang.Class temp$4, temp$5;
+
+        array := @parameter0: java.lang.Object;
+        index := @parameter1: int;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int getLength(java.lang.Object)>(array);
+        length = temp$0;
+        if index <= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if index >= length goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.IndexOutOfBoundsException;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Index: ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(index);
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(", Length: ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(length);
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$1.<java.lang.IndexOutOfBoundsException: void <init>(java.lang.String)>(temp$3);
+        throw temp$1;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke array.<java.lang.Object: java.lang.Class getClass()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.Class: java.lang.Class getComponentType()>();
+        temp$6 = length - 1;
+        temp$7 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>(temp$5, temp$6);
+        result = temp$7;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array, 0, result, 0, index);
+        temp$8 = length - 1;
+        if index < temp$8 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$9 = index;
+        temp$10 = temp$9 + 1;
+        temp$11 = length - index;
+        temp$12 = temp$11 - 1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array, temp$10, result, index, temp$12);
+
+     label4:
+        nop;
+        return result;
+    }
+}

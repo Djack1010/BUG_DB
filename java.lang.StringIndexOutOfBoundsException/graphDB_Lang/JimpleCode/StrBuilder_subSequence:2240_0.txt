@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public java.lang.CharSequence subSequence(int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, temp$1, temp$4;
+        java.lang.StringIndexOutOfBoundsException temp$0, temp$2, temp$3;
+        java.lang.String temp$5;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        if startIndex < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$0.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(startIndex);
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if endIndex > temp$1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.StringIndexOutOfBoundsException;
+        specialinvoke temp$2.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(endIndex);
+        throw temp$2;
+
+     label3:
+        nop;
+        if startIndex > endIndex goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = new java.lang.StringIndexOutOfBoundsException;
+        temp$4 = endIndex - startIndex;
+        specialinvoke temp$3.<java.lang.StringIndexOutOfBoundsException: void <init>(int)>(temp$4);
+        throw temp$3;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String substring(int,int)>(startIndex, endIndex);
+        return temp$5;
+    }
+}

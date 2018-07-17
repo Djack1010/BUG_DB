@@ -1,0 +1,109 @@
+public class WrapClass 
+{
+    public static void removeCommonFrames(java.util.List, java.util.List)
+    {
+        java.util.List causeFrames, wrapperFrames;
+        boolean temp$0, temp$1, temp$11;
+        java.lang.IllegalArgumentException temp$2;
+        int causeFrameIndex, temp$3, temp$4, wrapperFrameIndex, temp$5, temp$6, temp$14, temp$15, temp$16, temp$17;
+        java.lang.String causeFrame, temp$8, wrapperFrame, temp$10, temp$13;
+        java.lang.Object temp$7, temp$9, temp$12;
+
+        causeFrames := @parameter0: java.util.List;
+        wrapperFrames := @parameter1: java.util.List;
+        if causeFrames == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if wrapperFrames == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The List must not be null");
+        throw temp$2;
+
+     label7:
+        nop;
+        temp$3 = interfaceinvoke causeFrames.<java.util.List: int size()>();
+        temp$4 = temp$3 - 1;
+        causeFrameIndex = temp$4;
+        temp$5 = interfaceinvoke wrapperFrames.<java.util.List: int size()>();
+        temp$6 = temp$5 - 1;
+        wrapperFrameIndex = temp$6;
+
+     label8:
+        nop;
+        if causeFrameIndex >= 0 goto label9;
+
+        goto label13;
+
+     label9:
+        nop;
+        if wrapperFrameIndex >= 0 goto label10;
+
+        goto label13;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$7 = interfaceinvoke causeFrames.<java.util.List: java.lang.Object get(int)>(causeFrameIndex);
+        temp$8 = (java.lang.String) temp$7;
+        causeFrame = temp$8;
+        temp$9 = interfaceinvoke wrapperFrames.<java.util.List: java.lang.Object get(int)>(wrapperFrameIndex);
+        temp$10 = (java.lang.String) temp$9;
+        wrapperFrame = temp$10;
+        temp$11 = virtualinvoke causeFrame.<java.lang.String: boolean equals(java.lang.Object)>(wrapperFrame);
+        if temp$11 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$12 = interfaceinvoke causeFrames.<java.util.List: java.lang.Object remove(int)>(causeFrameIndex);
+        temp$13 = (java.lang.String) temp$12;
+
+     label12:
+        nop;
+        temp$14 = causeFrameIndex;
+        temp$15 = temp$14 + -1;
+        causeFrameIndex = temp$15;
+        temp$16 = wrapperFrameIndex;
+        temp$17 = temp$16 + -1;
+        wrapperFrameIndex = temp$17;
+        goto label8;
+
+     label13:
+        nop;
+        return;
+    }
+}

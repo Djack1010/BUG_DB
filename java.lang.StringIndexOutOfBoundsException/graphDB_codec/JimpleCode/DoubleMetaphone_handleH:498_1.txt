@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    private final int handleH(java.lang.String, org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult result;
+        int index, temp$0, temp$3, temp$4, temp$7, temp$8, temp$9, temp$10;
+        char temp$1, temp$5;
+        boolean temp$2, temp$6;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        result := @parameter1: org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult;
+        index := @parameter2: int;
+        if index == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = index - 1;
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$0);
+        temp$2 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$1);
+        if temp$2 == 0 goto label3;
+
+        goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$3 = index;
+        temp$4 = temp$3 + 1;
+        temp$5 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$4);
+        temp$6 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$5);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+        goto label2;
+
+     label2:
+        nop;
+        virtualinvoke result.<org.apache.commons.codec.language.DoubleMetaphone$DoubleMetaphoneResult: void append(char)>(72);
+        temp$7 = index;
+        temp$8 = temp$7 + -2;
+        index = temp$8;
+        goto label4;
+
+     label3:
+        nop;
+        temp$9 = index;
+        temp$10 = temp$9 + 1;
+        index = temp$10;
+
+     label4:
+        nop;
+        return index;
+    }
+}

@@ -1,0 +1,12 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.reflect.Typed wrap(java.lang.Class)
+    {
+        java.lang.Class type;
+        org.apache.commons.lang3.reflect.Typed temp$0;
+
+        type := @parameter0: java.lang.Class;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: org.apache.commons.lang3.reflect.Typed wrap(java.lang.reflect.Type)>(type);
+        return temp$0;
+    }
+}

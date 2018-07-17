@@ -1,0 +1,85 @@
+public class WrapClass 
+{
+    public static boolean isSameLength(long[], long[])
+    {
+        long[] array1, array2;
+        int temp$0, temp$1, temp$2, temp$3;
+        boolean temp$4, temp$5;
+
+        array1 := @parameter0: long[];
+        array2 := @parameter1: long[];
+        if array1 == null goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        if array2 != null goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$0 = lengthof array2;
+        if temp$0 > 0 goto label7;
+
+        goto label2;
+
+        goto label7;
+
+     label2:
+        nop;
+        if array2 == null goto label3;
+
+        goto label5;
+
+     label3:
+        nop;
+        if array1 != null goto label4;
+
+        goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$1 = lengthof array1;
+        if temp$1 > 0 goto label7;
+
+        goto label5;
+
+        goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        if array2 != null goto label6;
+
+        goto label8;
+
+     label6:
+        nop;
+        temp$2 = lengthof array1;
+        temp$3 = lengthof array2;
+        if temp$2 != temp$3 goto label7;
+
+        goto label8;
+
+        goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label8:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+    }
+}

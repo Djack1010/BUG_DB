@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.CharSet this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$1, temp$2, temp$5;
+        java.util.Set temp$3, temp$4;
+
+        this := @this: org.apache.commons.lang3.CharSet;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = obj instanceof org.apache.commons.lang3.CharSet;
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label3:
+        nop;
+        other = null;
+        temp$3 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$4 = other.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$5 = interfaceinvoke temp$3.<java.util.Set: boolean equals(java.lang.Object)>(temp$4);
+        return temp$5;
+    }
+}

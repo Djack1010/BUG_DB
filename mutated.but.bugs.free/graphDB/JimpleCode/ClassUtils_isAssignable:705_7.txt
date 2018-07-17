@@ -1,0 +1,473 @@
+public class WrapClass 
+{
+    public static boolean isAssignable(java.lang.Class, java.lang.Class, boolean)
+    {
+        java.lang.Class 'cls', toClass, temp$5, temp$8, temp$15, temp$17, temp$19, temp$21, temp$24, temp$26, temp$28, temp$31, temp$34, temp$37, temp$39, temp$41, temp$43, temp$45, temp$47, temp$49, temp$52, temp$54, temp$56, temp$58, temp$60, temp$63, temp$65, temp$67, temp$69, temp$71, temp$73;
+        boolean autoboxing, temp$0, temp$1, temp$2, temp$3, temp$4, temp$6, temp$7, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, temp$16, temp$18, temp$20, temp$22, temp$23, temp$25, temp$27, temp$29, temp$30, temp$32, temp$33, temp$35, temp$36, temp$38, temp$40, temp$42, temp$44, temp$46, temp$48, temp$50, temp$51, temp$53, temp$55, temp$57, temp$59, temp$61, temp$62, temp$64, temp$66, temp$68, temp$70, temp$72, temp$74, temp$75, temp$76, temp$77;
+
+        'cls' := @parameter0: java.lang.Class;
+        toClass := @parameter1: java.lang.Class;
+        autoboxing := @parameter2: boolean;
+        if toClass == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        if 'cls' == null goto label2;
+
+        goto label6;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke toClass.<java.lang.Class: boolean isPrimitive()>();
+        if temp$1 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        return temp$2;
+
+     label6:
+        nop;
+        if autoboxing == 0 goto label18;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$3 = virtualinvoke 'cls'.<java.lang.Class: boolean isPrimitive()>();
+        if temp$3 == 0 goto label12;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$4 = virtualinvoke toClass.<java.lang.Class: boolean isPrimitive()>();
+        if temp$4 == 0 goto label9;
+
+        goto label12;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class primitiveToWrapper(java.lang.Class)>('cls');
+        'cls' = temp$5;
+        if 'cls' == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$6 = virtualinvoke toClass.<java.lang.Class: boolean isPrimitive()>();
+        if temp$6 == 0 goto label17;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$7 = virtualinvoke 'cls'.<java.lang.Class: boolean isPrimitive()>();
+        if temp$7 == 0 goto label14;
+
+        goto label17;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$8 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Class wrapperToPrimitive(java.lang.Class)>('cls');
+        'cls' = temp$8;
+        if 'cls' == null goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+        temp$10 = virtualinvoke 'cls'.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$10 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$11 = 1;
+        return temp$11;
+
+     label20:
+        nop;
+        temp$12 = virtualinvoke 'cls'.<java.lang.Class: boolean isPrimitive()>();
+        if temp$12 == 0 goto label68;
+
+        goto label21;
+
+     label21:
+        nop;
+        temp$13 = virtualinvoke toClass.<java.lang.Class: boolean isPrimitive()>();
+        if temp$13 == 0 goto label22;
+
+        goto label23;
+
+     label22:
+        nop;
+        temp$14 = 0;
+        return temp$14;
+
+     label23:
+        nop;
+        temp$15 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$16 = virtualinvoke temp$15.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$16 == 0 goto label30;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$17 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$18 = virtualinvoke temp$17.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$18 == 0 goto label25;
+
+        goto label28;
+
+     label25:
+        nop;
+        temp$19 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$20 = virtualinvoke temp$19.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$20 == 0 goto label26;
+
+        goto label28;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$21 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$22 = virtualinvoke temp$21.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$22 == 0 goto label27;
+
+        goto label28;
+
+        goto label27;
+
+     label27:
+        nop;
+        temp$23 = 0;
+        goto label29;
+
+     label28:
+        nop;
+        temp$23 = 1;
+
+     label29:
+        nop;
+        return temp$23;
+
+     label30:
+        nop;
+        temp$24 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$25 = virtualinvoke temp$24.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$25 == 0 goto label36;
+
+        goto label31;
+
+     label31:
+        nop;
+        temp$26 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$27 = virtualinvoke temp$26.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$27 == 0 goto label32;
+
+        goto label34;
+
+     label32:
+        nop;
+        temp$28 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$29 = virtualinvoke temp$28.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$29 == 0 goto label33;
+
+        goto label34;
+
+        goto label33;
+
+     label33:
+        nop;
+        temp$30 = 0;
+        goto label35;
+
+     label34:
+        nop;
+        temp$30 = 1;
+
+     label35:
+        nop;
+        return temp$30;
+
+     label36:
+        nop;
+        temp$31 = <java.lang.Boolean: java.lang.Class TYPE>;
+        temp$32 = virtualinvoke temp$31.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$32 == 0 goto label38;
+
+        goto label37;
+
+     label37:
+        nop;
+        temp$33 = 0;
+        return temp$33;
+
+     label38:
+        nop;
+        temp$34 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$35 = virtualinvoke temp$34.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$35 == 0 goto label40;
+
+        goto label39;
+
+     label39:
+        nop;
+        temp$36 = 0;
+        return temp$36;
+
+     label40:
+        nop;
+        temp$37 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$38 = virtualinvoke temp$37.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$38 == 0 goto label42;
+
+        goto label41;
+
+     label41:
+        nop;
+        temp$39 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$40 = virtualinvoke temp$39.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        return temp$40;
+
+     label42:
+        nop;
+        temp$41 = <java.lang.Character: java.lang.Class TYPE>;
+        temp$42 = virtualinvoke temp$41.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$42 == 0 goto label50;
+
+        goto label43;
+
+     label43:
+        nop;
+        temp$43 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$44 = virtualinvoke temp$43.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$44 == 0 goto label44;
+
+        goto label48;
+
+     label44:
+        nop;
+        temp$45 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$46 = virtualinvoke temp$45.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$46 == 0 goto label45;
+
+        goto label48;
+
+        goto label45;
+
+     label45:
+        nop;
+        temp$47 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$48 = virtualinvoke temp$47.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$48 == 0 goto label46;
+
+        goto label48;
+
+        goto label46;
+
+     label46:
+        nop;
+        temp$49 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$50 = virtualinvoke temp$49.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$50 == 0 goto label47;
+
+        goto label48;
+
+        goto label47;
+
+     label47:
+        nop;
+        temp$51 = 0;
+        goto label49;
+
+     label48:
+        nop;
+        temp$51 = 1;
+
+     label49:
+        nop;
+        return temp$51;
+
+     label50:
+        nop;
+        temp$52 = <java.lang.Short: java.lang.Class TYPE>;
+        temp$53 = virtualinvoke temp$52.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$53 == 0 goto label58;
+
+        goto label51;
+
+     label51:
+        nop;
+        temp$54 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$55 = virtualinvoke temp$54.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$55 == 0 goto label52;
+
+        goto label56;
+
+     label52:
+        nop;
+        temp$56 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$57 = virtualinvoke temp$56.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$57 == 0 goto label53;
+
+        goto label56;
+
+        goto label53;
+
+     label53:
+        nop;
+        temp$58 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$59 = virtualinvoke temp$58.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$59 == 0 goto label54;
+
+        goto label56;
+
+        goto label54;
+
+     label54:
+        nop;
+        temp$60 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$61 = virtualinvoke temp$60.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$61 == 0 goto label55;
+
+        goto label56;
+
+        goto label55;
+
+     label55:
+        nop;
+        temp$62 = 0;
+        goto label57;
+
+     label56:
+        nop;
+        temp$62 = 1;
+
+     label57:
+        nop;
+        return temp$62;
+
+     label58:
+        nop;
+        temp$63 = <java.lang.Byte: java.lang.Class TYPE>;
+        temp$64 = virtualinvoke temp$63.<java.lang.Class: boolean equals(java.lang.Object)>('cls');
+        if temp$64 == 0 goto label67;
+
+        goto label59;
+
+     label59:
+        nop;
+        temp$65 = <java.lang.Short: java.lang.Class TYPE>;
+        temp$66 = virtualinvoke temp$65.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$66 == 0 goto label60;
+
+        goto label65;
+
+     label60:
+        nop;
+        temp$67 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$68 = virtualinvoke temp$67.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$68 == 0 goto label61;
+
+        goto label65;
+
+        goto label61;
+
+     label61:
+        nop;
+        temp$69 = <java.lang.Long: java.lang.Class TYPE>;
+        temp$70 = virtualinvoke temp$69.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$70 == 0 goto label62;
+
+        goto label65;
+
+        goto label62;
+
+     label62:
+        nop;
+        temp$71 = <java.lang.Float: java.lang.Class TYPE>;
+        temp$72 = virtualinvoke temp$71.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$72 == 0 goto label63;
+
+        goto label65;
+
+        goto label63;
+
+     label63:
+        nop;
+        temp$73 = <java.lang.Double: java.lang.Class TYPE>;
+        temp$74 = virtualinvoke temp$73.<java.lang.Class: boolean equals(java.lang.Object)>(toClass);
+        if temp$74 == 0 goto label64;
+
+        goto label65;
+
+        goto label64;
+
+     label64:
+        nop;
+        temp$75 = 0;
+        goto label66;
+
+     label65:
+        nop;
+        temp$75 = 1;
+
+     label66:
+        nop;
+        return temp$75;
+
+     label67:
+        nop;
+        temp$76 = 0;
+        return temp$76;
+
+     label68:
+        nop;
+        temp$77 = virtualinvoke toClass.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>('cls');
+        return temp$77;
+    }
+}

@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendAll(java.lang.Iterable)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2;
+        java.lang.Iterable iterable;
+        java.util.Iterator temp$0;
+        java.lang.Object o;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        iterable := @parameter0: java.lang.Iterable;
+        temp$0 = interfaceinvoke iterable.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$1 = interfaceinvoke temp$0.<java.util.Iterator: boolean hasNext()>();
+        if temp$1 == 0 goto label1;
+
+        o = interfaceinvoke temp$0.<java.util.Iterator: java.lang.Object next()>();
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.Object)>(o);
+        nop;
+        goto label0;
+
+     label1:
+        nop;
+        return this;
+    }
+}

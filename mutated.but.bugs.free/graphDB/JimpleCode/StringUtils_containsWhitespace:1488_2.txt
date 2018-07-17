@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public static boolean containsWhitespace(java.lang.CharSequence)
+    {
+        java.lang.CharSequence seq;
+        int strLen, temp$0, i, temp$4, temp$5;
+        char temp$1;
+        boolean temp$2, temp$3, temp$6;
+
+        seq := @parameter0: java.lang.CharSequence;
+        temp$0 = interfaceinvoke seq.<java.lang.CharSequence: int length()>();
+        strLen = temp$0;
+        i = 0;
+
+     label0:
+        nop;
+        if i < strLen goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke seq.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$2 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(temp$1);
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = 1;
+        return temp$3;
+
+     label3:
+        nop;
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + 1;
+        i = temp$5;
+        goto label0;
+
+     label4:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+    }
+}

@@ -1,0 +1,248 @@
+public class WrapClass 
+{
+    private static final java.lang.String[] splitWorker(java.lang.String, java.lang.String, int, boolean)
+    {
+        java.lang.String str, separatorChars, temp$13, temp$28, temp$36;
+        int max, len, temp$1, sizePlus1, i, start, temp$4, temp$7, temp$8, temp$10, temp$11, temp$16, temp$19, temp$20, temp$22, temp$23, temp$25, temp$26, temp$31, temp$34, temp$35, temp$38;
+        boolean preserveAllTokens, match, lastMatch, temp$9, temp$12, temp$14, temp$15, temp$17, temp$18, temp$24, temp$27, temp$29, temp$30, temp$32, temp$33, temp$37;
+        java.lang.String[] temp$0, temp$2, temp$39, temp$41;
+        java.util.List list;
+        java.util.ArrayList temp$3;
+        char sep, temp$5, temp$6, temp$21;
+        java.lang.Object[] temp$40;
+
+        str := @parameter0: java.lang.String;
+        separatorChars := @parameter1: java.lang.String;
+        max := @parameter2: int;
+        preserveAllTokens := @parameter3: boolean;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$1;
+        if len == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = new java.util.ArrayList;
+        specialinvoke temp$3.<java.util.ArrayList: void <init>()>();
+        list = temp$3;
+        sizePlus1 = 1;
+        i = 0;
+        start = 0;
+        match = 0;
+        lastMatch = 0;
+        temp$4 = virtualinvoke separatorChars.<java.lang.String: int length()>();
+        if temp$4 == 1 goto label4;
+
+        goto label15;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke separatorChars.<java.lang.String: char charAt(int)>(0);
+        sep = temp$5;
+
+     label5:
+        nop;
+        if i < len goto label6;
+
+        goto label14;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$7 = (int) temp$6;
+        temp$8 = (int) sep;
+        if temp$7 == temp$8 goto label7;
+
+        goto label13;
+
+     label7:
+        nop;
+        if match == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        if preserveAllTokens == 0 goto label12;
+
+        goto label9;
+
+        goto label12;
+
+     label9:
+        nop;
+        temp$9 = 1;
+        lastMatch = temp$9;
+        temp$10 = sizePlus1;
+        temp$11 = temp$10 + 1;
+        sizePlus1 = temp$11;
+        if temp$10 == max goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        i = len;
+        temp$12 = 0;
+        lastMatch = temp$12;
+
+     label11:
+        nop;
+        temp$13 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$14 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$13);
+        temp$15 = 0;
+        match = temp$15;
+
+     label12:
+        nop;
+        temp$16 = i + 1;
+        i = temp$16;
+        start = temp$16;
+        goto label5;
+
+     label13:
+        nop;
+        temp$17 = 0;
+        lastMatch = temp$17;
+        temp$18 = 1;
+        match = temp$18;
+        temp$19 = i;
+        temp$20 = temp$19 + 1;
+        i = temp$20;
+        goto label5;
+
+     label14:
+        nop;
+        goto label26;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        if i < len goto label17;
+
+        goto label25;
+
+     label17:
+        nop;
+        temp$21 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$22 = (int) temp$21;
+        temp$23 = virtualinvoke separatorChars.<java.lang.String: int indexOf(int)>(temp$22);
+        if temp$23 >= 0 goto label18;
+
+        goto label24;
+
+     label18:
+        nop;
+        if match == 0 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        if preserveAllTokens == 0 goto label23;
+
+        goto label20;
+
+        goto label23;
+
+     label20:
+        nop;
+        temp$24 = 1;
+        lastMatch = temp$24;
+        temp$25 = sizePlus1;
+        temp$26 = temp$25 + 1;
+        sizePlus1 = temp$26;
+        if temp$25 == max goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        i = len;
+        temp$27 = 0;
+        lastMatch = temp$27;
+
+     label22:
+        nop;
+        temp$28 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$29 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$28);
+        temp$30 = 0;
+        match = temp$30;
+
+     label23:
+        nop;
+        temp$31 = i + 1;
+        i = temp$31;
+        start = temp$31;
+        goto label16;
+
+     label24:
+        nop;
+        temp$32 = 0;
+        lastMatch = temp$32;
+        temp$33 = 1;
+        match = temp$33;
+        temp$34 = i;
+        temp$35 = temp$34 + 1;
+        i = temp$35;
+        goto label16;
+
+     label25:
+        nop;
+
+     label26:
+        nop;
+        nop;
+        if match == 0 goto label27;
+
+        goto label29;
+
+     label27:
+        nop;
+        if preserveAllTokens == 0 goto label30;
+
+        goto label28;
+
+     label28:
+        nop;
+        if lastMatch == 0 goto label30;
+
+        goto label29;
+
+        goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$36 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, i);
+        temp$37 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$36);
+
+     label30:
+        nop;
+        temp$38 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$39 = newarray (java.lang.String)[temp$38];
+        temp$40 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$39);
+        temp$41 = (java.lang.String[]) temp$40;
+        return temp$41;
+    }
+}

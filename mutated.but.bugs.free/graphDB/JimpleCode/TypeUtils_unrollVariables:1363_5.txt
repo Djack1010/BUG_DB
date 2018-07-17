@@ -1,0 +1,146 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type unrollVariables(java.util.Map, java.lang.reflect.Type)
+    {
+        java.util.Map typeArguments, temp$0, temp$1, parameterizedTypeArguments, temp$7;
+        java.lang.reflect.Type type, temp$5, unrolled, temp$12, temp$13, temp$18, temp$19;
+        boolean temp$2, temp$3, temp$4, temp$22;
+        java.lang.reflect.ParameterizedType p, temp$21;
+        java.util.HashMap temp$6;
+        java.lang.reflect.Type[] args, temp$8, temp$10, temp$14, temp$24, temp$25, temp$27, temp$28;
+        int i, temp$9, temp$11, temp$15, temp$16, temp$17;
+        java.lang.Class temp$20;
+        java.lang.reflect.WildcardType wild, temp$30;
+        org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder temp$23, temp$26, temp$29;
+
+        typeArguments := @parameter0: java.util.Map;
+        type := @parameter1: java.lang.reflect.Type;
+        if typeArguments == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <java.util.Collections: java.util.Map emptyMap()>();
+        temp$1 = (java.util.Map) temp$0;
+        typeArguments = temp$1;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean containsTypeVariables(java.lang.reflect.Type)>(type);
+        if temp$2 == 0 goto label17;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = type instanceof java.lang.reflect.TypeVariable;
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$4 = type instanceof java.lang.reflect.ParameterizedType;
+        if temp$4 == 0 goto label14;
+
+        goto label5;
+
+     label5:
+        nop;
+        p = (java.lang.reflect.ParameterizedType) type;
+        temp$5 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        if temp$5 == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        parameterizedTypeArguments = typeArguments;
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = new java.util.HashMap;
+        specialinvoke temp$6.<java.util.HashMap: void <init>(java.util.Map)>(typeArguments);
+        parameterizedTypeArguments = temp$6;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.util.Map getTypeArguments(java.lang.reflect.ParameterizedType)>(p);
+        interfaceinvoke parameterizedTypeArguments.<java.util.Map: void putAll(java.util.Map)>(temp$7);
+
+     label8:
+        nop;
+        temp$8 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>();
+        args = temp$8;
+        i = 0;
+
+     label9:
+        nop;
+        temp$9 = lengthof args;
+        if i < temp$9 goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$10 = args;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        temp$13 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type unrollVariables(java.util.Map,java.lang.reflect.Type)>(parameterizedTypeArguments, temp$12);
+        unrolled = temp$13;
+        if unrolled != null goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$14 = args;
+        temp$15 = i;
+        temp$14[temp$15] = unrolled;
+
+     label12:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label9;
+
+     label13:
+        nop;
+        temp$18 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>();
+        temp$19 = interfaceinvoke p.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getRawType()>();
+        temp$20 = (java.lang.Class) temp$19;
+        temp$21 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.ParameterizedType parameterizeWithOwner(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type[])>(temp$18, temp$20, args);
+        return temp$21;
+
+     label14:
+        nop;
+        temp$22 = type instanceof java.lang.reflect.WildcardType;
+        if temp$22 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        wild = (java.lang.reflect.WildcardType) type;
+        temp$23 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder wildcardType()>();
+        temp$24 = interfaceinvoke wild.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        temp$25 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] unrollBounds(java.util.Map,java.lang.reflect.Type[])>(typeArguments, temp$24);
+        temp$26 = virtualinvoke temp$23.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder withUpperBounds(java.lang.reflect.Type[])>(temp$25);
+        temp$27 = interfaceinvoke wild.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getLowerBounds()>();
+        temp$28 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.reflect.Type[] unrollBounds(java.util.Map,java.lang.reflect.Type[])>(typeArguments, temp$27);
+        temp$29 = virtualinvoke temp$26.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder withLowerBounds(java.lang.reflect.Type[])>(temp$28);
+        temp$30 = virtualinvoke temp$29.<org.apache.commons.lang3.reflect.TypeUtils$WildcardTypeBuilder: java.lang.reflect.WildcardType build()>();
+        return temp$30;
+
+     label16:
+        nop;
+
+     label17:
+        nop;
+        return type;
+    }
+}

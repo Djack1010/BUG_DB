@@ -1,0 +1,77 @@
+public class WrapClass 
+{
+    public static java.lang.String deleteWhitespace(java.lang.String)
+    {
+        java.lang.String str, temp$11;
+        boolean temp$0, temp$3;
+        int sz, temp$1, count, i, temp$5, temp$6, temp$7, temp$9, temp$10;
+        char[] chs, temp$4;
+        char temp$2, temp$8;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        sz = temp$1;
+        chs = null;
+        count = 0;
+        i = 0;
+
+     label2:
+        nop;
+        if i < sz goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$3 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(temp$2);
+        if temp$3 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = chs;
+        temp$5 = count;
+        temp$6 = temp$5 + 1;
+        count = temp$6;
+        temp$7 = temp$5;
+        temp$8 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        temp$4[temp$7] = temp$8;
+
+     label5:
+        nop;
+        nop;
+        temp$9 = i;
+        temp$10 = temp$9 + 1;
+        i = temp$10;
+        goto label2;
+
+     label6:
+        nop;
+        if count == sz goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return str;
+
+     label8:
+        nop;
+        temp$11 = new java.lang.String;
+        specialinvoke temp$11.<java.lang.String: void <init>(char[],int,int)>(chs, 0, count);
+        return temp$11;
+    }
+}

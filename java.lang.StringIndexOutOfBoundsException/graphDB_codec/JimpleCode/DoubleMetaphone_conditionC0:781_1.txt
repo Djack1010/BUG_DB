@@ -1,0 +1,113 @@
+public class WrapClass 
+{
+    private final boolean conditionC0(java.lang.String, int)
+    {
+        org.apache.commons.codec.language.DoubleMetaphone this;
+        java.lang.String value;
+        int index, temp$4, temp$8, temp$12, temp$13, temp$15, temp$16, temp$17;
+        java.lang.String[] temp$0, temp$9, temp$18;
+        boolean temp$1, temp$2, temp$3, temp$6, temp$7, temp$10, temp$11, temp$19, temp$20;
+        char temp$5, c, temp$14;
+
+        this := @this: org.apache.commons.codec.language.DoubleMetaphone;
+        value := @parameter0: java.lang.String;
+        index := @parameter1: int;
+        temp$0 = newarray (java.lang.String)[1];
+        temp$0[0] = "CHIA";
+        temp$1 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, index, 4, temp$0);
+        if temp$1 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = 1;
+        return temp$2;
+
+     label1:
+        nop;
+        if index <= 1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label3:
+        nop;
+        temp$4 = index - 2;
+        temp$5 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$4);
+        temp$6 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: boolean isVowel(char)>(temp$5);
+        if temp$6 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+
+     label5:
+        nop;
+        temp$8 = index - 1;
+        temp$9 = newarray (java.lang.String)[1];
+        temp$9[0] = "ACH";
+        temp$10 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$8, 3, temp$9);
+        if temp$10 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label7:
+        nop;
+        temp$12 = index;
+        temp$13 = temp$12 + 2;
+        temp$14 = virtualinvoke this.<org.apache.commons.codec.language.DoubleMetaphone: char charAt(java.lang.String,int)>(value, temp$13);
+        c = temp$14;
+        temp$15 = (int) c;
+        if temp$15 != 73 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$16 = (int) c;
+        if temp$16 != 69 goto label11;
+
+        goto label9;
+
+        goto label11;
+
+     label9:
+        nop;
+        temp$17 = index - 2;
+        temp$18 = newarray (java.lang.String)[2];
+        temp$18[0] = "BACHER";
+        temp$18[1] = "MACHER";
+        temp$19 = staticinvoke <org.apache.commons.codec.language.DoubleMetaphone: boolean contains(java.lang.String,int,int,java.lang.String[])>(value, temp$17, -6, temp$18);
+        if temp$19 == 0 goto label10;
+
+        goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$20 = 0;
+        goto label12;
+
+     label11:
+        nop;
+        temp$20 = 1;
+
+     label12:
+        nop;
+        return temp$20;
+    }
+}

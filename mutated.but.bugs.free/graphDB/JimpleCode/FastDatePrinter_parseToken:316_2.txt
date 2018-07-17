@@ -1,0 +1,236 @@
+public class WrapClass 
+{
+    protected java.lang.String parseToken(java.lang.String, int[])
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.lang.String pattern, temp$43;
+        int[] indexRef, temp$1, temp$41;
+        java.lang.StringBuilder buf, temp$0, temp$9, temp$17, temp$20, temp$31, temp$38;
+        int i, temp$2, length, temp$3, temp$5, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12, temp$13, temp$15, temp$16, temp$18, temp$19, temp$22, temp$23, temp$24, temp$25, temp$26, temp$28, temp$29, temp$30, temp$33, temp$34, temp$35, temp$36, temp$37, temp$39, temp$40, temp$42;
+        char c, temp$4, peek, temp$14, temp$21, temp$27;
+        boolean inLiteral, temp$32;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        pattern := @parameter0: java.lang.String;
+        indexRef := @parameter1: int[];
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        buf = temp$0;
+        temp$1 = indexRef;
+        temp$2 = 0;
+        i = temp$1[temp$2];
+        temp$3 = virtualinvoke pattern.<java.lang.String: int length()>();
+        length = temp$3;
+        temp$4 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(i);
+        c = temp$4;
+        temp$5 = (int) c;
+        if temp$5 >= 65 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$6 = (int) c;
+        if temp$6 <= 90 goto label3;
+
+        goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$7 = (int) c;
+        if temp$7 >= 97 goto label2;
+
+        goto label10;
+
+     label2:
+        nop;
+        temp$8 = (int) c;
+        if temp$8 <= 122 goto label3;
+
+        goto label10;
+
+        goto label3;
+
+        goto label10;
+
+     label3:
+        nop;
+        temp$9 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+
+     label4:
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        if temp$11 < length goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        temp$14 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$13);
+        peek = temp$14;
+        temp$15 = (int) peek;
+        temp$16 = (int) c;
+        if temp$15 == temp$16 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$17 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        i = temp$19;
+        goto label8;
+
+     label7:
+        nop;
+        goto label9;
+
+     label8:
+        nop;
+        goto label4;
+
+     label9:
+        nop;
+        goto label29;
+
+     label10:
+        nop;
+        temp$20 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(39);
+        inLiteral = 0;
+
+     label11:
+        nop;
+        if i < length goto label12;
+
+        goto label28;
+
+     label12:
+        nop;
+        temp$21 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(i);
+        c = temp$21;
+        temp$22 = (int) c;
+        if temp$22 == 39 goto label13;
+
+        goto label21;
+
+     label13:
+        nop;
+        temp$23 = i;
+        temp$24 = temp$23 + 1;
+        if temp$24 < length goto label14;
+
+        goto label16;
+
+     label14:
+        nop;
+        temp$25 = i;
+        temp$26 = temp$25 + 1;
+        temp$27 = virtualinvoke pattern.<java.lang.String: char charAt(int)>(temp$26);
+        temp$28 = (int) temp$27;
+        if temp$28 == 39 goto label15;
+
+        goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$29 = i;
+        temp$30 = temp$29 + 1;
+        i = temp$30;
+        temp$31 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        goto label20;
+
+     label16:
+        nop;
+        if inLiteral == 0 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$32 = 0;
+        goto label19;
+
+     label18:
+        nop;
+        temp$32 = 1;
+
+     label19:
+        nop;
+        inLiteral = temp$32;
+
+     label20:
+        nop;
+        goto label27;
+
+     label21:
+        nop;
+        if inLiteral == 0 goto label22;
+
+        goto label26;
+
+     label22:
+        nop;
+        temp$33 = (int) c;
+        if temp$33 >= 65 goto label23;
+
+        goto label24;
+
+     label23:
+        nop;
+        temp$34 = (int) c;
+        if temp$34 <= 90 goto label25;
+
+        goto label24;
+
+        goto label25;
+
+     label24:
+        nop;
+        temp$35 = (int) c;
+        if temp$35 >= 97 goto label25;
+
+        goto label26;
+
+        goto label26;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$36 = i;
+        temp$37 = temp$36 + -1;
+        i = temp$37;
+        goto label28;
+
+     label26:
+        nop;
+        temp$38 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+
+     label27:
+        nop;
+        nop;
+        temp$39 = i;
+        temp$40 = temp$39 + 1;
+        i = temp$40;
+        goto label11;
+
+     label28:
+        nop;
+
+     label29:
+        nop;
+        temp$41 = indexRef;
+        temp$42 = 0;
+        temp$41[temp$42] = i;
+        temp$43 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$43;
+    }
+}

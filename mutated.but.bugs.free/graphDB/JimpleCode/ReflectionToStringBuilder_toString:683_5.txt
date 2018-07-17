@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public java.lang.String toString()
+    {
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder this;
+        java.lang.Class clazz, temp$1, temp$2, temp$3, temp$4;
+        java.lang.Object temp$0;
+        java.lang.String temp$5;
+
+        this := @this: org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Object getObject()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.Object: java.lang.Class getClass()>();
+        clazz = temp$1;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: void appendFieldsIn(java.lang.Class)>(clazz);
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke clazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        if temp$2 != null goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.Class getUpToClass()>();
+        if clazz != temp$3 goto label2;
+
+        goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = virtualinvoke clazz.<java.lang.Class: java.lang.Class getSuperclass()>();
+        clazz = temp$4;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: void appendFieldsIn(java.lang.Class)>(clazz);
+        goto label0;
+
+     label3:
+        nop;
+        temp$5 = specialinvoke this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.String toString()>();
+        return temp$5;
+    }
+}

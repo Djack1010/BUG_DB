@@ -1,0 +1,97 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Type[] normalizeUpperBounds(java.lang.reflect.Type[])
+    {
+        java.lang.reflect.Type[] bounds, temp$13, temp$15;
+        int temp$0, temp$2, temp$3, temp$4, temp$6, temp$7, temp$12;
+        java.util.Set types;
+        java.util.HashSet temp$1;
+        java.lang.reflect.Type type1, temp$5, type2, temp$8;
+        boolean subtypeFound, temp$9, temp$10, temp$11;
+        java.lang.Object[] temp$14;
+
+        bounds := @parameter0: java.lang.reflect.Type[];
+        temp$0 = lengthof bounds;
+        if temp$0 < 2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return bounds;
+
+     label1:
+        nop;
+        temp$1 = new java.util.HashSet;
+        temp$2 = lengthof bounds;
+        specialinvoke temp$1.<java.util.HashSet: void <init>(int)>(temp$2);
+        types = temp$1;
+        temp$3 = 0;
+
+     label2:
+        nop;
+        temp$4 = lengthof bounds;
+        if temp$3 >= temp$4 goto label10;
+
+        temp$5 = bounds[temp$3];
+        type1 = temp$5;
+        subtypeFound = 0;
+        temp$6 = 0;
+
+     label3:
+        nop;
+        temp$7 = lengthof bounds;
+        if temp$6 >= temp$7 goto label7;
+
+        temp$8 = bounds[temp$6];
+        type2 = temp$8;
+        if type1 != type2 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: boolean isAssignable(java.lang.reflect.Type,java.lang.reflect.Type,java.util.Map)>(type2, type1, null);
+        if temp$9 == 0 goto label6;
+
+        goto label5;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$10 = 1;
+        subtypeFound = temp$10;
+        goto label7;
+
+     label6:
+        nop;
+        nop;
+        temp$6 = temp$6 + 1;
+        goto label3;
+
+     label7:
+        nop;
+        if subtypeFound == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$11 = interfaceinvoke types.<java.util.Set: boolean add(java.lang.Object)>(type1);
+
+     label9:
+        nop;
+        nop;
+        temp$3 = temp$3 + 1;
+        goto label2;
+
+     label10:
+        nop;
+        temp$12 = interfaceinvoke types.<java.util.Set: int size()>();
+        temp$13 = newarray (java.lang.reflect.Type)[temp$12];
+        temp$14 = interfaceinvoke types.<java.util.Set: java.lang.Object[] toArray(java.lang.Object[])>(temp$13);
+        temp$15 = (java.lang.reflect.Type[]) temp$14;
+        return temp$15;
+    }
+}

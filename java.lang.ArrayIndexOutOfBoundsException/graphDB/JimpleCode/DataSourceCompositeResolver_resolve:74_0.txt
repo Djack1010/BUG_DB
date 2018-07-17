@@ -1,0 +1,44 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceCompositeResolver this;
+        java.lang.String resourceLocation, temp$4;
+        javax.activation.DataSource result, temp$0;
+        boolean temp$1;
+        java.io.IOException temp$2;
+        java.lang.StringBuffer temp$3;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceCompositeResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: javax.activation.DataSource resolve(java.lang.String,boolean)>(resourceLocation, 1);
+        result = temp$0;
+        temp$1 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: boolean isLenient()>();
+        if temp$1 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        if result != null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return result;
+
+     label2:
+        nop;
+        temp$2 = new java.io.IOException;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("The following resource was not found : ");
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(resourceLocation);
+        temp$4 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$2.<java.io.IOException: void <init>(java.lang.String)>(temp$4);
+        throw temp$2;
+    }
+}

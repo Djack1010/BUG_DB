@@ -1,0 +1,82 @@
+public class WrapClass 
+{
+    public static java.lang.String remove(java.lang.String, char)
+    {
+        java.lang.String str, temp$18;
+        char remove, temp$6, temp$15;
+        boolean temp$0;
+        int temp$1, temp$2, pos, i, temp$3, temp$5, temp$7, temp$8, temp$10, temp$11, temp$12, temp$14, temp$16, temp$17;
+        char[] chars, temp$4, temp$9, temp$13;
+
+        str := @parameter0: java.lang.String;
+        remove := @parameter1: char;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = (int) remove;
+        temp$2 = virtualinvoke str.<java.lang.String: int indexOf(int)>(temp$1);
+        if temp$2 == -1 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        chars = null;
+        pos = 0;
+        i = 0;
+
+     label3:
+        nop;
+        temp$3 = lengthof chars;
+        if i < temp$3 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$4 = chars;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = (int) temp$6;
+        temp$8 = (int) remove;
+        if temp$7 != temp$8 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$9 = chars;
+        temp$10 = pos;
+        temp$11 = temp$10 + 1;
+        pos = temp$11;
+        temp$12 = temp$10;
+        temp$13 = chars;
+        temp$14 = i;
+        temp$15 = temp$13[temp$14];
+        temp$9[temp$12] = temp$15;
+
+     label6:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label3;
+
+     label7:
+        nop;
+        temp$18 = new java.lang.String;
+        specialinvoke temp$18.<java.lang.String: void <init>(char[],int,int)>(chars, 0, pos);
+        return temp$18;
+    }
+}

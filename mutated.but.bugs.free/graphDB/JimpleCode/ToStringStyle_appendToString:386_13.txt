@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public void appendToString(java.lang.StringBuffer, java.lang.String)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$9;
+        java.lang.String toString, temp$0, temp$3, temp$5, data, temp$7;
+        int pos1, temp$1, temp$2, temp$4, pos2, temp$6;
+        boolean temp$8;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        toString := @parameter1: java.lang.String;
+        if toString != null goto label0;
+
+        goto label7;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String contentStart>;
+        temp$1 = virtualinvoke toString.<java.lang.String: int indexOf(java.lang.String)>(temp$0);
+        temp$2 = temp$1;
+        temp$3 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String contentStart>;
+        temp$4 = virtualinvoke temp$3.<java.lang.String: int length()>();
+        pos1 = temp$2 + temp$4;
+        temp$5 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String contentEnd>;
+        temp$6 = virtualinvoke toString.<java.lang.String: int lastIndexOf(java.lang.String)>(temp$5);
+        pos2 = temp$6;
+        if pos1 < pos2 goto label1;
+
+        goto label6;
+
+     label1:
+        nop;
+        if pos1 >= 0 goto label2;
+
+        goto label6;
+
+        goto label2;
+
+     label2:
+        nop;
+        if pos2 >= 0 goto label3;
+
+        goto label6;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke toString.<java.lang.String: java.lang.String substring(int,int)>(pos1, pos2);
+        data = temp$7;
+        temp$8 = this.<org.apache.commons.lang3.builder.ToStringStyle: boolean fieldSeparatorAtStart>;
+        if temp$8 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void removeLastFieldSeparator(java.lang.StringBuffer)>(buffer);
+
+     label5:
+        nop;
+        temp$9 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(data);
+        virtualinvoke this.<org.apache.commons.lang3.builder.ToStringStyle: void appendFieldSeparator(java.lang.StringBuffer)>(buffer);
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        return;
+    }
+}

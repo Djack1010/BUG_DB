@@ -1,0 +1,342 @@
+public class WrapClass 
+{
+    private final java.lang.String[] soundex(java.lang.String, boolean)
+    {
+        org.apache.commons.codec.language.DaitchMokotoffSoundex this;
+        java.lang.String source, input, temp$1, inputContext, temp$8, nextReplacement, temp$29, temp$53;
+        boolean branching, temp$4, temp$7, temp$16, temp$18, temp$20, branchingRequired, temp$23, temp$25, force, temp$36, temp$37, temp$38, temp$47;
+        java.lang.String[] temp$0, replacements, temp$21, result, temp$49;
+        java.util.Set currentBranches;
+        java.util.LinkedHashSet temp$2;
+        org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch temp$3, branch, nextBranch, temp$30, temp$31, branch;
+        char lastChar, ch, temp$6;
+        int index, temp$5, temp$19, temp$22, temp$27, temp$28, temp$32, temp$33, temp$34, temp$35, temp$39, temp$40, temp$41, temp$42, temp$43, temp$44, temp$45, index, temp$50, temp$51, temp$52;
+        java.util.List rules, temp$12, nextBranches, temp$13;
+        java.util.Map temp$9;
+        java.lang.Character temp$10;
+        java.lang.Object temp$11, temp$17, temp$26, temp$48;
+        java.util.ArrayList temp$14;
+        java.util.Iterator temp$15, temp$24, temp$46;
+        org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule rule;
+
+        this := @this: org.apache.commons.codec.language.DaitchMokotoffSoundex;
+        source := @parameter0: java.lang.String;
+        branching := @parameter1: boolean;
+        if source == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.language.DaitchMokotoffSoundex: java.lang.String cleanup(java.lang.String)>(source);
+        input = temp$1;
+        temp$2 = new java.util.LinkedHashSet;
+        specialinvoke temp$2.<java.util.LinkedHashSet: void <init>()>();
+        currentBranches = temp$2;
+        temp$3 = new org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch;
+        specialinvoke temp$3.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch: void <init>(org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch$1)>(null);
+        temp$4 = interfaceinvoke currentBranches.<java.util.Set: boolean add(java.lang.Object)>(temp$3);
+        lastChar = 0;
+        index = -1;
+
+     label2:
+        nop;
+        temp$5 = virtualinvoke input.<java.lang.String: int length()>();
+        if index < temp$5 goto label3;
+
+        goto label43;
+
+     label3:
+        nop;
+        temp$6 = virtualinvoke input.<java.lang.String: char charAt(int)>(index);
+        ch = temp$6;
+        temp$7 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(ch);
+        if temp$7 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        goto label42;
+
+     label5:
+        nop;
+        temp$8 = virtualinvoke input.<java.lang.String: java.lang.String substring(int)>(index);
+        inputContext = temp$8;
+        temp$9 = <org.apache.commons.codec.language.DaitchMokotoffSoundex: java.util.Map RULES>;
+        temp$10 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(ch);
+        temp$11 = interfaceinvoke temp$9.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$10);
+        temp$12 = (java.util.List) temp$11;
+        rules = temp$12;
+        if rules == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        goto label42;
+
+     label7:
+        nop;
+        if branching == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$14 = new java.util.ArrayList;
+        specialinvoke temp$14.<java.util.ArrayList: void <init>()>();
+        temp$13 = temp$14;
+        goto label10;
+
+     label9:
+        nop;
+        temp$13 = <java.util.Collections: java.util.List EMPTY_LIST>;
+
+     label10:
+        nop;
+        nextBranches = temp$13;
+        temp$15 = interfaceinvoke rules.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label11:
+        nop;
+        temp$16 = interfaceinvoke temp$15.<java.util.Iterator: boolean hasNext()>();
+        if temp$16 == 0 goto label41;
+
+        temp$17 = interfaceinvoke temp$15.<java.util.Iterator: java.lang.Object next()>();
+        rule = (org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule) temp$17;
+        temp$18 = virtualinvoke rule.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule: boolean matches(java.lang.String)>(inputContext);
+        if temp$18 == 0 goto label40;
+
+        goto label12;
+
+     label12:
+        nop;
+        if branching == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        interfaceinvoke nextBranches.<java.util.List: void clear()>();
+
+     label14:
+        nop;
+        temp$19 = (int) lastChar;
+        if temp$19 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$20 = 0;
+        goto label17;
+
+     label16:
+        nop;
+        temp$20 = 1;
+
+     label17:
+        nop;
+        temp$21 = virtualinvoke rule.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule: java.lang.String[] getReplacements(java.lang.String,boolean)>(inputContext, temp$20);
+        replacements = temp$21;
+        temp$22 = lengthof replacements;
+        if temp$22 > 1 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        if branching == 0 goto label19;
+
+        goto label20;
+
+        goto label20;
+
+     label19:
+        nop;
+        temp$23 = 0;
+        goto label21;
+
+     label20:
+        nop;
+        temp$23 = 1;
+
+     label21:
+        nop;
+        branchingRequired = temp$23;
+        temp$24 = interfaceinvoke currentBranches.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label22:
+        nop;
+        temp$25 = interfaceinvoke temp$24.<java.util.Iterator: boolean hasNext()>();
+        if temp$25 == 0 goto label37;
+
+        temp$26 = interfaceinvoke temp$24.<java.util.Iterator: java.lang.Object next()>();
+        branch = (org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch) temp$26;
+        temp$27 = 0;
+
+     label23:
+        nop;
+        temp$28 = lengthof replacements;
+        if temp$27 >= temp$28 goto label36;
+
+        temp$29 = replacements[temp$27];
+        nextReplacement = temp$29;
+        if branchingRequired == 0 goto label25;
+
+        goto label24;
+
+     label24:
+        nop;
+        temp$31 = virtualinvoke branch.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch: org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch createBranch()>();
+        temp$30 = temp$31;
+        goto label26;
+
+     label25:
+        nop;
+        temp$30 = branch;
+
+     label26:
+        nop;
+        nextBranch = temp$30;
+        temp$32 = (int) lastChar;
+        if temp$32 == 109 goto label27;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$33 = (int) ch;
+        if temp$33 == 110 goto label31;
+
+        goto label28;
+
+        goto label31;
+
+     label28:
+        nop;
+        temp$34 = (int) lastChar;
+        if temp$34 == 110 goto label29;
+
+        goto label30;
+
+     label29:
+        nop;
+        temp$35 = (int) ch;
+        if temp$35 == 109 goto label31;
+
+        goto label30;
+
+        goto label31;
+
+        goto label30;
+
+     label30:
+        nop;
+        temp$36 = 0;
+        goto label32;
+
+     label31:
+        nop;
+        temp$36 = 1;
+
+     label32:
+        nop;
+        force = temp$36;
+        virtualinvoke nextBranch.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch: void processNextReplacement(java.lang.String,boolean)>(nextReplacement, force);
+        if branching == 0 goto label34;
+
+        goto label33;
+
+     label33:
+        nop;
+        temp$37 = interfaceinvoke nextBranches.<java.util.List: boolean add(java.lang.Object)>(nextBranch);
+        goto label35;
+
+     label34:
+        nop;
+        goto label36;
+
+     label35:
+        nop;
+        nop;
+        temp$27 = temp$27 + 1;
+        goto label23;
+
+     label36:
+        nop;
+        nop;
+        goto label22;
+
+     label37:
+        nop;
+        if branching == 0 goto label39;
+
+        goto label38;
+
+     label38:
+        nop;
+        interfaceinvoke currentBranches.<java.util.Set: void clear()>();
+        temp$38 = interfaceinvoke currentBranches.<java.util.Set: boolean addAll(java.util.Collection)>(nextBranches);
+
+     label39:
+        nop;
+        temp$39 = index;
+        temp$40 = virtualinvoke rule.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Rule: int getPatternLength()>();
+        temp$41 = temp$40 - 1;
+        temp$42 = temp$39 + temp$41;
+        index = temp$42;
+        goto label41;
+
+     label40:
+        nop;
+        nop;
+        goto label11;
+
+     label41:
+        nop;
+        lastChar = ch;
+
+     label42:
+        nop;
+        temp$43 = index;
+        temp$44 = temp$43 + 1;
+        index = temp$44;
+        goto label2;
+
+     label43:
+        nop;
+        temp$45 = interfaceinvoke currentBranches.<java.util.Set: int size()>();
+        result = newarray (java.lang.String)[temp$45];
+        index = 0;
+        temp$46 = interfaceinvoke currentBranches.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label44:
+        nop;
+        temp$47 = interfaceinvoke temp$46.<java.util.Iterator: boolean hasNext()>();
+        if temp$47 == 0 goto label45;
+
+        temp$48 = interfaceinvoke temp$46.<java.util.Iterator: java.lang.Object next()>();
+        branch = (org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch) temp$48;
+        virtualinvoke branch.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch: void finish()>();
+        temp$49 = result;
+        temp$50 = index;
+        temp$51 = temp$50 + 1;
+        index = temp$51;
+        temp$52 = temp$50;
+        temp$53 = virtualinvoke branch.<org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch: java.lang.String toString()>();
+        temp$49[temp$52] = temp$53;
+        nop;
+        goto label44;
+
+     label45:
+        nop;
+        return result;
+    }
+}

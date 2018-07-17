@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    public static boolean isSameInstant(java.util.Date, java.util.Date)
+    {
+        java.util.Date date1, date2;
+        java.lang.IllegalArgumentException temp$0;
+        long temp$1, temp$2;
+        int temp$3;
+        boolean temp$4;
+
+        date1 := @parameter0: java.util.Date;
+        date2 := @parameter1: java.util.Date;
+        goto label0;
+
+     label0:
+        nop;
+        if date2 == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke date1.<java.util.Date: long getTime()>();
+        temp$2 = virtualinvoke date2.<java.util.Date: long getTime()>();
+        temp$3 = temp$1 cmp temp$2;
+        if temp$3 != 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$4 = 1;
+
+     label5:
+        nop;
+        return temp$4;
+    }
+}

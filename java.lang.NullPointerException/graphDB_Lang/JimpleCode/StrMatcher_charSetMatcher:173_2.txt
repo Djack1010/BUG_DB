@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    public static transient org.apache.commons.lang3.text.StrMatcher charSetMatcher(char[])
+    {
+        char[] chars, temp$6;
+        boolean temp$0, temp$2;
+        int temp$1, temp$4, temp$7;
+        org.apache.commons.lang3.text.StrMatcher temp$3;
+        org.apache.commons.lang3.text.StrMatcher$CharMatcher temp$5;
+        char temp$8;
+        org.apache.commons.lang3.text.StrMatcher$CharSetMatcher temp$9;
+
+        chars := @parameter0: char[];
+        if chars == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = lengthof chars;
+        if temp$1 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$3 = <org.apache.commons.lang3.text.StrMatcher: org.apache.commons.lang3.text.StrMatcher NONE_MATCHER>;
+        return temp$3;
+
+     label7:
+        nop;
+        temp$4 = lengthof chars;
+        if temp$4 == 1 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$5 = new org.apache.commons.lang3.text.StrMatcher$CharMatcher;
+        temp$6 = chars;
+        temp$7 = 0;
+        temp$8 = temp$6[temp$7];
+        specialinvoke temp$5.<org.apache.commons.lang3.text.StrMatcher$CharMatcher: void <init>(char)>(temp$8);
+        return temp$5;
+
+     label9:
+        nop;
+        temp$9 = new org.apache.commons.lang3.text.StrMatcher$CharSetMatcher;
+        specialinvoke temp$9.<org.apache.commons.lang3.text.StrMatcher$CharSetMatcher: void <init>(char[])>(chars);
+        return temp$9;
+    }
+}

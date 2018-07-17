@@ -1,0 +1,65 @@
+public class WrapClass 
+{
+    public static transient java.lang.String getCommonPrefix(java.lang.String[])
+    {
+        java.lang.String[] strs, temp$3, temp$7, temp$10;
+        int temp$0, smallestIndexOfDiff, temp$2, temp$4, temp$8, temp$11;
+        java.lang.String temp$1, temp$5, temp$6, temp$9, temp$12, temp$13;
+
+        strs := @parameter0: java.lang.String[];
+        if strs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = lengthof strs;
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: int indexOfDifference(java.lang.CharSequence[])>(strs);
+        smallestIndexOfDiff = temp$2;
+        if smallestIndexOfDiff == -1 goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$3 = strs;
+        temp$4 = 0;
+        temp$5 = temp$3[temp$4];
+        if temp$5 == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$6;
+
+     label5:
+        nop;
+        temp$7 = strs;
+        temp$8 = 0;
+        temp$9 = temp$7[temp$8];
+        return temp$9;
+
+     label6:
+        nop;
+        temp$10 = strs;
+        temp$11 = 0;
+        temp$12 = temp$10[temp$11];
+        temp$13 = virtualinvoke temp$12.<java.lang.String: java.lang.String substring(int,int)>(0, smallestIndexOfDiff);
+        return temp$13;
+    }
+}

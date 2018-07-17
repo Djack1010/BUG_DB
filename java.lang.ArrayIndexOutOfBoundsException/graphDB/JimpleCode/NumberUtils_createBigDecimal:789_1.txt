@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public static java.math.BigDecimal createBigDecimal(java.lang.String)
+    {
+        java.lang.String str, temp$2, temp$6;
+        boolean temp$0, temp$3;
+        java.lang.NumberFormatException temp$1, temp$4;
+        java.lang.StringBuffer temp$5;
+        java.math.BigDecimal temp$7;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.NumberFormatException;
+        specialinvoke temp$1.<java.lang.NumberFormatException: void <init>(java.lang.String)>("A blank string is not a valid number");
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: java.lang.String trim()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.String: boolean startsWith(java.lang.String)>("--");
+        if temp$3 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = new java.lang.NumberFormatException;
+        temp$5 = new java.lang.StringBuffer;
+        specialinvoke temp$5.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$6 = virtualinvoke temp$5.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$4.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$6);
+        throw temp$4;
+
+     label3:
+        nop;
+        temp$7 = new java.math.BigDecimal;
+        specialinvoke temp$7.<java.math.BigDecimal: void <init>(java.lang.String)>(str);
+        return temp$7;
+    }
+}

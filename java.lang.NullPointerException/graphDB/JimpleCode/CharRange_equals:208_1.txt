@@ -1,0 +1,80 @@
+public class WrapClass 
+{
+    public final boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.CharRange this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$1, temp$2, temp$11, temp$12, temp$13;
+        char temp$3, temp$4, temp$7, temp$8;
+        int temp$5, temp$6, temp$9, temp$10;
+
+        this := @this: org.apache.commons.lang3.CharRange;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = obj instanceof org.apache.commons.lang3.CharRange;
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label3:
+        nop;
+        other = null;
+        temp$3 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$4 = other.<org.apache.commons.lang3.CharRange: char start>;
+        temp$5 = (int) temp$3;
+        temp$6 = (int) temp$4;
+        if temp$5 == temp$6 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$8 = other.<org.apache.commons.lang3.CharRange: char end>;
+        temp$9 = (int) temp$7;
+        temp$10 = (int) temp$8;
+        if temp$9 == temp$10 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$11 = this.<org.apache.commons.lang3.CharRange: boolean negated>;
+        temp$12 = other.<org.apache.commons.lang3.CharRange: boolean negated>;
+        if temp$11 == temp$12 goto label7;
+
+        goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$13 = 0;
+        goto label8;
+
+     label7:
+        nop;
+        temp$13 = 1;
+
+     label8:
+        nop;
+        return temp$13;
+    }
+}

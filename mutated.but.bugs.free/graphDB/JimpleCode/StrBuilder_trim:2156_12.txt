@@ -1,0 +1,105 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder trim()
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$16, temp$17;
+        int temp$0, len, pos, temp$2, temp$4, temp$5, temp$6, temp$8, temp$9, temp$11, temp$12, temp$13, temp$14, temp$15;
+        char[] buf, temp$1, temp$7;
+        char temp$3, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        len = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        buf = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        pos = 0;
+
+     label2:
+        nop;
+        if pos < len goto label3;
+
+        goto label5;
+
+     label3:
+        nop;
+        temp$1 = buf;
+        temp$2 = pos;
+        temp$3 = temp$1[temp$2];
+        temp$4 = (int) temp$3;
+        if temp$4 <= 32 goto label4;
+
+        goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$5 = pos;
+        temp$6 = temp$5 + 1;
+        pos = temp$6;
+        goto label2;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        if pos < len goto label7;
+
+        goto label9;
+
+     label7:
+        nop;
+        temp$7 = buf;
+        temp$8 = len - 1;
+        temp$9 = temp$8;
+        temp$10 = temp$7[temp$9];
+        temp$11 = (int) temp$10;
+        if temp$11 <= 32 goto label8;
+
+        goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$12 = len;
+        temp$13 = temp$12 + -1;
+        len = temp$13;
+        goto label6;
+
+     label9:
+        nop;
+        temp$14 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if len < temp$14 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$15 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder delete(int,int)>(len, temp$15);
+
+     label11:
+        nop;
+        if pos > 0 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$17 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder delete(int,int)>(0, pos);
+
+     label13:
+        nop;
+        return this;
+    }
+}

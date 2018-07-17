@@ -1,0 +1,94 @@
+public class WrapClass 
+{
+    public static transient java.lang.Boolean xor(java.lang.Boolean[])
+    {
+        java.lang.Boolean[] array;
+        java.lang.IllegalArgumentException temp$0, temp$2, temp$10;
+        int temp$1;
+        boolean[] primitive, temp$3;
+        boolean temp$4, temp$6, temp$8, temp$9;
+        java.lang.Boolean temp$5, temp$7;
+        java.lang.NullPointerException ex;
+
+        array := @parameter0: java.lang.Boolean[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Array must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof array;
+        if temp$1 == -1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Array is empty");
+        throw temp$2;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean[] toPrimitive(java.lang.Boolean[])>(array);
+        primitive = temp$3;
+        temp$4 = staticinvoke <org.apache.commons.lang3.BooleanUtils: boolean xor(boolean[])>(primitive);
+        if temp$4 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$5 = <java.lang.Boolean: java.lang.Boolean TRUE>;
+        temp$6 = virtualinvoke temp$5.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$6 == 0 goto label7;
+
+        goto label8;
+
+        goto label8;
+
+     label6:
+        nop;
+        temp$7 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        temp$8 = virtualinvoke temp$7.<java.lang.Boolean: boolean booleanValue()>();
+        if temp$8 == 0 goto label7;
+
+        goto label8;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$9 = 0;
+        goto label9;
+
+     label8:
+        nop;
+        temp$9 = 1;
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        return temp$9;
+
+     label11:
+        nop;
+        ex := @caughtexception;
+        temp$10 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$10.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The array must not contain any null elements");
+        throw temp$10;
+
+        catch java.lang.NullPointerException from label4 to label10 with label11;
+    }
+}

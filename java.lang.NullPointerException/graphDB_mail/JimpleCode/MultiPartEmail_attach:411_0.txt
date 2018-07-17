@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public org.apache.commons.mail.MultiPartEmail attach(javax.activation.DataSource, java.lang.String, java.lang.String) throws org.apache.commons.mail.EmailException
+    {
+        org.apache.commons.mail.MultiPartEmail this, temp$4;
+        javax.activation.DataSource ds;
+        java.lang.String name, description;
+        java.io.InputStream is, temp$0, temp$1;
+        org.apache.commons.mail.EmailException temp$2, temp$3;
+        java.io.IOException e;
+
+        this := @this: org.apache.commons.mail.MultiPartEmail;
+        ds := @parameter0: javax.activation.DataSource;
+        name := @parameter1: java.lang.String;
+        description := @parameter2: java.lang.String;
+
+     label0:
+        nop;
+        if ds != null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke ds.<javax.activation.DataSource: java.io.InputStream getInputStream()>();
+        temp$0 = temp$1;
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = null;
+
+     label3:
+        nop;
+        is = temp$0;
+        if is != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        virtualinvoke is.<java.io.InputStream: void close()>();
+
+     label5:
+        nop;
+        if is == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$2.<org.apache.commons.mail.EmailException: void <init>(java.lang.String)>("Invalid Datasource");
+        throw temp$2;
+
+     label7:
+        nop;
+        goto label9;
+
+     label8:
+        nop;
+        e := @caughtexception;
+        temp$3 = new org.apache.commons.mail.EmailException;
+        specialinvoke temp$3.<org.apache.commons.mail.EmailException: void <init>(java.lang.String,java.lang.Throwable)>("Invalid Datasource", e);
+        throw temp$3;
+
+     label9:
+        nop;
+        temp$4 = virtualinvoke this.<org.apache.commons.mail.MultiPartEmail: org.apache.commons.mail.MultiPartEmail attach(javax.activation.DataSource,java.lang.String,java.lang.String,java.lang.String)>(ds, name, description, "attachment");
+        return temp$4;
+
+        catch java.io.IOException from label0 to label8 with label8;
+    }
+}

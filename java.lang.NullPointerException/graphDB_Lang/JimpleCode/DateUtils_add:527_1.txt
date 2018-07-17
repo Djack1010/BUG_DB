@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    private static final java.util.Date add(java.util.Date, int, int)
+    {
+        java.util.Date date, temp$2;
+        int calendarField, amount;
+        java.lang.IllegalArgumentException temp$0;
+        java.util.Calendar c, temp$1;
+
+        date := @parameter0: java.util.Date;
+        calendarField := @parameter1: int;
+        amount := @parameter2: int;
+        if date == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        c = temp$1;
+        virtualinvoke c.<java.util.Calendar: void setTime(java.util.Date)>(date);
+        virtualinvoke c.<java.util.Calendar: void add(int,int)>(calendarField, amount);
+        temp$2 = null;
+        return temp$2;
+    }
+}

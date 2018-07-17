@@ -1,0 +1,856 @@
+public class WrapClass 
+{
+    public static java.lang.Number createNumber(java.lang.String) throws java.lang.NumberFormatException
+    {
+        java.lang.String str, pfx, temp$6, mant, dec, exp, temp$36, temp$39, temp$42, temp$43, temp$48, temp$49, temp$50, temp$51, temp$60, temp$61, numeric, temp$64, temp$70, temp$77, temp$90, temp$95, temp$96;
+        java.lang.Number temp$0;
+        boolean temp$1, temp$7, temp$52, allZeros, temp$65, temp$66, temp$67, temp$71, temp$72, temp$79, temp$83, allZeros, temp$100, temp$101, temp$102, temp$104, temp$108;
+        java.lang.NumberFormatException temp$2, temp$34, temp$46, nfe, temp$75, nfe, nfe, e, temp$88, nfe, nfe, nfe, nfe;
+        java.lang.String[] hex_prefixes, temp$3;
+        int pfxLen, temp$4, temp$5, temp$8, temp$9, temp$10, i, temp$11, temp$13, temp$14, temp$15, temp$16, temp$17, hexDigits, temp$18, temp$19, temp$20, temp$22, temp$25, temp$26, decPos, temp$28, expPos, temp$29, temp$30, temp$31, temp$32, numDecimals, temp$33, temp$37, temp$38, temp$40, temp$41, temp$44, temp$45, temp$53, temp$54, temp$55, temp$56, temp$57, temp$58, temp$59, temp$62, temp$63, temp$69, temp$81, temp$86, temp$91, temp$92, temp$93, temp$94, temp$106, temp$110;
+        char firstSigDigit, temp$12, lastChar, temp$27, temp$68;
+        java.math.BigInteger temp$21, temp$74, temp$99;
+        java.lang.Long temp$23, temp$73, temp$98;
+        java.lang.Integer temp$24, temp$97;
+        java.lang.StringBuffer temp$35, temp$47, temp$76, temp$89;
+        java.lang.Float f, temp$78, f, temp$103;
+        float temp$80, temp$84, temp$105;
+        java.lang.Double d, temp$82, d, temp$107;
+        double temp$85, temp$109;
+        java.math.BigDecimal temp$87, temp$111;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(str);
+        if temp$1 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.NumberFormatException;
+        specialinvoke temp$2.<java.lang.NumberFormatException: void <init>(java.lang.String)>("A blank string is not a valid number");
+        throw temp$2;
+
+     label3:
+        nop;
+        temp$3 = newarray (java.lang.String)[6];
+        temp$3[0] = "0x";
+        temp$3[1] = "0X";
+        temp$3[2] = "-0x";
+        temp$3[3] = "-0X";
+        temp$3[4] = "#";
+        temp$3[5] = "-#";
+        hex_prefixes = temp$3;
+        pfxLen = 0;
+        temp$4 = 0;
+
+     label4:
+        nop;
+        temp$5 = lengthof hex_prefixes;
+        if temp$4 >= temp$5 goto label7;
+
+        temp$6 = hex_prefixes[temp$4];
+        pfx = temp$6;
+        temp$7 = virtualinvoke str.<java.lang.String: boolean startsWith(java.lang.String)>(pfx);
+        if temp$7 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$8 = pfxLen;
+        temp$9 = virtualinvoke pfx.<java.lang.String: int length()>();
+        temp$10 = temp$8 + temp$9;
+        pfxLen = temp$10;
+        goto label7;
+
+     label6:
+        nop;
+        nop;
+        temp$4 = temp$4 + 1;
+        goto label4;
+
+     label7:
+        nop;
+        if pfxLen > 0 goto label8;
+
+        goto label23;
+
+     label8:
+        nop;
+        firstSigDigit = 0;
+        i = pfxLen;
+
+     label9:
+        nop;
+        temp$11 = virtualinvoke str.<java.lang.String: int length()>();
+        if i < temp$11 goto label10;
+
+        goto label14;
+
+     label10:
+        nop;
+        temp$12 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        firstSigDigit = temp$12;
+        temp$13 = (int) firstSigDigit;
+        if temp$13 == 48 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$14 = pfxLen;
+        temp$15 = temp$14 + 1;
+        pfxLen = temp$15;
+        goto label13;
+
+     label12:
+        nop;
+        goto label14;
+
+     label13:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label9;
+
+     label14:
+        nop;
+        temp$18 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$19 = temp$18 - pfxLen;
+        hexDigits = temp$19;
+        if hexDigits > 16 goto label17;
+
+        goto label15;
+
+     label15:
+        nop;
+        if hexDigits == 16 goto label16;
+
+        goto label18;
+
+     label16:
+        nop;
+        temp$20 = (int) firstSigDigit;
+        if temp$20 > 55 goto label17;
+
+        goto label18;
+
+        goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$21 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.math.BigInteger createBigInteger(java.lang.String)>(str);
+        return temp$21;
+
+     label18:
+        nop;
+        if hexDigits > 8 goto label21;
+
+        goto label19;
+
+     label19:
+        nop;
+        if hexDigits == 8 goto label20;
+
+        goto label22;
+
+     label20:
+        nop;
+        temp$22 = (int) firstSigDigit;
+        if temp$22 > 55 goto label21;
+
+        goto label22;
+
+        goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        temp$23 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Long createLong(java.lang.String)>(str);
+        return temp$23;
+
+     label22:
+        nop;
+        temp$24 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Integer createInteger(java.lang.String)>(str);
+        return temp$24;
+
+     label23:
+        nop;
+        temp$25 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$26 = temp$25 - 1;
+        temp$27 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$26);
+        lastChar = temp$27;
+        temp$28 = virtualinvoke str.<java.lang.String: int indexOf(int)>(46);
+        decPos = temp$28;
+        temp$29 = virtualinvoke str.<java.lang.String: int indexOf(int)>(101);
+        temp$30 = temp$29;
+        temp$31 = virtualinvoke str.<java.lang.String: int indexOf(int)>(69);
+        temp$32 = temp$30 + temp$31;
+        expPos = temp$32 + 1;
+        numDecimals = 0;
+        if decPos > -1 goto label24;
+
+        goto label31;
+
+     label24:
+        nop;
+        if expPos > -1 goto label25;
+
+        goto label29;
+
+     label25:
+        nop;
+        if expPos < decPos goto label27;
+
+        goto label26;
+
+     label26:
+        nop;
+        temp$33 = virtualinvoke str.<java.lang.String: int length()>();
+        if expPos > temp$33 goto label27;
+
+        goto label28;
+
+        goto label28;
+
+     label27:
+        nop;
+        temp$34 = new java.lang.NumberFormatException;
+        temp$35 = new java.lang.StringBuffer;
+        specialinvoke temp$35.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$36 = virtualinvoke temp$35.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$34.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$36);
+        throw temp$34;
+
+     label28:
+        nop;
+        temp$37 = decPos;
+        temp$38 = temp$37 + 1;
+        temp$39 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(temp$38, expPos);
+        dec = temp$39;
+        goto label30;
+
+     label29:
+        nop;
+        temp$40 = decPos;
+        temp$41 = temp$40 + 1;
+        temp$42 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(temp$41);
+        dec = temp$42;
+
+     label30:
+        nop;
+        temp$43 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.String getMantissa(java.lang.String,int)>(str, decPos);
+        mant = temp$43;
+        temp$44 = virtualinvoke dec.<java.lang.String: int length()>();
+        numDecimals = temp$44;
+        goto label37;
+
+     label31:
+        nop;
+        if expPos > -1 goto label32;
+
+        goto label35;
+
+     label32:
+        nop;
+        temp$45 = virtualinvoke str.<java.lang.String: int length()>();
+        if expPos > temp$45 goto label33;
+
+        goto label34;
+
+     label33:
+        nop;
+        temp$46 = new java.lang.NumberFormatException;
+        temp$47 = new java.lang.StringBuffer;
+        specialinvoke temp$47.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$47.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$47.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$48 = virtualinvoke temp$47.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$46.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$48);
+        throw temp$46;
+
+     label34:
+        nop;
+        temp$49 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.String getMantissa(java.lang.String,int)>(str, expPos);
+        mant = temp$49;
+        goto label36;
+
+     label35:
+        nop;
+        temp$50 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.String getMantissa(java.lang.String)>(str);
+        mant = temp$50;
+
+     label36:
+        nop;
+        temp$51 = null;
+        dec = temp$51;
+
+     label37:
+        nop;
+        temp$52 = staticinvoke <java.lang.Character: boolean isDigit(char)>(lastChar);
+        if temp$52 == 0 goto label38;
+
+        goto label86;
+
+     label38:
+        nop;
+        temp$53 = (int) lastChar;
+        if temp$53 != 46 goto label39;
+
+        goto label86;
+
+        goto label39;
+
+     label39:
+        nop;
+        if expPos > -1 goto label40;
+
+        goto label42;
+
+     label40:
+        nop;
+        temp$54 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$55 = temp$54 - 1;
+        if expPos < temp$55 goto label41;
+
+        goto label42;
+
+        goto label41;
+
+     label41:
+        nop;
+        temp$56 = expPos;
+        temp$57 = temp$56 + 1;
+        temp$58 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$59 = temp$58 - 1;
+        temp$60 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(temp$57, temp$59);
+        exp = temp$60;
+        goto label43;
+
+     label42:
+        nop;
+        temp$61 = null;
+        exp = temp$61;
+
+     label43:
+        nop;
+        temp$62 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$63 = temp$62 - 1;
+        temp$64 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, temp$63);
+        numeric = temp$64;
+        temp$65 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isAllZeros(java.lang.String)>(mant);
+        if temp$65 == 0 goto label45;
+
+        goto label44;
+
+     label44:
+        nop;
+        temp$66 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isAllZeros(java.lang.String)>(exp);
+        if temp$66 == 0 goto label45;
+
+        goto label46;
+
+        goto label46;
+
+     label45:
+        nop;
+        temp$67 = 0;
+        goto label47;
+
+     label46:
+        nop;
+        temp$67 = 1;
+
+     label47:
+        nop;
+        allZeros = temp$67;
+        goto label85;
+
+     label48:
+        nop;
+
+     label49:
+        nop;
+        if dec == null goto label50;
+
+        goto label59;
+
+     label50:
+        nop;
+        if exp == null goto label51;
+
+        goto label59;
+
+        goto label51;
+
+     label51:
+        nop;
+        temp$68 = virtualinvoke numeric.<java.lang.String: char charAt(int)>(0);
+        temp$69 = (int) temp$68;
+        if temp$69 == 45 goto label52;
+
+        goto label53;
+
+     label52:
+        nop;
+        temp$70 = virtualinvoke numeric.<java.lang.String: java.lang.String substring(int)>(1);
+        temp$71 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isDigits(java.lang.String)>(temp$70);
+        if temp$71 == 0 goto label53;
+
+        goto label54;
+
+        goto label54;
+
+     label53:
+        nop;
+        temp$72 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isDigits(java.lang.String)>(numeric);
+        if temp$72 == 0 goto label59;
+
+        goto label54;
+
+        goto label59;
+
+        goto label54;
+
+     label54:
+        nop;
+
+     label55:
+        nop;
+        temp$73 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Long createLong(java.lang.String)>(numeric);
+
+     label56:
+        nop;
+        return temp$73;
+
+     label57:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label58;
+
+     label58:
+        nop;
+        temp$74 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.math.BigInteger createBigInteger(java.lang.String)>(numeric);
+        return temp$74;
+
+     label59:
+        nop;
+        temp$75 = new java.lang.NumberFormatException;
+        temp$76 = new java.lang.StringBuffer;
+        specialinvoke temp$76.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$76.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$76.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$77 = virtualinvoke temp$76.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$75.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$77);
+        throw temp$75;
+
+     label60:
+        nop;
+
+     label61:
+        nop;
+
+     label62:
+        nop;
+        temp$78 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Float createFloat(java.lang.String)>(numeric);
+        f = temp$78;
+        temp$79 = virtualinvoke f.<java.lang.Float: boolean isInfinite()>();
+        if temp$79 == 0 goto label63;
+
+        goto label67;
+
+     label63:
+        nop;
+        temp$80 = virtualinvoke f.<java.lang.Float: float floatValue()>();
+        temp$81 = temp$80 cmpg 0.0F;
+        if temp$81 != 0 goto label65;
+
+        goto label64;
+
+     label64:
+        nop;
+        if allZeros == 0 goto label67;
+
+        goto label65;
+
+        goto label67;
+
+        goto label65;
+
+     label65:
+        nop;
+
+     label66:
+        nop;
+        return f;
+
+     label67:
+        nop;
+        goto label69;
+
+     label68:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label69;
+
+     label69:
+        nop;
+
+     label70:
+        nop;
+
+     label71:
+        nop;
+
+     label72:
+        nop;
+        temp$82 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Double createDouble(java.lang.String)>(numeric);
+        d = temp$82;
+        temp$83 = virtualinvoke d.<java.lang.Double: boolean isInfinite()>();
+        if temp$83 == 0 goto label73;
+
+        goto label77;
+
+     label73:
+        nop;
+        temp$84 = virtualinvoke d.<java.lang.Double: float floatValue()>();
+        temp$85 = (double) temp$84;
+        temp$86 = temp$85 cmpg 0.0;
+        if temp$86 != 0 goto label75;
+
+        goto label74;
+
+     label74:
+        nop;
+        if allZeros == 0 goto label77;
+
+        goto label75;
+
+        goto label77;
+
+        goto label75;
+
+     label75:
+        nop;
+
+     label76:
+        nop;
+        return d;
+
+     label77:
+        nop;
+        goto label79;
+
+     label78:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label79;
+
+     label79:
+        nop;
+
+     label80:
+        nop;
+        temp$87 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.math.BigDecimal createBigDecimal(java.lang.String)>(numeric);
+
+     label81:
+        nop;
+        return temp$87;
+
+     label82:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label83;
+
+     label83:
+        nop;
+
+     label84:
+        nop;
+        temp$88 = new java.lang.NumberFormatException;
+        temp$89 = new java.lang.StringBuffer;
+        specialinvoke temp$89.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$89.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(str);
+        virtualinvoke temp$89.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" is not a valid number.");
+        temp$90 = virtualinvoke temp$89.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$88.<java.lang.NumberFormatException: void <init>(java.lang.String)>(temp$90);
+        throw temp$88;
+
+     label85:
+        nop;
+        nop;
+        lookupswitch(lastChar)
+        {
+            case 68: goto label71;
+            case 70: goto label61;
+            case 76: goto label49;
+            case 100: goto label70;
+            case 102: goto label60;
+            case 108: goto label48;
+            default: goto label84;
+        };
+
+        nop;
+
+     label86:
+        nop;
+        if expPos > -1 goto label87;
+
+        goto label89;
+
+     label87:
+        nop;
+        temp$91 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$92 = temp$91 - 1;
+        if expPos < temp$92 goto label88;
+
+        goto label89;
+
+        goto label88;
+
+     label88:
+        nop;
+        temp$93 = expPos * 1;
+        temp$94 = virtualinvoke str.<java.lang.String: int length()>();
+        temp$95 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(temp$93, temp$94);
+        exp = temp$95;
+        goto label90;
+
+     label89:
+        nop;
+        temp$96 = null;
+        exp = temp$96;
+
+     label90:
+        nop;
+        if dec == null goto label91;
+
+        goto label101;
+
+     label91:
+        nop;
+        if exp == null goto label92;
+
+        goto label101;
+
+        goto label92;
+
+     label92:
+        nop;
+
+     label93:
+        nop;
+        temp$97 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Integer createInteger(java.lang.String)>(str);
+
+     label94:
+        nop;
+        return temp$97;
+
+     label95:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label96;
+
+     label96:
+        nop;
+
+     label97:
+        nop;
+        temp$98 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Long createLong(java.lang.String)>(str);
+
+     label98:
+        nop;
+        return temp$98;
+
+     label99:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label100;
+
+     label100:
+        nop;
+        temp$99 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.math.BigInteger createBigInteger(java.lang.String)>(str);
+        return temp$99;
+
+     label101:
+        nop;
+        temp$100 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isAllZeros(java.lang.String)>(mant);
+        if temp$100 == 0 goto label103;
+
+        goto label102;
+
+     label102:
+        nop;
+        temp$101 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: boolean isAllZeros(java.lang.String)>(exp);
+        if temp$101 == 0 goto label103;
+
+        goto label104;
+
+        goto label104;
+
+     label103:
+        nop;
+        temp$102 = 0;
+        goto label105;
+
+     label104:
+        nop;
+        temp$102 = 1;
+
+     label105:
+        nop;
+        allZeros = temp$102;
+
+     label106:
+        nop;
+        if numDecimals <= 7 goto label107;
+
+        goto label113;
+
+     label107:
+        nop;
+        temp$103 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Float createFloat(java.lang.String)>(str);
+        f = temp$103;
+        temp$104 = virtualinvoke f.<java.lang.Float: boolean isInfinite()>();
+        if temp$104 == 0 goto label108;
+
+        goto label112;
+
+     label108:
+        nop;
+        temp$105 = virtualinvoke f.<java.lang.Float: float floatValue()>();
+        temp$106 = temp$105 cmpg 0.0F;
+        if temp$106 != 0 goto label110;
+
+        goto label109;
+
+     label109:
+        nop;
+        if allZeros == 0 goto label112;
+
+        goto label110;
+
+        goto label112;
+
+        goto label110;
+
+     label110:
+        nop;
+
+     label111:
+        nop;
+        return f;
+
+     label112:
+        nop;
+
+     label113:
+        nop;
+        goto label115;
+
+     label114:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label115;
+
+     label115:
+        nop;
+
+     label116:
+        nop;
+        if numDecimals <= 16 goto label117;
+
+        goto label123;
+
+     label117:
+        nop;
+        temp$107 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.lang.Double createDouble(java.lang.String)>(str);
+        d = temp$107;
+        temp$108 = virtualinvoke d.<java.lang.Double: boolean isInfinite()>();
+        if temp$108 == 0 goto label118;
+
+        goto label122;
+
+     label118:
+        nop;
+        temp$109 = virtualinvoke d.<java.lang.Double: double doubleValue()>();
+        temp$110 = temp$109 cmpg 0.0;
+        if temp$110 != 0 goto label120;
+
+        goto label119;
+
+     label119:
+        nop;
+        if allZeros == 0 goto label122;
+
+        goto label120;
+
+        goto label122;
+
+        goto label120;
+
+     label120:
+        nop;
+
+     label121:
+        nop;
+        return d;
+
+     label122:
+        nop;
+
+     label123:
+        nop;
+        goto label125;
+
+     label124:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        goto label125;
+
+     label125:
+        nop;
+        temp$111 = staticinvoke <org.apache.commons.lang3.math.NumberUtils: java.math.BigDecimal createBigDecimal(java.lang.String)>(str);
+        return temp$111;
+
+        catch java.lang.NumberFormatException from label55 to label56 with label57;
+        catch java.lang.NumberFormatException from label62 to label66 with label68;
+        catch java.lang.NumberFormatException from label67 to label68 with label68;
+        catch java.lang.NumberFormatException from label72 to label76 with label78;
+        catch java.lang.NumberFormatException from label77 to label78 with label78;
+        catch java.lang.NumberFormatException from label80 to label81 with label82;
+        catch java.lang.NumberFormatException from label93 to label94 with label95;
+        catch java.lang.NumberFormatException from label97 to label98 with label99;
+        catch java.lang.NumberFormatException from label106 to label111 with label114;
+        catch java.lang.NumberFormatException from label112 to label114 with label114;
+        catch java.lang.NumberFormatException from label116 to label121 with label124;
+        catch java.lang.NumberFormatException from label122 to label124 with label124;
+    }
+}

@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource findAttachmentByName(java.lang.String)
+    {
+        org.apache.commons.mail.util.MimeMessageParser this;
+        java.lang.String name, temp$5;
+        javax.activation.DataSource dataSource, temp$4, temp$9;
+        int i, temp$1, temp$7, temp$8;
+        java.util.List temp$0, temp$2;
+        java.lang.Object temp$3;
+        boolean temp$6;
+
+        this := @this: org.apache.commons.mail.util.MimeMessageParser;
+        name := @parameter0: java.lang.String;
+        i = -1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: java.util.List getAttachmentList()>();
+        temp$1 = interfaceinvoke temp$0.<java.util.List: int size()>();
+        if i < temp$1 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.mail.util.MimeMessageParser: java.util.List getAttachmentList()>();
+        temp$3 = interfaceinvoke temp$2.<java.util.List: java.lang.Object get(int)>(i);
+        temp$4 = (javax.activation.DataSource) temp$3;
+        dataSource = temp$4;
+        temp$5 = interfaceinvoke dataSource.<javax.activation.DataSource: java.lang.String getName()>();
+        temp$6 = virtualinvoke name.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(temp$5);
+        if temp$6 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        return dataSource;
+
+     label3:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label0;
+
+     label4:
+        nop;
+        temp$9 = null;
+        return temp$9;
+    }
+}

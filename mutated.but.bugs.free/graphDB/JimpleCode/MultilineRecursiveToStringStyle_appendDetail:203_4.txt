@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    protected void appendDetail(java.lang.StringBuffer, java.lang.String, float[])
+    {
+        org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle this;
+        java.lang.StringBuffer buffer;
+        java.lang.String fieldName;
+        float[] array;
+        int temp$0, temp$1, temp$2, temp$3, temp$4, temp$5;
+
+        this := @this: org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        array := @parameter2: float[];
+        temp$0 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces>;
+        temp$1 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int indent>;
+        temp$2 = temp$0 + temp$1;
+        this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces> = temp$2;
+        specialinvoke this.<org.apache.commons.lang3.builder.RecursiveToStringStyle: void appendDetail(java.lang.StringBuffer,java.lang.String,float[])>(buffer, fieldName, array);
+        temp$3 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces>;
+        temp$4 = this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int indent>;
+        temp$5 = temp$3 - temp$4;
+        this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: int spaces> = temp$5;
+        virtualinvoke this.<org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle: void resetIndent()>();
+        return;
+    }
+}

@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field[] getFieldsWithAnnotation(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class 'cls', annotationCls;
+        java.util.List annotatedFieldsList, temp$0;
+        int temp$1;
+        java.lang.reflect.Field[] temp$2, temp$4;
+        java.lang.Object[] temp$3;
+
+        'cls' := @parameter0: java.lang.Class;
+        annotationCls := @parameter1: java.lang.Class;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.util.List getFieldsListWithAnnotation(java.lang.Class,java.lang.Class)>('cls', annotationCls);
+        annotatedFieldsList = temp$0;
+        temp$1 = interfaceinvoke annotatedFieldsList.<java.util.List: int size()>();
+        temp$2 = newarray (java.lang.reflect.Field)[temp$1];
+        temp$3 = interfaceinvoke annotatedFieldsList.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$2);
+        temp$4 = (java.lang.reflect.Field[]) temp$3;
+        return temp$4;
+    }
+}

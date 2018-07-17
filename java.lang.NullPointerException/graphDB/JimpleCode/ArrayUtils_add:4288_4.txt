@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public static java.lang.Object[] add(java.lang.Object[], int, java.lang.Object)
+    {
+        java.lang.Object[] array, newArray;
+        int index;
+        java.lang.Object element, temp$3;
+        java.lang.Class clss, temp$0, temp$1;
+        java.lang.IllegalArgumentException temp$2;
+
+        array := @parameter0: java.lang.Object[];
+        index := @parameter1: int;
+        element := @parameter2: java.lang.Object;
+        clss = null;
+        if array != null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        clss = temp$0;
+        goto label5;
+
+     label1:
+        nop;
+        if element != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke element.<java.lang.Object: java.lang.Class getClass()>();
+        clss = temp$1;
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Array and element cannot both be null");
+        throw temp$2;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object add(java.lang.Object,int,java.lang.Object,java.lang.Class)>(array, index, element, clss);
+        newArray = (java.lang.Object[]) temp$3;
+        return newArray;
+    }
+}

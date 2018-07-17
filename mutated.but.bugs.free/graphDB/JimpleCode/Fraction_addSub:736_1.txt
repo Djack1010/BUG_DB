@@ -1,0 +1,155 @@
+public class WrapClass 
+{
+    private final org.apache.commons.lang3.math.Fraction addSub(org.apache.commons.lang3.math.Fraction, boolean)
+    {
+        org.apache.commons.lang3.math.Fraction this, fraction, temp$2, temp$3, temp$38;
+        boolean isAdd;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1, temp$4, d1, temp$5, temp$6, temp$7, temp$8, temp$11, temp$12, temp$16, temp$19, temp$20, tmodd1, temp$30, d2, temp$31, temp$32, temp$36, temp$39, temp$40, temp$41, temp$42, temp$43, temp$44;
+        java.math.BigInteger uvp, temp$10, temp$14, temp$15, upv, temp$18, temp$22, temp$23, t, temp$24, temp$25, temp$26, temp$28, temp$29, w, temp$34, temp$35;
+        long temp$9, temp$13, temp$17, temp$21, temp$27, temp$33;
+        java.lang.ArithmeticException temp$37;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        fraction := @parameter0: org.apache.commons.lang3.math.Fraction;
+        isAdd := @parameter1: boolean;
+        if fraction == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The fraction must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$1 == 0 goto label2;
+
+        goto label6;
+
+     label2:
+        nop;
+        if isAdd == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = fraction;
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = virtualinvoke fraction.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction negate()>();
+        temp$2 = temp$3;
+
+     label5:
+        nop;
+        return temp$2;
+
+     label6:
+        nop;
+        temp$4 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$4 == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        return this;
+
+     label8:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$6 = fraction.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$7 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(temp$5, temp$6);
+        d1 = temp$7;
+        temp$8 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$9 = (long) temp$8;
+        temp$10 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$9);
+        temp$11 = fraction.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$12 = temp$11 / d1;
+        temp$13 = (long) temp$12;
+        temp$14 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$13);
+        temp$15 = virtualinvoke temp$10.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(temp$14);
+        uvp = temp$15;
+        temp$16 = fraction.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        temp$17 = (long) temp$16;
+        temp$18 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$17);
+        temp$19 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$20 = temp$19 / d1;
+        temp$21 = (long) temp$20;
+        temp$22 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$21);
+        temp$23 = virtualinvoke temp$18.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(temp$22);
+        upv = temp$23;
+        if isAdd == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$25 = virtualinvoke uvp.<java.math.BigInteger: java.math.BigInteger add(java.math.BigInteger)>(upv);
+        temp$24 = temp$25;
+        goto label11;
+
+     label10:
+        nop;
+        temp$26 = virtualinvoke uvp.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(upv);
+        temp$24 = temp$26;
+
+     label11:
+        nop;
+        t = temp$24;
+        temp$27 = (long) d1;
+        temp$28 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$27);
+        temp$29 = virtualinvoke t.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(temp$28);
+        temp$30 = virtualinvoke temp$29.<java.math.BigInteger: int intValue()>();
+        tmodd1 = temp$30;
+        if tmodd1 == 0 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$31 = d1;
+        goto label14;
+
+     label13:
+        nop;
+        temp$32 = staticinvoke <org.apache.commons.lang3.math.Fraction: int greatestCommonDivisor(int,int)>(tmodd1, d1);
+        temp$31 = temp$32;
+
+     label14:
+        nop;
+        d2 = temp$31;
+        temp$33 = (long) d2;
+        temp$34 = staticinvoke <java.math.BigInteger: java.math.BigInteger valueOf(long)>(temp$33);
+        temp$35 = virtualinvoke t.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(temp$34);
+        w = temp$35;
+        temp$36 = virtualinvoke w.<java.math.BigInteger: int bitLength()>();
+        if temp$36 > 31 goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$37 = new java.lang.ArithmeticException;
+        specialinvoke temp$37.<java.lang.ArithmeticException: void <init>(java.lang.String)>("overflow: numerator too large after multiply");
+        throw temp$37;
+
+     label16:
+        nop;
+        temp$38 = new org.apache.commons.lang3.math.Fraction;
+        temp$39 = virtualinvoke w.<java.math.BigInteger: int intValue()>();
+        temp$40 = this.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$41 = temp$40 / d1;
+        temp$42 = fraction.<org.apache.commons.lang3.math.Fraction: int denominator>;
+        temp$43 = temp$42 / d2;
+        temp$44 = staticinvoke <org.apache.commons.lang3.math.Fraction: int mulPosAndCheck(int,int)>(temp$41, temp$43);
+        specialinvoke temp$38.<org.apache.commons.lang3.math.Fraction: void <init>(int,int)>(temp$39, temp$44);
+        return temp$38;
+    }
+}

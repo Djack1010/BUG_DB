@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    public static byte[] encodeBase64(byte[], boolean, boolean, int)
+    {
+        byte[] binaryData, temp$4, temp$11;
+        boolean isChunked, urlSafe;
+        int maxResultSize, temp$0, temp$7;
+        org.apache.commons.codec.binary.Base64 b64, temp$1, temp$2, temp$3;
+        long len, temp$5, temp$6;
+        java.lang.IllegalArgumentException temp$8;
+        java.lang.StringBuffer temp$9;
+        java.lang.String temp$10;
+
+        binaryData := @parameter0: byte[];
+        isChunked := @parameter1: boolean;
+        urlSafe := @parameter2: boolean;
+        maxResultSize := @parameter3: int;
+        temp$0 = lengthof binaryData;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return binaryData;
+
+     label1:
+        nop;
+        if isChunked == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = new org.apache.commons.codec.binary.Base64;
+        specialinvoke temp$2.<org.apache.commons.codec.binary.Base64: void <init>(boolean)>(urlSafe);
+        temp$1 = temp$2;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = new org.apache.commons.codec.binary.Base64;
+        temp$4 = <org.apache.commons.codec.binary.Base64: byte[] CHUNK_SEPARATOR>;
+        specialinvoke temp$3.<org.apache.commons.codec.binary.Base64: void <init>(int,byte[],boolean)>(0, temp$4, urlSafe);
+        temp$1 = temp$3;
+
+     label4:
+        nop;
+        b64 = temp$1;
+        temp$5 = virtualinvoke b64.<org.apache.commons.codec.binary.Base64: long getEncodedLength(byte[])>(binaryData);
+        len = temp$5;
+        temp$6 = (long) maxResultSize;
+        temp$7 = len cmp temp$6;
+        if temp$7 <= 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$8 = new java.lang.IllegalArgumentException;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Input array too big, the output array would be bigger (");
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(long)>(len);
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(") than the specified maximum size of ");
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(maxResultSize);
+        temp$10 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$10);
+        throw temp$8;
+
+     label6:
+        nop;
+        temp$11 = virtualinvoke b64.<org.apache.commons.codec.binary.Base64: byte[] encode(byte[])>(binaryData);
+        return temp$11;
+    }
+}

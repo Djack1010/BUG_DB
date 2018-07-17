@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    protected void appendSummarySize(java.lang.StringBuffer, java.lang.String, int)
+    {
+        org.apache.commons.lang3.builder.ToStringStyle this;
+        java.lang.StringBuffer buffer, temp$0, temp$2;
+        java.lang.String fieldName, temp$1;
+        int size;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringStyle;
+        buffer := @parameter0: java.lang.StringBuffer;
+        fieldName := @parameter1: java.lang.String;
+        size := @parameter2: int;
+        temp$0 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(size);
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringStyle: java.lang.String sizeEndText>;
+        temp$2 = virtualinvoke buffer.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(temp$1);
+        return;
+    }
+}

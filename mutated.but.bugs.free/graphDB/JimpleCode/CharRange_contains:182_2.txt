@@ -1,0 +1,180 @@
+public class WrapClass 
+{
+    public final boolean contains(org.apache.commons.lang3.CharRange)
+    {
+        org.apache.commons.lang3.CharRange this, range;
+        java.lang.IllegalArgumentException temp$0;
+        boolean temp$1, temp$2, temp$11, temp$20, temp$21, temp$26, temp$35;
+        char temp$3, temp$4, temp$7, temp$8, temp$12, temp$13, temp$16, temp$17, temp$22, temp$24, temp$27, temp$28, temp$31, temp$32;
+        int temp$5, temp$6, temp$9, temp$10, temp$14, temp$15, temp$18, temp$19, temp$23, temp$25, temp$29, temp$30, temp$33, temp$34;
+
+        this := @this: org.apache.commons.lang3.CharRange;
+        range := @parameter0: org.apache.commons.lang3.CharRange;
+        if range == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Range must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.CharRange: boolean negated>;
+        if temp$1 == 0 goto label13;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = range.<org.apache.commons.lang3.CharRange: boolean negated>;
+        if temp$2 == 0 goto label8;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$4 = range.<org.apache.commons.lang3.CharRange: char start>;
+        temp$5 = (int) temp$3;
+        temp$6 = (int) temp$4;
+        if temp$5 >= temp$6 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$8 = range.<org.apache.commons.lang3.CharRange: char end>;
+        temp$9 = (int) temp$7;
+        temp$10 = (int) temp$8;
+        if temp$9 <= temp$10 goto label6;
+
+        goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$11 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$11 = 1;
+
+     label7:
+        nop;
+        return temp$11;
+
+     label8:
+        nop;
+        temp$12 = range.<org.apache.commons.lang3.CharRange: char end>;
+        temp$13 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$14 = (int) temp$12;
+        temp$15 = (int) temp$13;
+        if temp$14 < temp$15 goto label11;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$16 = range.<org.apache.commons.lang3.CharRange: char start>;
+        temp$17 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$18 = (int) temp$16;
+        temp$19 = (int) temp$17;
+        if temp$18 > temp$19 goto label11;
+
+        goto label10;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$20 = 0;
+        goto label12;
+
+     label11:
+        nop;
+        temp$20 = 1;
+
+     label12:
+        nop;
+        return temp$20;
+
+     label13:
+        nop;
+        temp$21 = range.<org.apache.commons.lang3.CharRange: boolean negated>;
+        if temp$21 == 0 goto label19;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$22 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$23 = (int) temp$22;
+        if temp$23 <= 0 goto label15;
+
+        goto label16;
+
+     label15:
+        nop;
+        temp$24 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$25 = (int) temp$24;
+        if temp$25 == 65535 goto label17;
+
+        goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$26 = 0;
+        goto label18;
+
+     label17:
+        nop;
+        temp$26 = 1;
+
+     label18:
+        nop;
+        return temp$26;
+
+     label19:
+        nop;
+        temp$27 = this.<org.apache.commons.lang3.CharRange: char start>;
+        temp$28 = range.<org.apache.commons.lang3.CharRange: char start>;
+        temp$29 = (int) temp$27;
+        temp$30 = (int) temp$28;
+        if temp$29 <= temp$30 goto label20;
+
+        goto label21;
+
+     label20:
+        nop;
+        temp$31 = this.<org.apache.commons.lang3.CharRange: char end>;
+        temp$32 = range.<org.apache.commons.lang3.CharRange: char end>;
+        temp$33 = (int) temp$31;
+        temp$34 = (int) temp$32;
+        if temp$33 >= temp$34 goto label22;
+
+        goto label21;
+
+        goto label22;
+
+     label21:
+        nop;
+        temp$35 = 0;
+        goto label23;
+
+     label22:
+        nop;
+        temp$35 = 1;
+
+     label23:
+        nop;
+        return temp$35;
+    }
+}

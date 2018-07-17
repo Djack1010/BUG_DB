@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    private static final java.util.Date add(java.util.Date, int, int)
+    {
+        java.util.Date date, temp$1;
+        int calendarField, amount;
+        java.util.Calendar c, temp$0;
+
+        date := @parameter0: java.util.Date;
+        calendarField := @parameter1: int;
+        amount := @parameter2: int;
+        temp$0 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance()>();
+        c = temp$0;
+        virtualinvoke c.<java.util.Calendar: void setTime(java.util.Date)>(date);
+        virtualinvoke c.<java.util.Calendar: void add(int,int)>(calendarField, amount);
+        temp$1 = virtualinvoke c.<java.util.Calendar: java.util.Date getTime()>();
+        return temp$1;
+    }
+}

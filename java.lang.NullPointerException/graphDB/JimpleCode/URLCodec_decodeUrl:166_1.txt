@@ -1,0 +1,107 @@
+public class WrapClass 
+{
+    public static final byte[] decodeUrl(byte[]) throws org.apache.commons.codec.DecoderException
+    {
+        byte[] bytes, temp$2, temp$5, temp$10, temp$23;
+        java.io.ByteArrayOutputStream buffer, temp$0;
+        int i, temp$1, b, temp$3, u, temp$6, temp$7, temp$9, l, temp$11, temp$12, temp$14, temp$15, temp$16, temp$17, temp$19, temp$21, temp$22;
+        byte temp$4, temp$8, temp$13;
+        char temp$18;
+        java.lang.ArrayIndexOutOfBoundsException e;
+        org.apache.commons.codec.DecoderException temp$20;
+
+        bytes := @parameter0: byte[];
+        temp$0 = new java.io.ByteArrayOutputStream;
+        specialinvoke temp$0.<java.io.ByteArrayOutputStream: void <init>()>();
+        buffer = temp$0;
+        i = 0;
+
+     label0:
+        nop;
+        temp$1 = lengthof bytes;
+        if i < temp$1 goto label1;
+
+        goto label11;
+
+     label1:
+        nop;
+        temp$2 = bytes;
+        temp$3 = i;
+        temp$4 = temp$2[temp$3];
+        b = (int) temp$4;
+        if b == 43 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(32);
+        goto label10;
+
+     label3:
+        nop;
+        if b == 37 goto label4;
+
+        goto label8;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$5 = bytes;
+        temp$6 = i + 1;
+        i = temp$6;
+        temp$7 = temp$6;
+        temp$8 = temp$5[temp$7];
+        temp$9 = staticinvoke <org.apache.commons.codec.net.Utils: int digit16(byte)>(temp$8);
+        u = temp$9;
+        temp$10 = bytes;
+        temp$11 = i + 1;
+        i = temp$11;
+        temp$12 = temp$11;
+        temp$13 = temp$10[temp$12];
+        temp$14 = staticinvoke <org.apache.commons.codec.net.Utils: int digit16(byte)>(temp$13);
+        l = temp$14;
+        temp$15 = u << 4;
+        temp$16 = temp$15;
+        temp$17 = temp$16 + l;
+        temp$18 = (char) temp$17;
+        temp$19 = (int) temp$18;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(temp$19);
+        goto label7;
+
+     label6:
+        nop;
+        e := @caughtexception;
+        temp$20 = new org.apache.commons.codec.DecoderException;
+        specialinvoke temp$20.<org.apache.commons.codec.DecoderException: void <init>(java.lang.String,java.lang.Throwable)>("Invalid URL encoding: ", e);
+        throw temp$20;
+
+     label7:
+        nop;
+        goto label9;
+
+     label8:
+        nop;
+        virtualinvoke buffer.<java.io.ByteArrayOutputStream: void write(int)>(b);
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        nop;
+        temp$21 = i;
+        temp$22 = temp$21 + 1;
+        i = temp$22;
+        goto label0;
+
+     label11:
+        nop;
+        temp$23 = virtualinvoke buffer.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        return temp$23;
+
+        catch java.lang.ArrayIndexOutOfBoundsException from label5 to label6 with label6;
+    }
+}

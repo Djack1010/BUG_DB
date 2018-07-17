@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public static boolean equals(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs1, cs2;
+        boolean temp$0, temp$1, temp$5;
+        int temp$2, temp$3, temp$4;
+
+        cs1 := @parameter0: java.lang.CharSequence;
+        cs2 := @parameter1: java.lang.CharSequence;
+        if cs1 == cs2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if cs1 == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        if cs2 == null goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label4:
+        nop;
+        temp$2 = interfaceinvoke cs1.<java.lang.CharSequence: int length()>();
+        temp$3 = interfaceinvoke cs2.<java.lang.CharSequence: int length()>();
+        temp$4 = staticinvoke <java.lang.Math: int max(int,int)>(temp$2, temp$3);
+        temp$5 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(cs1, 0, 0, cs2, 0, temp$4);
+        return temp$5;
+    }
+}

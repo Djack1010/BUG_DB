@@ -1,0 +1,80 @@
+public class WrapClass 
+{
+    public static java.lang.String join(long[], char, int, int)
+    {
+        long[] array, temp$7;
+        char separator;
+        int startIndex, endIndex, noOfItems, temp$1, temp$4, temp$5, i, temp$8, temp$11, temp$12;
+        java.lang.String temp$0, temp$2, temp$13;
+        java.lang.StringBuilder buf, temp$3, temp$6, temp$10;
+        long temp$9;
+
+        array := @parameter0: long[];
+        separator := @parameter1: char;
+        startIndex := @parameter2: int;
+        endIndex := @parameter3: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = endIndex - startIndex;
+        noOfItems = temp$1;
+        if noOfItems <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$2;
+
+     label3:
+        nop;
+        temp$3 = new java.lang.StringBuilder;
+        temp$4 = noOfItems;
+        temp$5 = temp$4 + 16;
+        specialinvoke temp$3.<java.lang.StringBuilder: void <init>(int)>(temp$5);
+        buf = temp$3;
+        i = startIndex;
+
+     label4:
+        nop;
+        if i < endIndex goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        if i > startIndex goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(separator);
+
+     label7:
+        nop;
+        temp$7 = array;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>(temp$9);
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label4;
+
+     label8:
+        nop;
+        temp$13 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$13;
+    }
+}

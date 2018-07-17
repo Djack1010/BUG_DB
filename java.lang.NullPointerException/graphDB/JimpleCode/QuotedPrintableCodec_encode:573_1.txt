@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public java.lang.String encode(java.lang.String, java.nio.charset.Charset)
+    {
+        org.apache.commons.codec.net.QuotedPrintableCodec this;
+        java.lang.String str, temp$2;
+        java.nio.charset.Charset charset;
+        byte[] temp$0, temp$1;
+
+        this := @this: org.apache.commons.codec.net.QuotedPrintableCodec;
+        str := @parameter0: java.lang.String;
+        charset := @parameter1: java.nio.charset.Charset;
+        temp$0 = virtualinvoke str.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>(charset);
+        temp$1 = virtualinvoke this.<org.apache.commons.codec.net.QuotedPrintableCodec: byte[] encode(byte[])>(temp$0);
+        temp$2 = staticinvoke <org.apache.commons.codec.binary.StringUtils: java.lang.String newStringUsAscii(byte[])>(temp$1);
+        return temp$2;
+    }
+}

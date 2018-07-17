@@ -1,0 +1,30 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.EqualsBuilder append(int, int)
+    {
+        org.apache.commons.lang3.builder.EqualsBuilder this;
+        int lhs, rhs;
+        boolean temp$0;
+
+        this := @this: org.apache.commons.lang3.builder.EqualsBuilder;
+        lhs := @parameter0: int;
+        rhs := @parameter1: int;
+        if lhs == rhs goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals> = temp$0;
+        return this;
+    }
+}

@@ -1,0 +1,146 @@
+public class WrapClass 
+{
+    public static transient byte[] removeElements(byte[], byte[])
+    {
+        byte[] array, values, temp$2, temp$30;
+        boolean temp$0, temp$1, temp$16;
+        java.util.Map occurrences;
+        int temp$3, temp$4, found, i, ct, temp$22, temp$24, temp$25, temp$26, temp$27, temp$28;
+        byte v, temp$5, temp$23;
+        java.lang.Byte boxed, temp$6, v, temp$19;
+        org.apache.commons.lang3.mutable.MutableInt count, temp$8, temp$9, temp$11, temp$21;
+        java.lang.Object temp$7, temp$10, temp$17, temp$18, temp$20, temp$29;
+        java.util.BitSet toRemove, temp$12;
+        java.util.Set temp$13, temp$14;
+        java.util.Iterator temp$15;
+        java.util.Map$Entry e;
+
+        array := @parameter0: byte[];
+        values := @parameter1: byte[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(byte[])>(array);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(byte[])>(values);
+        if temp$1 == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.ArrayUtils: byte[] clone(byte[])>(array);
+        return temp$2;
+
+     label2:
+        nop;
+        occurrences = null;
+        temp$3 = 0;
+
+     label3:
+        nop;
+        temp$4 = lengthof values;
+        if temp$3 >= temp$4 goto label7;
+
+        temp$5 = values[temp$3];
+        v = temp$5;
+        temp$6 = staticinvoke <java.lang.Byte: java.lang.Byte valueOf(byte)>(v);
+        boxed = temp$6;
+        temp$7 = interfaceinvoke occurrences.<java.util.Map: java.lang.Object get(java.lang.Object)>(boxed);
+        temp$8 = (org.apache.commons.lang3.mutable.MutableInt) temp$7;
+        count = temp$8;
+        if count == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$9 = new org.apache.commons.lang3.mutable.MutableInt;
+        specialinvoke temp$9.<org.apache.commons.lang3.mutable.MutableInt: void <init>(int)>(1);
+        temp$10 = interfaceinvoke occurrences.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(boxed, temp$9);
+        temp$11 = (org.apache.commons.lang3.mutable.MutableInt) temp$10;
+        goto label6;
+
+     label5:
+        nop;
+        virtualinvoke count.<org.apache.commons.lang3.mutable.MutableInt: void increment()>();
+
+     label6:
+        nop;
+        nop;
+        temp$3 = temp$3 + 1;
+        goto label3;
+
+     label7:
+        nop;
+        temp$12 = new java.util.BitSet;
+        specialinvoke temp$12.<java.util.BitSet: void <init>()>();
+        toRemove = temp$12;
+        temp$13 = interfaceinvoke occurrences.<java.util.Map: java.util.Set entrySet()>();
+        temp$14 = (java.util.Set) temp$13;
+        temp$15 = interfaceinvoke temp$14.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label8:
+        nop;
+        temp$16 = interfaceinvoke temp$15.<java.util.Iterator: boolean hasNext()>();
+        if temp$16 == 0 goto label14;
+
+        temp$17 = interfaceinvoke temp$15.<java.util.Iterator: java.lang.Object next()>();
+        e = (java.util.Map$Entry) temp$17;
+        temp$18 = interfaceinvoke e.<java.util.Map$Entry: java.lang.Object getKey()>();
+        temp$19 = (java.lang.Byte) temp$18;
+        v = temp$19;
+        found = 0;
+        i = 0;
+        temp$20 = interfaceinvoke e.<java.util.Map$Entry: java.lang.Object getValue()>();
+        temp$21 = (org.apache.commons.lang3.mutable.MutableInt) temp$20;
+        temp$22 = virtualinvoke temp$21.<org.apache.commons.lang3.mutable.MutableInt: int intValue()>();
+        ct = temp$22;
+
+     label9:
+        nop;
+        if i < ct goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$23 = virtualinvoke v.<java.lang.Byte: byte byteValue()>();
+        temp$24 = staticinvoke <org.apache.commons.lang3.ArrayUtils: int indexOf(byte[],byte,int)>(array, temp$23, found);
+        found = temp$24;
+        if found < 0 goto label11;
+
+        goto label12;
+
+     label11:
+        nop;
+        goto label13;
+
+     label12:
+        nop;
+        temp$25 = found;
+        temp$26 = temp$25 + 1;
+        found = temp$26;
+        virtualinvoke toRemove.<java.util.BitSet: void set(int)>(temp$25);
+        nop;
+        temp$27 = i;
+        temp$28 = temp$27 + 1;
+        i = temp$28;
+        goto label9;
+
+     label13:
+        nop;
+        nop;
+        goto label8;
+
+     label14:
+        nop;
+        temp$29 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object removeAll(java.lang.Object,java.util.BitSet)>(array, toRemove);
+        temp$30 = (byte[]) temp$29;
+        return temp$30;
+    }
+}

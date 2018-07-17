@@ -1,0 +1,89 @@
+public class WrapClass 
+{
+    public static java.lang.Boolean toBooleanObject(java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Integer)
+    {
+        java.lang.Integer value, trueValue, falseValue, nullValue;
+        java.lang.Boolean temp$0, temp$1, temp$3, temp$5, temp$7;
+        boolean temp$2, temp$4, temp$6;
+        java.lang.IllegalArgumentException temp$8;
+
+        value := @parameter0: java.lang.Integer;
+        trueValue := @parameter1: java.lang.Integer;
+        falseValue := @parameter2: java.lang.Integer;
+        nullValue := @parameter3: java.lang.Integer;
+        if value == null goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+        if falseValue == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        return temp$0;
+
+     label2:
+        nop;
+        if nullValue == null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label4:
+        nop;
+        goto label12;
+
+     label5:
+        nop;
+        temp$2 = virtualinvoke value.<java.lang.Integer: boolean equals(java.lang.Object)>(trueValue);
+        if temp$2 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$3 = <java.lang.Boolean: java.lang.Boolean TRUE>;
+        return temp$3;
+
+     label7:
+        nop;
+        temp$4 = virtualinvoke value.<java.lang.Integer: boolean equals(java.lang.Object)>(falseValue);
+        if temp$4 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$5 = <java.lang.Boolean: java.lang.Boolean FALSE>;
+        return temp$5;
+
+     label9:
+        nop;
+        temp$6 = virtualinvoke value.<java.lang.Integer: boolean equals(java.lang.Object)>(nullValue);
+        if temp$6 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$7 = null;
+        return temp$7;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$8 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Integer did not match any specified value");
+        throw temp$8;
+    }
+}

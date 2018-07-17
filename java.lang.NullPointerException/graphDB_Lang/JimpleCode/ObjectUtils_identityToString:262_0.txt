@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public static java.lang.String identityToString(java.lang.Object)
+    {
+        java.lang.Object object;
+        java.lang.String temp$0, temp$2;
+        java.lang.StringBuilder builder, temp$1;
+
+        object := @parameter0: java.lang.Object;
+        if object == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.StringBuilder;
+        specialinvoke temp$1.<java.lang.StringBuilder: void <init>()>();
+        builder = temp$1;
+        staticinvoke <org.apache.commons.lang3.ObjectUtils: void identityToString(java.lang.StringBuilder,java.lang.Object)>(builder, object);
+        temp$2 = virtualinvoke builder.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$2;
+    }
+}

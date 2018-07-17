@@ -1,0 +1,73 @@
+public class WrapClass 
+{
+    private static final boolean memberEquals(java.lang.Class, java.lang.Object, java.lang.Object)
+    {
+        java.lang.Class type, temp$3;
+        java.lang.Object o1, o2;
+        boolean temp$0, temp$1, temp$2, temp$4, temp$5, temp$8, temp$9;
+        java.lang.annotation.Annotation temp$6, temp$7;
+
+        type := @parameter0: java.lang.Class;
+        o1 := @parameter1: java.lang.Object;
+        o2 := @parameter2: java.lang.Object;
+        if o1 == o2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if o1 == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        if o2 == null goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke type.<java.lang.Class: boolean isArray()>();
+        if temp$2 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke type.<java.lang.Class: java.lang.Class getComponentType()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: boolean arrayMemberEquals(java.lang.Class,java.lang.Object,java.lang.Object)>(temp$3, o1, o2);
+        return temp$4;
+
+     label6:
+        nop;
+        temp$5 = virtualinvoke type.<java.lang.Class: boolean isAnnotation()>();
+        if temp$5 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$6 = (java.lang.annotation.Annotation) o1;
+        temp$7 = (java.lang.annotation.Annotation) o2;
+        temp$8 = staticinvoke <org.apache.commons.lang3.AnnotationUtils: boolean equals(java.lang.annotation.Annotation,java.lang.annotation.Annotation)>(temp$6, temp$7);
+        return temp$8;
+
+     label8:
+        nop;
+        temp$9 = virtualinvoke o1.<java.lang.Object: boolean equals(java.lang.Object)>(o2);
+        return temp$9;
+    }
+}

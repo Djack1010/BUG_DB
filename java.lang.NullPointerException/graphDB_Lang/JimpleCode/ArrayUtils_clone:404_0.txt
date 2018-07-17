@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public static byte[] clone(byte[])
+    {
+        byte[] array, temp$0, temp$2;
+        java.lang.Object temp$1;
+
+        array := @parameter0: byte[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke array.<java.lang.Object: java.lang.Object clone()>();
+        temp$2 = (byte[]) temp$1;
+        return temp$2;
+    }
+}

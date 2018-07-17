@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public javax.activation.DataSource resolve(java.lang.String, boolean) throws java.io.IOException
+    {
+        org.apache.commons.mail.resolver.DataSourceCompositeResolver this;
+        java.lang.String resourceLocation, temp$11;
+        boolean isLenient;
+        int i, temp$1, temp$4, temp$6, temp$7;
+        org.apache.commons.mail.DataSourceResolver[] temp$0, temp$2, temp$3;
+        org.apache.commons.mail.DataSourceResolver dataSourceResolver;
+        javax.activation.DataSource dataSource, temp$5, temp$8;
+        java.io.IOException temp$9;
+        java.lang.StringBuffer temp$10;
+
+        this := @this: org.apache.commons.mail.resolver.DataSourceCompositeResolver;
+        resourceLocation := @parameter0: java.lang.String;
+        isLenient := @parameter1: boolean;
+        i = -1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: org.apache.commons.mail.DataSourceResolver[] getDataSourceResolvers()>();
+        temp$1 = lengthof temp$0;
+        if i < temp$1 goto label1;
+
+        goto label4;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.mail.resolver.DataSourceCompositeResolver: org.apache.commons.mail.DataSourceResolver[] getDataSourceResolvers()>();
+        temp$3 = temp$2;
+        temp$4 = i;
+        dataSourceResolver = temp$3[temp$4];
+        temp$5 = interfaceinvoke dataSourceResolver.<org.apache.commons.mail.DataSourceResolver: javax.activation.DataSource resolve(java.lang.String,boolean)>(resourceLocation, isLenient);
+        dataSource = temp$5;
+        if dataSource != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return dataSource;
+
+     label3:
+        nop;
+        nop;
+        temp$6 = i;
+        temp$7 = temp$6 + 1;
+        i = temp$7;
+        goto label0;
+
+     label4:
+        nop;
+        if isLenient == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$8 = null;
+        return temp$8;
+
+     label6:
+        nop;
+        temp$9 = new java.io.IOException;
+        temp$10 = new java.lang.StringBuffer;
+        specialinvoke temp$10.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("The following resource was not found : ");
+        virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(resourceLocation);
+        temp$11 = virtualinvoke temp$10.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$9.<java.io.IOException: void <init>(java.lang.String)>(temp$11);
+        throw temp$9;
+    }
+}
