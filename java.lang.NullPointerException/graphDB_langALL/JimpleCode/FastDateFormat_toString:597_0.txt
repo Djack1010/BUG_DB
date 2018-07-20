@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public java.lang.String toString()
+    {
+        org.apache.commons.lang3.time.FastDateFormat this;
+        java.lang.StringBuffer temp$0;
+        org.apache.commons.lang3.time.FastDatePrinter temp$1, temp$3, temp$5;
+        java.lang.String temp$2, temp$7, temp$8;
+        java.util.Locale temp$4;
+        java.util.TimeZone temp$6;
+
+        this := @this: org.apache.commons.lang3.time.FastDateFormat;
+        temp$0 = new java.lang.StringBuffer;
+        specialinvoke temp$0.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("FastDateFormat[");
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;
+        temp$2 = virtualinvoke temp$1.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String getPattern()>();
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$2);
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(",");
+        temp$3 = this.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;
+        temp$4 = virtualinvoke temp$3.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale getLocale()>();
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$4);
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(",");
+        temp$5 = this.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;
+        temp$6 = virtualinvoke temp$5.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone getTimeZone()>();
+        temp$7 = virtualinvoke temp$6.<java.util.TimeZone: java.lang.String getID()>();
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$7);
+        virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("]");
+        temp$8 = virtualinvoke temp$0.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$8;
+    }
+}

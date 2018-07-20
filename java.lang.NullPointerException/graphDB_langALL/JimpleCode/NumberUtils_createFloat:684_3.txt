@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public static java.lang.Float createFloat(java.lang.String)
+    {
+        java.lang.String str;
+        java.lang.Float temp$0;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = staticinvoke <java.lang.Float: java.lang.Float valueOf(java.lang.String)>(str);
+        return temp$0;
+    }
+}

@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public static boolean isAllUpperCase(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        boolean temp$0, temp$1, temp$2, temp$5, temp$6, temp$9;
+        int sz, temp$3, i, temp$7, temp$8;
+        char temp$4;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(cs);
+        if temp$0 != temp$1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label4:
+        nop;
+        temp$3 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        sz = temp$3;
+        i = 0;
+
+     label5:
+        nop;
+        if i < sz goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$4 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$5 = staticinvoke <java.lang.Character: boolean isUpperCase(char)>(temp$4);
+        if temp$5 == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+
+     label8:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label5;
+
+     label9:
+        nop;
+        temp$9 = 1;
+        return temp$9;
+    }
+}

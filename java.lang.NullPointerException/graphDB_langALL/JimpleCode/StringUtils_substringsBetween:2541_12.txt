@@ -1,0 +1,121 @@
+public class WrapClass 
+{
+    public static java.lang.String[] substringsBetween(java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String str, open, close, temp$12;
+        boolean temp$0, temp$13, temp$16;
+        java.lang.String[] temp$1, temp$3, temp$17, temp$19, temp$21;
+        int strLen, temp$2, closeLen, temp$4, openLen, temp$5, pos, temp$7, start, temp$8, temp$9, temp$10, end, temp$11, temp$14, temp$15, temp$18;
+        java.util.List list;
+        java.util.ArrayList temp$6;
+        java.lang.Object[] temp$20;
+
+        str := @parameter0: java.lang.String;
+        open := @parameter1: java.lang.String;
+        close := @parameter2: java.lang.String;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(open);
+        if temp$0 == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$2;
+        if strLen == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$3;
+
+     label4:
+        nop;
+        temp$4 = virtualinvoke close.<java.lang.String: int length()>();
+        closeLen = temp$4;
+        temp$5 = virtualinvoke open.<java.lang.String: int length()>();
+        openLen = temp$5;
+        temp$6 = new java.util.ArrayList;
+        specialinvoke temp$6.<java.util.ArrayList: void <init>()>();
+        list = temp$6;
+        pos = 0;
+
+     label5:
+        nop;
+        temp$7 = strLen - closeLen;
+        if pos < temp$7 goto label6;
+
+        goto label11;
+
+     label6:
+        nop;
+        temp$8 = virtualinvoke str.<java.lang.String: int indexOf(java.lang.String,int)>(open, pos);
+        start = temp$8;
+        if start < 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        goto label11;
+
+     label8:
+        nop;
+        temp$9 = start;
+        temp$10 = temp$9 + openLen;
+        start = temp$10;
+        temp$11 = virtualinvoke str.<java.lang.String: int indexOf(java.lang.String,int)>(close, start);
+        end = temp$11;
+        if end < 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        goto label11;
+
+     label10:
+        nop;
+        temp$12 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(start, end);
+        temp$13 = interfaceinvoke list.<java.util.List: boolean add(java.lang.Object)>(temp$12);
+        temp$14 = end;
+        temp$15 = temp$14 + closeLen;
+        pos = temp$15;
+        goto label5;
+
+     label11:
+        nop;
+        temp$16 = interfaceinvoke list.<java.util.List: boolean isEmpty()>();
+        if temp$16 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$17 = null;
+        return temp$17;
+
+     label13:
+        nop;
+        temp$18 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$19 = newarray (java.lang.String)[temp$18];
+        temp$20 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$19);
+        temp$21 = (java.lang.String[]) temp$20;
+        return temp$21;
+    }
+}

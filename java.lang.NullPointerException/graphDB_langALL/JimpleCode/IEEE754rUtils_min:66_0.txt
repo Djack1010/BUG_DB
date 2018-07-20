@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    public static transient float min(float[])
+    {
+        float[] array, temp$4, temp$7;
+        java.lang.IllegalArgumentException temp$0;
+        int temp$1, temp$5, i, temp$6, temp$8, temp$11, temp$12;
+        boolean temp$2;
+        java.lang.Object[] temp$3;
+        float min, temp$9, temp$10;
+
+        array := @parameter0: float[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Array must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof array;
+        if temp$1 != 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 1;
+
+     label4:
+        nop;
+        temp$3 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "Array cannot be empty.", temp$3);
+        temp$4 = array;
+        temp$5 = 0;
+        min = temp$4[temp$5];
+        i = 1;
+
+     label5:
+        nop;
+        temp$6 = lengthof array;
+        if i < temp$6 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$7 = array;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = staticinvoke <org.apache.commons.lang3.math.IEEE754rUtils: float min(float,float)>(temp$9, min);
+        min = temp$10;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label5;
+
+     label7:
+        nop;
+        return min;
+    }
+}

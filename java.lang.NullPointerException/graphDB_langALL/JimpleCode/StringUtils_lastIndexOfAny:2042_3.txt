@@ -1,0 +1,79 @@
+public class WrapClass 
+{
+    public static transient int lastIndexOfAny(java.lang.CharSequence, java.lang.CharSequence[])
+    {
+        java.lang.CharSequence str, search;
+        java.lang.CharSequence[] searchStrs, temp$0;
+        int sz, 'ret', tmp, i, temp$1, temp$2, temp$3, temp$4, temp$5;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStrs := @parameter1: java.lang.CharSequence[];
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if searchStrs == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        sz = lengthof searchStrs;
+        'ret' = -1;
+        tmp = 0;
+        i = 0;
+
+     label3:
+        nop;
+        if i < sz goto label4;
+
+        goto label10;
+
+     label4:
+        nop;
+        temp$0 = searchStrs;
+        temp$1 = i;
+        search = temp$0[temp$1];
+        if search == null goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        goto label9;
+
+     label6:
+        nop;
+        temp$2 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$3 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int lastIndexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(str, search, temp$2);
+        tmp = temp$3;
+        if tmp > 'ret' goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        'ret' = tmp;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + 1;
+        i = temp$5;
+        goto label3;
+
+     label10:
+        nop;
+        return 'ret';
+    }
+}

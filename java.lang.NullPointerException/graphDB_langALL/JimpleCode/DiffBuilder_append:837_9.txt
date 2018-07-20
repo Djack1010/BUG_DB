@@ -1,0 +1,215 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String, java.lang.Object, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.DiffBuilder this, temp$7, temp$11, temp$15, temp$19, temp$23, temp$27, temp$31, temp$35, temp$38;
+        java.lang.String fieldName;
+        java.lang.Object lhs, rhs, objectToTest, temp$1;
+        boolean temp$0, temp$3, temp$4, temp$8, temp$12, temp$16, temp$20, temp$24, temp$28, temp$32, temp$39, temp$42;
+        java.lang.Class temp$2;
+        boolean[] temp$5, temp$6;
+        byte[] temp$9, temp$10;
+        char[] temp$13, temp$14;
+        double[] temp$17, temp$18;
+        float[] temp$21, temp$22;
+        int[] temp$25, temp$26;
+        long[] temp$29, temp$30;
+        short[] temp$33, temp$34;
+        java.lang.Object[] temp$36, temp$37;
+        java.util.List temp$40;
+        org.apache.commons.lang3.builder.DiffBuilder$14Anonymous16 temp$41;
+
+        this := @this: org.apache.commons.lang3.builder.DiffBuilder;
+        fieldName := @parameter0: java.lang.String;
+        lhs := @parameter1: java.lang.Object;
+        rhs := @parameter2: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.builder.DiffBuilder: boolean objectsTriviallyEqual>;
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        objectToTest = lhs;
+        goto label6;
+
+     label5:
+        nop;
+        temp$1 = null;
+        objectToTest = temp$1;
+
+     label6:
+        nop;
+        temp$2 = virtualinvoke objectToTest.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = virtualinvoke temp$2.<java.lang.Class: boolean isArray()>();
+        if temp$3 == 0 goto label24;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$4 = objectToTest instanceof boolean[];
+        if temp$4 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$5 = (boolean[]) lhs;
+        temp$6 = (boolean[]) rhs;
+        temp$7 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,boolean[],boolean[])>(fieldName, temp$5, temp$6);
+        return temp$7;
+
+     label9:
+        nop;
+        temp$8 = objectToTest instanceof byte[];
+        if temp$8 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$9 = (byte[]) lhs;
+        temp$10 = (byte[]) rhs;
+        temp$11 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,byte[],byte[])>(fieldName, temp$9, temp$10);
+        return temp$11;
+
+     label11:
+        nop;
+        temp$12 = objectToTest instanceof char[];
+        if temp$12 == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$13 = (char[]) lhs;
+        temp$14 = (char[]) rhs;
+        temp$15 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,char[],char[])>(fieldName, temp$13, temp$14);
+        return temp$15;
+
+     label13:
+        nop;
+        temp$16 = objectToTest instanceof double[];
+        if temp$16 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$17 = (double[]) lhs;
+        temp$18 = (double[]) rhs;
+        temp$19 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,double[],double[])>(fieldName, temp$17, temp$18);
+        return temp$19;
+
+     label15:
+        nop;
+        temp$20 = objectToTest instanceof float[];
+        if temp$20 == 0 goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$21 = (float[]) lhs;
+        temp$22 = (float[]) rhs;
+        temp$23 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,float[],float[])>(fieldName, temp$21, temp$22);
+        return temp$23;
+
+     label17:
+        nop;
+        temp$24 = objectToTest instanceof int[];
+        if temp$24 == 0 goto label19;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$25 = (int[]) lhs;
+        temp$26 = (int[]) rhs;
+        temp$27 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,int[],int[])>(fieldName, temp$25, temp$26);
+        return temp$27;
+
+     label19:
+        nop;
+        temp$28 = objectToTest instanceof long[];
+        if temp$28 == 0 goto label21;
+
+        goto label20;
+
+     label20:
+        nop;
+        temp$29 = (long[]) lhs;
+        temp$30 = (long[]) rhs;
+        temp$31 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,long[],long[])>(fieldName, temp$29, temp$30);
+        return temp$31;
+
+     label21:
+        nop;
+        temp$32 = objectToTest instanceof short[];
+        if temp$32 == 0 goto label23;
+
+        goto label22;
+
+     label22:
+        nop;
+        temp$33 = (short[]) lhs;
+        temp$34 = (short[]) rhs;
+        temp$35 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,short[],short[])>(fieldName, temp$33, temp$34);
+        return temp$35;
+
+     label23:
+        nop;
+        temp$36 = (java.lang.Object[]) lhs;
+        temp$37 = (java.lang.Object[]) rhs;
+        temp$38 = virtualinvoke this.<org.apache.commons.lang3.builder.DiffBuilder: org.apache.commons.lang3.builder.DiffBuilder append(java.lang.String,java.lang.Object[],java.lang.Object[])>(fieldName, temp$36, temp$37);
+        return temp$38;
+
+     label24:
+        nop;
+        if lhs != null goto label25;
+
+        goto label27;
+
+     label25:
+        nop;
+        temp$39 = virtualinvoke lhs.<java.lang.Object: boolean equals(java.lang.Object)>(rhs);
+        if temp$39 == 0 goto label27;
+
+        goto label26;
+
+        goto label26;
+
+     label26:
+        nop;
+        return this;
+
+     label27:
+        nop;
+        temp$40 = this.<org.apache.commons.lang3.builder.DiffBuilder: java.util.List diffs>;
+        temp$41 = new org.apache.commons.lang3.builder.DiffBuilder$14Anonymous16;
+        specialinvoke temp$41.<org.apache.commons.lang3.builder.DiffBuilder$14Anonymous16: void <init>(org.apache.commons.lang3.builder.DiffBuilder,java.lang.String,java.lang.Object,java.lang.Object)>(this, fieldName, lhs, rhs);
+        temp$42 = interfaceinvoke temp$40.<java.util.List: boolean add(java.lang.Object)>(temp$41);
+        return this;
+    }
+}

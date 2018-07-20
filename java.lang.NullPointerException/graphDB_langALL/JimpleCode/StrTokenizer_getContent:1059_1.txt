@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public java.lang.String getContent()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        char[] temp$0, temp$2;
+        java.lang.String temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        if temp$0 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$1 = new java.lang.String;
+        temp$2 = this.<org.apache.commons.lang3.text.StrTokenizer: char[] chars>;
+        specialinvoke temp$1.<java.lang.String: void <init>(char[])>(temp$2);
+        return temp$1;
+    }
+}

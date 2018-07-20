@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public final org.apache.commons.lang3.math.Fraction abs()
+    {
+        org.apache.commons.lang3.math.Fraction this, temp$1;
+        int temp$0;
+
+        this := @this: org.apache.commons.lang3.math.Fraction;
+        temp$0 = this.<org.apache.commons.lang3.math.Fraction: int numerator>;
+        if temp$0 >= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.math.Fraction: org.apache.commons.lang3.math.Fraction negate()>();
+        return temp$1;
+    }
+}

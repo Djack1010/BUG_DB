@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static java.lang.String replaceEach(java.lang.String, java.lang.String[], java.lang.String[])
+    {
+        java.lang.String text, temp$0;
+        java.lang.String[] searchList, replacementList;
+
+        text := @parameter0: java.lang.String;
+        searchList := @parameter1: java.lang.String[];
+        replacementList := @parameter2: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String replaceEach(java.lang.String,java.lang.String[],java.lang.String[],boolean,int)>(text, searchList, replacementList, 0, 0);
+        return temp$0;
+    }
+}

@@ -1,0 +1,81 @@
+public class WrapClass 
+{
+    public static java.util.List getMethodsListWithAnnotation(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class 'cls', annotationCls;
+        boolean temp$0, temp$2, temp$9;
+        java.lang.Object[] temp$1, temp$3;
+        java.lang.reflect.Method[] allMethods, temp$4;
+        java.util.List annotatedMethods;
+        int temp$5, temp$6;
+        java.lang.reflect.Method method, temp$7;
+        java.lang.annotation.Annotation temp$8;
+
+        'cls' := @parameter0: java.lang.Class;
+        annotationCls := @parameter1: java.lang.Class;
+        if 'cls' != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The class must not be null", temp$1);
+        if annotationCls != null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        temp$3 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "The annotation class must not be null", temp$3);
+        temp$4 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Method[] getMethods()>();
+        allMethods = temp$4;
+        annotatedMethods = null;
+        temp$5 = 0;
+
+     label6:
+        nop;
+        temp$6 = lengthof allMethods;
+        if temp$5 >= temp$6 goto label9;
+
+        temp$7 = allMethods[temp$5];
+        method = temp$7;
+        temp$8 = virtualinvoke method.<java.lang.reflect.Method: java.lang.annotation.Annotation getAnnotation(java.lang.Class)>(annotationCls);
+        if temp$8 != null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$9 = interfaceinvoke annotatedMethods.<java.util.List: boolean add(java.lang.Object)>(method);
+
+     label8:
+        nop;
+        nop;
+        temp$5 = temp$5 + 1;
+        goto label6;
+
+     label9:
+        nop;
+        return annotatedMethods;
+    }
+}

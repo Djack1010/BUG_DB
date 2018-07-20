@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public static boolean isAsciiPrintable(java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs;
+        int sz, temp$0, i, temp$4, temp$5;
+        char temp$1;
+        boolean temp$2, temp$3, temp$6;
+
+        cs := @parameter0: java.lang.CharSequence;
+        if cs == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = interfaceinvoke cs.<java.lang.CharSequence: int length()>();
+        sz = temp$0;
+        i = 0;
+
+     label2:
+        nop;
+        if i < sz goto label3;
+
+        goto label6;
+
+     label3:
+        nop;
+        temp$1 = interfaceinvoke cs.<java.lang.CharSequence: char charAt(int)>(i);
+        temp$2 = staticinvoke <org.apache.commons.lang3.CharUtils: boolean isAsciiPrintable(char)>(temp$1);
+        if temp$2 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = 0;
+        return temp$3;
+
+     label5:
+        nop;
+        nop;
+        temp$4 = i;
+        temp$5 = temp$4 + 1;
+        i = temp$5;
+        goto label2;
+
+     label6:
+        nop;
+        temp$6 = 1;
+        return temp$6;
+    }
+}

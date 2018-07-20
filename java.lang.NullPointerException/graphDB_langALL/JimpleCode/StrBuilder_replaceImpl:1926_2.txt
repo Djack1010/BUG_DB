@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    private final void replaceImpl(int, int, int, java.lang.String, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3;
+        int startIndex, endIndex, removeLen, insertLen, newSize, temp$0, temp$1, temp$2, temp$6, temp$7, temp$8, temp$9;
+        java.lang.String insertStr;
+        char[] temp$4, temp$5, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        removeLen := @parameter2: int;
+        insertStr := @parameter3: java.lang.String;
+        insertLen := @parameter4: int;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$1 = temp$0 - removeLen;
+        temp$2 = temp$1;
+        newSize = temp$2 + insertLen;
+        if insertLen != removeLen goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(newSize);
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = startIndex;
+        temp$7 = temp$6 + insertLen;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$8 - endIndex;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$4, endIndex, temp$5, temp$7, temp$9);
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = newSize;
+
+     label1:
+        nop;
+        if insertLen >= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$10 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        virtualinvoke insertStr.<java.lang.String: void getChars(int,int,char[],int)>(0, insertLen, temp$10, startIndex);
+
+     label3:
+        nop;
+        return;
+    }
+}

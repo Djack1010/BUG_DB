@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.String reverse(java.lang.String)
+    {
+        java.lang.String str, temp$2;
+        java.lang.StringBuilder temp$0, temp$1;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>(java.lang.String)>(str);
+        temp$1 = virtualinvoke temp$0.<java.lang.StringBuilder: java.lang.StringBuilder reverse()>();
+        temp$2 = virtualinvoke temp$1.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$2;
+    }
+}

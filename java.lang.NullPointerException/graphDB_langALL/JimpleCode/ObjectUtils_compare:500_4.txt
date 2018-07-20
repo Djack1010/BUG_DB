@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    public static int compare(java.lang.Comparable, java.lang.Comparable, boolean)
+    {
+        java.lang.Comparable c1, c2;
+        boolean nullGreater;
+        int temp$0, temp$1, temp$2;
+
+        c1 := @parameter0: java.lang.Comparable;
+        c2 := @parameter1: java.lang.Comparable;
+        nullGreater := @parameter2: boolean;
+        if c1 == c2 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        return temp$0;
+
+     label1:
+        nop;
+        if c2 == null goto label2;
+
+        goto label6;
+
+     label2:
+        nop;
+        if nullGreater == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = -1;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        return temp$1;
+
+     label6:
+        nop;
+        temp$2 = interfaceinvoke c1.<java.lang.Comparable: int compareTo(java.lang.Object)>(c2);
+        return temp$2;
+    }
+}

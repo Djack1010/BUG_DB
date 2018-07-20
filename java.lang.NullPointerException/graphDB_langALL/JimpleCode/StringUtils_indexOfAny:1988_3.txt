@@ -1,0 +1,128 @@
+public class WrapClass 
+{
+    public static transient int indexOfAny(java.lang.CharSequence, java.lang.CharSequence[])
+    {
+        java.lang.CharSequence str, search;
+        java.lang.CharSequence[] searchStrs, temp$3;
+        boolean temp$0, temp$1;
+        int temp$2, sz, 'ret', tmp, i, temp$4, temp$5, temp$6, temp$7, temp$8;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStrs := @parameter1: java.lang.CharSequence[];
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if searchStrs == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label7:
+        nop;
+        sz = lengthof searchStrs;
+        'ret' = 2147483647;
+        tmp = 0;
+        i = 0;
+
+     label8:
+        nop;
+        if i < sz goto label9;
+
+        goto label17;
+
+     label9:
+        nop;
+        temp$3 = searchStrs;
+        temp$4 = i;
+        search = temp$3[temp$4];
+        if search == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        goto label16;
+
+     label11:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int indexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(str, search, 0);
+        tmp = temp$5;
+        if tmp == -1 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        goto label16;
+
+     label13:
+        nop;
+        if tmp < 'ret' goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        'ret' = tmp;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        temp$6 = i;
+        temp$7 = temp$6 + 1;
+        i = temp$7;
+        goto label8;
+
+     label17:
+        nop;
+        if 'ret' == 2147483647 goto label18;
+
+        goto label19;
+
+     label18:
+        nop;
+        temp$8 = -1;
+        goto label20;
+
+     label19:
+        nop;
+        temp$8 = 'ret';
+
+     label20:
+        nop;
+        return temp$8;
+    }
+}

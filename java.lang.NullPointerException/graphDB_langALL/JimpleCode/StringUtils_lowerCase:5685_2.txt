@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static java.lang.String lowerCase(java.lang.String, java.util.Locale)
+    {
+        java.lang.String str, temp$0;
+        java.util.Locale locale;
+
+        str := @parameter0: java.lang.String;
+        locale := @parameter1: java.util.Locale;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke str.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>(locale);
+        return temp$0;
+    }
+}

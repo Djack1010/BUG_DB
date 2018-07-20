@@ -1,0 +1,128 @@
+public class WrapClass 
+{
+    public int readFrom(java.lang.Readable) throws java.io.IOException
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$3, temp$15, temp$20, temp$28;
+        java.lang.Readable readable;
+        int oldSize, temp$1, temp$2, read, temp$5, temp$7, temp$8, temp$9, temp$10, temp$11, temp$12, temp$13, temp$14, remaining, temp$17, temp$18, temp$19, temp$22, temp$24, temp$25, temp$26, temp$27, temp$30, temp$32, temp$33, temp$34, read, temp$36, temp$37, temp$38, temp$39, temp$40;
+        boolean temp$0, temp$16;
+        java.io.Reader r;
+        char[] temp$4, temp$6, temp$21, temp$29, temp$31;
+        java.nio.CharBuffer cb, temp$23, buf, temp$35;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        readable := @parameter0: java.lang.Readable;
+        oldSize = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$0 = readable instanceof java.io.Reader;
+        if temp$0 == 0 goto label4;
+
+        goto label0;
+
+     label0:
+        nop;
+        r = (java.io.Reader) readable;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$2 = temp$1 + 1;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$2);
+
+     label1:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = lengthof temp$6;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$7 - temp$8;
+        temp$10 = virtualinvoke r.<java.io.Reader: int read(char[],int,int)>(temp$4, temp$5, temp$9);
+        read = temp$10;
+        if temp$10 != -1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$11 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$12 = temp$11 + read;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$12;
+        temp$13 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$14 = temp$13 + 1;
+        temp$15 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$14);
+        goto label1;
+
+     label3:
+        nop;
+        goto label13;
+
+     label4:
+        nop;
+        temp$16 = readable instanceof java.nio.CharBuffer;
+        if temp$16 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        cb = null;
+        temp$17 = virtualinvoke cb.<java.nio.CharBuffer: int remaining()>();
+        remaining = temp$17;
+        temp$18 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$19 = temp$18 + remaining;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$19);
+        temp$21 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$22 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$23 = virtualinvoke cb.<java.nio.CharBuffer: java.nio.CharBuffer get(char[],int,int)>(temp$21, temp$22, remaining);
+        temp$24 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$25 = temp$24 + remaining;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$25;
+        goto label12;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        goto label8;
+
+     label8:
+        nop;
+        temp$26 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$27 = temp$26 + 1;
+        temp$28 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$27);
+        temp$29 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$30 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$31 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$32 = lengthof temp$31;
+        temp$33 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$34 = temp$32 - temp$33;
+        temp$35 = staticinvoke <java.nio.CharBuffer: java.nio.CharBuffer wrap(char[],int,int)>(temp$29, temp$30, temp$34);
+        buf = temp$35;
+        temp$36 = interfaceinvoke readable.<java.lang.Readable: int read(java.nio.CharBuffer)>(buf);
+        read = temp$36;
+        if read == -1 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        goto label11;
+
+     label10:
+        nop;
+        temp$37 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$38 = temp$37 + read;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$38;
+        goto label7;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+
+     label13:
+        nop;
+        temp$39 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$40 = temp$39 - oldSize;
+        return temp$40;
+    }
+}

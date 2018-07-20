@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.time.FastDateFormat this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$3;
+        org.apache.commons.lang3.time.FastDatePrinter temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.time.FastDateFormat;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof org.apache.commons.lang3.time.FastDateFormat;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        other = (org.apache.commons.lang3.time.FastDateFormat) obj;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;
+        temp$2 = other.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;
+        temp$3 = virtualinvoke temp$1.<org.apache.commons.lang3.time.FastDatePrinter: boolean equals(java.lang.Object)>(temp$2);
+        return temp$3;
+    }
+}

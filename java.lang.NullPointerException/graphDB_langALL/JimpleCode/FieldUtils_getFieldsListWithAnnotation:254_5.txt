@@ -1,0 +1,63 @@
+public class WrapClass 
+{
+    public static java.util.List getFieldsListWithAnnotation(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class 'cls', annotationCls;
+        boolean temp$0, temp$4, temp$7;
+        java.lang.Object[] temp$1;
+        java.util.List allFields, temp$2, annotatedFields;
+        java.util.Iterator temp$3;
+        java.lang.reflect.Field field;
+        java.lang.Object temp$5;
+        java.lang.annotation.Annotation temp$6;
+
+        'cls' := @parameter0: java.lang.Class;
+        annotationCls := @parameter1: java.lang.Class;
+        if annotationCls != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The annotation class must not be null", temp$1);
+        temp$2 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.util.List getAllFieldsList(java.lang.Class)>('cls');
+        allFields = temp$2;
+        annotatedFields = null;
+        temp$3 = interfaceinvoke allFields.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label3:
+        nop;
+        temp$4 = interfaceinvoke temp$3.<java.util.Iterator: boolean hasNext()>();
+        if temp$4 == 0 goto label6;
+
+        temp$5 = interfaceinvoke temp$3.<java.util.Iterator: java.lang.Object next()>();
+        field = (java.lang.reflect.Field) temp$5;
+        temp$6 = virtualinvoke field.<java.lang.reflect.Field: java.lang.annotation.Annotation getAnnotation(java.lang.Class)>(annotationCls);
+        if temp$6 != null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$7 = interfaceinvoke annotatedFields.<java.util.List: boolean add(java.lang.Object)>(field);
+
+     label5:
+        nop;
+        nop;
+        goto label3;
+
+     label6:
+        nop;
+        return annotatedFields;
+    }
+}

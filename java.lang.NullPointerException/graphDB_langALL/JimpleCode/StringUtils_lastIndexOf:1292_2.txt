@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public static int lastIndexOf(java.lang.CharSequence, java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence seq, searchSeq;
+        int startPos, temp$0;
+
+        seq := @parameter0: java.lang.CharSequence;
+        searchSeq := @parameter1: java.lang.CharSequence;
+        startPos := @parameter2: int;
+        if seq == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if searchSeq == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int lastIndexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(seq, searchSeq, startPos);
+        return temp$0;
+    }
+}

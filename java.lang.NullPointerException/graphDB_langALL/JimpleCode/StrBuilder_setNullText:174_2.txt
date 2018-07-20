@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder setNullText(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String nullText, temp$2;
+        boolean temp$0, temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        nullText := @parameter0: java.lang.String;
+        if nullText != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke nullText.<java.lang.String: boolean isEmpty()>();
+        if temp$0 == temp$1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = null;
+        nullText = temp$2;
+
+     label4:
+        nop;
+        this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText> = nullText;
+        return this;
+    }
+}

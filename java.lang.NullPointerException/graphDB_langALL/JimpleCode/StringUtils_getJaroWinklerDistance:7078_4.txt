@@ -1,0 +1,74 @@
+public class WrapClass 
+{
+    public static double getJaroWinklerDistance(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence first, second;
+        double DEFAULT_SCALING_FACTOR, jaro, temp$3, matchScore, temp$5, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, temp$13, temp$14;
+        boolean temp$0, temp$1;
+        java.lang.IllegalArgumentException temp$2;
+        int cl, temp$4;
+        long temp$12;
+
+        first := @parameter0: java.lang.CharSequence;
+        second := @parameter1: java.lang.CharSequence;
+        DEFAULT_SCALING_FACTOR = 0.1;
+        if first == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if second == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("Strings must not be null");
+        throw temp$2;
+
+     label7:
+        nop;
+        temp$3 = staticinvoke <org.apache.commons.lang3.StringUtils: double score(java.lang.CharSequence,java.lang.CharSequence)>(first, second);
+        jaro = temp$3;
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: int commonPrefixLength(java.lang.CharSequence,java.lang.CharSequence)>(first, second);
+        cl = temp$4;
+        temp$5 = jaro;
+        temp$6 = (double) cl;
+        temp$7 = 0.1 * temp$6;
+        temp$8 = 1.0 - jaro;
+        temp$9 = temp$7 * temp$8;
+        temp$10 = temp$5 + temp$9;
+        temp$11 = temp$10 * 100.0;
+        temp$12 = staticinvoke <java.lang.Math: long round(double)>(temp$11);
+        temp$13 = (double) temp$12;
+        temp$14 = temp$13 / 100.0;
+        matchScore = temp$14;
+        return matchScore;
+    }
+}

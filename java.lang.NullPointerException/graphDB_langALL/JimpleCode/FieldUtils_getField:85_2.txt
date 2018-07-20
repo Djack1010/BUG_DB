@@ -1,0 +1,145 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field getField(java.lang.Class, java.lang.String, boolean)
+    {
+        java.lang.Class 'cls', acls, temp$5, class1;
+        java.lang.String fieldName;
+        boolean forceAccess, temp$0, temp$4, temp$8, temp$11;
+        java.lang.Object[] temp$1, temp$12;
+        java.lang.reflect.Field field, temp$2, match, test, temp$10;
+        int temp$3;
+        java.lang.NoSuchFieldException ex, ex;
+        java.util.List temp$6;
+        java.util.Iterator temp$7;
+        java.lang.Object temp$9;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        forceAccess := @parameter2: boolean;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isNotBlank(java.lang.CharSequence)>(fieldName);
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The field name must not be blank/empty", temp$1);
+        acls = 'cls';
+
+     label0:
+        nop;
+        if acls != null goto label1;
+
+        goto label13;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke acls.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(fieldName);
+        field = temp$2;
+        temp$3 = virtualinvoke field.<java.lang.reflect.Field: int getModifiers()>();
+        temp$4 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$3);
+        if temp$4 == 0 goto label3;
+
+        goto label8;
+
+     label3:
+        nop;
+        if forceAccess == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        virtualinvoke field.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        goto label7;
+
+     label5:
+        nop;
+
+     label6:
+        nop;
+        goto label12;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        return field;
+
+     label10:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label11;
+
+     label11:
+        nop;
+
+     label12:
+        nop;
+        temp$5 = virtualinvoke acls.<java.lang.Class: java.lang.Class getSuperclass()>();
+        acls = temp$5;
+        goto label0;
+
+     label13:
+        nop;
+        match = null;
+        temp$6 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.util.List getAllInterfaces(java.lang.Class)>('cls');
+        temp$7 = interfaceinvoke temp$6.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label14:
+        nop;
+        temp$8 = interfaceinvoke temp$7.<java.util.Iterator: boolean hasNext()>();
+        if temp$8 == 0 goto label21;
+
+        temp$9 = interfaceinvoke temp$7.<java.util.Iterator: java.lang.Object next()>();
+        class1 = (java.lang.Class) temp$9;
+
+     label15:
+        nop;
+        temp$10 = virtualinvoke class1.<java.lang.Class: java.lang.reflect.Field getField(java.lang.String)>(fieldName);
+        test = temp$10;
+        if match == null goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$11 = 0;
+        goto label18;
+
+     label17:
+        nop;
+        temp$11 = 1;
+
+     label18:
+        nop;
+        temp$12 = newarray (java.lang.Object)[2];
+        temp$12[0] = fieldName;
+        temp$12[1] = 'cls';
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$11, "Reference to field %s is ambiguous relative to %s; a matching field exists on two or more implemented interfaces.", temp$12);
+        match = test;
+        goto label20;
+
+     label19:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label20;
+
+     label20:
+        nop;
+        nop;
+        goto label14;
+
+     label21:
+        nop;
+        return match;
+
+        catch java.lang.NoSuchFieldException from label2 to label6 with label10;
+        catch java.lang.NoSuchFieldException from label7 to label9 with label10;
+        catch java.lang.NoSuchFieldException from label15 to label19 with label19;
+    }
+}

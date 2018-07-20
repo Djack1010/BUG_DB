@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    private static final java.lang.String paddedValue(long, boolean, int)
+    {
+        long value;
+        boolean padWithZeros;
+        int count;
+        java.lang.String longString, temp$0, temp$1, temp$2;
+
+        value := @parameter0: long;
+        padWithZeros := @parameter1: boolean;
+        count := @parameter2: int;
+        temp$0 = staticinvoke <java.lang.Long: java.lang.String toString(long)>(value);
+        longString = temp$0;
+        if padWithZeros == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String leftPad(java.lang.String,int,char)>(longString, count, 48);
+        temp$1 = temp$2;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = longString;
+
+     label2:
+        nop;
+        return temp$1;
+    }
+}

@@ -1,0 +1,29 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder insert(int, java.lang.Object)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1, temp$3;
+        int index;
+        java.lang.Object obj;
+        java.lang.String temp$0, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        obj := @parameter1: java.lang.Object;
+        if obj == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String nullText>;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder insert(int,java.lang.String)>(index, temp$0);
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke obj.<java.lang.Object: java.lang.String toString()>();
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder insert(int,java.lang.String)>(index, temp$2);
+        return temp$3;
+    }
+}

@@ -1,0 +1,57 @@
+public class WrapClass 
+{
+    private static final void getAllInterfaces(java.lang.Class, java.util.HashSet)
+    {
+        java.lang.Class 'cls', i, temp$2, temp$4;
+        java.util.HashSet interfacesFound;
+        java.lang.Class[] interfaces;
+        int temp$0, temp$1;
+        boolean temp$3;
+
+        'cls' := @parameter0: java.lang.Class;
+        interfacesFound := @parameter1: java.util.HashSet;
+
+     label0:
+        nop;
+        if 'cls' != null goto label1;
+
+        goto label6;
+
+     label1:
+        nop;
+        interfaces = null;
+        temp$0 = 0;
+
+     label2:
+        nop;
+        temp$1 = lengthof interfaces;
+        if temp$0 >= temp$1 goto label5;
+
+        temp$2 = interfaces[temp$0];
+        i = temp$2;
+        temp$3 = virtualinvoke interfacesFound.<java.util.HashSet: boolean add(java.lang.Object)>(i);
+        if temp$3 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        staticinvoke <org.apache.commons.lang3.ClassUtils: void getAllInterfaces(java.lang.Class,java.util.HashSet)>(i, interfacesFound);
+
+     label4:
+        nop;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label2;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        'cls' = temp$4;
+        goto label0;
+
+     label6:
+        nop;
+        return;
+    }
+}

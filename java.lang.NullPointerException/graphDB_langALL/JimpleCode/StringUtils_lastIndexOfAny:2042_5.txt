@@ -1,0 +1,104 @@
+public class WrapClass 
+{
+    public static transient int lastIndexOfAny(java.lang.CharSequence, java.lang.CharSequence[])
+    {
+        java.lang.CharSequence str, search;
+        java.lang.CharSequence[] searchStrs, temp$3;
+        boolean temp$0, temp$1;
+        int temp$2, sz, 'ret', tmp, i, temp$4, temp$5, temp$6, temp$7, temp$8;
+
+        str := @parameter0: java.lang.CharSequence;
+        searchStrs := @parameter1: java.lang.CharSequence[];
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        if searchStrs == null goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$1 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = <org.apache.commons.lang3.StringUtils: int INDEX_NOT_FOUND>;
+        return temp$2;
+
+     label7:
+        nop;
+        sz = lengthof searchStrs;
+        'ret' = -1;
+        tmp = 0;
+        i = 0;
+
+     label8:
+        nop;
+        if i < sz goto label9;
+
+        goto label15;
+
+     label9:
+        nop;
+        temp$3 = searchStrs;
+        temp$4 = i;
+        search = temp$3[temp$4];
+        if search == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        goto label14;
+
+     label11:
+        nop;
+        temp$5 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$6 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int lastIndexOf(java.lang.CharSequence,java.lang.CharSequence,int)>(str, search, temp$5);
+        tmp = temp$6;
+        if tmp > 'ret' goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        'ret' = tmp;
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label8;
+
+     label15:
+        nop;
+        return 'ret';
+    }
+}

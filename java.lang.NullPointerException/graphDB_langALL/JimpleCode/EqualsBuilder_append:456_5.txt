@@ -1,0 +1,238 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.EqualsBuilder append(java.lang.Object, java.lang.Object)
+    {
+        org.apache.commons.lang3.builder.EqualsBuilder this, temp$9, temp$13, temp$17, temp$21, temp$25, temp$29, temp$33, temp$37, temp$40, temp$41;
+        java.lang.Object lhs, rhs;
+        boolean temp$0, temp$2, temp$3, temp$6, temp$10, temp$14, temp$18, temp$22, temp$26, temp$30, temp$34;
+        java.lang.Class lhsClass, temp$1, temp$4, temp$5;
+        long[] temp$7, temp$8;
+        int[] temp$11, temp$12;
+        short[] temp$15, temp$16;
+        char[] temp$19, temp$20;
+        byte[] temp$23, temp$24;
+        double[] temp$27, temp$28;
+        float[] temp$31, temp$32;
+        boolean[] temp$35, temp$36;
+        java.lang.Object[] temp$38, temp$39;
+
+        this := @this: org.apache.commons.lang3.builder.EqualsBuilder;
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == null goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        if rhs == null goto label5;
+
+        goto label6;
+
+        goto label6;
+
+     label5:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: void setEquals(boolean)>(0);
+        return this;
+
+     label6:
+        nop;
+        temp$1 = virtualinvoke lhs.<java.lang.Object: java.lang.Class getClass()>();
+        lhsClass = temp$1;
+        temp$2 = virtualinvoke lhsClass.<java.lang.Class: boolean isArray()>();
+        if temp$2 == 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$3 = virtualinvoke lhs.<java.lang.Object: boolean equals(java.lang.Object)>(rhs);
+        this.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals> = temp$3;
+        goto label36;
+
+     label8:
+        nop;
+        temp$4 = virtualinvoke lhs.<java.lang.Object: java.lang.Class getClass()>();
+        temp$5 = virtualinvoke rhs.<java.lang.Object: java.lang.Class getClass()>();
+        if temp$4 != temp$5 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: void setEquals(boolean)>(0);
+        goto label35;
+
+     label10:
+        nop;
+        temp$6 = lhs instanceof long[];
+        if temp$6 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$7 = (long[]) lhs;
+        temp$8 = (long[]) rhs;
+        temp$9 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(long[],long[])>(temp$7, temp$8);
+        goto label34;
+
+     label12:
+        nop;
+        temp$10 = lhs instanceof int[];
+        if temp$10 == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$11 = (int[]) lhs;
+        temp$12 = (int[]) rhs;
+        temp$13 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(int[],int[])>(temp$11, temp$12);
+        goto label33;
+
+     label14:
+        nop;
+        temp$14 = lhs instanceof short[];
+        if temp$14 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$15 = (short[]) lhs;
+        temp$16 = (short[]) rhs;
+        temp$17 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(short[],short[])>(temp$15, temp$16);
+        goto label32;
+
+     label16:
+        nop;
+        temp$18 = lhs instanceof char[];
+        if temp$18 == 0 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$19 = (char[]) lhs;
+        temp$20 = (char[]) rhs;
+        temp$21 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(char[],char[])>(temp$19, temp$20);
+        goto label31;
+
+     label18:
+        nop;
+        temp$22 = lhs instanceof byte[];
+        if temp$22 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$23 = (byte[]) lhs;
+        temp$24 = (byte[]) rhs;
+        temp$25 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(byte[],byte[])>(temp$23, temp$24);
+        goto label30;
+
+     label20:
+        nop;
+        temp$26 = lhs instanceof double[];
+        if temp$26 == 0 goto label22;
+
+        goto label21;
+
+     label21:
+        nop;
+        temp$27 = (double[]) lhs;
+        temp$28 = (double[]) rhs;
+        temp$29 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(double[],double[])>(temp$27, temp$28);
+        goto label29;
+
+     label22:
+        nop;
+        temp$30 = lhs instanceof float[];
+        if temp$30 == 0 goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$31 = (float[]) lhs;
+        temp$32 = (float[]) rhs;
+        temp$33 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(float[],float[])>(temp$31, temp$32);
+        goto label28;
+
+     label24:
+        nop;
+        temp$34 = lhs instanceof boolean[];
+        if temp$34 == 0 goto label26;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$35 = (boolean[]) lhs;
+        temp$36 = (boolean[]) rhs;
+        temp$37 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(boolean[],boolean[])>(temp$35, temp$36);
+        goto label27;
+
+     label26:
+        nop;
+        temp$38 = (java.lang.Object[]) lhs;
+        temp$39 = (java.lang.Object[]) rhs;
+        temp$40 = virtualinvoke this.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(java.lang.Object[],java.lang.Object[])>(temp$38, temp$39);
+
+     label27:
+        nop;
+
+     label28:
+        nop;
+
+     label29:
+        nop;
+
+     label30:
+        nop;
+
+     label31:
+        nop;
+
+     label32:
+        nop;
+
+     label33:
+        nop;
+
+     label34:
+        nop;
+
+     label35:
+        nop;
+
+     label36:
+        nop;
+        temp$41 = null;
+        return temp$41;
+    }
+}

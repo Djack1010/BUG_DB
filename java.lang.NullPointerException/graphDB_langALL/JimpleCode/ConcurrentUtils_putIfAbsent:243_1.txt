@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static java.lang.Object putIfAbsent(java.util.concurrent.ConcurrentMap, java.lang.Object, java.lang.Object)
+    {
+        java.util.concurrent.ConcurrentMap map;
+        java.lang.Object key, value, result, temp$0, temp$1;
+
+        map := @parameter0: java.util.concurrent.ConcurrentMap;
+        key := @parameter1: java.lang.Object;
+        value := @parameter2: java.lang.Object;
+        if map == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = interfaceinvoke map.<java.util.concurrent.ConcurrentMap: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(key, value);
+        result = temp$0;
+        if result != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = result;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = value;
+
+     label4:
+        nop;
+        return temp$1;
+    }
+}

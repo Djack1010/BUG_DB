@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object firstNonNull(java.lang.Object[])
+    {
+        java.lang.Object[] values;
+        int temp$0, temp$1;
+        java.lang.Object val, temp$2, temp$3;
+
+        values := @parameter0: java.lang.Object[];
+        if values != null goto label0;
+
+        goto label5;
+
+     label0:
+        nop;
+        temp$0 = 0;
+
+     label1:
+        nop;
+        temp$1 = lengthof values;
+        if temp$0 >= temp$1 goto label4;
+
+        temp$2 = values[temp$0];
+        val = temp$2;
+        if val != null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return val;
+
+     label3:
+        nop;
+        nop;
+        temp$0 = temp$0 + 1;
+        goto label1;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$3 = null;
+        return temp$3;
+    }
+}

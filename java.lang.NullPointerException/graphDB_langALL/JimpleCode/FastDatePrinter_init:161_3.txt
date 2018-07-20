@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    private final void init()
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.util.List rulesList;
+        int temp$0, len, i, temp$5, temp$6, temp$8, temp$10, temp$11;
+        org.apache.commons.lang3.time.FastDatePrinter$Rule[] temp$1, temp$3, temp$4, temp$7;
+        java.lang.Object[] temp$2;
+        org.apache.commons.lang3.time.FastDatePrinter$Rule temp$9;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        rulesList = null;
+        temp$0 = interfaceinvoke rulesList.<java.util.List: int size()>();
+        temp$1 = newarray (org.apache.commons.lang3.time.FastDatePrinter$Rule)[temp$0];
+        temp$2 = interfaceinvoke rulesList.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$1);
+        temp$3 = (org.apache.commons.lang3.time.FastDatePrinter$Rule[]) temp$2;
+        this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$Rule[] mRules> = temp$3;
+        len = 0;
+        temp$4 = this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$Rule[] mRules>;
+        i = lengthof temp$4;
+
+     label0:
+        nop;
+        temp$5 = i + -1;
+        i = temp$5;
+        if temp$5 >= 0 goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$6 = len;
+        temp$7 = this.<org.apache.commons.lang3.time.FastDatePrinter: org.apache.commons.lang3.time.FastDatePrinter$Rule[] mRules>;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        temp$10 = interfaceinvoke temp$9.<org.apache.commons.lang3.time.FastDatePrinter$Rule: int estimateLength()>();
+        temp$11 = temp$6 + temp$10;
+        len = temp$11;
+        nop;
+        goto label0;
+
+     label2:
+        nop;
+        this.<org.apache.commons.lang3.time.FastDatePrinter: int mMaxLengthEstimate> = len;
+        return;
+    }
+}

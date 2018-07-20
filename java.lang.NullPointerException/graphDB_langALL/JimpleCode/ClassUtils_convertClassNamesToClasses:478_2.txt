@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static java.util.List convertClassNamesToClasses(java.util.List)
+    {
+        java.util.List classNames, temp$0, classes;
+        java.util.Iterator temp$1;
+        java.lang.String className;
+        boolean temp$2, temp$5, temp$6;
+        java.lang.Object temp$3;
+        java.lang.Class temp$4;
+        java.lang.Exception ex;
+
+        classNames := @parameter0: java.util.List;
+        if classNames == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        classes = null;
+        temp$1 = interfaceinvoke classNames.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label2:
+        nop;
+        temp$2 = interfaceinvoke temp$1.<java.util.Iterator: boolean hasNext()>();
+        if temp$2 == 0 goto label6;
+
+        temp$3 = interfaceinvoke temp$1.<java.util.Iterator: java.lang.Object next()>();
+        className = (java.lang.String) temp$3;
+
+     label3:
+        nop;
+        temp$4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>(className);
+        temp$5 = interfaceinvoke classes.<java.util.List: boolean add(java.lang.Object)>(temp$4);
+        goto label5;
+
+     label4:
+        nop;
+        ex := @caughtexception;
+        temp$6 = interfaceinvoke classes.<java.util.List: boolean add(java.lang.Object)>(null);
+        nop;
+        goto label5;
+
+     label5:
+        nop;
+        nop;
+        goto label2;
+
+     label6:
+        nop;
+        return classes;
+
+        catch java.lang.Exception from label3 to label4 with label4;
+    }
+}

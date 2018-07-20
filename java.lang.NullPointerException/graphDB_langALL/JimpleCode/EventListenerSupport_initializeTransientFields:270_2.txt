@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    private final void initializeTransientFields(java.lang.Class, java.lang.ClassLoader)
+    {
+        org.apache.commons.lang3.event.EventListenerSupport this;
+        java.lang.Class listenerInterface;
+        java.lang.ClassLoader classLoader;
+        java.lang.Object[] array;
+        java.lang.Object temp$0;
+
+        this := @this: org.apache.commons.lang3.event.EventListenerSupport;
+        listenerInterface := @parameter0: java.lang.Class;
+        classLoader := @parameter1: java.lang.ClassLoader;
+        temp$0 = staticinvoke <java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int)>(listenerInterface, 0);
+        array = (java.lang.Object[]) temp$0;
+        virtualinvoke this.<org.apache.commons.lang3.event.EventListenerSupport: void createProxy(java.lang.Class,java.lang.ClassLoader)>(listenerInterface, classLoader);
+        return;
+    }
+}

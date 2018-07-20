@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    public final boolean isAfter(java.lang.Object)
+    {
+        org.apache.commons.lang3.Range this;
+        java.lang.Object element, temp$1;
+        java.util.Comparator temp$0;
+        int temp$2;
+        boolean temp$3;
+
+        this := @this: org.apache.commons.lang3.Range;
+        element := @parameter0: java.lang.Object;
+        if element == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.Range: java.util.Comparator comparator>;
+        temp$1 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$2 = interfaceinvoke temp$0.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(element, temp$1);
+        if temp$2 < 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 1;
+
+     label4:
+        nop;
+        return temp$3;
+    }
+}

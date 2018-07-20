@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public static byte[] serialize(java.io.Serializable)
+    {
+        java.io.Serializable obj;
+        java.io.ByteArrayOutputStream baos, temp$0;
+        byte[] temp$1;
+
+        obj := @parameter0: java.io.Serializable;
+        temp$0 = new java.io.ByteArrayOutputStream;
+        specialinvoke temp$0.<java.io.ByteArrayOutputStream: void <init>(int)>(512);
+        baos = temp$0;
+        staticinvoke <org.apache.commons.lang3.SerializationUtils: void serialize(java.io.Serializable,java.io.OutputStream)>(obj, baos);
+        temp$1 = null;
+        return temp$1;
+    }
+}

@@ -1,0 +1,34 @@
+public class WrapClass 
+{
+    public static java.lang.String getMessage(java.lang.Throwable)
+    {
+        java.lang.Throwable th;
+        java.lang.String temp$0, clsName, temp$1, msg, temp$2, temp$4, temp$5;
+        java.lang.StringBuffer temp$3;
+
+        th := @parameter0: java.lang.Throwable;
+        if th == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = "";
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.String getShortClassName(java.lang.Object,java.lang.String)>(th, null);
+        clsName = temp$1;
+        temp$2 = virtualinvoke th.<java.lang.Throwable: java.lang.String getMessage()>();
+        msg = temp$2;
+        temp$3 = new java.lang.StringBuffer;
+        specialinvoke temp$3.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(clsName);
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(": ");
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String defaultString(java.lang.String)>(msg);
+        virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$4);
+        temp$5 = virtualinvoke temp$3.<java.lang.StringBuffer: java.lang.String toString()>();
+        return temp$5;
+    }
+}

@@ -1,0 +1,156 @@
+public class WrapClass 
+{
+    public static java.lang.Object clone(java.lang.Object)
+    {
+        java.lang.Object obj, result, temp$7, temp$10, temp$13, temp$18, checked, temp$35;
+        boolean temp$0, temp$2, temp$5;
+        java.lang.Class temp$1, componentType, temp$3, temp$4, temp$14, temp$21, temp$26, temp$31;
+        java.lang.Object[] temp$6, temp$8, temp$17;
+        int length, temp$9, temp$11, temp$12;
+        java.lang.reflect.Method clone, temp$16;
+        java.lang.Class[] temp$15;
+        java.lang.NoSuchMethodException e;
+        org.apache.commons.lang3.exception.CloneFailedException temp$19, temp$24, temp$29;
+        java.lang.StringBuffer temp$20, temp$25, temp$30;
+        java.lang.String temp$22, temp$23, temp$27, temp$28, temp$32, temp$33;
+        java.lang.IllegalAccessException e;
+        java.lang.reflect.InvocationTargetException e;
+        java.lang.Throwable temp$34;
+
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof java.lang.Cloneable;
+        if temp$0 == 0 goto label15;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$2 = virtualinvoke temp$1.<java.lang.Class: boolean isArray()>();
+        if temp$2 == 0 goto label8;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$4 = virtualinvoke temp$3.<java.lang.Class: java.lang.Class getComponentType()>();
+        componentType = temp$4;
+        temp$5 = virtualinvoke componentType.<java.lang.Class: boolean isPrimitive()>();
+        if temp$5 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = (java.lang.Object[]) obj;
+        temp$7 = virtualinvoke temp$6.<java.lang.Object: java.lang.Object clone()>();
+        temp$8 = (java.lang.Object[]) temp$7;
+        result = temp$8;
+        goto label7;
+
+     label3:
+        nop;
+        temp$9 = staticinvoke <java.lang.reflect.Array: int getLength(java.lang.Object)>(obj);
+        length = temp$9;
+        temp$10 = null;
+        result = temp$10;
+
+     label4:
+        nop;
+        temp$11 = length;
+        temp$12 = temp$11 + -1;
+        length = temp$12;
+        if temp$11 > 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$13 = staticinvoke <java.lang.reflect.Array: java.lang.Object get(java.lang.Object,int)>(obj, length);
+        staticinvoke <java.lang.reflect.Array: void set(java.lang.Object,int,java.lang.Object)>(result, length, temp$13);
+        goto label4;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        goto label14;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$14 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$15 = newarray (java.lang.Class)[0];
+        temp$16 = virtualinvoke temp$14.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("clone", temp$15);
+        clone = temp$16;
+        temp$17 = newarray (java.lang.Object)[0];
+        temp$18 = virtualinvoke clone.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(obj, temp$17);
+        result = temp$18;
+        goto label13;
+
+     label10:
+        nop;
+        e := @caughtexception;
+        temp$19 = new org.apache.commons.lang3.exception.CloneFailedException;
+        temp$20 = new java.lang.StringBuffer;
+        specialinvoke temp$20.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Cloneable type ");
+        temp$21 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$22 = virtualinvoke temp$21.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$22);
+        virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" has no clone method");
+        temp$23 = virtualinvoke temp$20.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$19.<org.apache.commons.lang3.exception.CloneFailedException: void <init>(java.lang.String,java.lang.Throwable)>(temp$23, e);
+        throw temp$19;
+
+     label11:
+        nop;
+        e := @caughtexception;
+        temp$24 = new org.apache.commons.lang3.exception.CloneFailedException;
+        temp$25 = new java.lang.StringBuffer;
+        specialinvoke temp$25.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$25.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Cannot clone Cloneable type ");
+        temp$26 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$27 = virtualinvoke temp$26.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$25.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$27);
+        temp$28 = virtualinvoke temp$25.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$24.<org.apache.commons.lang3.exception.CloneFailedException: void <init>(java.lang.String,java.lang.Throwable)>(temp$28, e);
+        throw temp$24;
+
+     label12:
+        nop;
+        e := @caughtexception;
+        temp$29 = new org.apache.commons.lang3.exception.CloneFailedException;
+        temp$30 = new java.lang.StringBuffer;
+        specialinvoke temp$30.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$30.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Exception cloning Cloneable type ");
+        temp$31 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$32 = virtualinvoke temp$31.<java.lang.Class: java.lang.String getName()>();
+        virtualinvoke temp$30.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$32);
+        temp$33 = virtualinvoke temp$30.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$34 = virtualinvoke e.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getCause()>();
+        specialinvoke temp$29.<org.apache.commons.lang3.exception.CloneFailedException: void <init>(java.lang.String,java.lang.Throwable)>(temp$33, temp$34);
+        throw temp$29;
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+        checked = result;
+        return checked;
+
+     label15:
+        nop;
+        temp$35 = null;
+        return temp$35;
+
+        catch java.lang.NoSuchMethodException from label9 to label10 with label10;
+        catch java.lang.IllegalAccessException from label9 to label10 with label11;
+        catch java.lang.reflect.InvocationTargetException from label9 to label10 with label12;
+    }
+}

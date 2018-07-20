@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    private static final boolean endsWith(java.lang.CharSequence, java.lang.CharSequence, boolean)
+    {
+        java.lang.CharSequence str, suffix;
+        boolean ignoreCase, temp$2, temp$7;
+        int temp$0, temp$1, strOffset, temp$3, temp$4, temp$5, temp$6;
+
+        str := @parameter0: java.lang.CharSequence;
+        suffix := @parameter1: java.lang.CharSequence;
+        ignoreCase := @parameter2: boolean;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if suffix == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$1 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        if temp$0 > temp$1 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        return temp$2;
+
+     label4:
+        nop;
+        temp$3 = interfaceinvoke str.<java.lang.CharSequence: int length()>();
+        temp$4 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$5 = temp$3 - temp$4;
+        strOffset = temp$5;
+        temp$6 = interfaceinvoke suffix.<java.lang.CharSequence: int length()>();
+        temp$7 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: boolean regionMatches(java.lang.CharSequence,boolean,int,java.lang.CharSequence,int,int)>(str, ignoreCase, strOffset, suffix, 0, temp$6);
+        return temp$7;
+    }
+}

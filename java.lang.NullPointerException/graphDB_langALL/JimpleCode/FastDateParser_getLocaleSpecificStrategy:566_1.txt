@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    private final org.apache.commons.lang3.time.FastDateParser$Strategy getLocaleSpecificStrategy(int, java.util.Calendar)
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        int field;
+        java.util.Calendar definingCalendar;
+        java.util.concurrent.ConcurrentMap cache, temp$0;
+        org.apache.commons.lang3.time.FastDateParser$Strategy strategy, temp$3;
+        java.util.Locale temp$1;
+        java.lang.Object temp$2;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        field := @parameter0: int;
+        definingCalendar := @parameter1: java.util.Calendar;
+        temp$0 = staticinvoke <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap getCache(int)>(field);
+        cache = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$2 = interfaceinvoke cache.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$1);
+        temp$3 = (org.apache.commons.lang3.time.FastDateParser$Strategy) temp$2;
+        strategy = temp$3;
+        return strategy;
+    }
+}

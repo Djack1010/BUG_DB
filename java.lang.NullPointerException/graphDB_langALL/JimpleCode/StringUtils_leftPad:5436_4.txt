@@ -1,0 +1,118 @@
+public class WrapClass 
+{
+    public static java.lang.String leftPad(java.lang.String, int, java.lang.String)
+    {
+        java.lang.String str, padStr, temp$1, temp$6, temp$7, temp$8, temp$9, temp$19, temp$20;
+        int size, padLen, temp$2, strLen, temp$3, pads, temp$4, i, temp$12, temp$14, temp$15, temp$17, temp$18;
+        boolean temp$0;
+        char temp$5, temp$16;
+        char[] padding, padChars, temp$10, temp$11, temp$13;
+
+        str := @parameter0: java.lang.String;
+        size := @parameter1: int;
+        padStr := @parameter2: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(padStr);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = " ";
+        padStr = temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke padStr.<java.lang.String: int length()>();
+        padLen = temp$2;
+        temp$3 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$3;
+        temp$4 = size - strLen;
+        pads = temp$4;
+        if pads <= 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return str;
+
+     label3:
+        nop;
+        if padLen == 1 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        if pads <= 8192 goto label5;
+
+        goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke padStr.<java.lang.String: char charAt(int)>(0);
+        temp$6 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String leftPad(java.lang.String,int,char)>(str, size, temp$5);
+        return temp$6;
+
+     label6:
+        nop;
+        if pads == padLen goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$7 = virtualinvoke padStr.<java.lang.String: java.lang.String concat(java.lang.String)>(str);
+        return temp$7;
+
+     label8:
+        nop;
+        if pads < padLen goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$8 = virtualinvoke padStr.<java.lang.String: java.lang.String substring(int,int)>(0, pads);
+        temp$9 = virtualinvoke temp$8.<java.lang.String: java.lang.String concat(java.lang.String)>(str);
+        return temp$9;
+
+     label10:
+        nop;
+        padding = newarray (char)[pads];
+        temp$10 = virtualinvoke padStr.<java.lang.String: char[] toCharArray()>();
+        padChars = temp$10;
+        i = 0;
+
+     label11:
+        nop;
+        if i < pads goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$11 = padding;
+        temp$12 = i;
+        temp$13 = padChars;
+        temp$14 = i % padLen;
+        temp$15 = temp$14;
+        temp$16 = temp$13[temp$15];
+        temp$11[temp$12] = temp$16;
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label11;
+
+     label13:
+        nop;
+        temp$19 = new java.lang.String;
+        specialinvoke temp$19.<java.lang.String: void <init>(char[])>(padding);
+        temp$20 = virtualinvoke temp$19.<java.lang.String: java.lang.String concat(java.lang.String)>(str);
+        return temp$20;
+    }
+}

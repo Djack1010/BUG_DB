@@ -1,0 +1,114 @@
+public class WrapClass 
+{
+    public static java.util.Formatter append(java.lang.CharSequence, java.util.Formatter, int, int, int, char, java.lang.CharSequence)
+    {
+        java.lang.CharSequence seq, ellipsis, _ellipsis, temp$5;
+        java.util.Formatter formatter, temp$20;
+        int flags, width, precision, temp$3, temp$6, temp$7, temp$8, temp$11, i, temp$13, temp$14, temp$16, temp$17;
+        char padChar;
+        java.lang.Object[] temp$0, temp$19;
+        java.lang.Integer temp$1;
+        java.lang.StringBuilder buf, temp$2, temp$10, temp$15;
+        java.lang.Object temp$4;
+        java.lang.String temp$9, temp$18;
+        boolean leftJustify, temp$12;
+
+        seq := @parameter0: java.lang.CharSequence;
+        formatter := @parameter1: java.util.Formatter;
+        flags := @parameter2: int;
+        width := @parameter3: int;
+        precision := @parameter4: int;
+        padChar := @parameter5: char;
+        ellipsis := @parameter6: java.lang.CharSequence;
+        temp$0 = newarray (java.lang.Object)[2];
+        temp$0[0] = ellipsis;
+        temp$1 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(precision);
+        temp$0[1] = temp$1;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(1, "Specified ellipsis \'%1$s\' exceeds precision of %2$s", temp$0);
+        temp$2 = new java.lang.StringBuilder;
+        specialinvoke temp$2.<java.lang.StringBuilder: void <init>(java.lang.CharSequence)>(seq);
+        buf = temp$2;
+        if precision >= 0 goto label0;
+
+        goto label2;
+
+     label0:
+        nop;
+        temp$3 = interfaceinvoke seq.<java.lang.CharSequence: int length()>();
+        if precision < temp$3 goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$4 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.Object defaultIfNull(java.lang.Object,java.lang.Object)>(ellipsis, "");
+        temp$5 = (java.lang.CharSequence) temp$4;
+        _ellipsis = temp$5;
+        temp$6 = interfaceinvoke _ellipsis.<java.lang.CharSequence: int length()>();
+        temp$7 = precision - temp$6;
+        temp$8 = interfaceinvoke seq.<java.lang.CharSequence: int length()>();
+        temp$9 = interfaceinvoke _ellipsis.<java.lang.CharSequence: java.lang.String toString()>();
+        temp$10 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder replace(int,int,java.lang.String)>(temp$7, temp$8, temp$9);
+
+     label2:
+        nop;
+        temp$11 = flags & 1;
+        if temp$11 == 1 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$12 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$12 = 1;
+
+     label5:
+        nop;
+        leftJustify = temp$12;
+        temp$13 = virtualinvoke buf.<java.lang.StringBuilder: int length()>();
+        i = temp$13;
+
+     label6:
+        nop;
+        if i < width goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        if leftJustify == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$14 = i;
+        goto label10;
+
+     label9:
+        nop;
+        temp$14 = 0;
+
+     label10:
+        nop;
+        temp$15 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char)>(temp$14, padChar);
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label6;
+
+     label11:
+        nop;
+        temp$18 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        temp$19 = newarray (java.lang.Object)[0];
+        temp$20 = virtualinvoke formatter.<java.util.Formatter: java.util.Formatter format(java.lang.String,java.lang.Object[])>(temp$18, temp$19);
+        return formatter;
+    }
+}

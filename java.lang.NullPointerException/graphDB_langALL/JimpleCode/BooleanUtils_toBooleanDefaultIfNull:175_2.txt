@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static boolean toBooleanDefaultIfNull(java.lang.Boolean, boolean)
+    {
+        java.lang.Boolean bool;
+        boolean valueIfNull, temp$0;
+
+        bool := @parameter0: java.lang.Boolean;
+        valueIfNull := @parameter1: boolean;
+        if bool == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke bool.<java.lang.Boolean: boolean booleanValue()>();
+        return temp$0;
+    }
+}

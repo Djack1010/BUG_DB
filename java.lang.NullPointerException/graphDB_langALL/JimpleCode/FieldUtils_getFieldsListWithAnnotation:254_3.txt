@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public static java.util.List getFieldsListWithAnnotation(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class 'cls', annotationCls;
+        java.util.List allFields, temp$0, annotatedFields;
+        java.util.ArrayList temp$1;
+        java.util.Iterator temp$2;
+        java.lang.reflect.Field field;
+        boolean temp$3, temp$6;
+        java.lang.Object temp$4;
+        java.lang.annotation.Annotation temp$5;
+
+        'cls' := @parameter0: java.lang.Class;
+        annotationCls := @parameter1: java.lang.Class;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.util.List getAllFieldsList(java.lang.Class)>('cls');
+        allFields = temp$0;
+        temp$1 = new java.util.ArrayList;
+        specialinvoke temp$1.<java.util.ArrayList: void <init>()>();
+        annotatedFields = temp$1;
+        temp$2 = interfaceinvoke allFields.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$3 = interfaceinvoke temp$2.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label3;
+
+        temp$4 = interfaceinvoke temp$2.<java.util.Iterator: java.lang.Object next()>();
+        field = (java.lang.reflect.Field) temp$4;
+        temp$5 = virtualinvoke field.<java.lang.reflect.Field: java.lang.annotation.Annotation getAnnotation(java.lang.Class)>(annotationCls);
+        if temp$5 != null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$6 = interfaceinvoke annotatedFields.<java.util.List: boolean add(java.lang.Object)>(field);
+
+     label2:
+        nop;
+        nop;
+        goto label0;
+
+     label3:
+        nop;
+        return annotatedFields;
+    }
+}

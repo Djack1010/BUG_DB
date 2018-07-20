@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    public static java.lang.Throwable[] getThrowables(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable;
+        java.util.List list, temp$0;
+        int temp$1;
+        java.lang.Throwable[] temp$2, temp$4;
+        java.lang.Object[] temp$3;
+
+        throwable := @parameter0: java.lang.Throwable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.util.List getThrowableList(java.lang.Throwable)>(throwable);
+        list = temp$0;
+        temp$1 = interfaceinvoke list.<java.util.List: int size()>();
+        temp$2 = newarray (java.lang.Throwable)[temp$1];
+        temp$3 = interfaceinvoke list.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$2);
+        temp$4 = (java.lang.Throwable[]) temp$3;
+        return temp$4;
+    }
+}

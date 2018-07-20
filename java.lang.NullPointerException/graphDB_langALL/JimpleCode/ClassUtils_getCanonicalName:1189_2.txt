@@ -1,0 +1,97 @@
+public class WrapClass 
+{
+    private static final java.lang.String getCanonicalName(java.lang.String)
+    {
+        java.lang.String className, temp$0, temp$1, temp$5, temp$8, temp$10, temp$15;
+        int dim, temp$3, temp$4, temp$6, i, temp$13, temp$14;
+        boolean temp$2;
+        java.util.Map temp$7;
+        java.lang.Object temp$9;
+        java.lang.StringBuilder canonicalClassNameBuffer, temp$11, temp$12;
+
+        className := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String deleteWhitespace(java.lang.String)>(className);
+        className = temp$0;
+        if className == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        dim = 0;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke className.<java.lang.String: boolean startsWith(java.lang.String)>("[");
+        if temp$2 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$3 = dim;
+        temp$4 = temp$3 + 1;
+        dim = temp$4;
+        temp$5 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(1);
+        className = temp$5;
+        goto label2;
+
+     label4:
+        nop;
+        if dim < 1 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        return className;
+
+     label6:
+        nop;
+        temp$6 = virtualinvoke className.<java.lang.String: int length()>();
+        if temp$6 > 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$7 = <org.apache.commons.lang3.ClassUtils: java.util.Map reverseAbbreviationMap>;
+        temp$8 = virtualinvoke className.<java.lang.String: java.lang.String substring(int,int)>(0, 1);
+        temp$9 = interfaceinvoke temp$7.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$8);
+        temp$10 = (java.lang.String) temp$9;
+        className = temp$10;
+
+     label8:
+        nop;
+        nop;
+        temp$11 = new java.lang.StringBuilder;
+        specialinvoke temp$11.<java.lang.StringBuilder: void <init>(java.lang.String)>(className);
+        canonicalClassNameBuffer = temp$11;
+        i = 0;
+
+     label9:
+        nop;
+        if i < dim goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$12 = virtualinvoke canonicalClassNameBuffer.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[]");
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label9;
+
+     label11:
+        nop;
+        temp$15 = virtualinvoke canonicalClassNameBuffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$15;
+    }
+}

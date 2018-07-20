@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public static org.apache.commons.lang3.time.FastDateFormat getDateInstance(int)
+    {
+        int style;
+        org.apache.commons.lang3.time.FormatCache temp$0;
+        java.text.Format temp$1;
+        org.apache.commons.lang3.time.FastDateFormat temp$2;
+
+        style := @parameter0: int;
+        temp$0 = <org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FormatCache cache>;
+        temp$1 = virtualinvoke temp$0.<org.apache.commons.lang3.time.FormatCache: java.text.Format getDateInstance(int,java.util.TimeZone,java.util.Locale)>(style, null, null);
+        temp$2 = (org.apache.commons.lang3.time.FastDateFormat) temp$1;
+        return temp$2;
+    }
+}

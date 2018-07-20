@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public boolean replaceIn(org.apache.commons.lang3.text.StrBuilder)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        org.apache.commons.lang3.text.StrBuilder source;
+        int temp$0;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        source := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        if source == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke source.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean substitute(org.apache.commons.lang3.text.StrBuilder,int,int)>(source, 0, temp$0);
+        return temp$1;
+    }
+}

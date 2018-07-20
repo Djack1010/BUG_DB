@@ -1,0 +1,85 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Field getDeclaredField(java.lang.Class, java.lang.String, boolean)
+    {
+        java.lang.Class 'cls';
+        java.lang.String fieldName;
+        boolean forceAccess, temp$0, temp$2, temp$5;
+        java.lang.Object[] temp$1, temp$3;
+        java.lang.reflect.Field field, temp$4, temp$6, temp$7;
+        java.lang.NoSuchFieldException e;
+
+        'cls' := @parameter0: java.lang.Class;
+        fieldName := @parameter1: java.lang.String;
+        forceAccess := @parameter2: boolean;
+        if 'cls' != null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$0, "The class must not be null", temp$1);
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isNotBlank(java.lang.CharSequence)>(fieldName);
+        temp$3 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$2, "The field name must not be blank/empty", temp$3);
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>(fieldName);
+        field = temp$4;
+        temp$5 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean isAccessible(java.lang.reflect.Member)>(field);
+        if temp$5 == 0 goto label4;
+
+        goto label9;
+
+     label4:
+        nop;
+        if forceAccess == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        virtualinvoke field.<java.lang.reflect.Field: void setAccessible(boolean)>(1);
+        goto label8;
+
+     label6:
+        nop;
+        temp$6 = null;
+
+     label7:
+        nop;
+        return temp$6;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        goto label11;
+
+     label10:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label11;
+
+     label11:
+        nop;
+        temp$7 = null;
+        return temp$7;
+
+        catch java.lang.NoSuchFieldException from label3 to label7 with label10;
+        catch java.lang.NoSuchFieldException from label8 to label10 with label10;
+    }
+}

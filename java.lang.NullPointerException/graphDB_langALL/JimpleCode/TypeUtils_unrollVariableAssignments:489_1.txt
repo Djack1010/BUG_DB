@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type unrollVariableAssignments(java.lang.reflect.TypeVariable, java.util.Map)
+    {
+        java.lang.reflect.TypeVariable var, temp$5;
+        java.util.Map typeVarAssigns;
+        java.lang.reflect.Type result, temp$1;
+        java.lang.Object temp$0;
+        boolean temp$2, temp$3, temp$4;
+
+        var := @parameter0: java.lang.reflect.TypeVariable;
+        typeVarAssigns := @parameter1: java.util.Map;
+
+     label0:
+        nop;
+        temp$0 = interfaceinvoke typeVarAssigns.<java.util.Map: java.lang.Object get(java.lang.Object)>(var);
+        temp$1 = (java.lang.reflect.Type) temp$0;
+        result = temp$1;
+        temp$2 = interfaceinvoke result.<java.lang.reflect.Type: boolean equals(java.lang.Object)>(var);
+        if temp$2 == 0 goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$3 = 1;
+
+     label3:
+        nop;
+        temp$4 = result instanceof java.lang.reflect.TypeVariable;
+        if temp$4 == temp$3 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = (java.lang.reflect.TypeVariable) result;
+        var = temp$5;
+        goto label6;
+
+     label5:
+        nop;
+        goto label7;
+
+     label6:
+        nop;
+        goto label0;
+
+     label7:
+        nop;
+        return result;
+    }
+}

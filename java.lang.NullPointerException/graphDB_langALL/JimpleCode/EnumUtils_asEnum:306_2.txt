@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    private static final java.lang.Class asEnum(java.lang.Class)
+    {
+        java.lang.Class enumClass, temp$2;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+
+        enumClass := @parameter0: java.lang.Class;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(enumClass, "EnumClass must be defined.", temp$0);
+        temp$2 = (java.lang.Class) temp$1;
+        return enumClass;
+    }
+}

@@ -1,0 +1,48 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendWithSeparators(java.lang.Iterable, java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$4, temp$6;
+        java.lang.Iterable iterable;
+        java.lang.String separator, sep, temp$0;
+        java.util.Iterator it, temp$1;
+        boolean temp$2, temp$5;
+        java.lang.Object temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        iterable := @parameter0: java.lang.Iterable;
+        separator := @parameter1: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ObjectUtils: java.lang.String toString(java.lang.Object)>(separator);
+        sep = temp$0;
+        temp$1 = interfaceinvoke iterable.<java.lang.Iterable: java.util.Iterator iterator()>();
+        it = temp$1;
+
+     label0:
+        nop;
+        temp$2 = interfaceinvoke it.<java.util.Iterator: boolean hasNext()>();
+        if temp$2 == 0 goto label4;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$3 = interfaceinvoke it.<java.util.Iterator: java.lang.Object next()>();
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.Object)>(temp$3);
+        temp$5 = interfaceinvoke it.<java.util.Iterator: boolean hasNext()>();
+        if temp$5 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(sep);
+
+     label3:
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        return this;
+    }
+}

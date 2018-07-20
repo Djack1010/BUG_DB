@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static transient org.apache.commons.lang3.CharSet getInstance(java.lang.String[])
+    {
+        java.lang.String[] setStrs, temp$3;
+        org.apache.commons.lang3.CharSet temp$0, common, temp$7, temp$8;
+        int temp$1, temp$4;
+        java.util.Map temp$2;
+        java.lang.String temp$5;
+        java.lang.Object temp$6;
+
+        setStrs := @parameter0: java.lang.String[];
+        if setStrs == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof setStrs;
+        if temp$1 == 1 goto label2;
+
+        goto label5;
+
+     label2:
+        nop;
+        temp$2 = <org.apache.commons.lang3.CharSet: java.util.Map COMMON>;
+        temp$3 = setStrs;
+        temp$4 = 0;
+        temp$5 = temp$3[temp$4];
+        temp$6 = interfaceinvoke temp$2.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$5);
+        temp$7 = (org.apache.commons.lang3.CharSet) temp$6;
+        common = temp$7;
+        if common != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        return common;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$8 = null;
+        return temp$8;
+    }
+}

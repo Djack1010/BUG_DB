@@ -1,0 +1,92 @@
+public class WrapClass 
+{
+    private static final java.lang.String getSetOfMatchingCharacterWithin(java.lang.CharSequence, java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence first, second;
+        int limit, i, temp$1, j, temp$3, temp$4, temp$5, temp$6, temp$7, temp$8, temp$10, temp$11, temp$14, temp$15, temp$16, temp$17;
+        java.lang.StringBuilder common, temp$0, copy, temp$13;
+        char ch, temp$2, temp$9;
+        boolean found, temp$12;
+        java.lang.String temp$18;
+
+        first := @parameter0: java.lang.CharSequence;
+        second := @parameter1: java.lang.CharSequence;
+        limit := @parameter2: int;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        common = temp$0;
+        copy = null;
+        i = 0;
+
+     label0:
+        nop;
+        temp$1 = interfaceinvoke first.<java.lang.CharSequence: int length()>();
+        if i < temp$1 goto label1;
+
+        goto label8;
+
+     label1:
+        nop;
+        temp$2 = interfaceinvoke first.<java.lang.CharSequence: char charAt(int)>(i);
+        ch = temp$2;
+        found = 0;
+        temp$3 = i - limit;
+        temp$4 = staticinvoke <java.lang.Math: int max(int,int)>(0, temp$3);
+        j = temp$4;
+
+     label2:
+        nop;
+        if found == 0 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$5 = i;
+        temp$6 = temp$5 + limit;
+        temp$7 = interfaceinvoke second.<java.lang.CharSequence: int length()>();
+        temp$8 = staticinvoke <java.lang.Math: int min(int,int)>(temp$6, temp$7);
+        if j < temp$8 goto label4;
+
+        goto label7;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$9 = virtualinvoke copy.<java.lang.StringBuilder: char charAt(int)>(j);
+        temp$10 = (int) temp$9;
+        temp$11 = (int) ch;
+        if temp$10 == temp$11 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$12 = 1;
+        found = temp$12;
+        temp$13 = virtualinvoke common.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(ch);
+        virtualinvoke copy.<java.lang.StringBuilder: void setCharAt(int,char)>(j, 42);
+
+     label6:
+        nop;
+        nop;
+        temp$14 = j;
+        temp$15 = temp$14 + 1;
+        j = temp$15;
+        goto label2;
+
+     label7:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label0;
+
+     label8:
+        nop;
+        temp$18 = virtualinvoke common.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$18;
+    }
+}

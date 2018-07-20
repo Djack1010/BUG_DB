@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public static java.lang.String stripToNull(java.lang.String)
+    {
+        java.lang.String str, temp$0, temp$1;
+        boolean temp$2;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String strip(java.lang.String,java.lang.String)>(str, null);
+        str = temp$0;
+        temp$2 = virtualinvoke str.<java.lang.String: boolean isEmpty()>();
+        if temp$2 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = null;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = str;
+
+     label4:
+        nop;
+        return temp$1;
+    }
+}

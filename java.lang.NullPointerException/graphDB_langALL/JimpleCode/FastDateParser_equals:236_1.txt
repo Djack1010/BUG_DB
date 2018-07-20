@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.time.FastDateParser this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$3, temp$6, temp$9, temp$10;
+        java.lang.String temp$1, temp$2;
+        java.util.TimeZone temp$4, temp$5;
+        java.util.Locale temp$7, temp$8;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof org.apache.commons.lang3.time.FastDateParser;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        other = (org.apache.commons.lang3.time.FastDateParser) obj;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.lang.String pattern>;
+        temp$2 = other.<org.apache.commons.lang3.time.FastDateParser: java.lang.String pattern>;
+        temp$3 = virtualinvoke temp$1.<java.lang.String: boolean equals(java.lang.Object)>(temp$2);
+        if temp$3 == 0 goto label4;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$5 = other.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$6 = virtualinvoke temp$4.<java.util.TimeZone: boolean equals(java.lang.Object)>(temp$5);
+        if temp$6 == 0 goto label4;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$7 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$8 = other.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$9 = virtualinvoke temp$7.<java.util.Locale: boolean equals(java.lang.Object)>(temp$8);
+        if temp$9 == 0 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$10 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$10 = 1;
+
+     label6:
+        nop;
+        return temp$10;
+    }
+}

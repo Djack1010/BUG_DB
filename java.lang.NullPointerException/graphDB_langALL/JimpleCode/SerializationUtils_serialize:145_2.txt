@@ -1,0 +1,105 @@
+public class WrapClass 
+{
+    public static void serialize(java.io.Serializable, java.io.OutputStream)
+    {
+        java.io.Serializable obj;
+        java.io.OutputStream outputStream;
+        java.lang.IllegalArgumentException temp$0;
+        java.io.ObjectOutputStream out;
+        java.io.IOException ex, ex, ex;
+        org.apache.commons.lang3.SerializationException temp$1;
+        java.lang.Throwable temp$2;
+
+        obj := @parameter0: java.io.Serializable;
+        outputStream := @parameter1: java.io.OutputStream;
+        if outputStream == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The OutputStream must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        out = null;
+
+     label2:
+        nop;
+        virtualinvoke out.<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>(obj);
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        if out != null goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        virtualinvoke out.<java.io.ObjectOutputStream: void close()>();
+
+     label6:
+        nop;
+        goto label8;
+
+     label7:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label8;
+
+     label8:
+        nop;
+        goto label16;
+
+     label9:
+        nop;
+        ex := @caughtexception;
+        temp$1 = new org.apache.commons.lang3.SerializationException;
+        specialinvoke temp$1.<org.apache.commons.lang3.SerializationException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$1;
+
+     label10:
+        nop;
+        temp$2 := @caughtexception;
+
+     label11:
+        nop;
+        if out != null goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        virtualinvoke out.<java.io.ObjectOutputStream: void close()>();
+
+     label13:
+        nop;
+        goto label15;
+
+     label14:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label15;
+
+     label15:
+        nop;
+        throw temp$2;
+
+     label16:
+        nop;
+        return;
+
+        catch java.io.IOException from label4 to label7 with label7;
+        catch java.io.IOException from label11 to label14 with label14;
+        catch java.io.IOException from label2 to label3 with label9;
+        catch java.lang.Throwable from label2 to label3 with label10;
+        catch java.lang.Throwable from label3 to label10 with label10;
+    }
+}

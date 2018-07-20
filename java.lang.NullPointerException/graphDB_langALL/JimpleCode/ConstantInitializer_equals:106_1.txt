@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.concurrent.ConstantInitializer this, c;
+        java.lang.Object obj, temp$2, temp$3;
+        boolean temp$0, temp$1, temp$4;
+
+        this := @this: org.apache.commons.lang3.concurrent.ConstantInitializer;
+        obj := @parameter0: java.lang.Object;
+        if this == obj goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = obj instanceof org.apache.commons.lang3.concurrent.ConstantInitializer;
+        if temp$1 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        c = (org.apache.commons.lang3.concurrent.ConstantInitializer) obj;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.concurrent.ConstantInitializer: java.lang.Object getObject()>();
+        temp$3 = virtualinvoke c.<org.apache.commons.lang3.concurrent.ConstantInitializer: java.lang.Object getObject()>();
+        temp$4 = staticinvoke <org.apache.commons.lang3.ObjectUtils: boolean equals(java.lang.Object,java.lang.Object)>(temp$2, temp$3);
+        return temp$4;
+    }
+}

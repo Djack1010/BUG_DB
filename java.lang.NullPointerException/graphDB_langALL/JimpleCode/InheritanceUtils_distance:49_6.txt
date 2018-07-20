@@ -1,0 +1,77 @@
+public class WrapClass 
+{
+    public static int distance(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class child, parent, cParent, temp$2;
+        boolean temp$0, temp$3;
+        int temp$1, d, temp$4, temp$5, temp$6, temp$7, temp$8, temp$9;
+
+        child := @parameter0: java.lang.Class;
+        parent := @parameter1: java.lang.Class;
+        if child == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if parent == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = virtualinvoke child.<java.lang.Class: boolean equals(java.lang.Object)>(parent);
+        if temp$0 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke child.<java.lang.Class: java.lang.Class getSuperclass()>();
+        cParent = temp$2;
+        temp$3 = virtualinvoke parent.<java.lang.Class: boolean equals(java.lang.Object)>(cParent);
+        temp$4 = staticinvoke <org.apache.commons.lang3.BooleanUtils: int toInteger(boolean)>(temp$3);
+        d = temp$4;
+        if d == 1 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        return d;
+
+     label6:
+        nop;
+        temp$5 = d;
+        temp$6 = staticinvoke <org.apache.commons.lang3.reflect.InheritanceUtils: int distance(java.lang.Class,java.lang.Class)>(cParent, parent);
+        temp$7 = temp$5 + temp$6;
+        d = temp$7;
+        if d > 0 goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$9 = d;
+        temp$8 = temp$9 + 1;
+        goto label9;
+
+     label8:
+        nop;
+        temp$8 = -1;
+
+     label9:
+        nop;
+        return temp$8;
+    }
+}

@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public final boolean isBeforeRange(org.apache.commons.lang3.Range)
+    {
+        org.apache.commons.lang3.Range this, otherRange;
+        java.lang.Object temp$0;
+        boolean temp$1;
+
+        this := @this: org.apache.commons.lang3.Range;
+        otherRange := @parameter0: org.apache.commons.lang3.Range;
+        if otherRange == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = otherRange.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.Range: boolean isBefore(java.lang.Object)>(temp$0);
+        return temp$1;
+    }
+}

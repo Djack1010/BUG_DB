@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public static transient java.lang.String toStringExclude(java.lang.Object, java.lang.String[])
+    {
+        java.lang.Object object;
+        java.lang.String[] excludeFieldNames;
+        org.apache.commons.lang3.builder.ReflectionToStringBuilder temp$0, temp$1;
+        java.lang.String temp$2;
+
+        object := @parameter0: java.lang.Object;
+        excludeFieldNames := @parameter1: java.lang.String[];
+        temp$0 = new org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+        specialinvoke temp$0.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: void <init>(java.lang.Object)>(object);
+        temp$1 = virtualinvoke temp$0.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: org.apache.commons.lang3.builder.ReflectionToStringBuilder setExcludeFieldNames(java.lang.String[])>(excludeFieldNames);
+        temp$2 = virtualinvoke temp$1.<org.apache.commons.lang3.builder.ReflectionToStringBuilder: java.lang.String toString()>();
+        return temp$2;
+    }
+}

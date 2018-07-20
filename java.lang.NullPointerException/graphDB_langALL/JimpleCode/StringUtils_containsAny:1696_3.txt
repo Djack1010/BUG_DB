@@ -1,0 +1,61 @@
+public class WrapClass 
+{
+    public static transient boolean containsAny(java.lang.CharSequence, java.lang.CharSequence[])
+    {
+        java.lang.CharSequence cs, searchCharSequence, temp$4;
+        java.lang.CharSequence[] searchCharSequences;
+        boolean temp$0, temp$1, temp$5, temp$6, temp$7;
+        int temp$2, temp$3;
+
+        cs := @parameter0: java.lang.CharSequence;
+        searchCharSequences := @parameter1: java.lang.CharSequence[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(cs);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(java.lang.Object[])>(searchCharSequences);
+        if temp$1 == 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$2 = 0;
+
+     label3:
+        nop;
+        temp$3 = lengthof searchCharSequences;
+        if temp$2 >= temp$3 goto label6;
+
+        temp$4 = searchCharSequences[temp$2];
+        searchCharSequence = temp$4;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean contains(java.lang.CharSequence,java.lang.CharSequence)>(cs, searchCharSequence);
+        if temp$5 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$6 = 1;
+        return temp$6;
+
+     label5:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label3;
+
+     label6:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+    }
+}

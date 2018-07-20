@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    private final void readObject(java.io.ObjectInputStream) throws java.io.IOException, java.lang.ClassNotFoundException
+    {
+        org.apache.commons.lang3.time.FastDatePrinter this;
+        java.io.ObjectInputStream in;
+
+        this := @this: org.apache.commons.lang3.time.FastDatePrinter;
+        in := @parameter0: java.io.ObjectInputStream;
+        virtualinvoke in.<java.io.ObjectInputStream: void defaultReadObject()>();
+        virtualinvoke this.<org.apache.commons.lang3.time.FastDatePrinter: void init()>();
+        return;
+    }
+}

@@ -1,0 +1,58 @@
+public class WrapClass 
+{
+    public static java.lang.reflect.Method getAccessibleMethod(java.lang.reflect.Method)
+    {
+        java.lang.reflect.Method method, temp$1, temp$7, temp$8;
+        boolean temp$0, temp$4;
+        java.lang.Class 'cls', temp$2;
+        int temp$3;
+        java.lang.String methodName, temp$5;
+        java.lang.Class[] parameterTypes, temp$6;
+
+        method := @parameter0: java.lang.reflect.Method;
+        temp$0 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean isAccessible(java.lang.reflect.Member)>(method);
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class getDeclaringClass()>();
+        'cls' = temp$2;
+        temp$3 = virtualinvoke 'cls'.<java.lang.Class: int getModifiers()>();
+        temp$4 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$3);
+        if temp$4 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        return method;
+
+     label3:
+        nop;
+        temp$5 = virtualinvoke method.<java.lang.reflect.Method: java.lang.String getName()>();
+        methodName = temp$5;
+        temp$6 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        parameterTypes = temp$6;
+        temp$7 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethodFromInterfaceNest(java.lang.Class,java.lang.String,java.lang.Class[])>('cls', methodName, parameterTypes);
+        method = temp$7;
+        if method == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethodFromSuperclass(java.lang.Class,java.lang.String,java.lang.Class[])>('cls', methodName, parameterTypes);
+        method = temp$8;
+
+     label5:
+        nop;
+        return method;
+    }
+}

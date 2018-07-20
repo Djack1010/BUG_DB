@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    protected java.lang.String resolveVariable(java.lang.String, org.apache.commons.lang3.text.StrBuilder, int, int)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        java.lang.String variableName, temp$1;
+        org.apache.commons.lang3.text.StrBuilder buf;
+        int startPos, endPos;
+        org.apache.commons.lang3.text.StrLookup resolver, temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        variableName := @parameter0: java.lang.String;
+        buf := @parameter1: org.apache.commons.lang3.text.StrBuilder;
+        startPos := @parameter2: int;
+        endPos := @parameter3: int;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: org.apache.commons.lang3.text.StrLookup getVariableResolver()>();
+        resolver = temp$0;
+        temp$1 = virtualinvoke resolver.<org.apache.commons.lang3.text.StrLookup: java.lang.String lookup(java.lang.String)>(variableName);
+        return temp$1;
+    }
+}

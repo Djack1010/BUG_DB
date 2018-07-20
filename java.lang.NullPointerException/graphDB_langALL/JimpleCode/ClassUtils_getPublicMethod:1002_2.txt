@@ -1,0 +1,111 @@
+public class WrapClass 
+{
+    public static transient java.lang.reflect.Method getPublicMethod(java.lang.Class, java.lang.String, java.lang.Class[]) throws java.lang.SecurityException, java.lang.NoSuchMethodException
+    {
+        java.lang.Class 'cls', temp$1, candidateClass, temp$13;
+        java.lang.String methodName, temp$18, temp$19;
+        java.lang.Class[] parameterTypes;
+        java.lang.reflect.Method declaredMethod, temp$0, candidateMethod, temp$12;
+        int temp$2, temp$10, temp$14;
+        boolean temp$3, temp$6, temp$8, temp$11, temp$15;
+        java.util.List candidateClasses, temp$5;
+        java.util.ArrayList temp$4;
+        java.util.Iterator temp$7;
+        java.lang.Object temp$9;
+        java.lang.NoSuchMethodException ex, temp$16;
+        java.lang.StringBuffer temp$17;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+        declaredMethod = temp$0;
+        temp$1 = virtualinvoke declaredMethod.<java.lang.reflect.Method: java.lang.Class getDeclaringClass()>();
+        temp$2 = virtualinvoke temp$1.<java.lang.Class: int getModifiers()>();
+        temp$3 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$2);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return declaredMethod;
+
+     label1:
+        nop;
+        temp$4 = new java.util.ArrayList;
+        specialinvoke temp$4.<java.util.ArrayList: void <init>()>();
+        candidateClasses = temp$4;
+        temp$5 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.util.List getAllSuperclasses(java.lang.Class)>('cls');
+        temp$6 = interfaceinvoke candidateClasses.<java.util.List: boolean addAll(java.util.Collection)>(temp$5);
+        temp$7 = interfaceinvoke candidateClasses.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label2:
+        nop;
+        temp$8 = interfaceinvoke temp$7.<java.util.Iterator: boolean hasNext()>();
+        if temp$8 == 0 goto label11;
+
+        temp$9 = interfaceinvoke temp$7.<java.util.Iterator: java.lang.Object next()>();
+        candidateClass = (java.lang.Class) temp$9;
+        temp$10 = virtualinvoke candidateClass.<java.lang.Class: int getModifiers()>();
+        temp$11 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$10);
+        if temp$11 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        goto label10;
+
+     label4:
+        nop;
+
+     label5:
+        nop;
+        temp$12 = virtualinvoke candidateClass.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+        candidateMethod = temp$12;
+        goto label7;
+
+     label6:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label10;
+
+     label7:
+        nop;
+        temp$13 = virtualinvoke candidateMethod.<java.lang.reflect.Method: java.lang.Class getDeclaringClass()>();
+        temp$14 = virtualinvoke temp$13.<java.lang.Class: int getModifiers()>();
+        temp$15 = staticinvoke <java.lang.reflect.Modifier: boolean isPublic(int)>(temp$14);
+        if temp$15 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        return candidateMethod;
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        goto label2;
+
+     label11:
+        nop;
+        temp$16 = new java.lang.NoSuchMethodException;
+        temp$17 = new java.lang.StringBuffer;
+        specialinvoke temp$17.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$17.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Can\'t find a public method for ");
+        virtualinvoke temp$17.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(methodName);
+        virtualinvoke temp$17.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" ");
+        temp$18 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.String toString(java.lang.Object)>(parameterTypes);
+        virtualinvoke temp$17.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$18);
+        temp$19 = virtualinvoke temp$17.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$16.<java.lang.NoSuchMethodException: void <init>(java.lang.String)>(temp$19);
+        throw temp$16;
+
+        catch java.lang.NoSuchMethodException from label5 to label6 with label6;
+    }
+}

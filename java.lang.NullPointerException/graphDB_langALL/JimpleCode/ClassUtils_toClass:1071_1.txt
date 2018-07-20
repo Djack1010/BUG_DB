@@ -1,0 +1,85 @@
+public class WrapClass 
+{
+    public static transient java.lang.Class[] toClass(java.lang.Object[])
+    {
+        java.lang.Object[] array, temp$7, temp$10;
+        int temp$0, temp$2, i, temp$3, temp$5, temp$8, temp$11, temp$14, temp$15;
+        java.lang.Class[] temp$1, classes, temp$4;
+        java.lang.Class temp$6, temp$13;
+        java.lang.Object temp$9, temp$12;
+
+        array := @parameter0: java.lang.Object[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        goto label4;
+
+     label1:
+        nop;
+        temp$0 = lengthof array;
+        if temp$0 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+        return temp$1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$2 = lengthof array;
+        classes = newarray (java.lang.Class)[temp$2];
+        i = 0;
+
+     label5:
+        nop;
+        temp$3 = lengthof array;
+        if i < temp$3 goto label6;
+
+        goto label10;
+
+     label6:
+        nop;
+        temp$4 = classes;
+        temp$5 = i;
+        temp$7 = array;
+        temp$8 = i;
+        temp$9 = temp$7[temp$8];
+        if temp$9 == null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$6 = null;
+        goto label9;
+
+     label8:
+        nop;
+        temp$10 = array;
+        temp$11 = i;
+        temp$12 = temp$10[temp$11];
+        temp$13 = virtualinvoke temp$12.<java.lang.Object: java.lang.Class getClass()>();
+        temp$6 = temp$13;
+
+     label9:
+        nop;
+        temp$4[temp$5] = temp$6;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label5;
+
+     label10:
+        nop;
+        return classes;
+    }
+}

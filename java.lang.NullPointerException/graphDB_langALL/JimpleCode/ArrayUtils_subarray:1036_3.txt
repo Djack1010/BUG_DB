@@ -1,0 +1,62 @@
+public class WrapClass 
+{
+    public static char[] subarray(char[], int, int)
+    {
+        char[] array, temp$0, temp$5, subarray;
+        int startIndexInclusive, endIndexExclusive, temp$1, temp$2, temp$3, newSize, temp$4;
+
+        array := @parameter0: char[];
+        startIndexInclusive := @parameter1: int;
+        endIndexExclusive := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndexInclusive < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = -1;
+        startIndexInclusive = temp$1;
+
+     label3:
+        nop;
+        temp$2 = lengthof array;
+        if endIndexExclusive > temp$2 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$3 = lengthof array;
+        endIndexExclusive = temp$3;
+
+     label5:
+        nop;
+        temp$4 = endIndexExclusive - startIndexInclusive;
+        newSize = temp$4;
+        if newSize <= 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$5 = <org.apache.commons.lang3.ArrayUtils: char[] EMPTY_CHAR_ARRAY>;
+        return temp$5;
+
+     label7:
+        nop;
+        subarray = newarray (char)[newSize];
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array, startIndexInclusive, subarray, 0, newSize);
+        return subarray;
+    }
+}

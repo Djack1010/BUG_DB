@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public boolean hasNext()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.String[] temp$0;
+        int temp$1, temp$2;
+        boolean temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        temp$1 = this.<org.apache.commons.lang3.text.StrTokenizer: int tokenPos>;
+        temp$2 = lengthof temp$0;
+        if temp$1 < temp$2 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = 1;
+
+     label2:
+        nop;
+        return temp$3;
+    }
+}

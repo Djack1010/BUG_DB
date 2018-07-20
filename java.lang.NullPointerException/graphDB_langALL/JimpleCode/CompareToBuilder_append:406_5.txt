@@ -1,0 +1,230 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.CompareToBuilder append(java.lang.Object, java.lang.Object, java.util.Comparator)
+    {
+        org.apache.commons.lang3.builder.CompareToBuilder this, temp$8, temp$12, temp$16, temp$20, temp$24, temp$28, temp$32, temp$36, temp$39;
+        java.lang.Object lhs, rhs;
+        java.util.Comparator comparator, comparator2;
+        int temp$0, temp$1, temp$2, temp$40;
+        java.lang.Class temp$3;
+        boolean temp$4, temp$5, temp$9, temp$13, temp$17, temp$21, temp$25, temp$29, temp$33;
+        long[] temp$6, temp$7;
+        int[] temp$10, temp$11;
+        short[] temp$14, temp$15;
+        char[] temp$18, temp$19;
+        byte[] temp$22, temp$23;
+        double[] temp$26, temp$27;
+        float[] temp$30, temp$31;
+        boolean[] temp$34, temp$35;
+        java.lang.Object[] temp$37, temp$38;
+
+        this := @this: org.apache.commons.lang3.builder.CompareToBuilder;
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        comparator := @parameter2: java.util.Comparator;
+        temp$0 = this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison>;
+        if temp$0 != 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return this;
+
+     label1:
+        nop;
+        if lhs == rhs goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        return this;
+
+     label3:
+        nop;
+        if lhs == null goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$1 = -1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$1;
+        return this;
+
+     label5:
+        nop;
+        if rhs == null goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$2 = 1;
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$2;
+        return this;
+
+     label7:
+        nop;
+        temp$3 = virtualinvoke lhs.<java.lang.Object: java.lang.Class getClass()>();
+        temp$4 = virtualinvoke temp$3.<java.lang.Class: boolean isArray()>();
+        if temp$4 == 0 goto label33;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$5 = lhs instanceof long[];
+        if temp$5 == 0 goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        temp$6 = (long[]) lhs;
+        temp$7 = (long[]) rhs;
+        temp$8 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(long[],long[])>(temp$6, temp$7);
+        goto label32;
+
+     label10:
+        nop;
+        temp$9 = lhs instanceof int[];
+        if temp$9 == 0 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$10 = (int[]) lhs;
+        temp$11 = (int[]) rhs;
+        temp$12 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(int[],int[])>(temp$10, temp$11);
+        goto label31;
+
+     label12:
+        nop;
+        temp$13 = lhs instanceof short[];
+        if temp$13 == 0 goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$14 = (short[]) lhs;
+        temp$15 = (short[]) rhs;
+        temp$16 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(short[],short[])>(temp$14, temp$15);
+        goto label30;
+
+     label14:
+        nop;
+        temp$17 = lhs instanceof char[];
+        if temp$17 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$18 = (char[]) lhs;
+        temp$19 = (char[]) rhs;
+        temp$20 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(char[],char[])>(temp$18, temp$19);
+        goto label29;
+
+     label16:
+        nop;
+        temp$21 = lhs instanceof byte[];
+        if temp$21 == 0 goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$22 = (byte[]) lhs;
+        temp$23 = (byte[]) rhs;
+        temp$24 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(byte[],byte[])>(temp$22, temp$23);
+        goto label28;
+
+     label18:
+        nop;
+        temp$25 = lhs instanceof double[];
+        if temp$25 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$26 = (double[]) lhs;
+        temp$27 = (double[]) rhs;
+        temp$28 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(double[],double[])>(temp$26, temp$27);
+        goto label27;
+
+     label20:
+        nop;
+        temp$29 = lhs instanceof float[];
+        if temp$29 == 0 goto label22;
+
+        goto label21;
+
+     label21:
+        nop;
+        temp$30 = (float[]) lhs;
+        temp$31 = (float[]) rhs;
+        temp$32 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(float[],float[])>(temp$30, temp$31);
+        goto label26;
+
+     label22:
+        nop;
+        temp$33 = lhs instanceof boolean[];
+        if temp$33 == 0 goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$34 = (boolean[]) lhs;
+        temp$35 = (boolean[]) rhs;
+        temp$36 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(boolean[],boolean[])>(temp$34, temp$35);
+        goto label25;
+
+     label24:
+        nop;
+        temp$37 = (java.lang.Object[]) lhs;
+        temp$38 = (java.lang.Object[]) rhs;
+        temp$39 = virtualinvoke this.<org.apache.commons.lang3.builder.CompareToBuilder: org.apache.commons.lang3.builder.CompareToBuilder append(java.lang.Object[],java.lang.Object[],java.util.Comparator)>(temp$37, temp$38, comparator);
+
+     label25:
+        nop;
+
+     label26:
+        nop;
+
+     label27:
+        nop;
+
+     label28:
+        nop;
+
+     label29:
+        nop;
+
+     label30:
+        nop;
+
+     label31:
+        nop;
+
+     label32:
+        nop;
+        goto label34;
+
+     label33:
+        nop;
+        comparator2 = (java.util.Comparator) comparator;
+        temp$40 = interfaceinvoke comparator2.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        this.<org.apache.commons.lang3.builder.CompareToBuilder: int comparison> = temp$40;
+        nop;
+
+     label34:
+        nop;
+        return this;
+    }
+}

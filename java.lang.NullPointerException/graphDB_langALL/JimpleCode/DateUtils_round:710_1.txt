@@ -1,0 +1,32 @@
+public class WrapClass 
+{
+    public static java.util.Date round(java.util.Date, int)
+    {
+        java.util.Date date, temp$2;
+        int field;
+        java.lang.IllegalArgumentException temp$0;
+        java.util.Calendar gval;
+        org.apache.commons.lang3.time.DateUtils$ModifyType temp$1;
+
+        date := @parameter0: java.util.Date;
+        field := @parameter1: int;
+        if date == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The date must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        gval = null;
+        virtualinvoke gval.<java.util.Calendar: void setTime(java.util.Date)>(date);
+        temp$1 = <org.apache.commons.lang3.time.DateUtils$ModifyType: org.apache.commons.lang3.time.DateUtils$ModifyType ROUND>;
+        staticinvoke <org.apache.commons.lang3.time.DateUtils: void modify(java.util.Calendar,int,org.apache.commons.lang3.time.DateUtils$ModifyType)>(gval, field, temp$1);
+        temp$2 = virtualinvoke gval.<java.util.Calendar: java.util.Date getTime()>();
+        return temp$2;
+    }
+}

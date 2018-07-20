@@ -1,0 +1,50 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.exception.DefaultExceptionContext setContextValue(java.lang.String, java.lang.Object)
+    {
+        org.apache.commons.lang3.exception.DefaultExceptionContext this, temp$6;
+        java.lang.String label, temp$4;
+        java.lang.Object value, temp$1, temp$3;
+        java.util.Iterator iter;
+        boolean temp$0, temp$5;
+        org.apache.commons.lang3.tuple.Pair p, temp$2;
+
+        this := @this: org.apache.commons.lang3.exception.DefaultExceptionContext;
+        label := @parameter0: java.lang.String;
+        value := @parameter1: java.lang.Object;
+        iter = null;
+
+     label0:
+        nop;
+        temp$0 = interfaceinvoke iter.<java.util.Iterator: boolean hasNext()>();
+        if temp$0 == 0 goto label4;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$1 = interfaceinvoke iter.<java.util.Iterator: java.lang.Object next()>();
+        temp$2 = (org.apache.commons.lang3.tuple.Pair) temp$1;
+        p = temp$2;
+        temp$3 = virtualinvoke p.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$4 = (java.lang.String) temp$3;
+        temp$5 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean equals(java.lang.CharSequence,java.lang.CharSequence)>(label, temp$4);
+        if temp$5 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        interfaceinvoke iter.<java.util.Iterator: void remove()>();
+
+     label3:
+        nop;
+        nop;
+        goto label0;
+
+     label4:
+        nop;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.exception.DefaultExceptionContext: org.apache.commons.lang3.exception.DefaultExceptionContext addContextValue(java.lang.String,java.lang.Object)>(label, value);
+        return this;
+    }
+}

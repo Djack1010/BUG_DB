@@ -1,0 +1,67 @@
+public class WrapClass 
+{
+    public static long[] toPrimitive(java.lang.Long[])
+    {
+        java.lang.Long[] array, temp$6;
+        int temp$0, temp$2, i, temp$3, temp$5, temp$7, temp$10, temp$11;
+        long[] temp$1, result, temp$4;
+        java.lang.Long temp$8;
+        long temp$9;
+
+        array := @parameter0: java.lang.Long[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        goto label4;
+
+     label1:
+        nop;
+        temp$0 = lengthof array;
+        if temp$0 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: long[] EMPTY_LONG_ARRAY>;
+        return temp$1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$2 = lengthof array;
+        result = newarray (long)[temp$2];
+        i = 0;
+
+     label5:
+        nop;
+        temp$3 = lengthof array;
+        if i < temp$3 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = result;
+        temp$5 = i;
+        temp$6 = array;
+        temp$7 = i;
+        temp$8 = temp$6[temp$7];
+        temp$9 = virtualinvoke temp$8.<java.lang.Long: long longValue()>();
+        temp$4[temp$5] = temp$9;
+        nop;
+        temp$10 = i;
+        temp$11 = temp$10 + 1;
+        i = temp$11;
+        goto label5;
+
+     label7:
+        nop;
+        return result;
+    }
+}

@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder appendNewLine()
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$2, temp$4;
+        java.lang.String temp$0, temp$1, temp$3;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String newLine>;
+        if temp$0 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.SystemUtils: java.lang.String LINE_SEPARATOR>;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(temp$1);
+        return this;
+
+     label1:
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: java.lang.String newLine>;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.String)>(temp$3);
+        return temp$4;
+    }
+}

@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    private final void readObject(java.io.ObjectInputStream) throws java.io.IOException, java.lang.ClassNotFoundException
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        java.io.ObjectInputStream in;
+        java.util.Calendar definingCalendar, temp$2;
+        java.util.TimeZone temp$0;
+        java.util.Locale temp$1;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        in := @parameter0: java.io.ObjectInputStream;
+        virtualinvoke in.<java.io.ObjectInputStream: void defaultReadObject()>();
+        temp$0 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$2 = staticinvoke <java.util.Calendar: java.util.Calendar getInstance(java.util.TimeZone,java.util.Locale)>(temp$0, temp$1);
+        definingCalendar = temp$2;
+        virtualinvoke this.<org.apache.commons.lang3.time.FastDateParser: void init(java.util.Calendar)>(definingCalendar);
+        return;
+    }
+}

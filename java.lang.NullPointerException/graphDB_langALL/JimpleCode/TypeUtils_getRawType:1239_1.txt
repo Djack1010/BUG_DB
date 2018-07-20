@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    private static final java.lang.Class getRawType(java.lang.reflect.ParameterizedType)
+    {
+        java.lang.reflect.ParameterizedType parameterizedType;
+        java.lang.reflect.Type rawType;
+        boolean temp$0;
+        java.lang.IllegalStateException temp$1;
+        java.lang.StringBuffer temp$2;
+        java.lang.String temp$3;
+        java.lang.Class temp$4;
+
+        parameterizedType := @parameter0: java.lang.reflect.ParameterizedType;
+        rawType = null;
+        temp$0 = rawType instanceof java.lang.Class;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = new java.lang.IllegalStateException;
+        temp$2 = new java.lang.StringBuffer;
+        specialinvoke temp$2.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Wait... What!? Type of rawType: ");
+        virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(rawType);
+        temp$3 = virtualinvoke temp$2.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$1.<java.lang.IllegalStateException: void <init>(java.lang.String)>(temp$3);
+        throw temp$1;
+
+     label1:
+        nop;
+        temp$4 = (java.lang.Class) rawType;
+        return temp$4;
+    }
+}

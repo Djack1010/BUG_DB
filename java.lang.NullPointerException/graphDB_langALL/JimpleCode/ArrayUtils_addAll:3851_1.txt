@@ -1,0 +1,45 @@
+public class WrapClass 
+{
+    public static transient short[] addAll(short[], short[])
+    {
+        short[] array1, array2, temp$0, joinedArray;
+        int temp$1, temp$2, temp$3, temp$4, temp$5, temp$6;
+
+        array1 := @parameter0: short[];
+        array2 := @parameter1: short[];
+        if array1 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        goto label4;
+
+     label1:
+        nop;
+        if array2 == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: short[] clone(short[])>(array1);
+        return temp$0;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        temp$1 = lengthof array1;
+        temp$2 = lengthof array2;
+        temp$3 = temp$1 + temp$2;
+        joinedArray = newarray (short)[temp$3];
+        temp$4 = lengthof array1;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array1, 0, joinedArray, 0, temp$4);
+        temp$5 = lengthof array1;
+        temp$6 = lengthof array2;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(array2, 0, joinedArray, temp$5, temp$6);
+        return joinedArray;
+    }
+}

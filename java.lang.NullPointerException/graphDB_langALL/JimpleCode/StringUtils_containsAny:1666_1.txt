@@ -1,0 +1,24 @@
+public class WrapClass 
+{
+    public static boolean containsAny(java.lang.CharSequence, java.lang.CharSequence)
+    {
+        java.lang.CharSequence cs, searchChars;
+        char[] temp$0;
+        boolean temp$1;
+
+        cs := @parameter0: java.lang.CharSequence;
+        searchChars := @parameter1: java.lang.CharSequence;
+        if searchChars == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: char[] toCharArray(java.lang.CharSequence)>(searchChars);
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean containsAny(java.lang.CharSequence,char[])>(cs, temp$0);
+        return temp$1;
+    }
+}

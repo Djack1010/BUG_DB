@@ -1,0 +1,108 @@
+public class WrapClass 
+{
+    public static java.lang.String replaceChars(java.lang.String, java.lang.String, java.lang.String)
+    {
+        java.lang.String str, searchChars, replaceChars, temp$2, temp$15;
+        boolean temp$0, temp$1, modified, temp$9;
+        int replaceCharsLength, temp$3, strLength, temp$4, i, index, temp$7, temp$8, temp$13, temp$14;
+        java.lang.StringBuilder buf, temp$5, temp$11, temp$12;
+        char ch, temp$6, temp$10;
+
+        str := @parameter0: java.lang.String;
+        searchChars := @parameter1: java.lang.String;
+        replaceChars := @parameter2: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(searchChars);
+        if temp$0 != temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        if replaceChars == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = "";
+        replaceChars = temp$2;
+
+     label3:
+        nop;
+        modified = 0;
+        temp$3 = virtualinvoke replaceChars.<java.lang.String: int length()>();
+        replaceCharsLength = temp$3;
+        temp$4 = virtualinvoke str.<java.lang.String: int length()>();
+        strLength = temp$4;
+        temp$5 = new java.lang.StringBuilder;
+        specialinvoke temp$5.<java.lang.StringBuilder: void <init>(int)>(strLength);
+        buf = temp$5;
+        i = 0;
+
+     label4:
+        nop;
+        if i < strLength goto label5;
+
+        goto label11;
+
+     label5:
+        nop;
+        temp$6 = virtualinvoke str.<java.lang.String: char charAt(int)>(i);
+        ch = temp$6;
+        temp$7 = (int) ch;
+        temp$8 = virtualinvoke searchChars.<java.lang.String: int indexOf(int)>(temp$7);
+        index = temp$8;
+        if index >= 0 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$9 = 1;
+        modified = temp$9;
+        if index < replaceCharsLength goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$10 = virtualinvoke replaceChars.<java.lang.String: char charAt(int)>(index);
+        temp$11 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$10);
+
+     label8:
+        nop;
+        goto label10;
+
+     label9:
+        nop;
+        temp$12 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(ch);
+
+     label10:
+        nop;
+        nop;
+        temp$13 = i;
+        temp$14 = temp$13 + 1;
+        i = temp$14;
+        goto label4;
+
+     label11:
+        nop;
+        if modified == 0 goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$15 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$15;
+
+     label13:
+        nop;
+        return str;
+    }
+}

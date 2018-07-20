@@ -1,0 +1,39 @@
+public class WrapClass 
+{
+    public static java.lang.Enum getEnum(java.lang.Class, java.lang.String)
+    {
+        java.lang.Class enumClass;
+        java.lang.String enumName;
+        java.lang.Enum temp$0, temp$1;
+        java.lang.IllegalArgumentException ex;
+
+        enumClass := @parameter0: java.lang.Class;
+        enumName := @parameter1: java.lang.String;
+        if enumName == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(enumClass, enumName);
+
+     label3:
+        nop;
+        return temp$0;
+
+     label4:
+        nop;
+        ex := @caughtexception;
+        temp$1 = null;
+        nop;
+        return temp$1;
+
+        catch java.lang.IllegalArgumentException from label2 to label3 with label4;
+    }
+}

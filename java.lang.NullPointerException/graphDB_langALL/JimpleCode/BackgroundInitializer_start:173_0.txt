@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public synchronized boolean start()
+    {
+        org.apache.commons.lang3.concurrent.BackgroundInitializer this;
+        boolean temp$0, temp$8, temp$9;
+        java.util.concurrent.ExecutorService tempExec, temp$1, temp$2, temp$3, temp$4, temp$5;
+        java.util.concurrent.Callable temp$6;
+        java.util.concurrent.Future temp$7;
+
+        this := @this: org.apache.commons.lang3.concurrent.BackgroundInitializer;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: boolean isStarted()>();
+        if temp$0 == 0 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService getExternalExecutor()>();
+        this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor> = temp$1;
+        temp$2 = this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor>;
+        if temp$2 == null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService createExecutor()>();
+        tempExec = temp$3;
+        this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor> = temp$3;
+        goto label3;
+
+     label2:
+        nop;
+        temp$4 = null;
+        tempExec = temp$4;
+
+     label3:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor>;
+        temp$6 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.Callable createTask(java.util.concurrent.ExecutorService)>(tempExec);
+        temp$7 = interfaceinvoke temp$5.<java.util.concurrent.ExecutorService: java.util.concurrent.Future submit(java.util.concurrent.Callable)>(temp$6);
+        this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.Future future> = temp$7;
+        temp$8 = 1;
+        return temp$8;
+
+     label4:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+    }
+}

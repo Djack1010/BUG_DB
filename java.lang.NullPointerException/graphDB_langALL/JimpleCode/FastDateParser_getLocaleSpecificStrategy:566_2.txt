@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    private final org.apache.commons.lang3.time.FastDateParser$Strategy getLocaleSpecificStrategy(int, java.util.Calendar)
+    {
+        org.apache.commons.lang3.time.FastDateParser this;
+        int field;
+        java.util.Calendar definingCalendar;
+        java.util.concurrent.ConcurrentMap cache, temp$0;
+        org.apache.commons.lang3.time.FastDateParser$Strategy strategy, temp$3, inCache, temp$6;
+        java.util.Locale temp$1, temp$4;
+        java.lang.Object temp$2, temp$5;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        field := @parameter0: int;
+        definingCalendar := @parameter1: java.util.Calendar;
+        temp$0 = staticinvoke <org.apache.commons.lang3.time.FastDateParser: java.util.concurrent.ConcurrentMap getCache(int)>(field);
+        cache = temp$0;
+        temp$1 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$2 = interfaceinvoke cache.<java.util.Map: java.lang.Object get(java.lang.Object)>(temp$1);
+        temp$3 = (org.apache.commons.lang3.time.FastDateParser$Strategy) temp$2;
+        strategy = temp$3;
+        if strategy == null goto label0;
+
+        goto label3;
+
+     label0:
+        nop;
+        temp$4 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$5 = interfaceinvoke cache.<java.util.concurrent.ConcurrentMap: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(temp$4, strategy);
+        temp$6 = (org.apache.commons.lang3.time.FastDateParser$Strategy) temp$5;
+        inCache = temp$6;
+        if inCache != null goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        return inCache;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        return strategy;
+    }
+}

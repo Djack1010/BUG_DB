@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static final org.apache.commons.lang3.Range between(java.lang.Comparable, java.lang.Comparable)
+    {
+        java.lang.Comparable fromInclusive, toInclusive;
+        org.apache.commons.lang3.Range temp$0, temp$1;
+
+        fromInclusive := @parameter0: java.lang.Comparable;
+        toInclusive := @parameter1: java.lang.Comparable;
+        temp$0 = staticinvoke <org.apache.commons.lang3.Range: org.apache.commons.lang3.Range between(java.lang.Object,java.lang.Object,java.util.Comparator)>(fromInclusive, toInclusive, null);
+        temp$1 = (org.apache.commons.lang3.Range) temp$0;
+        return temp$1;
+    }
+}

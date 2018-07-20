@@ -1,0 +1,69 @@
+public class WrapClass 
+{
+    public boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.time.FastDateParser this, other;
+        java.lang.Object obj;
+        boolean temp$0, temp$1, temp$4, temp$7, temp$10, temp$11;
+        java.lang.String temp$2, temp$3;
+        java.util.TimeZone temp$5, temp$6;
+        java.util.Locale temp$8, temp$9;
+
+        this := @this: org.apache.commons.lang3.time.FastDateParser;
+        obj := @parameter0: java.lang.Object;
+        temp$0 = obj instanceof org.apache.commons.lang3.time.FastDateParser;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        other = (org.apache.commons.lang3.time.FastDateParser) obj;
+        temp$2 = this.<org.apache.commons.lang3.time.FastDateParser: java.lang.String pattern>;
+        temp$3 = other.<org.apache.commons.lang3.time.FastDateParser: java.lang.String pattern>;
+        temp$4 = virtualinvoke temp$2.<java.lang.String: boolean equals(java.lang.Object)>(temp$3);
+        if temp$4 == 0 goto label4;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$5 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$6 = other.<org.apache.commons.lang3.time.FastDateParser: java.util.TimeZone timeZone>;
+        temp$7 = virtualinvoke temp$5.<java.util.TimeZone: boolean equals(java.lang.Object)>(temp$6);
+        if temp$7 == 0 goto label4;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$8 = this.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$9 = other.<org.apache.commons.lang3.time.FastDateParser: java.util.Locale locale>;
+        temp$10 = virtualinvoke temp$8.<java.util.Locale: boolean equals(java.lang.Object)>(temp$9);
+        if temp$10 == 0 goto label4;
+
+        goto label5;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$11 = 0;
+        goto label6;
+
+     label5:
+        nop;
+        temp$11 = 1;
+
+     label6:
+        nop;
+        return temp$11;
+    }
+}

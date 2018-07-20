@@ -1,0 +1,38 @@
+public class WrapClass 
+{
+    public static float toFloat(java.lang.String, float)
+    {
+        java.lang.String str;
+        float defaultValue, temp$0;
+        java.lang.NumberFormatException nfe;
+
+        str := @parameter0: java.lang.String;
+        defaultValue := @parameter1: float;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return defaultValue;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <java.lang.Float: float parseFloat(java.lang.String)>(str);
+
+     label3:
+        nop;
+        return temp$0;
+
+     label4:
+        nop;
+        nfe := @caughtexception;
+        nop;
+        return defaultValue;
+
+        catch java.lang.NumberFormatException from label2 to label3 with label4;
+    }
+}

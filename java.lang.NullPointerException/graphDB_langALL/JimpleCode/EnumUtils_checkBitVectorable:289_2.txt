@@ -1,0 +1,45 @@
+public class WrapClass 
+{
+    private static final java.lang.Class checkBitVectorable(java.lang.Class)
+    {
+        java.lang.Class enumClass, temp$0;
+        java.lang.Enum[] constants, temp$2;
+        java.lang.Object[] temp$1, temp$5;
+        int temp$3, temp$6;
+        boolean temp$4;
+        java.lang.Integer temp$7, temp$9;
+        java.lang.String temp$8;
+
+        enumClass := @parameter0: java.lang.Class;
+        temp$0 = staticinvoke <org.apache.commons.lang3.EnumUtils: java.lang.Class asEnum(java.lang.Class)>(enumClass);
+        temp$1 = virtualinvoke temp$0.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+        temp$2 = (java.lang.Enum[]) temp$1;
+        constants = temp$2;
+        temp$3 = lengthof constants;
+        if temp$3 == 64 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$4 = 1;
+
+     label2:
+        nop;
+        temp$5 = newarray (java.lang.Object)[3];
+        temp$6 = lengthof constants;
+        temp$7 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$6);
+        temp$5[0] = temp$7;
+        temp$8 = virtualinvoke enumClass.<java.lang.Class: java.lang.String getSimpleName()>();
+        temp$5[1] = temp$8;
+        temp$9 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(64);
+        temp$5[2] = temp$9;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$4, "Cannot store %s %s values in %s bits", temp$5);
+        return enumClass;
+    }
+}

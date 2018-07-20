@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public static boolean contains(java.lang.CharSequence, int)
+    {
+        java.lang.CharSequence seq;
+        int searchChar, temp$2;
+        boolean temp$0, temp$1, temp$3;
+
+        seq := @parameter0: java.lang.CharSequence;
+        searchChar := @parameter1: int;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(seq);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = staticinvoke <org.apache.commons.lang3.CharSequenceUtils: int indexOf(java.lang.CharSequence,int,int)>(seq, searchChar, 0);
+        if temp$2 >= 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$3 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = 1;
+
+     label4:
+        nop;
+        return temp$3;
+    }
+}

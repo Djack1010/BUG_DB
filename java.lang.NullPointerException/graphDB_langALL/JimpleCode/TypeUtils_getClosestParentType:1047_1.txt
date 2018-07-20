@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    private static final java.lang.reflect.Type getClosestParentType(java.lang.Class, java.lang.Class)
+    {
+        java.lang.Class 'cls', superClass;
+        java.lang.reflect.Type temp$0;
+
+        'cls' := @parameter0: java.lang.Class;
+        superClass := @parameter1: java.lang.Class;
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Type getGenericSuperclass()>();
+        return temp$0;
+    }
+}

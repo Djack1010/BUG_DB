@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static char toChar(java.lang.Character, char)
+    {
+        java.lang.Character ch;
+        char defaultValue, temp$0;
+
+        ch := @parameter0: java.lang.Character;
+        defaultValue := @parameter1: char;
+        if ch == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return defaultValue;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke ch.<java.lang.Character: char charValue()>();
+        return temp$0;
+    }
+}

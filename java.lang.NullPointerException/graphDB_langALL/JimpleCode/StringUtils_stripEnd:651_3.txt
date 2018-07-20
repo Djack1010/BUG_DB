@@ -1,0 +1,136 @@
+public class WrapClass 
+{
+    public static java.lang.String stripEnd(java.lang.String, java.lang.String)
+    {
+        java.lang.String str, stripChars, temp$15;
+        int end, temp$1, temp$3, temp$6, temp$7, temp$9, temp$11, temp$12, temp$13, temp$14;
+        boolean temp$0, temp$2, temp$5, temp$8;
+        char temp$4, temp$10;
+
+        str := @parameter0: java.lang.String;
+        stripChars := @parameter1: java.lang.String;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = 1;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: int length()>();
+        end = temp$1;
+        if temp$1 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$2 = 0;
+        goto label5;
+
+     label4:
+        nop;
+        temp$2 = 1;
+
+     label5:
+        nop;
+        if temp$0 != temp$2 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        return str;
+
+     label7:
+        nop;
+        if stripChars == null goto label8;
+
+        goto label13;
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        if end != 0 goto label10;
+
+        goto label12;
+
+     label10:
+        nop;
+        temp$3 = end - 1;
+        temp$4 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$3);
+        temp$5 = staticinvoke <java.lang.Character: boolean isWhitespace(char)>(temp$4);
+        if temp$5 == 0 goto label12;
+
+        goto label11;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$6 = end;
+        temp$7 = temp$6 + -1;
+        end = temp$7;
+        goto label9;
+
+     label12:
+        nop;
+        goto label20;
+
+     label13:
+        nop;
+        temp$8 = virtualinvoke stripChars.<java.lang.String: boolean isEmpty()>();
+        if temp$8 == 0 goto label15;
+
+        goto label14;
+
+     label14:
+        nop;
+        return str;
+
+     label15:
+        nop;
+
+     label16:
+        nop;
+        if end != 0 goto label17;
+
+        goto label19;
+
+     label17:
+        nop;
+        temp$9 = end - 1;
+        temp$10 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$9);
+        temp$11 = (int) temp$10;
+        temp$12 = virtualinvoke stripChars.<java.lang.String: int indexOf(int)>(temp$11);
+        if temp$12 != -1 goto label18;
+
+        goto label19;
+
+        goto label18;
+
+     label18:
+        nop;
+        temp$13 = end;
+        temp$14 = temp$13 + -1;
+        end = temp$14;
+        goto label16;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+        temp$15 = virtualinvoke str.<java.lang.String: java.lang.String substring(int,int)>(0, end);
+        return temp$15;
+    }
+}

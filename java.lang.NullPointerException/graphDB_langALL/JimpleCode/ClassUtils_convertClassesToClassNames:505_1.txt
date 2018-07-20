@@ -1,0 +1,60 @@
+public class WrapClass 
+{
+    public static java.util.List convertClassesToClassNames(java.util.List)
+    {
+        java.util.List classes, classNames;
+        java.util.ArrayList temp$0;
+        int temp$1;
+        java.util.Iterator temp$2;
+        java.lang.Class 'cls';
+        boolean temp$3, temp$5, temp$7;
+        java.lang.Object temp$4;
+        java.lang.String temp$6;
+
+        classes := @parameter0: java.util.List;
+        if classes == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = new java.util.ArrayList;
+        temp$1 = interfaceinvoke classes.<java.util.List: int size()>();
+        specialinvoke temp$0.<java.util.ArrayList: void <init>(int)>(temp$1);
+        classNames = temp$0;
+        temp$2 = interfaceinvoke classes.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label2:
+        nop;
+        temp$3 = interfaceinvoke temp$2.<java.util.Iterator: boolean hasNext()>();
+        if temp$3 == 0 goto label6;
+
+        temp$4 = interfaceinvoke temp$2.<java.util.Iterator: java.lang.Object next()>();
+        'cls' = (java.lang.Class) temp$4;
+        if 'cls' == null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = interfaceinvoke classNames.<java.util.List: boolean add(java.lang.Object)>(null);
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$7 = interfaceinvoke classNames.<java.util.List: boolean add(java.lang.Object)>(temp$6);
+
+     label5:
+        nop;
+        nop;
+        goto label2;
+
+     label6:
+        nop;
+        return classNames;
+    }
+}

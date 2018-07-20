@@ -1,0 +1,26 @@
+public class WrapClass 
+{
+    public static java.lang.String getAbbreviatedName(java.lang.Class, int)
+    {
+        java.lang.Class 'cls';
+        int len;
+        java.lang.String temp$0, temp$1, temp$2;
+
+        'cls' := @parameter0: java.lang.Class;
+        len := @parameter1: int;
+        if 'cls' == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke 'cls'.<java.lang.Class: java.lang.String getName()>();
+        temp$2 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.String getAbbreviatedName(java.lang.String,int)>(temp$1, len);
+        return temp$2;
+    }
+}

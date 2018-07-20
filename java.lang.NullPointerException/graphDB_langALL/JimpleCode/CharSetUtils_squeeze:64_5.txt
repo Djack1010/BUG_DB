@@ -1,0 +1,96 @@
+public class WrapClass 
+{
+    public static transient java.lang.String squeeze(java.lang.String, java.lang.String[])
+    {
+        java.lang.String str, temp$14;
+        java.lang.String[] set;
+        boolean temp$0, temp$10;
+        org.apache.commons.lang3.CharSet chars, temp$1;
+        java.lang.StringBuilder buffer, temp$2, temp$11;
+        int temp$3, sz, i, temp$6, temp$8, temp$9, temp$12, temp$13;
+        char[] chrs, temp$4, temp$5;
+        char lastChar, ch, temp$7;
+
+        str := @parameter0: java.lang.String;
+        set := @parameter1: java.lang.String[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return str;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.CharSet: org.apache.commons.lang3.CharSet getInstance(java.lang.String[])>(set);
+        chars = temp$1;
+        temp$2 = new java.lang.StringBuilder;
+        temp$3 = virtualinvoke str.<java.lang.String: int length()>();
+        specialinvoke temp$2.<java.lang.StringBuilder: void <init>(int)>(temp$3);
+        buffer = temp$2;
+        temp$4 = virtualinvoke str.<java.lang.String: char[] toCharArray()>();
+        chrs = temp$4;
+        sz = lengthof chrs;
+        lastChar = 32;
+        ch = 32;
+        i = 0;
+
+     label2:
+        nop;
+        if i < sz goto label3;
+
+        goto label9;
+
+     label3:
+        nop;
+        temp$5 = chrs;
+        temp$6 = i;
+        temp$7 = temp$5[temp$6];
+        ch = temp$7;
+        temp$8 = (int) ch;
+        temp$9 = (int) lastChar;
+        if temp$8 == temp$9 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        if i != 0 goto label5;
+
+        goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$10 = virtualinvoke chars.<org.apache.commons.lang3.CharSet: boolean contains(char)>(ch);
+        if temp$10 == 0 goto label7;
+
+        goto label6;
+
+        goto label6;
+
+     label6:
+        nop;
+        goto label8;
+
+     label7:
+        nop;
+        temp$11 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(ch);
+        lastChar = ch;
+
+     label8:
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label2;
+
+     label9:
+        nop;
+        temp$14 = virtualinvoke buffer.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$14;
+    }
+}

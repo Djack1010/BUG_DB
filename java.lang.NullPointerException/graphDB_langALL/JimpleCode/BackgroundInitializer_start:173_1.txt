@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public synchronized boolean start()
+    {
+        org.apache.commons.lang3.concurrent.BackgroundInitializer this;
+        boolean temp$0, temp$6, temp$7;
+        java.util.concurrent.ExecutorService tempExec, temp$1, temp$2, temp$3;
+        java.util.concurrent.Callable temp$4;
+        java.util.concurrent.Future temp$5;
+
+        this := @this: org.apache.commons.lang3.concurrent.BackgroundInitializer;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: boolean isStarted()>();
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService getExternalExecutor()>();
+        this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor> = temp$1;
+        temp$2 = null;
+        tempExec = temp$2;
+        nop;
+        temp$3 = this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.ExecutorService executor>;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.Callable createTask(java.util.concurrent.ExecutorService)>(tempExec);
+        temp$5 = interfaceinvoke temp$3.<java.util.concurrent.ExecutorService: java.util.concurrent.Future submit(java.util.concurrent.Callable)>(temp$4);
+        this.<org.apache.commons.lang3.concurrent.BackgroundInitializer: java.util.concurrent.Future future> = temp$5;
+        temp$6 = 1;
+        return temp$6;
+
+     label1:
+        nop;
+        temp$7 = 0;
+        return temp$7;
+    }
+}

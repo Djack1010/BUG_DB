@@ -1,0 +1,92 @@
+public class WrapClass 
+{
+    public static java.lang.String toLongString(java.lang.reflect.TypeVariable)
+    {
+        java.lang.reflect.TypeVariable var, temp$2;
+        java.lang.Object[] temp$0;
+        java.lang.Object temp$1;
+        java.lang.StringBuilder buf, temp$3, temp$8, temp$10, temp$11, temp$16, temp$17, temp$18, temp$20;
+        java.lang.reflect.GenericDeclaration d, temp$4;
+        boolean temp$5, temp$13;
+        java.lang.Class c, temp$6, temp$12;
+        java.lang.String temp$7, temp$9, temp$15, temp$19, temp$21;
+        java.lang.reflect.Type temp$14;
+
+        var := @parameter0: java.lang.reflect.TypeVariable;
+        temp$0 = newarray (java.lang.Object)[0];
+        temp$1 = staticinvoke <org.apache.commons.lang3.Validate: java.lang.Object notNull(java.lang.Object,java.lang.String,java.lang.Object[])>(var, "var is null", temp$0);
+        temp$2 = (java.lang.reflect.TypeVariable) temp$1;
+        temp$3 = new java.lang.StringBuilder;
+        specialinvoke temp$3.<java.lang.StringBuilder: void <init>()>();
+        buf = temp$3;
+        temp$4 = interfaceinvoke var.<java.lang.reflect.TypeVariable: java.lang.reflect.GenericDeclaration getGenericDeclaration()>();
+        d = temp$4;
+        temp$5 = d instanceof java.lang.Class;
+        if temp$5 == 0 goto label6;
+
+        goto label0;
+
+     label0:
+        nop;
+        c = null;
+
+     label1:
+        nop;
+        goto label2;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke c.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if temp$6 == null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke c.<java.lang.Class: java.lang.String getName()>();
+        temp$8 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.String)>(0, temp$7);
+        goto label5;
+
+     label4:
+        nop;
+        temp$9 = virtualinvoke c.<java.lang.Class: java.lang.String getSimpleName()>();
+        temp$10 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.String)>(0, temp$9);
+        temp$11 = virtualinvoke temp$10.<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char)>(0, 46);
+        temp$12 = virtualinvoke c.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        c = temp$12;
+        goto label1;
+
+     label5:
+        nop;
+        goto label10;
+
+     label6:
+        nop;
+        temp$13 = d instanceof java.lang.reflect.Type;
+        if temp$13 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$14 = (java.lang.reflect.Type) d;
+        temp$15 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String toString(java.lang.reflect.Type)>(temp$14);
+        temp$16 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$15);
+        goto label9;
+
+     label8:
+        nop;
+        temp$17 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(d);
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        temp$18 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(58);
+        temp$19 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.String typeVariableToString(java.lang.reflect.TypeVariable)>(var);
+        temp$20 = virtualinvoke temp$18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$19);
+        temp$21 = virtualinvoke temp$20.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$21;
+    }
+}

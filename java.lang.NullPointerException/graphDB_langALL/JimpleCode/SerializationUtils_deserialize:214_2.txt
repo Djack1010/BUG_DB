@@ -1,0 +1,119 @@
+public class WrapClass 
+{
+    public static java.lang.Object deserialize(java.io.InputStream)
+    {
+        java.io.InputStream inputStream;
+        java.lang.IllegalArgumentException temp$0;
+        java.io.ObjectInputStream in;
+        java.lang.Object obj, temp$1;
+        java.io.IOException ex, ex, ex;
+        java.lang.ClassCastException ex;
+        org.apache.commons.lang3.SerializationException temp$2, temp$3, temp$4;
+        java.lang.ClassNotFoundException ex;
+        java.lang.Throwable temp$5;
+
+        inputStream := @parameter0: java.io.InputStream;
+        if inputStream == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The InputStream must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        in = null;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke in.<java.io.ObjectInputStream: java.lang.Object readObject()>();
+        obj = temp$1;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        if in != null goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        virtualinvoke in.<java.io.ObjectInputStream: void close()>();
+
+     label6:
+        nop;
+        goto label8;
+
+     label7:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label8;
+
+     label8:
+        nop;
+        return obj;
+
+     label9:
+        nop;
+        ex := @caughtexception;
+        temp$2 = new org.apache.commons.lang3.SerializationException;
+        specialinvoke temp$2.<org.apache.commons.lang3.SerializationException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$2;
+
+     label10:
+        nop;
+        ex := @caughtexception;
+        temp$3 = new org.apache.commons.lang3.SerializationException;
+        specialinvoke temp$3.<org.apache.commons.lang3.SerializationException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$3;
+
+     label11:
+        nop;
+        ex := @caughtexception;
+        temp$4 = new org.apache.commons.lang3.SerializationException;
+        specialinvoke temp$4.<org.apache.commons.lang3.SerializationException: void <init>(java.lang.Throwable)>(ex);
+        throw temp$4;
+
+     label12:
+        nop;
+        temp$5 := @caughtexception;
+
+     label13:
+        nop;
+        if in != null goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        virtualinvoke in.<java.io.ObjectInputStream: void close()>();
+
+     label15:
+        nop;
+        goto label17;
+
+     label16:
+        nop;
+        ex := @caughtexception;
+        nop;
+        goto label17;
+
+     label17:
+        nop;
+        throw temp$5;
+
+        catch java.io.IOException from label4 to label7 with label7;
+        catch java.io.IOException from label13 to label16 with label16;
+        catch java.lang.ClassCastException from label2 to label3 with label9;
+        catch java.lang.ClassNotFoundException from label2 to label3 with label10;
+        catch java.io.IOException from label2 to label3 with label11;
+        catch java.lang.Throwable from label2 to label3 with label12;
+        catch java.lang.Throwable from label9 to label12 with label12;
+    }
+}

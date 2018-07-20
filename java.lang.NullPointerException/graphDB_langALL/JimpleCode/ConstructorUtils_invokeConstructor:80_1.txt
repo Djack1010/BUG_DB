@@ -1,0 +1,18 @@
+public class WrapClass 
+{
+    public static transient java.lang.Object invokeConstructor(java.lang.Class, java.lang.Object[]) throws java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException, java.lang.InstantiationException
+    {
+        java.lang.Class 'cls';
+        java.lang.Object[] args, temp$0;
+        java.lang.Class[] parameterTypes;
+        java.lang.Object temp$1;
+
+        'cls' := @parameter0: java.lang.Class;
+        args := @parameter1: java.lang.Object[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object[] nullToEmpty(java.lang.Object[])>(args);
+        args = temp$0;
+        parameterTypes = null;
+        temp$1 = staticinvoke <org.apache.commons.lang3.reflect.ConstructorUtils: java.lang.Object invokeConstructor(java.lang.Class,java.lang.Object[],java.lang.Class[])>('cls', args, parameterTypes);
+        return temp$1;
+    }
+}

@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.builder.ToStringBuilder append(char[])
+    {
+        org.apache.commons.lang3.builder.ToStringBuilder this;
+        char[] array;
+        org.apache.commons.lang3.builder.ToStringStyle temp$0;
+        java.lang.StringBuffer temp$1;
+
+        this := @this: org.apache.commons.lang3.builder.ToStringBuilder;
+        array := @parameter0: char[];
+        temp$0 = this.<org.apache.commons.lang3.builder.ToStringBuilder: org.apache.commons.lang3.builder.ToStringStyle style>;
+        temp$1 = this.<org.apache.commons.lang3.builder.ToStringBuilder: java.lang.StringBuffer buffer>;
+        virtualinvoke temp$0.<org.apache.commons.lang3.builder.ToStringStyle: void append(java.lang.StringBuffer,java.lang.String,char[],java.lang.Boolean)>(temp$1, null, array, null);
+        return this;
+    }
+}

@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    public static boolean containsNone(java.lang.CharSequence, java.lang.String)
+    {
+        java.lang.CharSequence cs;
+        java.lang.String invalidChars;
+        char[] temp$0;
+        boolean temp$1;
+
+        cs := @parameter0: java.lang.CharSequence;
+        invalidChars := @parameter1: java.lang.String;
+        if cs == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if invalidChars == null goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = virtualinvoke invalidChars.<java.lang.String: char[] toCharArray()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean containsNone(java.lang.CharSequence,char[])>(cs, temp$0);
+        return temp$1;
+    }
+}

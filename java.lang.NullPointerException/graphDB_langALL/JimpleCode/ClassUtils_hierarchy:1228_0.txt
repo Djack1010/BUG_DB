@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static java.lang.Iterable hierarchy(java.lang.Class)
+    {
+        java.lang.Class type;
+        org.apache.commons.lang3.ClassUtils$Interfaces temp$0;
+        java.lang.Iterable temp$1;
+
+        type := @parameter0: java.lang.Class;
+        temp$0 = <org.apache.commons.lang3.ClassUtils$Interfaces: org.apache.commons.lang3.ClassUtils$Interfaces EXCLUDE>;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ClassUtils: java.lang.Iterable hierarchy(java.lang.Class,org.apache.commons.lang3.ClassUtils$Interfaces)>(type, temp$0);
+        return temp$1;
+    }
+}

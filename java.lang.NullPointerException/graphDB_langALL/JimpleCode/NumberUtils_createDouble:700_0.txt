@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.Double createDouble(java.lang.String)
+    {
+        java.lang.String str;
+        java.lang.Double temp$0, temp$1;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.lang.Double: java.lang.Double valueOf(java.lang.String)>(str);
+        return temp$1;
+    }
+}

@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    public static boolean isInnerClass(java.lang.Class)
+    {
+        java.lang.Class 'cls', temp$0;
+        boolean temp$1;
+
+        'cls' := @parameter0: java.lang.Class;
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getEnclosingClass()>();
+        if temp$0 != null goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 1;
+
+     label3:
+        nop;
+        return temp$1;
+    }
+}

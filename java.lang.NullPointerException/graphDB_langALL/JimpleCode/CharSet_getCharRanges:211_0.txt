@@ -1,0 +1,20 @@
+public class WrapClass 
+{
+    org.apache.commons.lang3.CharRange[] getCharRanges()
+    {
+        org.apache.commons.lang3.CharSet this;
+        java.util.Set temp$0, temp$1;
+        int temp$2;
+        org.apache.commons.lang3.CharRange[] temp$3, temp$5;
+        java.lang.Object[] temp$4;
+
+        this := @this: org.apache.commons.lang3.CharSet;
+        temp$0 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$1 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$2 = interfaceinvoke temp$1.<java.util.Set: int size()>();
+        temp$3 = newarray (org.apache.commons.lang3.CharRange)[temp$2];
+        temp$4 = interfaceinvoke temp$0.<java.util.Set: java.lang.Object[] toArray(java.lang.Object[])>(temp$3);
+        temp$5 = (org.apache.commons.lang3.CharRange[]) temp$4;
+        return temp$5;
+    }
+}

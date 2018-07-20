@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    public final boolean isStartedBy(java.lang.Object)
+    {
+        org.apache.commons.lang3.Range this;
+        java.lang.Object element, temp$1;
+        java.util.Comparator temp$0;
+        int temp$2;
+        boolean temp$3;
+
+        this := @this: org.apache.commons.lang3.Range;
+        element := @parameter0: java.lang.Object;
+        temp$0 = this.<org.apache.commons.lang3.Range: java.util.Comparator comparator>;
+        temp$1 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$2 = interfaceinvoke temp$0.<java.util.Comparator: int compare(java.lang.Object,java.lang.Object)>(element, temp$1);
+        if temp$2 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$3 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$3 = 1;
+
+     label2:
+        nop;
+        return temp$3;
+    }
+}

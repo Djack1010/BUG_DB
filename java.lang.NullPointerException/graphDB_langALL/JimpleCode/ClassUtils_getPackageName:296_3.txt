@@ -1,0 +1,79 @@
+public class WrapClass 
+{
+    public static java.lang.String getPackageName(java.lang.String)
+    {
+        java.lang.String className, temp$3, temp$10, temp$12, temp$13;
+        boolean temp$0;
+        char temp$1, temp$4, temp$8;
+        int temp$2, temp$5, temp$6, temp$7, temp$9, i, temp$11;
+
+        className := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(className);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke className.<java.lang.String: char charAt(int)>(0);
+        temp$2 = (int) temp$1;
+        if temp$2 == 91 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$3 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(1);
+        className = temp$3;
+        goto label2;
+
+     label4:
+        nop;
+        temp$4 = virtualinvoke className.<java.lang.String: char charAt(int)>(0);
+        temp$5 = (int) temp$4;
+        if temp$5 == 76 goto label5;
+
+        goto label7;
+
+     label5:
+        nop;
+        temp$6 = virtualinvoke className.<java.lang.String: int length()>();
+        temp$7 = temp$6 - 1;
+        temp$8 = virtualinvoke className.<java.lang.String: char charAt(int)>(temp$7);
+        temp$9 = (int) temp$8;
+        if temp$9 == 59 goto label6;
+
+        goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$10 = virtualinvoke className.<java.lang.String: java.lang.String substring(int)>(1);
+        className = temp$10;
+
+     label7:
+        nop;
+        temp$11 = virtualinvoke className.<java.lang.String: int lastIndexOf(int)>(46);
+        i = temp$11;
+        if i == -1 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$12 = <org.apache.commons.lang3.StringUtils: java.lang.String EMPTY>;
+        return temp$12;
+
+     label9:
+        nop;
+        temp$13 = virtualinvoke className.<java.lang.String: java.lang.String substring(int,int)>(0, i);
+        return temp$13;
+    }
+}

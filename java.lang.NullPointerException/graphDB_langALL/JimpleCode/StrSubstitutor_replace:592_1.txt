@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public java.lang.String replace(java.lang.Object)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        java.lang.Object source;
+        java.lang.String temp$0, temp$3;
+        org.apache.commons.lang3.text.StrBuilder buf;
+        int temp$1;
+        boolean temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        source := @parameter0: java.lang.Object;
+        if source == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        buf = null;
+        temp$1 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean substitute(org.apache.commons.lang3.text.StrBuilder,int,int)>(buf, 0, temp$1);
+        temp$3 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: java.lang.String toString()>();
+        return temp$3;
+    }
+}

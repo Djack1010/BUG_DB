@@ -1,0 +1,51 @@
+public class WrapClass 
+{
+    public static transient boolean isAnyBlank(java.lang.CharSequence[])
+    {
+        java.lang.CharSequence[] css;
+        boolean temp$0, temp$4, temp$5, temp$6;
+        int temp$1, temp$2;
+        java.lang.CharSequence cs, temp$3;
+
+        css := @parameter0: java.lang.CharSequence[];
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(java.lang.Object[])>(css);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$1 = 0;
+
+     label2:
+        nop;
+        temp$2 = lengthof css;
+        if temp$1 >= temp$2 goto label5;
+
+        temp$3 = css[temp$1];
+        cs = temp$3;
+        temp$4 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isBlank(java.lang.CharSequence)>(cs);
+        if temp$4 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+
+     label4:
+        nop;
+        nop;
+        temp$1 = temp$1 + 1;
+        goto label2;
+
+     label5:
+        nop;
+        temp$6 = 0;
+        return temp$6;
+    }
+}

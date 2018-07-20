@@ -1,0 +1,35 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$4;
+        java.lang.String str;
+        int strLen, temp$0, len, temp$1, temp$2, temp$3, temp$6, temp$7;
+        char[] temp$5;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: java.lang.String;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$0;
+        if strLen > 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$1;
+        temp$2 = len;
+        temp$3 = temp$2 + strLen;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$3);
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        virtualinvoke str.<java.lang.String: void getChars(int,int,char[],int)>(0, strLen, temp$5, len);
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$7 = temp$6 + strLen;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$7;
+
+     label1:
+        nop;
+        return this;
+    }
+}

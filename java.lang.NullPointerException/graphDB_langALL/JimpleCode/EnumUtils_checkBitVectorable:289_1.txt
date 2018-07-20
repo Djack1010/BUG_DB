@@ -1,0 +1,42 @@
+public class WrapClass 
+{
+    private static final java.lang.Class checkBitVectorable(java.lang.Class)
+    {
+        java.lang.Class enumClass;
+        java.lang.Enum[] constants;
+        int temp$0, temp$3;
+        boolean temp$1;
+        java.lang.Object[] temp$2;
+        java.lang.Integer temp$4, temp$6;
+        java.lang.String temp$5;
+
+        enumClass := @parameter0: java.lang.Class;
+        constants = null;
+        temp$0 = lengthof constants;
+        if temp$0 <= 64 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[3];
+        temp$3 = lengthof constants;
+        temp$4 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$3);
+        temp$2[0] = temp$4;
+        temp$5 = virtualinvoke enumClass.<java.lang.Class: java.lang.String getSimpleName()>();
+        temp$2[1] = temp$5;
+        temp$6 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(64);
+        temp$2[2] = temp$6;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Cannot store %s %s values in %s bits", temp$2);
+        return enumClass;
+    }
+}

@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public static java.lang.String random(int, java.lang.String)
+    {
+        int count;
+        java.lang.String chars, temp$1;
+        char[] temp$0;
+
+        count := @parameter0: int;
+        chars := @parameter1: java.lang.String;
+        temp$0 = virtualinvoke chars.<java.lang.String: char[] toCharArray()>();
+        temp$1 = staticinvoke <org.apache.commons.lang3.RandomStringUtils: java.lang.String random(int,char[])>(count, temp$0);
+        return temp$1;
+    }
+}

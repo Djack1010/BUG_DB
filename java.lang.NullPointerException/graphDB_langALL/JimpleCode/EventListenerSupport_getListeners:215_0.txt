@@ -1,0 +1,15 @@
+public class WrapClass 
+{
+    public java.lang.Object[] getListeners()
+    {
+        org.apache.commons.lang3.event.EventListenerSupport this;
+        java.util.List temp$0;
+        java.lang.Object[] temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.event.EventListenerSupport;
+        temp$0 = this.<org.apache.commons.lang3.event.EventListenerSupport: java.util.List listeners>;
+        temp$1 = this.<org.apache.commons.lang3.event.EventListenerSupport: java.lang.Object[] prototypeArray>;
+        temp$2 = interfaceinvoke temp$0.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$1);
+        return temp$2;
+    }
+}

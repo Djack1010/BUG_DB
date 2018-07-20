@@ -1,0 +1,75 @@
+public class WrapClass 
+{
+    protected java.util.List tokenize(char[], int, int)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        char[] srcChars;
+        int offset, count, pos, temp$3;
+        java.util.List temp$0, temp$1, tokenList;
+        org.apache.commons.lang3.text.StrBuilder buf, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        srcChars := @parameter0: char[];
+        offset := @parameter1: int;
+        count := @parameter2: int;
+        if srcChars == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        if count == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$0 = staticinvoke <java.util.Collections: java.util.List emptyList()>();
+        temp$1 = (java.util.List) temp$0;
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = new org.apache.commons.lang3.text.StrBuilder;
+        specialinvoke temp$2.<org.apache.commons.lang3.text.StrBuilder: void <init>()>();
+        buf = temp$2;
+        tokenList = null;
+        pos = offset;
+
+     label3:
+        nop;
+        if pos >= 0 goto label4;
+
+        goto label8;
+
+     label4:
+        nop;
+        if pos < count goto label5;
+
+        goto label8;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: int readNextToken(char[],int,int,org.apache.commons.lang3.text.StrBuilder,java.util.List)>(srcChars, pos, count, buf, tokenList);
+        pos = temp$3;
+        if pos >= count goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void addToken(java.util.List,java.lang.String)>(tokenList, "");
+
+     label7:
+        nop;
+        goto label3;
+
+     label8:
+        nop;
+        return tokenList;
+    }
+}

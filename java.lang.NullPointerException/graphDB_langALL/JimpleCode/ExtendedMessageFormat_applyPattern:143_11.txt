@@ -1,0 +1,279 @@
+public class WrapClass 
+{
+    public final void applyPattern(java.lang.String)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.lang.String pattern, temp$1, formatDescription, temp$24, temp$29, temp$42, temp$53, temp$54, temp$55;
+        java.util.Map temp$0;
+        java.util.ArrayList foundFormats, temp$2, foundDescriptions, temp$3;
+        java.lang.StringBuilder stripCustom, temp$4, temp$10, temp$16, temp$17, temp$26, temp$27, temp$47;
+        int temp$5, fmtCount, temp$8, temp$9, temp$11, temp$12, start, temp$13, index, temp$15, temp$19, temp$20, temp$22, temp$31, temp$33, temp$36, temp$37, temp$39, temp$44, temp$45, temp$50, temp$51, i, temp$64, temp$65, temp$66;
+        java.text.ParsePosition pos, temp$6, temp$14, temp$23, temp$48;
+        char[] c, temp$7, temp$18, temp$35, temp$43, temp$49;
+        java.text.Format format, temp$25, f, temp$62;
+        char temp$21, temp$38, temp$46, temp$52;
+        boolean temp$28, temp$30, temp$32, temp$34, temp$56, temp$60;
+        java.lang.IllegalArgumentException temp$40;
+        java.lang.StringBuffer temp$41;
+        java.text.Format[] origFormats, temp$57, temp$63;
+        java.util.Iterator it, temp$58, temp$59;
+        java.lang.Object temp$61;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pattern := @parameter0: java.lang.String;
+        temp$0 = this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.util.Map registry>;
+        if temp$0 == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        specialinvoke this.<java.text.MessageFormat: void applyPattern(java.lang.String)>(pattern);
+        temp$1 = specialinvoke this.<java.text.MessageFormat: java.lang.String toPattern()>();
+        this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.String toPattern> = temp$1;
+        return;
+
+     label1:
+        nop;
+        temp$2 = new java.util.ArrayList;
+        specialinvoke temp$2.<java.util.ArrayList: void <init>()>();
+        foundFormats = temp$2;
+        temp$3 = new java.util.ArrayList;
+        specialinvoke temp$3.<java.util.ArrayList: void <init>()>();
+        foundDescriptions = temp$3;
+        temp$4 = new java.lang.StringBuilder;
+        temp$5 = virtualinvoke pattern.<java.lang.String: int length()>();
+        specialinvoke temp$4.<java.lang.StringBuilder: void <init>(int)>(temp$5);
+        stripCustom = temp$4;
+        temp$6 = new java.text.ParsePosition;
+        specialinvoke temp$6.<java.text.ParsePosition: void <init>(int)>(0);
+        pos = temp$6;
+        temp$7 = virtualinvoke pattern.<java.lang.String: char[] toCharArray()>();
+        c = temp$7;
+        fmtCount = 0;
+
+     label2:
+        nop;
+        temp$8 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$9 = virtualinvoke pattern.<java.lang.String: int length()>();
+        if temp$8 < temp$9 goto label3;
+
+        goto label24;
+
+     label3:
+        nop;
+        goto label22;
+
+     label4:
+        nop;
+        temp$10 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.StringBuilder appendQuotedString(java.lang.String,java.text.ParsePosition,java.lang.StringBuilder)>(pattern, pos, stripCustom);
+        goto label23;
+
+     label5:
+        nop;
+        temp$11 = fmtCount;
+        temp$12 = temp$11 + 1;
+        fmtCount = temp$12;
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void seekNonWs(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+        temp$13 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        start = temp$13;
+        temp$14 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        temp$15 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: int readArgumentIndex(java.lang.String,java.text.ParsePosition)>(pattern, temp$14);
+        index = temp$15;
+        temp$16 = virtualinvoke stripCustom.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(123);
+        temp$17 = virtualinvoke temp$16.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(index);
+        virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: void seekNonWs(java.lang.String,java.text.ParsePosition)>(pattern, pos);
+        format = null;
+        formatDescription = null;
+        temp$18 = c;
+        temp$19 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$20 = temp$19;
+        temp$21 = temp$18[temp$20];
+        temp$22 = (int) temp$21;
+        if temp$22 == 44 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$23 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        temp$24 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.String parseFormatDescription(java.lang.String,java.text.ParsePosition)>(pattern, temp$23);
+        formatDescription = temp$24;
+        temp$25 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.Format getFormat(java.lang.String)>(formatDescription);
+        format = temp$25;
+        if format == null goto label7;
+
+        goto label8;
+
+     label7:
+        nop;
+        temp$26 = virtualinvoke stripCustom.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44);
+        temp$27 = virtualinvoke temp$26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(formatDescription);
+
+     label8:
+        nop;
+
+     label9:
+        nop;
+        temp$28 = virtualinvoke foundFormats.<java.util.ArrayList: boolean add(java.lang.Object)>(format);
+        if format == null goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$29 = null;
+        goto label12;
+
+     label11:
+        nop;
+        temp$29 = formatDescription;
+
+     label12:
+        nop;
+        temp$30 = virtualinvoke foundDescriptions.<java.util.ArrayList: boolean add(java.lang.Object)>(temp$29);
+        temp$31 = virtualinvoke foundFormats.<java.util.ArrayList: int size()>();
+        if temp$31 == fmtCount goto label14;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$32 = 0;
+        goto label15;
+
+     label14:
+        nop;
+        temp$32 = 1;
+
+     label15:
+        nop;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean)>(temp$32);
+        temp$33 = virtualinvoke foundDescriptions.<java.util.ArrayList: int size()>();
+        if temp$33 == fmtCount goto label17;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$34 = 0;
+        goto label18;
+
+     label17:
+        nop;
+        temp$34 = 1;
+
+     label18:
+        nop;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean)>(temp$34);
+        temp$35 = c;
+        temp$36 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$37 = temp$36;
+        temp$38 = temp$35[temp$37];
+        temp$39 = (int) temp$38;
+        if temp$39 != 125 goto label19;
+
+        goto label20;
+
+     label19:
+        nop;
+        temp$40 = new java.lang.IllegalArgumentException;
+        temp$41 = new java.lang.StringBuffer;
+        specialinvoke temp$41.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>("Unreadable format element at position ");
+        virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.StringBuffer append(int)>(start);
+        temp$42 = virtualinvoke temp$41.<java.lang.StringBuffer: java.lang.String toString()>();
+        specialinvoke temp$40.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(temp$42);
+        throw temp$40;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        temp$43 = c;
+        temp$44 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$45 = temp$44;
+        temp$46 = temp$43[temp$45];
+        temp$47 = virtualinvoke stripCustom.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$46);
+        temp$48 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.ParsePosition next(java.text.ParsePosition)>(pos);
+        goto label23;
+
+     label22:
+        nop;
+        temp$49 = c;
+        temp$50 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$51 = temp$50;
+        temp$52 = temp$49[temp$51];
+        nop;
+        lookupswitch(temp$52)
+        {
+            case 39: goto label4;
+            case 123: goto label5;
+            default: goto label21;
+        };
+
+     label23:
+        nop;
+        goto label2;
+
+     label24:
+        nop;
+        temp$53 = virtualinvoke stripCustom.<java.lang.StringBuilder: java.lang.String toString()>();
+        specialinvoke this.<java.text.MessageFormat: void applyPattern(java.lang.String)>(temp$53);
+        temp$54 = specialinvoke this.<java.text.MessageFormat: java.lang.String toPattern()>();
+        temp$55 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.String insertFormats(java.lang.String,java.util.ArrayList)>(temp$54, foundDescriptions);
+        this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.lang.String toPattern> = temp$55;
+        temp$56 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: boolean containsElements(java.util.Collection)>(foundFormats);
+        if temp$56 == 0 goto label31;
+
+        goto label25;
+
+     label25:
+        nop;
+        temp$57 = virtualinvoke this.<org.apache.commons.lang3.text.ExtendedMessageFormat: java.text.Format[] getFormats()>();
+        origFormats = temp$57;
+        i = 1;
+        temp$58 = virtualinvoke foundFormats.<java.util.ArrayList: java.util.Iterator iterator()>();
+        temp$59 = (java.util.Iterator) temp$58;
+        it = temp$59;
+
+     label26:
+        nop;
+        temp$60 = interfaceinvoke it.<java.util.Iterator: boolean hasNext()>();
+        if temp$60 == 0 goto label30;
+
+        goto label27;
+
+     label27:
+        nop;
+        temp$61 = interfaceinvoke it.<java.util.Iterator: java.lang.Object next()>();
+        temp$62 = (java.text.Format) temp$61;
+        f = temp$62;
+        if f != null goto label28;
+
+        goto label29;
+
+     label28:
+        nop;
+        temp$63 = origFormats;
+        temp$64 = i;
+        temp$63[temp$64] = f;
+
+     label29:
+        nop;
+        nop;
+        temp$65 = i;
+        temp$66 = temp$65 + 1;
+        i = temp$66;
+        goto label26;
+
+     label30:
+        nop;
+        specialinvoke this.<java.text.MessageFormat: void setFormats(java.text.Format[])>(origFormats);
+
+     label31:
+        nop;
+        return;
+    }
+}

@@ -1,0 +1,36 @@
+public class WrapClass 
+{
+    public java.util.Set getContextLabels()
+    {
+        org.apache.commons.lang3.exception.DefaultExceptionContext this;
+        java.util.Set labels;
+        java.util.List temp$0;
+        java.util.Iterator temp$1;
+        org.apache.commons.lang3.tuple.Pair pair;
+        boolean temp$2, temp$6;
+        java.lang.Object temp$3, temp$4;
+        java.lang.String temp$5;
+
+        this := @this: org.apache.commons.lang3.exception.DefaultExceptionContext;
+        labels = null;
+        temp$0 = this.<org.apache.commons.lang3.exception.DefaultExceptionContext: java.util.List contextValues>;
+        temp$1 = interfaceinvoke temp$0.<java.lang.Iterable: java.util.Iterator iterator()>();
+
+     label0:
+        nop;
+        temp$2 = interfaceinvoke temp$1.<java.util.Iterator: boolean hasNext()>();
+        if temp$2 == 0 goto label1;
+
+        temp$3 = interfaceinvoke temp$1.<java.util.Iterator: java.lang.Object next()>();
+        pair = (org.apache.commons.lang3.tuple.Pair) temp$3;
+        temp$4 = virtualinvoke pair.<org.apache.commons.lang3.tuple.Pair: java.lang.Object getKey()>();
+        temp$5 = (java.lang.String) temp$4;
+        temp$6 = interfaceinvoke labels.<java.util.Set: boolean add(java.lang.Object)>(temp$5);
+        nop;
+        goto label0;
+
+     label1:
+        nop;
+        return labels;
+    }
+}

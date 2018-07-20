@@ -1,0 +1,160 @@
+public class WrapClass 
+{
+    public static transient boolean reflectionEquals(java.lang.Object, java.lang.Object, boolean, java.lang.Class, java.lang.String[])
+    {
+        java.lang.Object lhs, rhs;
+        boolean testTransients, temp$0, temp$1, temp$4, temp$5, temp$6, temp$7, temp$8, temp$10, temp$14, temp$15;
+        java.lang.Class reflectUpToClass, lhsClass, temp$2, rhsClass, temp$3, testClass, temp$12, temp$13;
+        java.lang.String[] excludeFields;
+        org.apache.commons.lang3.builder.EqualsBuilder equalsBuilder, temp$9, temp$11;
+        java.lang.IllegalArgumentException e;
+
+        lhs := @parameter0: java.lang.Object;
+        rhs := @parameter1: java.lang.Object;
+        testTransients := @parameter2: boolean;
+        reflectUpToClass := @parameter3: java.lang.Class;
+        excludeFields := @parameter4: java.lang.String[];
+        if lhs == rhs goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if rhs == null goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        return temp$1;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke lhs.<java.lang.Object: java.lang.Class getClass()>();
+        lhsClass = temp$2;
+        temp$3 = virtualinvoke rhs.<java.lang.Object: java.lang.Class getClass()>();
+        rhsClass = temp$3;
+        temp$4 = virtualinvoke lhsClass.<java.lang.Class: boolean isInstance(java.lang.Object)>(rhs);
+        if temp$4 == 0 goto label7;
+
+        goto label4;
+
+     label4:
+        nop;
+        testClass = lhsClass;
+        temp$5 = virtualinvoke rhsClass.<java.lang.Class: boolean isInstance(java.lang.Object)>(lhs);
+        if temp$5 == 0 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        testClass = rhsClass;
+
+     label6:
+        nop;
+        goto label13;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke rhsClass.<java.lang.Class: boolean isInstance(java.lang.Object)>(lhs);
+        if temp$6 == 0 goto label11;
+
+        goto label8;
+
+     label8:
+        nop;
+        testClass = rhsClass;
+        temp$7 = virtualinvoke lhsClass.<java.lang.Class: boolean isInstance(java.lang.Object)>(rhs);
+        if temp$7 == 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        testClass = lhsClass;
+
+     label10:
+        nop;
+        goto label12;
+
+     label11:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+
+     label12:
+        nop;
+
+     label13:
+        nop;
+        temp$9 = new org.apache.commons.lang3.builder.EqualsBuilder;
+        specialinvoke temp$9.<org.apache.commons.lang3.builder.EqualsBuilder: void <init>()>();
+        equalsBuilder = temp$9;
+
+     label14:
+        nop;
+        temp$10 = virtualinvoke testClass.<java.lang.Class: boolean isArray()>();
+        if temp$10 == 0 goto label16;
+
+        goto label15;
+
+     label15:
+        nop;
+        temp$11 = virtualinvoke equalsBuilder.<org.apache.commons.lang3.builder.EqualsBuilder: org.apache.commons.lang3.builder.EqualsBuilder append(java.lang.Object,java.lang.Object)>(lhs, rhs);
+        goto label21;
+
+     label16:
+        nop;
+        staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: void reflectionAppend(java.lang.Object,java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.EqualsBuilder,boolean,java.lang.String[])>(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);
+
+     label17:
+        nop;
+        temp$12 = virtualinvoke testClass.<java.lang.Class: java.lang.Class getSuperclass()>();
+        if temp$12 != null goto label18;
+
+        goto label20;
+
+     label18:
+        nop;
+        if testClass != reflectUpToClass goto label19;
+
+        goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        temp$13 = virtualinvoke testClass.<java.lang.Class: java.lang.Class getSuperclass()>();
+        testClass = temp$13;
+        staticinvoke <org.apache.commons.lang3.builder.EqualsBuilder: void reflectionAppend(java.lang.Object,java.lang.Object,java.lang.Class,org.apache.commons.lang3.builder.EqualsBuilder,boolean,java.lang.String[])>(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);
+        goto label17;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        goto label23;
+
+     label22:
+        nop;
+        e := @caughtexception;
+        temp$14 = 0;
+        nop;
+        return temp$14;
+
+     label23:
+        nop;
+        temp$15 = virtualinvoke equalsBuilder.<org.apache.commons.lang3.builder.EqualsBuilder: boolean isEquals()>();
+        return temp$15;
+
+        catch java.lang.IllegalArgumentException from label14 to label22 with label22;
+    }
+}

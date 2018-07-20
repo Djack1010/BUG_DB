@@ -1,0 +1,41 @@
+public class WrapClass 
+{
+    public static boolean isValidEnum(java.lang.Class, java.lang.String)
+    {
+        java.lang.Class enumClass;
+        java.lang.String enumName;
+        java.lang.Enum temp$0;
+        boolean temp$1, temp$2;
+        java.lang.IllegalArgumentException ex;
+
+        enumClass := @parameter0: java.lang.Class;
+        enumName := @parameter1: java.lang.String;
+        if enumName == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$0 = staticinvoke <java.lang.Enum: java.lang.Enum valueOf(java.lang.Class,java.lang.String)>(enumClass, enumName);
+        temp$1 = 1;
+
+     label3:
+        nop;
+        return temp$1;
+
+     label4:
+        nop;
+        ex := @caughtexception;
+        temp$2 = 0;
+        nop;
+        return temp$2;
+
+        catch java.lang.IllegalArgumentException from label2 to label3 with label4;
+    }
+}

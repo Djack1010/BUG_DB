@@ -1,0 +1,28 @@
+public class WrapClass 
+{
+    public static java.lang.String stripAccents(java.lang.String)
+    {
+        java.lang.String input, temp$0, decomposed, temp$3;
+        java.util.regex.Pattern pattern, temp$1;
+        java.util.regex.Matcher temp$2;
+
+        input := @parameter0: java.lang.String;
+        if input == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>("\\p{InCombiningDiacriticalMarks}+");
+        pattern = temp$1;
+        decomposed = null;
+        temp$2 = virtualinvoke pattern.<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>(decomposed);
+        temp$3 = virtualinvoke temp$2.<java.util.regex.Matcher: java.lang.String replaceAll(java.lang.String)>("");
+        return temp$3;
+    }
+}

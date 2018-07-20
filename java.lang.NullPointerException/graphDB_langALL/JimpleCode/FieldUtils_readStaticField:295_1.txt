@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static java.lang.Object readStaticField(java.lang.reflect.Field, boolean) throws java.lang.IllegalAccessException
+    {
+        java.lang.reflect.Field field;
+        boolean forceAccess, temp$1;
+        int temp$0;
+        java.lang.Object[] temp$2;
+        java.lang.String temp$3;
+        java.lang.Object temp$4;
+
+        field := @parameter0: java.lang.reflect.Field;
+        forceAccess := @parameter1: boolean;
+        temp$0 = virtualinvoke field.<java.lang.reflect.Field: int getModifiers()>();
+        temp$1 = staticinvoke <java.lang.reflect.Modifier: boolean isStatic(int)>(temp$0);
+        temp$2 = newarray (java.lang.Object)[1];
+        temp$3 = virtualinvoke field.<java.lang.reflect.Field: java.lang.String getName()>();
+        temp$2[0] = temp$3;
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "The field \'%s\' is not static", temp$2);
+        temp$4 = staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: java.lang.Object readField(java.lang.reflect.Field,java.lang.Object,boolean)>(field, null, forceAccess);
+        return temp$4;
+    }
+}

@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public static java.lang.Character toCharacterObject(java.lang.String)
+    {
+        java.lang.String str;
+        boolean temp$0;
+        java.lang.Character temp$1, temp$3;
+        char temp$2;
+
+        str := @parameter0: java.lang.String;
+        temp$0 = staticinvoke <org.apache.commons.lang3.StringUtils: boolean isEmpty(java.lang.CharSequence)>(str);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = null;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: char charAt(int)>(1);
+        temp$3 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>(temp$2);
+        return temp$3;
+    }
+}

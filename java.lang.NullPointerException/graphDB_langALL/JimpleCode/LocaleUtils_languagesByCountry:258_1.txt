@@ -1,0 +1,97 @@
+public class WrapClass 
+{
+    public static java.util.List languagesByCountry(java.lang.String)
+    {
+        java.lang.String countryCode, temp$9, temp$11;
+        java.util.List temp$0, temp$1, langs, temp$4, locales, temp$5, temp$16, temp$17, temp$20, temp$23;
+        java.util.concurrent.ConcurrentMap temp$2, temp$18, temp$21;
+        java.lang.Object temp$3, temp$7, temp$19, temp$22;
+        int i, temp$6, temp$14, temp$15;
+        java.util.Locale locale, temp$8;
+        boolean temp$10, temp$12, temp$13;
+
+        countryCode := @parameter0: java.lang.String;
+        if countryCode == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = staticinvoke <java.util.Collections: java.util.List emptyList()>();
+        temp$1 = (java.util.List) temp$0;
+        return temp$1;
+
+     label1:
+        nop;
+        temp$2 = <org.apache.commons.lang3.LocaleUtils: java.util.concurrent.ConcurrentMap cLanguagesByCountry>;
+        temp$3 = interfaceinvoke temp$2.<java.util.Map: java.lang.Object get(java.lang.Object)>(countryCode);
+        temp$4 = (java.util.List) temp$3;
+        langs = temp$4;
+        if langs == null goto label2;
+
+        goto label9;
+
+     label2:
+        nop;
+        temp$5 = staticinvoke <org.apache.commons.lang3.LocaleUtils: java.util.List availableLocaleList()>();
+        locales = temp$5;
+        i = 0;
+
+     label3:
+        nop;
+        temp$6 = interfaceinvoke locales.<java.util.List: int size()>();
+        if i < temp$6 goto label4;
+
+        goto label8;
+
+     label4:
+        nop;
+        temp$7 = interfaceinvoke locales.<java.util.List: java.lang.Object get(int)>(i);
+        temp$8 = (java.util.Locale) temp$7;
+        locale = temp$8;
+        temp$9 = virtualinvoke locale.<java.util.Locale: java.lang.String getCountry()>();
+        temp$10 = virtualinvoke countryCode.<java.lang.String: boolean equals(java.lang.Object)>(temp$9);
+        if temp$10 == 0 goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$11 = virtualinvoke locale.<java.util.Locale: java.lang.String getVariant()>();
+        temp$12 = virtualinvoke temp$11.<java.lang.String: boolean isEmpty()>();
+        if temp$12 == 0 goto label7;
+
+        goto label6;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$13 = interfaceinvoke langs.<java.util.List: boolean add(java.lang.Object)>(locale);
+
+     label7:
+        nop;
+        nop;
+        temp$14 = i;
+        temp$15 = temp$14 + 1;
+        i = temp$15;
+        goto label3;
+
+     label8:
+        nop;
+        temp$16 = staticinvoke <java.util.Collections: java.util.List unmodifiableList(java.util.List)>(langs);
+        temp$17 = (java.util.List) temp$16;
+        langs = temp$17;
+        temp$18 = <org.apache.commons.lang3.LocaleUtils: java.util.concurrent.ConcurrentMap cLanguagesByCountry>;
+        temp$19 = interfaceinvoke temp$18.<java.util.concurrent.ConcurrentMap: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(countryCode, langs);
+        temp$20 = (java.util.List) temp$19;
+        temp$21 = <org.apache.commons.lang3.LocaleUtils: java.util.concurrent.ConcurrentMap cLanguagesByCountry>;
+        temp$22 = interfaceinvoke temp$21.<java.util.Map: java.lang.Object get(java.lang.Object)>(countryCode);
+        temp$23 = (java.util.List) temp$22;
+        langs = temp$23;
+
+     label9:
+        nop;
+        return langs;
+    }
+}

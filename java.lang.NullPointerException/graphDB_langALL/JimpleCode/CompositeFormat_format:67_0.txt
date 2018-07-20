@@ -1,0 +1,19 @@
+public class WrapClass 
+{
+    public java.lang.StringBuffer format(java.lang.Object, java.lang.StringBuffer, java.text.FieldPosition)
+    {
+        org.apache.commons.lang3.text.CompositeFormat this;
+        java.lang.Object obj;
+        java.lang.StringBuffer toAppendTo, temp$1;
+        java.text.FieldPosition pos;
+        java.text.Format temp$0;
+
+        this := @this: org.apache.commons.lang3.text.CompositeFormat;
+        obj := @parameter0: java.lang.Object;
+        toAppendTo := @parameter1: java.lang.StringBuffer;
+        pos := @parameter2: java.text.FieldPosition;
+        temp$0 = this.<org.apache.commons.lang3.text.CompositeFormat: java.text.Format formatter>;
+        temp$1 = virtualinvoke temp$0.<java.text.Format: java.lang.StringBuffer format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)>(obj, toAppendTo, pos);
+        return temp$1;
+    }
+}

@@ -1,0 +1,33 @@
+public class WrapClass 
+{
+    public java.lang.String replace(java.lang.StringBuffer)
+    {
+        org.apache.commons.lang3.text.StrSubstitutor this;
+        java.lang.StringBuffer source;
+        org.apache.commons.lang3.text.StrBuilder buf, temp$0, temp$2;
+        int temp$1, temp$3;
+        boolean temp$4;
+        java.lang.String temp$5;
+
+        this := @this: org.apache.commons.lang3.text.StrSubstitutor;
+        source := @parameter0: java.lang.StringBuffer;
+        if source == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = new org.apache.commons.lang3.text.StrBuilder;
+        temp$1 = virtualinvoke source.<java.lang.StringBuffer: int length()>();
+        specialinvoke temp$0.<org.apache.commons.lang3.text.StrBuilder: void <init>(int)>(temp$1);
+        temp$2 = virtualinvoke temp$0.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder append(java.lang.StringBuffer)>(source);
+        buf = temp$2;
+        temp$3 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.text.StrSubstitutor: boolean substitute(org.apache.commons.lang3.text.StrBuilder,int,int)>(buf, 0, temp$3);
+        temp$5 = virtualinvoke buf.<org.apache.commons.lang3.text.StrBuilder: java.lang.String toString()>();
+        return temp$5;
+    }
+}

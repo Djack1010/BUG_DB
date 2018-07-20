@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public static java.util.List getAllSuperclasses(java.lang.Class)
+    {
+        java.lang.Class 'cls', superclass, temp$1, temp$3;
+        java.util.List classes;
+        java.util.ArrayList temp$0;
+        boolean temp$2;
+
+        'cls' := @parameter0: java.lang.Class;
+        if 'cls' == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+
+     label1:
+        nop;
+        temp$0 = new java.util.ArrayList;
+        specialinvoke temp$0.<java.util.ArrayList: void <init>()>();
+        classes = temp$0;
+        temp$1 = virtualinvoke 'cls'.<java.lang.Class: java.lang.Class getSuperclass()>();
+        superclass = temp$1;
+
+     label2:
+        nop;
+        if superclass != null goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$2 = interfaceinvoke classes.<java.util.List: boolean add(java.lang.Object)>(superclass);
+        temp$3 = virtualinvoke superclass.<java.lang.Class: java.lang.Class getSuperclass()>();
+        superclass = temp$3;
+        goto label2;
+
+     label4:
+        nop;
+        return classes;
+    }
+}

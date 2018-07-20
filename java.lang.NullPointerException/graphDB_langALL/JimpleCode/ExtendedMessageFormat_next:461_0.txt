@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    private final java.text.ParsePosition next(java.text.ParsePosition)
+    {
+        org.apache.commons.lang3.text.ExtendedMessageFormat this;
+        java.text.ParsePosition pos;
+        int temp$0, temp$1, temp$2;
+
+        this := @this: org.apache.commons.lang3.text.ExtendedMessageFormat;
+        pos := @parameter0: java.text.ParsePosition;
+        temp$0 = virtualinvoke pos.<java.text.ParsePosition: int getIndex()>();
+        temp$1 = temp$0;
+        temp$2 = temp$1 + 1;
+        virtualinvoke pos.<java.text.ParsePosition: void setIndex(int)>(temp$2);
+        return pos;
+    }
+}
