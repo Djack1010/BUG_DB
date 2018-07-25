@@ -1,0 +1,76 @@
+public class WrapClass 
+{
+    public static void reverse(java.lang.Object[], int, int)
+    {
+        java.lang.Object[] array, temp$4, temp$7, temp$9, temp$12;
+        int startIndexInclusive, endIndexExclusive, i, temp$0, j, temp$1, temp$2, temp$3, temp$5, temp$8, temp$10, temp$13, temp$14, temp$15, temp$16, temp$17;
+        java.lang.Object tmp, temp$6, temp$11;
+
+        array := @parameter0: java.lang.Object[];
+        startIndexInclusive := @parameter1: int;
+        endIndexExclusive := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        if startIndexInclusive < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$0 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$0 = startIndexInclusive;
+
+     label4:
+        nop;
+        i = temp$0;
+        temp$1 = lengthof array;
+        temp$2 = staticinvoke <java.lang.Math: int min(int,int)>(temp$1, endIndexExclusive);
+        temp$3 = temp$2 - 0;
+        j = temp$3;
+
+     label5:
+        nop;
+        if j > i goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = array;
+        temp$5 = j;
+        temp$6 = temp$4[temp$5];
+        tmp = temp$6;
+        temp$7 = array;
+        temp$8 = j;
+        temp$9 = array;
+        temp$10 = i;
+        temp$11 = temp$9[temp$10];
+        temp$7[temp$8] = temp$11;
+        temp$12 = array;
+        temp$13 = i;
+        temp$12[temp$13] = tmp;
+        temp$14 = j;
+        temp$15 = temp$14 + -1;
+        j = temp$15;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label5;
+
+     label7:
+        nop;
+        return;
+    }
+}

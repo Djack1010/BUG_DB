@@ -1,0 +1,16 @@
+public class WrapClass 
+{
+    public java.lang.String[] getTokenArray()
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        java.lang.String[] temp$0, temp$2;
+        java.lang.Object temp$1;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrTokenizer: void checkTokenized()>();
+        temp$0 = this.<org.apache.commons.lang3.text.StrTokenizer: java.lang.String[] tokens>;
+        temp$1 = virtualinvoke temp$0.<java.lang.Object: java.lang.Object clone()>();
+        temp$2 = (java.lang.String[]) temp$1;
+        return temp$2;
+    }
+}

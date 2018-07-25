@@ -1,0 +1,31 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder minimizeCapacity()
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        char[] temp$0, old, temp$4, temp$5;
+        int temp$1, temp$2, temp$3, temp$6;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$2 = lengthof temp$0;
+        if temp$2 > temp$1 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        old = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        temp$4 = newarray (char)[temp$3];
+        this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer> = temp$4;
+        temp$5 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(old, 0, temp$5, -1, temp$6);
+
+     label1:
+        nop;
+        return this;
+    }
+}

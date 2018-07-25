@@ -1,0 +1,130 @@
+public class WrapClass 
+{
+    public static java.lang.String[] getRootCauseStackTrace(java.lang.Throwable)
+    {
+        java.lang.Throwable throwable, temp$5, temp$11, temp$16, temp$23;
+        java.lang.String[] temp$0, temp$34, temp$36;
+        java.lang.Throwable[] throwables, temp$1, temp$2, temp$8, temp$14, temp$21;
+        int count, temp$3, temp$4, i, temp$7, temp$9, temp$10, temp$13, temp$15, temp$22, j, temp$27, temp$31, temp$32, temp$33;
+        java.util.List frames, nextTrace, temp$6, trace, temp$12;
+        java.lang.String temp$17, temp$20, temp$24, temp$25, temp$29;
+        boolean temp$18, temp$26, temp$30;
+        java.lang.StringBuffer temp$19;
+        java.lang.Object temp$28;
+        java.lang.Object[] temp$35;
+
+        throwable := @parameter0: java.lang.Throwable;
+        if throwable == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ArrayUtils: java.lang.String[] EMPTY_STRING_ARRAY>;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.Throwable[] getThrowables(java.lang.Throwable)>(throwable);
+        throwables = temp$1;
+        count = lengthof throwables;
+        frames = null;
+        temp$2 = throwables;
+        temp$3 = count - 1;
+        temp$4 = temp$3;
+        temp$5 = temp$2[temp$4];
+        temp$6 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.util.List getStackFrameList(java.lang.Throwable)>(temp$5);
+        nextTrace = temp$6;
+        i = count;
+
+     label2:
+        nop;
+        temp$7 = i + -1;
+        i = temp$7;
+        if temp$7 >= 0 goto label3;
+
+        goto label12;
+
+     label3:
+        nop;
+        trace = nextTrace;
+        if i != 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = throwables;
+        temp$9 = i - 1;
+        temp$10 = temp$9;
+        temp$11 = temp$8[temp$10];
+        temp$12 = staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: java.util.List getStackFrameList(java.lang.Throwable)>(temp$11);
+        nextTrace = temp$12;
+        staticinvoke <org.apache.commons.lang3.exception.ExceptionUtils: void removeCommonFrames(java.util.List,java.util.List)>(trace, nextTrace);
+
+     label5:
+        nop;
+        temp$13 = count - 1;
+        if i == temp$13 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$14 = throwables;
+        temp$15 = i;
+        temp$16 = temp$14[temp$15];
+        temp$17 = virtualinvoke temp$16.<java.lang.Throwable: java.lang.String toString()>();
+        temp$18 = interfaceinvoke frames.<java.util.List: boolean add(java.lang.Object)>(temp$17);
+        goto label8;
+
+     label7:
+        nop;
+        temp$19 = new java.lang.StringBuffer;
+        specialinvoke temp$19.<java.lang.StringBuffer: void <init>()>();
+        temp$20 = <org.apache.commons.lang3.exception.ExceptionUtils: java.lang.String WRAPPED_MARKER>;
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$20);
+        temp$21 = throwables;
+        temp$22 = i;
+        temp$23 = temp$21[temp$22];
+        temp$24 = virtualinvoke temp$23.<java.lang.Throwable: java.lang.String toString()>();
+        virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(temp$24);
+        temp$25 = virtualinvoke temp$19.<java.lang.StringBuffer: java.lang.String toString()>();
+        temp$26 = interfaceinvoke frames.<java.util.List: boolean add(java.lang.Object)>(temp$25);
+
+     label8:
+        nop;
+        j = 0;
+
+     label9:
+        nop;
+        temp$27 = interfaceinvoke trace.<java.util.List: int size()>();
+        if j < temp$27 goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$28 = interfaceinvoke trace.<java.util.List: java.lang.Object get(int)>(j);
+        temp$29 = (java.lang.String) temp$28;
+        temp$30 = interfaceinvoke frames.<java.util.List: boolean add(java.lang.Object)>(temp$29);
+        nop;
+        temp$31 = j;
+        temp$32 = temp$31 + 1;
+        j = temp$32;
+        goto label9;
+
+     label11:
+        nop;
+        nop;
+        goto label2;
+
+     label12:
+        nop;
+        temp$33 = interfaceinvoke frames.<java.util.List: int size()>();
+        temp$34 = newarray (java.lang.String)[temp$33];
+        temp$35 = interfaceinvoke frames.<java.util.List: java.lang.Object[] toArray(java.lang.Object[])>(temp$34);
+        temp$36 = (java.lang.String[]) temp$35;
+        return temp$36;
+    }
+}

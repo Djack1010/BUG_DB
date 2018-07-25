@@ -1,0 +1,52 @@
+public class WrapClass 
+{
+    public static transient double min(double[])
+    {
+        double[] array, temp$1, temp$4;
+        java.lang.IllegalArgumentException temp$0;
+        double min, temp$6, temp$7;
+        int temp$2, i, temp$3, temp$5, temp$8, temp$9;
+
+        array := @parameter0: double[];
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = new java.lang.IllegalArgumentException;
+        specialinvoke temp$0.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("The Array must not be null");
+        throw temp$0;
+
+     label1:
+        nop;
+        temp$1 = array;
+        temp$2 = 0;
+        min = temp$1[temp$2];
+        i = 1;
+
+     label2:
+        nop;
+        temp$3 = lengthof array;
+        if i < temp$3 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$4 = array;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = staticinvoke <org.apache.commons.lang3.math.IEEE754rUtils: double min(double,double)>(temp$6, min);
+        min = temp$7;
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        i = temp$9;
+        goto label2;
+
+     label4:
+        nop;
+        return min;
+    }
+}

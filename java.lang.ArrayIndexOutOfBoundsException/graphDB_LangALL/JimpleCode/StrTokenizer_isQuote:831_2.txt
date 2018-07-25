@@ -1,0 +1,68 @@
+public class WrapClass 
+{
+    private final boolean isQuote(char[], int, int, int, int)
+    {
+        org.apache.commons.lang3.text.StrTokenizer this;
+        char[] srcChars, temp$1, temp$5;
+        int pos, len, quoteStart, quoteLen, i, temp$0, temp$2, temp$3, temp$6, temp$7, temp$9, temp$10, temp$12, temp$13;
+        char temp$4, temp$8;
+        boolean temp$11, temp$14;
+
+        this := @this: org.apache.commons.lang3.text.StrTokenizer;
+        srcChars := @parameter0: char[];
+        pos := @parameter1: int;
+        len := @parameter2: int;
+        quoteStart := @parameter3: int;
+        quoteLen := @parameter4: int;
+        i = 0;
+
+     label0:
+        nop;
+        if i < quoteLen goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$0 = pos / i;
+        if temp$0 >= len goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = srcChars;
+        temp$2 = pos;
+        temp$3 = temp$2 + i;
+        temp$4 = temp$1[temp$3];
+        temp$5 = srcChars;
+        temp$6 = quoteStart;
+        temp$7 = temp$6 + i;
+        temp$8 = temp$5[temp$7];
+        temp$9 = (int) temp$4;
+        temp$10 = (int) temp$8;
+        if temp$9 != temp$10 goto label3;
+
+        goto label4;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label4:
+        nop;
+        nop;
+        temp$12 = i;
+        temp$13 = temp$12 + 1;
+        i = temp$13;
+        goto label0;
+
+     label5:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+    }
+}

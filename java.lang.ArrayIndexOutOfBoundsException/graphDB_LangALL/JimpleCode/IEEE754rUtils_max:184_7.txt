@@ -1,0 +1,59 @@
+public class WrapClass 
+{
+    public static transient float max(float[])
+    {
+        float[] array, temp$3, temp$6;
+        int temp$0, temp$4, j, temp$5, temp$7, temp$10, temp$11;
+        boolean temp$1;
+        java.lang.Object[] temp$2;
+        float max, temp$8, temp$9;
+
+        array := @parameter0: float[];
+        temp$0 = lengthof array;
+        if temp$0 != 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = 1;
+
+     label2:
+        nop;
+        temp$2 = newarray (java.lang.Object)[0];
+        staticinvoke <org.apache.commons.lang3.Validate: void isTrue(boolean,java.lang.String,java.lang.Object[])>(temp$1, "Array cannot be empty.", temp$2);
+        temp$3 = array;
+        temp$4 = 0;
+        max = temp$3[temp$4];
+        j = 1;
+
+     label3:
+        nop;
+        temp$5 = lengthof array;
+        if j < temp$5 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$6 = array;
+        temp$7 = j;
+        temp$8 = temp$6[temp$7];
+        temp$9 = staticinvoke <org.apache.commons.lang3.math.IEEE754rUtils: float max(float,float)>(temp$8, max);
+        max = temp$9;
+        nop;
+        temp$10 = j;
+        temp$11 = temp$10 + 1;
+        j = temp$11;
+        goto label3;
+
+     label5:
+        nop;
+        return max;
+    }
+}

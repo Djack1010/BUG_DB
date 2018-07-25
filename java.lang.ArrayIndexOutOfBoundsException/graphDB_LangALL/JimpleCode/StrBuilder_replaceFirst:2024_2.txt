@@ -1,0 +1,62 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder replaceFirst(java.lang.String, java.lang.String)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String searchStr, replaceStr;
+        int searchLen, temp$0, temp$1, index, temp$2, replaceLen, temp$3, temp$4, temp$5, temp$6;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        searchStr := @parameter0: java.lang.String;
+        replaceStr := @parameter1: java.lang.String;
+        if searchStr == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 0;
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke searchStr.<java.lang.String: int length()>();
+        temp$0 = temp$1;
+
+     label2:
+        nop;
+        searchLen = temp$0;
+        if searchLen > 0 goto label3;
+
+        goto label7;
+
+     label3:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int indexOf(java.lang.String,int)>(searchStr, 0);
+        index = temp$2;
+        if index >= 0 goto label4;
+
+        goto label6;
+
+     label4:
+        nop;
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = virtualinvoke replaceStr.<java.lang.String: int length()>();
+        temp$3 = temp$4;
+        nop;
+        replaceLen = temp$3;
+        temp$5 = index;
+        temp$6 = temp$5 + searchLen;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void replaceImpl(int,int,int,java.lang.String,int)>(index, temp$6, searchLen, replaceStr, replaceLen);
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        return this;
+    }
+}

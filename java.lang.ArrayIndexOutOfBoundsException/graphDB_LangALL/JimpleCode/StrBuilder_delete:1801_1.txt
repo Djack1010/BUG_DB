@@ -1,0 +1,25 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder delete(int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int startIndex, endIndex, len, temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        startIndex := @parameter0: int;
+        endIndex := @parameter1: int;
+        temp$0 = endIndex - startIndex;
+        len = temp$0;
+        if len > 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void deleteImpl(int,int,int)>(startIndex, endIndex, len);
+
+     label1:
+        nop;
+        return this;
+    }
+}

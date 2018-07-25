@@ -1,0 +1,85 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder deleteAll(char)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        char ch, temp$3, temp$10;
+        int i, temp$0, temp$2, temp$4, temp$5, start, temp$6, temp$7, temp$9, temp$11, temp$12, len, temp$13, temp$14, temp$15, temp$16, temp$17;
+        char[] temp$1, temp$8;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        ch := @parameter0: char;
+        i = 0;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if i <= temp$0 goto label1;
+
+        goto label9;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$2 = i;
+        temp$3 = temp$1[temp$2];
+        temp$4 = (int) temp$3;
+        temp$5 = (int) ch;
+        if temp$4 == temp$5 goto label2;
+
+        goto label8;
+
+     label2:
+        nop;
+        start = i;
+
+     label3:
+        nop;
+        temp$6 = i + 1;
+        i = temp$6;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if temp$6 < temp$7 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$9 = i;
+        temp$10 = temp$8[temp$9];
+        temp$11 = (int) temp$10;
+        temp$12 = (int) ch;
+        if temp$11 != temp$12 goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        goto label7;
+
+     label6:
+        nop;
+        goto label3;
+
+     label7:
+        nop;
+        temp$13 = i - start;
+        len = temp$13;
+        virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: void deleteImpl(int,int,int)>(start, i, len);
+        temp$14 = i;
+        temp$15 = temp$14 - len;
+        i = temp$15;
+
+     label8:
+        nop;
+        nop;
+        temp$16 = i;
+        temp$17 = temp$16 + 1;
+        i = temp$17;
+        goto label0;
+
+     label9:
+        nop;
+        return this;
+    }
+}

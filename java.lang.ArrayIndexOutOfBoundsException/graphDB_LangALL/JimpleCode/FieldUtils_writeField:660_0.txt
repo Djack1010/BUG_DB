@@ -1,0 +1,14 @@
+public class WrapClass 
+{
+    public static void writeField(java.lang.reflect.Field, java.lang.Object, java.lang.Object) throws java.lang.IllegalAccessException
+    {
+        java.lang.reflect.Field field;
+        java.lang.Object target, value;
+
+        field := @parameter0: java.lang.reflect.Field;
+        target := @parameter1: java.lang.Object;
+        value := @parameter2: java.lang.Object;
+        staticinvoke <org.apache.commons.lang3.reflect.FieldUtils: void writeField(java.lang.reflect.Field,java.lang.Object,java.lang.Object,boolean)>(field, target, value, 0);
+        return;
+    }
+}

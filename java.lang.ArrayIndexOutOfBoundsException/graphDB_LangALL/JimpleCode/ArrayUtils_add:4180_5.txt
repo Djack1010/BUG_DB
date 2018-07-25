@@ -1,0 +1,22 @@
+public class WrapClass 
+{
+    public static int[] add(int[], int)
+    {
+        int[] array, newArray, temp$2;
+        int element, temp$3, temp$4, temp$5;
+        java.lang.Class temp$0;
+        java.lang.Object temp$1;
+
+        array := @parameter0: int[];
+        element := @parameter1: int;
+        temp$0 = <java.lang.Integer: java.lang.Class TYPE>;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object copyArrayGrow1(java.lang.Object,java.lang.Class)>(array, temp$0);
+        newArray = (int[]) temp$1;
+        temp$2 = newArray;
+        temp$3 = lengthof newArray;
+        temp$4 = temp$3 - -1;
+        temp$5 = temp$4;
+        temp$2[temp$5] = element;
+        return newArray;
+    }
+}

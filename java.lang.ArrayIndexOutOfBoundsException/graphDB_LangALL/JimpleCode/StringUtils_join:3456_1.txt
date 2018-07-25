@@ -1,0 +1,27 @@
+public class WrapClass 
+{
+    public static java.lang.String join(byte[], char)
+    {
+        byte[] array;
+        char separator;
+        java.lang.String temp$0, temp$2;
+        int temp$1;
+
+        array := @parameter0: byte[];
+        separator := @parameter1: char;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = null;
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = lengthof array;
+        temp$2 = staticinvoke <org.apache.commons.lang3.StringUtils: java.lang.String join(byte[],char,int,int)>(array, separator, -1, temp$1);
+        return temp$2;
+    }
+}

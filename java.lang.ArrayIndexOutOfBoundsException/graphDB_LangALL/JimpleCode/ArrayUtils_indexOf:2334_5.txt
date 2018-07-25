@@ -1,0 +1,69 @@
+public class WrapClass 
+{
+    public static int indexOf(char[], char, int)
+    {
+        char[] array, temp$2;
+        char valueToFind, temp$4;
+        int startIndex, temp$0, i, temp$1, temp$3, temp$5, temp$6, temp$7, temp$8, temp$9;
+
+        array := @parameter0: char[];
+        valueToFind := @parameter1: char;
+        startIndex := @parameter2: int;
+        if array == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$0;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+
+     label3:
+        nop;
+        i = startIndex;
+
+     label4:
+        nop;
+        temp$1 = lengthof array;
+        if i < temp$1 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$2 = array;
+        temp$3 = i;
+        temp$4 = temp$2[temp$3];
+        temp$5 = (int) valueToFind;
+        temp$6 = (int) temp$4;
+        if temp$5 == temp$6 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        return i;
+
+     label7:
+        nop;
+        nop;
+        temp$7 = i;
+        temp$8 = temp$7 + 1;
+        i = temp$8;
+        goto label4;
+
+     label8:
+        nop;
+        temp$9 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$9;
+    }
+}

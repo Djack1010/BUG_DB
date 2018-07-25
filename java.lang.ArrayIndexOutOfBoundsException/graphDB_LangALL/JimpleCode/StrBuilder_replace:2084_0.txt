@@ -1,0 +1,21 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder replace(org.apache.commons.lang3.text.StrMatcher, java.lang.String, int, int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, temp$1;
+        org.apache.commons.lang3.text.StrMatcher matcher;
+        java.lang.String replaceStr;
+        int startIndex, endIndex, replaceCount, temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        matcher := @parameter0: org.apache.commons.lang3.text.StrMatcher;
+        replaceStr := @parameter1: java.lang.String;
+        startIndex := @parameter2: int;
+        endIndex := @parameter3: int;
+        replaceCount := @parameter4: int;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int validateRange(int,int)>(startIndex, endIndex);
+        endIndex = temp$0;
+        temp$1 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder replaceImpl(org.apache.commons.lang3.text.StrMatcher,java.lang.String,int,int,int)>(matcher, replaceStr, startIndex, endIndex, replaceCount);
+        return temp$1;
+    }
+}

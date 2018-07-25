@@ -1,0 +1,96 @@
+public class WrapClass 
+{
+    private static final java.lang.StringBuilder escapeRegex(java.lang.StringBuilder, java.lang.String, boolean)
+    {
+        java.lang.StringBuilder regex, temp$0, temp$5, temp$8, temp$10, temp$12;
+        java.lang.String value;
+        boolean unquote;
+        int i, temp$1, temp$3, temp$4, temp$7, temp$11;
+        char c, temp$2, temp$6, temp$9;
+
+        regex := @parameter0: java.lang.StringBuilder;
+        value := @parameter1: java.lang.String;
+        unquote := @parameter2: boolean;
+        temp$0 = virtualinvoke regex.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\Q");
+        i = 0;
+
+     label0:
+        nop;
+        temp$1 = virtualinvoke value.<java.lang.String: int length()>();
+        if i < temp$1 goto label1;
+
+        goto label11;
+
+     label1:
+        nop;
+        temp$2 = virtualinvoke value.<java.lang.String: char charAt(int)>(i);
+        c = temp$2;
+        goto label9;
+
+     label2:
+        nop;
+        goto label10;
+
+     label3:
+        nop;
+        temp$3 = i + 1;
+        i = temp$3;
+        temp$4 = virtualinvoke value.<java.lang.String: int length()>();
+        if temp$3 == temp$4 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        goto label10;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke regex.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        temp$6 = virtualinvoke value.<java.lang.String: char charAt(int)>(i);
+        c = temp$6;
+        temp$7 = (int) c;
+        if temp$7 == 69 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$8 = virtualinvoke regex.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("E\\\\E\\");
+        temp$9 = 81;
+        c = temp$9;
+
+     label7:
+        nop;
+        goto label10;
+
+     label8:
+        nop;
+        goto label10;
+
+        goto label10;
+
+     label9:
+        nop;
+        nop;
+        lookupswitch(c)
+        {
+            case 39: goto label2;
+            case 92: goto label3;
+            default: goto label8;
+        };
+
+     label10:
+        nop;
+        temp$10 = virtualinvoke regex.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(c);
+        nop;
+        temp$11 = i + 1;
+        i = temp$11;
+        goto label0;
+
+     label11:
+        nop;
+        temp$12 = virtualinvoke regex.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\\E");
+        return regex;
+    }
+}

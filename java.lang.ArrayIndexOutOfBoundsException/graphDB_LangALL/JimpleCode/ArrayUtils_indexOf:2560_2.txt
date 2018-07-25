@@ -1,0 +1,72 @@
+public class WrapClass 
+{
+    public static int indexOf(double[], double, int)
+    {
+        double[] array, temp$4;
+        double valueToFind, temp$6;
+        int startIndex, temp$1, temp$2, i, temp$3, temp$5, temp$7, temp$8, temp$9, temp$10;
+        boolean temp$0;
+
+        array := @parameter0: double[];
+        valueToFind := @parameter1: double;
+        startIndex := @parameter2: int;
+        temp$0 = staticinvoke <org.apache.commons.lang3.ArrayUtils: boolean isEmpty(double[])>(array);
+        if temp$0 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$1 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$1;
+
+     label1:
+        nop;
+        if startIndex < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = 0;
+        startIndex = temp$2;
+
+     label3:
+        nop;
+        i = startIndex;
+
+     label4:
+        nop;
+        temp$3 = lengthof array;
+        if i != temp$3 goto label5;
+
+        goto label8;
+
+     label5:
+        nop;
+        temp$4 = array;
+        temp$5 = i;
+        temp$6 = temp$4[temp$5];
+        temp$7 = valueToFind cmpg temp$6;
+        if temp$7 != 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        return i;
+
+     label7:
+        nop;
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        i = temp$9;
+        goto label4;
+
+     label8:
+        nop;
+        temp$10 = <org.apache.commons.lang3.ArrayUtils: int INDEX_NOT_FOUND>;
+        return temp$10;
+    }
+}

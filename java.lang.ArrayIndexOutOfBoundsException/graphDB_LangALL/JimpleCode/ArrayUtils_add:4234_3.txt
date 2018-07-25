@@ -1,0 +1,23 @@
+public class WrapClass 
+{
+    public static short[] add(short[], short)
+    {
+        short[] array, newArray, temp$2;
+        short element;
+        java.lang.Class temp$0;
+        java.lang.Object temp$1;
+        int temp$3, temp$4, temp$5;
+
+        array := @parameter0: short[];
+        element := @parameter1: short;
+        temp$0 = <java.lang.Short: java.lang.Class TYPE>;
+        temp$1 = staticinvoke <org.apache.commons.lang3.ArrayUtils: java.lang.Object copyArrayGrow1(java.lang.Object,java.lang.Class)>(array, temp$0);
+        newArray = (short[]) temp$1;
+        temp$2 = newArray;
+        temp$3 = lengthof newArray;
+        temp$4 = temp$3 - -1;
+        temp$5 = temp$4;
+        temp$2[temp$5] = element;
+        return newArray;
+    }
+}

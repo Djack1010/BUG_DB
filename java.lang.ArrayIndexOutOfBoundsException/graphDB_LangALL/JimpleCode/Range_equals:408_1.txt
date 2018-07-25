@@ -1,0 +1,98 @@
+public class WrapClass 
+{
+    public final boolean equals(java.lang.Object)
+    {
+        org.apache.commons.lang3.Range this, range;
+        java.lang.Object obj, temp$6, temp$7, temp$9, temp$10;
+        boolean temp$0, temp$1, temp$4, temp$5, temp$8, temp$11, temp$12;
+        java.lang.Class temp$2, temp$3;
+
+        this := @this: org.apache.commons.lang3.Range;
+        obj := @parameter0: java.lang.Object;
+        if obj == this goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = 1;
+        return temp$0;
+
+     label1:
+        nop;
+        if obj == null goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$1 = 0;
+        goto label4;
+
+     label3:
+        nop;
+        temp$1 = 1;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke obj.<java.lang.Object: java.lang.Class getClass()>();
+        temp$3 = virtualinvoke this.<org.apache.commons.lang3.Range: java.lang.Class getClass()>();
+        if temp$2 != temp$3 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = 0;
+        goto label7;
+
+     label6:
+        nop;
+        temp$4 = 1;
+
+     label7:
+        nop;
+        if temp$1 != temp$4 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$5 = 0;
+        return temp$5;
+
+     label9:
+        nop;
+        range = (org.apache.commons.lang3.Range) obj;
+        temp$6 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$7 = range.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$8 = virtualinvoke temp$6.<java.lang.Object: boolean equals(java.lang.Object)>(temp$7);
+        if temp$8 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$9 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$10 = range.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$11 = virtualinvoke temp$9.<java.lang.Object: boolean equals(java.lang.Object)>(temp$10);
+        if temp$11 == 0 goto label11;
+
+        goto label12;
+
+        goto label12;
+
+     label11:
+        nop;
+        temp$12 = 0;
+        goto label13;
+
+     label12:
+        nop;
+        temp$12 = 1;
+
+     label13:
+        nop;
+        return temp$12;
+    }
+}

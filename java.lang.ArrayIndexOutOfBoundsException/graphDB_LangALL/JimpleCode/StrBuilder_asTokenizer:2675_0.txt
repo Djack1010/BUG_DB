@@ -1,0 +1,13 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrTokenizer asTokenizer()
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer temp$0;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = new org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer;
+        specialinvoke temp$0.<org.apache.commons.lang3.text.StrBuilder$StrBuilderTokenizer: void <init>(org.apache.commons.lang3.text.StrBuilder)>(this);
+        return temp$0;
+    }
+}

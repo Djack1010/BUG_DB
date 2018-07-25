@@ -1,0 +1,45 @@
+public class WrapClass 
+{
+    public final int hashCode()
+    {
+        org.apache.commons.lang3.Range this;
+        int result, temp$0, temp$1, temp$2, temp$3, temp$5, temp$6, temp$7, temp$8, temp$10, temp$11, temp$12, temp$13, temp$15, temp$16;
+        java.lang.Class temp$4;
+        java.lang.Object temp$9, temp$14;
+
+        this := @this: org.apache.commons.lang3.Range;
+        result = this.<org.apache.commons.lang3.Range: int hashCode>;
+        temp$0 = this.<org.apache.commons.lang3.Range: int hashCode>;
+        if temp$0 == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$1 = 17;
+        result = temp$1;
+        temp$2 = 37 * result;
+        temp$3 = temp$2;
+        temp$4 = virtualinvoke this.<org.apache.commons.lang3.Range: java.lang.Class getClass()>();
+        temp$5 = virtualinvoke temp$4.<java.lang.Class: int hashCode()>();
+        temp$6 = temp$3 + temp$5;
+        result = temp$6;
+        temp$7 = 37 * result;
+        temp$8 = temp$7;
+        temp$9 = this.<org.apache.commons.lang3.Range: java.lang.Object minimum>;
+        temp$10 = virtualinvoke temp$9.<java.lang.Object: int hashCode()>();
+        temp$11 = temp$8 + temp$10;
+        result = temp$11;
+        temp$12 = 37 * result;
+        temp$13 = temp$12;
+        temp$14 = this.<org.apache.commons.lang3.Range: java.lang.Object maximum>;
+        temp$15 = virtualinvoke temp$14.<java.lang.Object: int hashCode()>();
+        temp$16 = temp$13 + temp$15;
+        result = temp$16;
+        this.<org.apache.commons.lang3.Range: int hashCode> = result;
+
+     label1:
+        nop;
+        return result;
+    }
+}

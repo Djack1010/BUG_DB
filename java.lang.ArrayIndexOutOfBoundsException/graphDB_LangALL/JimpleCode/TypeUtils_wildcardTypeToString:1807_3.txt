@@ -1,0 +1,109 @@
+public class WrapClass 
+{
+    private static final java.lang.String wildcardTypeToString(java.lang.reflect.WildcardType)
+    {
+        java.lang.reflect.WildcardType w;
+        java.lang.StringBuilder buf, temp$0, temp$1, temp$9, temp$10, temp$20, temp$21;
+        java.lang.reflect.Type[] lowerBounds, temp$2, upperBounds, temp$3, temp$6, temp$16;
+        int temp$4, temp$5, temp$7, temp$11, temp$12, temp$17;
+        java.lang.reflect.Type temp$8, temp$18;
+        java.lang.Class temp$13, temp$14, temp$15;
+        boolean temp$19;
+        java.lang.String temp$22;
+
+        w := @parameter0: java.lang.reflect.WildcardType;
+        temp$0 = new java.lang.StringBuilder;
+        specialinvoke temp$0.<java.lang.StringBuilder: void <init>()>();
+        temp$1 = virtualinvoke temp$0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(63);
+        buf = temp$1;
+        temp$2 = interfaceinvoke w.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getLowerBounds()>();
+        lowerBounds = temp$2;
+        temp$3 = interfaceinvoke w.<java.lang.reflect.WildcardType: java.lang.reflect.Type[] getUpperBounds()>();
+        upperBounds = temp$3;
+        temp$4 = lengthof lowerBounds;
+        if temp$4 > 1 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$5 = lengthof lowerBounds;
+        if temp$5 == 1 goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        temp$6 = lowerBounds;
+        temp$7 = -1;
+        temp$8 = temp$6[temp$7];
+        if temp$8 != null goto label2;
+
+        goto label3;
+
+        goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$9 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" super ");
+        temp$10 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.StringBuilder appendAllTo(java.lang.StringBuilder,java.lang.String,java.lang.reflect.Type[])>(temp$9, " & ", lowerBounds);
+        goto label10;
+
+     label3:
+        nop;
+        temp$11 = lengthof upperBounds;
+        if temp$11 > 1 goto label8;
+
+        goto label4;
+
+     label4:
+        nop;
+        temp$12 = lengthof upperBounds;
+        if temp$12 == 1 goto label5;
+
+        goto label9;
+
+     label5:
+        nop;
+        temp$14 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+        if temp$14 != null goto label6;
+
+        temp$15 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$(java.lang.String)>("java.lang.Object");
+        <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object> = temp$15;
+        temp$13 = temp$15;
+        goto label7;
+
+     label6:
+        nop;
+        temp$13 = <org.apache.commons.lang3.reflect.TypeUtils: java.lang.Class class$java$lang$Object>;
+
+     label7:
+        nop;
+        temp$16 = upperBounds;
+        temp$17 = 0;
+        temp$18 = temp$16[temp$17];
+        temp$19 = virtualinvoke temp$13.<java.lang.Class: boolean equals(java.lang.Object)>(temp$18);
+        if temp$19 == 0 goto label8;
+
+        goto label9;
+
+        goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$20 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" extends ");
+        temp$21 = staticinvoke <org.apache.commons.lang3.reflect.TypeUtils: java.lang.StringBuilder appendAllTo(java.lang.StringBuilder,java.lang.String,java.lang.reflect.Type[])>(temp$20, " & ", upperBounds);
+
+     label9:
+        nop;
+
+     label10:
+        nop;
+        temp$22 = virtualinvoke buf.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$22;
+    }
+}

@@ -1,0 +1,119 @@
+public class WrapClass 
+{
+    public static transient java.lang.reflect.Method getMatchingAccessibleMethod(java.lang.Class, java.lang.String, java.lang.Class[])
+    {
+        java.lang.Class 'cls';
+        java.lang.String methodName, temp$5;
+        java.lang.Class[] parameterTypes, temp$7, temp$10, temp$11;
+        java.lang.reflect.Method method, temp$0, bestMatch, method, temp$4, accessibleMethod, temp$9;
+        boolean temp$1, temp$6, temp$8, temp$13;
+        java.lang.NoSuchMethodException e;
+        java.lang.reflect.Method[] methods;
+        int temp$2, temp$3, temp$12;
+
+        'cls' := @parameter0: java.lang.Class;
+        methodName := @parameter1: java.lang.String;
+        parameterTypes := @parameter2: java.lang.Class[];
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke 'cls'.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(methodName, parameterTypes);
+        method = temp$0;
+        temp$1 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(method);
+
+     label1:
+        nop;
+        return method;
+
+     label2:
+        nop;
+        e := @caughtexception;
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        bestMatch = null;
+        methods = null;
+        temp$2 = 0;
+
+     label4:
+        nop;
+        temp$3 = lengthof methods;
+        if temp$2 >= temp$3 goto label12;
+
+        temp$4 = methods[temp$2];
+        method = temp$4;
+        temp$5 = virtualinvoke method.<java.lang.reflect.Method: java.lang.String getName()>();
+        temp$6 = virtualinvoke temp$5.<java.lang.String: boolean equals(java.lang.Object)>(methodName);
+        if temp$6 == 0 goto label11;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$7 = virtualinvoke method.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        temp$8 = staticinvoke <org.apache.commons.lang3.ClassUtils: boolean isAssignable(java.lang.Class[],java.lang.Class[],boolean)>(parameterTypes, temp$7, 1);
+        if temp$8 == 0 goto label11;
+
+        goto label6;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$9 = staticinvoke <org.apache.commons.lang3.reflect.MethodUtils: java.lang.reflect.Method getAccessibleMethod(java.lang.reflect.Method)>(method);
+        accessibleMethod = temp$9;
+        if accessibleMethod != null goto label7;
+
+        goto label10;
+
+     label7:
+        nop;
+        if bestMatch == null goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$10 = virtualinvoke accessibleMethod.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        temp$11 = virtualinvoke bestMatch.<java.lang.reflect.Method: java.lang.Class[] getParameterTypes()>();
+        temp$12 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: int compareParameterTypes(java.lang.Class[],java.lang.Class[],java.lang.Class[])>(temp$10, temp$11, parameterTypes);
+        if temp$12 < 0 goto label9;
+
+        goto label10;
+
+        goto label10;
+
+        goto label9;
+
+     label9:
+        nop;
+        bestMatch = accessibleMethod;
+
+     label10:
+        nop;
+
+     label11:
+        nop;
+        nop;
+        temp$2 = temp$2 + 1;
+        goto label4;
+
+     label12:
+        nop;
+        if bestMatch != null goto label13;
+
+        goto label14;
+
+     label13:
+        nop;
+        temp$13 = staticinvoke <org.apache.commons.lang3.reflect.MemberUtils: boolean setAccessibleWorkaround(java.lang.reflect.AccessibleObject)>(bestMatch);
+
+     label14:
+        nop;
+        return bestMatch;
+
+        catch java.lang.NoSuchMethodException from label0 to label1 with label2;
+    }
+}
