@@ -1,0 +1,56 @@
+public class WrapClass 
+{
+    public java.lang.String midString(int, int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int index, length, temp$0, temp$2, temp$3, temp$4, temp$7, temp$8;
+        java.lang.String temp$1, temp$5, temp$9;
+        char[] temp$6, temp$10;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        index := @parameter0: int;
+        length := @parameter1: int;
+        if length <= 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if index >= temp$0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$1 = "";
+        return temp$1;
+
+     label2:
+        nop;
+        temp$2 = index;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$4 = temp$2 + length;
+        if temp$3 <= temp$4 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$5 = new java.lang.String;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$8 = temp$7 - index;
+        specialinvoke temp$5.<java.lang.String: void <init>(char[],int,int)>(temp$6, index, temp$8);
+        return temp$5;
+
+     label4:
+        nop;
+        temp$9 = new java.lang.String;
+        temp$10 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        specialinvoke temp$9.<java.lang.String: void <init>(char[],int,int)>(temp$10, index, length);
+        return temp$9;
+    }
+}

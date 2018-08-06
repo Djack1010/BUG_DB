@@ -1,0 +1,54 @@
+public class WrapClass 
+{
+    public static java.lang.String uncapitalize(java.lang.String)
+    {
+        java.lang.String str, temp$6, temp$8;
+        int strLen, temp$0;
+        char firstChar, temp$1, temp$4;
+        boolean temp$2;
+        java.lang.StringBuilder temp$3, temp$5, temp$7;
+
+        str := @parameter0: java.lang.String;
+        if str == null goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        strLen = temp$0;
+        if temp$0 == 0 goto label1;
+
+        goto label2;
+
+        goto label2;
+
+     label1:
+        nop;
+        return str;
+
+     label2:
+        nop;
+        temp$1 = virtualinvoke str.<java.lang.String: char charAt(int)>(0);
+        firstChar = temp$1;
+        temp$2 = staticinvoke <java.lang.Character: boolean isLowerCase(char)>(firstChar);
+        if temp$2 == 0 goto label4;
+
+        goto label3;
+
+     label3:
+        nop;
+        return str;
+
+     label4:
+        nop;
+        temp$3 = new java.lang.StringBuilder;
+        specialinvoke temp$3.<java.lang.StringBuilder: void <init>(int)>(strLen);
+        temp$4 = staticinvoke <java.lang.Character: char toLowerCase(char)>(firstChar);
+        temp$5 = virtualinvoke temp$3.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(temp$4);
+        temp$6 = virtualinvoke str.<java.lang.String: java.lang.String substring(int)>(1);
+        temp$7 = virtualinvoke temp$5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(temp$6);
+        temp$8 = virtualinvoke temp$7.<java.lang.StringBuilder: java.lang.String toString()>();
+        return temp$8;
+    }
+}

@@ -1,0 +1,47 @@
+public class WrapClass 
+{
+    public org.apache.commons.lang3.text.StrBuilder append(org.apache.commons.lang3.text.StrBuilder)
+    {
+        org.apache.commons.lang3.text.StrBuilder this, str, temp$0, temp$5, temp$10;
+        int strLen, temp$1, len, temp$2, temp$3, temp$4, temp$8, temp$9;
+        char[] temp$6, temp$7;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        str := @parameter0: org.apache.commons.lang3.text.StrBuilder;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder appendNull()>();
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke str.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        strLen = temp$1;
+        if strLen > 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: int length()>();
+        len = temp$2;
+        temp$3 = len;
+        temp$4 = temp$3 + strLen;
+        temp$5 = virtualinvoke this.<org.apache.commons.lang3.text.StrBuilder: org.apache.commons.lang3.text.StrBuilder ensureCapacity(int)>(temp$4);
+        temp$6 = str.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$7 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>(temp$6, 0, temp$7, len, strLen);
+        temp$8 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        temp$9 = temp$8 + strLen;
+        this.<org.apache.commons.lang3.text.StrBuilder: int size> = temp$9;
+
+     label3:
+        nop;
+        temp$10 = null;
+        return temp$10;
+    }
+}

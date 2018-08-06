@@ -1,0 +1,17 @@
+public class WrapClass 
+{
+    public java.lang.String toString()
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        java.lang.String temp$0;
+        char[] temp$1;
+        int temp$2;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        temp$0 = new java.lang.String;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$2 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        specialinvoke temp$0.<java.lang.String: void <init>(char[],int,int)>(temp$1, -1, temp$2);
+        return temp$0;
+    }
+}

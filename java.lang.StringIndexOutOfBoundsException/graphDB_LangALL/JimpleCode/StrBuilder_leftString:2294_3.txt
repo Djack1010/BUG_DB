@@ -1,0 +1,43 @@
+public class WrapClass 
+{
+    public java.lang.String leftString(int)
+    {
+        org.apache.commons.lang3.text.StrBuilder this;
+        int length, temp$1, temp$4;
+        java.lang.String temp$0, temp$2, temp$5;
+        char[] temp$3, temp$6;
+
+        this := @this: org.apache.commons.lang3.text.StrBuilder;
+        length := @parameter0: int;
+        if length == 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$0 = "";
+        return temp$0;
+
+     label1:
+        nop;
+        temp$1 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        if length >= temp$1 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$2 = new java.lang.String;
+        temp$3 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        temp$4 = this.<org.apache.commons.lang3.text.StrBuilder: int size>;
+        specialinvoke temp$2.<java.lang.String: void <init>(char[],int,int)>(temp$3, 0, temp$4);
+        return temp$2;
+
+     label3:
+        nop;
+        temp$5 = new java.lang.String;
+        temp$6 = this.<org.apache.commons.lang3.text.StrBuilder: char[] buffer>;
+        specialinvoke temp$5.<java.lang.String: void <init>(char[],int,int)>(temp$6, 0, length);
+        return temp$5;
+    }
+}

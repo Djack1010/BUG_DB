@@ -1,0 +1,188 @@
+public class WrapClass 
+{
+    protected void add(java.lang.String)
+    {
+        org.apache.commons.lang3.CharSet this;
+        java.lang.String str;
+        int len, temp$0, pos, remainder, temp$1, temp$3, temp$4, temp$5, temp$7, temp$9, temp$10, temp$12, temp$13, temp$17, temp$18, temp$20, temp$21, temp$23, temp$27, temp$28, temp$32, temp$33, temp$35, temp$37, temp$38, temp$42, temp$43, temp$48, temp$49;
+        char temp$2, temp$6, temp$11, temp$14, temp$22, temp$26, temp$29, temp$34, temp$39, temp$45;
+        java.util.Set temp$8, temp$25, temp$36, temp$44;
+        org.apache.commons.lang3.CharRange temp$15, temp$30, temp$40, temp$46;
+        boolean temp$16, temp$19, temp$24, temp$31, temp$41, temp$47;
+
+        this := @this: org.apache.commons.lang3.CharSet;
+        str := @parameter0: java.lang.String;
+        if str == null goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return;
+
+     label1:
+        nop;
+        temp$0 = virtualinvoke str.<java.lang.String: int length()>();
+        len = temp$0;
+        pos = 0;
+
+     label2:
+        nop;
+        if pos < len goto label3;
+
+        goto label22;
+
+     label3:
+        nop;
+        temp$1 = len - pos;
+        remainder = temp$1;
+        if remainder >= 4 goto label4;
+
+        goto label7;
+
+     label4:
+        nop;
+        temp$2 = virtualinvoke str.<java.lang.String: char charAt(int)>(pos);
+        temp$3 = (int) temp$2;
+        if temp$3 == 94 goto label5;
+
+        goto label7;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$4 = pos;
+        temp$5 = temp$4 + 2;
+        temp$6 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$5);
+        temp$7 = (int) temp$6;
+        if temp$7 == 45 goto label6;
+
+        goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        temp$8 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$9 = pos;
+        temp$10 = temp$9 + 1;
+        temp$11 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$10);
+        temp$12 = pos;
+        temp$13 = temp$12 + 3;
+        temp$14 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$13);
+        temp$15 = staticinvoke <org.apache.commons.lang3.CharRange: org.apache.commons.lang3.CharRange isNotIn(char,char)>(temp$11, temp$14);
+        temp$16 = interfaceinvoke temp$8.<java.util.Set: boolean add(java.lang.Object)>(temp$15);
+        temp$17 = pos;
+        temp$18 = temp$17 + 4;
+        pos = temp$18;
+        goto label21;
+
+     label7:
+        nop;
+        if remainder >= 3 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$19 = 0;
+        goto label10;
+
+     label9:
+        nop;
+        temp$19 = 1;
+
+     label10:
+        nop;
+        temp$20 = pos;
+        temp$21 = temp$20 + 1;
+        temp$22 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$21);
+        temp$23 = (int) temp$22;
+        if temp$23 == 45 goto label12;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$24 = 0;
+        goto label13;
+
+     label12:
+        nop;
+        temp$24 = 1;
+
+     label13:
+        nop;
+        if temp$19 == temp$24 goto label14;
+
+        goto label15;
+
+     label14:
+        nop;
+        temp$25 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$26 = virtualinvoke str.<java.lang.String: char charAt(int)>(pos);
+        temp$27 = pos;
+        temp$28 = temp$27 + 2;
+        temp$29 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$28);
+        temp$30 = staticinvoke <org.apache.commons.lang3.CharRange: org.apache.commons.lang3.CharRange isIn(char,char)>(temp$26, temp$29);
+        temp$31 = interfaceinvoke temp$25.<java.util.Set: boolean add(java.lang.Object)>(temp$30);
+        temp$32 = pos;
+        temp$33 = temp$32 + 3;
+        pos = temp$33;
+        goto label20;
+
+     label15:
+        nop;
+        if remainder >= 2 goto label16;
+
+        goto label18;
+
+     label16:
+        nop;
+        temp$34 = virtualinvoke str.<java.lang.String: char charAt(int)>(pos);
+        temp$35 = (int) temp$34;
+        if temp$35 == 94 goto label17;
+
+        goto label18;
+
+        goto label17;
+
+     label17:
+        nop;
+        temp$36 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$37 = pos;
+        temp$38 = temp$37 + 1;
+        temp$39 = virtualinvoke str.<java.lang.String: char charAt(int)>(temp$38);
+        temp$40 = staticinvoke <org.apache.commons.lang3.CharRange: org.apache.commons.lang3.CharRange isNot(char)>(temp$39);
+        temp$41 = interfaceinvoke temp$36.<java.util.Set: boolean add(java.lang.Object)>(temp$40);
+        temp$42 = pos;
+        temp$43 = temp$42 + 2;
+        pos = temp$43;
+        goto label19;
+
+     label18:
+        nop;
+        temp$44 = this.<org.apache.commons.lang3.CharSet: java.util.Set set>;
+        temp$45 = virtualinvoke str.<java.lang.String: char charAt(int)>(pos);
+        temp$46 = staticinvoke <org.apache.commons.lang3.CharRange: org.apache.commons.lang3.CharRange is(char)>(temp$45);
+        temp$47 = interfaceinvoke temp$44.<java.util.Set: boolean add(java.lang.Object)>(temp$46);
+        temp$48 = pos;
+        temp$49 = temp$48 + 1;
+        pos = temp$49;
+
+     label19:
+        nop;
+
+     label20:
+        nop;
+
+     label21:
+        nop;
+        goto label2;
+
+     label22:
+        nop;
+        return;
+    }
+}
