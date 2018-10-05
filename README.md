@@ -4,7 +4,7 @@ This repo contains datasets of buggy examples for java code. The datasets were c
 We extracted the methods from each mutated code where the mutation occured, and we then grouped them by kind of bug behaviour that we got.
 We defined as "buggy methods" the ones on which we injected an error with regard of the test suite. We considered the original methods as "non-buggy", at least for that specific bug pattern.
 
-The dataset were used for training machine learning models for the project https://github.com/Djack1010/GrapPa.
+The dataset were used for training machine learning models by the project https://github.com/Djack1010/GrapPa.
 
 ## Contents of the repo
 
