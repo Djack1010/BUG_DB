@@ -1,7 +1,7 @@
-# Datasets of Byggy/non-buggy examples for Java code
+# Datasets of Buggy examples for bug pattern
 
 This repo contains datasets of buggy examples for java code. The datasets were created by mutating open source projects using the Major mutation framework. The mutated codes were tested using the test suites provided by the open source projects.
-We extracted the Java method from each mutated code where the mutation occured, and we then grouped them by kind of bug behaviour that we got.
+We extracted the methods from each mutated code where the mutation occured, and we then grouped them by kind of bug behaviour that we got.
 We defined as "buggy methods" the ones on which we injected an error with regard of the test suite. We considered the original methods as "non-buggy", at least for that specific bug pattern.
 
 The dataset were used for training machine learning models for the project https://github.com/Djack1010/GrapPa.
