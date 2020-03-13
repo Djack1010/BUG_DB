@@ -18,3 +18,13 @@ The dataset were used for training machine learning models by the project https:
 ## Authors
 
 * **Giacomo Iadarola** - *main contributor* - [Djack1010](https://github.com/Djack1010)
+
+Cite this work by refering to the Master thesis (bibtex format):
+```
+@mastersthesis{iadarola2018graph,
+  title={Graph-based classification for detecting instances of bug patterns},
+  author={Iadarola, Giacomo},
+  year={2018},
+  school={University of Twente}
+}
+```
